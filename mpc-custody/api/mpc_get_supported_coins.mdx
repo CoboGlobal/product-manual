@@ -1,0 +1,73 @@
+---
+title: Get Supported Coins
+api: GET /v1/custody/mpc/get_supported_coins/ 
+description: "This endpoint returns a JSON response containing a list of supported coins for a given chain. The response includes the coin code, display code, description, decimal, deposit and withdrawal availability, and confirming threshold."
+---
+#### Request
+<ParamField body="chain_code" type="String" required>Chain code for which to retrieve supported coins.</ParamField>
+
+#### Response
+<ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
+<ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+<ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField> 
+<ResponseField name="decimal" type="Int" >Decimal precision</ResponseField> 
+<ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField> 
+<ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField> 
+<ResponseField name="confirming_threshold" type="Int" >Number of confirmations required</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/mpc/get_supported_coins/",
+    {
+        "chain_code": "ETH"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/mpc/get_supported_coins/', {
+  "chain_code": "ETH"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/mpc/get_supported_coins/", map[string]string{
+ "chain_code": "ETH"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "coins": [
+    {
+      "coin": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "decimal": 18,
+      "can_deposit": True,
+      "can_withdraw": True,
+      "confirming_threshold": 12
+    },
+    {
+      "coin": "ETH_USDT",
+      "display_code": "USDT",
+      "description": "",
+      "decimal": 6,
+      "can_deposit": True,
+      "can_withdraw": True,
+      "confirming_threshold": 12
+    }
+  ]
+}
+```
+</ResponseExample>

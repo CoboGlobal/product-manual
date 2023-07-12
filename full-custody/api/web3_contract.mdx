@@ -1,0 +1,73 @@
+---
+title: Submit Web3 Contract
+api: POST /v1/custody/web3_contract/ 
+description: "This endpoint allows users to interact with smart contracts on various blockchain networks. Users can send requests to execute a method on a specific smart contract by providing the necessary parameters such as the contract address, method ID, and arguments. The endpoint also supports specifying the gas limit and amount to be sent with the transaction."
+---
+#### Request 
+
+<ParamField body="chain_code" type="String" required>The code of the blockchain network to use.</ParamField> 
+<ParamField body="request_id" type="String" required>A unique identifier for the request.</ParamField> 
+<ParamField body="wallet_addr" type="String" required>The address of the wallet to use for the transaction.</ParamField> 
+<ParamField body="contract_addr" type="String" required>The address of the smart contract to interact with.</ParamField> 
+<ParamField body="method_id" type="String" required>The ID of the method to execute on the smart contract.</ParamField> 
+<ParamField body="method_name" type="String" required>The name of the method to execute on the smart contract.</ParamField> 
+<ParamField body="args" type="String" required>A JSON-encoded list of arguments to pass to the method.</ParamField> 
+<ParamField body="gas_limit" type="Int" >Gas limit</ParamField> 
+
+#### Response
+<ResponseField name="coin" type="String" >Coin Code</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/web3_contract/",
+    {
+        "request_id": "1665381850776",
+        "chain_code": "RETH",
+        "wallet_addr": "0x5ff46982b56183bc243a1ad05a50ec457de50c8b",
+        "contract_addr": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "method_id": "0xa9059cbb",
+        "method_name": "transfer",
+        "args": ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984", 1],
+        "gas_limit": 21000
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/web3_contract/', {
+    "chain_code": "RETH",
+    "wallet_addr": "0x5ff46982b56183bc243a1ad05a50ec457de50c8b",
+    "contract_addr": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    "method_id": "0xa9059cbb",
+    "method_name": "transfer",
+    "args": ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984", 1],
+    "gas_limit": 21000
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/web3_contract/", map[string]string{
+    "chain_code": "RETH",
+    "wallet_addr": "0x5ff46982b56183bc243a1ad05a50ec457de50c8b",
+    "contract_addr": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    "method_id": "0xa9059cbb",
+    "method_name": "transfer",
+    "args": ["0x1f9840a85d5af5bf1d1762f925bdaddc4201f984", 1],
+    "gas_limit": 21000
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+
+```
+</ResponseExample>

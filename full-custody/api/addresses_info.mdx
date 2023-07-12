@@ -1,0 +1,67 @@
+---
+title: Get Addresses Info
+api: "GET /v1/custody/addresses_info/"
+description: This endpoint returns information about a list of addresses for a specific coin. The endpoint accepts GET and POST requests with parameters 'coin' and 'address'. The 'coin' parameter specifies the coin type, and the 'address' parameter is a comma-separated list of addresses. The response contains the coin type and a comma-separated list of addresses that belong to the custody wallet of the authenticated user.
+---
+
+
+#### Request
+<ParamField body="coin" type="String" required>The coin type.</ParamField>
+<ParamField body="address" type="String" required>A comma-separated list of addresses.</ParamField>
+
+#### Response
+<ResponseField name="coin" type="String">The coin type.</ResponseField>
+<ResponseField name="addresses" type="String">A comma-separated list of addresses that belong to the custody wallet of the authenticated user.</ResponseField>
+
+<RequestExample>
+ ```python Python
+request(
+  "GET",
+  "/v1/custody/addresses_info/",
+  {
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e,0x33bb80427711adc881b56a209a374b00388f8a99,0x70099565fe19464b544ccb6ad8080891863eb080,0xafe68A8F8B339D7bbb30A9e486c0c06c3964Cd7B",
+  },
+  api_key, api_secret, host
+)
+```
+
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/addresses_info/',
+        {
+            "coin": "ETH",
+            "address": "0x544094588811118b7701cf4a9dea056e775b4b4e,0x33bb80427711adc881b56a209a374b00388f8a99,0x70099565fe19464b544ccb6ad8080891863eb080,0xafe68A8F8B339D7bbb30A9e486c0c06c3964Cd7B",
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("GET", "/v1/custody/addresses_info/", map[string]string{
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e,0x33bb80427711adc881b56a209a374b00388f8a99,0x70099565fe19464b544ccb6ad8080891863eb080,0xafe68A8F8B339D7bbb30A9e486c0c06c3964Cd7B",
+})
+```
+</RequestExample>
+
+And here is an example response from the API endpoint:
+
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "addresses": "0x544094588811118b7701cf4a9dea056e775b4b4e,0x33bb80427711adc881b56a209a374b00388f8a99,0x70099565fe19464b544ccb6ad8080891863eb080"
+  }
+}
+
+```
+</ResponseExample>

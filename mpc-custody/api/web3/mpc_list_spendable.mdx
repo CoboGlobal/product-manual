@@ -1,0 +1,59 @@
+---
+title: Get Spendable List
+api: GET /v1/custody/mpc/list_spendable/ 
+description: "This endpoint returns a JSON response containing a list of spendable unspent transaction outputs (UTXOs) for a given asset coin and address. The response includes the transaction hash, output index, address, amount, and confirmation status of each UTXO."
+---
+#### Request
+<ParamField body="coin" type="String" required>The asset coin symbol (e.g. BTC, ETH).</ParamField>
+<ParamField body="address" type="String" >The address to filter UTXOs by.</ParamField>
+
+#### Response
+<ResponseField name="tx_hash" type="String" >Transaction hash of the UTXO.</ResponseField>
+<ResponseField name="vout_n" type="Int" >Output index of the UTXO.</ResponseField>
+<ResponseField name="address" type="String" >Address of the UTXO.</ResponseField>
+<ResponseField name="amount" type="Int" >UTXO amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC).</ResponseField>
+<ResponseField name="is_coinbase" type="Bool" >Whether the UTXO is a coinbase transaction</ResponseField>
+<ResponseField name="confirmed_number" type="Int" >Number of confirmations for the UTXO.</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/mpc/list_spendable/",
+    {
+        "coin": "ETH",
+        "amount": 1,
+        "address": ""
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/mpc/list_spendable/', {
+    "coin": "ETH",
+    "amount": 1,
+    "address": ""
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/mpc/list_spendable/", map[string]string{
+    "coin": "ETH",
+    "amount": 1,
+    "address": ""
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+
+
+```
+</ResponseExample>

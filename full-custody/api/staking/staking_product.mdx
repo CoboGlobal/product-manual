@@ -1,0 +1,98 @@
+---
+title: Get Staking Product Details
+api: GET /v1/custody/staking_product/ 
+description: "This endpoint returns information about a staking product with the given product ID. The response is a JSON object containing details about the product, such as its name, description, and rewards. The language parameter can be used to specify the language of the response (default is English)."
+---
+#### Request
+<ParamField body="product_id" type="String" required>Unique ID for staking product</ParamField> 
+<ParamField body="language" type="String" >Language of product description(zh,en(default))</ParamField> 
+
+#### Response
+<ResponseField name="product_id" type="Int" >Product id(unique)</ResponseField> 
+<ResponseField name="name" type="String" >Product name</ResponseField> 
+<ResponseField name="description" type="String" >Product description</ResponseField> 
+<ResponseField name="doc_src" type="String" >Product detailed description doc</ResponseField> 
+<ResponseField name="coin" type="String" >Coin code</ResponseField> 
+<ResponseField name="coin_decimal" type="Int" >Coin decimal</ResponseField> 
+<ResponseField name="reward_coin" type="String" >Reward coin</ResponseField> 
+<ResponseField name="reward_coin_decimal" type="Int" >Reward coin decimal</ResponseField> 
+<ResponseField name="unstake_fee" type="String" >Unstake fee</ResponseField> 
+<ResponseField name="min_amount" type="String" >Min. amount to stake</ResponseField> 
+<ResponseField name="rate" type="String" >Yearly ROI</ResponseField> 
+<ResponseField name="rate_type" type="Int" >1:fixed rate 2:estimated rate</ResponseField> 
+<ResponseField name="days" type="Int" >Reward period</ResponseField> 
+<ResponseField name="stake_type" type="String" >Staking type（Masternode, DPoS, etc）</ResponseField> 
+<ResponseField name="lockup" type="Bool" >If there's a lockup period</ResponseField> 
+<ResponseField name="start_stake_time" type="Int" >Start stake time(mileseconds timestamp)</ResponseField> 
+<ResponseField name="stop_stake_time" type="Int" >Stop stake time(mileseconds timestamp)</ResponseField> 
+<ResponseField name="start_staking_time" type="Int" >Start staking time(mileseconds timestamp)</ResponseField> 
+<ResponseField name="stop_staking_time" type="Int" >Stop staking time(mileseconds timestamp)</ResponseField> 
+<ResponseField name="liquidate_time" type="Int" >Liquidate time(mileseconds timestamp)</ResponseField>
+<ResponseField name="reward_liquidate_time" type="Int" >Reward liquidate time(mileseconds timestamp)</ResponseField>
+
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/staking_product/",
+    {
+        "product_id": 2751,
+        "language": "zh",
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/staking_product/',
+        {
+            "product_id": 2751,
+            "language": "zh",
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/staking_product/", map[string]string{
+    "product_id": 2751,
+    "language": "zh",
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": {
+    "product_id": 2751,
+    "name": "ZEL PPS",
+    "description": "30 ZEL\u8d77\u6295\uff0c\u9636\u68af\u6536\u76ca\u7387\uff0c\u8d28\u62bc\u8d8a\u591a\uff0c\u6536\u76ca\u7387\u8d8a\u9ad8\n\u8d28\u62bc\u540e\u7b2c\u4e8c\u5929\u5f00\u59cb\u4ea7\u751f\u6536\u76ca\uff0c\u6bcf\u5929\u6839\u636e\u5168\u7f51\u6536\u76ca\u60c5\u51b5\u53d1\u653e\u6536\u76ca\uff0c\u9009\u62e9\u3010\u5230\u671f\u540e\u81ea\u52a8\u7eed\u671f\u3011\uff0c\u65e0\u7f1d\u8854\u63a5\u4e0b\u4e00\u671f\u6536\u76ca\n\u968f\u65f6\u53ef\u5212\u51fa\uff0cT+1\u5230\u8d26\uff0c\u6536\u76ca\u5468\u671f\u5185\u53d6\u51fa\u635f\u5931\u5f53\u671f\u6536\u76ca\n\u6bcf\u6b21\u53d6\u51fa\u8d4e\u56de\u8d39: 10 ZEL",
+    "doc_src": "https://support.cobo.com/hc/zh-cn/articles/360025623074",
+    "coin": "ZEL",
+    "coin_decimal": 8,
+    "reward_coin": "ZEL",
+    "reward_coin_decimal": 8,
+    "unstake_fee": "1000000000",
+    "min_amount": "3000000000",
+    "rate": "0.1351459495",
+    "rate_type": 2,
+    "days": 20,
+    "stake_type": "masternode",
+    "lockup": false,
+    "start_stake_time": 1573455600000,
+    "stop_stake_time": 1573542000000,
+    "start_staking_time": 1573574400000,
+    "stop_staking_time": 1575302400000,
+    "liquidate_time": 1575388800000,
+    "reward_liquidate_time": 1575388800000
+  }
+}
+```
+</ResponseExample>

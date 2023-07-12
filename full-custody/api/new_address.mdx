@@ -1,0 +1,69 @@
+---
+title: Get New Deposit Address
+api: "POST /v1/custody/new_address/"
+description: "This endpoint generates a new cryptocurrency address for a given coin and returns it in a JSON response. The endpoint requires authentication and takes in two parameters: 'coin' and 'native_segwit'. The 'coin' parameter specifies the cryptocurrency for which the address needs to be generated, and the 'native_segwit' parameter is a boolean flag indicating whether the address should be generated using native segwit format. The endpoint checks for permission and address count limits before generating the new address."
+---
+
+<Note>For BTC address, it supports generating segwit (3 address) and native_ Segwit (bc1 address), see below for details. (*
+Cobo supports withdrawal to any BTC address type)</Note>
+
+
+#### Request
+<ParamField body="coin" type="String" required>Cryptocurrency for which the address needs to be generated.</ParamField>
+<ParamField body="native_segwit" type="Bool">Flag indicating whether the address should be generated using native segwit format.</ParamField>
+
+
+#### Response
+<ResponseField name="coin" type="String">Cryptocurrency for which the address was generated.</ResponseField>
+<ResponseField name="address" type="String">Newly generated cryptocurrency address.</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+  "POST",
+  "/v1/custody/new_address/",
+  {
+    "coin": "BTC"
+            "native_segwit": 1
+},
+api_key, api_secret, host
+)
+```
+
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/new_address/',
+        {
+            "coin": "BTC"
+            "native_segwit": 1
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("POST", "/v1/custody/new_address/", map[string]string{
+    "coin": "BTC",
+    "native_segwit": 1,
+
+})
+```
+</RequestExample>
+
+
+<ResponseExample>
+    ```json
+    {
+        "success": true,
+        "result": {
+            "address": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+            "coin": "BTC"
+        }
+    }
+    ```
+</ResponseExample>

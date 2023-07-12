@@ -1,0 +1,77 @@
+---
+title: "Transaction Notification"
+description: ""
+---
+
+Upon receiving a successful deposit/withdrawal transaction, Cobo will notify a client-designated URL via HTTP(S), and request method is POST. The
+message includes the transaction data in the HTTP message body in JSON format. After the client receives and finishes
+processing the message, they must send an HTTP response with status code =200 and http body = 'ok' to Cobo. Otherwise,
+we will continue to push the same message to the designated URL (up to 14 times, if you want to re-send the push later,
+you could click on 'Resend' Button on Web: Wallet - API Callback - API Push History)
+
+If block confirmation status is chosen in web platform, there will be a notification whenever the block confirmation
+number changes for one transaction, the status is marked as 'pending', the confirmation number and '
+confirming_threshold' will be included. Each notification (for each number change) will be sent only once.
+
+<img src="/images/pendingpushEN.png" />
+
+
+If you want to check Cobo pubkey to verify Cobo signature, please go to: Web management platform - Wallet - API
+Callback. (NOTICE they're different in Sandbox & Prod environment)
+
+### Example
+
+```json
+{
+  "id": "20201207150724000192033000003701",
+  "coin": "TRON",
+  "display_code": "TRX",
+  "description": "TRON",
+  "decimal": 6,
+  "address": "TZAt997umXasPUfxUZYKQKcGwjmYpJzX6V",
+  "source_address": "TWDchZBmYvTQBeXD4w8rRUowDv5ka8kiFU",
+  "side": "deposit",
+  "amount": "1",
+  "abs_amount": "0.000001",
+  "txid": "6c2df6f6cf7fe8fe1e8559c11679a5a5b90768d1c128ffb3dd66d6f3cb910775",
+  "vout_n": 0,
+  "request_id": null,
+  "status": "success",
+  "abs_cobo_fee": "0",
+  "created_time": 1607324928585,
+  "last_time": 1607324928585,
+  "confirmed_num": 27,
+  "tx_detail": {
+    "txid": "6c2df6f6cf7fe8fe1e8559c11679a5a5b90768d1c128ffb3dd66d6f3cb910775",
+    "blocknum": 25660684,
+    "blockhash": "0000000001878d0c83fb9640712d3354a0a1912dfd5884959d3c1a16b6f62e1c",
+    "hexstr": ""
+  },
+  "source_address_detail": "TWDchZBmYvTQBeXD4w8rRUowDv5ka8kiFU",
+  "confirming_threshold": 27,
+  "type": "external"
+}
+```
+Cobo receives a deposit of 0.000001 TRX to address TZAt997umXasPUfxUZYKQKcGwjmYpJzX6V. The transaction hash is
+6c2df6f6cf7fe8fe1e8559c11679a5a5b90768d1c128ffb3dd66d6f3cb910775. If the address belongs to a Cobo client, Cobo will
+send an HTTP post request to the client-designated URL with the body ->
+
+### NOTICE
+
+1. After clients receive a notification from Cobo, they need to call the Cobo transaction query interface with the ID
+   from the notification to confirm the transaction's validity. **Clients should not rely on push message to confirm
+   deposits or withdrawals.**
+
+2. For 'successful transaction' notifications, Cobo use a 'succeed at least once' strategy. If the client does not
+   respond with a 'body data ok' or HTTP request timeout message, Cobo will consider the push as failed. After a while,
+   we will push again. However, there is a limit for push attempts. It the limit is exceeded, it will be marked as a
+   failed push.
+
+3. For 'pending transaction' notifications, Cobo will only send once when the confirmation number changes. No response
+   required from client.
+
+4. For 'success transaction' notifications, Cobo will not push the confirmation number changes any more.
+
+5. Use ID as unique key for each transaction, and lock your DB, in case of duplicate accounting for one transaction.
+
+6. We recommend you to use https and Cobo pubkey for signature verification. (please refer to our SDK)

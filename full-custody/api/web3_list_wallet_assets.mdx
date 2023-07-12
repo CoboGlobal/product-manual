@@ -1,0 +1,78 @@
+---
+title: Get Wallet Assets List
+api: GET /v1/custody/web3_list_wallet_assets/ 
+description: "This endpoint returns a JSON response containing a list of assets (coins and NFTs) and their respective information for a given wallet address and chain code. The response includes the coin's name, chain code, display code, description, and balance. For NFTs, the response includes the NFT code, chain code, display code, description, balance, token type, and contract address."
+---
+#### Request 
+
+<ParamField body="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField> 
+<ParamField body="chain_code" type="String" >Chain code, if it is empty, it will return all chain_code assets, if it is not empty, it will return the assets in this chain_code</ParamField> 
+
+#### Response
+<ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+<ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
+<ResponseField name="display_code" type="String" >Coin/NFT ticker symbol (not unique, changeable, for reference only ).</ResponseField>
+<ResponseField name="description" type="String" >Full name of coin/NFT (not unique, changeable, for reference only ).</ResponseField>
+<ResponseField name="amount" type="String" >Coin/NFT amount</ResponseField> 
+<ResponseField name="nft_code" type="String" >NFT Collection Code</ResponseField> 
+<ResponseField name="standard" type="String" >The token type of the NFT.</ResponseField>
+<ResponseField name="contract_address" type="String" >The contract address of the NFT.</ResponseField>
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/web3_list_wallet_assets/",
+    {
+        "address": "0x47795c2f1459aa1d27d00a755a729cc2c9b952df",
+        "chain_code": "ETH"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/web3_list_wallet_assets/', {
+      "address": "0x47795c2f1459aa1d27d00a755a729cc2c9b952df",
+      "chain_code": "ETH"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/web3_list_wallet_assets/", map[string]string{
+      "address": "0x47795c2f1459aa1d27d00a755a729cc2c9b952df",
+      "chain_code": "ETH"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "coin_infos": [
+    {
+      "coin": "ETH",
+      "chain_code": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "amount": "1000000000000000"
+    }
+  ],
+  "nft_infos": [
+    {
+      "nft_code": "NFT_ETH_SS",
+      "chain_code": "ETH",
+      "display_code": "Smuggled Supplies",
+      "description": "Smuggled Supplies",
+      "amount": "1",
+      "standard": "ERC1155",
+      "contract_address": "0x76be3b62873462d2142405439777e971754e8e77"
+    }
+  ]
+}
+```
+</ResponseExample>

@@ -1,0 +1,96 @@
+---
+title: "Sign Request Description"
+icon: ""
+description:
+---
+
+
+## Callback API Request Description
+
+### request_type
+
+TypeKeySign = 2
+
+### request_detail
+
+The format is a serialized JSON string of structure below.
+
+<ParamField body="group_id" type="String" required>Group ID used during transaction signing.</ParamField>
+<ParamField body="root_pub_key" type="String" required>MPC root extended public key.</ParamField>
+<ParamField body="used_node_ids" type="[]String" required>Node IDs used during transaction signing.</ParamField>
+<ParamField body="bip32_path_list" type="[]String" required>Address paths (BIP32).</ParamField>
+<ParamField body="msg_hash_list" type="[]String" required>Hashes to be signed.</ParamField>
+
+### extra_info
+
+The format is a serialized JSON string of structure below.
+
+<ParamField body="cobo_id" type="String" required>Unique ID of the transaction signing (KeySign) request.</ParamField>
+<ParamField body="api_request_id" type="String" optional><p>Request ID of the withdrawal request;</p><p>If the request is initialized via API, the value should be the same as request_id;</p><p>If the request is initialized via Cobo Custody Web, the field should be blank.</p></ParamField>
+<ParamField body="transaction_type" type="TransactionTypeEnum" required>Please refer to TransactionTypeEnum below.</ParamField>
+<ParamField body="operation" type="TransactionOperationEnum" required>Please refer to TransactionOperationEnum below.</ParamField>
+<ParamField body="coin" type="String" required>Asset name.</ParamField>
+<ParamField body="decimal" type="Int" required>Decimal precision.</ParamField>
+<ParamField body="from_address" type="String" required>Address from which assets are withdrawn.</ParamField>
+<ParamField body="amount" type="String" optional>Transaction amount, which contains decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC).</ParamField>
+<ParamField body="to_address" type="String" required>Deposit address.</ParamField>
+<ParamField body="to_address_details" type="Json" optional>List of deposit addresses; applicable to the UTXO model; the value must meets the JSON structure of list[ToAddressDetail].</ParamField>
+<ParamField body="fee" type="Int" optional>For BTC transaction, this field returns the transaction fees per byte; unit: satoshi.</ParamField>
+<ParamField body="gas_price" type="Int" optional>Gas fees; applicable to ETH; unit: GWei.</ParamField>
+<ParamField body="gas_limit" type="Int" optional>Gas limit; applicable to ETH.</ParamField>
+<ParamField body="extra_parameters" type="Json" required>Additional parameters for the transaction; for more information, please refer to the description of create_transaction.</ParamField>
+<ParamField body="replace_cobo_id" type="String" optional>ID of a Cobo transaction that has been designated as RBF.</ParamField>
+<ParamField body="api_key" type="String" optional>API_KEY of the withdrawal request initialized through API.</ParamField>
+<ParamField body="spender" type="String" optional>Email information of the withdrawer; applicable to Cobo Custody Web.</ParamField>
+<ParamField body="raw_tx" type="List[RawTx]" required>Raw transaction data.</ParamField>
+<ParamField body="note" type="String" required>Transaction remarks.</ParamField>
+
+#### ToAddressDetail
+
+<ParamField body="to_address" type="String">Withdrawal address.</ParamField>
+<ParamField body="amount" type="String">Transaction amount, which contains decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC).</ParamField>
+
+#### extra_parameters
+
+<ParamField body="inputs_to_spend" type="List[Input]">Unspent Transaction Output (UTXO) to spend; this only applies in UTXO type of blockchains (e.g. bitcoin).</ParamField>
+<ParamField body="inputs_to_exclude" type="List[Input]">Unspent Transaction Output (UTXO) to exclude from spending; this only applies in UTXO type of blockchains (e.g bitcoin).</ParamField>
+
+#### Input
+
+<ParamField body="tx_hash" type="String">Transaction hash.</ParamField>
+<ParamField body="vout_n" type="Int">Transaction index/no.</ParamField>
+
+#### TransactionTypeEnum
+
+- TYPE_MPC_WEB = 100
+- TYPE_MPC_MMI = 101
+- TYPE_MPC_API = 102
+- TYPE_RBF_API_SPEEDUP = 103
+- TYPE_RBF_WEB_SPEEDUP = 104
+- TYPE_RBF_API_DROP = 105
+- TYPE_RBF_WEB_DROP = 106
+- TYPE_MPC_TRANSACTION_FROM_EXTERNAL = 107
+- TYPE_MPC_WEB3_WEB = 300  # mpc web3 web withdraw
+- TYPE_MPC_WEB3_MMI_TX = 301  # mpc web3 mmi tx
+- TYPE_MPC_WEB3_MMI_MSG = 302  # mpc web3 mmi msg
+- TYPE_MPC_WEB3_API_TRANSACTION = 303
+- TYPE_MPC_WEB3_API_EIP_191 = 304
+- TYPE_MPC_WEB3_API_EIP_712 = 305
+- TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL = 307
+- TYPE_MPC_WEB3_RBF_API_SPEEDUP = 308
+- TYPE_MPC_WEB3_RBF_WEB_SPEEDUP = 309
+- TYPE_MPC_WEB3_RBF_API_DROP = 310
+- TYPE_MPC_WEB3_RBF_WEB_DROP = 311
+
+#### TransactionOperationEnum
+
+- OPERATION_TRANSFER = 100
+- OPERATION_CONTRACT_CALL = 200
+- OPERATION_MINT = 201
+- OPERATION_BURN = 202
+- OPERATION_SIGN_MESSAGE = 300
+
+#### RawTx
+
+<ParamField body="raw_tx" type="String">Hex-encoded transaction information.</ParamField>
+<ParamField body="derivation_path" type="String">Derivation path to sign, for example："m/44/60/3/0/1".</ParamField>

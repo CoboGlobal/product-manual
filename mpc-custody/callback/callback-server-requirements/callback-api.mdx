@@ -1,0 +1,99 @@
+---
+title: "Callback API"
+icon: ""
+description:
+---
+
+## HTTP API
+
+The callback server is an HTTP server that supports the following endpoints:
+
+* Path
+  * /v1/check
+* Method
+  * POST
+* Body
+  * Encoded with x-www-form-urlencoded&#x20;
+
+## HTTP Request Parsing&#x20;
+
+The TSS Node will follow the steps below to send the HTTP request:
+
+* Generate CallbackRequest
+* Serialize CallbackRequest to derive CallbackRequestJsonString
+* Use CallbackRequestJsonString as the JWT payload and sign it using its RSA private key to create a JWT
+* Submit the HTTP POST request via an HTML form with TSS\_JWT\_MSG as the key and JWT as the value
+
+The callback server will follow the steps below once it receives the HTTP request:
+
+* Retrieve the data in the HTTP POST request using TSS\_JWT\_MSG as the key and the JWT as the value
+* Use the TSS Node’s RSA public key to validate the signed JWT
+* Retrieve the payload in the JWT and deserialize it using CallbackRequest
+* Deserialize the meta field to retrieve the information in the request
+
+## Risk Control
+
+You'll need to perform a risk control for each CallbackRequest based on your organization’s business and security requirements to further validate the request.
+
+## HTTP Response
+
+The callback server will send the HTTP response as follows: &#x20;
+
+* Generate CallbackResponse
+* Serialize CallbackResponse to derive CallbackResponseJsonString
+* Use CallbackResponseJsonString as the JWT payload and sign it using its RSA private key to create a JWT
+* Use the JWT as the HTTP response and return it to the TSS Node
+
+## Callback API Request Description
+
+<ParamField body="request_id" type="String" required>Unique ID of the callback request.</ParamField>
+<ParamField body="request_type" type="Int" required><p>The types of callback requests, which will be an enum:</p><p></p><p>TypeKeyGen = 1</p><p>TypeKeySign = 2</p><p>TypeKeyReshare = 3</p></ParamField>
+<ParamField body="request_detail" type="String" required>The details of the callback request; each type of the callback requests corresponds to a different request\_detail structure; the format is a serialized JSON string.</ParamField>
+<ParamField body="extra_info" type="String" required>Other information associated with the callback request; each type of the callback requests corresponds to a different extra\_info structure; the format is a serialized JSON string.</ParamField>
+
+## Callback API Response Description
+
+<ResponseField name="status" type="Int" required>Status; 0: callback server is normal; other values: callback server has an error</ResponseField>
+<ResponseField name="request_id" type="String" required>Request ID of the callback; the value must be the same as request\_id in CallbackRequest</ResponseField>
+<ResponseField name="action" type="String" required><p>Instructions for task execution, which will be an enum: [APPROVE, REJECT, WAIT]</p><p></p><p>APPROVE: task should be executed; </p><p></p><p>REJECT: task should be rejected, and the reason can be retrieved from the error field; </p><p></p><p>WAIT: instruction fails to be given and the TSS Node should re-send the request to the callback server</p><p></p></ResponseField>
+<ResponseField name="error" type="String" optional><p>Error message;</p><p></p><p>If the returned status is not 0, it indicates an error within the callback server</p><p></p><p>If the returned status is 0 and action returns a “REJECT”, it indicates the reason for task rejection</p><p></p></ResponseField>
+
+
+
+<RequestExample>
+    ```CallbackRequest
+    TSS_JWT_MSG=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYWNrYWdlX2RhdGEiOiJleUp5WlhGMVpYTjBYMmxrSWpvaWRHVnpkRjl5WlhGMVpYTjBYMmxrSWl3aWNtVnhkV1Z6ZEY5MGVYQmxJam94TENKeVpYRjFaWE4wWDJSbGRHRnBiQ0k2SW5SbGMzUmZkR0Z6YTE5a1pYUmhhV3dpTENKbGVIUnlZVjlwYm1adklqb2llMXdpWTI5aWIxd2lPaUJjSW50OVhDSXNJRndpWTNWemRHOXRaWEpjSWpvZ1hDSjdYRnhjSW10bGVWeGNYQ0k2WEZ4Y0luWmhiRnhjWENKOVhDSjlJbjA9IiwiaXNzIjoiVEVTVF9DSEVDS0VSIiwiZXhwIjoxNjg3MzIxNDEwfQ.insE89dQezZPUTAxRoGBqtjVuxSGBeGBEKsmfVpdy8Rs1DenVXj3oj-184bwvGsJncxbul-YaenxYaLt5FSAzgLf5UWHwJ9PnqzorIcPORo2VDSE1B05PS8D7GNL8HZvqd9j2v72tnuy8PuMe8zGEOzAhOzFCnuinVXbOZO3q85W05gmJnICPNRe0kCWe6VvfkiZ15wlqlEkDlRebrAb4QaL7QvQ2rZ8Q-ClNepg9E1WbtgMgfS4b64thFNhDfBM1I-3Bq2BcaClpKTo0SgMkXsEng3c9r_Gl_cizw5u_6qNKlc8MpxlfjRYWLgZ5J45CZRdcVBb_Q231FcdVZraFg
+    ```
+</RequestExample>
+
+<ResponseExample>
+    ```go Go
+    // verify token
+    tokenString := c.PostForm("TSS_JWT_MSG")
+    token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+        // Make sure that the token method conform to "SigningMethodRSA"
+        if _, ok := token.Method.(*jwt.SigningMethodRSA); !ok {
+            return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+        }
+        return CallBackPublicKey, nil
+    })
+
+    if token.Valid {
+        dataClaim, err := json.Marshal(token.Claims)
+        if err != nil {
+            return err
+        }
+        var claim PackageDataClaim
+        if err := json.Unmarshal(dataClaim, &claim); err != nil {
+            return err
+        }
+
+        req := CallBackRequest{}
+        if err := json.Unmarshal(claim.PackageData, &req); err != nil {
+            return err
+        }
+        // got CallbackRequest
+    }
+
+    ```
+</ResponseExample>

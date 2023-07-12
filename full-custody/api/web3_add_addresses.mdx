@@ -1,0 +1,56 @@
+---
+title: Add Addresses
+api: POST /v1/custody/web3_add_addresses/ 
+description: "This endpoint allows users to add new addresses to their custody wallet. The endpoint takes in a POST request with the chain code and the number of addresses to be added. The maximum number of addresses that can be added at once is 200. The response is a JSON object containing the newly generated addresses."
+---
+#### Request 
+
+<ParamField body="chain_code" type="String" required>The chain code of the blockchain network.</ParamField> 
+<ParamField body="count" type="Int" required>The number of addresses to be added.</ParamField> 
+
+#### Response
+<ResponseField name="addresses" type="String" >The newly generated addresses.</ResponseField>
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/web3_add_addresses/",
+    {
+        "chain_code": "ETH",
+        "count": 3
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/web3_add_addresses/', {
+    "chain_code": "ETH",
+    "count": 3
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/web3_add_addresses/", map[string]string{
+    "chain_code": "ETH",
+    "count": 3
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "addresses": [
+    "0xb45d863bfb0bbf6df53cb3434c31aed10f84024c",
+    "0x53e989cd15c45e382963bb9d2ee4c12a55b1a93a",
+    "0x33d38645ee9b0475187eb0bcb06e0a41ab8ba1c5"
+  ]
+}
+```
+</ResponseExample>

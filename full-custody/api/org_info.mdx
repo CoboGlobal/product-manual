@@ -1,0 +1,121 @@
+---
+title: "Get Account Details"
+api: "GET /v1/custody/org_info/"
+description: "This endpoint returns a JSON response with detailed information about the organization associated with the authenticated user's custody wallet."
+---
+
+#### Request
+None
+
+#### Response
+<ResponseField name="coin" type="String">The coin symbol.</ResponseField>
+<ResponseField name="display_code" type="String">Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>
+<ResponseField name="description" type="String">Full name of coin (not unique, changeable, for reference only )</ResponseField>
+<ResponseField name="decimal" type="String">Coin balance decimal places</ResponseField>
+<ResponseField name="can_deposit" type="Boolean">Deposit accessibility</ResponseField>
+<ResponseField name="can_withdraw" type="Boolean">Withdrawal accessibility</ResponseField>
+<ResponseField name="Balance" type="String">Current balance</ResponseField>
+<ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
+<ResponseField name="fee_coin" type="String">Coin used for fee</ResponseField>
+<ResponseField name="abs_estimate_fee" type="String">Estimated fee</ResponseField>
+<ResponseField name="abs_estimate_fee_usd" type="String">Estimated fee usd</ResponseField>
+<ResponseField name="confirming_threshold" type="Int">Confirmation threshold required for the coin</ResponseField>
+<ResponseField name="dust_threshold" type="Int">Coin minimum withdrawal threshold</ResponseField>
+<ResponseField name="minimum_deposit_threshold" type="String">Coin minimum withdrawal threshold</ResponseField>
+<ResponseField name="token_address" type="String">Smart contract address for token (null for main-chain token)</ResponseField>
+<ResponseField name="require_memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST</ResponseField>
+
+
+
+
+
+
+<RequestExample>
+```python Python
+request(
+  "GET",
+  "/v1/custody/org_info/",
+  {},
+  api_key,
+  api_secret,
+  host
+)
+```
+
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/org_info/', {}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("GET", "/v1/custody/org_info/", map[string]string{})
+```
+</RequestExample>
+
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": {
+    "name": "test",
+    "assets": [
+      {
+        "coin": "ETH",
+        "display_code": "ETH",
+        "description": "Ethereum",
+        "decimal": 18,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "balance": "0",
+        "abs_balance": "0",
+        "fee_coin": "ETH",
+        "abs_estimate_fee": "0.0003648",
+        "confirming_threshold": 12,
+        "dust_threshold": 1,
+        "token_address": "",
+        "require_memo": false
+      },
+      {
+        "coin": "BTC_USDT",
+        "display_code": "USDT",
+        "description": "Tether",
+        "decimal": 8,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "balance": "740145525",
+        "abs_balance": "7.40145525",
+        "fee_coin": "BTC",
+        "abs_estimate_fee": "0.00015044",
+        "confirming_threshold": 3,
+        "dust_threshold": 1,
+        "token_address": "31",
+        "require_memo": false
+      },
+      {
+        "coin": "BTC",
+        "display_code": "BTC",
+        "description": "Bitcoin",
+        "decimal": 8,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "balance": "102730",
+        "abs_balance": "0.0010273",
+        "fee_coin": "BTC",
+        "abs_estimate_fee": "0.00013513",
+        "confirming_threshold": 3,
+        "dust_threshold": 546,
+        "token_address": "",
+        "require_memo": false
+      }
+    ]
+  }
+}
+```
+</ResponseExample>

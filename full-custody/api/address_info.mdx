@@ -1,0 +1,73 @@
+---
+title: Get Address Info
+api: "GET /v1/custody/address_info/"
+description: This endpoint returns information about a given address for a specific coin. It checks if the address belongs to the custody wallet and raises an exception if it doesn't. The response is a JSON object containing the coin and address fields.
+---
+
+
+#### Request
+
+<ParamField body="coin" type="String" required>The coin symbol.</ParamField>
+<ParamField body="address" type="String" required>The address to retrieve information for.</ParamField>
+
+#### Response
+<ResponseField name="coin" type="String" required>The coin symbol.</ResponseField>
+<ResponseField name="address" type="String" required>The address to retrieve information for.</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+  "GET",
+  "/v1/custody/address_info/",
+  {
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e",
+  },
+  api_key, api_secret, host
+)
+```
+
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/address_info/',
+        {
+            "coin": "ETH",
+            "address": "0x544094588811118b7701cf4a9dea056e775b4b4e",
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("GET", "/v1/custody/address_info/", map[string]string{
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e",
+})
+```
+
+</RequestExample>
+
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e"
+  }
+}
+----
+{
+  "success": false,
+  "error_code": 12015,
+  "error_description": "0x544094588811118b7701cf4a9dea056e775b4b4e is not Cobo Address of Coin ETH"
+}
+```
+</ResponseExample>
+

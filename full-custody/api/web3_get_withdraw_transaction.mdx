@@ -1,0 +1,92 @@
+---
+title: Get Withdraw Transaction
+api: GET /v1/custody/web3_get_withdraw_transaction/ 
+description: "This endpoint returns a JSON response containing the transaction details of a withdrawal request identified by the given request ID. The response includes the transaction hash, sender address, recipient address, amount, gas limit, and gas price."
+---
+#### Request 
+
+<ParamField body="request_id" type="String" required>The ID of the withdrawal request.</ParamField> 
+
+#### Response
+<ResponseField name="id" type="String" >Cobo Unique Transaction ID</ResponseField> 
+<ResponseField name="txid" type="String" >Transaction Hash</ResponseField> 
+<ResponseField name="create_time" type="Int" >Transaction creation time</ResponseField> 
+<ResponseField name="status" type="Int" >Transaction status(pending approval: 101, pending: 100, success: 200, reject: 300, fail: 400)</ResponseField> 
+<ResponseField name="chain_code" type="String" >Chain code</ResponseField> 
+<ResponseField name="coin" type="String" >Coin code</ResponseField> 
+<ResponseField name="name" type="String" >Token name</ResponseField>
+<ResponseField name="amount" type="String" >Transaction value (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
+<ResponseField name="display_code" type="String" >Coin ticker symbol (not unique, changeable, for reference only )</ResponseField> 
+<ResponseField name="description" type="String" >Full name of coin (not unique, changeable, for reference only )</ResponseField> 
+<ResponseField name="decimal" type="String" >Coin balance decimal places</ResponseField> 
+<ResponseField name="can_deposit" type="String" >Deposit accessibility</ResponseField> 
+<ResponseField name="can_withdraw" type="String" >Withdrawal accessibility</ResponseField> 
+<ResponseField name="confirming_threshold" type="String" >Confirmation threshold required for the coin</ResponseField> 
+<ResponseField name="gas_price" type="String" >The gas price of the withdrawal transaction in wei.</ResponseField> 
+<ResponseField name="gas_limit" type="String" >The gas limit of the withdrawal transaction.</ResponseField> 
+<ResponseField name="fee_used" type="String" >Transaction gas fee value</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/web3_get_withdraw_transaction/",
+    {
+        "request_id": "1670926590854"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/web3_get_withdraw_transaction/', {
+      "request_id": "1670926590854"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/web3_get_withdraw_transaction/", map[string]string{
+      "request_id": "1670926590854"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "tx_info": {
+    "id": "20221213181631000373820000005311",
+    "txid": "0x9e871e10b81bcc840fc894c08a15f1ea560ee37878d1f6352bc69811e0bdc9e1",
+    "create_time": 1670926591333,
+    "status": 200,
+    "chain_code": "GETH",
+    "tokens": [
+      {
+        "name": "GETH",
+        "amount": "-0.000022081870734000"
+      }
+    ],
+    "fee_detail": {
+      "fee_coin_detail": {
+        "coin": "GETH",
+        "display_code": "GETH",
+        "description": "Ethereum Goerli Testnet",
+        "decimal": 18,
+        "can_deposit": True,
+        "can_withdraw": True,
+        "confirming_threshold": 32
+      },
+      "gas_price": 1051517654,
+      "gas_limit": 21000,
+      "fee_used": 22081870734000
+    }
+  }
+}
+
+```
+</ResponseExample>

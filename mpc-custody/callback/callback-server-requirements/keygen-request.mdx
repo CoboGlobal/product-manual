@@ -1,0 +1,28 @@
+---
+title: "KeyGen Request Description"
+icon: ""
+description:
+---
+
+
+## Callback API Request Description
+
+### request_type
+
+TypeKeyGen = 1
+
+### request_detail
+
+The format is a serialized JSON string of structure below.
+
+
+<ParamField body="threshold" type="Int" required>Signature threshold.</ParamField>
+<ParamField body="node_ids" type="[]String" required>Node IDs associated with the generation of all MPC key shares under the MPC wallet.</ParamField>
+<ParamField body="curve" type="Int" required><p>Signature algorithm that has been used.</p><p>  0: SECP256K1 </p><p>  2: ED25519 </p></ParamField>
+
+### extra_info
+
+The format is a serialized JSON string of structure below.
+
+
+<ParamField body="cobo_id" type="String" required>Unique ID of the key generation (KeyGen) request.</ParamField>

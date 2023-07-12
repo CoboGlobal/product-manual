@@ -1,0 +1,1198 @@
+---
+title: "PHP"
+icon: "php"
+description: "If you’re working with PHP, the official [cobo-php-api](https://github.com/CoboGlobal/cobo-php-api) package is the easiest way to use."
+---
+
+## Installation
+
+add dependency in `composer.json`
+
+```json
+"require": {
+    ...
+    "cobo/cobo_custody": "0.2.10",
+  }
+```
+
+## Test
+
+```
+php phpunit.phar ClientTest.php
+```
+
+## Usage
+
+### Initialize
+
+#### Generate Key Pair
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Cobo\Custody\Config;
+use Cobo\Custody\LocalSigner;
+use Cobo\Custody\Client;
+$key = LocalSigner::generateKeyPair();
+echo "apiSecret:", $key['apiSecret'],"\n";
+echo "apiKey:", $key['apiKey'];
+```
+
+Please refer to the [link](/full-custody/authentication) for how to use apiKey
+
+#### Initialize RestClient
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Cobo\Custody\Config;
+use Cobo\Custody\LocalSigner;
+use Cobo\Custody\Client;
+
+$client = new Client($signer, Config::SANDBOX, false);
+```
+
+#### Initialize ApiSigner
+
+`ApiSigner` can be instantiated through `$signer = new LocalSigner("secret key");`
+
+In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your
+own implementation by implements `ApiSigner` interface
+
+### Account
+
+#### Check Account Details
+
+```php
+$client->getAccountInfo();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "name": "cobo_test",
+    "assets": [
+      {
+        "coin": "ADA",
+        "display_code": "ADA",
+        "description": "Cardano",
+        "decimal": 6,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "require_memo": false,
+        "balance": "29880892",
+        "abs_balance": "29.880892",
+        "fee_coin": "ADA",
+        "abs_estimate_fee": "1",
+        "confirming_threshold": 9,
+        "dust_threshold": 1000000,
+        "token_address": ""
+      },
+      {
+        "coin": "ALGO",
+        "display_code": "ALGO",
+        "description": "Algorand",
+        "decimal": 6,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "require_memo": false,
+        "balance": "8359337",
+        "abs_balance": "8.359337",
+        "fee_coin": "ALGO",
+        "abs_estimate_fee": "0.8",
+        "confirming_threshold": 12,
+        "dust_threshold": 1,
+        "token_address": ""
+      }
+    ]
+  }
+}
+```
+
+</Accordion>
+
+#### Get Coin Details
+
+```php
+$client->getCoinDetails("ETH");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "display_code": "ETH",
+    "description": "Ethereum",
+    "decimal": 18,
+    "can_deposit": true,
+    "can_withdraw": true,
+    "require_memo": false,
+    "balance": "0",
+    "abs_balance": "0",
+    "fee_coin": "ETH",
+    "abs_estimate_fee": "0.006069",
+    "confirming_threshold": 12,
+    "dust_threshold": 1,
+    "token_address": ""
+  }
+}
+```
+
+</Accordion>
+
+#### Get New Deposit Address
+
+```php
+$client->newDepositAddress("BTC");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": { "coin": "BTC", "address": "3CQLFsaM87YARbyY4y6dooeGNdFkxs3h6M" }
+}
+```
+
+</Accordion>
+
+#### Batch New Deposit Address
+
+```php
+$client->batchNewDepositAddress("ETH", 4);
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "addresses": [
+      "0x8c6635bf81f9d8271a75f726360ce0f809333f40",
+      "0x024ba2b471b7920fa7691449b68687950323dd43",
+      "0x7dbd079c5f81aada4a9c28c5deae43705e4c2bf7",
+      "0x9fc4fc843a1539e9d220993de64765e1c41df30f"
+    ]
+  }
+}
+```
+
+</Accordion>
+
+#### Verify Deposit Address
+
+```php
+$client->verifyDepositAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": { "coin": "BTC", "address": "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM" }
+}
+```
+
+</Accordion>
+
+#### Batch Verify Deposit Address
+
+```php
+$addresses = [
+            "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee",
+            "0xe105a42297428575086387de415900a08765a8af",
+            "0x641733cde30e99fe0d6082c2ed96601c37a1718b",
+            "0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d"
+        ];
+
+        $client->batchVerifyDepositAddress("ETH", join(",", $addresses));
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "addresses": "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee,0x641733cde30e99fe0d6082c2ed96601c37a1718b,0xe105a42297428575086387de415900a08765a8af,0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d"
+  }
+}
+```
+
+</Accordion>
+
+#### Verify Valid Address
+
+```php
+$client->verifyValidAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{ "success": true, "result": true }
+```
+
+</Accordion>
+
+#### Get Address History List
+
+```php
+$client->getAddressHistoryList("ETH", 0, 5);
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    { "coin": "ETH", "address": "0x9fc4fc843a1539e9d220993de64765e1c41df30f" },
+    { "coin": "ETH", "address": "0x7dbd079c5f81aada4a9c28c5deae43705e4c2bf7" },
+    { "coin": "ETH", "address": "0x024ba2b471b7920fa7691449b68687950323dd43" },
+    { "coin": "ETH", "address": "0x8c6635bf81f9d8271a75f726360ce0f809333f40" },
+    { "coin": "ETH", "address": "0x3926a17265cd48ad4e37cc62a2832ad1110fffd0" }
+  ]
+}
+```
+
+</Accordion>
+
+### Loop Alliance
+
+#### Check Loop Address Details
+
+```php
+$client->checkLoopAddressDetails("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "address": "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee",
+    "is_internal_address": false,
+    "internal_org": "",
+    "internal_wallet": ""
+  }
+}
+```
+
+</Accordion>
+
+#### Verify Loop Address List
+
+```php
+$client->verifyLoopAddressList("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a,0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "coin": "ETH",
+      "address": "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a",
+      "is_internal_address": false
+    },
+    {
+      "coin": "ETH",
+      "address": "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a",
+      "is_internal_address": false
+    }
+  ]
+}
+```
+
+</Accordion>
+
+#### Loop Transaction Explorer
+
+To help your user to check the Loop transaction, we offer you an explorer, you may insert the following URL in your
+platform：https://loop.top/tx/[Loop_ID]
+e.g. https://loop.top/tx/L456e5cb652dcfe557a43fd9d8e48627
+
+### Transactions
+
+#### Get Transaction Details
+
+```php
+$client->getTransactionDetails("20210422193807000343569000002370");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "id": "20210422193807000343569000002370",
+    "coin": "TETH",
+    "display_code": "TETH",
+    "description": "Ethereum Testnet",
+    "decimal": 18,
+    "address": "0x14ce095a3593db7db1d13a0765eb826e00d4fc91",
+    "source_address": "0x7ca60000afea5a1730e40cf6b51abbf8b594ad91",
+    "side": "withdraw",
+    "amount": "210000000000000000",
+    "abs_amount": "0.21",
+    "txid": "0xb40d0ca5a5fadda884a67a46f979741e96be92c69f767fed57ccc000d5c0a14b",
+    "vout_n": 0,
+    "request_id": "web_send_by_user_424_1619091344352",
+    "status": "success",
+    "abs_cobo_fee": "0",
+    "created_time": 1619091344501,
+    "last_time": 1619091838174,
+    "confirmed_num": 36,
+    "tx_detail": {
+      "txid": "0xb40d0ca5a5fadda884a67a46f979741e96be92c69f767fed57ccc000d5c0a14b",
+      "blocknum": 10088274,
+      "blockhash": "0x1b9e862f4056cbc55fe70f817fd1b92e32ddfd7eb5092f56ffc36b91ebd69074",
+      "fee": 0,
+      "actualgas": 21000000000000,
+      "gasprice": 1,
+      "hexstr": ""
+    },
+    "source_address_detail": "0x7ca60000afea5a1730e40cf6b51abbf8b594ad91",
+    "memo": "",
+    "confirming_threshold": 36,
+    "fee_coin": "TETH",
+    "fee_amount": 4000000000000000,
+    "fee_decimal": 18,
+    "type": "external"
+  }
+}
+```
+
+</Accordion>
+
+#### Get Transactions By Txid
+
+```php
+$client->getTransactionsByTxid("0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "20220620112255000399219000004796",
+      "coin": "COBO_ETH",
+      "display_code": "COBO_ETH",
+      "description": "Cobo Ethereum Testnet",
+      "decimal": 18,
+      "address": "0x9e6d2c7a9561ae9c7651768038c7d40da78920c9",
+      "source_address": "0x929590a1428dffa67df664482cf2cad3c230ec6d",
+      "side": "withdraw",
+      "amount": "100000000000000",
+      "abs_amount": "0.0001",
+      "txid": "0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f",
+      "vout_n": 0,
+      "request_id": "web_send_by_user_1272_1655694295628",
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1655695375730,
+      "last_time": 1655695375730,
+      "confirmed_num": 13,
+      "tx_detail": {
+        "txid": "0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f",
+        "blocknum": 8025087,
+        "blockhash": "0xfef9d77a7d1e473c88272cef449fea7d5ef7eefe29f43f56ee27b8f7f1f1d8cf",
+        "fee": 0,
+        "actualgas": 21000000000000,
+        "gasprice": 1,
+        "hexstr": ""
+      },
+      "source_address_detail": "0x929590a1428dffa67df664482cf2cad3c230ec6d",
+      "memo": "for test",
+      "confirming_threshold": 13,
+      "fee_coin": "COBO_ETH",
+      "fee_amount": 21000000000000,
+      "fee_decimal": 18,
+      "type": "external"
+    },
+    {
+      "id": "20220620112258000399219000009986",
+      "coin": "COBO_ETH",
+      "display_code": "COBO_ETH",
+      "description": "Cobo Ethereum Testnet",
+      "decimal": 18,
+      "address": "0x9e6d2c7a9561ae9c7651768038c7d40da78920c9",
+      "source_address": "0x929590a1428dffa67df664482cf2cad3c230ec6d",
+      "side": "deposit",
+      "amount": "100000000000000",
+      "abs_amount": "0.0001",
+      "txid": "0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1655695378377,
+      "last_time": 1655695378377,
+      "confirmed_num": 15,
+      "tx_detail": {
+        "txid": "0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f",
+        "blocknum": 8025087,
+        "blockhash": "0xfef9d77a7d1e473c88272cef449fea7d5ef7eefe29f43f56ee27b8f7f1f1d8cf",
+        "hexstr": ""
+      },
+      "source_address_detail": "0x929590a1428dffa67df664482cf2cad3c230ec6d",
+      "confirming_threshold": 15,
+      "type": "external"
+    }
+  ]
+}
+```
+
+</Accordion>
+
+#### Obtain the list of confirmed transactions through ID query(deposit&withdraw)
+
+```php
+$client->getTransactionsById(["max_id"]=>"id*********")
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "3228776326735331328",
+      "coin": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "decimal": 18,
+      "address": "0x62b3f5f1717e46bec22c52c1607f84a25b4e7f83",
+      "source_address": "0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a",
+      "side": "deposit",
+      "amount": "100000000000000",
+      "abs_amount": "0.0001",
+      "txid": "0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1539600528114,
+      "last_time": 1539600528114,
+      "confirmed_num": 12,
+      "tx_detail": {
+        "txid": "0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568",
+        "blocknum": 6519238,
+        "blockhash": "0x2abf41e86a9cd37d481d7a3212ca0eab80fa2f4d10e70e94b2623c5318c383c8",
+        "hexstr": ""
+      },
+      "source_address_detail": "0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a",
+      "confirming_threshold": 12,
+      "type": "external"
+    },
+    {
+      "id": "3228768325479694336",
+      "coin": "BTC",
+      "display_code": "BTC",
+      "description": "Bitcoin",
+      "decimal": 8,
+      "address": "1Q1xfp8UkQagCn2pbJFpG89Cd6Ku3yUixE",
+      "source_address": "185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi",
+      "side": "deposit",
+      "amount": "1000",
+      "abs_amount": "0.00001",
+      "txid": "dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1539596712818,
+      "last_time": 1539596712818,
+      "confirmed_num": 3,
+      "tx_detail": {
+        "txid": "dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b",
+        "blocknum": 545845,
+        "blockhash": "0000000000000000001fb2c338e7aed6560d852a3a0836f8aac7409b99f8d624",
+        "hexstr": ""
+      },
+      "source_address_detail": "185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi",
+      "confirming_threshold": 3,
+      "type": "external"
+    }
+  ]
+}
+```
+
+</Accordion>
+
+#### Obtain the list of confirmed transactions through time query(deposit&withdraw)
+
+```php
+$client->getTransactionsByTime();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "20210528110436000351269000008628",
+      "coin": "TRON",
+      "display_code": "TRX",
+      "description": "TRON",
+      "decimal": 6,
+      "address": "TYYouQF3MjvKjyrGAtmumrpDfnc83gDnp1",
+      "source_address": "TTVUgZ23NFyjik6bnDv7WQj3TtM8AMWPWi",
+      "side": "deposit",
+      "amount": "1",
+      "abs_amount": "0.000001",
+      "txid": "04661b683a1bff64e780f7f8c9405ecf9407d06d0754ce3ae98bb87ecb3fbb44",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1622171157601,
+      "last_time": 1622171157601,
+      "confirmed_num": 28,
+      "tx_detail": {
+        "txid": "04661b683a1bff64e780f7f8c9405ecf9407d06d0754ce3ae98bb87ecb3fbb44",
+        "blocknum": 30572179,
+        "blockhash": "0000000001d27e93afce52baa3532b2c8083367f64a0c085e5059e13e4236073",
+        "hexstr": ""
+      },
+      "source_address_detail": "TTVUgZ23NFyjik6bnDv7WQj3TtM8AMWPWi",
+      "confirming_threshold": 28,
+      "type": "external"
+    },
+    {
+      "id": "20210528110333000303016000008281",
+      "coin": "TRON",
+      "display_code": "TRX",
+      "description": "TRON",
+      "decimal": 6,
+      "address": "TYYouQF3MjvKjyrGAtmumrpDfnc83gDnp1",
+      "source_address": "TTVUgZ23NFyjik6bnDv7WQj3TtM8AMWPWi",
+      "side": "withdraw",
+      "amount": "1",
+      "abs_amount": "0.000001",
+      "txid": "04661b683a1bff64e780f7f8c9405ecf9407d06d0754ce3ae98bb87ecb3fbb44",
+      "vout_n": 0,
+      "request_id": "tron294732764876",
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1622171157592,
+      "last_time": 1622171157592,
+      "confirmed_num": 28,
+      "tx_detail": {
+        "txid": "04661b683a1bff64e780f7f8c9405ecf9407d06d0754ce3ae98bb87ecb3fbb44",
+        "blocknum": 30572179,
+        "blockhash": "0000000001d27e93afce52baa3532b2c8083367f64a0c085e5059e13e4236073",
+        "fee": 0,
+        "actualgas": 100000,
+        "gasprice": 1,
+        "hexstr": ""
+      },
+      "source_address_detail": "TTVUgZ23NFyjik6bnDv7WQj3TtM8AMWPWi",
+      "memo": "",
+      "confirming_threshold": 28,
+      "fee_coin": "TRON",
+      "fee_amount": 1000000,
+      "fee_decimal": 6,
+      "type": "external"
+    }
+  ]
+}
+```
+
+</Accordion>
+
+#### Get Pending Transactions
+
+```php
+$client->getPendingTransactions();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "20200630175208000359964000002754",
+      "coin": "TOMO",
+      "display_code": "TOMO",
+      "description": "TomoChain",
+      "address": "0xab65bdd2e1fd20878d2cf8b09fe87a34059519fc",
+      "source_address": "0x1a7d388963fa4ea8bb7a5822802a48ccb0ff08b5",
+      "side": "withdraw",
+      "amount": "1000000000000000000",
+      "decimal": 18,
+      "abs_amount": "1",
+      "txid": "0xc19e50b0b15116a146f033ad3f3e1e77ae84a604fca50b77b54b72dfb21cd7e5",
+      "vout_n": 0,
+      "request_id": "tool9207389726",
+      "status": "pending",
+      "created_time": 1593510728558,
+      "last_time": 1593510728558,
+      "confirming_threshold": 100,
+      "confirmed_num": 0,
+      "waiting_audit": false,
+      "tx_detail": {
+        "txid": "0xc19e50b0b15116a146f033ad3f3e1e77ae84a604fca50b77b54b72dfb21cd7e5",
+        "blocknum": 0,
+        "blockhash": "",
+        "fee": 10000000000000000,
+        "actualgas": 0,
+        "gasprice": 1,
+        "hexstr": ""
+      },
+      "source_address_detail": "0x1a7d388963fa4ea8bb7a5822802a48ccb0ff08b5",
+      "memo": "",
+      "type": "external"
+    },
+    {
+      "id": "20200604173207000367545000002794",
+      "coin": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "address": "0x0c1a06710fac5e6ec6681c2a5a7e20b9e90319c0",
+      "source_address": "0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66",
+      "side": "withdraw",
+      "amount": "100000000000000000",
+      "decimal": 18,
+      "abs_amount": "0.1",
+      "txid": "0xe433dc4cb1ac9c576b4d9c2b4c10fec1e73e92cf97ecfe4d222599a6fd0e5d2a",
+      "vout_n": 0,
+      "request_id": "web_send_by_user_194_1591263071240",
+      "status": "success",
+      "created_time": 1591263127392,
+      "last_time": 1591263127392,
+      "confirming_threshold": 12,
+      "confirmed_num": 12,
+      "waiting_audit": false,
+      "tx_detail": {
+        "txid": "0xe433dc4cb1ac9c576b4d9c2b4c10fec1e73e92cf97ecfe4d222599a6fd0e5d2a",
+        "blocknum": 10198480,
+        "blockhash": "0x81c3da0a9aa3737bf32066a5961b489364284039a5da074fad9a69d2df5d285c",
+        "fee": 400000000000000,
+        "actualgas": 1134000045948000,
+        "gasprice": 1,
+        "hexstr": ""
+      },
+      "source_address_detail": "0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66",
+      "memo": "tesing",
+      "type": "external"
+    },
+
+  ]
+}
+```
+
+</Accordion>
+
+#### Get Pending Deposit Details
+
+```php
+$client->getPendingDepositDetails("20200604171238000354106000006405");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "id": "20200604171238000354106000006405",
+    "coin": "ETH_USDT",
+    "display_code": "USDT",
+    "description": "Tether",
+    "address": "0x0c1a06710fac5e6ec6681c2a5a7e20b9e90319c0",
+    "source_address": "0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66",
+    "side": "withdraw",
+    "amount": "1000000",
+    "decimal": 6,
+    "abs_amount": "1",
+    "txid": "0xe967fb51b1a32dc73c1db51395993a7ccee66645376f524df5ae7960887e2f6a",
+    "vout_n": 0,
+    "request_id": "web_send_by_user_194_1591261893993",
+    "status": "success",
+    "created_time": 1591261958382,
+    "last_time": 1591261958382,
+    "confirming_threshold": 12,
+    "confirmed_num": 12,
+    "waiting_audit": false,
+    "tx_detail": {
+      "txid": "0xe967fb51b1a32dc73c1db51395993a7ccee66645376f524df5ae7960887e2f6a",
+      "blocknum": 10198392,
+      "blockhash": "0x3816eee4d54720ddfd14a0472061bf928bd4d8001da53c2e2ec58b03be81f0a3",
+      "fee": 600000000000000,
+      "actualgas": 2973446068854969,
+      "gasprice": 1,
+      "hexstr": ""
+    },
+    "source_address_detail": "0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66",
+    "memo": "",
+    "type": "external"
+  }
+}
+```
+
+</Accordion>
+
+#### Get Transaction History
+
+```php
+$client->getTransactionHistory();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "3228776326735331328",
+      "coin": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "decimal": 18,
+      "address": "0x62b3f5f1717e46bec22c52c1607f84a25b4e7f83",
+      "source_address": "0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a",
+      "side": "deposit",
+      "amount": "100000000000000",
+      "abs_amount": "0.0001",
+      "txid": "0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1539600528114,
+      "last_time": 1539600528114,
+      "confirmed_num": 12,
+      "tx_detail": {
+        "txid": "0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568",
+        "blocknum": 6519238,
+        "blockhash": "0x2abf41e86a9cd37d481d7a3212ca0eab80fa2f4d10e70e94b2623c5318c383c8",
+        "hexstr": ""
+      },
+      "source_address_detail": "0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a",
+      "confirming_threshold": 12,
+      "type": "external"
+    },
+    {
+      "id": "3228768325479694336",
+      "coin": "BTC",
+      "display_code": "BTC",
+      "description": "Bitcoin",
+      "decimal": 8,
+      "address": "1Q1xfp8UkQagCn2pbJFpG89Cd6Ku3yUixE",
+      "source_address": "185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi",
+      "side": "deposit",
+      "amount": "1000",
+      "abs_amount": "0.00001",
+      "txid": "dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1539596712818,
+      "last_time": 1539596712818,
+      "confirmed_num": 3,
+      "tx_detail": {
+        "txid": "dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b",
+        "blocknum": 545845,
+        "blockhash": "0000000000000000001fb2c338e7aed6560d852a3a0836f8aac7409b99f8d624",
+        "hexstr": ""
+      },
+      "source_address_detail": "185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi",
+      "confirming_threshold": 3,
+      "type": "external"
+    }
+  ]
+}
+```
+
+</Accordion>
+
+### Withdrawal
+
+#### Submit Withdraw Request
+
+```php
+$client->withdraw("TETH",
+            "request_id_" . time(),
+            "0xb744adc8d75e115eec8e582eb5e8d60eb0972037",
+            new BigInteger("1"));
+```
+
+<Accordion title="View Response">
+
+
+```json
+{ "success": true, "result": "" }
+```
+
+</Accordion>
+
+#### Get Withdraw Information
+
+```php
+$client->getWithdrawInfo("teth29374893624");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": {
+    "id": "20210511151005000324213000009776",
+    "coin": "TETH",
+    "display_code": "TETH",
+    "description": "Ethereum Testnet",
+    "decimal": 18,
+    "address": "0xb744adc8d75e115eec8e582eb5e8d60eb0972037",
+    "source_address": "0x7ca60000afea5a1730e40cf6b51abbf8b594ad91",
+    "side": "withdraw",
+    "amount": "1",
+    "abs_amount": "0.000000000000000001",
+    "txid": "0xd67169392144c9400224f07a6fe7efcfa4bf7e19445a361359c2c9530bca64d6",
+    "vout_n": 0,
+    "request_id": "teth29374893624",
+    "status": "success",
+    "abs_cobo_fee": "0",
+    "created_time": 1620712218490,
+    "last_time": 1620724457693,
+    "confirmed_num": 32,
+    "tx_detail": {
+      "txid": "0xd67169392144c9400224f07a6fe7efcfa4bf7e19445a361359c2c9530bca64d6",
+      "blocknum": 10212633,
+      "blockhash": "0x444fe10d583194687c32223fd884dae82d0f0f2ebeacfb8040b4d83808253b59",
+      "fee": 0,
+      "actualgas": 21000000000000,
+      "gasprice": 1,
+      "hexstr": ""
+    },
+    "source_address_detail": "0x7ca60000afea5a1730e40cf6b51abbf8b594ad91",
+    "memo": "",
+    "confirming_threshold": 32,
+    "fee_coin": "TETH",
+    "fee_amount": 4000000000000000,
+    "fee_decimal": 18,
+    "type": "external"
+  }
+}
+```
+
+</Accordion>
+
+### Staking
+
+#### Get a Staking Product Details
+
+```php
+$client->getStakingProductDetails($prooductId);
+```
+
+<Accordion title="View Response">
+
+
+```json
+{"success": true, "result": [{"name": "DASH FP TEST", "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH", "doc_src": "https://support.cobo.com/hc/en-us/articles/360023826033", "coin": "DASH", "coin_decimal": 8, "reward_coin": "DASH", "reward_coin_decimal": 8, "unstake_fee": "1000000", "min_amount": "1000000", "rate": "0.0002000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": true, "start_stake_time": 1622124000000, "stop_stake_time": 1622210400000, "start_staking_time": 1622217600000, "stop_staking_time": 1622304000000, "liquidate_time": 1622304000000, "reward_liquidate_time": 1622304000000, "product_id": 159185, "product_group": "DASHFPTEST"}, {"name": "ZEL FP TEST", "description": "Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL", "doc_src": "https://support.cobo.com/hc/en-us/articles/360025623054", "coin": "ZEL", "coin_decimal": 8, "reward_coin": "ZEL", "reward_coin_decimal": 8, "unstake_fee": "1000000000", "min_amount": "3000000000", "rate": "0.2000000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622476800000, "reward_liquidate_time": 1622476800000, "product_id": 159186, "product_group": "ZELFPTEST"}, {"name": "ZEL FP TEST 2", "description": "Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL", "doc_src": "https://support.cobo.com/hc/en-us/articles/360025623054", "coin": "ZEL", "coin_decimal": 8, "reward_coin": "ZEL", "reward_coin_decimal": 8, "unstake_fee": "1000000000", "min_amount": "3000000000", "rate": "0.2000000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622476800000, "reward_liquidate_time": 1622476800000, "product_id": 159188, "product_group": "ZELFPTEST2"}, {"name": "IOST PPS Wallet", "description": "IOST PPS Wallet", "doc_src": "https://support.cobo.com/hc/en-us/articles/360025765593", "coin": "IOST", "coin_decimal": 8, "reward_coin": "IOST", "reward_coin_decimal": 8, "unstake_fee": "5000000000", "min_amount": "10000000000", "rate": "0.1000000000", "rate_type": 2, "days": 1, "stake_type": "dpos", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622995200000, "reward_liquidate_time": 1622995200000, "product_id": 159189, "product_group": "IOSTPPSW"}, {"name": "IOST FP TEST", "description": "Min. 1 IOST\nRewards start from the next day, will be released every day according to the dynamic reward, choose [Stake continuously] to earn continuously!\nWithdraw available anytime, return to wallet in T+8 (7 days required by IOST)\nWithdrawal fee per time: 1 IOST", "doc_src": "https://support.cobo.com/hc/en-us/articles/360023713454", "coin": "IOST", "coin_decimal": 8, "reward_coin": "IOST", "reward_coin_decimal": 8, "unstake_fee": "100000000", "min_amount": "100000000", "rate": "0.0001000000", "rate_type": 1, "days": 1, "stake_type": "dpos", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1623081600000, "reward_liquidate_time": 1623081600000, "product_id": 159187, "product_group": "IOSTFPTEST"}]}{"success": true, "result": {"name": "DASH FP TEST", "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH", "doc_src": "https://support.cobo.com/hc/en-us/articles/360023826033", "coin": "DASH", "coin_decimal": 8, "reward_coin": "DASH", "reward_coin_decimal": 8, "unstake_fee": "1000000", "min_amount": "1000000", "rate": "0.0002000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": true, "start_stake_time": 1622124000000, "stop_stake_time": 1622210400000, "start_staking_time": 1622217600000, "stop_staking_time": 1622304000000, "liquidate_time": 1622304000000, "reward_liquidate_time": 1622304000000, "product_id": 159185, "product_group": "DASHFPTEST"}}
+```
+
+</Accordion>
+
+#### Get All Staking Product List
+
+```php
+$client->getStakingProductList(null, "zh");
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "name": "DASH FP TEST",
+      "description": "\u6ce8\uff1a0.01 DASH\u8d77\u6295\uff0c\u9636\u68af\u6536\u76ca\u7387\uff0c\u8d28\u62bc\u8d8a\u591a\uff0c\u6536\u76ca\u7387\u8d8a\u9ad8 \u8d28\u62bc\u540e\u7b2c\u4e8c\u5929\u5f00\u59cb\u4ea7\u751f\u6536\u76ca\uff0c\u6bcf10\u5929\u6839\u636e\u8f6c\u5165\u65f6\u7ea6\u5b9a\u7684\u6536\u76ca\u7387\u53d1\u653e\u6536\u76ca\uff0c\u9009\u62e9\u3010\u5230\u671f\u540e\u81ea\u52a8\u7eed\u671f\u3011\uff0c\u65e0\u7f1d\u8854\u63a5\u4e0b\u4e00\u671f\u6536\u76ca \u968f\u65f6\u53ef\u5212\u51fa\uff0cT+1\u5230\u8d26\uff0c\u6536\u76ca\u5468\u671f\u5185\u53d6\u51fa\u635f\u5931\u5f53\u671f\u6536\u76ca \u6bcf\u6b21\u53d6\u51fa\u8d4e\u56de\u8d39: 0.01 DASH",
+      "doc_src": "https://support.cobo.com/hc/zh-cn/articles/360023826033",
+      "coin": "DASH",
+      "coin_decimal": 8,
+      "reward_coin": "DASH",
+      "reward_coin_decimal": 8,
+      "unstake_fee": "1000000",
+      "min_amount": "1000000",
+      "rate": "0.0002000000",
+      "rate_type": 1,
+      "days": 1,
+      "stake_type": "masternode",
+      "lockup": true,
+      "start_stake_time": 1622124000000,
+      "stop_stake_time": 1622210400000,
+      "start_staking_time": 1622217600000,
+      "stop_staking_time": 1622304000000,
+      "liquidate_time": 1622304000000,
+      "reward_liquidate_time": 1622304000000,
+      "product_id": 159185,
+      "product_group": "DASHFPTEST"
+    },
+    {
+      "name": "ZEL FP TEST",
+      "description": "30 ZEL\u8d77\u6295\uff0c\u9636\u68af\u6536\u76ca\u7387\uff0c\u8d28\u62bc\u8d8a\u591a\uff0c\u6536\u76ca\u7387\u8d8a\u9ad8 \u8d28\u62bc\u540e\u7b2c\u4e8c\u5929\u5f00\u59cb\u4ea7\u751f\u6536\u76ca\uff0c\u6bcf\u5929\u6839\u636e\u8f6c\u5165\u65f6\u7ea6\u5b9a\u7684\u6536\u76ca\u7387\u53d1\u653e\u6536\u76ca\uff0c\u9009\u62e9\u3010\u5230\u671f\u540e\u81ea\u52a8\u7eed\u671f\u3011\uff0c\u65e0\u7f1d\u8854\u63a5\u4e0b\u4e00\u671f \u6536\u76ca \u968f\u65f6\u53ef\u5212\u51fa\uff0cT+1\u5230\u8d26\uff0c\u6536\u76ca\u5468\u671f\u5185\u53d6\u51fa\u635f\u5931\u5f53\u671f\u6536\u76ca \u6bcf\u6b21\u53d6\u51fa\u8d4e\u56de\u8d39: 10 ZEL",
+      "doc_src": "https://support.cobo.com/hc/zh-cn/articles/360025623054",
+      "coin": "ZEL",
+      "coin_decimal": 8,
+      "reward_coin": "ZEL",
+      "reward_coin_decimal": 8,
+      "unstake_fee": "1000000000",
+      "min_amount": "3000000000",
+      "rate": "0.2000000000",
+      "rate_type": 1,
+      "days": 1,
+      "stake_type": "masternode",
+      "lockup": false,
+      "start_stake_time": 1622185200000,
+      "stop_stake_time": 1622271600000,
+      "start_staking_time": 1622304000000,
+      "stop_staking_time": 1622390400000,
+      "liquidate_time": 1622476800000,
+      "reward_liquidate_time": 1622476800000,
+      "product_id": 159186,
+      "product_group": "ZELFPTEST"
+    }
+  ]
+}
+```
+
+</Accordion>
+
+#### Stake
+
+```php
+$client->stake($product_id, new BigInteger("100000"));
+```
+
+<Accordion title="View Response">
+
+
+```json
+{ "success": true, "result": "" }
+```
+
+</Accordion>
+
+#### Unstake
+
+```php
+$client->unstake($product_id, new BigInteger("100000"));
+```
+
+<Accordion title="View Response">
+
+
+```json
+{ "success": true, "result": "" }
+```
+
+</Accordion>
+
+#### Get Staking Data
+
+```php
+$client->getStakingData();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "staking_id": 9470,
+      "coin": "IOST",
+      "coin_decimal": 8,
+      "amount": "100000000",
+      "reward_coin": "IOST",
+      "reward_coin_decimal": 8,
+      "reward_amount": 0,
+      "product": {
+        "name": "IOST FP TEST",
+        "description": "Min. 1 IOST\nRewards start from the next day, will be released every day according to the dynamic reward, choose [Stake continuously] to earn continuously!\nWithdraw available anytime, return to wallet in T+8 (7 days required by IOST)\nWithdrawal fee per time: 1 IOST",
+        "doc_src": "https://support.cobo.com/hc/en-us/articles/360023713454",
+        "coin": "IOST",
+        "coin_decimal": 8,
+        "reward_coin": "IOST",
+        "reward_coin_decimal": 8,
+        "unstake_fee": "100000000",
+        "min_amount": "100000000",
+        "rate": "0.0001000000",
+        "rate_type": 1,
+        "days": 1,
+        "stake_type": "dpos",
+        "lockup": false,
+        "start_stake_time": 1622098800000,
+        "stop_stake_time": 1622185200000,
+        "start_staking_time": 1622217600000,
+        "stop_staking_time": 1622304000000,
+        "liquidate_time": 1622995200000,
+        "reward_liquidate_time": 1622995200000,
+        "product_id": 159182,
+        "product_group": "IOSTFPTEST"
+      }
+    }
+  ]
+}
+```
+
+</Accordion>
+
+#### Get Unstaking Data
+
+```php
+$client->getUnstakingData();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{ "success": true, "result": [] }
+```
+
+</Accordion>
+
+#### Get All Staking History
+
+```php
+$client->getStakingHistory();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "activity_id": "20210527170029000342594000007129",
+      "coin": "IOST",
+      "amount": "100000000",
+      "type": "stake",
+      "raw_type": 0,
+      "time": 1622106029455,
+      "product": {
+        "name": "IOST FP TEST",
+        "description": "Min. 1 IOST\nRewards start from the next day, will be released every day according to the dynamic reward, choose [Stake continuously] to earn continuously!\nWithdraw available anytime, return to wallet in T+8 (7 days required by IOST)\nWithdrawal fee per time: 1 IOST",
+        "doc_src": "https://support.cobo.com/hc/en-us/articles/360023713454",
+        "coin": "IOST",
+        "coin_decimal": 8,
+        "reward_coin": "IOST",
+        "reward_coin_decimal": 8,
+        "unstake_fee": "100000000",
+        "min_amount": "100000000",
+        "rate": "0.0001000000",
+        "rate_type": 1,
+        "days": 1,
+        "stake_type": "dpos",
+        "lockup": false,
+        "start_stake_time": 1622098800000,
+        "stop_stake_time": 1622185200000,
+        "start_staking_time": 1622217600000,
+        "stop_staking_time": 1622304000000,
+        "liquidate_time": 1622995200000,
+        "reward_liquidate_time": 1622995200000,
+        "product_id": 159182,
+        "product_group": "IOSTFPTEST"
+      }
+    },
+    {
+      "activity_id": "20210524111335000366850000005158",
+      "coin": "DASH",
+      "amount": "1000000",
+      "type": "fee",
+      "raw_type": -4,
+      "time": 1621826015470,
+      "product": {
+        "name": "DASH FP TEST",
+        "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH",
+        "doc_src": "https://support.cobo.com/hc/en-us/articles/360023826033",
+        "coin": "DASH",
+        "coin_decimal": 8,
+        "reward_coin": "DASH",
+        "reward_coin_decimal": 8,
+        "unstake_fee": "1000000",
+        "min_amount": "1000000",
+        "rate": "0.0002000000",
+        "rate_type": 1,
+        "days": 1,
+        "stake_type": "masternode",
+        "lockup": true,
+        "start_stake_time": 1621778400000,
+        "stop_stake_time": 1621864800000,
+        "start_staking_time": 1621872000000,
+        "stop_staking_time": 1621958400000,
+        "liquidate_time": 1621958400000,
+        "reward_liquidate_time": 1621958400000,
+        "product_id": 159165,
+        "product_group": "DASHFPTEST"
+      }
+    }
+  ]
+}
+```
+
+</Accordion>
+
+### Trading
+
+### [Transaction Notification](/full-custody/waas-reference/transaction-notification)
+
+### [Withdrawal Confirmation](/full-custody/waas-reference/withdrawal-confirmation)
+

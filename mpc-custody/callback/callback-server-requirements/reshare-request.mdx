@@ -1,0 +1,32 @@
+---
+title: "Reshare Request Description"
+icon: ""
+description:
+---
+
+
+## Callback API Request Description
+
+### request_type
+
+TypeKeyReshare = 3
+
+### request_detail
+
+The format is a serialized JSON string of structure below.
+
+
+<ParamField body="old_group_id" type="String" required>Old Group ID.</ParamField>
+<ParamField body="root_pub_key" type="String" required>MPC extended public key.</ParamField>
+<ParamField body="curve" type="Int" required><p>Signature algorithm that has been used.</p><p>  0: SECP256K1 </p><p>  2: ED25519 </p></ParamField>
+<ParamField body="used_node_ids" type="[]String" required>Selected Node IDs from the previous group that have been used for soft key recovery</ParamField>
+<ParamField body="old_threshold" type="Int" required>Previous signature threshold.</ParamField>
+<ParamField body="new_threshold" type="Int" required>New Signature Threshold.</ParamField>
+<ParamField body="new_node_ids" type="[]String" required>New Node IDs associated with the generation of all MPC key shares under the MPC wallet</ParamField>
+
+### extra_info
+
+The format is a serialized JSON string of structure below.
+
+
+<ParamField body="cobo_id" type="String" required>Unique ID of the soft key recovery (KeyReshare) request.</ParamField>

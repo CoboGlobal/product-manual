@@ -1,0 +1,65 @@
+---
+title: Verify Valid Address
+api: "GET /v1/custody/is_valid_address/"
+description: "This endpoint checks whether a given cryptocurrency address is valid and returns a boolean value. It also supports memo for certain coins. Authentication is required to access this endpoint."
+---
+
+
+#### Request
+<ParamField body="coin" type="String" required>The cryptocurrency symbol.</ParamField>
+<ParamField body="address" type="String" required>The cryptocurrency address.(Address|Memo)</ParamField>
+
+#### Response
+<ResponseField name="result" type="bool" required>Whether the address is valid or not.</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+  "GET",
+  "/v1/custody/is_valid_address/",
+  {
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e",
+  },
+  api_key, api_secret, host
+)
+```
+
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/is_valid_address/',
+        {
+            "coin": "ETH",
+            "address": "0x544094588811118b7701cf4a9dea056e775b4b4e",
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("GET", "/v1/custody/is_valid_address/", map[string]string{
+    "coin": "ETH",
+    "address": "0x544094588811118b7701cf4a9dea056e775b4b4e",
+})
+```
+</RequestExample>
+
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": true
+}
+----
+{
+  "success": true,
+  "result": false
+}
+```
+</ResponseExample>
