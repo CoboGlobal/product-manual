@@ -4,8 +4,8 @@ api: GET /v1/custody/web3_wallet_nft_detail/
 description: "This endpoint returns detailed information about a specific NFT (Non-Fungible Token) in a wallet. It takes two parameters, 'nft_code' and 'token_id', and returns a JSON response with information such as the NFT's code, chain code, display code, description, contract address, standard, and token ID."
 ---
 #### Request
-<ParamField body="nft_code" type="String" required>The code of the NFT.</ParamField> 
-<ParamField body="token_id" type="String" required>The ID of the token.</ParamField> 
+<ParamField query="nft_code" type="String" required>The code of the NFT.</ParamField>
+<ParamField query="token_id" type="String" required>The ID of the token.</ParamField>
 
 #### Response
 <ResponseField name="nft_code" type="String" >The code of the NFT.</ResponseField> 

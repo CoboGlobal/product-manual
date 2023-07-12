@@ -4,8 +4,8 @@ api: GET /v1/custody/mpc/is_valid_address/
 description: "This endpoint checks if a given address is valid for a specified coin. It also supports memos for certain coins. The response is a boolean indicating whether the address is valid or not."
 ---
 #### Request
-<ParamField body="coin" type="String" required>coin name (Cobo Custody)</ParamField> 
-<ParamField body="address" type="String" required>address; please use ‘｜’ to separate the addresses if there’s also a memo</ParamField> 
+<ParamField query="coin" type="String" required>coin name (Cobo Custody)</ParamField>
+<ParamField query="address" type="String" required>address; please use ‘｜’ to separate the addresses if there’s also a memo</ParamField>
 
 #### Response
 <ResponseField name="result" type="Bool" >Queried result(True/ False)</ResponseField>

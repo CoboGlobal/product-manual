@@ -4,7 +4,7 @@ api: GET /v1/custody/pending_transaction/
 description: "This endpoint returns a JSON response with the details of a pending transaction specified by its ID."
 ---
 #### Request
-<ParamField body="id" type="String" required>ID of the pending transaction.</ParamField>
+<ParamField query="id" type="String" required>ID of the pending transaction.</ParamField>
 
 #### Response
 <ResponseField name="id" type="String">Cobo Unique Transaction ID</ResponseField>

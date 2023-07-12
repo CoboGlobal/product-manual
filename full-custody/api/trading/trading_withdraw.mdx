@@ -3,11 +3,12 @@ title: Withdraw to Investor's Wallet
 api: POST /v1/custody/trading_withdraw/ 
 description: "This endpoint allows users to withdraw funds from their exchange account. The user must provide their exchange account token, the coin they wish to withdraw, the amount they wish to withdraw, and a unique request ID. The endpoint returns a JSON response with information about the withdrawal, including the request ID, the coin, the absolute amount withdrawn, the estimated amount received, the withdrawal status, the absolute fee, and the fee."
 ---
+
 #### Request
-<ParamField body="exchange_account_token" type="String" required>from exchange account token (aquire from Web)</ParamField> 
-<ParamField body="coin" type="String" required>Coin code</ParamField> 
-<ParamField body="amount" type="Int" required>Int amount (e.g. if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis))</ParamField> 
-<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField> 
+<ParamField body="exchange_account_token" type="String" required>from exchange account token (aquire from Web)</ParamField>
+<ParamField body="coin" type="String" required>Coin code</ParamField>
+<ParamField body="amount" type="Int" required>Int amount (e.g. if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis))</ParamField>
+<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField>
 
 #### Response
 <ResponseField name="request_id" type="String" >Request ID (Universally unique ID for each request)</ResponseField> 

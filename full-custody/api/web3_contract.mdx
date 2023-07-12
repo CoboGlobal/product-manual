@@ -5,14 +5,14 @@ description: "This endpoint allows users to interact with smart contracts on var
 ---
 #### Request 
 
-<ParamField body="chain_code" type="String" required>The code of the blockchain network to use.</ParamField> 
-<ParamField body="request_id" type="String" required>A unique identifier for the request.</ParamField> 
-<ParamField body="wallet_addr" type="String" required>The address of the wallet to use for the transaction.</ParamField> 
-<ParamField body="contract_addr" type="String" required>The address of the smart contract to interact with.</ParamField> 
-<ParamField body="method_id" type="String" required>The ID of the method to execute on the smart contract.</ParamField> 
-<ParamField body="method_name" type="String" required>The name of the method to execute on the smart contract.</ParamField> 
-<ParamField body="args" type="String" required>A JSON-encoded list of arguments to pass to the method.</ParamField> 
-<ParamField body="gas_limit" type="Int" >Gas limit</ParamField> 
+<ParamField body="chain_code" type="String" required>The code of the blockchain network to use.</ParamField>
+<ParamField body="request_id" type="String" required>A unique identifier for the request.</ParamField>
+<ParamField body="wallet_addr" type="String" required>The address of the wallet to use for the transaction.</ParamField>
+<ParamField body="contract_addr" type="String" required>The address of the smart contract to interact with.</ParamField>
+<ParamField body="method_id" type="String" required>The ID of the method to execute on the smart contract.</ParamField>
+<ParamField body="method_name" type="String" required>The name of the method to execute on the smart contract.</ParamField>
+<ParamField body="args" type="String" required>A JSON-encoded list of arguments to pass to the method.</ParamField>
+<ParamField body="gas_limit" type="Int" >Gas limit</ParamField>
 
 #### Response
 <ResponseField name="coin" type="String" >Coin Code</ResponseField>

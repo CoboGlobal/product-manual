@@ -3,11 +3,12 @@ title: Drop Transaction
 api: POST /v1/custody/mpc/drop_transaction/ 
 description: "This endpoint accepts parameters 'cobo_id' and 'request_id' as required fields, and 'fee', 'gas_price', 'gas_limit', and 'fee_amount' as optional fields. The endpoint returns a JSON response containing information about the transaction request."
 ---
+
 #### Request
-<ParamField body="cobo_id" type="String" required>Unique transaction ID</ParamField> 
-<ParamField body="request_id" type="String" required>RBF transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField> 
-<ParamField body="fee" type="Float" >Transaction fees per byte; must be higher than the original transaction fees; applicable to the UTXO model</ParamField> 
-<ParamField body="gas_price" type="Int" >Gas price; must be higher than the original gas price</ParamField> 
+<ParamField body="cobo_id" type="String" required>Unique transaction ID</ParamField>
+<ParamField body="request_id" type="String" required>RBF transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField>
+<ParamField body="fee" type="Float" >Transaction fees per byte; must be higher than the original transaction fees; applicable to the UTXO model</ParamField>
+<ParamField body="gas_price" type="Int" >Gas price; must be higher than the original gas price</ParamField>
 <ParamField body="gas_limit" type="Int" >Gas limit</ParamField>
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model</ParamField>
 

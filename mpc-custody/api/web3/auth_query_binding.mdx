@@ -4,7 +4,7 @@ api: GET /v1/custody/auth/query_binding/
 description: "This endpoint returns a JSON response with the binding information for a given binder ID. The endpoint requires authentication and the user must have query permission. The binder ID is passed as a parameter in the GET request."
 ---
 #### Request
-<ParamField body="binder_id" type="String" required>CoboAuth binding code</ParamField> 
+<ParamField query="binder_id" type="String" required>CoboAuth binding code</ParamField>
 
 #### Response
 <ResponseField name="status" type="Int" >Binding code status()</ResponseField> 

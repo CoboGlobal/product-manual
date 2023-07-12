@@ -4,7 +4,7 @@ api: GET /v1/custody/auth/query_user_auth/
 description: "This endpoint is a GET request that requires a 'user_id' parameter. It returns a JSON response containing the user's authentication information queried from PrimeBrokerManager. Authentication is required to access this endpoint."
 ---
 #### Request
-<ParamField body="user_id" type="String" required>unique user ID</ParamField> 
+<ParamField query="user_id" type="String" required>unique user ID</ParamField>
 
 #### Response
 <ResponseField name="pubkey" type="String" >The bound Auth public key</ResponseField>

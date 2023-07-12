@@ -4,8 +4,8 @@ api: GET /v1/custody/staking_product/
 description: "This endpoint returns information about a staking product with the given product ID. The response is a JSON object containing details about the product, such as its name, description, and rewards. The language parameter can be used to specify the language of the response (default is English)."
 ---
 #### Request
-<ParamField body="product_id" type="String" required>Unique ID for staking product</ParamField> 
-<ParamField body="language" type="String" >Language of product description(zh,en(default))</ParamField> 
+<ParamField query="product_id" type="String" required>Unique ID for staking product</ParamField>
+<ParamField query="language" type="String" >Language of product description(zh,en(default))</ParamField>
 
 #### Response
 <ResponseField name="product_id" type="Int" >Product id(unique)</ResponseField> 

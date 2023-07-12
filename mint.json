@@ -41,7 +41,7 @@
     {
       "name": "News",
       "icon": "newspaper",
-      "url": "https://news.cobo.com/home/en/"
+      "url": "https://www.cobo.com/web3/channel/news"
     },
     {
       "name": "GitHub",
@@ -377,7 +377,7 @@
     },
     {
       "group": "Community",
-      "pages": ["twitter", "linkedln", "discord", "telegram", "contact"]
+      "pages": ["twitter", "linkedln", "discord", "telegram"]
     }
   ],
   "footerSocials": {
@@ -390,14 +390,9 @@
     "raiseIssue": true
   },
   "api": {
-    "baseUrl": [
-      "https://api.cobo.com",
-      "https://api.sandbox.cobo.com",
-      "https://api.develop.cobo.com"
-    ],
+    "baseUrl":"https://api.develop.cobo.com",
     "auth": {
-      "method": "basic",
-      "name": "Biz-Api-Key:BIZ-API-SIGNATURE:BIZ-API-NONCE"
+      "method": "cobo"
     },
     "playground": {
       "mode": "show"

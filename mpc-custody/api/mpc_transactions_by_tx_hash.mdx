@@ -5,8 +5,8 @@ description: "This endpoint returns transaction details for a given transaction 
 ---
 #### Request 
 
-<ParamField body="tx_hash" type="String" required>Transaction hash</ParamField> 
-<ParamField body="transaction_type" type="int" >transaction status（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
+<ParamField query="tx_hash" type="String" required>Transaction hash</ParamField>
+<ParamField query="transaction_type" type="int" >transaction status（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
 
 #### Response
 <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>

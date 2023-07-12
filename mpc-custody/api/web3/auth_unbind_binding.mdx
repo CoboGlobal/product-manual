@@ -3,8 +3,9 @@ title: Unbind Binding
 api: POST /v1/custody/auth/unbind_binding/ 
 description: "This endpoint allows users to unbind their broker account from their Custody MPC account. It requires a POST request with a 'user_id' field in the request body. The response is a JSON object containing a 'statement_id' field which can be used to query the status of the unbinding process."
 ---
+
 #### Request
-<ParamField body="user_id" type="String" required>unique user ID</ParamField> 
+<ParamField body="user_id" type="String" required>unique user ID</ParamField>
 
 #### Response 
 <ResponseField name="statement_id" type="String" >unique auth statement id</ResponseField>

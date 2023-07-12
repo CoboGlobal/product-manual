@@ -7,13 +7,13 @@ description: "This endpoint returns a list of transactions filtered by various p
 <Note>Only successful deposit/withdraw requests will be considered as 'Transaction' here</Note>
 
 #### Request
-<ParamField body="coin" type="String" >Coin code (Does not return all currencies)</ParamField>
-<ParamField body="side" type="enum(deposit / withdraw)" >Deposit/withdrawal </ParamField>
-<ParamField body="address" type="String" >Deposit/withdrawal address is optional. If not included, all address history will be returned. </ParamField>
-<ParamField body="max_id" type="String" >The transaction history ID limit is optional. If not included, will by default return the most recent records.(cannot be used with min_id) </ParamField>
-<ParamField body="min_id" type="String" > Optional. If included, the sequence will be changed to time ASC. If not included, will by default return the most recent records, time DESC.(cannot be used with max_id) </ParamField>
-<ParamField body="limit" type="Integer" >Page size is optional. If not included, the default size will be 50, and the maximum size will also be 50.</ParamField>
-<ParamField body="include_financial" type="String" >Request all transactions. If it is passed in, return all transactions(Including stacking, trading)</ParamField>
+<ParamField query="coin" type="String" >Coin code (Does not return all currencies)</ParamField>
+<ParamField query="side" type="enum(deposit / withdraw)" >Deposit/withdrawal </ParamField>
+<ParamField query="address" type="String" >Deposit/withdrawal address is optional. If not included, all address history will be returned. </ParamField>
+<ParamField query="max_id" type="String" >The transaction history ID limit is optional. If not included, will by default return the most recent records.(cannot be used with min_id) </ParamField>
+<ParamField query="min_id" type="String" > Optional. If included, the sequence will be changed to time ASC. If not included, will by default return the most recent records, time DESC.(cannot be used with max_id) </ParamField>
+<ParamField query="limit" type="Integer" >Page size is optional. If not included, the default size will be 50, and the maximum size will also be 50.</ParamField>
+<ParamField query="include_financial" type="String" >Request all transactions. If it is passed in, return all transactions(Including stacking, trading)</ParamField>
 
 
 #### Response

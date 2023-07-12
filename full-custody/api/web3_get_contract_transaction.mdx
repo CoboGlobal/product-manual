@@ -3,8 +3,9 @@ title: Get Contract Transaction
 api: GET /v1/custody/web3_get_contract_transaction/ 
 description: "This endpoint retrieves a contract transaction from the blockchain by its request ID. The request ID is passed as a parameter in the GET request. The response is a JSON object containing the transaction details."
 ---
+
 #### Request
-<ParamField body="request_id" type="String" required>request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField> 
+<ParamField query="request_id" type="String" required>request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField> 
 
 #### Response
 <ResponseField name="id" type="String" >Cobo Unique Transaction ID</ResponseField> 

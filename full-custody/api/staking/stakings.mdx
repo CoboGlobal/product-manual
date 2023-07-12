@@ -4,8 +4,8 @@ api: GET /v1/custody/stakings/
 description: "This endpoint returns a list of staking information for a given coin and language. The response includes staking ID, coin, decimal, amount, reward coin, reward coin decimal, reward amount, and product information. The product information is parsed based on the language parameter."
 ---
 #### Request
-<ParamField body="coin" type="String" >The coin to query staking information for.</ParamField> 
-<ParamField body="language" type="String" >The language to parse product information in.</ParamField> 
+<ParamField query="coin" type="String" >The coin to query staking information for.</ParamField>
+<ParamField query="language" type="String" >The language to parse product information in.</ParamField>
 
 #### Response
 <ResponseField name="staking_id" type="Int" >The ID of the staking.</ResponseField> 

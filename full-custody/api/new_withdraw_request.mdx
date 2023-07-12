@@ -4,14 +4,15 @@ api: POST /v1/custody/new_withdraw_request/
 description: "This endpoint allows users to create a new withdrawal request for a specified coin. The request requires authentication and the necessary parameters include the coin, request ID, withdrawal address, and amount. Optional parameters include a memo, force_external, and force_internal. The response will contain information about the newly created withdrawal request.
 "
 ---
+
 #### Request
-<ParamField body="coin" type="String" required>The coin to withdraw.</ParamField> 
-<ParamField body="request_id" type="String" required>A unique ID for the withdrawal request.</ParamField> 
-<ParamField body="address" type="String" required>The address to withdraw to.</ParamField> 
-<ParamField body="amount" type="Int" required>The amount to withdraw.</ParamField> 
-<ParamField body="memo" type="String" >Needed when you withdraw EOS, XRP, IOST</ParamField> 
-<ParamField body="force_external" type="String" >Non-empty means: force the transaction on-chain even if it's a Loop Tx</ParamField> 
-<ParamField body="force_internal" type="String" >Non-empty means: force the transaction off-chain even if it's not a Loop Tx, if it cannot be handled as a Loop tx, it will be rejected</ParamField> 
+<ParamField body="coin" type="String" required>The coin to withdraw.</ParamField>
+<ParamField body="request_id" type="String" required>A unique ID for the withdrawal request.</ParamField>
+<ParamField body="address" type="String" required>The address to withdraw to.</ParamField>
+<ParamField body="amount" type="Int" required>The amount to withdraw.</ParamField>
+<ParamField body="memo" type="String" >Needed when you withdraw EOS, XRP, IOST</ParamField>
+<ParamField body="force_external" type="String" >Non-empty means: force the transaction on-chain even if it's a Loop Tx</ParamField>
+<ParamField body="force_internal" type="String" >Non-empty means: force the transaction off-chain even if it's not a Loop Tx, if it cannot be handled as a Loop tx, it will be rejected</ParamField>
 
 #### Response
 None

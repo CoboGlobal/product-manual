@@ -3,12 +3,13 @@ title: Transfer Among Exchange Account
 api: POST /v1/custody/trading_transfer/ 
 description: "This endpoint allows authenticated traders to transfer funds between their exchange accounts. The request must include the 'from_exchange_account_token', 'to_exchange_account_token', 'coin', 'amount', and 'request_id' parameters. The response includes information about the transfer, such as the requested and estimated amounts, fees, and status."
 ---
+
 #### Request
-<ParamField body="from_exchange_account_token" type="String" required>from exchange account token (aquire from Web)</ParamField> 
-<ParamField body="to_exchange_account_token" type="String" required>to exchange account token (aquire from Web)</ParamField> 
-<ParamField body="coin" type="String" required>Coin code</ParamField> 
-<ParamField body="amount" type="Int" required>Int amount (e.g. if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis))</ParamField> 
-<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField> 
+<ParamField body="from_exchange_account_token" type="String" required>from exchange account token (aquire from Web)</ParamField>
+<ParamField body="to_exchange_account_token" type="String" required>to exchange account token (aquire from Web)</ParamField>
+<ParamField body="coin" type="String" required>Coin code</ParamField>
+<ParamField body="amount" type="Int" required>Int amount (e.g. if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis))</ParamField>
+<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField>
 
 #### Response
 <ResponseField name="request_id" type="String" >Request ID (Universally unique ID for each request)</ResponseField> 

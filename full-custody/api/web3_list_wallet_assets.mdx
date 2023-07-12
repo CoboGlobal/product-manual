@@ -5,8 +5,8 @@ description: "This endpoint returns a JSON response containing a list of assets 
 ---
 #### Request 
 
-<ParamField body="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField> 
-<ParamField body="chain_code" type="String" >Chain code, if it is empty, it will return all chain_code assets, if it is not empty, it will return the assets in this chain_code</ParamField> 
+<ParamField query="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField>
+<ParamField query="chain_code" type="String" >Chain code, if it is empty, it will return all chain_code assets, if it is not empty, it will return the assets in this chain_code</ParamField>
 
 #### Response
 <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>

@@ -5,9 +5,9 @@ description: "This endpoint returns the balance of a given address in a custody 
 ---
 #### Request 
 
-<ParamField body="address" type="String" required>The address to get the balance of.</ParamField>
-<ParamField body="chain_code" type="String" >The chain code of the coin to filter by.</ParamField>
-<ParamField body="coin" type="String" >The asset coin of the coin to filter by.</ParamField>
+<ParamField query="address" type="String" required>The address to get the balance of.</ParamField>
+<ParamField query="chain_code" type="String" >The chain code of the coin to filter by.</ParamField>
+<ParamField query="coin" type="String" >The asset coin of the coin to filter by.</ParamField>
 
 #### Response
 <ResponseField name="address" type="String" >The address of the coin.</ResponseField>

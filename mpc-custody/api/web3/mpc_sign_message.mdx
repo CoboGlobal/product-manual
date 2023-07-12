@@ -5,11 +5,11 @@ description: Sign Message
 ---
 #### Request 
 
-<ParamField body="chain_code" type="String" required>chain code</ParamField> 
-<ParamField body="request_id" type="String" required>Withdrawal request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField> 
-<ParamField body="from_address" type="String" required>source address</ParamField> 
-<ParamField body="sign_version" type="String" required>sign version, EIP-191: 1 , EIP-712: 2</ParamField> 
-<ParamField body="extra_parameters" type="Json" required>extra_parameters should include field message in EIP-191 signature, which is Base64 encode of the original message, and should contain filed structured_data in EIP-712 signature, which is Json of EIP-712 structured data</ParamField> 
+<ParamField body="chain_code" type="String" required>chain code</ParamField>
+<ParamField body="request_id" type="String" required>Withdrawal request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField>
+<ParamField body="from_address" type="String" required>source address</ParamField>
+<ParamField body="sign_version" type="String" required>sign version, EIP-191: 1 , EIP-712: 2</ParamField>
+<ParamField body="extra_parameters" type="Json" required>extra_parameters should include field message in EIP-191 signature, which is Base64 encode of the original message, and should contain filed structured_data in EIP-712 signature, which is Json of EIP-712 structured data</ParamField>
 
 #### Response
 <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>

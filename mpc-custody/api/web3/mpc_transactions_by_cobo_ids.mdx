@@ -4,8 +4,8 @@ api: GET /v1/custody/mpc/transactions_by_cobo_ids/
 description: "This endpoint returns a list of transaction requests based on the provided cobo_ids and status. The cobo_ids parameter is a comma-separated list of cobo ids. The status parameter is an optional integer representing the status of the transaction request. The response is a JSON object containing an array of transaction request objects."
 ---
 #### Request
-<ParamField body="cobo_ids" type="String" required>List of Cobo Unique IDs for transactions, separated by commas, cannot be empty or greater than 50</ParamField> 
-<ParamField body="status" type="Int" >Transaction type(PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ParamField> 
+<ParamField query="cobo_ids" type="String" required>List of Cobo Unique IDs for transactions, separated by commas, cannot be empty or greater than 50</ParamField>
+<ParamField query="status" type="Int" >Transaction type(PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ParamField>
 
 
 #### Response

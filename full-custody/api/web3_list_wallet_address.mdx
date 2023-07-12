@@ -5,10 +5,10 @@ description: "This endpoint returns a JSON response containing a list of wallet 
 ---
 #### Request 
 
-<ParamField body="chain_code" type="String" required>Chain code for which to retrieve wallet addresses.</ParamField> 
-<ParamField body="page_index" type="Int" required>Index of the page to retrieve.</ParamField> 
-<ParamField body="page_length" type="Int" required>Number of wallet addresses to retrieve per page.</ParamField> 
-<ParamField body="sort_flag" type="Int" >Address sorting method: If it is 1, it will be returned in a positive order of address creation time, or else it will be returned in a reverse order of address creation time.</ParamField>
+<ParamField query="chain_code" type="String" required>Chain code for which to retrieve wallet addresses.</ParamField>
+<ParamField query="page_index" type="Int" required>Index of the page to retrieve.</ParamField>
+<ParamField query="page_length" type="Int" required>Number of wallet addresses to retrieve per page.</ParamField>
+<ParamField query="sort_flag" type="Int" >Address sorting method: If it is 1, it will be returned in a positive order of address creation time, or else it will be returned in a reverse order of address creation time.</ParamField>
 
 #### Response 
 <ResponseField name="total_count" type="Int" >Total number of addresses.</ResponseField>

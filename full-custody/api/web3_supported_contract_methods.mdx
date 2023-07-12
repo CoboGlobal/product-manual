@@ -4,8 +4,8 @@ api: GET /v1/custody/web3_supported_contract_methods/
 description: "This endpoint returns a JSON response with a list of supported contract methods for a given chain and contract address."
 ---
 #### Request
-<ParamField body="chain_code" type="String" required>Chain code of the blockchain.</ParamField>
-<ParamField body="contract_address" type="String" required>Address of the contract.</ParamField>
+<ParamField query="chain_code" type="String" required>Chain code of the blockchain.</ParamField>
+<ParamField query="contract_address" type="String" required>Address of the contract.</ParamField>
 
 #### Response
 <ResponseField name="type" type="String" >Contract Method Type</ResponseField> 

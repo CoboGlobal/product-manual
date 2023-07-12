@@ -3,11 +3,12 @@ title: Deposit to Exchange Account (Investor Only)
 api: POST /v1/custody/trading_deposit/ 
 description: "This endpoint allows users to deposit funds into their trading account. The user must provide their exchange account token, the coin they wish to deposit, the amount they wish to deposit, and a unique request ID. The endpoint returns a JSON response with information about the deposit, including the request ID, the coin, the absolute amount deposited, the estimated amount received, the status of the deposit, the absolute fee charged, and the fee in the same coin as the deposit."
 ---
+
 #### Request
-<ParamField body="exchange_account_token" type="String" required>to exchange account token (aquire from Web)</ParamField> 
-<ParamField body="coin" type="String" required>Coin code</ParamField> 
-<ParamField body="amount" type="Int" required>Int amount (e.g. if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis))</ParamField> 
-<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField> 
+<ParamField body="exchange_account_token" type="String" required>to exchange account token (aquire from Web)</ParamField>
+<ParamField body="coin" type="String" required>Coin code</ParamField>
+<ParamField body="amount" type="Int" required>Int amount (e.g. if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis))</ParamField>
+<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField>
 
 #### Response
 <ResponseField name="request_id" type="String" >Request ID (Universally unique ID for each request)</ResponseField> 

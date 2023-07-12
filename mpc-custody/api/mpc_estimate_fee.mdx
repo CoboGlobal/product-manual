@@ -5,16 +5,16 @@ description: "This endpoint estimates the fee for a given transaction. It takes 
 ---
 
 #### Request
-<ParamField body="coin" type="String" required>coin name</ParamField>
-<ParamField body="amount" type="Int" >transaction amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ParamField>
-<ParamField body="address" type="String" >deposit address used for account model</ParamField>
-<ParamField body="replace_cobo_id" type="String" >Cobo ID of a transaction designated as RBF</ParamField>
-<ParamField body="from_address" type="String" >from address used for account model</ParamField>
-<ParamField body="to_address_details" type="Json" >list of addresses used for receiving coins associated with the UTXO model; this value must be a JSON string and has a parameter type that fits</ParamField>
-<ParamField body="fee" type="Float" >transaction fees per byte; applicable to UTXO model</ParamField>
-<ParamField body="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
-<ParamField body="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
-<ParamField body="extra_parameters" type="Json" >calldata: request data associated with an EVM transaction, type: string; input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField>
+<ParamField query="coin" type="String" required>coin name</ParamField>
+<ParamField query="amount" type="Int" >transaction amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ParamField>
+<ParamField query="address" type="String" >deposit address used for account model</ParamField>
+<ParamField query="replace_cobo_id" type="String" >Cobo ID of a transaction designated as RBF</ParamField>
+<ParamField query="from_address" type="String" >from address used for account model</ParamField>
+<ParamField query="to_address_details" type="Json" >list of addresses used for receiving coins associated with the UTXO model; this value must be a JSON string and has a parameter type that fits</ParamField>
+<ParamField query="fee" type="Float" >transaction fees per byte; applicable to UTXO model</ParamField>
+<ParamField query="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
+<ParamField query="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
+<ParamField query="extra_parameters" type="Json" >calldata: request data associated with an EVM transaction, type: string; input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField>
 
 #### Response
 <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>

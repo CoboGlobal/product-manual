@@ -4,8 +4,8 @@ api: GET /v1/custody/mpc/transactions_by_request_ids/
 description: "This endpoint returns a JSON response containing transaction information for a list of transaction request IDs. The response includes the transaction ID, request ID, status, and other relevant information. The endpoint requires authentication and accepts optional query parameters to filter the results by transaction status."
 ---
 #### Request
-<ParamField body="request_ids" type="String" required>Transaction request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField> 
-<ParamField body="status" type="Int" >Transaction status; please refer to TransactionStatusEnum for more information (PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ParamField> 
+<ParamField query="request_ids" type="String" required>Transaction request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField>
+<ParamField query="status" type="Int" >Transaction status; please refer to TransactionStatusEnum for more information (PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ParamField>
 
 #### Response
 <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>

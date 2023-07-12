@@ -4,9 +4,9 @@ api: POST /v1/custody/mpc/speedup_transaction/
 description: "This endpoint allows users to speed up a previously submitted transaction by replacing it with a new transaction with higher gas price. The endpoint accepts a POST request with parameters including cobo_id, request_id, fee, gas_price, gas_limit, and fee_amount. The response is a JSON object containing the updated transaction information."
 ---
 #### Request
-<ParamField body="cobo_id" type="String" required>Unique transaction ID</ParamField> 
-<ParamField body="request_id" type="String" required>RBF transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField> 
-<ParamField body="fee" type="Float" >Transaction fees per byte; must be higher than the original transaction fees; applicable to the UTXO model</ParamField> 
+<ParamField body="cobo_id" type="String" required>Unique transaction ID</ParamField>
+<ParamField body="request_id" type="String" required>RBF transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField>
+<ParamField body="fee" type="Float" >Transaction fees per byte; must be higher than the original transaction fees; applicable to the UTXO model</ParamField>
 <ParamField body="gas_price" type="Int" >The gas price for the new transaction(must be higher than the original gas price)</ParamField>
 <ParamField body="gas_limit" type="Int" >The gas limit for the new transaction.</ParamField>
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model.</ParamField>

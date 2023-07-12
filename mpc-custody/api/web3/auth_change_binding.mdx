@@ -3,8 +3,9 @@ title: Change Binding
 api: POST /v1/custody/auth/change_binding/ 
 description: "This endpoint allows authenticated users to change their binding to a new Prime Broker. The user's `broker_user_id` is passed in the request body, and the new `binder_id` is returned in the JSON response."
 ---
+
 #### Request
-<ParamField body="binder_id" type="String" required>CoboAuth binding code</ParamField> 
+<ParamField body="binder_id" type="String" required>CoboAuth binding code</ParamField>
 
 #### Response
 <ResponseField name="binder_id" type="String" >Binding ID, the binding ID needs to be prefixed with binder_id= to generate a QR code for the user to scan the code to bind, or the user can directly copy the binding code in the form of binder_id=xxxx to Cobo Auth for the binding operation</ResponseField>

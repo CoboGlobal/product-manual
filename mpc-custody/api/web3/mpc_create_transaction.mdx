@@ -3,19 +3,20 @@ title: Create Transaction
 api: POST /v1/custody/mpc/create_transaction/ 
 description: "This endpoint creates a transaction for a given coin and request ID. The request must include the amount, from_address, and to_address. Optional parameters include fee, gas_price, gas_limit, max_fee, max_priority_fee, operation, and extra_parameters. The endpoint returns a JSON response with a 'cobo_id' field containing the ID of the created transaction."
 ---
+
 #### Request
-<ParamField body="coin" type="String" required>coin name (Cobo Custody)</ParamField> 
-<ParamField body="request_id" type="String" required>transaction ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField> 
-<ParamField body="amount" type="Int" required>transaction amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ParamField> 
-<ParamField body="from_address" type="String" >from address; this parameter is required if an account model is used; this parameter is optional if an UTXO model is used and the input will be selected based off extra_parameters</ParamField> 
-<ParamField body="to_address" type="String" >to address</ParamField> 
+<ParamField body="coin" type="String" required>coin name (Cobo Custody)</ParamField>
+<ParamField body="request_id" type="String" required>transaction ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField>
+<ParamField body="amount" type="Int" required>transaction amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ParamField>
+<ParamField body="from_address" type="String" >from address; this parameter is required if an account model is used; this parameter is optional if an UTXO model is used and the input will be selected based off extra_parameters</ParamField>
+<ParamField body="to_address" type="String" >to address</ParamField>
 <ParamField body="to_address_details" type="String" >list of addresses used for receiving  coins associated with the UTXO model; this value must be a JSON string and has a parameter type that fits,</ParamField>
-<ParamField body="fee" type="Float" >transaction fees per byte; applicable to UTXO model</ParamField> 
-<ParamField body="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField> 
-<ParamField body="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField> 
-<ParamField body="operation" type="Int" >action type; default: 100 (TRANSFER), 200(CONTRACT_CALL)</ParamField> 
-<ParamField body="extra_parameters" type="Json" >calldata: request data associated with an EVM transaction, type: string; input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField> 
-<ParamField body="max_fee" type="Int" >max fee, applicable to ETH EIP 1559 transaction</ParamField> 
+<ParamField body="fee" type="Float" >transaction fees per byte; applicable to UTXO model</ParamField>
+<ParamField body="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
+<ParamField body="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
+<ParamField body="operation" type="Int" >action type; default: 100 (TRANSFER), 200(CONTRACT_CALL)</ParamField>
+<ParamField body="extra_parameters" type="Json" >calldata: request data associated with an EVM transaction, type: string; input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField>
+<ParamField body="max_fee" type="Int" >max fee, applicable to ETH EIP 1559 transaction</ParamField>
 <ParamField body="max_priority_fee" type="Int" >max priority fee, applicable to ETH EIP 1559 transaction</ParamField>
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model</ParamField>
 

@@ -4,8 +4,8 @@ api: GET /v1/custody/mpc/transactions_by_tx_hash/
 description: "This endpoint returns transaction details for a given transaction hash. The response is a JSON object containing transaction details such as transaction hash, block number, sender address, recipient address, value, and gas used. The endpoint also accepts an optional parameter 'transaction_type' to filter the transaction details based on the type of transaction."
 ---
 #### Request
-<ParamField body="tx_hash" type="String" required>Transaction hash</ParamField> 
-<ParamField body="transaction_type" type="int" >transaction status（TYPE_MPC_WEB3_WEB: 300, TYPE_MPC_WEB3_MMI_TX：301， TYPE_MPC_WEB3_API_TRANSACTION: 303, TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL: 307, TYPE_MPC_WEB3_RBF_API_SPEEDUP: 308, TYPE_MPC_WEB3_RBF_WEB_SPEEDUP: 309, TYPE_MPC_WEB3_RBF_API_DROP: 310, TYPE_MPC_WEB3_RBF_WEB_DROP: 311, TRANSACTION_FROM_DEPOSIT：1000）</ParamField> 
+<ParamField query="tx_hash" type="String" required>Transaction hash</ParamField>
+<ParamField query="transaction_type" type="int" >transaction status（TYPE_MPC_WEB3_WEB: 300, TYPE_MPC_WEB3_MMI_TX：301， TYPE_MPC_WEB3_API_TRANSACTION: 303, TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL: 307, TYPE_MPC_WEB3_RBF_API_SPEEDUP: 308, TYPE_MPC_WEB3_RBF_WEB_SPEEDUP: 309, TYPE_MPC_WEB3_RBF_API_DROP: 310, TYPE_MPC_WEB3_RBF_WEB_DROP: 311, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
 
 #### Response
 <ResponseField name="total" type="Int" >Total number of transactions that meets the requirements</ResponseField>

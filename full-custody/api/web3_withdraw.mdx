@@ -3,12 +3,13 @@ title: Submit Web3 Withdraw
 api: POST /v1/custody/web3_withdraw/ 
 description: "This endpoint allows users to withdraw cryptocurrency from their custody wallet to an external address. The endpoint requires the user to provide the coin type, request ID, sender address, receiver address, and amount. The endpoint verifies that the coin is supported, the chain is supported, and the asset coin is supported before creating a transaction. If the transaction is successful, an event is dispatched."
 ---
+
 #### Request
-<ParamField body="coin" type="String" required>Coin code</ParamField> 
-<ParamField body="request_id" type="String" required>Withdrawal request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField> 
-<ParamField body="from_addr" type="String" required>Source address</ParamField> 
-<ParamField body="to_addr" type="String" required>Deposit address</ParamField> 
-<ParamField body="amount" type="Int" required>Please note that the withdrawal amount should be expressed in terms of the respective coin's smallest unit. For example, if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis)</ParamField> 
+<ParamField body="coin" type="String" required>Coin code</ParamField>
+<ParamField body="request_id" type="String" required>Withdrawal request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField>
+<ParamField body="from_addr" type="String" required>Source address</ParamField>
+<ParamField body="to_addr" type="String" required>Deposit address</ParamField>
+<ParamField body="amount" type="Int" required>Please note that the withdrawal amount should be expressed in terms of the respective coin's smallest unit. For example, if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis)</ParamField>
 
 #### Response
 None

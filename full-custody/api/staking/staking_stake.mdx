@@ -3,6 +3,7 @@ title: Stake
 api: POST /v1/custody/staking_stake/ 
 description: "This endpoint allows users to stake a certain amount of cryptocurrency on a particular product. The user must provide the product ID and the amount they wish to stake. The endpoint will then attempt to stake the specified amount on the specified product. If the product ID is invalid, an error will be returned."
 ---
+
 #### Request
 <ParamField body="product_id" type="Int" required>The ID of the product to stake on.</ParamField>
 <ParamField body="amount" type="Int" required>The amount of cryptocurrency to stake.</ParamField>

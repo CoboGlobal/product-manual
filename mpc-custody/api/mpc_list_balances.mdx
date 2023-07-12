@@ -4,10 +4,10 @@ api: GET /v1/custody/mpc/list_balances/
 description: "This endpoint returns a JSON response with a list of token assets and their balances for a given custody wallet. The response includes the total count of token assets, as well as information about each asset, such as the coin type, chain code, display code, and balance. Additionally, if any of the token assets are NFTs, the response will include information about the NFT, such as the NFT code, token ID, and contract address."
 ---
 #### Request
-<ParamField body="coin" type="String" >Coin type of the token asset to retrieve.</ParamField>
-<ParamField body="chain_code" type="String" >Chain code of the token asset to retrieve.</ParamField>
-<ParamField body="page_index" type="Int" required>Index of the page to retrieve.</ParamField>
-<ParamField body="page_length" type="Int" required>Number of items to retrieve per page(max:50)</ParamField>
+<ParamField query="coin" type="String" >Coin type of the token asset to retrieve.</ParamField>
+<ParamField query="chain_code" type="String" >Chain code of the token asset to retrieve.</ParamField>
+<ParamField query="page_index" type="Int" required>Index of the page to retrieve.</ParamField>
+<ParamField query="page_length" type="Int" required>Number of items to retrieve per page(max:50)</ParamField>
 
 #### Response
 <ResponseField name="total" type="Int" >Total number of entries</ResponseField> 

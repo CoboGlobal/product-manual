@@ -4,7 +4,7 @@ api: GET /v1/custody/unstakings/
 description: "This endpoint returns a JSON response with a list of unstaking and liquidating positions for the specified coin."
 ---
 #### Request
-<ParamField body="coin" type="String" >The coin to filter the positions by.</ParamField> 
+<ParamField query="coin" type="String" >The coin to filter the positions by.</ParamField>
 
 #### Response
 <ResponseField name="coin" type="String" >The coin of the position.</ResponseField> 

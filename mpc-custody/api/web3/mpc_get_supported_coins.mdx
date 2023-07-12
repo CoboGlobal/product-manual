@@ -4,7 +4,7 @@ api: GET /v1/custody/mpc/get_supported_coins/
 description: "This endpoint returns a JSON response containing a list of supported coins for a given chain. The response includes the coin code, display code, description, decimal, deposit and withdrawal availability, and confirming threshold."
 ---
 #### Request
-<ParamField body="chain_code" type="String" required>Chain code for which to retrieve supported coins.</ParamField>
+<ParamField query="chain_code" type="String" required>Chain code for which to retrieve supported coins.</ParamField>
 
 #### Response
 <ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>

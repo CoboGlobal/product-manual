@@ -5,8 +5,8 @@ description: "This endpoint generates new addresses for a given chain code and r
 ---
 #### Request 
 
-<ParamField body="chain_code" type="String" required>The chain code for which the addresses are to be generated.</ParamField>
-<ParamField body="count" type="Int" required>The number of addresses to generate.</ParamField>
+<ParamField query="chain_code" type="String" required>The chain code for which the addresses are to be generated.</ParamField>
+<ParamField query="count" type="Int" required>The number of addresses to generate.</ParamField>
 
 #### Response
 <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>

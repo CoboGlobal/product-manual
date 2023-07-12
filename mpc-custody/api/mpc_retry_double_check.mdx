@@ -4,7 +4,7 @@ api: POST /v1/custody/mpc/retry_double_check/
 description: "This endpoint retries a double check for a withdrawal request with the given request_id. The request must be a POST request and the user must have all permissions. The endpoint retrieves the withdrawal request with the given request_id and checks if it exists and has a status of 'STATUS_WAITING_DOUBLE_CHECK'. If the request is valid, the endpoint locks the record and processes the withdrawal request with the 'process_waiting_double_check_withdraw_request' method from the CustodyService class."
 ---
 #### Request
-<ParamField body="request_id" type="String" required>transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField> 
+<ParamField body="request_id" type="String" required>transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField>
 
 #### Response 
 None

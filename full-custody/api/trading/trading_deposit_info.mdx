@@ -4,7 +4,7 @@ api: GET /v1/custody/trading_deposit_info/
 description: "This endpoint returns information about a trading deposit. It requires a valid request ID and authentication with operation permission. The response contains details about the deposit, including the coin code, amount, estimated amount received, status, and fee."
 ---
 #### Request
-<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField> 
+<ParamField query="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField>
 
 #### Response
 <ResponseField name="request_id" type="String" >Request ID (Universally unique ID for each request)</ResponseField>

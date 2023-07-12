@@ -5,8 +5,8 @@ description: "This endpoint returns a JSON response containing a list of TSS (Th
 ---
 
 #### Request
-<ParamField body="request_type" type="Int" >Request type(KEYGEN type: 1, KEYRESHARE type: 2)</ParamField>
-<ParamField body="status" type="int" >Request status</ParamField>
+<ParamField query="request_type" type="Int" >Request type(KEYGEN type: 1, KEYRESHARE type: 2)</ParamField>
+<ParamField query="status" type="int" >Request status</ParamField>
 
 #### Response
 <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>

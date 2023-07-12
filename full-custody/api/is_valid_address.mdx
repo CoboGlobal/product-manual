@@ -6,8 +6,8 @@ description: "This endpoint checks whether a given cryptocurrency address is val
 
 
 #### Request
-<ParamField body="coin" type="String" required>The cryptocurrency symbol.</ParamField>
-<ParamField body="address" type="String" required>The cryptocurrency address.(Address|Memo)</ParamField>
+<ParamField query="coin" type="String" required>The cryptocurrency symbol.</ParamField>
+<ParamField query="address" type="String" required>The cryptocurrency address.(Address|Memo)</ParamField>
 
 #### Response
 <ResponseField name="result" type="bool" required>Whether the address is valid or not.</ResponseField>

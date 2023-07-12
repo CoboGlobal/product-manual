@@ -5,7 +5,7 @@ description: "This endpoint returns a JSON response with a list of contract addr
 ---
 #### Request 
 
-<ParamField body="chain_code" type="String" required>The chain code for which to retrieve contract addresses.</ParamField>
+<ParamField query="chain_code" type="String" required>The chain code for which to retrieve contract addresses.</ParamField>
 
 #### Response
 <ResponseField name="contract_addresses" type="String" >Supported Contract addresses(The result applies to the contract_address content in the other web3 api request parameters)</ResponseField>

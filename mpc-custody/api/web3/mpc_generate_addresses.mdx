@@ -4,8 +4,8 @@ api: GET /v1/custody/mpc/generate_addresses/
 description: "This endpoint generates new addresses for a given chain code and returns a list of the generated addresses. The number of addresses to generate is specified in the 'count' parameter of the POST request. The maximum number of addresses that can be generated in one request is 200. The endpoint also checks if the organization has permission to add addresses and if the number of addresses being added exceeds the minutely limit. The response contains a list of the generated addresses along with their IDs, HD paths, and encodings."
 ---
 #### Request
-<ParamField body="chain_code" type="String" required>The chain code for which the addresses are to be generated.</ParamField>
-<ParamField body="count" type="Int" required>The number of addresses to generate.</ParamField>
+<ParamField query="chain_code" type="String" required>The chain code for which the addresses are to be generated.</ParamField>
+<ParamField query="count" type="Int" required>The number of addresses to generate.</ParamField>
 
 #### Response
 <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>

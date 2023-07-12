@@ -4,11 +4,11 @@ api: GET /v1/custody/mpc/list_addresses/
 description: "This endpoint returns a JSON response containing a list of wallet addresses and their associated information. The endpoint takes in a chain code and optional parameters for pagination and sorting. The response includes the total count of addresses and a list of addresses with their respective ID, address, encoding, and HD path."
 ---
 #### Request
-<ParamField body="chain_code" type="String" required>Chain code of the wallet addresses.</ParamField>
-<ParamField body="start_id" type="String" >ID of an address to start with; the latest address information will be returned if neither the start ID nor the end ID is specified</ParamField>
-<ParamField body="end_id" type="String" >ID of an address to end with; the latest address information will be returned if neither the start ID nor the end ID is specified</ParamField>
-<ParamField body="limit" type="Int" >number of entries per page; max: 50; default: 50</ParamField>
-<ParamField body="sort" type="Int" >address sorting method; 1: based on creation time, from earliest to latest; other value: based on creation time, from latest to earliest (default)</ParamField>
+<ParamField query="chain_code" type="String" required>Chain code of the wallet addresses.</ParamField>
+<ParamField query="start_id" type="String" >ID of an address to start with; the latest address information will be returned if neither the start ID nor the end ID is specified</ParamField>
+<ParamField query="end_id" type="String" >ID of an address to end with; the latest address information will be returned if neither the start ID nor the end ID is specified</ParamField>
+<ParamField query="limit" type="Int" >number of entries per page; max: 50; default: 50</ParamField>
+<ParamField query="sort" type="Int" >address sorting method; 1: based on creation time, from earliest to latest; other value: based on creation time, from latest to earliest (default)</ParamField>
 
 #### Response
 <ResponseField name="total" type="Int" >Total number of addresses</ResponseField>

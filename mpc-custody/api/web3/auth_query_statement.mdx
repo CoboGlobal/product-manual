@@ -4,7 +4,7 @@ api: GET /v1/custody/auth/query_statement/
 description: "This endpoint allows authenticated users to query a statement by providing a statement ID. The response is a JSON object containing information about the statement, including its ID, creation time, and a list of transactions. The endpoint requires the user to have query permission."
 ---
 #### Request
-<ParamField body="statement_id" type="String" required>unique auth statement id</ParamField> 
+<ParamField query="statement_id" type="String" required>unique auth statement id</ParamField>
 
 #### Response
 <ResponseField name="id" type="String" >unique auth statement id</ResponseField>

@@ -4,11 +4,11 @@ api: GET /v1/custody/web3_list_wallet_transactions/
 description: "This endpoint returns a list of web3 transactions for a given wallet address. The response contains transaction details such as transaction hash, block number, and transaction value."
 ---
 #### Request
-<ParamField body="address" type="String" required>Wallet address to retrieve transactions for.</ParamField> 
-<ParamField body="max_id" type="Int" >Maximum transaction ID to retrieve.</ParamField> 
-<ParamField body="min_id" type="Int" >Minimum transaction ID to retrieve.</ParamField> 
-<ParamField body="limit" type="Int" >Maximum number of transactions to retrieve.</ParamField> 
-<ParamField body="chain_code" type="String" >Chain code of the wallet.</ParamField> 
+<ParamField query="address" type="String" required>Wallet address to retrieve transactions for.</ParamField>
+<ParamField query="max_id" type="Int" >Maximum transaction ID to retrieve.</ParamField>
+<ParamField query="min_id" type="Int" >Minimum transaction ID to retrieve.</ParamField>
+<ParamField query="limit" type="Int" >Maximum number of transactions to retrieve.</ParamField>
+<ParamField query="chain_code" type="String" >Chain code of the wallet.</ParamField>
 
 #### Response
 <ResponseField name="id" type="String" >Cobo Unique Transaction ID</ResponseField> 

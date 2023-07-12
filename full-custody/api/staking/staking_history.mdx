@@ -4,11 +4,11 @@ api: GET /v1/custody/staking_history/
 description: "This endpoint returns a list of staking activities for a given coin, with optional filters for activity type, maximum ID, limit, and product ID. The response includes the activity ID, coin, amount, type, raw type, time, and product information."
 ---
 #### Request
-<ParamField body="coin" type="String" >The coin to filter by.</ParamField> 
-<ParamField body="type" type="String" >The activity type to filter by.</ParamField> 
-<ParamField body="max_id" type="String" >The maximum activity ID to return.</ParamField> 
-<ParamField body="limit" type="String" >The maximum number of activities to return.</ParamField> 
-<ParamField body="product_id" type="Int" >The product ID to filter by.</ParamField> 
+<ParamField query="coin" type="String" >The coin to filter by.</ParamField>
+<ParamField query="type" type="String" >The activity type to filter by.</ParamField>
+<ParamField query="max_id" type="String" >The maximum activity ID to return.</ParamField>
+<ParamField query="limit" type="String" >The maximum number of activities to return.</ParamField>
+<ParamField query="product_id" type="Int" >The product ID to filter by.</ParamField>
 
 #### Response
 <ResponseField name="id" type="String" >Action ID</ResponseField> 

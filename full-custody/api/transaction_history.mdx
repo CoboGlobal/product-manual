@@ -3,16 +3,17 @@ title:
 api: GET /v1/custody/transaction_history/ 
 description: "This endpoint returns a JSON response containing the transaction history for a given coin and address. The response can be filtered by various parameters such as side, max_id, min_id, begin_time, end_time, and include_financial. The maximum number of transactions returned is 50."
 ---
+
 #### Request
-<ParamField body="coin" type="String" >Coin code (Does not return all currencies)</ParamField> 
-<ParamField body="side" type="enum(deposit / withdraw)" >Deposit/withdrawal</ParamField> 
-<ParamField body="address" type="String" >Deposit/withdrawal address is optional. If not included, all address history will be returned.</ParamField> 
-<ParamField body="max_id" type="String" >The transaction history ID limit is optional. If not included, will by default return the most recent records.(cannot be used with min_id)</ParamField> 
-<ParamField body="min_id" type="String" >Optional. If included, the sequence will be changed to time ASC. If not included, will by default return the most recent records, time DESC.(cannot be used with max_id)</ParamField> 
-<ParamField body="limit" type="Integer" >Page size is optional. If not included, the default size will be 50, and the maximum size will also be 50.</ParamField> 
-<ParamField body="begin_time" type="Long" >Begin timestamp(milliseconds). If set, transactions whose confirmation times are shorter than this value will not be returned. (cannot be used with end_time)</ParamField> 
-<ParamField body="end_time" type="Long" >End time stamp (milliseconds). If it is passed in, the transactions whose transaction confirmation time is greater than or equal to this will not be returned.(cannot be used with begin_time)</ParamField> 
-<ParamField body="include_financial" type="String" >Request all transactions, if they are, return all transactions (including Staking, Trading)</ParamField> 
+<ParamField query="coin" type="String" >Coin code (Does not return all currencies)</ParamField> 
+<ParamField query="side" type="enum(deposit / withdraw)" >Deposit/withdrawal</ParamField> 
+<ParamField query="address" type="String" >Deposit/withdrawal address is optional. If not included, all address history will be returned.</ParamField> 
+<ParamField query="max_id" type="String" >The transaction history ID limit is optional. If not included, will by default return the most recent records.(cannot be used with min_id)</ParamField> 
+<ParamField query="min_id" type="String" >Optional. If included, the sequence will be changed to time ASC. If not included, will by default return the most recent records, time DESC.(cannot be used with max_id)</ParamField> 
+<ParamField query="limit" type="Integer" >Page size is optional. If not included, the default size will be 50, and the maximum size will also be 50.</ParamField> 
+<ParamField query="begin_time" type="Long" >Begin timestamp(milliseconds). If set, transactions whose confirmation times are shorter than this value will not be returned. (cannot be used with end_time)</ParamField> 
+<ParamField query="end_time" type="Long" >End time stamp (milliseconds). If it is passed in, the transactions whose transaction confirmation time is greater than or equal to this will not be returned.(cannot be used with begin_time)</ParamField> 
+<ParamField query="include_financial" type="String" >Request all transactions, if they are, return all transactions (including Staking, Trading)</ParamField> 
 
 #### Response
 <ResponseField name="id" type="String">Cobo Unique Transaction ID</ResponseField>

@@ -5,8 +5,8 @@ description: "This endpoint checks if a given address is valid for a specified c
 ---
 
 #### Request
-<ParamField body="coin" type="String" required>coin name (Cobo Custody)</ParamField>
-<ParamField body="address" type="String" required>address; please use ‘｜’ to separate the addresses if there’s also a memo</ParamField>
+<ParamField query="coin" type="String" required>coin name (Cobo Custody)</ParamField>
+<ParamField query="address" type="String" required>address; please use ‘｜’ to separate the addresses if there’s also a memo</ParamField>
 
 #### Response
 <ResponseField name="result" type="Bool" >Queried result(True/ False)</ResponseField>

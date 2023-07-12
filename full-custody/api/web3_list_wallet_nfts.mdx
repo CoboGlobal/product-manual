@@ -5,8 +5,8 @@ description: "This endpoint returns a JSON response with a list of NFTs (Non-Fun
 ---
 #### Request 
 
-<ParamField body="nft_code" type="String" required>NFT Collection Code</ParamField> 
-<ParamField body="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField> 
+<ParamField query="nft_code" type="String" required>NFT Collection Code</ParamField>
+<ParamField query="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField>
 
 #### Response
 <ResponseField name="nft_code" type="String" >Code of the NFT.</ResponseField>

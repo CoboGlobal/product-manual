@@ -4,7 +4,7 @@ api: GET /v1/custody/mpc/get_supported_nft_collections/
 description: "This endpoint returns a JSON response with a list of supported NFT collections on the specified chain. The response includes the NFT code, chain code, contract address, description, display code, and standard for each supported collection."
 ---
 #### Request
-<ParamField body="chain_code" type="String" required>chain code</ParamField> 
+<ParamField query="chain_code" type="String" required>chain code</ParamField>
 
 #### Response
 <ResponseField name="nft_code" type="String" >NFT Token code</ResponseField> 
