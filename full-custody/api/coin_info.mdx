@@ -1,0 +1,86 @@
+---
+title: "Get Coin Details"
+api: "GET /v1/custody/coin_info"
+description: "This endpoint returns a JSON response with the currency rate and unit for a given coin code. The endpoint requires authentication and takes a 'coin_code' parameter in the GET request."
+---
+
+
+#### Request
+
+<ParamField body="coin" type="String" required>Coin code</ParamField>
+
+#### Response
+<ResponseField name="coin" type="String">Coin code</ResponseField>
+<ResponseField name="display_code" type="String">Coin ticker symbol  (not unique, changeable, for reference only )</ResponseField>
+<ResponseField name="description" type="String">Coin code</ResponseField>
+<ResponseField name="decimal" type="Int">Coin balance decimal places</ResponseField>
+<ResponseField name="can_deposit" type="bool">Deposit accessibility</ResponseField>
+<ResponseField name="can_withdraw" type="bool">Withdrawal accessibility</ResponseField>
+<ResponseField name="balance" type="String">Current balance</ResponseField>
+<ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
+<ResponseField name="fee_coin" type="String">Coin used for fee</ResponseField>
+<ResponseField name="abs_estimate_fee" type="String">Estimated fee</ResponseField>
+<ResponseField name="confirming_threshold" type="Int">Confirmation threshold required for the coin</ResponseField>
+<ResponseField name="dust_threshold" type="Int">Coin minimum withdrawal threshold</ResponseField>
+<ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
+<ResponseField name="token_address" type="String">Smart contract address for token (null for main-chain token)</ResponseField>
+<ResponseField name="require_memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
+
+<RequestExample>
+
+```python Python
+request(
+  "GET",
+  "/v1/custody/coin_info/",
+  {
+    "coin": "ETH"
+  },
+  api_key, api_secret, host
+)
+```
+
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/coin_info/', {
+    "coin": "ETH"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("GET", "/v1/custody/coin_info/", map[string]string{
+    "coin": "ETH",
+})
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "ETH",
+    "display_code": "ETH",
+    "description": "Ethereum",
+    "decimal": 18,
+    "can_deposit": true,
+    "can_withdraw": true,
+    "require_memo": false,
+    "balance": "0",
+    "abs_balance": "0",
+    "fee_coin": "ETH",
+    "abs_estimate_fee": "0.0003648",
+    "confirming_threshold": 12,
+    "dust_threshold": 0,
+    "token_address": ""
+  }
+}
+```
+</ResponseExample>
+

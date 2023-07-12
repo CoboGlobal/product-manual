@@ -1,0 +1,85 @@
+---
+title: Get Supported Coins
+api: GET /v1/custody/web3_supported_coins/ 
+description: "This endpoint returns a JSON response with a list of supported coins for a given chain code. The response includes the coin name, display code, description, decimal, and minimum deposit threshold. It also indicates whether the coin can be deposited or withdrawn, based on the current suspension status."
+---
+#### Request 
+
+<ParamField body="chain_code" type="String" required>Chain code for which to retrieve supported coins.</ParamField> 
+
+#### Response 
+
+<ResponseField name="coin" type="String" >Name of the coin.</ResponseField> 
+<ResponseField name="description" type="String" >Description of the coin.</ResponseField> 
+<ResponseField name="decimal" type="Int" >Number of decimal places for the coin.</ResponseField> 
+<ResponseField name="can_deposit" type="Boolean" >Whether the coin can be deposited.</ResponseField> 
+<ResponseField name="can_withdraw" type="Boolean" >Whether the coin can be withdrawn.</ResponseField> 
+<ResponseField name="minimum_deposit_threshold" type="String" >Minimum deposit threshold for the coin.</ResponseField> 
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/web3_supported_coins/",
+    {
+        "chain_code": "ETH"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch("GET", "/v1/custody/web3_supported_coins/", {
+    "chain_code": "ETH"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request(
+    "GET", 
+    "/v1/custody/web3_supported_coins/", 
+    map[string]string{
+        "chain_code": "ETH"
+    })
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "coins": [
+    {
+      "coin": "ETH_WBTC",
+      "display_code": "WBTC",
+      "description": "Wrapped Bitcoin",
+      "decimal": 8,
+      "can_deposit": True,
+      "can_withdraw": True,
+      "minimum_deposit_threshold": "0"
+    },
+    {
+      "coin": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "decimal": 18,
+      "can_deposit": True,
+      "can_withdraw": True,
+      "minimum_deposit_threshold": "1000000000000000"
+    },
+    {
+      "coin": "ETH_USDT",
+      "display_code": "USDT",
+      "description": "",
+      "decimal": 6,
+      "can_deposit": True,
+      "can_withdraw": True,
+      "minimum_deposit_threshold": "1000"
+    }
+  ]
+}
+```
+</ResponseExample>

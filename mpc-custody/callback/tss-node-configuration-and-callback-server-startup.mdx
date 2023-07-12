@@ -1,0 +1,56 @@
+---
+title: "TSS Node Configuration & Callback Server Startup"
+icon: ""
+description:
+---
+
+## TSS Node Configuration
+
+
+
+You’ll need to complete the following steps on the server where the TSS Node is deployed.
+
+
+
+* Copy the callback server’s RSA public key file to the configs directory of the TSS Node
+
+```
+cobo-tss-node-generic
+├── configs
+│   ├── callback-server-pub.key
+│   └── cobo-tss-node-config.yaml
+```
+
+
+
+* Modify the cobo-tss-node-config.yaml file
+* cb\_server
+* service\_address indicates the callback server address
+* pubkey\_path indicates the file path of the callback server’s RSA&#x20;
+* token\_expire\_minutes indicates the timeout period of the JWT (unit: minutes)&#x20;
+* retry\_time indicates the number of retries if the callback request fails
+* sleep\_seconds indicates the time interval between each retry (unit: minutes)
+
+
+
+You can configure multiple callback servers. The following output uses two callback servers as an example:
+
+```
+callback:
+  cb_server:
+    - service_address: http://callback-server-01:8080/v1/check
+      pubkey_path: configs/callback-server-pub-01.key
+    - service_address: http://callback-server-02:8080/v1/check
+      pubkey_path: configs/callback-server-pub-02.key
+  token_expire_minutes: 2
+  retry_times: 60
+  sleep_seconds: 60
+```
+
+
+
+## TSS Node & Callback Server Startup
+
+
+
+Once the aforementioned configuration has been completed, you can start up the callback server and the TSS Node.&#x20;

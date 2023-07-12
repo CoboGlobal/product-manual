@@ -1,0 +1,37 @@
+---
+title: "Withdrawal Confirmation"
+description: ""
+---
+
+```json
+{
+  "id": "",
+  "coin": "LONT_ONT",
+  "display_code": "LONT",
+  "description": "ONT Local net",
+  "address": "AJ6SScHEiXt8stDXjaUvTPKJwVGkJL4F3J",
+  "side": "withdraw",
+  "amount": "5",
+  "abs_amount": "5",
+  "decimal": 0,
+  "txid": "d9fb6178ce2ddab6ab55894947640e469021473757e42f66652c06b58daf1419",
+  "vout_n": 0,
+  "request_id": "test_request_id",
+  "status": "pending",
+  "created_time": 1537843965164,
+  "last_time": 1537843965164
+}
+```
+Upon receiving a withdrawal request, Cobo will check it by notifing a client-designated URL via HTTP(S), and request method is POST.  The message
+includes the withdrawal request data in the HTTP message body in JSON format. After the client receives and finishes
+checking the message, they must send an HTTP response with status=200 and http body = ok(or deny) to Cobo. Otherwise, we
+will continue to push the same message to the designated URL.
+
+### NOTICE
+
+1. An isolated server (e.g. risk monitor) should be used for the withdrawal confirmation in case of SPOF.
+
+2. Please check the request_id、to_addr、amount for each withdraw request to verify if it's a normal request.
+
+3. We recommend you to use https and Cobo pubkey for signature verification. (please refer to our SDK)
+

@@ -1,0 +1,11 @@
+---
+title: "Cobo Callback Signature"
+description: ""
+---
+Cobo signs each response(HTTP response & Callback push)with ECDSA signature, the signed message is in Http
+Header: `BIZ_TIMESTAMP`, `BIZ_RESP_SIGNATURE`, you may verify the signature to ensure it's from Cobo, refer to the
+samples in Client
+demo:  [https://github.com/cobowallet/custody-clients/](https://github.com/cobowallet/custody-clients/)
+
+If you want to check Cobo pubkey to verify Cobo signature, please go to: Web management platform - Wallet - API
+Callback. (NOTICE they're different in Sandbox&Prod environment)

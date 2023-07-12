@@ -1,0 +1,71 @@
+---
+title: Get All Staking History
+api: GET /v1/custody/staking_history/ 
+description: "This endpoint returns a list of staking activities for a given coin, with optional filters for activity type, maximum ID, limit, and product ID. The response includes the activity ID, coin, amount, type, raw type, time, and product information."
+---
+#### Request
+<ParamField body="coin" type="String" >The coin to filter by.</ParamField> 
+<ParamField body="type" type="String" >The activity type to filter by.</ParamField> 
+<ParamField body="max_id" type="String" >The maximum activity ID to return.</ParamField> 
+<ParamField body="limit" type="String" >The maximum number of activities to return.</ParamField> 
+<ParamField body="product_id" type="Int" >The product ID to filter by.</ParamField> 
+
+#### Response
+<ResponseField name="id" type="String" >Action ID</ResponseField> 
+<ResponseField name="coin" type="String" >The coin of the activity.</ResponseField> 
+<ResponseField name="amount" type="String" >The absolute amount of the activity.</ResponseField>
+<ResponseField name="type" type="String" >Action type(stake unstake reward fee).</ResponseField>
+<ResponseField name="time" type="Int" >The time of the activity.</ResponseField> 
+<ResponseField name="product" type="Dict" >The product information of the activity.</ResponseField> 
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/staking_history/",
+    {
+        "coin": "ZEL",
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/staking_history/',
+        {
+            "coin": "ZEL",
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/staking_history/", map[string]string{
+    "coin": "ZEL",
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "activity_id": "20191112000112159193000000094747",
+      "coin": "ZEL",
+      "amount": "1424658",
+      "type": "unstake",
+      "time": 1573488072058,
+      "product": {
+      }
+    },
+    {},
+    {}
+  ]
+}
+```
+</ResponseExample>

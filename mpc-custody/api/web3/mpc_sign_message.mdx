@@ -1,0 +1,66 @@
+---
+title: Sign Message
+api: POST /v1/custody/mpc/sign_message/ 
+description: Sign Message 
+---
+#### Request 
+
+<ParamField body="chain_code" type="String" required>chain code</ParamField> 
+<ParamField body="request_id" type="String" required>Withdrawal request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField> 
+<ParamField body="from_address" type="String" required>source address</ParamField> 
+<ParamField body="sign_version" type="String" required>sign version, EIP-191: 1 , EIP-712: 2</ParamField> 
+<ParamField body="extra_parameters" type="Json" required>extra_parameters should include field message in EIP-191 signature, which is Base64 encode of the original message, and should contain filed structured_data in EIP-712 signature, which is Json of EIP-712 structured data</ParamField> 
+
+#### Response
+<ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
+
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/mpc/sign_message/",
+    {
+        "chain_code": "ETH",
+        "request_id": "1671699717647",
+        "from_address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
+        "sign_version": 1,
+        "extra_parameters": "{\"message\": \"YWFhYQ==\"}"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch("POST", "/v1/custody/mpc/sign_message/", {
+    "chain_code": "ETH",
+    "request_id": "1671699717647",
+    "from_address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
+    "sign_version": 1,
+    "extra_parameters": '{"message": "YWFhYQ=="}'
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/mpc/sign_message/", map[string]string{
+    "chain_code": "ETH",
+    "request_id": "1671699717647",
+    "from_address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
+    "sign_version": 1,
+    "extra_parameters": "{\"message\": \"YWFhYQ==\"}"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "cobo_id": "20221227195133000378036000001822"
+}
+```
+</ResponseExample>

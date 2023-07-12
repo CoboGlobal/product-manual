@@ -1,0 +1,126 @@
+---
+title: 
+api: GET /v1/custody/transaction_history/ 
+description: "This endpoint returns a JSON response containing the transaction history for a given coin and address. The response can be filtered by various parameters such as side, max_id, min_id, begin_time, end_time, and include_financial. The maximum number of transactions returned is 50."
+---
+#### Request
+<ParamField body="coin" type="String" >Coin code (Does not return all currencies)</ParamField> 
+<ParamField body="side" type="enum(deposit / withdraw)" >Deposit/withdrawal</ParamField> 
+<ParamField body="address" type="String" >Deposit/withdrawal address is optional. If not included, all address history will be returned.</ParamField> 
+<ParamField body="max_id" type="String" >The transaction history ID limit is optional. If not included, will by default return the most recent records.(cannot be used with min_id)</ParamField> 
+<ParamField body="min_id" type="String" >Optional. If included, the sequence will be changed to time ASC. If not included, will by default return the most recent records, time DESC.(cannot be used with max_id)</ParamField> 
+<ParamField body="limit" type="Integer" >Page size is optional. If not included, the default size will be 50, and the maximum size will also be 50.</ParamField> 
+<ParamField body="begin_time" type="Long" >Begin timestamp(milliseconds). If set, transactions whose confirmation times are shorter than this value will not be returned. (cannot be used with end_time)</ParamField> 
+<ParamField body="end_time" type="Long" >End time stamp (milliseconds). If it is passed in, the transactions whose transaction confirmation time is greater than or equal to this will not be returned.(cannot be used with begin_time)</ParamField> 
+<ParamField body="include_financial" type="String" >Request all transactions, if they are, return all transactions (including Staking, Trading)</ParamField> 
+
+#### Response
+<ResponseField name="id" type="String">Cobo Unique Transaction ID</ResponseField>
+<ResponseField name="coin" type="String">Coin code (Cobo has internal symbols for each coin to ensure they are all unique)</ResponseField>
+<ResponseField name="display_code" type="String">Coin ticker symbol  (not unique, changeable, for reference only )</ResponseField>
+<ResponseField name="description" type="String">Full name of coin  (not unique, changeable, for reference only )</ResponseField>
+<ResponseField name="address" type="String">Deposit address</ResponseField>
+<ResponseField name="memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
+<ResponseField name="source_address" type="String">Source address</ResponseField>
+<ResponseField name="source_address_detail" type="String">Separate by comma if more than one source address</ResponseField>
+<ResponseField name="side" type="enum(deposit / withdraw)">Transaction type</ResponseField>
+<ResponseField name="amount" type="String">Transaction value (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
+<ResponseField name="abs_amount" type="String">Transaction value (Note that this is an absolute value. If you trade 1.5 BTC, then the value is 1.5)</ResponseField>
+<ResponseField name="abs_cobo_fee" type="String">lute fee value. For examle, abs_cobo_fee 0.00005 means exactly 0.00005BTC</ResponseField>
+<ResponseField name="txid" type="String">Transaction ID, which can be found on the corresponding public chain</ResponseField>
+<ResponseField name="vout_n" type="String">For transactions on public blockchains that allow for multiple deposit addresses in a single transaction, this value indicates the transaction index on the corresponding public blockchain</ResponseField>
+<ResponseField name="request_id" type="String">Request ID</ResponseField>
+<ResponseField name="status" type="enum(success / failed / pending)">Transaction status</ResponseField>
+<ResponseField name="request_created_time" type="Long">Withdraw request creation time</ResponseField>
+<ResponseField name="created_time" type="Long">Transaction creation time</ResponseField>
+<ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
+<ResponseField name="confirming_threshold" type="Int">Confirmed numbers required for a successful transaction</ResponseField>
+<ResponseField name="confirmed_num" type="Int">Confirmed numbers</ResponseField>
+<ResponseField name="fee_coin" type="String">Fee coin name</ResponseField>
+<ResponseField name="fee_amount" type="Int">Fee amount (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
+<ResponseField name="fee_decimal" type="Int">Fee decimal</ResponseField>
+<ResponseField name="type" type="String">external, internal shows if it's a Loop tx or external(on-chain)</ResponseField>
+
+
+<RequestExample>
+```python Python
+request(
+    'GET',
+    '/v1/custody/transaction_history/',
+    {
+        "coin": "BTC_USDT",
+        "side": "deposit"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/transaction_history/',
+        {
+            "coin": "BTC_USDT",
+            "side": "deposit"
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/transaction_history/", map[string]string{
+    "coin": "BTC_USDT",
+    "side": "deposit",
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "20181114183534062065000000483656",
+      "coin": "BTC_USDT",
+      "display_code": "USDT",
+      "description": "Tether",
+      "decimal": 8,
+      "address": "17gErTGis85ZXTJ1CvYBB7PB3PiXozvwpP",
+      "source_address": "1F5i9mdCAsU2EfQtXYpwZgW2UFzS8A2EMn",
+      "side": "deposit",
+      "amount": "600000000",
+      "abs_amount": "6",
+      "txid": "ec33520be2079ffbc8eb7963e69db28a1d4d7a343296ee7270e2a82af3194a52",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "created_time": 1542191734958,
+      "last_time": 1542191734958,
+      "confirmed_num": 3
+    },
+    {
+      "id": "20181114112147059335000000359061",
+      "coin": "BTC_USDT",
+      "display_code": "USDT",
+      "description": "Tether",
+      "decimal": 8,
+      "address": "18bpqEgCJ17TwxDwT26YjQnSBFVgcLBimE",
+      "source_address": "1F5i9mdCAsU2EfQtXYpwZgW2UFzS8A2EMn",
+      "side": "deposit",
+      "amount": "100000000",
+      "abs_amount": "1",
+      "txid": "73ea2bcb20b36115bc50588a8bcdbfbaaeb3d75656c2b104ef4a1234e5dbe550",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "created_time": 1542165707058,
+      "last_time": 1542165707058,
+      "confirmed_num": 3
+    }
+  ]
+}
+```
+</ResponseExample>

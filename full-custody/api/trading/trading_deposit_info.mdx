@@ -1,0 +1,52 @@
+---
+title: Get Trading Deposit Information (Investor Only)
+api: GET /v1/custody/trading_deposit_info/ 
+description: "This endpoint returns information about a trading deposit. It requires a valid request ID and authentication with operation permission. The response contains details about the deposit, including the coin code, amount, estimated amount received, status, and fee."
+---
+#### Request
+<ParamField body="request_id" type="String" required>Request ID (Universally unique ID for each request)</ParamField> 
+
+#### Response
+<ResponseField name="request_id" type="String" >Request ID (Universally unique ID for each request)</ResponseField>
+<ResponseField name="coin" type="String" >Coin code</ResponseField>
+<ResponseField name="amount" type="Int" >Int amount contains decimals (e.g. if 1 BTC is to be deposited, the amount should be multiplied by 100,000,000 (Satoshis))</ResponseField>
+<ResponseField name="abs_amount" type="String" >Absolute amount. If you trade 1.5 BTC, then the abs_amount is 1.5</ResponseField>
+<ResponseField name="status" type="String" >Status: ok, pending, failed, human_check</ResponseField>
+<ResponseField name="fee" type="Int" >Fee amount (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
+<ResponseField name="abs_fee" type="String" >Absolute fee value. For examle, abs_cobo_fee 0.00005 means exactly 0.00005BTC</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/trading_deposit_info/",
+    {
+        "request_id": "UNIQUE_ID_FOR_DEPOSIT"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/trading_deposit_info/',
+        {
+            "request_id": "UNIQUE_ID_FOR_DEPOSIT"
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/trading_deposit_info/", map[string]string{
+    "request_id": "UNIQUE_ID_FOR_DEPOSIT"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+
+</ResponseExample>

@@ -1,0 +1,46 @@
+---
+title: Retry Double Check
+api: POST /v1/custody/mpc/retry_double_check/ 
+description: "This endpoint retries a double check for a withdrawal request with the given request_id. The request must be a POST request and the user must have all permissions. The endpoint retrieves the withdrawal request with the given request_id and checks if it exists and has a status of 'STATUS_WAITING_DOUBLE_CHECK'. If the request is valid, the endpoint locks the record and processes the withdrawal request with the 'process_waiting_double_check_withdraw_request' method from the CustodyService class."
+---
+#### Request
+<ParamField body="request_id" type="String" required>transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField> 
+
+#### Response 
+None
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/mpc/retry_double_check/",
+    {
+        "request_id": "722669426842706122"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/mpc/retry_double_check/', {
+    "request_id": "722669426842706122"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/mpc/retry_double_check/", map[string]string{
+    "request_id": "722669426842706122"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+
+```
+</ResponseExample>

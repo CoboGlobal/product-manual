@@ -1,0 +1,45 @@
+---
+title: "Callback Server Configuration"
+icon: ""
+description:
+---
+
+You'll need to complete the following configurations on the server where the callback server is deployed:
+
+* Generate the callback server’s RSA private key
+
+```
+openssl genrsa -out callback-server-pri.pem 2048
+```
+
+* Export the callback server’s RSA public key
+
+```
+openssl rsa -in callback-server-pri.pem -pubout >callback-server-pub.key
+```
+
+* Copy the exported RSA public key (i.e. the callback-server-pub.key file) to the server where the TSS Node is deployed
+* Copy the RSA public key of the TSS Node to the configuration files of the callback server
+* If you use the callback server codes provided by Cobo Custody, please refer to the configuration instructions in the samples
+* After you’ve successfully completed TSS Node initialization, execute the following command to query the RSA public key of the TSS Node:
+
+```
+sudo ./tss-node.sh info
+```
+
+Output example:
+
+```
+INFO[2022-12-14T07:09:44Z] Callback public key:
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA46Md8XAWi8SVdgnqjDNP
+qA6DnLKfZHuX7hGL5WnU0k9Uz870osN12hSU7Gwb6u+vgjvOSVVQ7/VlWz5Iu54b
+kusr6gpT76oCO99p3RuhhhHvXBrqXwY7NQABTfzUVy93bkbuRAxBnMwU9y0pyjYT
+DQklomks9bli6XaB2K9tTpNw14dhonogg/czED1NRP2zDBSoEbR1KwH0X+wNhTnW
+cF5c+M2NVsmMxVZEDKgYjEF9XhnABWHpLUS0Wwbk9auRYjCtODulfU1f9S9sUZPe
+oa4qxf+VKO8J9wQ3CClAlLDVlPNv5nn8deFeQlQWXIOiCP/lE6FyJFo2u4QLtVEq
+SQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+The Callback public key will be the RSA public key of the TSS Node.

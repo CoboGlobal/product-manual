@@ -1,0 +1,71 @@
+---
+title: Get Wallet NFTs List
+api: GET /v1/custody/web3_list_wallet_nfts/ 
+description: "This endpoint returns a JSON response with a list of NFTs (Non-Fungible Tokens) associated with a given wallet address. The response includes information such as the NFT code, chain code, display code, description, amount, standard, contract address, and token ID."
+---
+#### Request 
+
+<ParamField body="nft_code" type="String" required>NFT Collection Code</ParamField> 
+<ParamField body="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField> 
+
+#### Response
+<ResponseField name="nft_code" type="String" >Code of the NFT.</ResponseField>
+<ResponseField name="chain_code" type="String" >Code of the blockchain.</ResponseField>
+<ResponseField name="display_code" type="String" >NFT ticker symbol (not unique, changeable, for reference only ).</ResponseField>
+<ResponseField name="description" type="String" >Full name of NFT (not unique, changeable, for reference only )</ResponseField> 
+<ResponseField name="amount" type="String" >Amount of the NFT.</ResponseField>
+<ResponseField name="standard" type="String" >Standard of the NFT.</ResponseField>
+<ResponseField name="contract_address" type="String" >NFT Contract Address</ResponseField> 
+<ResponseField name="token_id" type="String" >ID of the NFT token.</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/web3_list_wallet_nfts/",
+    {
+        "nft_code": "NFT_ETH_SS",
+        "address": "0x47795c2f1459aa1d27d00a755a729cc2c9b952df"
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/web3_list_wallet_nfts/', {
+      "nft_code": "NFT_ETH_SS",
+      "address": "0x47795c2f1459aa1d27d00a755a729cc2c9b952df"
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/web3_list_wallet_nfts/", map[string]string{
+      "nft_code": "NFT_ETH_SS",
+      "address": "0x47795c2f1459aa1d27d00a755a729cc2c9b952df"
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "nfts": [
+    {
+      "nft_code": "NFT_ETH_SS",
+      "chain_code": "ETH",
+      "display_code": "Smuggled Supplies",
+      "description": "Smuggled Supplies",
+      "amount": "1",
+      "standard": "ERC1155",
+      "contract_address": "0x76be3b62873462d2142405439777e971754e8e77",
+      "token_id": "10342"
+    }
+  ]
+}
+```
+</ResponseExample>

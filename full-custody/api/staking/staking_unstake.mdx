@@ -1,0 +1,57 @@
+---
+title: Unstake
+api: POST /v1/custody/staking_unstake/ 
+description: "This endpoint allows users to stake or unstake a certain amount of a specified product in their custody wallet. The product_id and amount parameters are required in the POST request body. The endpoint first checks if the specified product exists, and then calls the pos_unstake method of the CustodyPosService to perform the staking or unstaking operation."
+---
+#### Request 
+
+<ParamField body="product_id" type="Int" required>The ID of the product to unstake.</ParamField>
+<ParamField body="amount" type="Int" required>The amount of the product to unstake.</ParamField>
+
+#### Response
+<ResponseField name="result" type="Bool" >Success is true,Failed is False.</ResponseField>
+
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/staking_unstake/",
+    {
+        "product_id": 2751
+        "amount": 4000000000
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/staking_unstake/',
+        {
+            "product_id": 2751
+            "amount": 4000000000
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/staking_unstake/", map[string]string{
+    "product_id": 2751
+    "amount": 4000000000
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": null
+}
+```
+</ResponseExample>

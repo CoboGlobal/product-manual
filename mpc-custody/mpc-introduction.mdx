@@ -1,0 +1,89 @@
+---
+title: "Introduction"
+icon: ""
+description: "Co-Managed Custody based on MPC-TSS"
+---
+
+Cobo MPC Co-Managed Custody leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
+
+With MPC-TSS technology, private key-shares are individually generated within
+separate secure environments, encrypted, and divided amongst multiple parties.
+These parties will jointly sign transactions without ever exposing their
+individual key-share to one another, or materializing the full private key at
+any point. This ensures that the private key never exists or resides in any one
+device, effectively removing the single point of failure and insulating user
+assets from security attacks and human errors.
+
+In Cobo's MPC Co-Managed Custody, a typical set up is 2-out-of-3 TSS, where
+Cobo stores and manages one of the three key shares. The client holds one of
+the three key shares. The last key share is either stored by the client in an
+offline environment or entrusted to a dedicated third party key backup/recovery
+service provide, i.e. insurance or security companies. Only Cobo and the client
+are required to cooperate to sign transactions, the backup key share are only
+needed in extreme conditions, e.g. one of Cobo or client's key share is
+damanaged or lost.
+
+# Benefits
+
+- No Single Point of Failure
+
+  - Key sharding achieves decentralization and ensures that no unauthorized party can unilaterally move your funds, preventing asset loss from external hacks or internal fraud and collusion.
+
+- Lower Transaction Fees
+
+  - MPC-TSS runs entirely off-chain, minimizing gas fees while maximizing security.
+
+- Asset Recovery Assurance
+
+  - If your key-share is lost or compromised, or in the event of any catastrophic event or system failure, remaining key-shares can collaborate to ensure that you can access and recover your assets.
+
+- Comprehensive Token Support
+
+  - MPC technology is chain- and asset-agnostic by design, enabling easy onboarding of new tokens.
+  - 1,200+ tokens across 27+ chains supported currently, encompassing the majority of active public blockchains, and we are constantly expanding this list.
+
+- Easy and Safe Access to Web3
+
+  - Securely connect to a multitude of DApps including DeFi, NFTs, DAOs, etc, and interact directly with Web3 using Cobo Connect browser extension.
+
+- Enhanced Operational Flexibility
+
+  - MPC technology allows for easy ongoing modifications to access controls and approval thresholds, enabling seamless operational adjustments as your organization scales.
+
+# Key Features
+
+## MPC-TSS Configuration
+
+With MPC-TSS, a flexible quorum approval scheme (“m out of n” key-shares) can be implemented. Cobo recommends a “2 out of 3” configuration, where three MPC key-shares will be generated independently by you, Cobo, and an entrusted third party disaster recovery service provider. To sign transactions, at least two key-shares (you and Cobo) are required to participate. The key-share held by the entrusted third party disaster recovery service provider is securely stored offline at all times and is solely intended for backup and recovery purposes, such as if your key-share is lost or compromised, or in the rare event that Cobo services were disrupted.
+
+![](https://lh4.googleusercontent.com/6BjUotXxdTq_AC372Me18qNr1ZeMXMwauQIDP5CdumNkHjnW9TpFzzEksSzmMCHIc2x3sGhksto7bwysslDYG7DkI857vqv3mSULuNvz9QAjitlqt4gcwjYlvu72CVBzYhDj0YwpGW95y9OUfWDq-9I)
+
+## Disaster Recovery
+
+Cobo MPC Co-Managed Custody provides comprehensive key recovery capabilities to ensure that you have control and access to your assets under all circumstances. If your key-share is lost or compromised, you can initiate ‘soft’ key recovery to generate a new set of three MPC key-shares. In the unlikely event that Cobo MPC Co-Managed Custody is no longer in service, you can initiate ‘hard’ key recovery with the entrusted third party to reconstruct the MPC root extended private key and take over full control of your assets. These key recovery mechanisms are designed to ensure that you have the peace of mind that your assets are safe and protected at all times.
+
+## Transaction Co-Management
+
+With Cobo MPC Co-Managed Custody, you can co-manage funds with your clients and/or business partners. Using Cobo's mobile SDK and Cobo’s authenticator app (external parties can seamlessly participate in transaction approval and signing. This extends the reach of custody technology beyond your organization to your entire business ecosystem.
+
+![](https://lh6.googleusercontent.com/A5FedLWXq8DKXAVP8CoKZOg21ssGNKQEOD6qdrkENXorrJvnJuIOPfrfVcTdXeRfM2ywf98J4BetWSw8dYL_yS2JPTzW5AJdUqfEvi97VXuBZ7I89OOvdJB0hIyQTPSAVxEZBVcTeoSz2n2I8y61zaE)
+
+## Advanced Risk Management
+
+Cobo MPC Co-Managed Custody utilizes Cobo’s superior risk management framework to effectively combat against every attack vector and cater to your compliance requirements. Through Cobo’s intuitive platform, you can effortlessly customize granular policy rules such as spending limits, whitelists, blacklists, and more, as well as implement real-time on-chain monitoring, screening rules and notification alerts.
+
+![](https://lh5.googleusercontent.com/GrSYU9c5VA23IMtwSGQTbu06_XboHZIFYz6cFt9Mg6XZ2Aq4rdlqrtueY5_tJcphzEWvdi1OZT4nu8GKnoFCn8v18FY11zH_647vu0N4YR5fHmm9cMrM_osSQ9rzl0gPIu11PV4wAgMazVhd3y9qqhA)
+
+## Role-based Access Control and Custom Workflows
+
+Cobo MPC Co-Managed Custody offers role-based access controls and a highly customizable workflow engine that adapts to the specific needs and scale of institutions. You can set up roles such as Admin, Spender, Approver and Operator to segregate user privileges. You can also configure and automate authorization workflows to streamline your operations. To ensure the integrity of each operation, Cobo Auth mobile app serves as a 2FA to support multi-role and multi-level authentication.
+
+![](https://lh5.googleusercontent.com/wq7JS2bHBVP13CyxVyu31o40J9eR1LZ5O885eX8VxILK4zRJkS5_Bw1AsSGoAqZSGjfJvHhS6KmOWBhStmm6y12WOuPtGSXPunSMgiZpncnXSN8LUNsrgJ0EVUFuz2JaJHKIVhxUUoApNVc71vCsmBs)
+
+## Wallet-as-a-Service Integration
+
+Cobo MPC Co-managed Custody offers simple wallet APIs and plug-and-play SDKs, supporting wallet-as-a-service (WaaS) integration. You can easily and quickly deploy an enterprise-grade wallet infrastructure into your applications and manage thousands of tokens across the majority of active public blockchains within a single wallet interface.
+
+Cobo WaaS allows you to generate and manage addresses on all supported chains, send and receive tokens, manage token sweep, interact with smart contracts, receive transaction notifications, view transaction history, and more. Cobo provides client libraries in five programming languages — Python, JavaScript, Golang, Java, and PHP.
+
+![](https://lh6.googleusercontent.com/dDP3Cr-TfC6JbINNFeNualN8vkKnUQfiU92ijOrX9lkgkW-yPMenoOD3daG-gv8Vqr-NzsHlqGFtcjEBfKiv-_lpFh4XgTg8lKLpDSwEp5QtzhmHscU3GB3DNm0SSQEQN4qpnOWuy0HdTbJUEcs6F1o)

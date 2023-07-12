@@ -1,0 +1,65 @@
+---
+title: Bind Addresses
+api: POST /v1/custody/auth/bind_addresses/ 
+description: "This endpoint allows a prime broker to bind a list of chain addresses to a user account. The endpoint requires a POST request with a JSON payload containing the user ID and a list of chain addresses. If the payload is valid, the endpoint returns a JSON response with the result of the binding operation."
+---
+#### Request 
+
+<ParamField body="user_id" type="String" required>unique user ID</ParamField> 
+<ParamField body="addresses" type="Json" required>A list of new addresses in the format</ParamField>
+
+#### Response 
+
+<ResponseField name="pubkey" type="String" >The bound Auth public key</ResponseField>
+<ResponseField name="addresses" type="String" >A list of bound addresses</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/auth/bind_addresses/",
+    {
+        "user_id": "cobo_168108513539918",
+        "address": [{'chain_coin': 'VET', 'address': '0x4baf0837d4c8bccd79dfa6fd60f4985ef9b696cc'}]
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/auth/bind_addresses/',
+        {
+          "user_id": "cobo_168108513539918",
+          "address": [{'chain_coin': 'VET', 'address': '0x4baf0837d4c8bccd79dfa6fd60f4985ef9b696cc'}]  
+        },
+        api_key, api_secret, host
+    ).then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/auth/bind_addresses/", map[string]string{
+    "user_id": "cobo_168108513539918",
+    "address": [{'chain_coin': 'VET', 'address': '0x4baf0837d4c8bccd79dfa6fd60f4985ef9b696cc'}]
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "pubkey": "480da241874516ca9a25b1776e2b3ce6d2d5ea184d9a83e28874e57d4a2786ea1db059aefb9023cf7775da68c5381cf401c128aa967927c3abc46c7545c90438",
+  "addresses": [
+    {
+      "chain_coin": "ETH",
+      "address": "0x123"
+    }
+    …
+  ]
+}
+
+```
+</ResponseExample>

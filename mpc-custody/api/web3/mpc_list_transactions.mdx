@@ -1,0 +1,229 @@
+---
+title: Get Transactions List
+api: POST /v1/custody/mpc/list_transactions/ 
+description: "This endpoint returns a list of transactions filtered by various parameters such as start and end time, transaction status, transaction type, coins, and addresses. The response is a JSON object containing a list of transactions."
+---
+
+#### Request
+<ParamField body="start_time" type="Int" >≥ start time (unit: milliseconds); details of transactions whose creation times are equal to or later than this timestamp will be returned</ParamField>
+<ParamField body="end_time" type="Int" >＜ end time (unit: milliseconds); details of transactions whose creation times are earlier than this timestamp will be returned</ParamField>
+<ParamField body="status" type="Int" >transaction status; please refer to TransactionsStatusEnum for more information</ParamField>
+<ParamField body="order_by" type="String" >sorting method; default: created_time; other option: modified_time</ParamField>
+<ParamField body="order" type="String" >sorting order; options: ASC (default), DESC</ParamField>
+<ParamField body="transaction_type" type="Int" >transaction type（TYPE_MPC_WEB3_WEB: 300, TYPE_MPC_WEB3_MMI_TX：301， TYPE_MPC_WEB3_API_TRANSACTION: 303, TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL: 307, TYPE_MPC_WEB3_RBF_API_SPEEDUP: 308, TYPE_MPC_WEB3_RBF_WEB_SPEEDUP: 309, TYPE_MPC_WEB3_RBF_API_DROP: 310, TYPE_MPC_WEB3_RBF_WEB_DROP: 311, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
+<ParamField body="coins" type="String" >coin names; separated by commas</ParamField>
+<ParamField body="from_address" type="String" >from address</ParamField>
+<ParamField body="to_address" type="String" >to address</ParamField>
+<ParamField body="limit" type="Int" >entries per page; max: 50; default: 50</ParamField>
+
+#### Response
+<ResponseField name="total" type="Int" >Total number of transactions that meets the requirements</ResponseField>
+<ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
+<ResponseField name="request_id" type="String" >Transaction request ID; it can be left empty if the transaction is a deposit</ResponseField>
+<ResponseField name="status" type="Int" >Transaction status (PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ResponseField>
+<ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
+<ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+<ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
+<ResponseField name="decimal" type="Int" >Decimal precision</ResponseField>
+<ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField>
+<ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField>
+<ResponseField name="confirming_threshold" type="Int" >Number of confirmations required (may fluctuate)</ResponseField>
+<ResponseField name="amount" type="String" >Transaction amount (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ResponseField>
+<ResponseField name="abs_amount" type="String" >Absolute value of the transaction amount (for instance, 1.5 will be displayed for a transaction amount of 1.5 BTC)</ResponseField>
+<ResponseField name="gas_price" type="Int" >Gas Price</ResponseField>
+<ResponseField name="gas_limit" type="Int" >Gas limit</ResponseField>
+<ResponseField name="fee_used" type="Int" >Gas fees (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ResponseField>
+<ResponseField name="fee" type="Float" >The fee of fee_amount value set when creating transaction for UTXO model</ResponseField>
+<ResponseField name="source_addresses" type="List" >List of ‘from addresses’</ResponseField>
+<ResponseField name="from_address" type="String" >From address</ResponseField>
+<ResponseField name="to_address" type="String" >To address</ResponseField>
+<ResponseField name="tx_hash" type="String" >Transaction hash</ResponseField>
+<ResponseField name="vout_n" type="Int" >UTXO transaction index</ResponseField>
+<ResponseField name="nonce" type="Int" >nonce value of a transaction on Ethereum</ResponseField>
+<ResponseField name="confirmed_number" type="Int" >Number of block confirmations</ResponseField>
+<ResponseField name="replace_cobo_id" type="String" >transaction ID of a transaction replaced via RBF</ResponseField>
+<ResponseField name="transaction_type" type="Int" >	Transaction type（TYPE_MPC_WEB3_WEB: 300, TYPE_MPC_WEB3_MMI_TX：301， TYPE_MPC_WEB3_API_TRANSACTION: 303, TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL: 307, TYPE_MPC_WEB3_RBF_API_SPEEDUP: 308, TYPE_MPC_WEB3_RBF_WEB_SPEEDUP: 309, TYPE_MPC_WEB3_RBF_API_DROP: 310, TYPE_MPC_WEB3_RBF_WEB_DROP: 311, TRANSACTION_FROM_DEPOSIT：1000）</ResponseField>
+<ResponseField name="operation" type="Int" >action type; it will be empty if the action is making a deposit (TRANSFER: 100, CONTRACT_CALL: 200)</ResponseField>
+<ResponseField name="block_hash" type="String" >Block hash</ResponseField>
+<ResponseField name="block_height" type="Int" >Block height</ResponseField>
+<ResponseField name="block_time" type="Int" >Block time</ResponseField>
+<ResponseField name="extra_parameters" type="Json" >Transaction remarks</ResponseField>
+<ResponseField name="created_time" type="Int" >Creation time of the transaction</ResponseField>
+<ResponseField name="updated_time" type="Int" >Last time the transaction is updated</ResponseField>
+<ResponseField name="failed_reason" type="String" >Reasons for rejection</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/mpc/list_transactions/",
+    {
+        "start_time": "",
+        "end_time": "",
+        "status": 900,
+        "order_by": "",
+        "order": "",
+        "transaction_type": 303,
+        "coins": "",
+        "from_address": "",
+        "to_address": "",
+        "limit": 2
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/mpc/list_transactions/', {
+    "start_time": "",
+    "end_time": "",
+    "status": 900,
+    "order_by": "",
+    "order":"",
+    "transaction_type": 303,
+    "coins": "",
+    "from_address": "",
+    "to_address": "",
+    "limit": 2
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/mpc/list_transactions/", map[string]string{
+    "start_time": "",
+    "end_time": "",
+    "status": 900,
+    "order_by": "",
+    "order":"",
+    "transaction_type": 303,
+    "coins": "",
+    "from_address": "",
+    "to_address": "",
+    "limit": 2
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "total": 28,
+  "transactions": [
+    {
+      "cobo_id": "20221219161751000350944000003727",
+      "request_id": "1671437866485",
+      "status": 900,
+      "coin_detail": {
+        "coin": "GETH",
+        "display_code": "GETH",
+        "description": "Ethereum Goerli Testnet",
+        "decimal": 18,
+        "can_deposit": True,
+        "can_withdraw": True,
+        "confirming_threshold": 32
+      },
+      "amount_detail": {
+        "amount": "10",
+        "abs_amount": "0.00000000000000001"
+      },
+      "fee_detail": {
+        "fee_coin_detail": {
+          "coin": "GETH",
+          "display_code": "GETH",
+          "description": "Ethereum Goerli Testnet",
+          "decimal": 18,
+          "can_deposit": True,
+          "can_withdraw": True,
+          "confirming_threshold": 32
+        },
+        "gas_price": 99609,
+        "gas_limit": 21000,
+        "fee_used": 2091789000
+      },
+      "source_addresses": None,
+      "from_address": "0x2a7670f4e84fe06a26ea1aa6bcdd23f03b3bbfc1",
+      "to_address": "0xEEACb7a5e53600c144C0b9839A834bb4b39E540c",
+      "tx_hash": "0x224cd23f20a8dfbbe5418871f6a32ddee4463b31e77b5090e7efff1bd8bb6b74",
+      "vout_n": 0,
+      "nonce": 0,
+      "confirmed_number": 32,
+      "replace_cobo_id": "",
+      "transaction_type": 303,
+      "operation": 100,
+      "block_detail": {
+        "block_hash": "0x5d74fb7415f10d5308599c0ca037e622da7aea75cb5e0af20d492f9d5e8150ab",
+        "block_height": 8162134,
+        "block_time": 1671438048000
+      },
+      "tx_detail": {
+        "tx_hash": "0x224cd23f20a8dfbbe5418871f6a32ddee4463b31e77b5090e7efff1bd8bb6b74"
+      },
+      "extra_parameters": "",
+      "created_time": 1671437871175,
+      "updated_time": 1671438549853,
+      "failed_reason": None
+    },
+    {
+      "cobo_id": "20221219192126000352912000006483",
+      "request_id": "test_002",
+      "status": 900,
+      "coin_detail": {
+        "coin": "GETH",
+        "display_code": "GETH",
+        "description": "Ethereum Goerli Testnet",
+        "decimal": 18,
+        "can_deposit": True,
+        "can_withdraw": True,
+        "confirming_threshold": 32
+      },
+      "amount_detail": {
+        "amount": "1",
+        "abs_amount": "0.000000000000000001"
+      },
+      "fee_detail": {
+        "fee_coin_detail": {
+          "coin": "GETH",
+          "display_code": "GETH",
+          "description": "Ethereum Goerli Testnet",
+          "decimal": 18,
+          "can_deposit": True,
+          "can_withdraw": True,
+          "confirming_threshold": 32
+        },
+        "gas_price": 4362985,
+        "gas_limit": 21000,
+        "fee_used": 91622685000
+      },
+      "source_addresses": None,
+      "from_address": "0x2a7670f4e84fe06a26ea1aa6bcdd23f03b3bbfc1",
+      "to_address": "0xEEACb7a5e53600c144C0b9839A834bb4b39E540c",
+      "tx_hash": "0x532770380f9418849782fb01f5b62189d44b999b153767fee26ade7592b89888",
+      "vout_n": 0,
+      "nonce": 1,
+      "confirmed_number": 33,
+      "replace_cobo_id": "",
+      "transaction_type": 303,
+      "operation": 0,
+      "block_detail": {
+        "block_hash": "0x779a310c97d50d8c49e417d5518132221a7052ce3dfe7df5c2857444235b98fc",
+        "block_height": 8162891,
+        "block_time": 1671449160000
+      },
+      "tx_detail": {
+        "tx_hash": "0x532770380f9418849782fb01f5b62189d44b999b153767fee26ade7592b89888"
+      },
+      "extra_parameters": "",
+      "created_time": 1671448916625,
+      "updated_time": 1671449659725,
+      "failed_reason": None
+    }
+  ]
+}
+
+```
+</ResponseExample>
