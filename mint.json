@@ -63,7 +63,8 @@
       "pages": [
         "full-custody/start-waas",
         "full-custody/authentication",
-        "full-custody/test"
+        "full-custody/test",
+        "full-custody/playground"
       ]
     },
     {
@@ -185,7 +186,8 @@
       "pages": [
         "mpc-custody/start-waas",
         "mpc-custody/authentication",
-        "mpc-custody/test"
+        "mpc-custody/test",
+        "mpc-custody/playground"
       ]
     },
     {
