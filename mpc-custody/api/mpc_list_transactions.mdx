@@ -1,19 +1,20 @@
 ---
 title: Get Transactions List
-api: POST /v1/custody/mpc/list_transactions/ 
+api: GET /v1/custody/mpc/list_transactions/
 description: "This endpoint returns a list of transactions filtered by various parameters such as start and end time, transaction status, transaction type, coins, and addresses. The response is a JSON object containing a list of transactions."
 ---
+
 #### Request
-<ParamField body="start_time" type="Int" >≥ start time (unit: milliseconds); details of transactions whose creation times are equal to or later than this timestamp will be returned</ParamField>
-<ParamField body="end_time" type="Int" >＜ end time (unit: milliseconds); details of transactions whose creation times are earlier than this timestamp will be returned</ParamField>
-<ParamField body="status" type="Int" >transaction status; please refer to TransactionsStatusEnum for more information</ParamField>
-<ParamField body="order_by" type="String" >sorting method; default: created_time; other option: modified_time</ParamField>
-<ParamField body="order" type="String" >sorting order; options: ASC (default), DESC</ParamField>
-<ParamField body="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
-<ParamField body="coins" type="String" >coin names; separated by commas</ParamField>
-<ParamField body="from_address" type="String" >from address</ParamField>
-<ParamField body="to_address" type="String" >to address</ParamField>
-<ParamField body="limit" type="Int" >entries per page; max: 50; default: 50</ParamField>
+<ParamField query="start_time" type="Int" >≥ start time (unit: milliseconds); details of transactions whose creation times are equal to or later than this timestamp will be returned</ParamField>
+<ParamField query="end_time" type="Int" >＜ end time (unit: milliseconds); details of transactions whose creation times are earlier than this timestamp will be returned</ParamField>
+<ParamField query="status" type="Int" >transaction status; please refer to TransactionsStatusEnum for more information</ParamField>
+<ParamField query="order_by" type="String" >sorting method; default: created_time; other option: modified_time</ParamField>
+<ParamField query="order" type="String" >sorting order; options: ASC (default), DESC</ParamField>
+<ParamField query="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
+<ParamField query="coins" type="String" >coin names; separated by commas</ParamField>
+<ParamField query="from_address" type="String" >from address</ParamField>
+<ParamField query="to_address" type="String" >to address</ParamField>
+<ParamField query="limit" type="Int" >entries per page; max: 50; default: 50</ParamField>
 
 #### Response
 <ResponseField name="total" type="Int" >Total number of transactions that meets the requirements</ResponseField> 
@@ -54,7 +55,7 @@ description: "This endpoint returns a list of transactions filtered by various p
 <RequestExample>
 ```python Python
 request(
-    "POST",
+    "GET",
     "/v1/custody/mpc/list_transactions/",
     {
         "start_time": "",
@@ -72,7 +73,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('POST', '/v1/custody/mpc/list_transactions/', {
+coboFetch('GET', '/v1/custody/mpc/list_transactions/', {
     "start_time": "",
     "end_time": "",
     "status": 900,
@@ -93,7 +94,7 @@ coboFetch('POST', '/v1/custody/mpc/list_transactions/', {
     });
 ```
 ```go Go
-Request("POST", "/v1/custody/mpc/list_transactions/", map[string]string{
+Request("GET", "/v1/custody/mpc/list_transactions/", map[string]string{
     "start_time": "",
     "end_time": "",
     "status": 900,
