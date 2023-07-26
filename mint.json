@@ -228,7 +228,10 @@
         },
         {
           "group": "Tss Node",
-          "pages": ["mpc-custody/api/mpc_list_tss_node_requests"]
+          "pages": [
+            "mpc-custody/api/mpc_list_tss_node_requests",
+            "mpc-custody/api/mpc_list_tss_node"
+          ]
         },
         {
           "group": "Bind Auth",
@@ -280,7 +283,10 @@
             },
             {
               "group": "Tss Node",
-              "pages": ["mpc-custody/api/web3/mpc_list_tss_node_requests"]
+              "pages": [
+                "mpc-custody/api/web3/mpc_list_tss_node_requests",
+                "mpc-custody/api/web3/mpc_list_tss_node"
+              ]
             },
             {
               "group": "Bind Auth",
