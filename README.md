@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://developers.cobo.com">
+  <a href="https://www.cobo.com/developers">
     <img src="images/instroduction.png">
   </a>
 </p>
@@ -9,11 +9,11 @@
 
   <br />
   <br />
-  <a href="https://developers.cobo.com/full-custody/introduction">Full Custody</a>
+  <a href="https://www.cobo.com/developers/full-custody/introduction">Full Custody</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://developers.cobo.com/mpc-custody/mpc-introduction">MPC Custody</a>
+  <a href="https://www.cobo.com/developers/mpc-custody/mpc-introduction">MPC Custody</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://developers.cobo.com/smart-contract-custody/cobosafe">Smart Contract Custody</a>
+  <a href="https://www.cobo.com/developers/smart-contract-custody/cobosafe">Smart Contract Custody</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href="https://www.cobo.com/web3/channel/news">News</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
@@ -45,9 +45,9 @@
 ## Get started
 
 The Developer Hub mainly includes the following resources.:
-- **[Full Custody](https://developers.cobo.com/full-custody/introduction)**. Cobo Full Custody is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
-- **[MPC Custody](https://developers.cobo.com/mpc-custody/mpc-introduction)**. Cobo MPC Co-Managed Custody leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
-- **[Smart Contract Custody](https://developers.cobo.com/smart-contract-custody/cobosafe)**. Cobo’s Smart Contract Custody solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
+- **[Full Custody](https://www.cobo.com/developers/full-custody/introduction)**. Cobo Full Custody is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
+- **[MPC Custody](https://www.cobo.com/developers/mpc-custody/mpc-introduction)**. Cobo MPC Co-Managed Custody leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
+- **[Smart Contract Custody](https://www.cobo.com/developers/smart-contract-custody/cobosafe)**. Cobo’s Smart Contract Custody solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
 <br />
 
 
