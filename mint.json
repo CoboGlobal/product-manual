@@ -269,7 +269,9 @@
                 "mpc-custody/api/web3/mpc_list_transactions",
                 "mpc-custody/api/web3/mpc_transactions_by_request_ids",
                 "mpc-custody/api/web3/mpc_transactions_by_cobo_ids",
-                "mpc-custody/api/web3/mpc_transactions_by_tx_hash"
+                "mpc-custody/api/web3/mpc_transactions_by_tx_hash",
+                "mpc-custody/api/web3/mpc_sign_messages_by_request_ids",
+                "mpc-custody/api/web3/mpc_sign_messages_by_cobo_ids"
               ]
             },
             {

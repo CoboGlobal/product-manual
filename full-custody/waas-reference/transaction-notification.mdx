@@ -5,7 +5,7 @@ description: ""
 
 Upon receiving a successful deposit/withdrawal transaction, Cobo will notify a client-designated URL via HTTP(S), and request method is POST. The
 message includes the transaction data in the HTTP message body in JSON format. After the client receives and finishes
-processing the message, they must send an HTTP response with status code =200 and http body = 'ok' to Cobo. Otherwise,
+processing the message, they must send an HTTP response with status code =200 and http body = ok to Cobo. Otherwise,
 we will continue to push the same message to the designated URL (up to 14 times, if you want to re-send the push later,
 you could click on 'Resend' Button on Web: Wallet - API Callback - API Push History)
 
@@ -17,7 +17,7 @@ confirming_threshold' will be included. Each notification (for each number chang
 
 
 If you want to check Cobo pubkey to verify Cobo signature, please go to: Web management platform - Wallet - API
-Callback. (NOTICE they're different in Sandbox & Prod environment)
+Callback. (NOTICE they're different in Sandbox & Develop & Prod environment)
 
 ### Example
 
