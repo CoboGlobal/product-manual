@@ -1,0 +1,62 @@
+---
+title: Get Signed Messages By Request ID
+api: GET /v1/custody/mpc/sign_messages_by_request_ids/
+description: "This endpoint returns a JSON response containing signed messages information for a list of request IDs. The response includes the request ID, Cobo ID, signature and other relevant information"
+---
+#### Request
+<ParamField query="request_ids" type="String" required>Sign message request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField>
+
+#### Response
+<ResponseField name="request_id" type="String" >Unique request ID</ResponseField>
+<ResponseField name="cobo_id" type="String" >Unique ID in Cobo</ResponseField>
+<ResponseField name="signature" type="String" >Signature</ResponseField>
+<ResponseField name="chain_code" type="String" >Chain code</ResponseField>
+<ResponseField name="sign_version" type="Int" >Sign version, EIP-191: 1, EIP-712: 2</ResponseField>
+<ResponseField name="from_address" type="String" >From address</ResponseField>
+<ResponseField name="extra_parameters" type="Json" >raw info of the message to be sign</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "GET",
+    "/v1/custody/mpc/sign_messages_by_request_ids/",
+    {
+        "request_ids": "1690349242683,1690349242684",
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/mpc/sign_messages_by_request_ids/', {
+    "request_ids": "1690349242683,1690349242684",
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("GET", "/v1/custody/mpc/sign_messages_by_request_ids/", map[string]string{
+    "request_ids": "1690349242683,1690349242684",
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "sign_messages": [{
+    "request_id": "1690349242683",
+    "cobo_id": "20230726132723000341052000008222",
+    "signature": "0x59328f02d00660d6c44d81e5bae985d2651614b5ee1e16764fd685530791748561b1f941a147f4e4ade4320b1c1d95179f9e058e622e632c020efbc476b2f9981c",
+    "chain_code": "ETH",
+    "from_address": "0xeea5e4a7c69e4d747a693b6fbd4211ae4843da39",
+    "sign_version": 1,
+    "extra_parameters": "{\"message\": \"YWFhYQ==\"}"
+  }]
+}
+```
+</ResponseExample>
