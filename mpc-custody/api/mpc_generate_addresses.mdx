@@ -9,10 +9,14 @@ description: "This endpoint generates new addresses for a given chain code and r
 <ParamField body="count" type="Int" required>The number of addresses to generate.</ParamField>
 
 #### Response
-<ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
-<ResponseField name="address" type="String" >The generated address.</ResponseField>
-<ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
-<ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+<ResponseField name="addresses" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
+        <ResponseField name="address" type="String" >The generated address.</ResponseField>
+        <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
+        <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

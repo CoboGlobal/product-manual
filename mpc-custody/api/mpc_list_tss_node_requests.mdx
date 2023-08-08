@@ -8,13 +8,25 @@ description: "This endpoint returns a JSON response containing a list of TSS (Th
 <ParamField query="status" type="int" >Request status</ParamField>
 
 #### Response
-<ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField> 
-<ResponseField name="request_type" type="Int" >Request type(KEYGEN type: 1, KEYRESHARE type: 2)</ResponseField> 
-<ResponseField name="status" type="Int" >Request status（NEW: 100, WAITING_APPROVAL: 200, PENDING: 300, SUCCESS: 400, FAILED: 500）</ResponseField> 
-<ResponseField name="failed_reason" type="String" >Reason for failure</ResponseField> 
-<ResponseField name="threshold" type="String" >Signature Threshold</ResponseField>
-<ResponseField name="node_ids" type="String" >Request data associated with key generation (i.e. KeyGen) and soft key recovery (i.e. KeyShare)</ResponseField>
-
+<ResponseField name="requests" type="object[]" >
+  <Expandable title="object">
+        <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>
+        <ResponseField name="request_type" type="Int" >Request type(KEYGEN type: 1, KEYRESHARE type: 2)</ResponseField>
+        <ResponseField name="status" type="Int" >Request status（NEW: 100, WAITING_APPROVAL: 200, PENDING: 300, SUCCESS: 400, FAILED: 500）</ResponseField>
+        <ResponseField name="failed_reason" type="String" >Reason for failure</ResponseField>
+        <ResponseField name="meta" type="object[]" >
+          <Expandable title="object">
+              <ResponseField name="key_gen" type="object[]" >
+              <Expandable title="object">
+                    <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>
+                    <ResponseField name="threshold" type="Int" >Signature Threshold</ResponseField>
+                    <ResponseField name="node_ids" type="String[ ]" >Request data associated with key generation (i.e. KeyGen) and soft key recovery (i.e. KeyShare)</ResponseField>
+               </Expandable>
+             </ResponseField>
+          </Expandable>
+        </ResponseField>
+  </Expandable>
+ </ResponseField>
 
 <RequestExample>
 ```python Python

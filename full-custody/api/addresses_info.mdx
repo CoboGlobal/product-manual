@@ -10,8 +10,13 @@ description: This endpoint returns information about a list of addresses for a s
 <ParamField query="address" type="String" required>A comma-separated list of addresses.</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String">The coin type.</ResponseField>
-<ResponseField name="addresses" type="String">A comma-separated list of addresses that belong to the custody wallet of the authenticated user.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+   <Expandable title="object">
+        <ResponseField name="coin" type="String">The coin type.</ResponseField>
+        <ResponseField name="addresses" type="String">A comma-separated list of addresses that belong to the custody wallet of the authenticated user.</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
  ```python Python

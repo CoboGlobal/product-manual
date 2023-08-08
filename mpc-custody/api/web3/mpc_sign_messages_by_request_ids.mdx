@@ -7,13 +7,17 @@ description: "This endpoint returns a JSON response containing signed messages i
 <ParamField query="request_ids" type="String" required>Sign message request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField>
 
 #### Response
-<ResponseField name="request_id" type="String" >Unique request ID</ResponseField>
-<ResponseField name="cobo_id" type="String" >Unique ID in Cobo</ResponseField>
-<ResponseField name="signature" type="String" >Signature</ResponseField>
-<ResponseField name="chain_code" type="String" >Chain code</ResponseField>
-<ResponseField name="sign_version" type="Int" >Sign version, EIP-191: 1, EIP-712: 2</ResponseField>
-<ResponseField name="from_address" type="String" >From address</ResponseField>
-<ResponseField name="extra_parameters" type="Json" >raw info of the message to be sign</ResponseField>
+<ResponseField name="sign_messages" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="request_id" type="String" >Unique request ID</ResponseField>
+        <ResponseField name="cobo_id" type="String" >Unique ID in Cobo</ResponseField>
+        <ResponseField name="signature" type="String" >Signature</ResponseField>
+        <ResponseField name="chain_code" type="String" >Chain code</ResponseField>
+        <ResponseField name="sign_version" type="Int" >Sign version, EIP-191: 1, EIP-712: 2</ResponseField>
+        <ResponseField name="from_address" type="String" >From address</ResponseField>
+        <ResponseField name="extra_parameters" type="Json" >raw info of the message to be sign</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

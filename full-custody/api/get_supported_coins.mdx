@@ -8,14 +8,19 @@ description: This endpoint returns a JSON response with a list of supported coin
 None
 
 #### Response
-<ResponseField name="coin" type="String">The coin symbol.</ResponseField>
-<ResponseField name="display_code" type="String">Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>
-<ResponseField name="description" type="Int">Full name of coin (not unique, changeable, for reference only )</ResponseField>
-<ResponseField name="decimal" type="Int">Coin balance decimal places</ResponseField>
-<ResponseField name="can_deposit" type="Bool">Deposit accessibility</ResponseField>
-<ResponseField name="can_withdraw" type="Bool">Withdrawal accessibility</ResponseField>
-<ResponseField name="require_memo" type="Bool">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
-<ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="coin" type="String">The coin symbol.</ResponseField>
+        <ResponseField name="display_code" type="String">Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>
+        <ResponseField name="description" type="Int">Full name of coin (not unique, changeable, for reference only )</ResponseField>
+        <ResponseField name="decimal" type="Int">Coin balance decimal places</ResponseField>
+        <ResponseField name="can_deposit" type="Bool">Deposit accessibility</ResponseField>
+        <ResponseField name="can_withdraw" type="Bool">Withdrawal accessibility</ResponseField>
+        <ResponseField name="require_memo" type="Bool">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
+        <ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
+    </Expandable>
+</ResponseField>
 
 
 

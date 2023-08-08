@@ -10,9 +10,9 @@ description: "This endpoint returns a JSON response containing a list of wallet 
 <ParamField query="page_length" type="Int" required>Number of wallet addresses to retrieve per page.</ParamField>
 <ParamField query="sort_flag" type="Int" >Address sorting method: If it is 1, it will be returned in a positive order of address creation time, or else it will be returned in a reverse order of address creation time.</ParamField>
 
-#### Response 
+#### Response
 <ResponseField name="total_count" type="Int" >Total number of addresses.</ResponseField>
-<ResponseField name="addresses" type="String" >List of wallet addresses for the given chain code.</ResponseField>
+<ResponseField name="addresses" type="String[ ]" >List of wallet addresses for the given chain code.</ResponseField>
 
 <RequestExample>
 ```python Python

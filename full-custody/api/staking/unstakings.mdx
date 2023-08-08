@@ -7,12 +7,16 @@ description: "This endpoint returns a JSON response with a list of unstaking and
 <ParamField query="coin" type="String" >The coin to filter the positions by.</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String" >The coin of the position.</ResponseField> 
-<ResponseField name="coin_decimal" type="Int" >Coin decimal</ResponseField> 
-<ResponseField name="amount" type="Int" >The amount of the position.</ResponseField> 
-<ResponseField name="unstake_time" type="Int" >Unstake time(mileseconds timestamp)</ResponseField>
-<ResponseField name="liquidate_time" type="Int" >Liquidate time(mileseconds timestamp)</ResponseField>
-
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object[ ]">
+  <Expandable title="object">
+    <ResponseField name="coin" type="String" >The coin of the position.</ResponseField>
+    <ResponseField name="coin_decimal" type="Int" >Coin decimal</ResponseField>
+    <ResponseField name="amount" type="Int" >The amount of the position.</ResponseField>
+    <ResponseField name="unstake_time" type="Int" >Unstake time(mileseconds timestamp)</ResponseField>
+    <ResponseField name="liquidate_time" type="Int" >Liquidate time(mileseconds timestamp)</ResponseField>
+  </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

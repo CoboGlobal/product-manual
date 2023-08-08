@@ -10,24 +10,28 @@ description: "This endpoint returns a JSON response with the currency rate and u
 <ParamField query="coin" type="String" required>Coin code</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String">Coin code</ResponseField>
-<ResponseField name="display_code" type="String">Coin ticker symbol  (not unique, changeable, for reference only )</ResponseField>
-<ResponseField name="description" type="String">Coin code</ResponseField>
-<ResponseField name="decimal" type="Int">Coin balance decimal places</ResponseField>
-<ResponseField name="can_deposit" type="bool">Deposit accessibility</ResponseField>
-<ResponseField name="can_withdraw" type="bool">Withdrawal accessibility</ResponseField>
-<ResponseField name="balance" type="String">Current balance</ResponseField>
-<ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
-<ResponseField name="fee_coin" type="String">Coin used for fee</ResponseField>
-<ResponseField name="abs_estimate_fee" type="String">Estimated fee</ResponseField>
-<ResponseField name="confirming_threshold" type="Int">Confirmation threshold required for the coin</ResponseField>
-<ResponseField name="dust_threshold" type="Int">Coin minimum withdrawal threshold</ResponseField>
-<ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
-<ResponseField name="token_address" type="String">Smart contract address for token (null for main-chain token)</ResponseField>
-<ResponseField name="require_memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object">
+    <Expandable title="object">
+        <ResponseField name="coin" type="String">Coin code</ResponseField>
+        <ResponseField name="display_code" type="String">Coin ticker symbol  (not unique, changeable, for reference only )</ResponseField>
+        <ResponseField name="description" type="String">Coin code</ResponseField>
+        <ResponseField name="decimal" type="Int">Coin balance decimal places</ResponseField>
+        <ResponseField name="can_deposit" type="bool">Deposit accessibility</ResponseField>
+        <ResponseField name="can_withdraw" type="bool">Withdrawal accessibility</ResponseField>
+        <ResponseField name="balance" type="String">Current balance</ResponseField>
+        <ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
+        <ResponseField name="fee_coin" type="String">Coin used for fee</ResponseField>
+        <ResponseField name="abs_estimate_fee" type="String">Estimated fee</ResponseField>
+        <ResponseField name="confirming_threshold" type="Int">Confirmation threshold required for the coin</ResponseField>
+        <ResponseField name="dust_threshold" type="Int">Coin minimum withdrawal threshold</ResponseField>
+        <ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
+        <ResponseField name="token_address" type="String">Smart contract address for token (null for main-chain token)</ResponseField>
+        <ResponseField name="require_memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
-
 ```python Python
 request(
   "GET",

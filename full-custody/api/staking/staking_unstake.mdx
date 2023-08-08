@@ -9,8 +9,8 @@ description: "This endpoint allows users to stake or unstake a certain amount of
 <ParamField body="amount" type="Int" required>The amount of the product to unstake.</ParamField>
 
 #### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
 <ResponseField name="result" type="Bool" >Success is true,Failed is False.</ResponseField>
-
 
 <RequestExample>
 ```python Python
@@ -51,7 +51,7 @@ Request("POST", "/v1/custody/staking_unstake/", map[string]string{
 ```json
 {
   "success": true,
-  "result": null
+  "result": true
 }
 ```
 </ResponseExample>

@@ -9,7 +9,9 @@ description: "This endpoint allows users to stake a certain amount of cryptocurr
 <ParamField body="amount" type="Int" required>The amount of cryptocurrency to stake.</ParamField>
 
 #### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
 <ResponseField name="result" type="Bool" >Success is true,Failed is False.</ResponseField>
+
 
 
 <RequestExample>
@@ -51,7 +53,7 @@ Request("POST", "/v1/custody/staking_stake/", map[string]string{
 ```json
 {
   "success": true,
-  "result": null
+  "result": true
 }
 ```
 </ResponseExample>

@@ -12,7 +12,8 @@ description: "This endpoint allows users to withdraw cryptocurrency from their c
 <ParamField body="amount" type="Int" required>Please note that the withdrawal amount should be expressed in terms of the respective coin's smallest unit. For example, if 1 BTC is to be withdrawn, the amount should be multiplied by 100,000,000 (Satoshis)</ParamField>
 
 #### Response
-None
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="Bool" >Success is true,Failed is False.</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -58,6 +59,9 @@ Request("POST", "/v1/custody/web3_withdraw/", map[string]string{
 
 <ResponseExample>
 ```json
-
+{
+  "success": true,
+  "result": true
+}
 ```
 </ResponseExample>

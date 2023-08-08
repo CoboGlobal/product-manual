@@ -15,7 +15,9 @@ description: "This endpoint allows users to create a new withdrawal request for 
 <ParamField body="force_internal" type="String" >Non-empty means: force the transaction off-chain even if it's not a Loop Tx, if it cannot be handled as a Loop tx, it will be rejected</ParamField>
 
 #### Response
-None
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="Bool" >Success is true,Failed is False.</ResponseField>
+
 
 <RequestExample>
 ```python Python
@@ -65,7 +67,7 @@ Request("POST", "/v1/custody/new_withdraw_request/", map[string]string{
 ```json
 {
   "success": true,
-  "result": ""
+  "result": true
 }
 ```
 </ResponseExample>

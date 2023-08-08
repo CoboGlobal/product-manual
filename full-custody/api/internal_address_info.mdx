@@ -15,12 +15,16 @@ More info about Loop: [https://loop.top/](https://loop.top/)</Note>
 <ParamField query="memo" type="String">The memo associated with the address (if any).</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String">The coin type of the address.</ResponseField>
-<ResponseField name="address" type="String">The address being checked.</ResponseField>
-<ResponseField name="is_internal_address" type="Bool">Whether the address is an internal address or not.</ResponseField>
-<ResponseField name="internal_org" type="String">The name of the organization associated with the address (if it is an internal address).</ResponseField>
-<ResponseField name="internal_wallet" type="String">The name of the wallet associated with the address (if it is an internal address).</ResponseField>
-
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object">
+    <Expandable title="object">
+        <ResponseField name="coin" type="String">The coin type of the address.</ResponseField>
+        <ResponseField name="address" type="String">The address being checked.</ResponseField>
+        <ResponseField name="is_internal_address" type="Bool">Whether the address is an internal address or not.</ResponseField>
+        <ResponseField name="internal_org" type="String">The name of the organization associated with the address (if it is an internal address).</ResponseField>
+        <ResponseField name="internal_wallet" type="String">The name of the wallet associated with the address (if it is an internal address).</ResponseField>
+  </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

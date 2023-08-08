@@ -8,7 +8,7 @@ description: "This endpoint creates a binding between a user in the prime broker
 <ParamField body="user_id" type="String" required>unique user ID, no more than 24 characters</ParamField>
 
 #### Response
-None
+<ResponseField name="binder_id" type="String" >Binding ID, the binding ID needs to be prefixed with binder_id= to generate a QR code for the user to scan the code to bind, or the user can directly copy the binding code in the form of binder_id=xxxx to Cobo Auth for the binding operation</ResponseField>
 
 <RequestExample>
 ```python Python

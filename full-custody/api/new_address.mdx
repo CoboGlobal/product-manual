@@ -14,8 +14,13 @@ Cobo supports withdrawal to any BTC address type)</Note>
 
 
 #### Response
-<ResponseField name="coin" type="String">Cryptocurrency for which the address was generated.</ResponseField>
-<ResponseField name="address" type="String">Newly generated cryptocurrency address.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+   <Expandable title="object">
+        <ResponseField name="coin" type="String">Cryptocurrency for which the address was generated.</ResponseField>
+        <ResponseField name="address" type="String">Newly generated cryptocurrency address.</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

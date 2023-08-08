@@ -8,10 +8,15 @@ description: "This endpoint returns a JSON response with a list of supported con
 <ParamField query="contract_address" type="String" required>Address of the contract.</ParamField>
 
 #### Response
-<ResponseField name="type" type="String" >Contract Method Type</ResponseField> 
-<ResponseField name="method_name" type="String" >Contract Method Name</ResponseField> 
-<ResponseField name="method_id" type="String" >Contract Method ID</ResponseField>
-<ResponseField name="inputs" type="String" >Contract Method Input Parameters</ResponseField>
+<ResponseField name="contract_methods" type="object[]">
+  <Expandable title="object">
+    <ResponseField name="type" type="String" >Contract Method Type</ResponseField>
+    <ResponseField name="method_name" type="String" >Contract Method Name</ResponseField>
+    <ResponseField name="method_id" type="String" >Contract Method ID</ResponseField>
+    <ResponseField name="inputs" type="String" >Contract Method Input Parameters</ResponseField>
+  </Expandable>
+</ResponseField>
+
 
 <RequestExample>
 ```python Python
