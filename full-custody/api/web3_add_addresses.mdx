@@ -9,7 +9,7 @@ description: "This endpoint allows users to add new addresses to their custody w
 <ParamField body="count" type="Int" required>The number of addresses to be added.</ParamField>
 
 #### Response
-<ResponseField name="addresses" type="String" >The newly generated addresses.</ResponseField>
+<ResponseField name="addresses" type="String[]" >The newly generated addresses.</ResponseField>
 <RequestExample>
 ```python Python
 request(

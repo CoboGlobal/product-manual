@@ -10,14 +10,28 @@ description: "This endpoint returns a JSON response with a list of token assets 
 <ParamField query="page_length" type="Int" required>Number of items to retrieve per page(max:50)</ParamField>
 
 #### Response
-<ResponseField name="total" type="Int" >Total number of entries</ResponseField> 
-<ResponseField name="address" type="String" >Address of the token asset.</ResponseField>
-<ResponseField name="coin" type="String" >Coin type of the token asset.</ResponseField>
-<ResponseField name="chain_code" type="String" >Chain code of the token asset.</ResponseField>
-<ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change.</ResponseField>
-<ResponseField name="description" type="String" >Description of the token asset.</ResponseField>
-<ResponseField name="balance" type="String" >Balance of the token asset.</ResponseField>
-<ResponseField name="decimal" type="Int" >Decimal places of the token asset.</ResponseField>
+<ResponseField name="coin_data" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
+        <ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
+        <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+        <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+        <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
+        <ResponseField name="balance" type="String" >The balance of the coin.</ResponseField>
+        <ResponseField name="decimal" type="Int" >The decimal of the coin.</ResponseField>
+    </Expandable>
+</ResponseField>
+
+<ResponseField name="nft_data" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
+        <ResponseField name="nft_code" type="String" >The NFT code.</ResponseField>
+        <ResponseField name="token_id" type="String" >The token ID of the NFT.</ResponseField>
+        <ResponseField name="contract_address" type="String" >The contract address of the NFT.</ResponseField>
+        <ResponseField name="balance" type="String" >The balance of the NFT.</ResponseField>
+        <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

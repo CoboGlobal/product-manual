@@ -7,13 +7,18 @@ description: "This endpoint returns a JSON response containing a list of support
 <ParamField query="chain_code" type="String" required>Chain code for which to retrieve supported coins.</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
-<ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
-<ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField> 
-<ResponseField name="decimal" type="Int" >Decimal precision</ResponseField> 
-<ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField> 
-<ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField> 
-<ResponseField name="confirming_threshold" type="Int" >Number of confirmations required</ResponseField>
+<ResponseField name="coins" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
+        <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+        <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
+        <ResponseField name="decimal" type="Int" >Decimal precision</ResponseField>
+        <ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField>
+        <ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField>
+        <ResponseField name="confirming_threshold" type="Int" >Number of confirmations required</ResponseField>
+    </Expandable>
+</ResponseField>
+
 
 <RequestExample>
 ```python Python

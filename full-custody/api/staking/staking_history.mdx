@@ -11,12 +11,45 @@ description: "This endpoint returns a list of staking activities for a given coi
 <ParamField query="product_id" type="Int" >The product ID to filter by.</ParamField>
 
 #### Response
-<ResponseField name="id" type="String" >Action ID</ResponseField> 
-<ResponseField name="coin" type="String" >The coin of the activity.</ResponseField> 
-<ResponseField name="amount" type="String" >The absolute amount of the activity.</ResponseField>
-<ResponseField name="type" type="String" >Action type(stake unstake reward fee).</ResponseField>
-<ResponseField name="time" type="Int" >The time of the activity.</ResponseField> 
-<ResponseField name="product" type="Dict" >The product information of the activity.</ResponseField> 
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object[ ]">
+  <Expandable title="object">
+    <ResponseField name="activity_id" type="String" >Activity ID</ResponseField>
+    <ResponseField name="coin" type="String" >The coin of the activity.</ResponseField>
+    <ResponseField name="amount" type="String" >The absolute amount of the activity.</ResponseField>
+    <ResponseField name="type" type="String" >Action type(stake unstake reward fee).</ResponseField>
+    <ResponseField name="raw_type" type="Int" >1:fixed rate 2:estimated rate</ResponseField>
+    <ResponseField name="time" type="Int" >The time of the activity.</ResponseField>
+    <ResponseField name="product" type="object" >
+        <Expandable title="object">
+            <ResponseField name="name" type="String" >Product name</ResponseField>
+            <ResponseField name="description" type="String" >Product description</ResponseField>
+            <ResponseField name="doc_src" type="String" >Product detailed description doc</ResponseField>
+            <ResponseField name="coin" type="String" >Coin code</ResponseField>
+            <ResponseField name="coin_decimal" type="Int" >Coin decimal</ResponseField>
+            <ResponseField name="reward_coin" type="String" >Reward coin</ResponseField>
+            <ResponseField name="reward_coin_decimal" type="Int" >Reward coin decimal</ResponseField>
+            <ResponseField name="unstake_fee" type="String" >Unstake fee</ResponseField>
+            <ResponseField name="min_amount" type="String" >Min. amount to stake</ResponseField>
+            <ResponseField name="rate" type="String" >Yearly ROI</ResponseField>
+            <ResponseField name="rate_type" type="Int" >1:fixed rate 2:estimated rate</ResponseField>
+            <ResponseField name="days" type="Int" >Reward period</ResponseField>
+            <ResponseField name="stake_type" type="String" >Staking type（Masternode, DPoS, etc）</ResponseField>
+            <ResponseField name="lockup" type="Bool" >If there's a lockup period</ResponseField>
+            <ResponseField name="start_stake_time" type="Int" >Start stake time(mileseconds timestamp)</ResponseField>
+            <ResponseField name="stop_stake_time" type="Int" >Stop stake time(mileseconds timestamp)</ResponseField>
+            <ResponseField name="start_staking_time" type="Int" >Start staking time(mileseconds timestamp)</ResponseField>
+            <ResponseField name="stop_staking_time" type="Int" >Stop staking time(mileseconds timestamp)</ResponseField>
+            <ResponseField name="liquidate_time" type="Int" >Liquidate time(mileseconds timestamp)</ResponseField>
+            <ResponseField name="reward_liquidate_time" type="Int" >Reward liquidate time(mileseconds timestamp)</ResponseField>
+            <ResponseField name="product_id" type="Int" >Product id(unique)</ResponseField>
+            <ResponseField name="product_group" type="String" >product of group </ResponseField>
+        </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
 <RequestExample>
 ```python Python
 request(
@@ -53,18 +86,71 @@ Request("GET", "/v1/custody/staking_history/", map[string]string{
 ```json
 {
   "success": true,
-  "result": [
-    {
-      "activity_id": "20191112000112159193000000094747",
-      "coin": "ZEL",
-      "amount": "1424658",
-      "type": "unstake",
-      "time": 1573488072058,
-      "product": {
-      }
-    },
-    {},
-    {}
+  "result":[
+  {
+    "activity_id": "20230807160006000354399000008312",
+    "coin": "TETH",
+    "amount": "1176999339169",
+    "type": "stake",
+    "raw_type": 0,
+    "time": 1691395206207,
+    "product": {
+      "name": " TETH PoS\u6d4b\u8bd5",
+      "description": "TETH PoS test",
+      "doc_src": "https://www.cobo.com",
+      "coin": "TETH",
+      "coin_decimal": 18,
+      "reward_coin": "TETH",
+      "reward_coin_decimal": 18,
+      "unstake_fee": "0",
+      "min_amount": "1000000",
+      "rate": "0.2000000000",
+      "rate_type": 1,
+      "days": 0,
+      "stake_type": "pos",
+      "lockup": false,
+      "start_stake_time": 1691390700000,
+      "stop_stake_time": 1691393400000,
+      "start_staking_time": 1691393400000,
+      "stop_staking_time": 1691400600000,
+      "liquidate_time": 1691400660000,
+      "reward_liquidate_time": 1691400720000,
+      "product_id": 236088,
+      "product_group": " TETHPPSW"
+    }
+  },
+  {
+    "activity_id": "20230807160005000354399000003540",
+    "coin": "TETH",
+    "amount": "53741808",
+    "type": "unstake",
+    "raw_type": -3,
+    "time": 1691395205779,
+    "product": {
+      "name": " TETH PoS\u6d4b\u8bd5",
+      "description": "TETH PoS test",
+      "doc_src": "https://www.cobo.com",
+      "coin": "TETH",
+      "coin_decimal": 18,
+      "reward_coin": "TETH",
+      "reward_coin_decimal": 18,
+      "unstake_fee": "0",
+      "min_amount": "1000000",
+      "rate": "0.2000000000",
+      "rate_type": 1,
+      "days": 0,
+      "stake_type": "pos",
+      "lockup": false,
+      "start_stake_time": 1691385300000,
+      "stop_stake_time": 1691388000000,
+      "start_staking_time": 1691388000000,
+      "stop_staking_time": 1691395200000,
+      "liquidate_time": 1691395260000,
+      "reward_liquidate_time": 1691395320000,
+      "product_id": 236078,
+      "product_group": " TETHPPSW"
+    }
+  }
   ]
 }
 ```

@@ -9,14 +9,28 @@ description: "This endpoint returns a JSON response containing a list of assets 
 <ParamField query="chain_code" type="String" >Chain code, if it is empty, it will return all chain_code assets, if it is not empty, it will return the assets in this chain_code</ParamField>
 
 #### Response
-<ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
-<ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
-<ResponseField name="display_code" type="String" >Coin/NFT ticker symbol (not unique, changeable, for reference only ).</ResponseField>
-<ResponseField name="description" type="String" >Full name of coin/NFT (not unique, changeable, for reference only ).</ResponseField>
-<ResponseField name="amount" type="String" >Coin/NFT amount</ResponseField> 
-<ResponseField name="nft_code" type="String" >NFT Collection Code</ResponseField> 
-<ResponseField name="standard" type="String" >The token type of the NFT.</ResponseField>
-<ResponseField name="contract_address" type="String" >The contract address of the NFT.</ResponseField>
+<ResponseField name="coin_infos" type="object[]">
+  <Expandable title="object">
+    <ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
+    <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+    <ResponseField name="display_code" type="String" >Coin ticker symbol (not unique, changeable, for reference only ).</ResponseField>
+    <ResponseField name="description" type="String" >Full name of coin (not unique, changeable, for reference only ).</ResponseField>
+    <ResponseField name="amount" type="String" >Coin amount</ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="nft_infos" type="object[]">
+  <Expandable title="object">
+    <ResponseField name="nft_code" type="String" >NFT Collection Code</ResponseField>
+    <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+    <ResponseField name="display_code" type="String" >NFT ticker symbol (not unique, changeable, for reference only ).</ResponseField>
+    <ResponseField name="description" type="String" >Full name of NFT (not unique, changeable, for reference only ).</ResponseField>
+    <ResponseField name="amount" type="String" >NFT amount</ResponseField>
+    <ResponseField name="standard" type="String" >The token type of the NFT.</ResponseField>
+    <ResponseField name="contract_address" type="String" >The contract address of the NFT.</ResponseField>
+  </Expandable>
+</ResponseField>
+
+
 <RequestExample>
 ```python Python
 request(

@@ -11,8 +11,14 @@ description: This endpoint returns information about a given address for a speci
 <ParamField query="address" type="String" required>The address to retrieve information for.</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String" required>The coin symbol.</ResponseField>
-<ResponseField name="address" type="String" required>The address to retrieve information for.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+   <Expandable title="object">
+        <ResponseField name="coin" type="String">The coin symbol.</ResponseField>
+        <ResponseField name="address" type="String">The address to retrieve information for.</ResponseField>
+    </Expandable>
+</ResponseField>
+
 
 <RequestExample>
 ```python Python

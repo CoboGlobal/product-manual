@@ -26,7 +26,7 @@ The format is a serialized JSON string of structure below.
 The format is a serialized JSON string of structure below.
 
 <ParamField body="cobo_id" type="String" required>Unique ID of the transaction signing (KeySign) request.</ParamField>
-<ParamField body="api_request_id" type="String" optional><p>Request ID of the withdrawal request;</p><p>If the request is initialized via API, the value should be the same as request_id;</p><p>If the request is initialized via Cobo Custody Web, the field should be blank.</p></ParamField>
+<ParamField body="api_request_id" type="String" required><p>Request ID of the withdrawal request;</p><p>If the request is initialized via API, the value should be the same as request_id;</p><p>If the request is initialized via Cobo Custody Web, Cobo will automatically generate a Request ID.</p></ParamField>
 <ParamField body="transaction_type" type="TransactionTypeEnum" required>Please refer to TransactionTypeEnum below.</ParamField>
 <ParamField body="operation" type="TransactionOperationEnum" required>Please refer to TransactionOperationEnum below.</ParamField>
 <ParamField body="coin" type="String" required>Asset name.</ParamField>
@@ -44,6 +44,7 @@ The format is a serialized JSON string of structure below.
 <ParamField body="spender" type="String" optional>Email information of the withdrawer; applicable to Cobo Custody Web.</ParamField>
 <ParamField body="raw_tx" type="List[RawTx]" required>Raw transaction data.</ParamField>
 <ParamField body="note" type="String" required>Transaction remarks.</ParamField>
+<ParamField body="raw_tx_info" type="Json" required>Raw information for constructing transaction to be signed.</ParamField>
 
 #### ToAddressDetail
 

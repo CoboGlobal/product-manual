@@ -55,10 +55,10 @@ The callback server will send the HTTP response as follows: &#x20;
 
 <ResponseField name="status" type="Int" required>Status; 0: callback server is normal; other values: callback server has an error</ResponseField>
 <ResponseField name="request_id" type="String" required>Request ID of the callback; the value must be the same as request\_id in CallbackRequest</ResponseField>
-<ResponseField name="action" type="String" required><p>Instructions for task execution, which will be an enum: [APPROVE, REJECT, WAIT]</p><p></p><p>APPROVE: task should be executed; </p><p></p><p>REJECT: task should be rejected, and the reason can be retrieved from the error field; </p><p></p><p>WAIT: instruction fails to be given and the TSS Node should re-send the request to the callback server</p><p></p></ResponseField>
+<ResponseField name="action" type="String" required><p>Instructions for task execution, which will be an enum: [APPROVE, REJECT]</p><p></p><p>APPROVE: task should be executed; </p><p></p><p>REJECT: task should be rejected, and the reason can be retrieved from the error field; </p><p></p></ResponseField>
 <ResponseField name="error" type="String" optional><p>Error message;</p><p></p><p>If the returned status is not 0, it indicates an error within the callback server</p><p></p><p>If the returned status is 0 and action returns a “REJECT”, it indicates the reason for task rejection</p><p></p></ResponseField>
 
-
+Note: If the TSS Node fails to receive the HTTP response, it will continue to send requests to the callback server. In such cases, when the maximum number of retries is reached, the response will be categorized as REJECT.
 
 <RequestExample>
     ```CallbackRequest

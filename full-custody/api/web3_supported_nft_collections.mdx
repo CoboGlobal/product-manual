@@ -8,12 +8,18 @@ None
 
 
 #### Response
-<ResponseField name="nft_code" type="String" >NFT Collection code.</ResponseField>
-<ResponseField name="chain_code" type="String" >Chain code.</ResponseField> 
-<ResponseField name="description" type="String" >Full name of coin (not unique, changeable, for reference only ).</ResponseField>
-<ResponseField name="display_code" type="String" >Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>
-<ResponseField name="standard" type="String" >Token Standard.</ResponseField>
-<ResponseField name="contract_address" type="String" >NFT Contract Address.</ResponseField>
+<ResponseField name="nft_collections" type="object[]">
+  <Expandable title="object">
+    <ResponseField name="nft_code" type="String" >NFT Collection code.</ResponseField>
+    <ResponseField name="chain_code" type="String" >Chain code.</ResponseField>
+    <ResponseField name="description" type="String" >Full name of coin (not unique, changeable, for reference only ).</ResponseField>
+    <ResponseField name="display_code" type="String" >Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>
+    <ResponseField name="standard" type="String" >Token Standard.</ResponseField>
+    <ResponseField name="contract_address" type="String" >NFT Contract Address.</ResponseField>
+  </Expandable>
+</ResponseField>
+
+
 <RequestExample>
 ```python Python
 request(

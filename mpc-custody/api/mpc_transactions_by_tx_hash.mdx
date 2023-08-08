@@ -9,43 +9,82 @@ description: "This endpoint returns transaction details for a given transaction 
 <ParamField query="transaction_type" type="int" >transaction status（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
 
 #### Response
-<ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
-<ResponseField name="request_id" type="String" >Transaction request ID; it can be left empty if the transaction is a deposit</ResponseField>
-<ResponseField name="status" type="Int" >Transaction status(PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ResponseField>
-<ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
-<ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
-<ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
-<ResponseField name="decimal" type="Int" >Decimal precision</ResponseField>
-<ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField>
-<ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField>
-<ResponseField name="confirming_threshold" type="Int" >Number of confirmations required (may fluctuate)</ResponseField>
-<ResponseField name="amount" type="String" >Transaction amount (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ResponseField>
-<ResponseField name="abs_amount" type="String" >Absolute value of the transaction amount (for instance, 1.5 will be displayed for a transaction amount of 1.5 BTC)</ResponseField>
-<ResponseField name="gas_price" type="Int" >Gas price</ResponseField>
-<ResponseField name="gas_limit" type="Int" >Gas limit</ResponseField>
-<ResponseField name="fee_used" type="Int" >Gas fees (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ResponseField>
-<ResponseField name="fee" type="Float" >The fee of fee_amount value set when creating transaction for UTXO model</ResponseField>
-<ResponseField name="source_addresses" type="String" >List of ‘from addresses’</ResponseField>
-<ResponseField name="from_address" type="String" >From address</ResponseField>
-<ResponseField name="to_address" type="String" >To address</ResponseField>
-<ResponseField name="tx_hash" type="String" >Transaction hash</ResponseField>
-<ResponseField name="vout_n" type="Int" >UTXO transaction index</ResponseField>
-<ResponseField name="nonce" type="Int" >Nonce value of a transaction on Ethereum</ResponseField>
-<ResponseField name="confirmed_number" type="Int" >Number of block confirmations</ResponseField>
-<ResponseField name="replace_cobo_id" type="String" >Transaction ID of a transaction replaced via RBF</ResponseField>
-<ResponseField name="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ResponseField>
-<ResponseField name="operation" type="Int" >Action type; it will be empty if the action is making a deposit(TRANSFER: 100, CONTRACT_CALL: 200)</ResponseField>
-<ResponseField name="block_hash" type="String" >Block hash</ResponseField>
-<ResponseField name="block_height" type="Int" >Block height</ResponseField>
-<ResponseField name="block_time" type="Int" >Block time</ResponseField>
-<ResponseField name="tx_raw" type="String" >Raw transaction data</ResponseField>
-<ResponseField name="extra_parameters" type="Json" >Additional Information for Transaction Requests</ResponseField>
-<ResponseField name="created_time" type="Int" >Creation time of the transaction</ResponseField>
-<ResponseField name="updated_time" type="Int" >Last time the transaction is updated</ResponseField>
-<ResponseField name="failed_reason" type="String" >Reasons for rejection</ResponseField>
-<ResponseField name="max_fee" type="Int" >EVM EIP 1559 transaction fee</ResponseField>
-<ResponseField name="max_priority_fee" type="Int" >EVM EIP 1559 transaction fee</ResponseField>
-<ResponseField name="approval_process" type="Json" >Approval flow</ResponseField>
+<ResponseField name="total" type="Int" >Total number of transactions that meets the requirements</ResponseField>
+<ResponseField name="transactions" type="object[]" >
+  <Expandable title="object">
+    <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
+    <ResponseField name="request_id" type="String" >Transaction request ID; it can be left empty if the transaction is a deposit</ResponseField>
+    <ResponseField name="status" type="Int" >Transaction status (PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ResponseField>
+    <ResponseField name="coin_detail" type="object" >
+        <Expandable title="object">
+            <ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
+            <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+            <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
+            <ResponseField name="decimal" type="Int" >Decimal precision</ResponseField>
+            <ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField>
+            <ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField>
+            <ResponseField name="confirming_threshold" type="Int" >Number of confirmations required (may fluctuate)</ResponseField>
+        </Expandable>
+    </ResponseField>
+
+    <ResponseField name="amount_detail" type="object" >
+        <Expandable title="object">
+            <ResponseField name="amount" type="String" >Transaction amount (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ResponseField>
+            <ResponseField name="abs_amount" type="String" >Absolute value of the transaction amount (for instance, 1.5 will be displayed for a transaction amount of 1.5 BTC)</ResponseField>
+        </Expandable>
+    </ResponseField>
+
+    <ResponseField name="fee_detail" type="object" >
+        <Expandable title="object">
+            <ResponseField name="fee_coin_detail" type="object" >
+                <Expandable title="object">
+                    <ResponseField name="coin" type="String" >The coin symbol.</ResponseField>
+                    <ResponseField name="display_code" type="String" >Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>
+                    <ResponseField name="description" type="String" >Full name of coin (not unique, changeable, for reference only )</ResponseField>
+                    <ResponseField name="decimal" type="Int" >Coin balance decimal places</ResponseField>
+                    <ResponseField name="can_deposit" type="Bool" >Deposit accessibility</ResponseField>
+                    <ResponseField name="can_withdraw" type="Bool" >Withdrawal accessibility</ResponseField>
+                    <ResponseField name="confirming_threshold" type="Int" >Confirming threshold of the coin.</ResponseField>
+                </Expandable>
+            </ResponseField>
+            <ResponseField name="gas_price" type="Int" >Gas Price</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >Gas limit</ResponseField>
+            <ResponseField name="fee_used" type="Int" >Gas fees (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ResponseField>
+        </Expandable>
+    </ResponseField>
+
+    <ResponseField name="source_addresses" type="List" >List of ‘from addresses’</ResponseField>
+    <ResponseField name="from_address" type="String" >From address</ResponseField>
+    <ResponseField name="to_address" type="String" >To address</ResponseField>
+    <ResponseField name="tx_hash" type="String" >Transaction hash</ResponseField>
+    <ResponseField name="vout_n" type="Int" >UTXO transaction index</ResponseField>
+    <ResponseField name="nonce" type="Int" >nonce value of a transaction on Ethereum</ResponseField>
+    <ResponseField name="confirmed_number" type="Int" >Number of block confirmations</ResponseField>
+    <ResponseField name="replace_cobo_id" type="String" >transaction ID of a transaction replaced via RBF</ResponseField>
+    <ResponseField name="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ResponseField>
+    <ResponseField name="operation" type="Int" >action type; it will be empty if the action is making a deposit (TRANSFER: 100, CONTRACT_CALL: 200)</ResponseField>
+
+    <ResponseField name="block_detail" type="object" >
+        <Expandable title="object">
+            <ResponseField name="block_hash" type="String" >Block hash</ResponseField>
+            <ResponseField name="block_height" type="Int" >Block height</ResponseField>
+            <ResponseField name="block_time" type="Int" >Block time</ResponseField>
+        </Expandable>
+    </ResponseField>
+    <ResponseField name="tx_detail" type="object" >
+        <Expandable title="object">
+            <ResponseField name="tx_hash" type="String" >transaction hash</ResponseField>
+        </Expandable>
+    </ResponseField>
+    <ResponseField name="extra_parameters" type="Json" >Transaction remarks</ResponseField>
+    <ResponseField name="created_time" type="Int" >Creation time of the transaction</ResponseField>
+    <ResponseField name="updated_time" type="Int" >Last time the transaction is updated</ResponseField>
+    <ResponseField name="failed_reason" type="String" >Reasons for rejection</ResponseField>
+    <ResponseField name="max_fee" type="Int" >EVM EIP 1559 transaction fee</ResponseField>
+    <ResponseField name="max_priority_fee" type="Int" >EVM EIP 1559 transaction fee</ResponseField>
+    <ResponseField name="approval_process" type="Json" >Approval flow</ResponseField>
+   </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

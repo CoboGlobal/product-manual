@@ -9,14 +9,18 @@ description: "This endpoint returns a JSON response with a list of NFTs (Non-Fun
 <ParamField query="address" type="String" >Address, if it is empty, it will return the assets in all addresses, if it is not empty, it will return the assets in this address</ParamField>
 
 #### Response
-<ResponseField name="nft_code" type="String" >Code of the NFT.</ResponseField>
-<ResponseField name="chain_code" type="String" >Code of the blockchain.</ResponseField>
-<ResponseField name="display_code" type="String" >NFT ticker symbol (not unique, changeable, for reference only ).</ResponseField>
-<ResponseField name="description" type="String" >Full name of NFT (not unique, changeable, for reference only )</ResponseField> 
-<ResponseField name="amount" type="String" >Amount of the NFT.</ResponseField>
-<ResponseField name="standard" type="String" >Standard of the NFT.</ResponseField>
-<ResponseField name="contract_address" type="String" >NFT Contract Address</ResponseField> 
-<ResponseField name="token_id" type="String" >ID of the NFT token.</ResponseField>
+<ResponseField name="nfts" type="object[ ]">
+  <Expandable title="object">
+    <ResponseField name="nft_code" type="String" >Code of the NFT.</ResponseField>
+    <ResponseField name="chain_code" type="String" >Code of the blockchain.</ResponseField>
+    <ResponseField name="display_code" type="String" >NFT ticker symbol (not unique, changeable, for reference only ).</ResponseField>
+    <ResponseField name="description" type="String" >Full name of NFT (not unique, changeable, for reference only )</ResponseField>
+    <ResponseField name="amount" type="String" >Amount of the NFT.</ResponseField>
+    <ResponseField name="standard" type="String" >Standard of the NFT.</ResponseField>
+    <ResponseField name="contract_address" type="String" >NFT Contract Address</ResponseField>
+    <ResponseField name="token_id" type="String" >ID of the NFT token.</ResponseField>
+  </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

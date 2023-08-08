@@ -12,11 +12,14 @@ description: "This endpoint returns a JSON response containing a list of wallet 
 
 #### Response
 <ResponseField name="total" type="Int" >Total number of addresses</ResponseField>
-<ResponseField name="id" type="String" >ID of the wallet address.</ResponseField>
-<ResponseField name="address" type="String" >Wallet address.</ResponseField>
-<ResponseField name="encoding" type="Int" >Address type (E.g chain BTC: Legacy(P2PKH): 0, Native SegWit(Bech32): 2).</ResponseField>
-<ResponseField name="hd_path" type="String" >HD path of the wallet address.</ResponseField>
-
+<ResponseField name="addresses" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
+        <ResponseField name="address" type="String" >The generated address.</ResponseField>
+        <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
+        <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+    </Expandable>
+</ResponseField>
 <RequestExample>
 ```python Python
 request(

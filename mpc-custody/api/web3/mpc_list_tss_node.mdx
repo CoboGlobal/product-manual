@@ -7,10 +7,13 @@ description: "This endpoint returns a JSON response containing a list of TSS nod
 None
 
 #### Response
-<ResponseField name="node_id" type="String" >Unique TSS Node ID</ResponseField>
-<ResponseField name="type" type="Int" >TSS Node type(third party: 1, node managed by yourself: 2, Cobo: 3)</ResponseField>
-<ResponseField name="online" type="Bool" >if TSS node is online (online: true，offline: false)</ResponseField>
-
+<ResponseField name="tss_nodes" type="object[]" >
+  <Expandable title="object">
+        <ResponseField name="node_id" type="String" >Unique TSS Node ID</ResponseField>
+        <ResponseField name="type" type="Int" >TSS Node type(third party: 1, node managed by yourself: 2, Cobo: 3)</ResponseField>
+        <ResponseField name="online" type="Bool" >if TSS node is online (online: true，offline: false)</ResponseField>
+  </Expandable>
+ </ResponseField>
 
 <RequestExample>
 ```python Python

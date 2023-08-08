@@ -10,7 +10,8 @@ description: "This endpoint checks whether a given cryptocurrency address is val
 <ParamField query="address" type="String" required>The cryptocurrency address.(Address|Memo)</ParamField>
 
 #### Response
-<ResponseField name="result" type="bool" required>Whether the address is valid or not.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="bool">Whether the address is valid or not.</ResponseField>
 
 <RequestExample>
 ```python Python

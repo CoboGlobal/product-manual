@@ -7,13 +7,16 @@ description: "This endpoint returns a JSON response with a list of supported NFT
 <ParamField query="chain_code" type="String" required>chain code</ParamField>
 
 #### Response
-<ResponseField name="nft_code" type="String" >NFT Token code</ResponseField> 
-<ResponseField name="chain_code" type="String" >chain code</ResponseField> 
-<ResponseField name="contract_address" type="String" >NFT contract address</ResponseField> 
-<ResponseField name="description" type="String" >NFT description</ResponseField>
-<ResponseField name="display_code" type="String" >NFT display code</ResponseField>
-<ResponseField name="standard" type="String" >NFT contract standard</ResponseField>
-
+<ResponseField name="nft_collections" type="object[ ]">
+    <Expandable title="object">
+        <ResponseField name="nft_code" type="String" >NFT Token code</ResponseField>
+        <ResponseField name="chain_code" type="String" >chain code</ResponseField>
+        <ResponseField name="contract_address" type="String" >NFT contract address</ResponseField>
+        <ResponseField name="description" type="String" >NFT description</ResponseField>
+        <ResponseField name="display_code" type="String" >NFT display code</ResponseField>
+        <ResponseField name="standard" type="String" >NFT contract standard</ResponseField>
+    </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python

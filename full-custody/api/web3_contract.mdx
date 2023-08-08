@@ -15,7 +15,10 @@ description: "This endpoint allows users to interact with smart contracts on var
 <ParamField body="gas_limit" type="Int" >Gas limit</ParamField>
 
 #### Response
-<ResponseField name="coin" type="String" >Coin Code</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="Bool" >Success is true,Failed is False.</ResponseField>
+
+
 
 <RequestExample>
 ```python Python
@@ -68,6 +71,9 @@ Request("POST", "/v1/custody/web3_contract/", map[string]string{
 
 <ResponseExample>
 ```json
-
+{
+  "success": true,
+  "result": true
+}
 ```
 </ResponseExample>
