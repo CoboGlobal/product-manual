@@ -7,10 +7,45 @@ description: "This endpoint returns a list of transactions filtered by various p
 #### Request
 <ParamField query="start_time" type="Int" >≥ start time (unit: milliseconds); details of transactions whose creation times are equal to or later than this timestamp will be returned</ParamField>
 <ParamField query="end_time" type="Int" >＜ end time (unit: milliseconds); details of transactions whose creation times are earlier than this timestamp will be returned</ParamField>
-<ParamField query="status" type="Int" >transaction status; please refer to TransactionsStatusEnum for more information</ParamField>
+<ParamField query="status" type="Int" >
+| Status Type | Code |
+| ----------- | ----------- |
+| PENDING_APPROVAL| 101|
+| QUEUED| 201|
+| PENDING_SIGNATURE| 301|
+| BROADCASTING| 401|
+| PENDING_CONFIRMATION| 501|
+| SUCCESS| 900|
+| FAILED| 901|
+</ParamField>
 <ParamField query="order_by" type="String" >sorting method; default: created_time; other option: modified_time</ParamField>
 <ParamField query="order" type="String" >sorting order; options: ASC (default), DESC</ParamField>
-<ParamField query="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ParamField>
+<ParamField query="transaction_type" type="Int" >
+**only use in non-web3 wallet:**
+| Transaction Type | Code |
+| ----------- | ----------- |
+| TRANSACTION_FROM_WEB| 100|
+| TRANSACTION_FROM_API| 102|
+| TRANSACTION_RBF_API_SPEEDUP| 103|
+| TRANSACTION_RBF_WEB_SPEEDUP| 104|
+| TRANSACTION_RBF_API_DROP| 105|
+| TRANSACTION_RBF_WEB_DROP| 106|
+| TRANSACTION_RBF_WEB_DROP| 1000|
+
+**only use in web3 wallet:**
+| Transaction Type | Code |
+| ----------- | ----------- |
+| TYPE_MPC_WEB3_WEB| 300|
+| TYPE_MPC_WEB3_MMI_TX| 301|
+| TYPE_MPC_WEB3_API_TRANSACTION| 303|
+| TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL| 307|
+| TYPE_MPC_WEB3_RBF_API_SPEEDUP| 308|
+| TYPE_MPC_WEB3_RBF_WEB_SPEEDUP| 309|
+| TYPE_MPC_WEB3_RBF_API_DROP| 310|
+| TYPE_MPC_WEB3_RBF_WEB_DROP| 311|
+| TRANSACTION_FROM_DEPOSIT| 1000|
+
+</ParamField>
 <ParamField query="coins" type="String" >coin names; separated by commas</ParamField>
 <ParamField query="from_address" type="String" >from address</ParamField>
 <ParamField query="to_address" type="String" >to address</ParamField>
@@ -22,7 +57,17 @@ description: "This endpoint returns a list of transactions filtered by various p
   <Expandable title="object">
     <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
     <ResponseField name="request_id" type="String" >Transaction request ID; it can be left empty if the transaction is a deposit</ResponseField>
-    <ResponseField name="status" type="Int" >Transaction status (PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ResponseField>
+    <ResponseField name="status" type="Int" >
+    | Status Type | Code |
+    | ----------- | ----------- |
+    | PENDING_APPROVAL| 101|
+    | QUEUED| 201|
+    | PENDING_SIGNATURE| 301|
+    | BROADCASTING| 401|
+    | PENDING_CONFIRMATION| 501|
+    | SUCCESS| 900|
+    | FAILED| 901|
+    </ResponseField>
     <ResponseField name="coin_detail" type="object" >
         <Expandable title="object">
             <ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
@@ -69,7 +114,32 @@ description: "This endpoint returns a list of transactions filtered by various p
     <ResponseField name="nonce" type="Int" >nonce value of a transaction on Ethereum</ResponseField>
     <ResponseField name="confirmed_number" type="Int" >Number of block confirmations</ResponseField>
     <ResponseField name="replace_cobo_id" type="String" >transaction ID of a transaction replaced via RBF</ResponseField>
-    <ResponseField name="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ResponseField>
+    <ResponseField name="transaction_type" type="Int" >
+    **only use in non-web3 wallet:**
+    | Transaction Type | Code |
+    | ----------- | ----------- |
+    | TRANSACTION_FROM_WEB | 100 |
+    | TRANSACTION_FROM_API | 102 |
+    | TRANSACTION_RBF_API_SPEEDUP| 103|
+    | TRANSACTION_RBF_WEB_SPEEDUP| 104|
+    | TRANSACTION_RBF_API_DROP| 105|
+    | TRANSACTION_RBF_WEB_DROP| 106|
+    | TRANSACTION_RBF_WEB_DROP| 1000|
+
+    **only use in web3 wallet:**
+    | Transaction Type | Code |
+    | ----------- | ----------- |
+    | TYPE_MPC_WEB3_WEB| 300|
+    | TYPE_MPC_WEB3_MMI_TX| 301|
+    | TYPE_MPC_WEB3_API_TRANSACTION| 303|
+    | TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL| 307|
+    | TYPE_MPC_WEB3_RBF_API_SPEEDUP| 308|
+    | TYPE_MPC_WEB3_RBF_WEB_SPEEDUP| 309|
+    | TYPE_MPC_WEB3_RBF_API_DROP| 310|
+    | TYPE_MPC_WEB3_RBF_WEB_DROP| 311|
+    | TRANSACTION_FROM_DEPOSIT| 1000|
+    </ResponseField>
+
     <ResponseField name="operation" type="Int" >action type; it will be empty if the action is making a deposit (TRANSFER: 100, CONTRACT_CALL: 200)</ResponseField>
 
     <ResponseField name="block_detail" type="object" >

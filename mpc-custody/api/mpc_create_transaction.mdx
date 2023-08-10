@@ -15,7 +15,12 @@ description: "This endpoint creates a transaction for a given coin and request I
 <ParamField body="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
 <ParamField body="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
 <ParamField body="operation" type="Int" >action type; default: 100 (TRANSFER), 200(CONTRACT_CALL)</ParamField>
-<ParamField body="extra_parameters" type="Json" >input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField>
+<ParamField body="extra_parameters" type="Json" >
+(for non-web3 wallet)input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection
+(for web3 wallet)calldata: request data associated with an EVM transaction, type: string;
+</ParamField>
+<ParamField body="max_fee" type="Int" >max fee, applicable to ETH EIP 1559 transaction (only use in web3 wallet) </ParamField>
+<ParamField body="max_priority_fee" type="Int" >max priority fee, applicable to ETH EIP 1559 transaction (only use in web3 wallet)</ParamField>
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model</ParamField>
 
 #### Response

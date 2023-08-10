@@ -113,26 +113,6 @@
           ]
         },
         {
-          "group": "Web3",
-          "pages": [
-            "full-custody/api/web3_supported_chains",
-            "full-custody/api/web3_supported_coins",
-            "full-custody/api/web3_supported_nft_collections",
-            "full-custody/api/web3_supported_contracts",
-            "full-custody/api/web3_supported_contract_methods",
-            "full-custody/api/web3_add_addresses",
-            "full-custody/api/web3_list_wallet_address",
-            "full-custody/api/web3_list_wallet_assets",
-            "full-custody/api/web3_list_wallet_nfts",
-            "full-custody/api/web3_wallet_nft_detail",
-            "full-custody/api/web3_list_wallet_transactions",
-            "full-custody/api/web3_withdraw",
-            "full-custody/api/web3_get_withdraw_transaction",
-            "full-custody/api/web3_contract",
-            "full-custody/api/web3_get_contract_transaction"
-          ]
-        },
-        {
           "group": "Staking",
           "pages": [
             "full-custody/api/staking/staking_product",
@@ -205,7 +185,8 @@
             "mpc-custody/api/mpc_get_balance",
             "mpc-custody/api/mpc_list_balances",
             "mpc-custody/api/mpc_list_spendable",
-            "mpc-custody/api/mpc_estimate_fee"
+            "mpc-custody/api/mpc_estimate_fee",
+            "mpc-custody/api/mpc_get_supported_nft_collections"
           ]
         },
         {
@@ -223,7 +204,10 @@
             "mpc-custody/api/mpc_create_transaction",
             "mpc-custody/api/mpc_speedup_transaction",
             "mpc-custody/api/mpc_drop_transaction",
-            "mpc-custody/api/mpc_retry_double_check"
+            "mpc-custody/api/mpc_retry_double_check",
+            "mpc-custody/api/mpc_sign_message",
+            "mpc-custody/api/mpc_sign_messages_by_cobo_ids",
+            "mpc-custody/api/mpc_sign_messages_by_request_ids"
           ]
         },
         {
@@ -243,65 +227,6 @@
             "mpc-custody/api/auth_change_binding",
             "mpc-custody/api/auth_unbind_binding",
             "mpc-custody/api/auth_query_statement"
-          ]
-        },
-        {
-          "group": "Web3",
-          "pages": [
-            {
-              "group": "Account",
-              "pages": [
-                "mpc-custody/api/web3/mpc_get_supported_chains",
-                "mpc-custody/api/web3/mpc_get_supported_coins",
-                "mpc-custody/api/web3/mpc_get_supported_nft_collections",
-                "mpc-custody/api/web3/mpc_is_valid_address",
-                "mpc-custody/api/web3/mpc_generate_addresses",
-                "mpc-custody/api/web3/mpc_list_addresses",
-                "mpc-custody/api/web3/mpc_get_balance",
-                "mpc-custody/api/web3/mpc_list_balances",
-                "mpc-custody/api/web3/mpc_list_spendable",
-                "mpc-custody/api/web3/mpc_estimate_fee"
-              ]
-            },
-            {
-              "group": "Transaction",
-              "pages": [
-                "mpc-custody/api/web3/mpc_list_transactions",
-                "mpc-custody/api/web3/mpc_transactions_by_request_ids",
-                "mpc-custody/api/web3/mpc_transactions_by_cobo_ids",
-                "mpc-custody/api/web3/mpc_transactions_by_tx_hash",
-                "mpc-custody/api/web3/mpc_sign_messages_by_request_ids",
-                "mpc-custody/api/web3/mpc_sign_messages_by_cobo_ids"
-              ]
-            },
-            {
-              "group": "Withdrawal",
-              "pages": [
-                "mpc-custody/api/web3/mpc_create_transaction",
-                "mpc-custody/api/web3/mpc_speedup_transaction",
-                "mpc-custody/api/web3/mpc_drop_transaction",
-                "mpc-custody/api/web3/mpc_sign_message"
-              ]
-            },
-            {
-              "group": "Tss Node",
-              "pages": [
-                "mpc-custody/api/web3/mpc_list_tss_node_requests",
-                "mpc-custody/api/web3/mpc_list_tss_node"
-              ]
-            },
-            {
-              "group": "Bind Auth",
-              "pages": [
-                "mpc-custody/api/web3/auth_create_binding",
-                "mpc-custody/api/web3/auth_query_binding",
-                "mpc-custody/api/web3/auth_query_user_auth",
-                "mpc-custody/api/web3/auth_bind_addresses",
-                "mpc-custody/api/web3/auth_change_binding",
-                "mpc-custody/api/web3/auth_unbind_binding",
-                "mpc-custody/api/web3/auth_query_statement"
-              ]
-            }
           ]
         },
         {
