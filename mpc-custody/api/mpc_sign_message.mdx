@@ -1,9 +1,12 @@
 ---
 title: Sign Message
-api: POST /v1/custody/mpc/sign_message/ 
-description: Sign Message 
+api: POST /v1/custody/mpc/sign_message/
+description: Sign Message
 ---
-#### Request 
+
+<Note>This api is only used for MPC Web3 wallets</Note>
+
+#### Request
 
 <ParamField body="chain_code" type="String" required>chain code</ParamField>
 <ParamField body="request_id" type="String" required>Withdrawal request ID (Universally unique ID for each user's withdraw request and less than or equal to 120 characters)</ParamField>

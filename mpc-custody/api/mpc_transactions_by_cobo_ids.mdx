@@ -5,7 +5,17 @@ description: "This endpoint returns a list of transaction requests based on the 
 ---
 #### Request
 <ParamField query="cobo_ids" type="String" required>List of Cobo Unique IDs for transactions, separated by commas, cannot be empty or greater than 50</ParamField>
-<ParamField query="status" type="Int" >Transaction type(PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ParamField>
+<ParamField query="status" type="Int" >
+| Status Type | Code |
+| ----------- | ----------- |
+| PENDING_APPROVAL| 101|
+| QUEUED| 201|
+| PENDING_SIGNATURE| 301|
+| BROADCASTING| 401|
+| PENDING_CONFIRMATION| 501|
+| SUCCESS| 900|
+| FAILED| 901|
+</ParamField>
 
 #### Response
 <ResponseField name="total" type="Int" >Total number of transactions that meets the requirements</ResponseField>
@@ -60,7 +70,31 @@ description: "This endpoint returns a list of transaction requests based on the 
     <ResponseField name="nonce" type="Int" >nonce value of a transaction on Ethereum</ResponseField>
     <ResponseField name="confirmed_number" type="Int" >Number of block confirmations</ResponseField>
     <ResponseField name="replace_cobo_id" type="String" >transaction ID of a transaction replaced via RBF</ResponseField>
-    <ResponseField name="transaction_type" type="Int" >Transaction type（TRANSACTION_FROM_WEB：100, TRANSACTION_FROM_API：102, TRANSACTION_RBF_API_SPEEDUP：103, TRANSACTION_RBF_WEB_SPEEDUP：104, TRANSACTION_RBF_API_DROP：105, TRANSACTION_RBF_WEB_DROP：106, TRANSACTION_FROM_DEPOSIT：1000）</ResponseField>
+    <ResponseField name="transaction_type" type="Int" >
+        **only use in non-web3 wallet:**
+        | Transaction Type | Code |
+        | ----------- | ----------- |
+        | TRANSACTION_FROM_WEB| 100|
+        | TRANSACTION_FROM_API| 102|
+        | TRANSACTION_RBF_API_SPEEDUP| 103|
+        | TRANSACTION_RBF_WEB_SPEEDUP| 104|
+        | TRANSACTION_RBF_API_DROP| 105|
+        | TRANSACTION_RBF_WEB_DROP| 106|
+        | TRANSACTION_RBF_WEB_DROP| 1000|
+
+        **only use in web3 wallet:**
+        | Transaction Type | Code |
+        | ----------- | ----------- |
+        | TYPE_MPC_WEB3_WEB| 300|
+        | TYPE_MPC_WEB3_MMI_TX| 301|
+        | TYPE_MPC_WEB3_API_TRANSACTION| 303|
+        | TYPE_MPC_WEB3_TRANSACTION_FROM_EXTERNAL| 307|
+        | TYPE_MPC_WEB3_RBF_API_SPEEDUP| 308|
+        | TYPE_MPC_WEB3_RBF_WEB_SPEEDUP| 309|
+        | TYPE_MPC_WEB3_RBF_API_DROP| 310|
+        | TYPE_MPC_WEB3_RBF_WEB_DROP| 311|
+        | TRANSACTION_FROM_DEPOSIT| 1000|
+    </ResponseField>
     <ResponseField name="operation" type="Int" >action type; it will be empty if the action is making a deposit (TRANSFER: 100, CONTRACT_CALL: 200)</ResponseField>
 
     <ResponseField name="block_detail" type="object" >
