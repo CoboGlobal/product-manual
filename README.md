@@ -9,7 +9,7 @@
 
   <br />
   <br />
-  <a href="https://www.cobo.com/developers/full-custody/introduction">Full Custody</a>
+  <a href="https://www.cobo.com/developers/custodial-wallet/introduction">Custodial Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href="https://www.cobo.com/developers/mpc-custody/mpc-introduction">MPC Custody</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
@@ -45,7 +45,7 @@
 ## Get started
 
 The Developer Hub mainly includes the following resources.:
-- **[Full Custody](https://www.cobo.com/developers/full-custody/introduction)**. Cobo Full Custody is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
+- **[Custodial Wallet](https://www.cobo.com/developers/custodial-wallet/introduction)**. Cobo Custodial Wallet is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
 - **[MPC Custody](https://www.cobo.com/developers/mpc-custody/mpc-introduction)**. Cobo MPC Co-Managed Custody leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
 - **[Smart Contract Custody](https://www.cobo.com/developers/smart-contract-custody/cobosafe)**. Cobo’s Smart Contract Custody solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
 <br />

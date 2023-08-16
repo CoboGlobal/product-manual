@@ -53,7 +53,7 @@ maven:
 ## Test
 
 ```
- ./gradlew test -DEnv=sandbox/develop/prod -DApiSecret=<yourApiSecret>
+ ./gradlew test -DEnv=develop/prod -DApiSecret=<yourApiSecret>
 ```
 
 ## Usage
@@ -70,7 +70,7 @@ String secretKey = key[0];
 String apiKey = key[1];
 ```
 
-Please refer to the [link](/full-custody/authentication) for how to use apiKey
+Please refer to the [link](/custodial-wallet/authentication) for how to use apiKey
 
 #### Initialize RestClient
 
@@ -85,7 +85,7 @@ import com.cobo.custody.api.client.impl.LocalSigner;
 
 CoboApiRestClient client = CoboApiClientFactory.newInstance(
                 new LocalSigner(apiSecret),
-                Env.SANDBOX,
+                Env.DEVELOP,
                 false).newRestClient();
 ```
 
@@ -1270,11 +1270,11 @@ ApiResponse<List<StakingHistory>> res = client.getStakingHistory(null, null, nul
 
 ### Trading
 
-### [Transaction Notification](/full-custody/waas-reference/transaction-notification)
+### [Transaction Notification](/custodial-wallet/waas-reference/transaction-notification)
 
 Demo: src/main/com/cobo/api/client/callback/Demo.java
 
-### [Withdrawal Confirmation](/full-custody/waas-reference/withdrawal-confirmation)
+### [Withdrawal Confirmation](/custodial-wallet/waas-reference/withdrawal-confirmation)
 
 Demo: src/main/com/cobo/api/client/callback/Demo.java
 

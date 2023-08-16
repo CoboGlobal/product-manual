@@ -1,24 +1,19 @@
 ---
-title: "PHP"
-icon: "php"
-description: "If you’re working with PHP, the official [cobo-php-api](https://github.com/CoboGlobal/cobo-php-api) package is the easiest way to use."
+title: "Python"
+icon: "python"
+description: "If you’re working with Python, the official [cobo-python-api](https://github.com/CoboGlobal/cobo-python-api) package is the easiest way to use."
 ---
 
 ## Installation
 
-add dependency in `composer.json`
-
-```json
-"require": {
-    ...
-    "cobo/cobo_custody": "0.2.10",
-  }
+```
+pip install cobo_custody
 ```
 
 ## Test
 
 ```
-php phpunit.phar ClientTest.php
+python test.py --env develop/prod --secret <yourApiSecret>
 ```
 
 ## Usage
@@ -27,51 +22,44 @@ php phpunit.phar ClientTest.php
 
 #### Generate Key Pair
 
-```php
-<?php
-require 'vendor/autoload.php';
-
-use Cobo\Custody\Config;
-use Cobo\Custody\LocalSigner;
-use Cobo\Custody\Client;
-$key = LocalSigner::generateKeyPair();
-echo "apiSecret:", $key['apiSecret'],"\n";
-echo "apiKey:", $key['apiKey'];
+```python
+from cobo_custody.signer.local_signer import generate_new_key
+api_secret, api_key = generate_new_key()
+print(api_secret)
+print(api_key)
 ```
 
-Please refer to the [link](/full-custody/authentication) for how to use apiKey
+Please refer to the [link](/custodial-wallet/authentication) for how to use apiKey
 
 #### Initialize RestClient
 
-```php
-<?php
-require 'vendor/autoload.php';
-
-use Cobo\Custody\Config;
-use Cobo\Custody\LocalSigner;
-use Cobo\Custody\Client;
-
-$client = new Client($signer, Config::SANDBOX, false);
+```python
+from cobo_custody.client import Client
+from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+client = Client(signer=signer, env=DEVELOP_ENV, debug=True)
 ```
 
 #### Initialize ApiSigner
 
-`ApiSigner` can be instantiated through `$signer = new LocalSigner("secret key");`
+`ApiSigner` can be instantiated through
 
-In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your
-own implementation by implements `ApiSigner` interface
+```python
+from cobo_custody.signer.local_signer import LocalSigner
+LocalSigner("API_SECRET")
+```
+
+In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your own implementation by implements `ApiSigner` interface
 
 ### Account
 
 #### Check Account Details
 
-```php
-$client->getAccountInfo();
+```python
+client.get_account_info()
 ```
 
 <Accordion title="View Response">
-
-
 ```json
 {
   "success": true,
@@ -114,13 +102,12 @@ $client->getAccountInfo();
   }
 }
 ```
-
 </Accordion>
 
 #### Get Coin Details
 
-```php
-$client->getCoinDetails("ETH");
+```python
+client.get_coin_info("ETH")
 ```
 
 <Accordion title="View Response">
@@ -152,8 +139,8 @@ $client->getCoinDetails("ETH");
 
 #### Get New Deposit Address
 
-```php
-$client->newDepositAddress("BTC");
+```python
+client.new_deposit_address("BTC")
 ```
 
 <Accordion title="View Response">
@@ -170,8 +157,8 @@ $client->newDepositAddress("BTC");
 
 #### Batch New Deposit Address
 
-```php
-$client->batchNewDepositAddress("ETH", 4);
+```python
+client.batch_new_deposit_address("BTC",4)
 ```
 
 <Accordion title="View Response">
@@ -196,8 +183,8 @@ $client->batchNewDepositAddress("ETH", 4);
 
 #### Verify Deposit Address
 
-```php
-$client->verifyDepositAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
+```python
+client.verify_deposit_address("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM")
 ```
 
 <Accordion title="View Response">
@@ -214,15 +201,8 @@ $client->verifyDepositAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
 
 #### Batch Verify Deposit Address
 
-```php
-$addresses = [
-            "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee",
-            "0xe105a42297428575086387de415900a08765a8af",
-            "0x641733cde30e99fe0d6082c2ed96601c37a1718b",
-            "0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d"
-        ];
-
-        $client->batchVerifyDepositAddress("ETH", join(",", $addresses));
+```python
+client.batch_verify_deposit_address("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee,0x05325e6f9d1f0437bd78a72c2ae084fbb8c039e1")
 ```
 
 <Accordion title="View Response">
@@ -242,8 +222,8 @@ $addresses = [
 
 #### Verify Valid Address
 
-```php
-$client->verifyValidAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
+```python
+client.verify_valid_address("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee")
 ```
 
 <Accordion title="View Response">
@@ -257,12 +237,12 @@ $client->verifyValidAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
 
 #### Get Address History List
 
-```php
-$client->getAddressHistoryList("ETH", 0, 5);
+```python
+from cobo_custody.model.enums import SortFlagEnum
+client.get_address_history("ETH",0, 10, sort_flag=SortFlagEnum.DESCENDING)
 ```
 
 <Accordion title="View Response">
-
 
 ```json
 {
@@ -283,8 +263,8 @@ $client->getAddressHistoryList("ETH", 0, 5);
 
 #### Check Loop Address Details
 
-```php
-$client->checkLoopAddressDetails("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee");
+```python
+client.check_loop_address_details("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee")
 ```
 
 <Accordion title="View Response">
@@ -307,8 +287,8 @@ $client->checkLoopAddressDetails("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c03
 
 #### Verify Loop Address List
 
-```php
-$client->verifyLoopAddressList("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a,0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a");
+```python
+client.verify_loop_address_list("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a,0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a")
 ```
 
 <Accordion title="View Response">
@@ -336,16 +316,15 @@ $client->verifyLoopAddressList("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38
 
 #### Loop Transaction Explorer
 
-To help your user to check the Loop transaction, we offer you an explorer, you may insert the following URL in your
-platform：https://loop.top/tx/[Loop_ID]
+To help your user to check the Loop transaction, we offer you an explorer, you may insert the following URL in your platform：https://loop.top/tx/[Loop_ID]
 e.g. https://loop.top/tx/L456e5cb652dcfe557a43fd9d8e48627
 
 ### Transactions
 
 #### Get Transaction Details
 
-```php
-$client->getTransactionDetails("20210422193807000343569000002370");
+```python
+client.get_transaction_details("20210422193807000343569000002370")
 ```
 
 <Accordion title="View Response">
@@ -395,10 +374,10 @@ $client->getTransactionDetails("20210422193807000343569000002370");
 
 </Accordion>
 
-#### Get Transactions By Txid
+#### Get Transactions By txid
 
-```php
-$client->getTransactionsByTxid("0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f");
+```python
+client.get_transaction_by_txid("0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f")
 ```
 
 <Accordion title="View Response">
@@ -481,8 +460,8 @@ $client->getTransactionsByTxid("0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69b
 
 #### Obtain the list of confirmed transactions through ID query(deposit&withdraw)
 
-```php
-$client->getTransactionsById(["max_id"]=>"id*********")
+```python
+client.get_transactions_by_id()
 ```
 
 <Accordion title="View Response">
@@ -558,12 +537,11 @@ $client->getTransactionsById(["max_id"]=>"id*********")
 
 #### Obtain the list of confirmed transactions through time query(deposit&withdraw)
 
-```php
-$client->getTransactionsByTime();
+```python
+client.get_transactions_by_time()
 ```
 
 <Accordion title="View Response">
-
 
 ```json
 {
@@ -642,8 +620,8 @@ $client->getTransactionsByTime();
 
 #### Get Pending Transactions
 
-```php
-$client->getPendingTransactions();
+```python
+client.get_pending_transactions()
 ```
 
 <Accordion title="View Response">
@@ -728,8 +706,8 @@ $client->getPendingTransactions();
 
 #### Get Pending Deposit Details
 
-```php
-$client->getPendingDepositDetails("20200604171238000354106000006405");
+```python
+client.get_pending_transaction("20200604171238000354106000006405")
 ```
 
 <Accordion title="View Response">
@@ -778,12 +756,11 @@ $client->getPendingDepositDetails("20200604171238000354106000006405");
 
 #### Get Transaction History
 
-```php
-$client->getTransactionHistory();
+```python
+client.get_transaction_history()
 ```
 
 <Accordion title="View Response">
-
 
 ```json
 {
@@ -850,18 +827,14 @@ $client->getTransactionHistory();
   ]
 }
 ```
-
 </Accordion>
 
 ### Withdrawal
 
 #### Submit Withdraw Request
 
-```php
-$client->withdraw("TETH",
-            "request_id_" . time(),
-            "0xb744adc8d75e115eec8e582eb5e8d60eb0972037",
-            new BigInteger("1"));
+```python
+client.withdraw("TETH","0xb744adc8d75e115eec8e582eb5e8d60eb0972037", 1)
 ```
 
 <Accordion title="View Response">
@@ -875,8 +848,8 @@ $client->withdraw("TETH",
 
 #### Get Withdraw Information
 
-```php
-$client->getWithdrawInfo("teth29374893624");
+```python
+client.query_withdraw_info("teth29374893624")
 ```
 
 <Accordion title="View Response">
@@ -930,23 +903,23 @@ $client->getWithdrawInfo("teth29374893624");
 
 #### Get a Staking Product Details
 
-```php
-$client->getStakingProductDetails($prooductId);
+```python
+client.get_staking_product_details(product_id)
 ```
 
 <Accordion title="View Response">
 
 
 ```json
-{"success": true, "result": [{"name": "DASH FP TEST", "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH", "doc_src": "https://support.cobo.com/hc/en-us/articles/360023826033", "coin": "DASH", "coin_decimal": 8, "reward_coin": "DASH", "reward_coin_decimal": 8, "unstake_fee": "1000000", "min_amount": "1000000", "rate": "0.0002000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": true, "start_stake_time": 1622124000000, "stop_stake_time": 1622210400000, "start_staking_time": 1622217600000, "stop_staking_time": 1622304000000, "liquidate_time": 1622304000000, "reward_liquidate_time": 1622304000000, "product_id": 159185, "product_group": "DASHFPTEST"}, {"name": "ZEL FP TEST", "description": "Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL", "doc_src": "https://support.cobo.com/hc/en-us/articles/360025623054", "coin": "ZEL", "coin_decimal": 8, "reward_coin": "ZEL", "reward_coin_decimal": 8, "unstake_fee": "1000000000", "min_amount": "3000000000", "rate": "0.2000000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622476800000, "reward_liquidate_time": 1622476800000, "product_id": 159186, "product_group": "ZELFPTEST"}, {"name": "ZEL FP TEST 2", "description": "Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL", "doc_src": "https://support.cobo.com/hc/en-us/articles/360025623054", "coin": "ZEL", "coin_decimal": 8, "reward_coin": "ZEL", "reward_coin_decimal": 8, "unstake_fee": "1000000000", "min_amount": "3000000000", "rate": "0.2000000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622476800000, "reward_liquidate_time": 1622476800000, "product_id": 159188, "product_group": "ZELFPTEST2"}, {"name": "IOST PPS Wallet", "description": "IOST PPS Wallet", "doc_src": "https://support.cobo.com/hc/en-us/articles/360025765593", "coin": "IOST", "coin_decimal": 8, "reward_coin": "IOST", "reward_coin_decimal": 8, "unstake_fee": "5000000000", "min_amount": "10000000000", "rate": "0.1000000000", "rate_type": 2, "days": 1, "stake_type": "dpos", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622995200000, "reward_liquidate_time": 1622995200000, "product_id": 159189, "product_group": "IOSTPPSW"}, {"name": "IOST FP TEST", "description": "Min. 1 IOST\nRewards start from the next day, will be released every day according to the dynamic reward, choose [Stake continuously] to earn continuously!\nWithdraw available anytime, return to wallet in T+8 (7 days required by IOST)\nWithdrawal fee per time: 1 IOST", "doc_src": "https://support.cobo.com/hc/en-us/articles/360023713454", "coin": "IOST", "coin_decimal": 8, "reward_coin": "IOST", "reward_coin_decimal": 8, "unstake_fee": "100000000", "min_amount": "100000000", "rate": "0.0001000000", "rate_type": 1, "days": 1, "stake_type": "dpos", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1623081600000, "reward_liquidate_time": 1623081600000, "product_id": 159187, "product_group": "IOSTFPTEST"}]}{"success": true, "result": {"name": "DASH FP TEST", "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH", "doc_src": "https://support.cobo.com/hc/en-us/articles/360023826033", "coin": "DASH", "coin_decimal": 8, "reward_coin": "DASH", "reward_coin_decimal": 8, "unstake_fee": "1000000", "min_amount": "1000000", "rate": "0.0002000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": true, "start_stake_time": 1622124000000, "stop_stake_time": 1622210400000, "start_staking_time": 1622217600000, "stop_staking_time": 1622304000000, "liquidate_time": 1622304000000, "reward_liquidate_time": 1622304000000, "product_id": 159185, "product_group": "DASHFPTEST"}}
+{"success": true, "result": [{"name": "DASH FP TEST", "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH", "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360023826033", "coin": "DASH", "coin_decimal": 8, "reward_coin": "DASH", "reward_coin_decimal": 8, "unstake_fee": "1000000", "min_amount": "1000000", "rate": "0.0002000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": true, "start_stake_time": 1622124000000, "stop_stake_time": 1622210400000, "start_staking_time": 1622217600000, "stop_staking_time": 1622304000000, "liquidate_time": 1622304000000, "reward_liquidate_time": 1622304000000, "product_id": 159185, "product_group": "DASHFPTEST"}, {"name": "ZEL FP TEST", "description": "Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL", "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360025623054", "coin": "ZEL", "coin_decimal": 8, "reward_coin": "ZEL", "reward_coin_decimal": 8, "unstake_fee": "1000000000", "min_amount": "3000000000", "rate": "0.2000000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622476800000, "reward_liquidate_time": 1622476800000, "product_id": 159186, "product_group": "ZELFPTEST"}, {"name": "ZEL FP TEST 2", "description": "Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL", "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360025623054", "coin": "ZEL", "coin_decimal": 8, "reward_coin": "ZEL", "reward_coin_decimal": 8, "unstake_fee": "1000000000", "min_amount": "3000000000", "rate": "0.2000000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622476800000, "reward_liquidate_time": 1622476800000, "product_id": 159188, "product_group": "ZELFPTEST2"}, {"name": "IOST PPS Wallet", "description": "IOST PPS Wallet", "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360025765593", "coin": "IOST", "coin_decimal": 8, "reward_coin": "IOST", "reward_coin_decimal": 8, "unstake_fee": "5000000000", "min_amount": "10000000000", "rate": "0.1000000000", "rate_type": 2, "days": 1, "stake_type": "dpos", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1622995200000, "reward_liquidate_time": 1622995200000, "product_id": 159189, "product_group": "IOSTPPSW"}, {"name": "IOST FP TEST", "description": "Min. 1 IOST\nRewards start from the next day, will be released every day according to the dynamic reward, choose [Stake continuously] to earn continuously!\nWithdraw available anytime, return to wallet in T+8 (7 days required by IOST)\nWithdrawal fee per time: 1 IOST", "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360023713454", "coin": "IOST", "coin_decimal": 8, "reward_coin": "IOST", "reward_coin_decimal": 8, "unstake_fee": "100000000", "min_amount": "100000000", "rate": "0.0001000000", "rate_type": 1, "days": 1, "stake_type": "dpos", "lockup": false, "start_stake_time": 1622185200000, "stop_stake_time": 1622271600000, "start_staking_time": 1622304000000, "stop_staking_time": 1622390400000, "liquidate_time": 1623081600000, "reward_liquidate_time": 1623081600000, "product_id": 159187, "product_group": "IOSTFPTEST"}]}{"success": true, "result": {"name": "DASH FP TEST", "description": "hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH", "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360023826033", "coin": "DASH", "coin_decimal": 8, "reward_coin": "DASH", "reward_coin_decimal": 8, "unstake_fee": "1000000", "min_amount": "1000000", "rate": "0.0002000000", "rate_type": 1, "days": 1, "stake_type": "masternode", "lockup": true, "start_stake_time": 1622124000000, "stop_stake_time": 1622210400000, "start_staking_time": 1622217600000, "stop_staking_time": 1622304000000, "liquidate_time": 1622304000000, "reward_liquidate_time": 1622304000000, "product_id": 159185, "product_group": "DASHFPTEST"}}
 ```
 
 </Accordion>
 
 #### Get All Staking Product List
 
-```php
-$client->getStakingProductList(null, "zh");
+```python
+client.get_staking_product_list()
 ```
 
 <Accordion title="View Response">
@@ -1012,8 +985,8 @@ $client->getStakingProductList(null, "zh");
 
 #### Stake
 
-```php
-$client->stake($product_id, new BigInteger("100000"));
+```python
+client.stake(product_id, 1000000)
 ```
 
 <Accordion title="View Response">
@@ -1027,8 +1000,8 @@ $client->stake($product_id, new BigInteger("100000"));
 
 #### Unstake
 
-```php
-$client->unstake($product_id, new BigInteger("100000"));
+```python
+unstake(product_id, 1000000)
 ```
 
 <Accordion title="View Response">
@@ -1042,8 +1015,8 @@ $client->unstake($product_id, new BigInteger("100000"));
 
 #### Get Staking Data
 
-```php
-$client->getStakingData();
+```python
+get_stakings("IOST")
 ```
 
 <Accordion title="View Response">
@@ -1064,7 +1037,7 @@ $client->getStakingData();
       "product": {
         "name": "IOST FP TEST",
         "description": "Min. 1 IOST\nRewards start from the next day, will be released every day according to the dynamic reward, choose [Stake continuously] to earn continuously!\nWithdraw available anytime, return to wallet in T+8 (7 days required by IOST)\nWithdrawal fee per time: 1 IOST",
-        "doc_src": "https://support.cobo.com/hc/en-us/articles/360023713454",
+        "doc_src": "https://support.cobo_custody.com/hc/en-us/articles/360023713454",
         "coin": "IOST",
         "coin_decimal": 8,
         "reward_coin": "IOST",
@@ -1094,8 +1067,8 @@ $client->getStakingData();
 
 #### Get Unstaking Data
 
-```php
-$client->getUnstakingData();
+```python
+client.get_unstakings()
 ```
 
 <Accordion title="View Response">
@@ -1109,8 +1082,8 @@ $client->getUnstakingData();
 
 #### Get All Staking History
 
-```php
-$client->getStakingHistory();
+```python
+client.get_staking_history()
 ```
 
 <Accordion title="View Response">
@@ -1192,7 +1165,7 @@ $client->getStakingHistory();
 
 ### Trading
 
-### [Transaction Notification](/full-custody/waas-reference/transaction-notification)
+### [Transaction Notification](/custodial-wallet/waas-reference/transaction-notification)
 
-### [Withdrawal Confirmation](/full-custody/waas-reference/withdrawal-confirmation)
+### [Withdrawal Confirmation](/custodial-wallet/waas-reference/withdrawal-confirmation)
 
