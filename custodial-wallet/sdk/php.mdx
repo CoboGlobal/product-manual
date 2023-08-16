@@ -1,25 +1,24 @@
 ---
-title: "JavaScript"
-icon: "js"
-description: "If you’re working with JavaScript, the official [cobo-js-api](https://github.com/CoboGlobal/cobo-js-api) package is the easiest way to use."
+title: "PHP"
+icon: "php"
+description: "If you’re working with PHP, the official [cobo-php-api](https://github.com/CoboGlobal/cobo-php-api) package is the easiest way to use."
 ---
 
 ## Installation
 
-add dependency in `package.json`
+add dependency in `composer.json`
 
-```
-  "dependencies": {
-     ...
-    "cobo-custody": "https://github.com/CoboGlobal/cobo-js-api/releases/download/v0.34.0/release.tgz"
+```json
+"require": {
+    ...
+    "cobo/cobo_custody": "0.2.10",
   }
 ```
 
 ## Test
 
 ```
-yarn build
-yarn test -env=sandbox/develop/prod -secretKey=<yourApiSecret>
+php phpunit.phar ClientTest.php
 ```
 
 ## Usage
@@ -28,43 +27,46 @@ yarn test -env=sandbox/develop/prod -secretKey=<yourApiSecret>
 
 #### Generate Key Pair
 
-```js
-const { LocalSigner } = require("cobo-custody");
+```php
+<?php
+require 'vendor/autoload.php';
 
-const keyPair = LocalSigner.newKeyPair();
-console.log(keyPair);
+use Cobo\Custody\Config;
+use Cobo\Custody\LocalSigner;
+use Cobo\Custody\Client;
+$key = LocalSigner::generateKeyPair();
+echo "apiSecret:", $key['apiSecret'],"\n";
+echo "apiKey:", $key['apiKey'];
 ```
 
-Please refer to the [link](/full-custody/authentication) for how to use apiKey
+Please refer to the [link](/custodial-wallet/authentication) for how to use apiKey
 
 #### Initialize RestClient
 
-```js
-const { Client } = require("cobo-custody");
-const { LocalSigner } = require("cobo-custody");
-const { SANDBOX, DEVELOP, PROD } = require("cobo-custody");
-const client = new Client(API_SIGNER, SANDBOX, true);
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Cobo\Custody\Config;
+use Cobo\Custody\LocalSigner;
+use Cobo\Custody\Client;
+
+$client = new Client($signer, Config::DEVELOP, false);
 ```
 
 #### Initialize ApiSigner
 
-`ApiSigner` can be instantiated through
+`ApiSigner` can be instantiated through `$signer = new LocalSigner("secret key");`
 
-```javascript
-const { LocalSigner } = require("cobo-custody");
-const signer = new LocalSigner(
-  "e7e73fabdd9edb8bddf947954c400a63bf93edc57abf170544ec570757df5453"
-);
-```
-
-In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your own implementation by implements `ApiSigner` interface
+In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your
+own implementation by implements `ApiSigner` interface
 
 ### Account
 
 #### Check Account Details
 
-```js
-const res = await client.getAccountInfo();
+```php
+$client->getAccountInfo();
 ```
 
 <Accordion title="View Response">
@@ -117,8 +119,8 @@ const res = await client.getAccountInfo();
 
 #### Get Coin Details
 
-```js
-const res = await client.getCoinInfo("ETH");
+```php
+$client->getCoinDetails("ETH");
 ```
 
 <Accordion title="View Response">
@@ -150,8 +152,8 @@ const res = await client.getCoinInfo("ETH");
 
 #### Get New Deposit Address
 
-```js
-const res = await client.newDepositAddress("BTC", true);
+```php
+$client->newDepositAddress("BTC");
 ```
 
 <Accordion title="View Response">
@@ -168,8 +170,8 @@ const res = await client.newDepositAddress("BTC", true);
 
 #### Batch New Deposit Address
 
-```js
-const res = await client.batchNewDepositAddress("ETH", 4, true);
+```php
+$client->batchNewDepositAddress("ETH", 4);
 ```
 
 <Accordion title="View Response">
@@ -194,11 +196,8 @@ const res = await client.batchNewDepositAddress("ETH", 4, true);
 
 #### Verify Deposit Address
 
-```js
-const res = await client.verifyDepositAddress(
-  "ETH",
-  "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee"
-);
+```php
+$client->verifyDepositAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
 ```
 
 <Accordion title="View Response">
@@ -215,11 +214,15 @@ const res = await client.verifyDepositAddress(
 
 #### Batch Verify Deposit Address
 
-```js
-const res = await client.batchVerifyDepositAddress(
-  "ETH",
-  "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee,0x05325e6f9d1f0437bd78a72c2ae084fbb8c039e1"
-);
+```php
+$addresses = [
+            "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee",
+            "0xe105a42297428575086387de415900a08765a8af",
+            "0x641733cde30e99fe0d6082c2ed96601c37a1718b",
+            "0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d"
+        ];
+
+        $client->batchVerifyDepositAddress("ETH", join(",", $addresses));
 ```
 
 <Accordion title="View Response">
@@ -239,11 +242,8 @@ const res = await client.batchVerifyDepositAddress(
 
 #### Verify Valid Address
 
-```js
-let res = await client.verifyValidAddress(
-  "ETH",
-  "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee"
-);
+```php
+$client->verifyValidAddress("BTC", "3Qd8ZV4DWxMPK1HfitxccZXV2H8mCST3kM");
 ```
 
 <Accordion title="View Response">
@@ -257,11 +257,12 @@ let res = await client.verifyValidAddress(
 
 #### Get Address History List
 
-```js
-const res = await client.getAddressHistory("ETH", 0, 50, 0);
+```php
+$client->getAddressHistoryList("ETH", 0, 5);
 ```
 
 <Accordion title="View Response">
+
 
 ```json
 {
@@ -282,11 +283,8 @@ const res = await client.getAddressHistory("ETH", 0, 50, 0);
 
 #### Check Loop Address Details
 
-```js
-const res = await client.checkLoopAddressDetails(
-  "ETH",
-  "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a"
-);
+```php
+$client->checkLoopAddressDetails("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee");
 ```
 
 <Accordion title="View Response">
@@ -309,11 +307,8 @@ const res = await client.checkLoopAddressDetails(
 
 #### Verify Loop Address List
 
-```js
-const res = await client.verifyLoopAddressList(
-  "ETH",
-  "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a,0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee"
-);
+```php
+$client->verifyLoopAddressList("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a,0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a");
 ```
 
 <Accordion title="View Response">
@@ -341,17 +336,16 @@ const res = await client.verifyLoopAddressList(
 
 #### Loop Transaction Explorer
 
-To help your user to check the Loop transaction, we offer you an explorer, you may insert the following URL in your platform：https://loop.top/tx/[Loop_ID]
+To help your user to check the Loop transaction, we offer you an explorer, you may insert the following URL in your
+platform：https://loop.top/tx/[Loop_ID]
 e.g. https://loop.top/tx/L456e5cb652dcfe557a43fd9d8e48627
 
 ### Transactions
 
 #### Get Transaction Details
 
-```js
-const res = await client.getTransactionDetail(
-  "20210422193807000343569000002370"
-);
+```php
+$client->getTransactionDetails("20210422193807000343569000002370");
 ```
 
 <Accordion title="View Response">
@@ -403,10 +397,8 @@ const res = await client.getTransactionDetail(
 
 #### Get Transactions By Txid
 
-```js
-const res = await client.getTransactionsByTxId(
-  "0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f"
-);
+```php
+$client->getTransactionsByTxid("0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f");
 ```
 
 <Accordion title="View Response">
@@ -489,8 +481,8 @@ const res = await client.getTransactionsByTxId(
 
 #### Obtain the list of confirmed transactions through ID query(deposit&withdraw)
 
-```js
-const res = await client.getTransactionsById({});
+```php
+$client->getTransactionsById(["max_id"]=>"id*********")
 ```
 
 <Accordion title="View Response">
@@ -566,11 +558,12 @@ const res = await client.getTransactionsById({});
 
 #### Obtain the list of confirmed transactions through time query(deposit&withdraw)
 
-```js
-const res = await client.getTransactionsByTime({});
+```php
+$client->getTransactionsByTime();
 ```
 
 <Accordion title="View Response">
+
 
 ```json
 {
@@ -649,8 +642,8 @@ const res = await client.getTransactionsByTime({});
 
 #### Get Pending Transactions
 
-```js
-const res = await client.getPendingTransactions({});
+```php
+$client->getPendingTransactions();
 ```
 
 <Accordion title="View Response">
@@ -735,10 +728,8 @@ const res = await client.getPendingTransactions({});
 
 #### Get Pending Deposit Details
 
-```js
-const res = await client.getPendingDepositDetails(
-  "20200604171238000354106000006405"
-);
+```php
+$client->getPendingDepositDetails("20200604171238000354106000006405");
 ```
 
 <Accordion title="View Response">
@@ -785,18 +776,92 @@ const res = await client.getPendingDepositDetails(
 
 </Accordion>
 
+#### Get Transaction History
+
+```php
+$client->getTransactionHistory();
+```
+
+<Accordion title="View Response">
+
+
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "id": "3228776326735331328",
+      "coin": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "decimal": 18,
+      "address": "0x62b3f5f1717e46bec22c52c1607f84a25b4e7f83",
+      "source_address": "0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a",
+      "side": "deposit",
+      "amount": "100000000000000",
+      "abs_amount": "0.0001",
+      "txid": "0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1539600528114,
+      "last_time": 1539600528114,
+      "confirmed_num": 12,
+      "tx_detail": {
+        "txid": "0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568",
+        "blocknum": 6519238,
+        "blockhash": "0x2abf41e86a9cd37d481d7a3212ca0eab80fa2f4d10e70e94b2623c5318c383c8",
+        "hexstr": ""
+      },
+      "source_address_detail": "0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a",
+      "confirming_threshold": 12,
+      "type": "external"
+    },
+    {
+      "id": "3228768325479694336",
+      "coin": "BTC",
+      "display_code": "BTC",
+      "description": "Bitcoin",
+      "decimal": 8,
+      "address": "1Q1xfp8UkQagCn2pbJFpG89Cd6Ku3yUixE",
+      "source_address": "185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi",
+      "side": "deposit",
+      "amount": "1000",
+      "abs_amount": "0.00001",
+      "txid": "dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b",
+      "vout_n": 0,
+      "request_id": null,
+      "status": "success",
+      "abs_cobo_fee": "0",
+      "created_time": 1539596712818,
+      "last_time": 1539596712818,
+      "confirmed_num": 3,
+      "tx_detail": {
+        "txid": "dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b",
+        "blocknum": 545845,
+        "blockhash": "0000000000000000001fb2c338e7aed6560d852a3a0836f8aac7409b99f8d624",
+        "hexstr": ""
+      },
+      "source_address_detail": "185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi",
+      "confirming_threshold": 3,
+      "type": "external"
+    }
+  ]
+}
+```
+
+</Accordion>
+
 ### Withdrawal
 
 #### Submit Withdraw Request
 
-```js
-const res = await client.withdraw({
-  coin: "TETH",
-  request_id: "request_id_" + String(new Date().getTime()),
-  address: "0xb744adc8d75e115eec8e582eb5e8d60eb0972037",
-  amount: "1",
-  memo: "cobo",
-});
+```php
+$client->withdraw("TETH",
+            "request_id_" . time(),
+            "0xb744adc8d75e115eec8e582eb5e8d60eb0972037",
+            new BigInteger("1"));
 ```
 
 <Accordion title="View Response">
@@ -810,8 +875,8 @@ const res = await client.withdraw({
 
 #### Get Withdraw Information
 
-```js
-const res = await client.getWithdrawInfo("teth29374893624");
+```php
+$client->getWithdrawInfo("teth29374893624");
 ```
 
 <Accordion title="View Response">
@@ -865,8 +930,8 @@ const res = await client.getWithdrawInfo("teth29374893624");
 
 #### Get a Staking Product Details
 
-```js
-let res = await client.getStakingProductList(productId, "en");
+```php
+$client->getStakingProductDetails($prooductId);
 ```
 
 <Accordion title="View Response">
@@ -880,8 +945,8 @@ let res = await client.getStakingProductList(productId, "en");
 
 #### Get All Staking Product List
 
-```js
-const res = await client.getStakingProductList();
+```php
+$client->getStakingProductList(null, "zh");
 ```
 
 <Accordion title="View Response">
@@ -947,8 +1012,8 @@ const res = await client.getStakingProductList();
 
 #### Stake
 
-```js
-res = await client.stake(productId, "1000000");
+```php
+$client->stake($product_id, new BigInteger("100000"));
 ```
 
 <Accordion title="View Response">
@@ -962,8 +1027,8 @@ res = await client.stake(productId, "1000000");
 
 #### Unstake
 
-```js
-res = await client.unstake(productId, "1000000");
+```php
+$client->unstake($product_id, new BigInteger("100000"));
 ```
 
 <Accordion title="View Response">
@@ -977,8 +1042,8 @@ res = await client.unstake(productId, "1000000");
 
 #### Get Staking Data
 
-```js
-const res = await client.getStakingData();
+```php
+$client->getStakingData();
 ```
 
 <Accordion title="View Response">
@@ -1029,8 +1094,8 @@ const res = await client.getStakingData();
 
 #### Get Unstaking Data
 
-```js
-const res = await client.getStakingHistory({});
+```php
+$client->getUnstakingData();
 ```
 
 <Accordion title="View Response">
@@ -1044,8 +1109,8 @@ const res = await client.getStakingHistory({});
 
 #### Get All Staking History
 
-```js
-client.get_staking_history();
+```php
+$client->getStakingHistory();
 ```
 
 <Accordion title="View Response">
@@ -1127,6 +1192,7 @@ client.get_staking_history();
 
 ### Trading
 
-### [Transaction Notification](/full-custody/waas-reference/transaction-notification)
+### [Transaction Notification](/custodial-wallet/waas-reference/transaction-notification)
 
-### [Withdrawal Confirmation](/full-custody/waas-reference/withdrawal-confirmation)
+### [Withdrawal Confirmation](/custodial-wallet/waas-reference/withdrawal-confirmation)
+

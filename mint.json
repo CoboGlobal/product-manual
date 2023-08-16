@@ -24,19 +24,24 @@
   },
   "anchors": [
     {
-      "name": "Full Custody",
+      "name": "Wallet as a Service",
+      "icon": "clouds",
+      "url": "waas"
+    },
+    {
+      "name": "Custodial Wallet",
       "icon": "warehouse",
-      "url": "full-custody"
+      "url": "custodial-wallet"
     },
     {
-      "name": "MPC Custody",
+      "name": "MPC Wallet",
       "icon": "people-group",
-      "url": "mpc-custody"
+      "url": "mpc-wallet"
     },
     {
-      "name": "Smart Contract Custody",
+      "name": "Smart Contract Wallet",
       "icon": "file-contract",
-      "url": "smart-contract-custody"
+      "url": "smart-contract-wallet"
     },
     {
       "name": "News",
@@ -56,16 +61,30 @@
     },
     {
       "group": "Overview",
-      "pages": ["full-custody/introduction"]
+      "pages": ["waas/start-waas"]
     },
     {
       "group": "Get Started",
       "pages": [
-        "full-custody/start-waas",
-        "full-custody/authentication",
-        "full-custody/test",
-        "full-custody/playground"
+        "waas/quickstart",
+        "waas/authentication",
+        "waas/test",
+        "waas/playground"
       ]
+    },
+    {
+      "group": "Appendix",
+      "pages": [
+        "waas/waas-reference/error-codes",
+        "waas/waas-reference/transaction-notification",
+        "waas/waas-reference/withdrawal-confirmation",
+        "waas/waas-reference/callback-signature",
+        "waas/waas-reference/faq"
+      ]
+    },
+    {
+      "group": "Overview",
+      "pages": ["custodial-wallet/introduction"]
     },
     {
       "group": "APIs",
@@ -73,76 +92,66 @@
         {
           "group": "Account",
           "pages": [
-            "full-custody/api/org_info",
-            "full-custody/api/coin_info",
-            "full-custody/api/get_supported_coins",
-            "full-custody/api/new_address",
-            "full-custody/api/new_addresses",
-            "full-custody/api/address_info",
-            "full-custody/api/addresses_info",
-            "full-custody/api/is_valid_address",
-            "full-custody/api/address_history"
+            "custodial-wallet/api/org_info",
+            "custodial-wallet/api/coin_info",
+            "custodial-wallet/api/get_supported_coins",
+            "custodial-wallet/api/new_address",
+            "custodial-wallet/api/new_addresses",
+            "custodial-wallet/api/address_info",
+            "custodial-wallet/api/addresses_info",
+            "custodial-wallet/api/is_valid_address",
+            "custodial-wallet/api/address_history"
           ]
         },
         {
           "group": "Loop Alliance",
           "pages": [
-            "full-custody/api/internal_address_info",
-            "full-custody/api/internal_address_info_batch",
-            "full-custody/api/loop-explorer"
+            "custodial-wallet/api/internal_address_info",
+            "custodial-wallet/api/internal_address_info_batch",
+            "custodial-wallet/api/loop-explorer"
           ]
         },
         {
           "group": "Transactions",
           "pages": [
-            "full-custody/api/transaction",
-            "full-custody/api/transactions_by_id",
-            "full-custody/api/transactions_by_request_ids",
-            "full-custody/api/transaction_by_txid",
-            "full-custody/api/transactions_by_time",
-            "full-custody/api/pending_transaction",
-            "full-custody/api/pending_transactions",
-            "full-custody/api/transaction_history"
+            "custodial-wallet/api/transaction",
+            "custodial-wallet/api/transactions_by_id",
+            "custodial-wallet/api/transactions_by_request_ids",
+            "custodial-wallet/api/transaction_by_txid",
+            "custodial-wallet/api/transactions_by_time",
+            "custodial-wallet/api/pending_transaction",
+            "custodial-wallet/api/pending_transactions",
+            "custodial-wallet/api/transaction_history"
           ]
         },
         {
           "group": "Withdrawal",
           "pages": [
-            "full-custody/api/new_withdraw_request",
-            "full-custody/api/withdraw_info_by_request_id"
+            "custodial-wallet/api/new_withdraw_request",
+            "custodial-wallet/api/withdraw_info_by_request_id"
           ]
         },
         {
           "group": "Staking",
           "pages": [
-            "full-custody/api/staking/staking_product",
-            "full-custody/api/staking/staking_products",
-            "full-custody/api/staking/staking_stake",
-            "full-custody/api/staking/staking_unstake",
-            "full-custody/api/staking/stakings",
-            "full-custody/api/staking/unstakings",
-            "full-custody/api/staking/staking_history"
+            "custodial-wallet/api/staking/staking_product",
+            "custodial-wallet/api/staking/staking_products",
+            "custodial-wallet/api/staking/staking_stake",
+            "custodial-wallet/api/staking/staking_unstake",
+            "custodial-wallet/api/staking/stakings",
+            "custodial-wallet/api/staking/unstakings",
+            "custodial-wallet/api/staking/staking_history"
           ]
         },
         {
           "group": "Trading",
           "pages": [
-            "full-custody/api/trading/trading_withdraw",
-            "full-custody/api/trading/trading_withdraw_info",
-            "full-custody/api/trading/trading_deposit",
-            "full-custody/api/trading/trading_deposit_info",
-            "full-custody/api/trading/trading_transfer",
-            "full-custody/api/trading/trading_transfer_info"
-          ]
-        },
-        {
-          "group": "Appendix",
-          "pages": [
-            "full-custody/waas-reference/error-codes",
-            "full-custody/waas-reference/transaction-notification",
-            "full-custody/waas-reference/withdrawal-confirmation",
-            "full-custody/waas-reference/callback-signature",
-            "full-custody/waas-reference/faq"
+            "custodial-wallet/api/trading/trading_withdraw",
+            "custodial-wallet/api/trading/trading_withdraw_info",
+            "custodial-wallet/api/trading/trading_deposit",
+            "custodial-wallet/api/trading/trading_deposit_info",
+            "custodial-wallet/api/trading/trading_transfer",
+            "custodial-wallet/api/trading/trading_transfer_info"
           ]
         }
       ]
@@ -150,25 +159,16 @@
     {
       "group": "SDKs",
       "pages": [
-        "full-custody/sdk/java",
-        "full-custody/sdk/php",
-        "full-custody/sdk/python",
-        "full-custody/sdk/javascript",
-        "full-custody/sdk/go"
+        "custodial-wallet/sdk/java",
+        "custodial-wallet/sdk/php",
+        "custodial-wallet/sdk/python",
+        "custodial-wallet/sdk/javascript",
+        "custodial-wallet/sdk/go"
       ]
     },
     {
       "group": "Overview",
-      "pages": ["mpc-custody/mpc-introduction"]
-    },
-    {
-      "group": "Get Started",
-      "pages": [
-        "mpc-custody/start-waas",
-        "mpc-custody/authentication",
-        "mpc-custody/test",
-        "mpc-custody/playground"
-      ]
+      "pages": ["mpc-wallet/mpc-introduction"]
     },
     {
       "group": "APIs",
@@ -176,67 +176,57 @@
         {
           "group": "Account",
           "pages": [
-            "mpc-custody/api/mpc_get_supported_chains",
-            "mpc-custody/api/mpc_get_supported_coins",
-            "mpc-custody/api/mpc_get_wallet_supported_coins",
-            "mpc-custody/api/mpc_is_valid_address",
-            "mpc-custody/api/mpc_generate_addresses",
-            "mpc-custody/api/mpc_list_addresses",
-            "mpc-custody/api/mpc_get_balance",
-            "mpc-custody/api/mpc_list_balances",
-            "mpc-custody/api/mpc_list_spendable",
-            "mpc-custody/api/mpc_estimate_fee",
-            "mpc-custody/api/mpc_get_supported_nft_collections"
+            "mpc-wallet/api/mpc_get_supported_chains",
+            "mpc-wallet/api/mpc_get_supported_coins",
+            "mpc-wallet/api/mpc_get_wallet_supported_coins",
+            "mpc-wallet/api/mpc_is_valid_address",
+            "mpc-wallet/api/mpc_generate_addresses",
+            "mpc-wallet/api/mpc_list_addresses",
+            "mpc-wallet/api/mpc_get_balance",
+            "mpc-wallet/api/mpc_list_balances",
+            "mpc-wallet/api/mpc_list_spendable",
+            "mpc-wallet/api/mpc_estimate_fee",
+            "mpc-wallet/api/mpc_get_supported_nft_collections"
           ]
         },
         {
           "group": "Transaction",
           "pages": [
-            "mpc-custody/api/mpc_list_transactions",
-            "mpc-custody/api/mpc_transactions_by_request_ids",
-            "mpc-custody/api/mpc_transactions_by_cobo_ids",
-            "mpc-custody/api/mpc_transactions_by_tx_hash"
+            "mpc-wallet/api/mpc_list_transactions",
+            "mpc-wallet/api/mpc_transactions_by_request_ids",
+            "mpc-wallet/api/mpc_transactions_by_cobo_ids",
+            "mpc-wallet/api/mpc_transactions_by_tx_hash"
           ]
         },
         {
           "group": "Withdrawal",
           "pages": [
-            "mpc-custody/api/mpc_create_transaction",
-            "mpc-custody/api/mpc_speedup_transaction",
-            "mpc-custody/api/mpc_drop_transaction",
-            "mpc-custody/api/mpc_retry_double_check",
-            "mpc-custody/api/mpc_sign_message",
-            "mpc-custody/api/mpc_sign_messages_by_cobo_ids",
-            "mpc-custody/api/mpc_sign_messages_by_request_ids"
+            "mpc-wallet/api/mpc_create_transaction",
+            "mpc-wallet/api/mpc_speedup_transaction",
+            "mpc-wallet/api/mpc_drop_transaction",
+            "mpc-wallet/api/mpc_retry_double_check",
+            "mpc-wallet/api/mpc_sign_message",
+            "mpc-wallet/api/mpc_sign_messages_by_cobo_ids",
+            "mpc-wallet/api/mpc_sign_messages_by_request_ids"
           ]
         },
         {
           "group": "Tss Node",
           "pages": [
-            "mpc-custody/api/mpc_list_tss_node_requests",
-            "mpc-custody/api/mpc_list_tss_node"
+            "mpc-wallet/api/mpc_list_tss_node_requests",
+            "mpc-wallet/api/mpc_list_tss_node"
           ]
         },
         {
           "group": "Bind Auth",
           "pages": [
-            "mpc-custody/api/auth_create_binding",
-            "mpc-custody/api/auth_query_binding",
-            "mpc-custody/api/auth_query_user_auth",
-            "mpc-custody/api/auth_bind_addresses",
-            "mpc-custody/api/auth_change_binding",
-            "mpc-custody/api/auth_unbind_binding",
-            "mpc-custody/api/auth_query_statement"
-          ]
-        },
-        {
-          "group": "Appendix",
-          "pages": [
-            "mpc-custody/waas-reference/error-codes",
-            "mpc-custody/waas-reference/transaction-notification",
-            "mpc-custody/waas-reference/withdrawal-confirmation",
-            "mpc-custody/waas-reference/callback-signature",
-            "mpc-custody/waas-reference/faq"
+            "mpc-wallet/api/auth_create_binding",
+            "mpc-wallet/api/auth_query_binding",
+            "mpc-wallet/api/auth_query_user_auth",
+            "mpc-wallet/api/auth_bind_addresses",
+            "mpc-wallet/api/auth_change_binding",
+            "mpc-wallet/api/auth_unbind_binding",
+            "mpc-wallet/api/auth_query_statement"
           ]
         }
       ]
@@ -244,71 +234,71 @@
     {
       "group": "TSS Node Callback",
       "pages": [
-        "mpc-custody/callback/tss-node-callback-mechanism",
+        "mpc-wallet/callback/tss-node-callback-mechanism",
         {
           "group": "Callback Server Requirements",
           "pages": [
-            "mpc-custody/callback/callback-server-requirements/callback-api",
-            "mpc-custody/callback/callback-server-requirements/keygen-request",
-            "mpc-custody/callback/callback-server-requirements/sign-request",
-            "mpc-custody/callback/callback-server-requirements/reshare-request",
-            "mpc-custody/callback/callback-server-requirements/callback-server-examples"
+            "mpc-wallet/callback/callback-server-requirements/callback-api",
+            "mpc-wallet/callback/callback-server-requirements/keygen-request",
+            "mpc-wallet/callback/callback-server-requirements/sign-request",
+            "mpc-wallet/callback/callback-server-requirements/reshare-request",
+            "mpc-wallet/callback/callback-server-requirements/callback-server-examples"
           ]
         },
-        "mpc-custody/callback/callback-server-configuration",
-        "mpc-custody/callback/tss-node-configuration-and-callback-server-startup"
+        "mpc-wallet/callback/callback-server-configuration",
+        "mpc-wallet/callback/tss-node-configuration-and-callback-server-startup"
       ]
     },
     {
       "group": "Tools",
-      "pages": ["mpc-custody/tools/recovery-kit"]
+      "pages": ["mpc-wallet/tools/recovery-kit"]
     },
     {
       "group": "Overview",
       "pages": [
-        "smart-contract-custody/cobosafe",
-        "smart-contract-custody/coboargus"
+        "smart-contract-wallet/cobosafe",
+        "smart-contract-wallet/coboargus"
       ]
     },
     {
       "group": "Contracts",
       "pages": [
-        "smart-contract-custody/en/1_overview",
+        "smart-contract-wallet/en/1_overview",
         {
           "group": "Cobo Account",
           "pages": [
-            "smart-contract-custody/en/2_1_account",
-            "smart-contract-custody/en/2_2_cobosafe",
-            "smart-contract-custody/en/2_3_cobosmart",
-            "smart-contract-custody/en/2_4_send_tx"
+            "smart-contract-wallet/en/2_1_account",
+            "smart-contract-wallet/en/2_2_cobosafe",
+            "smart-contract-wallet/en/2_3_cobosmart",
+            "smart-contract-wallet/en/2_4_send_tx"
           ]
         },
-        "smart-contract-custody/en/3_rolemanager",
+        "smart-contract-wallet/en/3_rolemanager",
         {
           "group": "Authorizer",
           "pages": [
-            "smart-contract-custody/en/4_1_authorizer",
-            "smart-contract-custody/en/4_2_sample",
-            "smart-contract-custody/en/4_3_ACL",
-            "smart-contract-custody/en/4_4_hint",
-            "smart-contract-custody/en/4_5_others"
+            "smart-contract-wallet/en/4_1_authorizer",
+            "smart-contract-wallet/en/4_2_sample",
+            "smart-contract-wallet/en/4_3_ACL",
+            "smart-contract-wallet/en/4_4_hint",
+            "smart-contract-wallet/en/4_5_others"
           ]
         },
-        "smart-contract-custody/en/5_argus",
-        "smart-contract-custody/en/6_audit",
-        "smart-contract-custody/en/7_deployment"
+        "smart-contract-wallet/en/5_argus",
+        "smart-contract-wallet/en/6_audit",
+        "smart-contract-wallet/en/7_deployment"
       ]
     },
     {
       "group": "SDKs",
       "pages": [
-        "smart-contract-custody/sdk/js",
-        "smart-contract-custody/sdk/python"
+        "smart-contract-wallet/sdk/js",
+        "smart-contract-wallet/sdk/python"
       ]
     },
     {
       "group": "Tools",
-      "pages": ["smart-contract-custody/tools/overview"]
+      "pages": ["smart-contract-wallet/tools/overview"]
     },
     {
       "group": "Community",
@@ -325,7 +315,7 @@
     "raiseIssue": true
   },
   "api": {
-    "baseUrl":"https://api.develop.cobo.com",
+    "baseUrl": "https://api.develop.cobo.com",
     "auth": {
       "method": "cobo"
     },

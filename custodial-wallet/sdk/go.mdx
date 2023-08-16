@@ -16,7 +16,7 @@ go get github.com/CoboCustody/cobo-go-api@v0.40.0
 
 ```
 cd cobo_custody
-go test -env sandbox/prod -secret <yourApiSecret>
+go test -env develop/prod -secret <yourApiSecret>
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ println("API_SECRET:", apiSecret)
 println("API_KEY:", apiKey)
 ```
 
-Please refer to the [link](/full-custody/authentication) for how to use apiKey
+Please refer to the [link](/custodial-wallet/authentication) for how to use apiKey
 
 #### Initialize RestClient
 
@@ -41,7 +41,7 @@ Please refer to the [link](/full-custody/authentication) for how to use apiKey
 import "github.com/CoboCustody/cobo-go-api/cobo_custody"
 var client = cobo_custody.Client{
   Signer:  localSigner,
-  Env: cobo.Sandbox(),
+  Env: cobo.Develop(),
 }
 ```
 
@@ -1207,7 +1207,7 @@ client.GetStakingHistory()
 
 ### Trading
 
-### [Transaction Notification](/full-custody/waas-reference/transaction-notification)
+### [Transaction Notification](/custodial-wallet/waas-reference/transaction-notification)
 
-### [Withdrawal Confirmation](/full-custody/waas-reference/withdrawal-confirmation)
+### [Withdrawal Confirmation](/custodial-wallet/waas-reference/withdrawal-confirmation)
 

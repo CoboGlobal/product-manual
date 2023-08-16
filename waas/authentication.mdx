@@ -1,0 +1,112 @@
+---
+title: "Authentication"
+description: "WaaS API Authentication"
+---
+
+## Introduction
+
+This article explains how Cobo's WaaS Service authenticates API clients.
+If you are using one of the five WaaS SDKs provided by Cobo, you can skip this
+article because the SDKs already encapsulate the authentication mechanism for
+you. If you don't use the SDKs, you would have to implement the authentication
+by yourself, this article explains how.
+
+[To be supplemented with details]
+
+## Create API key
+
+To ensure secure access to your crypto assets under Cobo Custody via APIs,
+Cobo mandates the use of ECDSA signatures for authentication in all API calls.
+Access to the API is denied without proper authentication.
+
+Generate and manage API keys effortlessly using the Cobo-provided SDK ([here](https://github.com/CoboGlobal)).
+Here's a sample Python SDK:
+
+```python Python
+from cobo_custody.signer.local_signer import generate_new_key
+api_secret, api_key = generate_new_key()
+print(api_secret)
+print(api_key)
+```
+
+<Warning>
+api_secret is your private key and should be stored securely.
+
+api_key is your public key and needs to be set in your custody account.
+</Warning>
+
+## Test API Key
+
+Once you've added your API key to your Custody account (see [How to set API key on Custody in the quickstart section](/waas/quickstart)),
+we provide two methods to test whether your API key has been configured successfully.
+
+**Test API key by SDKs:**
+
+```python Python
+signer = LocalSigner("YOUR_API_SECRET")
+client = Client(signer=signer, env=DEVELOP_ENV, debug=True)
+res = client.get_account_info()
+```
+
+<Accordion title="View Response">
+```json
+{
+  "success": true,
+  "result": {
+    "name": "cobo_test",
+    "assets": [
+      {
+        "coin": "ADA",
+        "display_code": "ADA",
+        "description": "Cardano",
+        "decimal": 6,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "require_memo": false,
+        "balance": "29880892",
+        "abs_balance": "29.880892",
+        "fee_coin": "ADA",
+        "abs_estimate_fee": "1",
+        "confirming_threshold": 9,
+        "dust_threshold": 1000000,
+        "token_address": ""
+      },
+      {
+        "coin": "ALGO",
+        "display_code": "ALGO",
+        "description": "Algorand",
+        "decimal": 6,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "require_memo": false,
+        "balance": "8359337",
+        "abs_balance": "8.359337",
+        "fee_coin": "ALGO",
+        "abs_estimate_fee": "0.8",
+        "confirming_threshold": 12,
+        "dust_threshold": 1,
+        "token_address": ""
+      }
+    ]
+  }
+}
+```
+</Accordion>
+
+<br/>
+
+**Test API key by Playground:**
+
+We also provide an exciting API interaction tool called Playground,
+which makes testing APIs a breeze. To learn how to use Playground, refer to the([Interactive API Playground](/waas/playground)) section.
+<br/>
+
+## SDKS
+
+<CardGroup cols={3}>
+  <Card title="Java" icon="java" color="#ea5a0c" href="/custodial-wallet/sdk/java"></Card>
+  <Card title="PHP" icon="php" color="#0285c7" href="/custodial-wallet/sdk/php"></Card>
+  <Card title="Python" icon="python" color="#16a34a" href="/custodial-wallet/sdk/python"></Card>
+  <Card title="JavaScript" icon="js" color="#dc2626" href="/custodial-wallet/sdk/javascript"></Card>
+  <Card title="Go" icon="golang" color="#dc2626" href="/custodial-wallet/sdk/go"></Card>
+</CardGroup>
