@@ -3,10 +3,13 @@ title: Get Tss Node List
 api: GET /v1/custody/mpc/list_tss_node/
 description: "This endpoint returns a JSON response containing a list of TSS nodes that configured on the Custody MPC Setting page. The response includes node id, node type and if the node is online."
 ---
+
 #### Request
+
 None
 
 #### Response
+
 <ResponseField name="tss_nodes" type="object[]" >
   <Expandable title="object">
         <ResponseField name="node_id" type="String" >Unique TSS Node ID</ResponseField>
@@ -59,3 +62,4 @@ Request("GET", "/v1/custody/mpc/list_tss_node/", map[string]string{})
 
 ```
 </ResponseExample>
+```
