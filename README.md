@@ -11,9 +11,9 @@
   <br />
   <a href="https://www.cobo.com/developers/custodial-wallet/introduction">Custodial Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://www.cobo.com/developers/mpc-custody/mpc-introduction">MPC Custody</a>
+  <a href="https://www.cobo.com/developers/mpc-custody/mpc-introduction">MPC Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://www.cobo.com/developers/smart-contract-custody/cobosafe">Smart Contract Custody</a>
+  <a href="https://www.cobo.com/developers/smart-contract-custody/cobosafe">Smart Contract Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href="https://www.cobo.com/web3/channel/news">News</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
@@ -41,37 +41,42 @@
 
 <br/>
 
-
 ## Get started
 
 The Developer Hub mainly includes the following resources.:
-- **[Custodial Wallet](https://www.cobo.com/developers/custodial-wallet/introduction)**. Cobo Custodial Wallet is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
-- **[MPC Custody](https://www.cobo.com/developers/mpc-custody/mpc-introduction)**. Cobo MPC Co-Managed Custody leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
-- **[Smart Contract Custody](https://www.cobo.com/developers/smart-contract-custody/cobosafe)**. Cobo’s Smart Contract Custody solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
-<br />
 
+- **[Custodial Wallet](https://www.cobo.com/developers/custodial-wallet/introduction)**. Cobo Custodial Wallet is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
+- **[MPC Wallet](https://www.cobo.com/developers/mpc-custody/mpc-introduction)**. Cobo MPC Wallet leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
+- **[Smart Contract Wallet](https://www.cobo.com/developers/smart-contract-custody/cobosafe)**. Cobo’s Smart Contract Wallet solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
+  <br />
 
 ## Contributing
+
 PRs are always welcome! To get started, follow this guide to build Cobo Developer Hub from
 source on your local machine.
 
-
 Step 1.clone
+
 ```
 git clone git@github.com:CoboGlobal/developer-site.git
 ```
+
 <br />
 
 Step 2. Install Mintlify on your OS:
+
 ```
 npm i -g mintlify
 ```
+
 <br />
 
-Step 3.  Go to the docs directory (where you can find mint.json) and run the following command:
+Step 3. Go to the docs directory (where you can find mint.json) and run the following command:
+
 ```
 mintlify dev
 ```
+
 The documentation website is now available at http://localhost:3000.
 
 <br />
@@ -82,9 +87,8 @@ Step 4. Developer Hub is built on mintlify, its syntax is very similar to markdo
 
 <br />
 
-
 Step 5. When you have completed the modifications locally, and after previewing with no issues,
-        please proceed with the standard Fork & Pull Request process for submission.
+please proceed with the standard Fork & Pull Request process for submission.
 
 [How to Fork & Pull Request 👉](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
 <br />
@@ -100,6 +104,6 @@ Step 5. When you have completed the modifications locally, and after previewing 
 [Follow our linkedln 👉](https://www.linkedin.com/company/cobo-global/)
 
 ## License
+
 The code in this repository is developed and distributed under the
 GPL 3.0 license. See [LICENSE](LICENSE) for details.
-

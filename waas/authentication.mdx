@@ -11,7 +11,108 @@ article because the SDKs already encapsulate the authentication mechanism for
 you. If you don't use the SDKs, you would have to implement the authentication
 by yourself, this article explains how.
 
-[To be supplemented with details]
+
+Cobo API Key authentication requires each request to be signed except public API interfaces.
+
+The data needs to be signed as the following:
+
+```
+HTTP_METHOD + |  +  HTTP_REQUEST_PATH + | + TIMESTAMP + | + PARAMS
+```
+
+The API signature should sign data with ECDSA signature after connection and sign the bytes with hex encoding.
+
+<aside class="notice">
+    Each component is defined as follows
+</aside>
+
+## HTTP HOST
+
+- Develop: https://api.develop.cobo.com
+- Production : https://api.custody.cobo.com
+
+## HTTP_METHOD
+
+Capitalized GET or POST. **Please note: Cobo doesn’t accept JSON payloads in HTTP POST. Please use form-data.**
+
+## HTTP_REQUEST_PATH
+
+The PATH part of the URL request. For example: /v1/test/
+in [https://api.develop.cobo.com/v1/test/](https://api.develop.cobo.com/v1/test/).
+
+## NONCE
+
+The UNIX EPOCH timestamp when calling the API is in milliseconds.
+
+## PARAMS
+
+If the parameters are:
+
+```
+{
+  "username": "username",
+  "password": "password"
+}
+```
+
+After sorting the key with alphabet:
+`password=password`
+`username=username`
+
+Because "p" is sorted before "u" in the alphabet, "password" should be placed before "username" and then connected as
+follows:
+`password=password&username=username`
+
+API parameters are key-value string pairs. Parameters need to be normalized before signing. The rule is as follows:
+
+1. Sort parameters by keys alphabetically.
+2. Transform each parameter to a string in the format of “key=value”.
+3. Connect the strings with &.
+
+## Example
+
+For the following requests:
+
+| Method | URL                                           | Nonce         |
+| ------ | --------------------------------------------- | ------------- |
+| POST   | https://api.develop.cobo.com/v1/custody/test/ | 1537498830736 |
+
+Paremeters
+
+| Parameter | Value   |
+| --------- | ------- |
+| type      | limit   |
+| side      | buy     |
+| amount    | 100.0   |
+| price     | 100.0   |
+| symbol    | btcusdt |
+
+Data to be prepared before signing are as follows:
+
+```
+POST|/v1/custody/test/|1537498830736|amount=100.0&price=100.0&side=buy&symbol=btcusdt&type=limit
+```
+
+Apply your locally generated API Secret to sign the data with ECDSA signature, and hex encode binary results to create
+the final signature for API server verification. (See Cobo
+examples: [https://github.com/CoboGlobal/](https://github.com/CoboGlobal/) )
+
+HEADER FIELDS
+
+- **BIZ-API-KEY**
+  This field contains the API key.
+- **BIZ-API-SIGNATURE**
+  This field contains the signature.
+- **BIZ-API-NONCE**
+  This field contains the nonce.
+
+Fill the Header with API Key, Nonce and signature on the right field to pass signature verification.
+
+If you want to check Cobo pubkey to verify Cobo signature, please go to: Web management platform - Wallet - API
+Callback. (NOTICE they're different in Develop&Production environment)
+
+
+The following content is to use the SDK to authorize.
 
 ## Create API key
 
