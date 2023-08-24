@@ -1,0 +1,86 @@
+---
+title: "Cobo Safe Python Kit"
+icon: ""
+description:
+---
+
+
+# Installation
+
+```sh
+pip install git+https://github.com/coboglobal/pycobosafe
+```
+
+# Usage
+
+`pycobosafe` provides an interactive console for interacting with Cobo Safe and allow users to view the information of Cobo Safe easily and perform simple on-chain actions.
+
+```
+$> pycobosafe -c polygon-main-fork
+Welcome to the cobosafe shell. Type `help` to list commands.
+
+cobosafe > help
+
+Documented commands (type help <topic>):
+========================================
+bind_authorizer    create_cobosmart  glob          safe             
+bind_delegate      debug             help          sh               
+chain              delegate          init_argus    unbind_authorizer
+cobosafe           dump              ipython       unbind_delegate  
+create_authorizer  exit              load_account
+create_cobosafe    factory           py  
+```
+
+List all implementations registered in `CoboFactory`.
+
+```
+cobosafe > factory
+Name: CoboFactory
+Address: 0xC0B00000e19D71fA50a9BB1fcaC2eC92fac9549C
+Version: 1
+Owner: 0x5551268c3664E5750C70f15A661F1C2E782ee210
+Latest implementations (Total 18):
+  ArgusAccountHelper: 0xB4d7111432C2827B58331802E1759e9c91e83282
+  ArgusViewHelper: 0xF97BB9AF9FE6A68b324EdBcd0fE698E631F5113A
+  CoboSafeAccount: 0xE7168444CF4c25800C2817BFDC6dcf17C261994d
+  FlatRoleManager: 0x2F2FDDb984cdEC4318D8d87BC70821e9B9Ed8e7E
+  ArgusRootAuthorizer: 0x7Ba3CC542b70f8F1D6282dae222235D42CFd34CD
+  FuncAuthorizer: 0x92DdB2B7D17FF42078AFFf98721F6d1E38083ED6
+  TransferAuthorizer: 0x2148c4F124029c3A18CFcC7A86A67A5Bf4D88658
+  1inchV5Authorizer: 0xfecE55912861a401738604c52998604ba45115a1
+  ParaswapBotAuthorizer: 0x47219e2f187a145De306f0ca882A0304D0AE912e
+  ...
+```
+
+Summarize information of contracts in Cobo Safe framework.
+```
+cobosafe > dump 0xE3dA9932f4492A28678cDe44ff875E434377bcFE
+Name: CoboSafeAccount
+Address: 0xE3dA9932f4492A28678cDe44ff875E434377bcFE
+Version: 1
+Owner: 0x765F20672A0Ff2d1fC518b7B318b72A043aaDD99
+Authorizer: 0x3C85b07C8478D5876D5F17EB8dcD4D442842BaaF
+Role manager: 0x324B5B185b2B02AA3A74EE44e76bc72464b020BA
+Delegates:
+```
+
+Interact with Cobo Safe contracts. *Note: For test purpose only, do NOT use in Production environment.*
+```
+cobosafe > load_account <your brownie account id>
+Enter password for "<id>":
+Load address: <0x..>
+Delegate set to <0x..>
+
+cobosafe > safe 0x765F20672A0Ff2d1fC518b7B318b72A043aaDD99
+Safe set to 0x765F20672A0Ff2d1fC518b7B318b72A043aaDD99
+
+cobosafe > init_argus
+CoboSafeAccount created at 0xE3dA9932f4492A28678cDe44ff875E434377bcFE
+Name: CoboSafeAccount
+Address: 0xE3dA9932f4492A28678cDe44ff875E434377bcFE
+Version: 1
+Owner: 0x765F20672A0Ff2d1fC518b7B318b72A043aaDD99
+Authorizer: 0x3C85b07C8478D5876D5F17EB8dcD4D442842BaaF
+Role manager: 0x324B5B185b2B02AA3A74EE44e76bc72464b020BA
+Delegates: 
+```

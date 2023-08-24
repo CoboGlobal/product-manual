@@ -1,0 +1,65 @@
+---
+title: "JavaScript"
+icon: "js"
+description: 
+---
+
+# Overview
+
+`jscobosafe` is a JavaScript SDK for sending transactions via `Cobo Safe` in the same way as [ethers.js](https://github.com/ethers-io/ethers.js/).
+
+Head to https://github.com/coboglobal/jscobosafe for the source code.
+
+# Installation
+
+```sh
+npm i git+https://github.com/coboglobal/jscobosafe
+```
+
+# Usage
+
+Your `.env` configuration
+```
+PRIV = <Private key of the delegate>
+COBOSAFE = <Address of CoboSafeAccount>
+```
+
+The code performs a transfer of WMATIC ERC20 token on Polygon network.
+```js
+const {CoboSafeAccount} = require("jscobosafe");
+const {ethers} = require("ethers");
+const ERC20_ABI = require("./ERC20.json");
+
+require("dotenv").config();
+const PRI_KEY = process.env.PRIV;
+const COBO_SAFE_ADDRESS = process.env.COBOSAFE
+
+const provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/polygon")
+const signer = new ethers.Wallet(PRI_KEY, provider);
+const coboSafe = new CoboSafeAccount(COBO_SAFE_ADDRESS, signer)
+const delegate = coboSafe.delegate;
+
+const WMATIC_ADDRESS = "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270";
+
+async function main(){
+    console.log("CoboSafe", coboSafe.address);
+    console.log("Safe", await coboSafe.safe());
+    console.log("Delegate", coboSafe.delegate);
+
+    let tx;
+
+    // Connect with the contract as other ethers.js signers do.
+    const token = new ethers.Contract(WMATIC_ADDRESS, ERC20_ABI, coboSafe);
+
+    console.log(await token.balanceOf(await coboSafe.safe()))
+    tx = await token.transfer(delegate, 1);
+    await tx.wait()
+    console.log(await token.balanceOf(await coboSafe.safe()))
+}
+
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
+```
+
