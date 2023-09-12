@@ -3,16 +3,11 @@ title: "Transaction Notification"
 description: ""
 ---
 
-When a successful deposit or withdrawal transaction is received, Cobo will notify a client-specified URL using HTTP(S) with a POST request method.
-The message will be provided in JSON format within the HTTP message body, containing transaction data.
-Once the client receives and completes message processing, they need to send an HTTP response with a status code of 200 back to Cobo.
-
-We will initiate resending of transaction data in the following scenarios:
-1. If a response is received with a status code other than 200.
-2. If a response is received with a status code of 200, but the body data is 'retry'.
-
-In such cases, we will continue pushing the same message to the designated URL up to 14 times.
-If you wish to resend the push at a later time, you can click the 'Resend' button on the web interface under Wallet - API Callback - API Push History.
+Upon receiving a successful deposit/withdrawal transaction, Cobo will notify a client-designated URL via HTTP(S), and request method is POST. The
+message includes the transaction data in the HTTP message body in JSON format. After the client receives and finishes
+processing the message, they must send an HTTP response with status code = 200 and http body = ok to Cobo. Otherwise,
+we will continue to push the same message to the designated URL (up to 14 times, if you want to re-send the push later,
+you could click on 'Resend' Button on Web: Wallet - API Callback - API Push History)
 
 If block confirmation status is chosen in web platform, there will be a notification whenever the block confirmation
 number changes for one transaction, the status is marked as 'pending', the confirmation number and '
@@ -68,7 +63,7 @@ send an HTTP post request to the client-designated URL with the body ->
    deposits or withdrawals.**
 
 2. For 'successful transaction' notifications, Cobo use a 'succeed at least once' strategy. If the client does not
-   respond with status code 200 or HTTP request timeout message, Cobo will consider the push as failed. After a while,
+   respond with a 'body data ok' or HTTP request timeout message, Cobo will consider the push as failed. After a while,
    we will push again. However, there is a limit for push attempts. It the limit is exceeded, it will be marked as a
    failed push.
 

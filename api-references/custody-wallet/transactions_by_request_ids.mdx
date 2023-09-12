@@ -29,7 +29,7 @@ description: "This endpoint returns a JSON response containing transaction infor
     <ResponseField name="txid" type="String">Transaction ID, which can be found on the corresponding public chain</ResponseField>
     <ResponseField name="vout_n" type="String">For transactions on public blockchains that allow for multiple deposit addresses in a single transaction, this value indicates the transaction index on the corresponding public blockchain</ResponseField>
     <ResponseField name="request_id" type="String">Request ID</ResponseField>
-    <ResponseField name="status" type="enum(success / failed / pending)">Transaction status</ResponseField>
+    <ResponseField name="status" type="enum(success / failed)">Transaction status</ResponseField>
     <ResponseField name="request_created_time" type="Long">Withdraw request creation time</ResponseField>
     <ResponseField name="created_time" type="Long">Transaction creation time</ResponseField>
     <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>

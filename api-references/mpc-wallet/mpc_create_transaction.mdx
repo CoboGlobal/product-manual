@@ -11,7 +11,7 @@ description: "This endpoint creates a transaction for a given coin and request I
 <ParamField body="from_address" type="String" >
 Account Model: this parameter is required
 
-UTXO Model: this parameter is optional,the input will be selected based off extra_parameters
+UTXO Model: this parameter is optional, the input will be selected based off extra_parameters. from_address will also be used as the change address of UTXO transactions when utxo_change_address not passed in extra_parameters
 </ParamField>
 <ParamField body="to_address" type="String" >to address</ParamField>
 <ParamField body="to_address_details" type="String" >
@@ -38,15 +38,17 @@ UTXO Model:
     3. **inputs_to_exclude:** UTXO you don't want as input
         - tx_hash: Transaction tx_hash
         - vout_n: UTXO index
+    4. **utxo_change_address:** the change address for UTXO transactions. if parameter from_address passed and utxo_change_address not passed, from_address will be used as the change address. otherwise, the permanent address (SegWit) will be used as the change address
 ```python Sample
 extra_parameters: '{"input_selection":
                         {"inputs_to_spend":[
                               {"tx_hash": "e7ddfa61cc2a78e1661da44b10cdc862256573d2dc0485dc989fb7045ed9032c", "vout_n": 1},
 			                  {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 2}],
-		                   "inputs_to_exclude":[
+                        "inputs_to_exclude":[
 		                      {"tx_hash": "e7ddfa61cc2a78e1661da44b10cdc862256573d2dc0485dc989fb7045ed9032c", "vout_n": 3},
 			                  {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 4}]
-			            }
+                        },
+                     "utxo_change_address": "2MznT7D2tKZKshfQPfhTuLYB7Bw9TZqb17w"
 			        }'
 ```
 Web3 wallet:
