@@ -3,6 +3,9 @@ title: Get Supported Coins
 api: GET /v1/custody/mpc/get_supported_coins/ 
 description: "This endpoint returns a JSON response containing a list of supported coins for a given chain. The response includes the coin code, display code, description, decimal, deposit and withdrawal availability, and confirming threshold."
 ---
+
+<Note>This API is only intended for MPC wallets; it does not support MPC web3 wallets.</Note>
+
 #### Request
 <ParamField query="chain_code" type="String" required>Chain code for which to retrieve supported coins.</ParamField>
 
