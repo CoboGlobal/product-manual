@@ -9,7 +9,7 @@ description: "If you’re working with Go, the official [cobo-go-api](https://gi
 add dependency
 
 ```
-go get github.com/CoboCustody/cobo-go-api@v0.40.0
+go get github.com/CoboGlobal/cobo-go-api@v0.44.0
 ```
 
 ## Test
@@ -26,7 +26,7 @@ go test -env develop/prod -secret <yourApiSecret>
 #### Generate Key Pair
 
 ```go
-import "github.com/CoboCustody/cobo-go-api/cobo_custody"
+import "github.com/CoboGlobal/cobo-go-api/cobo_custody"
 
 apiSecret, apiKey := cobo_custody.GenerateKeyPair()
 println("API_SECRET:", apiSecret)
@@ -38,7 +38,7 @@ Please refer to the [link](/custodial-wallet/authentication) for how to use apiK
 #### Initialize RestClient
 
 ```go
-import "github.com/CoboCustody/cobo-go-api/cobo_custody"
+import "github.com/CoboGlobal/cobo-go-api/cobo_custody"
 var client = cobo_custody.Client{
   Signer:  localSigner,
   Env: cobo.Develop(),
@@ -50,7 +50,7 @@ var client = cobo_custody.Client{
 `ApiSigner` can be instantiated through
 
 ```go
-import "github.com/CoboCustody/cobo-go-api/cobo_custody"
+import "github.com/CoboGlobal/cobo-go-api/cobo_custody"
 
 var localSigner = cobo_custody.LocalSigner{
 		PrivateKey: "apiSecret",
