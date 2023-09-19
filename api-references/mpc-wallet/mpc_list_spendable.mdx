@@ -3,6 +3,9 @@ title: Get Spendable List
 api: GET /v1/custody/mpc/list_spendable/ 
 description: "This endpoint returns a JSON response containing a list of spendable unspent transaction outputs (UTXOs) for a given asset coin and address. The response includes the transaction hash, output index, address, amount, and confirmation status of each UTXO."
 ---
+
+<Note>This API is only intended for MPC wallets and does not support MPC web3 wallets.</Note>
+
 #### Request
 <ParamField query="coin" type="String" required>The asset coin symbol (e.g. BTC, ETH).</ParamField>
 <ParamField query="address" type="String" >The address to filter UTXOs by.</ParamField>
