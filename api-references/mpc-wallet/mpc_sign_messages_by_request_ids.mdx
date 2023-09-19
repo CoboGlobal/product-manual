@@ -4,7 +4,7 @@ api: GET /v1/custody/mpc/sign_messages_by_request_ids/
 description: "This endpoint returns a JSON response containing signed messages information for a list of request IDs. The response includes the request ID, Cobo ID, signature and other relevant information."
 ---
 
-<Note>This api is only used for MPC Web3 wallets</Note>
+<Note>This API is only intended for MPC web3 wallets and does not support MPC wallets.</Note>
 
 #### Request
 <ParamField query="request_ids" type="String" required>Sign message request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField>
