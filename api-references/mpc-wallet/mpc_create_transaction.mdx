@@ -52,7 +52,7 @@ extra_parameters: '{"input_selection":
 			        }'
 ```
 Web3 wallet:
-    - calldata: request data associated with an EVM transaction;
+    - calldata: request data associated with an EVM transaction; When deploying a new contract, the `to_address` parameter should be set to `0x0000000000000000000000000000000000000000`. Please note that when using `calldata`, the `gas_limit` parameter should be set to an appropriate value based on the data being sent and the contract's execution requirements.
 ```python Sample
 extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869e4517311b190d7eb31e30eba0ef000000000000000000000000000000000000000000000000002386f26fc10000"}'
 ```
