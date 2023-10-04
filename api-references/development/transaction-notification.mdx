@@ -9,9 +9,10 @@ processing the message, they must send an HTTP response with status code = 200 a
 we will continue to push the same message to the designated URL (up to 14 times, if you want to re-send the push later,
 you could click on 'Resend' Button on Web: Wallet - API Callback - API Push History)
 
-If block confirmation status is chosen in web platform, there will be a notification whenever the block confirmation
-number changes for one transaction, the status is marked as 'pending', the confirmation number and '
-confirming_threshold' will be included. Each notification (for each number change) will be sent only once.
+If you have ticked "Push Pending Transaction" under Transaction Notification on Cobo Custody Web,
+you will receive a push notification whenever there is a change in the number of block confirmations for a specific transaction.
+The notification will indicate the transaction status as 'pending' and include essential details such as the number of confirmed blocks and the threshold.
+Please note that each notification for a given number change will be sent only once.
 
 <img src="/images/pendingpushEN.png" />
 

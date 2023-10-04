@@ -42,9 +42,12 @@
     },
     {
       "group": "Custodial Wallet",
-      "pages": ["overview/custodial-wallet"]
+      "pages": [
+        "overview/custodial-wallet"
+      ]
     },
-    {"group": "MPC Wallet",
+    {
+      "group": "MPC Wallet",
       "pages": [
         "overview/mpc-wallet/mpc-introduction",
         {
@@ -113,7 +116,6 @@
         }
       ]
     },
-
     {
       "group": "Community",
       "pages": [
@@ -129,18 +131,17 @@
       "group": "Overview",
       "pages": [
         "get-started/overview/quickstart",
-        "get-started/overview/authentication",
-        "get-started/overview/test",
-        "get-started/overview/playground"
+        "get-started/overview/full-custody-quick-start",
+        "get-started/overview/mpc-quick-start",
+        "get-started/overview/mpc-lite-quick-start"
       ]
     },
     {
-      "group": "Development",
+      "group": "Overview",
       "pages": [
-        "get-started/development/error-codes",
-        "get-started/development/transaction-notification",
-        "get-started/development/withdrawal-confirmation",
-        "get-started/development/callback-signature"
+        "api-references/overview/authentication",
+        "api-references/overview/test",
+        "api-references/overview/playground"
       ]
     },
     {
@@ -307,6 +308,15 @@
             "api-references/mpc-wallet/auth_query_statement"
           ]
         }
+      ]
+    },
+    {
+      "group": "Development",
+      "pages": [
+        "api-references/development/error-codes",
+        "api-references/development/transaction-notification",
+        "api-references/development/withdrawal-confirmation",
+        "api-references/development/callback-signature"
       ]
     }
   ],

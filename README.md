@@ -9,11 +9,11 @@
 
   <br />
   <br />
-  <a href="https://www.cobo.com/developers/custodial-wallet/introduction">Custodial Wallet</a>
+  <a href="https://www.cobo.com/developers/overview/custodial-wallet">Custodial Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://www.cobo.com/developers/mpc-custody/mpc-introduction">MPC Wallet</a>
+  <a href="https://www.cobo.com/developers/overview/mpc-wallet/mpc-introduction">MPC Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href="https://www.cobo.com/developers/smart-contract-custody/cobosafe">Smart Contract Wallet</a>
+  <a href="https://www.cobo.com/developers/overview/smart-contract-wallet/cobosafe">Smart Contract Wallet</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href="https://www.cobo.com/web3/channel/news">News</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
@@ -45,9 +45,9 @@
 
 The Developer Hub mainly includes the following resources.:
 
-- **[Custodial Wallet](https://www.cobo.com/developers/custodial-wallet/introduction)**. Cobo Custodial Wallet is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
-- **[MPC Wallet](https://www.cobo.com/developers/mpc-custody/mpc-introduction)**. Cobo MPC Wallet leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
-- **[Smart Contract Wallet](https://www.cobo.com/developers/smart-contract-custody/cobosafe)**. Cobo’s Smart Contract Wallet solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
+- **[Custodial Wallet](https://www.cobo.com/developers/overview/custodial-wallet)**. Cobo Custodial Wallet is built upon bank-grade security technologies such as Hardware Security Modules (HSM) and Intel Software Guard Extensions (SGX), that is battle tested in traditional financial industry.
+- **[MPC Wallet](https://www.cobo.com/developers/overview/mpc-wallet/mpc-introduction)**. Cobo MPC Wallet leverages advanced Multi-Party Computation (MPC) technology to implement a Threshold Signature Scheme (TSS).
+- **[Smart Contract Wallet](https://www.cobo.com/developers/overview/smart-contract-wallet/cobosafe)**. Cobo’s Smart Contract Wallet solution, dubbed as “Cobo Safe”, is a smart contract based access control framework on EVM compatible blockchains.
   <br />
 
 ## Contributing
