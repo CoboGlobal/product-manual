@@ -31,9 +31,8 @@ php phpunit.phar ClientTest.php
 <?php
 require 'vendor/autoload.php';
 
-use Cobo\Custody\Config;
 use Cobo\Custody\LocalSigner;
-use Cobo\Custody\Client;
+
 $key = LocalSigner::generateKeyPair();
 echo "apiSecret:", $key['apiSecret'],"\n";
 echo "apiKey:", $key['apiKey'];
@@ -50,13 +49,26 @@ require 'vendor/autoload.php';
 use Cobo\Custody\Config;
 use Cobo\Custody\LocalSigner;
 use Cobo\Custody\Client;
+use Cobo\Custody\MPCClient;
 
+# client for Custodial Wallet
 $client = new Client($signer, Config::DEVELOP, false);
+
+# client for MPC Wallet
+$mpcClient = new MPCClient($signer, Config::DEVELOP, false);
 ```
 
 #### Initialize ApiSigner
 
-`ApiSigner` can be instantiated through `$signer = new LocalSigner("secret key");`
+`ApiSigner` can be instantiated through
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Cobo\Custody\LocalSigner;
+
+$signer = new LocalSigner("YOUR_API_SECRET");
+```
 
 In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your
 own implementation by implements `ApiSigner` interface

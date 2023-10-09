@@ -41,9 +41,15 @@ Please refer to the [link](/custodial-wallet/authentication) for how to use apiK
 
 ```js
 const { Client } = require("cobo-custody");
+const { MPCClient } = require("cobo-custody");
 const { LocalSigner } = require("cobo-custody");
 const { DEVELOP, PROD } = require("cobo-custody");
-const client = new Client(API_SIGNER, DEVELOP, true);
+
+// client for Custodial Wallet
+const client = new Client(signer, DEVELOP, true);
+
+// client for MPC Wallet
+const mpc_client = new MPCClient(signer, DEVELOP, true);
 ```
 
 #### Initialize ApiSigner
@@ -52,9 +58,7 @@ const client = new Client(API_SIGNER, DEVELOP, true);
 
 ```javascript
 const { LocalSigner } = require("cobo-custody");
-const signer = new LocalSigner(
-  "e7e73fabdd9edb8bddf947954c400a63bf93edc57abf170544ec570757df5453"
-);
+const signer = new LocalSigner("YOUR_API_SECRET");
 ```
 
 In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your own implementation by implements `ApiSigner` interface

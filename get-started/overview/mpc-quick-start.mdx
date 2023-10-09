@@ -98,53 +98,21 @@ Please manually enter your key into the "API Key" field and ensure that the stat
 ## Test API by SDKs
 
 ```python Python
-# input your API_SECRET
+from cobo_custody.client.mpc_client import MPCClient
+from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+
+# input your API SECRET
 signer = LocalSigner("YOUR_API_SECRET")
-client = Client(signer=signer, env=DEVELOP_ENV, debug=True)
-res = client.get_account_info()
+mpc_client = MPCClient(signer=signer, env=DEVELOP_ENV, debug=True)
+res = mpc_client.get_supported_chains()
 ```
 
 <Accordion title="View Response">
 ```json
 {
   "success": true,
-  "result": {
-    "name": "cobo_test",
-    "assets": [
-      {
-        "coin": "ADA",
-        "display_code": "ADA",
-        "description": "Cardano",
-        "decimal": 6,
-        "can_deposit": true,
-        "can_withdraw": true,
-        "require_memo": false,
-        "balance": "29880892",
-        "abs_balance": "29.880892",
-        "fee_coin": "ADA",
-        "abs_estimate_fee": "1",
-        "confirming_threshold": 9,
-        "dust_threshold": 1000000,
-        "token_address": ""
-      },
-      {
-        "coin": "ALGO",
-        "display_code": "ALGO",
-        "description": "Algorand",
-        "decimal": 6,
-        "can_deposit": true,
-        "can_withdraw": true,
-        "require_memo": false,
-        "balance": "8359337",
-        "abs_balance": "8.359337",
-        "fee_coin": "ALGO",
-        "abs_estimate_fee": "0.8",
-        "confirming_threshold": 12,
-        "dust_threshold": 1,
-        "token_address": ""
-      }
-    ]
-  }
+  "result": {'chain_codes': ['DOT', 'BTC', 'CHZ2', 'XTN', 'BSC_BNB', 'VET', 'ETHW', 'SOL', 'ETH', 'GETH', 'TRON', 'MNT']}
 }
 ```
 </Accordion>
