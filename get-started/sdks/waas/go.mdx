@@ -39,8 +39,16 @@ Please refer to the [link](/custodial-wallet/authentication) for how to use apiK
 
 ```go
 import "github.com/CoboGlobal/cobo-go-api/cobo_custody"
+
+// client for Custodial Wallet
 var client = cobo_custody.Client{
-  Signer:  localSigner,
+  Signer: localSigner,
+  Env: cobo.Develop(),
+}
+
+// client for MPC Wallet
+var mpcClient = cobo_custody.MPCClient{
+  Signer: localSigner,
   Env: cobo.Develop(),
 }
 ```
@@ -53,7 +61,7 @@ var client = cobo_custody.Client{
 import "github.com/CoboGlobal/cobo-go-api/cobo_custody"
 
 var localSigner = cobo_custody.LocalSigner{
-		PrivateKey: "apiSecret",
+		PrivateKey: "YOUR_API_SECRET",
 	}
 ```
 

@@ -72,7 +72,11 @@ Please manually enter your key into the "API Key" field and ensure that the stat
 ## Test API by SDKs
 
 ```python Python
-# input your API_SECRET
+from cobo_custody.client import Client
+from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+
+# input your API SECRET
 signer = LocalSigner("YOUR_API_SECRET")
 client = Client(signer=signer, env=DEVELOP_ENV, debug=True)
 res = client.get_account_info()

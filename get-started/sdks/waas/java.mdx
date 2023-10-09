@@ -79,19 +79,39 @@ These can be instantiated through the corresponding factory method of `CoboApiCl
 ```java
 import com.cobo.custody.api.client.CoboApiClientFactory;
 import com.cobo.custody.api.client.CoboApiRestClient;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.CoboMPCPrimeBrokerRestClient;
 import com.cobo.custody.api.client.config.CoboApiConfig;
 import com.cobo.custody.api.client.config.Env;
 import com.cobo.custody.api.client.impl.LocalSigner;
 
+// client for Custodial Wallet
 CoboApiRestClient client = CoboApiClientFactory.newInstance(
-                new LocalSigner(apiSecret),
+                new LocalSigner("YOUR_API_SECRET"),
                 Env.DEVELOP,
                 false).newRestClient();
+
+// client for MPC Wallet
+CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
+                new LocalSigner("YOUR_API_SECRET"),
+                TestEnv,
+                false).newMPCRestClient();
+
+// client for Prime Broker
+CoboMPCPrimeBrokerRestClient primeBrokerClient = CoboApiClientFactory.newInstance(
+                new LocalSigner("YOUR_API_SECRET"),
+                TestEnv,
+                false).newMPCPrimeBrokerRestClient();
 ```
 
 #### Initialize ApiSigner
 
-`ApiSigner` can be instantiated through `new LocalSigner("secretkey" )`
+`ApiSigner` can be instantiated through
+```java
+import com.cobo.custody.api.client.impl.LocalSigner;
+
+LocalSigner localSigner = new LocalSigner("YOUR_API_SECRET")
+```
 
 In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your own implementation by implements `ApiSigner` interface:
 
