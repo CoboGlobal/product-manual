@@ -1,145 +1,128 @@
 ---
-title: "FAQ about WaaS"
-description: "Frequently Asked Questions about WaaS"
+title: "Wallet-as-a-Service FAQ"
+description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
 ---
+<Tip> Navigate to your desired sections via the sidebar   👉 </Tip>
 
-<AccordionGroup>
-  <Accordion title="What do `coin`, `display_code`, and `description` separately mean in the interface?">
-    `coin` is Cobo’s internal coin code, which uniquely identifies each coin, while `display_code ` is the ticker symbol of
-    a coin (not unique, changeable, for reference only ). ` description ` indicates the full name of a coin (not unique,
-    changeable, for reference only ).For example: Tron was an ERC-20 token before launching its own mainnet and token. The
-    ERC-20 and Tron mainnet tokens would share the same `display_code` and `description`, but have different `coin` values.
-  </Accordion>
+## Address Management
+### How to batch-generate addresses?
+   <Expandable title="Answer">
+      <ResponseField >You may use the [POST /v1/custody/new_addresses/](https://www.cobo.com/developers/api-references/custody-wallet/new_addresses) endpoint to batch-generate addresses under a Custodial Wallet.
+         To batch-generate addresses under an MPC Wallet, you may use the [POST /v1/custody/mpc/generate_addresses/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_generate_addresses) endpoint instead. A maximum of 200 addresses can be generated in a single request.</ResponseField>
+  </Expandable>
 
-  <Accordion title="What do `amount` and `abs_amount` mean in the interface?">
-    In the cryptocurrency world, each coin has a smallest unit. For example, Bitcoin’s smallest unit is Satoshi; 1 BTC =
-    100,000,000 Satoshi. Cobo expresses amounts in terms of the smallest unit of the coin. This is to avoid problems caused
-    by the misuse of floating numbers. Therefore, when transferring 1 BTC, the amount in the transaction is 100,000,000. In
-    other words, `abs_amount` is used to indicate the same thing in real numbers. Clients may configure according to their
-    own preferences. The conversion relation between them is: **abs_amount = amount / pow(10, decimal)**
-  </Accordion>
+### How to verify whether a withdrawal address is legitimate?
+    <Expandable title="Answer">
+        <ResponseField >You can use the [GET /v1/custody/is_valid_address/](https://www.cobo.com/developers/api-references/custody-wallet/is_valid_address) endpoint to query whether a withdrawal address under a Custodial Wallet is legitimate. 
+        For an MPC Wallet, please use the [GET /v1/custody/mpc/is_valid_address/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_is_valid_address) endpoint instead. If the response returns an zero, it indicates that the address is deemed invalid.</ResponseField>
+  </Expandable>
 
-   <Accordion title="Generate addresses in bulk">
-    GET /v1/custody/new_addresses/ You may utilize this interface to generate addresses in batches.
-    (For a single request, this interface can generate up to 200 addresses.
-    Please refer to your package details to understand the current supported address quantity based on your plan.)
-  </Accordion>
+## Coin Management
+### How do I query the withdrawal fees?
+    <Expandable title="Answer">
+        <ResponseField >
+         The withdrawal fees may fluctuate based on how busy a blockchain network is. You can refer to the `abs_estimate_fee` field
+          of the [GET /v1/custody/coin_info](https://www.cobo.com/developers/api-references/custody-wallet/coin_info) endpoint to check the estimated withdrawal fees associated with a Custodial Wallet. 
+          For an MPC Wallet, please use the [GET /v1/custody/mpc/estimate_fee/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_estimate_fee) endpoint instead.
+</ResponseField>
+  </Expandable>
 
-  <Accordion title="Verify if the withdrawal address is available.">
-    GET /v1/custody/is_valid_address/
-    You may visit this interface to validate the legitimacy of an address.
-    If the result is 'false,' then the address is deemed invalid.
-    For further information, you can refer to our API documentation at: https://www.cobo.com/developers/api-references/custody-wallet/is_valid_address
-  </Accordion>
+### What do `amount` and `abs_amount` stand for in the interface?
+<Expandable title="Answer">
+   <ResponseField >In the realm of cryptocurrencies, each coin possesses a smallest unit. 
+   For instance, a satoshi is the smallest unit of Bitcoin. Each Bitcoin equals 100 million satoshis (i.e., 100,000,000). 
+   Cobo denominates amount in terms of the smallest unit specific to each cryptocurrency to prevent complications associated with the misuse of floating point numbers. 
+   If you transfer 1 Bitcoin, for instance, the `amount` will be displayed as 100,000,000 and the `abs_amount` will be 1. 
+   This conversion is calculated using the formula: abs_amount = amount / pow(10, decimal).</ResponseField>
+</Expandable>
 
-   <Accordion title=" Get pending transactions of a certain coin/token.">
-    GET /v1/custody/pending_transactions/
-    This interface allows you to query transaction details for withdrawal currencies.
-    Input the desired currency in the 'Coin' field. For tokens, ensure to include the main chain's information, and if uncertain about the coin code, you can confirm it with our customer service.
-    The 'Side' field is used to specify the transaction type, where 'deposit' corresponds to deposits.
-    You can directly access this interface via the following link: https://www.cobo.com/developers/api-references/custody-wallet/pending_transactions
-  </Accordion>
+### How do I query the minimum deposit amount for a specific coin?
+   <Expandable title="Answer">
+      <ResponseField >
+      You can refer to the `minimum_deposit_threshold` field of the [GET /v1/custody/get_supported_coins/](https://www.cobo.com/developers/api-references/custody-wallet/get_supported_coins)
+       endpoint to query the minimum deposit amount for a specific coin within a Custodial Wallet. If the response returns a zero, it indicates that the there is no minimum deposit requirement for the selected type of coins. Note that coins held under an MPC Wallet do not have any minimum deposit requirements.
+      </ResponseField>
+  </Expandable>
 
-  <Accordion title="Check the transaction details of bulk withdrawals">
-    GET /v1/custody/transactions_by_request_ids/
-    You can use this interface to view transaction details for bulk withdrawals.
-    The request IDs should be provided in the 'request_ids' parameter of the GET request as a comma-separated string.
-    The maximum number of request IDs that can be provided is 50. https://www.cobo.com/developers/api-references/custody-wallet/transactions_by_request_ids
-  </Accordion>
+## Transaction Management
+### How to query the transaction details of a batch withdrawal request?
+    <Expandable title="Answer">
+        <ResponseField >
+         You can use the [GET /v1/custody/transactions_by_request_ids/](https://www.cobo.com/developers/api-references/custody-wallet/transactions_by_request_ids) endpoint 
+         to query the transaction details of a batch withdrawal request submitted under a Custodial Wallet. The request IDs should be provided in the `request_ids` field of the GET request, separated by commas. 
+         For an MPC Wallet, you can use the [GET /v1/custody/mpc/transactions_by_request_ids/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_transactions_by_request_ids) endpoint instead. A maximum of 50 request IDs can be included in a single request.
+        </ResponseField>
+  </Expandable>
 
- <Accordion title="Where can I find the withdrawal fee?">
-    The withdrawal fee will change in real-time according to the situation on the blockchain.
-    You can use the 'abs_estimate_fee' field in the GET /v1/custody/coin_info interface to query the current estimated withdrawal fee.
-  </Accordion>
+### How do I query the details of a pending transaction?
+    <Expandable title="Answer">
+        <ResponseField >
+        You may use the [GET /v1/custody/pending_transactions/](https://www.cobo.com/developers/api-references/custody-wallet/pending_transactions) 
+        endpoint to query the details of a pending transaction under a Custodial Wallet. For an MPC Wallet, you may refer to the `status` field with code 501 PENDING_CONFIRMATION in [any transactional APIs](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_list_transactions) to retrieve the details of a pending transaction. 
+        Prior to using any endpoints, however, you need to first head to Cobo Custody Web and enable the "Transaction Notification - Includes Block Confirmation Number" Status feature. 
+        Failure to enable this feature will result in the inability to fetch transaction information. For more information, please refer to  https://www.cobo.com/developers/api-references/development/transaction-notification. Do note that some transactions cannot be retrieved due to fast on-chain confirmations (e.g., TRON).
+        </ResponseField>
+  </Expandable>
 
- <Accordion title="Minimum deposit amount for XX coin/token.">
-    GET /v1/custody/new_addresses/
-    You can utilize  the 'minimum_deposit_threshold' field in this interface to query the minimum deposit amount. If it returns 0, there is no minimum deposit requirement
- </Accordion>
+## API Key
+### How can I obtain the public and private API keys?
+<Expandable title="Answer">
+      <ResponseField >
+      Cobo employs the ECDSA algorithm for signature verification. We strongly recommend that you generate your public and private API keys locally to ensure that Cobo neither has access to nor stores your private keys. After generating your keys locally, you can manage the public keys by heading to Cobo Custody Web-Wallet-API. For more information on private key generation, signing and verification, please refer to https://github.com/CoboGlobal/. For API references, please go to https://www.cobo.com/developers/api-references/overview/authentication.
+      </ResponseField>
+  </Expandable>
 
- <Accordion title="How to check the current stuck transaction? ">
-    You may use this interface GET /v1/custody/pending_transactions/ for inquiries, or you can go to the web end - Wallet - Transactions to view it.
- </Accordion>
+### Why cannot I add an API key on Cobo Custody Web?
+<Expandable title="Answer">
+      <ResponseField >
+      Only the admin is authorized to add API keys on Cobo Custody Web. Please contact your admin if you don't have the permission 
+      </ResponseField>
+  </Expandable>
 
-  <Accordion title="What functionality is  API used to implement.">
-    API withdrawal is mainly for exchanges and large institutions, and it is done through backend code without the need for human intervention.
-    Web-end withdrawal requires manual operation and will also go through a complete risk control process.
- </Accordion>
+### Why did my API signature verification fail?
+<Expandable title="Answer">
+      <ResponseField >
+      Your API signature verification may have failed due to the following reasons: 
 
-  <Accordion title="How to verify Cobo's callback push, which requires Cobo's Pub key? Is this signature verification necessary? How to obtain the Pub key?">
-     Hello, signature verification and IP whitelist are recommended to be efficient when accepting callbacks, which can simply and greatly improve security.
-     Cobo signature verification can be obtained on the hosting web management interface - wallet - API callback page. How to verify can refer to the document: https://www.cobo.
- </Accordion>
+The public keys are not associated with the correct environments (i.e., production, development) on Cobo Custody Web. 
 
- <Accordion title="We cannot receive callback push. What is the export IP for Cobo's callback push?">
-    Cobo Prod export IP: 54.201.57.0, please add it to your whitelist to receive Cobo’s callback push.
- </Accordion>
+Incorrect API key types. Please make sure that you are using the correct key type (i.e., "querying", "withdrawal and querying", "operation and querying").
 
- <Accordion title="Where to obtain the API public and private keys？">
-    Hello, from the perspective of security, Cobo uses the ECDSA signature algorithm for verification.
-    It is recommended that you generate the public and private keys locally, and Cobo will not know/save your private key.
-    After you generate the public and private keys locally, you can maintain the public key in the web management interface [Wallet - API].
-    For private key generation, signature and signature verification, please refer to the Sample provided by Cobo: https://github.com/CoboGlobal/, and for API related documents, please refer to: https://www.cobo.com/developers/custodial-wallet/introduction
- </Accordion>
+The incorrect HOST has been used. 
+- Development: https://api.develop.cobo.com; corresponding Cobo Custody Web page: https://home.develop.cobo.com/.
+- Production: https://api.custody.cobo.com; corresponding Cobo Custody Web page: https://home.custody.cobo.com/. 
+ 
+If the issue still persists, please provide us with the parameters and return values for troubleshooting.
+      </ResponseField>
+  </Expandable>
 
- <Accordion title=" Is there a maximum limit for API callback pushes？">
-    Hello, the maximum number of pushes for API transaction notifications is 14 times. The interval time is in an increasing state.
-    It is 10 minutes at the beginning, and it will increase with time later, 1 hour, 2 hours, etc.
- </Accordion>
 
-  <Accordion title="The necessity of configuring secondary callbacks">
-    Your company has configured an API_KEY in the security risk control, but has not configured the [Secondary Callback Server Address]. API link: https://doc.custody.cobo.com/#9a7cef1ae8
-    Considering the single-point risk faced by a single API server, we strongly recommend that you enable and configure a secondary confirmation callback internally, and maintain a separate callback server.
-    First, risk isolation, multiple servers are used for secondary confirmation.
-    Second, enabling the secondary callback is also a very effective internal security risk control measure. Once the secondary callback has an exception, Cobo's 24/7 customer service will also promptly remind you to check whether there is an exception in your internal business logic, provide early warning, and identify and block related abnormal withdrawals earlier, enhancing the security protection of your asset withdrawal.
-    The password of your custodial account, 2FA and Cobo Auth verification, ensure the multiple confirmations of your account and the initiation of withdrawals on the web end. Maintaining a separate secondary callback URL can ensure the multiple security of your internal server, so from a security perspective, we strongly recommend that you enable it.
- </Accordion>
+### Do all API keys have a validity period of 90 days?
+<Expandable title="Answer">
+      <ResponseField >
+      If an API key is not associated with an IP whitelist, its validity period is limited to 90 days. However, once an IP address is added to the API key, it becomes permanently valid.
+      </ResponseField>
+  </Expandable>
 
-  <Accordion title="What is the main consideration for the secondary callbacks? Is it cost considerations or business maintenance?">
-        As for the secondary callbacks，we consider the risk isolation. Based on our historical experience in custodial services, maintaining a server with business logic poses a significant risk.
-        We suggest you enable callbacks based on multi-layered risk control considerations.
-        From the perspective of your platform, your platform has a large trading volume. For the withdrawal behavior of the platform, it is necessary to carry out secondary withdrawal confirmation. '
-        We have also served many platform-type customers. From a safety perspective, we hope that you will conduct a more comprehensive internal assessment.
- </Accordion>
 
-  <Accordion title="Will Cobo proactively rollback failed transactions?">
-    Considering forward compatibility, Cobo will not actively callback for currently failed transactions (callbacks will be pushed for pending and successful ones), and it depends on the customer to poll the withdrawal request status.
-    There could be various reasons for withdrawal failures:
-    Network issues, insufficient balance, illegal addresses, etc., which are directly returned errors.
+## API Callback 
+### Do I need to verify a callback?
+<Expandable title="Answer">
+      <ResponseField >
+      For security reasons, we highly recommend that you complete the signature verification and IP whitelisting when receiving Cobo's callback messages. You can obtain Cobo's pubkey by heading to Cobo Custody Web-Wallet-API Callback. For more information on signature verification, refer to https://www.cobo.com/developers/api-references/development/callback-signature.
+      </ResponseField>
+  </Expandable>
 
-    (The following failures are exceptions)
-    After the withdrawal is initiated successfully, the withdrawal is confirmed by a secondary callback as deny/no response.
-    Web/AUTH manual review rejection.
-    Some transaction information is filled in incorrectly, such as memo errors, the other party's address has on-chain verification and cannot be on-chain.
- </Accordion>
+### How many times can an API callback notification be pushed?
+<Expandable title="Answer">
+      <ResponseField >
+      Each API callback can be pushed for a maximum of 14 times. The time intervals between each push are incremental, starting at 10-minute intervals and progressively extending to hourly, bi-hourly, and so forth.
+      </ResponseField>
+  </Expandable>
 
-  <Accordion title="Why can't I retrieve pending transactions using the custody/pending_transactions/ interface?">
-     1. Need to check if it is enabled: ""Transaction Notification - Includes Block Confirmation Number Status"" in API callback https://doc.custody.cobo.com/#913378a003
-     2. If 1 is enabled, if it is the TRON chain of the transaction, the confirmation on the chain may be too fast, so it is not in pending, it is in the successful tx table, you can use a coin type with a longer pending for joint debugging，such as ETH, BTC."
- </Accordion>
-
- <Accordion title="How to generate an API key? What format is the public key required by the wallet API?">
-    It needs in hex format. You can use the API Key private key (API SECRET) generated locally, sign the data with the private key using ECDSA, and hex encode the binary result.
-    This generates the final signature used for verification with the API server (you can refer to the Cobo routine: https://github.com/cobowallet/
- </Accordion>
-
- <Accordion title="Are all API keys valid for 90 days? Can they be made permanently valid?">
-    When not bound to an IP whitelist, the validity period for each key is 90 days. After binding to an IP whitelist, the key is permanently valid
- </Accordion>
-
- <Accordion title="Why can't I configure the API KEY">
-    Please check if you have administrator privileges, as only administrators can configure.
- </Accordion>
-
- <Accordion title="Reasons for API signature verification failure">
-    "There are several main reasons for signature verification failure, and you can also exclude the first few on your side to see:
-    1. Have you maintained your public key on the correct environment (Prod/Sandbox) Custody Web? And is the API Key type correct? (There are three types of API Keys, ""query"", ""withdrawal and query"", ""operation and query"", please make sure you are using the correct type of API Key)
-    2. Have you used the correct HOST:
-    Sandbox: https://api.dev.cobo.com, corresponding web page: Sandbox: https://home.dev.cobo.com/
-    Production: https://api.custody.cobo.com, corresponding web page: Prod: https://home.custody.cobo.com/
-    3. Does the parameter (such as memo) contain spaces, special characters, please remove them
-    After excluding the above problems:
-    4. Please provide both the parameters and return values for problem analysis. "
- </Accordion>
-
-</AccordionGroup>
+### Why do I need to configure API callback confirmation?
+<Expandable title="Answer">
+      <ResponseField >
+      Given the potential single-point failure risks associated with API servers, we strongly recommend that you maintain a dedicated callback server for configuring API callback confirmation. This not only enhances risk isolation but also facilitates effective internal security control. In the event of an exception during API callback confirmation, Cobo's 24/7 customer support will provide you with real-time alerts, enabling immediate internal inspection to address any potential security vulnerabilities.
+      </ResponseField>
+  </Expandable>

@@ -26,6 +26,7 @@ to_address_details: '[{"to_address": "2N4J1WajwKZKpRtzzUmaW9B5GEqkppqdVY9","amou
 <ParamField body="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
 <ParamField body="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
 <ParamField body="operation" type="Int" >
+action type, 
 100: TRANSFER (default);
 200: CONTRACT_CALL
 </ParamField>
@@ -43,13 +44,13 @@ UTXO Model:
 extra_parameters: '{"input_selection":
                         {"inputs_to_spend":[
                               {"tx_hash": "e7ddfa61cc2a78e1661da44b10cdc862256573d2dc0485dc989fb7045ed9032c", "vout_n": 1},
-			                  {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 2}],
+ 			                  {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 2}],
                         "inputs_to_exclude":[
-		                      {"tx_hash": "e7ddfa61cc2a78e1661da44b10cdc862256573d2dc0485dc989fb7045ed9032c", "vout_n": 3},
-			                  {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 4}]
+ 		                      {"tx_hash": "e7ddfa61cc2a78e1661da44b10cdc862256573d2dc0485dc989fb7045ed9032c", "vout_n": 3},
+ 			                  {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 4}]
                         },
                      "utxo_change_address": "2MznT7D2tKZKshfQPfhTuLYB7Bw9TZqb17w"
-			        }'
+ 			        }'
 ```
 Web3 wallet:
     - calldata: request data associated with an EVM transaction; When deploying a new contract, the `to_address` parameter should be set to `0x0000000000000000000000000000000000000000`. Please note that when using `calldata`, the `gas_limit` parameter should be set to an appropriate value based on the data being sent and the contract's execution requirements.

@@ -140,7 +140,6 @@
       "group": "Overview",
       "pages": [
         "api-references/overview/authentication",
-        "api-references/overview/test",
         "api-references/overview/playground"
       ]
     },
@@ -316,7 +315,9 @@
         "api-references/development/error-codes",
         "api-references/development/transaction-notification",
         "api-references/development/withdrawal-confirmation",
-        "api-references/development/callback-signature"
+        "api-references/development/callback-signature",
+        "api-references/development/testing",
+        "api-references/development/changelog"
       ]
     }
   ],

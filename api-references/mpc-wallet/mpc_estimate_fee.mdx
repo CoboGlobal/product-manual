@@ -4,6 +4,8 @@ api: GET /v1/custody/mpc/estimate_fee/
 description: "This endpoint estimates the fee for a given transaction. It takes in various parameters such as the coin type, amount, address, gas price, gas limit, and extra parameters. The response includes the fee amount in different levels such as slow, average, and fast."
 ---
 
+<Tip> FAQ：[How do I query the withdrawal fees?](/get-started/faq/waas#how-do-i-query-the-withdrawal-fees)</Tip>
+
 #### Request
 <ParamField query="coin" type="String" required>coin name</ParamField>
 <ParamField query="amount" type="Int" >transaction amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ParamField>

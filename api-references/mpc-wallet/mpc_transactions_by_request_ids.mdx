@@ -3,6 +3,8 @@ title: Get Transactions By Request ID
 api: GET /v1/custody/mpc/transactions_by_request_ids/ 
 description: "This endpoint returns a JSON response containing transaction information for a list of transaction request IDs. The response includes the transaction ID, request ID, status, and other relevant information. The endpoint requires authentication and accepts optional query parameters to filter the results by transaction status."
 ---
+<Tip> FAQ：[How to query the transaction details of a batch withdrawal request?](/get-started/faq/waas#how-to-query-the-transaction-details-of-a-batch-withdrawal-request)</Tip>
+
 #### Request
 <ParamField query="request_ids" type="String" required>Transaction request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField>
 <ParamField query="status" type="Int" >
@@ -80,7 +82,8 @@ description: "This endpoint returns a JSON response containing transaction infor
         | TRANSACTION_RBF_WEB_SPEEDUP| 104|
         | TRANSACTION_RBF_API_DROP| 105|
         | TRANSACTION_RBF_WEB_DROP| 106|
-        | TRANSACTION_RBF_WEB_DROP| 1000|
+        | TRANSACTION_FROM_EXTERNAL| 107|
+        | TRANSACTION_FROM_DEPOSIT| 1000|
 
         **only use in web3 wallet:**
         | Transaction Type | Code |
