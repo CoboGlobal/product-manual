@@ -1,0 +1,35 @@
+---
+title: "Token Sweeping for MPC Wallets"
+---
+## Overview
+
+Digital asset platforms and crypto exchanges often deal with the management of a substantial number of wallet addresses.
+These addresses are assigned to various end-users, each of whom deposits assets by initiating transfers to designated wallet addresses.
+In such cases, these platforms often conduct token sweeping to consolidate assets dispersed across different wallet addresses into a select few addresses.
+The rationale behind this approach is to curtail the number of on-chain transactions, thereby minimizing associated gas fees.
+
+Token sweeping may be triggered based on the following considerations:
+
+1. Total amount of assets on a single address
+2. Frequency (e.g., daily, weekly)
+3. Current network gas fees
+
+Do note that protracted trigger intervals may leave an end user's address with an insufficient balance in the event of a withdrawal request.
+In such cases, the client may need to submit another token sweeping request to ensure the availability of funds.
+
+## Code Samples
+
+Below are code samples along with corresponding explanations for your references.
+You can choose to optimize the token sweeping strategy according to your business needs.
+Token sweeping includes two categories: token sweeping for native tokens and non-native tokens.
+
+https://github.com/CoboGlobal/cobo-java-api/blob/main/example/src/main/java/com/cobo/custody/mpc/MPCFundCollection.java
+
+## Token Sweeping Logics
+
+1. Verify if the destination address is valid. If validation fails, please exit directly as the token sweeping will be marked as a failure.
+2. Query the coin type used for settling transaction fees.
+3. Consolidate the balances of the queried coin type across all addresses under the MPC Wallet. If the aggregated balance falls below the estimated transaction fees amount, please exit directly as the token sweeping will be marked as a failure.
+4. Transfer the balances of the specified coin type across all addresses to the destination address. The token sweeping process concludes when the total swept amount reaches the predefined threshold.
+    1. When you sweep native tokens, the amount to sweep is computed based on the total address balances, your pre-set sweeping threshold, and the estimated transaction fees.
+    2. When you sweep non-native tokens, verify first that "fromAddr" has sufficient balance to cover the estimated transaction fees. If insufficient, please transfer funds from "feeAddr" to "fromAddr" to ensure the success of token sweeping.

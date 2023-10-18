@@ -7,14 +7,14 @@ description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
 ## Address Management
 ### How to batch-generate addresses?
    <Expandable title="Answer">
-      <ResponseField >You may use the [POST /v1/custody/new_addresses/](https://www.cobo.com/developers/api-references/custody-wallet/new_addresses) endpoint to batch-generate addresses under a Custodial Wallet.
-         To batch-generate addresses under an MPC Wallet, you may use the [POST /v1/custody/mpc/generate_addresses/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_generate_addresses) endpoint instead. A maximum of 200 addresses can be generated in a single request.</ResponseField>
+      <ResponseField >You may use the [POST /v1/custody/new_addresses/](/api-references/custody-wallet/new_addresses) endpoint to batch-generate addresses under a Custodial Wallet.
+         To batch-generate addresses under an MPC Wallet, you may use the [POST /v1/custody/mpc/generate_addresses/](/api-references/mpc-wallet/mpc_generate_addresses) endpoint instead. A maximum of 200 addresses can be generated in a single request.</ResponseField>
   </Expandable>
 
 ### How to verify whether a withdrawal address is legitimate?
     <Expandable title="Answer">
-        <ResponseField >You can use the [GET /v1/custody/is_valid_address/](https://www.cobo.com/developers/api-references/custody-wallet/is_valid_address) endpoint to query whether a withdrawal address under a Custodial Wallet is legitimate. 
-        For an MPC Wallet, please use the [GET /v1/custody/mpc/is_valid_address/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_is_valid_address) endpoint instead. If the response returns an zero, it indicates that the address is deemed invalid.</ResponseField>
+        <ResponseField >You can use the [GET /v1/custody/is_valid_address/](/api-references/custody-wallet/is_valid_address) endpoint to query whether a withdrawal address under a Custodial Wallet is legitimate.
+        For an MPC Wallet, please use the [GET /v1/custody/mpc/is_valid_address/](/api-references/mpc-wallet/mpc_is_valid_address) endpoint instead. If the response returns an zero, it indicates that the address is deemed invalid.</ResponseField>
   </Expandable>
 
 ## Coin Management
@@ -22,8 +22,8 @@ description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
     <Expandable title="Answer">
         <ResponseField >
          The withdrawal fees may fluctuate based on how busy a blockchain network is. You can refer to the `abs_estimate_fee` field
-          of the [GET /v1/custody/coin_info](https://www.cobo.com/developers/api-references/custody-wallet/coin_info) endpoint to check the estimated withdrawal fees associated with a Custodial Wallet. 
-          For an MPC Wallet, please use the [GET /v1/custody/mpc/estimate_fee/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_estimate_fee) endpoint instead.
+          of the [GET /v1/custody/coin_info](/api-references/custody-wallet/coin_info) endpoint to check the estimated withdrawal fees associated with a Custodial Wallet.
+          For an MPC Wallet, please use the [GET /v1/custody/mpc/estimate_fee/](/api-references/mpc-wallet/mpc_estimate_fee) endpoint instead.
 </ResponseField>
   </Expandable>
 
@@ -39,7 +39,7 @@ description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
 ### How do I query the minimum deposit amount for a specific coin?
    <Expandable title="Answer">
       <ResponseField >
-      You can refer to the `minimum_deposit_threshold` field of the [GET /v1/custody/get_supported_coins/](https://www.cobo.com/developers/api-references/custody-wallet/get_supported_coins)
+      You can refer to the `minimum_deposit_threshold` field of the [GET /v1/custody/get_supported_coins/](/api-references/custody-wallet/get_supported_coins)
        endpoint to query the minimum deposit amount for a specific coin within a Custodial Wallet. If the response returns a zero, it indicates that the there is no minimum deposit requirement for the selected type of coins. Note that coins held under an MPC Wallet do not have any minimum deposit requirements.
       </ResponseField>
   </Expandable>
@@ -48,19 +48,19 @@ description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
 ### How to query the transaction details of a batch withdrawal request?
     <Expandable title="Answer">
         <ResponseField >
-         You can use the [GET /v1/custody/transactions_by_request_ids/](https://www.cobo.com/developers/api-references/custody-wallet/transactions_by_request_ids) endpoint 
+         You can use the [GET /v1/custody/transactions_by_request_ids/](/api-references/custody-wallet/transactions_by_request_ids) endpoint
          to query the transaction details of a batch withdrawal request submitted under a Custodial Wallet. The request IDs should be provided in the `request_ids` field of the GET request, separated by commas. 
-         For an MPC Wallet, you can use the [GET /v1/custody/mpc/transactions_by_request_ids/](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_transactions_by_request_ids) endpoint instead. A maximum of 50 request IDs can be included in a single request.
+         For an MPC Wallet, you can use the [GET /v1/custody/mpc/transactions_by_request_ids/](/api-references/mpc-wallet/mpc_transactions_by_request_ids) endpoint instead. A maximum of 50 request IDs can be included in a single request.
         </ResponseField>
   </Expandable>
 
 ### How do I query the details of a pending transaction?
     <Expandable title="Answer">
         <ResponseField >
-        You may use the [GET /v1/custody/pending_transactions/](https://www.cobo.com/developers/api-references/custody-wallet/pending_transactions) 
-        endpoint to query the details of a pending transaction under a Custodial Wallet. For an MPC Wallet, you may refer to the `status` field with code 501 PENDING_CONFIRMATION in [any transactional APIs](https://www.cobo.com/developers/api-references/mpc-wallet/mpc_list_transactions) to retrieve the details of a pending transaction. 
-        Prior to using any endpoints, however, you need to first head to Cobo Custody Web and enable the "Transaction Notification - Includes Block Confirmation Number" Status feature. 
-        Failure to enable this feature will result in the inability to fetch transaction information. For more information, please refer to  https://www.cobo.com/developers/api-references/development/transaction-notification. Do note that some transactions cannot be retrieved due to fast on-chain confirmations (e.g., TRON).
+        You may use the [GET /v1/custody/pending_transactions/](/api-references/custody-wallet/pending_transactions)
+        endpoint to query the details of a pending transaction under a Custodial Wallet. For an MPC Wallet, you may refer to the `status` field with code 501 CONFIRMATION in [any transactional APIs](/api-references/mpc-wallet/mpc_list_transactions) to retrieve the details of a pending transaction.
+        Prior to using any endpoints, however, you need to first head to Cobo Custody Web and enable the "Transaction Notification - Includes Block Confirmation Number" Status feature.
+        Failure to enable this feature will result in the inability to fetch transaction information. For more information, please refer to  /api-references/development/transaction-notification. Do note that some transactions cannot be retrieved due to fast on-chain confirmations (e.g., TRON).
         </ResponseField>
   </Expandable>
 
@@ -68,7 +68,7 @@ description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
 ### How can I obtain the public and private API keys?
 <Expandable title="Answer">
       <ResponseField >
-      Cobo employs the ECDSA algorithm for signature verification. We strongly recommend that you generate your public and private API keys locally to ensure that Cobo neither has access to nor stores your private keys. After generating your keys locally, you can manage the public keys by heading to Cobo Custody Web-Wallet-API. For more information on private key generation, signing and verification, please refer to https://github.com/CoboGlobal/. For API references, please go to https://www.cobo.com/developers/api-references/overview/authentication.
+      Cobo employs the ECDSA algorithm for signature verification. We strongly recommend that you generate your public and private API keys locally to ensure that Cobo neither has access to nor stores your private keys. After generating your keys locally, you can manage the public keys by heading to Cobo Custody Web-Wallet-API. For more information on private key generation, signing and verification, please refer to https://github.com/CoboGlobal/. For API references, please go to /api-references/overview/authentication.
       </ResponseField>
   </Expandable>
 
@@ -109,7 +109,7 @@ If the issue still persists, please provide us with the parameters and return va
 ### Do I need to verify a callback?
 <Expandable title="Answer">
       <ResponseField >
-      For security reasons, we highly recommend that you complete the signature verification and IP whitelisting when receiving Cobo's callback messages. You can obtain Cobo's pubkey by heading to Cobo Custody Web-Wallet-API Callback. For more information on signature verification, refer to https://www.cobo.com/developers/api-references/development/callback-signature.
+      For security reasons, we highly recommend that you complete the signature verification and IP whitelisting when receiving Cobo's callback messages. You can obtain Cobo's pubkey by heading to Cobo Custody Web-Wallet-API Callback. For more information on signature verification, refer to /api-references/development/callback-signature.
       </ResponseField>
   </Expandable>
 

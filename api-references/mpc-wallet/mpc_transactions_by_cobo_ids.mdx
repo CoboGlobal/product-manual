@@ -12,9 +12,12 @@ description: "This endpoint returns a list of transaction requests based on the 
 | QUEUED| 201|
 | PENDING_SIGNATURE| 301|
 | BROADCASTING| 401|
-| PENDING_CONFIRMATION| 501|
+| PENDING_CONFIRMATION| 403|
+| CONFIRMATION| 501|
 | SUCCESS| 900|
 | FAILED| 901|
+
+<Tip>The 403 status indicates that the transaction has been successfully broadcasted, while the 501 status indicates that the transaction has been successfully confirmed on the blockchain and is awaiting further confirmations.</Tip>
 </ParamField>
 
 #### Response
@@ -23,7 +26,20 @@ description: "This endpoint returns a list of transaction requests based on the 
   <Expandable title="object">
     <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
     <ResponseField name="request_id" type="String" >Transaction request ID; it can be left empty if the transaction is a deposit</ResponseField>
-    <ResponseField name="status" type="Int" >Transaction status (PENDING_APPROVAL: 101, QUEUED: 201, PENDING_SIGNATURE: 301, BROADCASTING: 401, PENDING_CONFIRMATION:501, SUCCESS:900, FAILED: 901)</ResponseField>
+    <ResponseField name="status" type="Int" >
+    | Status Type | Code |
+    | ----------- | ----------- |
+    | PENDING_APPROVAL| 101|
+    | QUEUED| 201|
+    | PENDING_SIGNATURE| 301|
+    | BROADCASTING| 401|
+    | PENDING_CONFIRMATION| 403|
+    | CONFIRMATION| 501|
+    | SUCCESS| 900|
+    | FAILED| 901|
+
+    <Tip>The 403 status indicates that the transaction has been successfully broadcasted, while the 501 status indicates that the transaction has been successfully confirmed on the blockchain and is awaiting further confirmations.</Tip>
+    </ResponseField>
     <ResponseField name="coin_detail" type="object" >
         <Expandable title="object">
             <ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>

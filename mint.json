@@ -30,6 +30,14 @@
     {
       "name": "API References",
       "url": "api-references"
+    },
+    {
+      "name": "Guides",
+      "url": "guides"
+    },
+    {
+      "name": "FAQs",
+      "url": "faqs"
     }
   ],
   "navigation": [
@@ -133,7 +141,8 @@
         "get-started/overview/quickstart",
         "get-started/overview/full-custody-quick-start",
         "get-started/overview/mpc-quick-start",
-        "get-started/overview/mpc-lite-quick-start"
+        "get-started/overview/mpc-lite-quick-start",
+        "get-started/overview/first-wallet-tutorial"
       ]
     },
     {
@@ -173,9 +182,17 @@
       ]
     },
     {
-      "group": "FAQ",
+      "group": "FAQs",
       "pages": [
-        "get-started/faq/waas"
+        "faqs/waas"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/howtos/create-manage-deposit-addresses",
+        "guides/howtos/auto-token-sweeping-for-mpc-wallets",
+        "guides/howtos/api-error-handling-and-reporting"
       ]
     },
     {
