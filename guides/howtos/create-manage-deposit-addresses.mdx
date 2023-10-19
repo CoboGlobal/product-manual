@@ -1,0 +1,40 @@
+---
+title: "Creating and Managing Deposit Addresses in Custodial Wallets"
+sidebarTitle: "Managing Deposit Addresses"
+---
+
+[Cobo Custodial Wallet APIs](/api-references/custody-wallet) serve as the interface for [Cobo Full Custody](/overview/custodial-wallet), where you can create multiple addresses as deposit addresses to receive funds from external users.
+
+Tokens deposited into these addresses will undergo automated aggregation (token sweep) by Cobo. You are exempt from the necessity to pre-fund or fund transaction fees for your deposit addresses. This translates into substantial savings in both development and operational efforts for your team.
+
+## Create Addresses
+
+To create a deposit address, you can use the [Get New Deposit Address](/api-references/custody-wallet/new_address). Alternatively, you can use the [Get New Deposit Addresses](/api-references/custody-wallet/new_addresses) to create up to 200 addresses.
+
+You need to specify the `Coin` field in the format of **Chain Code_Token Code** (e.g., “ETH_USDT”, “TRON_USDC”). Token Code is not required for native coins (e.g., “BTC”, “ETH”). You can query the types of coins supported by your wallet via the [Get Supported Coins](/api-references/custody-wallet/get_supported_coins).
+
+These addresses can be used to receive coins under the same chain, and EVM addresses can be used to receive coins for all EMV-compatible chains.
+
+For BTC, Cobo supports both _segwit_ (3 address) and _native_segwit_ (bc1 address) addresses. You can input “True”  in the `native_segwit` field to generate bc1 addresses.
+
+Please make sure you have added coins on Cobo Custody Web before creating any deposit addresses via API.
+
+## Manage Addresses
+
+You can view your address list using the [Get Address History](/api-references/custody-wallet/address_history). This API allows you to retrieve addresses by coin types. Each API request can retrieve up to 20 addresses, in either ascending or descending order.
+
+To validate whether the address belongs to your Cobo Custodial Wallet, you can use the [Get Address Info](/api-references/custody-wallet/address_info) or [Get Addresses Info](/api-references/custody-wallet/addresses_info).
+
+## Manage Balance and Transactions
+
+You can query the wallet balance using the [Get Account Details](/api-references/custody-wallet/org_info) , where the balance of each type of coin will be returned in the balance field of the response. Note that because Cobo will automatically aggregate funds in deposit addresses, the balance in a deposit address may not reflect the actual balance of the selected type of coin.
+
+Transactional APIs can be used to retrieve your deposit and withdrawal history for account reconciliation. Please refer to <Tooltip tip="Coming Soon">Best Practices of Managing Transaction History</Tooltip> article for more information.
+
+## Deposit Transaction Notification
+
+For real-time updates on deposit transactions, you can turn on Transaction Notification on Cobo Custody Web by heading to Wallet > API Callback > API Push History.
+
+<img src="/images/pendingpushEN.png" />
+
+For more information, please refer to the [transaction notification guide](/api-references/development/transaction-notification).

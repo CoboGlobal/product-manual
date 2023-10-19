@@ -14,9 +14,12 @@ description: "This endpoint returns a list of transactions filtered by various p
 | QUEUED| 201|
 | PENDING_SIGNATURE| 301|
 | BROADCASTING| 401|
-| PENDING_CONFIRMATION| 501|
+| PENDING_CONFIRMATION| 403|
+| CONFIRMATION| 501|
 | SUCCESS| 900|
 | FAILED| 901|
+
+<Tip>The 403 status indicates that the transaction has been successfully broadcasted, while the 501 status indicates that the transaction has been successfully confirmed on the blockchain and is awaiting further confirmations.</Tip>
 </ParamField>
 <ParamField query="order_by" type="String" >sorting method; default: created_time; other option: modified_time</ParamField>
 <ParamField query="order" type="String" >sorting order; options: ASC (default), DESC</ParamField>
@@ -65,9 +68,12 @@ description: "This endpoint returns a list of transactions filtered by various p
     | QUEUED| 201|
     | PENDING_SIGNATURE| 301|
     | BROADCASTING| 401|
-    | PENDING_CONFIRMATION| 501|
+    | PENDING_CONFIRMATION| 403|
+    | CONFIRMATION| 501|
     | SUCCESS| 900|
     | FAILED| 901|
+
+    <Tip>The 403 status indicates that the transaction has been successfully broadcasted, while the 501 status indicates that the transaction has been successfully confirmed on the blockchain and is awaiting further confirmations.</Tip>
     </ResponseField>
     <ResponseField name="coin_detail" type="object" >
         <Expandable title="object">
