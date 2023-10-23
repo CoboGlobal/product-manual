@@ -36,6 +36,7 @@ description: "This endpoint returns a JSON response with the details of a pendin
     <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
     <ResponseField name="confirming_threshold" type="Int">Confirmed numbers required for a successful transaction</ResponseField>
     <ResponseField name="confirmed_num" type="Int">Confirmed numbers</ResponseField>
+    <ResponseField name="remark" type="String">Transaction remark</ResponseField>
     <ResponseField name="tx_detail" type="object">
       <Expandable title="object">
         <ResponseField name="txid" type="string">transaction ID</ResponseField>
@@ -112,6 +113,7 @@ Request("GET", "/v1/custody/pending_transaction/", map[string]string{
     "last_time": 1542165707058,
     "confirming_threshold": 3,
     "confirmed_num": 3,
+    "remark":"hello test",
     "type": "external"
   }
 }

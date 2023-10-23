@@ -9,7 +9,7 @@ You'll need to complete the following configurations on the server where the cal
 * Generate the callback server’s RSA private key
 
 ```
-openssl genrsa -out callback-server-pri.pem 2048
+openssl genrsa -out callback-server-pri.pem 4096
 ```
 
 * Export the callback server’s RSA public key
@@ -32,13 +32,18 @@ Output example:
 ```
 INFO[2022-12-14T07:09:44Z] Callback public key:
 -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA46Md8XAWi8SVdgnqjDNP
-qA6DnLKfZHuX7hGL5WnU0k9Uz870osN12hSU7Gwb6u+vgjvOSVVQ7/VlWz5Iu54b
-kusr6gpT76oCO99p3RuhhhHvXBrqXwY7NQABTfzUVy93bkbuRAxBnMwU9y0pyjYT
-DQklomks9bli6XaB2K9tTpNw14dhonogg/czED1NRP2zDBSoEbR1KwH0X+wNhTnW
-cF5c+M2NVsmMxVZEDKgYjEF9XhnABWHpLUS0Wwbk9auRYjCtODulfU1f9S9sUZPe
-oa4qxf+VKO8J9wQ3CClAlLDVlPNv5nn8deFeQlQWXIOiCP/lE6FyJFo2u4QLtVEq
-SQIDAQAB
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4ki4fHY4/oSJOYBxBUI1
+GUdLCUF7wMFYlfkpI/bSf7fGvzaygtZdORG6OR4vAoKxvqK/ZbJITMR5rS7pNxOv
+vpLbsdVfJZGQn6wW8wLEx9ZB18JXt99oTESaxzoxMteXBC6tgYqWhSS386LfjSxQ
+a4EvPunTRdYrO9VmnDWHM06/c76UxcS038pJ4OByXx7sH0xzS4MZQhZWyfYkqBT2
+Ym9g46VXQ+CVZyWYXKPMyGPVTR1979lfJ1bFpYADNU3YUSK1mq0xaH9lQORFBs6/
+0kK8m27BGR7h59rFJGgeZ2SNGzcEmiAp7rjOtFpLj1OmNXtjGhTxpn8omBrdH86+
+qZfKsIm+O84e9S7uPMnx9hIpJHTcPoseW0d+WBoNplJQg22LUswPwaVgSHMB2U1B
+aFkEzMAkRmGIejlMG25uYaVlA0Mf9E+/JaZSGPVuq43lhHCE08pNxGrak6/vTPTv
+jAM449yTHrjDCDrFk/LdHqk5Ipt0b9CeHbCsQSs4BxHlDp2GEBJn1OEiizDwScWb
+YiFi3a6PAvqDO56KEUFMXpC8CzgJ8svmQoldIAWSKGpdnuxUMcD+glCsi7K7+FI+
+HDepO/4ejCm9DzuTUHG4PE0Ymb3PV8cZbLlGSZD/yG1541/xlHmzlOpAa8OdZBfb
+s8wADQvpbJTyPkkMyq/i5SkCAwEAAQ==
 -----END PUBLIC KEY-----
 ```
 

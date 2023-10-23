@@ -11,6 +11,7 @@ description: "This endpoint allows users to create a new withdrawal request for 
 <ParamField body="address" type="String" required>The address to withdraw to.</ParamField>
 <ParamField body="amount" type="Int" required>The amount to withdraw.</ParamField>
 <ParamField body="memo" type="String" >Needed when you withdraw EOS, XRP, IOST</ParamField>
+<ParamField body="remark" type="String" >The remark to withdraw.</ParamField>
 <ParamField body="force_external" type="String" >Non-empty means: force the transaction on-chain even if it's a Loop Tx</ParamField>
 <ParamField body="force_internal" type="String" >Non-empty means: force the transaction off-chain even if it's not a Loop Tx, if it cannot be handled as a Loop tx, it will be rejected</ParamField>
 
@@ -29,7 +30,7 @@ request(
         "address": "0x8e2782aabdf80fbb69399ce3d9bd5ae69a60462c",
         "amount": 100000000000000,
         "request_id": "unique_123456",
-        "memo": "hello test"
+        "remark": "hello test"
     },
     api_key, api_secret, host
 )
@@ -41,7 +42,7 @@ coboFetch('POST', '/v1/custody/new_withdraw_request/',
             "address": "0x8e2782aabdf80fbb69399ce3d9bd5ae69a60462c",
             "amount": 100000000000000,
             "request_id": "unique_123456",
-            "memo": "hello test"
+            "remark": "hello test"
         },
         api_key, api_secret, host
     ).then(res => {
@@ -58,7 +59,7 @@ Request("POST", "/v1/custody/new_withdraw_request/", map[string]string{
     "address": "0x8e2782aabdf80fbb69399ce3d9bd5ae69a60462c",
     "amount": 100000000000000,
     "request_id": "unique_123456",
-    "memo": "hello test",
+    "remark": "hello test",
 })
 ```
 </RequestExample>

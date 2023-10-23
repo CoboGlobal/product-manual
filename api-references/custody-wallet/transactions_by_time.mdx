@@ -41,6 +41,7 @@ description: "This endpoint returns a list of transactions filtered by time rang
     <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
     <ResponseField name="confirming_threshold" type="Int">Confirmed numbers required for a successful transaction</ResponseField>
     <ResponseField name="confirmed_num" type="Int">Confirmed numbers</ResponseField>
+    <ResponseField name="remark" type="String">Transaction remark</ResponseField>
     <ResponseField name="tx_detail" type="object">
       <Expandable title="object">
         <ResponseField name="txid" type="string">transaction ID</ResponseField>
@@ -123,6 +124,7 @@ Request("GET", "/v1/custody/transactions_by_time/", map[string]string{
       "status": "success",
       "created_time": 1542191734958,
       "last_time": 1542191734958,
+      "remark":"hello test",
       "confirmed_num": 3
     },
     {
@@ -142,6 +144,7 @@ Request("GET", "/v1/custody/transactions_by_time/", map[string]string{
       "status": "success",
       "created_time": 1542165707058,
       "last_time": 1542165707058,
+      "remark":"hello test",
       "confirmed_num": 3
     }
   ]

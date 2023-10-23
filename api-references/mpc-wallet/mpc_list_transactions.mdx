@@ -169,6 +169,7 @@ description: "This endpoint returns a list of transactions filtered by various p
     <ResponseField name="max_fee" type="Int" >EVM EIP 1559 transaction fee</ResponseField>
     <ResponseField name="max_priority_fee" type="Int" >EVM EIP 1559 transaction fee</ResponseField>
     <ResponseField name="approval_process" type="Json" >Approval flow</ResponseField>
+    <ResponseField name="remark" type="String" >The remark to withdraw</ResponseField>
    </Expandable>
 </ResponseField>
 
@@ -346,8 +347,8 @@ Request("GET", "/v1/custody/mpc/list_transactions/", map[string]string{
       "failed_reason": None,
       "max_priority_fee": None,
       "max_fee": None,
-      "approval_process": '{"spender_result": 1, "spender_review_threshold": 1, "spender_status": [{"spender_person": "Cobo_Test_spender", "status": "approve"}], "spender_complete_time": 1681906749496, "approver_result": 1, "approver_review_threshold": 1, "approver_status": [{"approve_person": "Cobo_Test_approver", "status": "approve"}], "approver_complete_time": 1681906758619}'
-
+      "approval_process": '{"spender_result": 1, "spender_review_threshold": 1, "spender_status": [{"spender_person": "Cobo_Test_spender", "status": "approve"}], "spender_complete_time": 1681906749496, "approver_result": 1, "approver_review_threshold": 1, "approver_status": [{"approve_person": "Cobo_Test_approver", "status": "approve"}], "approver_complete_time": 1681906758619}',
+      "remark":""
     }
   ]
 }
