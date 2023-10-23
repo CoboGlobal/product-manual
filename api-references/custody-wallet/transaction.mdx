@@ -36,6 +36,7 @@ description: "This endpoint retrieves a transaction by its ID from the WaaS API.
 <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
 <ResponseField name="confirming_threshold" type="Int">Confirmed numbers required for a successful transaction</ResponseField>
 <ResponseField name="confirmed_num" type="Int">Confirmed numbers</ResponseField>
+<ResponseField name="remark" type="String">Transaction remark</ResponseField>
 <ResponseField name="tx_detail" type="object">
 <Expandable title="object">
 <ResponseField name="txid" type="string">transaction ID</ResponseField>
@@ -120,6 +121,7 @@ request(
     "created_time": 1610445878970,
     "last_time": 1610445878970,
     "confirmed_num": 3,
+    "remark":"hello test",
     "tx_detail": {
       "txid": "239861be9a4afe080c359b7fe4a1d035945ec46256b1a0f44d1267c71de8ec28",
       "blocknum": 665711,
