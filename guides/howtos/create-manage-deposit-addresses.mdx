@@ -1,15 +1,45 @@
 ---
 title: "Creating and Managing Deposit Addresses in Custodial Wallets"
 sidebarTitle: "Managing Deposit Addresses"
+"og:title": "Creating Deposit Addresses in Custodial Wallets"
+"og:description": "Learn how to securely create, manage and view deposit addresses in your custodial wallet. Explore our guide to enhance your crypto wallet management. "
 ---
 
-[Cobo Custodial Wallet APIs](/api-references/custody-wallet) serve as the interface for [Cobo Full Custody](/overview/custodial-wallet), where you can create multiple addresses as deposit addresses to receive funds from external users.
+## Overview
 
-Tokens deposited into these addresses will undergo automated aggregation (token sweep) by Cobo. You are exempt from the necessity to pre-fund or fund transaction fees for your deposit addresses. This translates into substantial savings in both development and operational efforts for your team.
+User deposit addresses are commonly used by retail-facing platforms to receive funds from external users. These addresses are assigned to each user to easily distinguish the source of deposit transactions.
+
+With Cobo Wallet-as-a-Service, you can create and manage deposit addresses for your applications in both **Custodial Wallet** and **MPC Wallet**.
 
 ## Create Addresses
 
-To create a deposit address, you can use the [Get New Deposit Address](/api-references/custody-wallet/new_address). Alternatively, you can use the [Get New Deposit Addresses](/api-references/custody-wallet/new_addresses) to create up to 200 addresses.
+You can create up to 200 addresses by using [Cobo SDKs](https://github.com/CoboGlobal) and corresponding APIs ([Custodial Wallet API](/api-references/custody-wallet/new_addresses), [MPC Wallet API](/api-references/mpc-wallet/mpc_generate_addresses) )
+
+<CodeGroup>
+```python Python
+#Custodial Wallet
+client.batch_new_deposit_address("GETH",1)
+#MPC Wallet
+mpc_client.generate_addresses("GETH",1)
+```
+```java Java
+//Cusotidal Wallet
+client.newAddresses("GETH", 1, false);
+//MPC Wallet
+mpcClient.generateAddresses("GETH", 1);
+```
+</CodeGroup><br />
+<Accordion title="View Response">
+```json
+{
+  "success": true,
+  "result": {
+    "coin": "GETH",
+    "address": "0xec323f3743b96e020c234c216fa650f96b66fc9d"
+  }
+}
+```
+</Accordion>
 
 You need to specify the `Coin` field in the format of **Chain Code_Token Code** (e.g., “ETH_USDT”, “TRON_USDC”). Token Code is not required for native coins (e.g., “BTC”, “ETH”). You can query the types of coins supported by your wallet via the [Get Supported Coins](/api-references/custody-wallet/get_supported_coins).
 
@@ -21,20 +51,170 @@ Please make sure you have added coins on Cobo Custody Web before creating any de
 
 ## Manage Addresses
 
-You can view your address list using the [Get Address History](/api-references/custody-wallet/address_history). This API allows you to retrieve addresses by coin types. Each API request can retrieve up to 20 addresses, in either ascending or descending order.
+You can view your address list using the Get Address History ([Cusotidal Wallet API](/api-references/custody-wallet/address_history), [MPC Wallet API](/api-references/mpc-wallet/mpc_list_addresses)).
+This API allows you to retrieve addresses by coin types. Each API request can retrieve up to 20 addresses, in either ascending or descending order.
 
-To validate whether the address belongs to your Cobo Custodial Wallet, you can use the [Get Address Info](/api-references/custody-wallet/address_info) or [Get Addresses Info](/api-references/custody-wallet/addresses_info).
+<CodeGroup>
+```python Python
+#Custodial Wallet
+client.get_address_history("GETH")
+#MPC Wallet
+mpc_client.list_addresses("GETH")
+```
+```java Java
+//Cusotidal Wallet
+client.getAddressHistory("GETH");
+//MPC Wallet
+mpcClient.listAddresses("GETH");
+```
+</CodeGroup><br />
+<Accordion title="View Response - Custodial Wallet">
+```json
+{
+  "success": true,
+  "result": [
+    {
+      "coin": "GETH",
+      "address": "0x544094588811118b7701cf4a9dea056e775b4b4e"
+    },
+    {
+      "coin": "GETH",
+      "address": "0x644094588811118b7701cf4a9dea056e775b4b4e"
+    }
+  ]
+}
+
+```
+</Accordion>
+
+<Accordion title="View Response - MPC Wallet">
+```json
+{
+  "total": 2,
+  "addresses": [
+    {
+      "id": 721941011752862138,
+      "address": "0x297db9241bfe5665641951bcf166feebd003870c",
+      "encoding": 0,
+      "hd_path": "m/44/60/1/0/85"
+    },
+    {
+      "id": 721941011752862137,
+      "address": "0x14cf9de0d8062ca53af5c92dcc574c8f3acb6da5",
+      "encoding": 0,
+      "hd_path": "m/44/60/1/0/84"
+    }
+  ]
+}
+
+```
+</Accordion>
 
 ## Manage Balance and Transactions
 
-You can query the wallet balance using the [Get Account Details](/api-references/custody-wallet/org_info) , where the balance of each type of coin will be returned in the balance field of the response. Note that because Cobo will automatically aggregate funds in deposit addresses, the balance in a deposit address may not reflect the actual balance of the selected type of coin.
+**In Custodial Wallet**, you can query the wallet balance using the [Get Account Details](/api-references/custody-wallet/org_info) , where the balance of each type of coin will be returned in the balance field of the response.
+Note that because Cobo will automatically aggregate funds in deposit addresses, the balance in a deposit address may not reflect the actual balance of the selected type of coin.
 
-Transactional APIs can be used to retrieve your deposit and withdrawal history for account reconciliation. Please refer to <Tooltip tip="Coming Soon">Best Practices of Managing Transaction History</Tooltip> article for more information.
+<Tip>In Custodial Wallet, tokens deposited into these addresses will undergo automated aggregation (token sweep) by Cobo. You are exempt from the necessity to pre-fund or fund transaction fees for your deposit addresses. This translates into substantial savings in both development and operational efforts for your team.</Tip>
+<CodeGroup>
+```python Python
+#Custodial Wallet
+client.get_account_info()
+```
+```java Java
+//Cusotidal Wallet
+client.getOrgInfo();
+```
+</CodeGroup><br />
+<Accordion title="View Response - Custodial Wallet">
+```json
+{
+  "success": true,
+  "result": {
+    "name": "test",
+    "assets": [
+      {
+        "coin": "ETH",
+        "display_code": "ETH",
+        "description": "Ethereum",
+        "decimal": 18,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "balance": "0",
+        "abs_balance": "0",
+        "fee_coin": "ETH",
+        "abs_estimate_fee": "0.0003648",
+        "confirming_threshold": 12,
+        "dust_threshold": 1,
+        "token_address": "",
+        "require_memo": false
+      },
+      {
+        "coin": "BTC",
+        "display_code": "BTC",
+        "description": "Bitcoin",
+        "decimal": 8,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "balance": "102730",
+        "abs_balance": "0.0010273",
+        "fee_coin": "BTC",
+        "abs_estimate_fee": "0.00013513",
+        "confirming_threshold": 3,
+        "dust_threshold": 546,
+        "token_address": "",
+        "require_memo": false
+      }
+    ]
+  }
+}
 
-## Deposit Transaction Notification
 
-For real-time updates on deposit transactions, you can turn on Transaction Notification on Cobo Custody Web by heading to Wallet > API Callback > API Push History.
+```
+</Accordion>
 
-<img src="/images/pendingpushEN.png" />
 
-For more information, please refer to the [transaction notification guide](/api-references/development/transaction-notification).
+**In MPC Wallet**, you can query the balance of each address using the [Get Balances List](/api-references/mpc-wallet/mpc_list_balances) up to 50 addresses.
+<CodeGroup>
+```python Python
+#MPC Wallet
+client.list_balances("ETH",0,50)
+```
+```java Java
+//MPC Wallet
+client.listBalances("ETH",0,50);
+```
+</CodeGroup><br />
+<Accordion title="View Response - MPC Wallet">
+```json
+{
+  "total": 2,
+  "coin_data": [
+    {
+      "address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
+      "coin": "ETH",
+      "chain_code": "ETH",
+      "display_code": "ETH",
+      "description": "Ethereum",
+      "balance": "49999999999999999986",
+      "decimal": 18
+    }
+  ],
+  "nft_data": [
+    {
+      "nft_code": "NFT_ETH_BLUE_CHURCH",
+      "token_id": "200",
+      "address": "0xcc656c94b8ec881ddd9611e8ad4a4eca9f859e7b",
+      "chain_code": "ETH",
+      "contract_address": "0x357fd2942e8ee435d7d21859ecae99bd597d8779",
+      "balance": "1"
+    }
+  ]
+}
+```
+</Accordion>
+
+
+Transactional APIs can be used to retrieve your deposit and withdrawal history for account reconciliation.
+Please refer to <Tooltip tip="Coming Soon">Best Practices of Managing Transaction History</Tooltip> article for more information.
+
