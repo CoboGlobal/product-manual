@@ -1,6 +1,10 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Developer Hub",
+  "metadata": {
+    "og:title": "Cobo Developer Hub",
+    "og:description": "An institutional-grade, open platform for Web3 developers. Browse our resources to build innovative blockchain products and secure crypto custody solutions."
+   },
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png",
@@ -184,7 +188,11 @@
     {
       "group": "FAQs",
       "pages": [
-        "faqs/waas"
+        "faqs/address-management",
+        "faqs/coin-management",
+        "faqs/transaction-management",
+        "faqs/api-key",
+        "faqs/api-callback"
       ]
     },
     {
@@ -192,8 +200,9 @@
       "pages": [
         "guides/howtos/create-manage-deposit-addresses",
         "guides/howtos/auto-token-sweeping-for-mpc-wallets",
-        "guides/howtos/api-error-handling-and-reporting"
-      ]
+        "guides/howtos/api-error-handling-and-reporting",
+        "guides/howtos/configure-api-callback",
+        "guides/howtos/querying-deposit-transactions"]
     },
     {
       "group": "Custodial Wallet APIs",

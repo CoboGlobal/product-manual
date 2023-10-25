@@ -1,0 +1,24 @@
+---
+title: "Transaction Management"
+description: "Frequently Asked Questions about Cobo Wallet-as-a-Service"
+---
+<Tip> Navigate to your desired sections via the sidebar   👉 </Tip>
+
+### How to query the transaction details of a batch withdrawal request?
+    <Expandable title="Answer">
+        <ResponseField >
+         You can use the [GET /v1/custody/transactions_by_request_ids/](/api-references/custody-wallet/transactions_by_request_ids) endpoint
+         to query the transaction details of a batch withdrawal request submitted under a Custodial Wallet. The request IDs should be provided in the `request_ids` field of the GET request, separated by commas.
+         For an MPC Wallet, you can use the [GET /v1/custody/mpc/transactions_by_request_ids/](/api-references/mpc-wallet/mpc_transactions_by_request_ids) endpoint instead. A maximum of 50 request IDs can be included in a single request.
+        </ResponseField>
+  </Expandable>
+
+### How do I query the details of a pending transaction?
+    <Expandable title="Answer">
+        <ResponseField >
+        You may use the [GET /v1/custody/pending_transactions/](/api-references/custody-wallet/pending_transactions)
+        endpoint to query the details of a pending transaction under a Custodial Wallet. For an MPC Wallet, you may refer to the `status` field with code 501 CONFIRMATION in [any transactional APIs](/api-references/mpc-wallet/mpc_list_transactions) to retrieve the details of a pending transaction.
+        Prior to using any endpoints, however, you need to first head to Cobo Custody Web and enable the "Transaction Notification - Includes Block Confirmation Number" Status feature.
+        Failure to enable this feature will result in the inability to fetch transaction information. For more information, please refer to  /api-references/development/transaction-notification. Do note that some transactions cannot be retrieved due to fast on-chain confirmations (e.g., TRON).
+        </ResponseField>
+  </Expandable>
