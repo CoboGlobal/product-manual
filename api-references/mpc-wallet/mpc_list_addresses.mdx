@@ -18,6 +18,7 @@ description: "This endpoint returns a JSON response containing a list of wallet 
         <ResponseField name="address" type="String" >The generated address.</ResponseField>
         <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
         <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+        <ResponseField name="description" type="String" >The address description.</ResponseField>
     </Expandable>
 </ResponseField>
 
@@ -72,13 +73,15 @@ Request("GET", "/v1/custody/mpc/list_addresses/", map[string]string{
       "id": 721941011752862138,
       "address": "0x297db9241bfe5665641951bcf166feebd003870c",
       "encoding": 0,
-      "hd_path": "m/44/60/1/0/85"
+      "hd_path": "m/44/60/1/0/85",
+      "description":""
     },
     {
       "id": 721941011752862137,
       "address": "0x14cf9de0d8062ca53af5c92dcc574c8f3acb6da5",
       "encoding": 0,
-      "hd_path": "m/44/60/1/0/84"
+      "hd_path": "m/44/60/1/0/84",
+      "description":""
     }
   ]
 }

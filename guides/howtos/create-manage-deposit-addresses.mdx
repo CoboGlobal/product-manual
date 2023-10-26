@@ -43,7 +43,7 @@ mpcClient.generateAddresses("GETH", 1);
 
 You need to specify the `Coin` field in the format of **Chain Code_Token Code** (e.g., “ETH_USDT”, “TRON_USDC”). Token Code is not required for native coins (e.g., “BTC”, “ETH”). You can query the types of coins supported by your wallet via the [Get Supported Coins](/api-references/custody-wallet/get_supported_coins).
 
-These addresses can be used to receive coins under the same chain, and EVM addresses can be used to receive coins for all EMV-compatible chains.
+These addresses can be used to receive coins under the same chain, and EVM addresses can be used to receive coins for all EVM-compatible chains.
 
 For BTC, Cobo supports both _segwit_ (3 address) and _native_segwit_ (bc1 address) addresses. You can input “True”  in the `native_segwit` field to generate bc1 addresses.
 
