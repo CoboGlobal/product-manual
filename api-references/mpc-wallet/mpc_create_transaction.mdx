@@ -57,6 +57,16 @@ Web3 wallet:
 ```python Sample
 extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869e4517311b190d7eb31e30eba0ef000000000000000000000000000000000000000000000000002386f26fc10000"}'
 ```
+    - instructions: request data associated with a Solana transaction. This parameter is in JSON format and contains a list of instructions. Each instruction includes the following parameters:
+      - accounts: a list of accounts associated with Solana contract, each of which has the following attributes:
+        - pubkey: account address. If the account is signer, `pubkey` needs to match the `from_address` parameter.
+        - is_signer: boolean value indicating whether the account can sign transactions.
+        - is_writable: boolean value indicating whether the account can be modified.
+      - data: data used for calling Solana contract.
+      - program_id: contract address. when calling a Solana contract, the `to_address` parameter needs to match the `program_id` parameter. If multiple contracts are being called, then the `to_address` parameter should match the `program_id` parameter of the first instruction.
+```python Sample
+extra_parameters: '{"instructions": "[{\\"accounts\\":[{\\"pubkey\\":\\"E4MhQWiqCLER3fFZNf8LyQFpLWW3BRxtsR5eps3c3vNS\\",\\"is_signer\\":true,\\"is_writable\\":true}],\\"data\\":\\"Canary TX 4, slot: 219858117\\",\\"program_id\\":\\"MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr\\"}]"}'
+```
 </ParamField>
 <ParamField body="max_fee" type="Int" >max fee, applicable to ETH EIP 1559 transaction (only use in web3 wallet) </ParamField>
 <ParamField body="max_priority_fee" type="Int" >max priority fee, applicable to ETH EIP 1559 transaction (only use in web3 wallet)</ParamField>

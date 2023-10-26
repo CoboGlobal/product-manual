@@ -30,8 +30,84 @@ https://github.com/CoboGlobal/cobo-java-api/blob/main/example/src/main/java/com/
 ## Token Sweeping Logics
 
 1. Verify if the destination address is valid. If validation fails, please exit directly as the token sweeping will be marked as a failure.
+```java Java
+ApiResponse<Boolean> response = mpcClient.isValidAddress(coin, toAddr);
+    if (!response.isSuccess()) {
+        return false;
+    }
+    if (!response.getResult()) {
+        return false;
+    }
+```
 2. Query the coin type used for settling transaction fees.
+```java Java
+ApiResponse<EstimateFeeDetails> feeResponse = mpcClient.estimateFee(coin, toAmount, toAddr, null);
+    if (!feeResponse.isSuccess()) {
+        return false;
+    }
+```
 3. Consolidate the balances of the queried coin type across all addresses under the MPC Wallet. If the aggregated balance falls below the estimated transaction fees amount, please exit directly as the token sweeping will be marked as a failure.
+```java Java
+// Query the total number of addresses with remaining balances
+    Integer pageIndex = 0;
+    Integer pageLength = 50;
+    ApiResponse<MPCListBalances> balances = mpcClient.listBalances(coin, pageIndex, pageLength);
+    if (!balances.isSuccess()) {
+        return false;
+    }
+    Integer total = balances.getResult().getTotal();
+    if (total <= 0) {
+        return false;
+    }
+
+    // Retrieve the balance data from all addresses with remaining balances
+    List<MPCCoinBalanceDetail> allBalances = new ArrayList<>();
+    while (pageIndex * pageLength < total) {
+        balances = mpcClient.listBalances(coin, pageIndex, pageLength);
+        allBalances.addAll(balances.getResult().getCoinData());
+        pageIndex += pageLength;
+    }
+
+    // Summarize the total balance across all addresses with remaining balances; if the address matches the toAddr, the balance will not be swept
+    BigInteger allBalanceAmount = new BigInteger("0");
+    for (MPCCoinBalanceDetail balanceDetail : allBalances) {
+        if (Objects.equals(balanceDetail.getAddress(), toAddr)) {
+            continue;
+        }
+
+        BigInteger balance = new BigInteger(balanceDetail.getBalance());
+        allBalanceAmount = allBalanceAmount.add(balance);
+    }
+
+```
 4. Transfer the balances of the specified coin type across all addresses to the destination address. The token sweeping process concludes when the total swept amount reaches the predefined threshold.
     1. When you sweep native tokens, the amount to sweep is computed based on the total address balances, your pre-set sweeping threshold, and the estimated transaction fees.
     2. When you sweep non-native tokens, verify first that "fromAddr" has sufficient balance to cover the estimated transaction fees. If insufficient, please transfer funds from "feeAddr" to "fromAddr" to ensure the success of token sweeping.
+```java Java
+if (allBalanceAmount.compareTo(toAmount) >= 0) {
+    BigInteger transferAllAmount = new BigInteger("0");
+    for (MPCCoinBalanceDetail balanceDetail : allBalances) {
+        if (Objects.equals(balanceDetail.getAddress(), toAddr)) {
+            continue;
+        }
+
+        if (feeResponse.getResult().getFeeCoin().equals(coin)) {
+            // sweep native tokens
+            BigInteger transferAmount = transfer(balanceDetail.getCoin(), balanceDetail.getAddress(), toAddr, toAmount.subtract(transferAllAmount));
+            transferAllAmount = transferAllAmount.add(transferAmount);
+        } else {
+            // sweep non-native tokens
+            BigInteger transferAmount = tokenTransfer(balanceDetail.getCoin(), balanceDetail.getAddress(), toAddr, feeFromAddress, toAmount.subtract(transferAllAmount));
+            transferAllAmount = transferAllAmount.add(transferAmount);
+        }
+
+        if (transferAllAmount.compareTo(toAmount) >= 0) {
+            return true;
+        }
+    }
+    // transfer funds from "feeAddr" to "fromAddr" to ensure the success of token sweeping
+    return transferAllAmount.compareTo(toAmount) >= 0;
+    } else {
+    return false;
+    }
+```
