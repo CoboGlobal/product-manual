@@ -38,7 +38,7 @@ import org.apache.commons.lang3.StringUtils;
 @RestController
 public class CallbackController {
    // Configure coboPub based on your operating environment (i.e., development or production environment)
-   private static final String coboPubKey = Env.DEVELOP.coboPub;
+   private static final String coboPubKey = Env.DEV.coboPub;
 
    @RequestMapping(value="/custody_callback", method = RequestMethod.POST)
    public static String custodyCallback(@RequestHeader("Biz-Timestamp") String timestamp,

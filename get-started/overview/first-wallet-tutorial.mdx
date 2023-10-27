@@ -25,12 +25,12 @@ as well as the ApiSigner for API Authentication.
 <CodeGroup>
 ```python Python
 from cobo_custody.client import Client
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 
 # input your API SECRET
 signer = LocalSigner("YOUR_API_SECRET")
-client = Client(signer=signer, env=DEVELOP_ENV, debug=True)
+client = Client(signer=signer, env=DEV_ENV, debug=True)
 ```
 ```java Java
 import com.cobo.custody.api.client.CoboApiClientFactory;
@@ -41,7 +41,7 @@ import com.cobo.custody.api.client.impl.LocalSigner;
 
 CoboApiRestClient client = CoboApiClientFactory.newInstance(
                 new LocalSigner(apiSecret),
-                Env.DEVELOP,
+                Env.DEV,
                 false).newRestClient();
 
 ```
@@ -52,12 +52,12 @@ CoboApiRestClient client = CoboApiClientFactory.newInstance(
 <CodeGroup>
 ```python Python
 from cobo_custody.client import MPCClient
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 
 # input your API SECRET
 signer = LocalSigner("YOUR_API_SECRET")
-mpc_client = MPCClient(signer=signer, env=DEVELOP_ENV, debug=True)
+mpc_client = MPCClient(signer=signer, env=DEV_ENV, debug=True)
 ```
 ```java Java
 import com.cobo.custody.api.client.CoboApiClientFactory;
@@ -68,7 +68,7 @@ import com.cobo.custody.api.client.impl.LocalSigner;
 
 CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
                 new LocalSigner(apiSecret),
-                Env.DEVELOP,
+                Env.DEV,
                 false).newMPCRestClient();
 
 ```
@@ -77,7 +77,7 @@ CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
 
 <Card title="Use the correct Client and Environment" icon="lightbulb" iconType="duotone" color="#ca8b04">
   `Client` is for custodial wallet, `MPCClient` is for MPC Co-managed and MPC Lite wallet.<br/>
-  `DEVELOP_ENV` is development environment, `PROD_ENV` is for production environment.
+  `DEV_ENV` is development environment, `PROD_ENV` is for production environment.
 </Card>
 
 
@@ -388,7 +388,7 @@ The sample codes are for reference only. Please use [Cobo SDKs](https://github.c
 <CodeGroup>
 ```python Python
 from cobo_custody.client import Client
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 import time
 
@@ -398,7 +398,7 @@ amount = 10000000000000000  # Withdrawal amount：0.01GETH
 to_address = "your address"  # Your external address
 
 # Initialize Cobo Client
-client = Client(signer=LocalSigner(api_secret), env=DEVELOP_ENV, debug=False)
+client = Client(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
 
 # Check if GETH has been added in your wallet
 response = client.get_coin_info(coin=coin_code)
@@ -458,7 +458,7 @@ public class CoboApiExample {
         // Initialize Cobo Client
         CoboApiRestClient client = CoboApiClientFactory.newInstance(
                 new LocalSigner(apiSecret),
-                Env.DEVELOP,
+                Env.DEV,
                 false).newRestClient();
 
         // Check if GETH has been added in your wallet
@@ -503,7 +503,7 @@ public class CoboApiExample {
 <CodeGroup>
 ```python Python
 from cobo_custody.client.mpc_client import MPCClient
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 import time
 
@@ -516,7 +516,7 @@ from_address = "your mpc wallet address"  # Your MPC wallet address
 to_address = "your address"  # Your external address
 
 # Initialize Cobo Client
-mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEVELOP_ENV, debug=False)
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
 
 # Check if GETH has been added in your wallet
 response = mpc_client.get_wallet_supported_coins()
@@ -591,7 +591,7 @@ public class CobоCustodyApiClientExample {
         // Initialize Cobo Client
         CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
                 new LocalSigner(apiSecret),
-                Env.DEVELOP,
+                Env.DEV,
                 false).newMPCRestClient();
 
         // Check if GETH has been added to your wallet

@@ -43,13 +43,13 @@ Please refer to the [link](/custodial-wallet/authentication) for how to use apiK
 const { Client } = require("cobo-custody");
 const { MPCClient } = require("cobo-custody");
 const { LocalSigner } = require("cobo-custody");
-const { DEVELOP, PROD } = require("cobo-custody");
+const { DEV, PROD } = require("cobo-custody");
 
 // client for Custodial Wallet
-const client = new Client(signer, DEVELOP, true);
+const client = new Client(signer, DEV, true);
 
 // client for MPC Wallet
-const mpc_client = new MPCClient(signer, DEVELOP, true);
+const mpc_client = new MPCClient(signer, DEV, true);
 ```
 
 #### Initialize ApiSigner
