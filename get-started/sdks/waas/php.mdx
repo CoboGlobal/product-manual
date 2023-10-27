@@ -52,10 +52,10 @@ use Cobo\Custody\Client;
 use Cobo\Custody\MPCClient;
 
 # client for Custodial Wallet
-$client = new Client($signer, Config::DEVELOP, false);
+$client = new Client($signer, Config::DEV, false);
 
 # client for MPC Wallet
-$mpcClient = new MPCClient($signer, Config::DEVELOP, false);
+$mpcClient = new MPCClient($signer, Config::DEV, false);
 ```
 
 #### Initialize ApiSigner

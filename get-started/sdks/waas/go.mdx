@@ -43,13 +43,13 @@ import "github.com/CoboGlobal/cobo-go-api/cobo_custody"
 // client for Custodial Wallet
 var client = cobo_custody.Client{
   Signer: localSigner,
-  Env: cobo.Develop(),
+  Env: cobo.Dev(),
 }
 
 // client for MPC Wallet
 var mpcClient = cobo_custody.MPCClient{
   Signer: localSigner,
-  Env: cobo.Develop(),
+  Env: cobo.Dev(),
 }
 ```
 

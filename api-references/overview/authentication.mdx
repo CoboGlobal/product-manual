@@ -145,7 +145,7 @@ we provide two methods to test whether your API key has been configured successf
 
 ```python Python
 signer = LocalSigner("YOUR_API_SECRET")
-client = Client(signer=signer, env=DEVELOP_ENV, debug=True)
+client = Client(signer=signer, env=DEV_ENV, debug=True)
 res = client.get_account_info()
 ```
 

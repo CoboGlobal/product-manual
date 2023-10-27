@@ -99,12 +99,12 @@ Please manually enter your key into the "API Key" field and ensure that the stat
 
 ```python Python
 from cobo_custody.client.mpc_client import MPCClient
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 
 # input your API SECRET
 signer = LocalSigner("YOUR_API_SECRET")
-mpc_client = MPCClient(signer=signer, env=DEVELOP_ENV, debug=True)
+mpc_client = MPCClient(signer=signer, env=DEV_ENV, debug=True)
 res = mpc_client.get_supported_chains()
 ```
 

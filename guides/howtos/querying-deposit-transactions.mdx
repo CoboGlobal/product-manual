@@ -21,14 +21,14 @@ Below are code samples to show you how to query deposit transaction details by t
 
 <CodeGroup>
 ```python Python
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 from cobo_custody.client.mpc_client import MPCClient
 
 api_secret = "your api secret"  # your wallet api secret
 
 # init cobo client
-mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEVELOP_ENV, debug=False)
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
 
 response = mpc_client.list_transactions(transaction_type=1000, order_by="created_time", order="DESC")
 print(f"Get Transactions By Time: {response.result}")
@@ -50,7 +50,7 @@ public class CobоCustodyApiClientExample {
     // init client
     CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
     new LocalSigner(apiSecret),
-    Env.DEVELOP,
+    Env.DEV,
     false).newMPCRestClient();
 
     // get deposit transaction
@@ -66,12 +66,12 @@ public class CobоCustodyApiClientExample {
 <CodeGroup>
 ```python Python
 from cobo_custody.client import Client
-from cobo_custody.config import DEVELOP_ENV
+from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
 
 api_secret = "your_api_secret"  # your wallet api secret
 # init cobo client
-client = Client(signer=LocalSigner(api_secret), env=DEVELOP_ENV, debug=False)
+client = Client(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
 
 # get deposit transaction
 response = client.get_transactions_by_time(side="deposit")
@@ -96,7 +96,7 @@ public class CoboApiExample {
     // init cobo client
     CoboApiRestClient client = CoboApiClientFactory.newInstance(
         new LocalSigner(apiSecret),
-        Env.DEVELOP,
+        Env.DEV,
         false).newRestClient();
 
     // get deposit transaction

@@ -88,7 +88,7 @@ import com.cobo.custody.api.client.impl.LocalSigner;
 // client for Custodial Wallet
 CoboApiRestClient client = CoboApiClientFactory.newInstance(
                 new LocalSigner("YOUR_API_SECRET"),
-                Env.DEVELOP,
+                Env.DEV,
                 false).newRestClient();
 
 // client for MPC Wallet
