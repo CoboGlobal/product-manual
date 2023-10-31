@@ -202,7 +202,10 @@
         "guides/howtos/auto-token-sweeping-for-mpc-wallets",
         "guides/howtos/api-error-handling-and-reporting",
         "guides/howtos/configure-api-callback",
-        "guides/howtos/querying-deposit-transactions"]
+        "guides/howtos/querying-deposit-transactions",
+        "guides/howtos/deposit-and-withdrawal-transaction-status",
+        "guides/howtos/creating-utxo-transactions",
+        "guides/howtos/creating-withdrawal-transactions"]
     },
     {
       "group": "Custodial Wallet APIs",
