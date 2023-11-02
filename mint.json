@@ -5,6 +5,11 @@
     "og:title": "Cobo Developer Hub",
     "og:description": "An institutional-grade, open platform for Web3 developers. Browse our resources to build innovative blockchain products and secure crypto custody solutions."
    },
+  "analytics": {
+    "ga4": {
+        "measurementId": "G-XLRX3YMJXT"
+    }
+  },
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png",
