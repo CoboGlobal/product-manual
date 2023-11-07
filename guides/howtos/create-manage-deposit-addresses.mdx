@@ -15,21 +15,49 @@ With Cobo Wallet-as-a-Service, you can create and manage deposit addresses for y
 
 You can create up to 200 addresses by using [Cobo SDKs](https://github.com/CoboGlobal) and corresponding APIs ([Custodial Wallet API](/api-references/custody-wallet/new_addresses), [MPC Wallet API](/api-references/mpc-wallet/mpc_generate_addresses) )
 
+**Custodial Wallet**
 <CodeGroup>
 ```python Python
-#Custodial Wallet
-client.batch_new_deposit_address("GETH",1)
-#MPC Wallet
-mpc_client.generate_addresses("GETH",1)
+from cobo_custody.client import Client
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+
+api_secret = "your_api_secret"  # your wallet api secret
+# init cobo client
+client = Client(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+# new deposit addresses
+response = client.batch_new_deposit_address("GETH",1)
+print(f"New deposit addresses: {response.result}")
 ```
 ```java Java
-//Cusotidal Wallet
-client.newAddresses("GETH", 1, false);
-//MPC Wallet
-mpcClient.generateAddresses("GETH", 1);
+package com.cobo.custody.api.client.impl;
+import java.util.List;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.NewAddresses;
+
+public class CoboApiExample {
+    public static void main(String[] args) {
+    String apiSecret = "your_api_secret"; // your wallet api secret
+    String coin = "GETH";  // Your testing coin
+    // init cobo client
+    CoboApiRestClient client = CoboApiClientFactory.newInstance(
+        new LocalSigner(apiSecret),
+        Env.DEV,
+        false).newRestClient();
+
+    // create new deposit addresses
+    ApiResponse<NewAddresses> newAddresses = client.newAddresses(coin, 1, false);
+    System.out.println("generateAddresses:" + newAddresses.getResult());
+    }
+}
 ```
 </CodeGroup><br />
-<Accordion title="View Response">
+<Accordion title="View Response - Custodial Wallet">
 ```json
 {
   "success": true,
@@ -37,6 +65,66 @@ mpcClient.generateAddresses("GETH", 1);
     "coin": "GETH",
     "address": "0xec323f3743b96e020c234c216fa650f96b66fc9d"
   }
+}
+```
+</Accordion>
+
+**MPC Wallet**
+<CodeGroup>
+```python Python
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+from cobo_custody.client.mpc_client import MPCClient
+
+api_secret = "your api secret"  # your wallet api secret
+
+# init cobo client
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+response = mpc_client.generate_addresses("GETH",1)
+print(f"New deposit addresses: {response.result}")
+```
+```java Java 
+package com.cobo.custody.api.client.impl;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.MPCAddressList;
+
+public class CobоCustodyApiClientExample {
+    public static void main(String[] args) {
+    String apiSecret = "your_api_secret"; // your wallet api secret
+    String coin = "GETH";  // Your testing coin
+
+    // init client
+    CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
+    new LocalSigner(apiSecret),
+    Env.DEV,
+    false).newMPCRestClient();
+
+    // new deposit addresses
+    ApiResponse<MPCAddressList> generateAddressResponse = mpcClient.generateAddresses(chain_code, 1);
+    System.out.println("Generated Address: " + generateAddressResponse.getResult());
+    }
+}
+```
+</CodeGroup><br />
+<Accordion title="View Response - MPC Wallet">
+```json
+{
+  "addresses": [
+    {
+      "id": 721935051680543203,
+      "address": "0xd80e19dddb11e9a91f7aa644306564538e4b8586",
+      "hd_path": "m/44/60/1/0/82",
+      "encoding": 0
+    }
+  ]
 }
 ```
 </Accordion>
@@ -54,18 +142,46 @@ Please make sure you have added coins on Cobo Custody Web before creating any de
 You can view your address list using the Get Address History ([Cusotidal Wallet API](/api-references/custody-wallet/address_history), [MPC Wallet API](/api-references/mpc-wallet/mpc_list_addresses)).
 This API allows you to retrieve addresses by coin types. Each API request can retrieve up to 20 addresses, in either ascending or descending order.
 
+**Cusotidal Wallet**
 <CodeGroup>
 ```python Python
-#Custodial Wallet
-client.get_address_history("GETH")
-#MPC Wallet
-mpc_client.list_addresses("GETH")
+from cobo_custody.client import Client
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+
+api_secret = "your_api_secret"  # your wallet api secret
+# init cobo client
+client = Client(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+# get address history
+response = client.get_address_history("GETH")
+print(f"Transaction history: {response.result}")
 ```
 ```java Java
-//Cusotidal Wallet
-client.getAddressHistory("GETH");
-//MPC Wallet
-mpcClient.listAddresses("GETH");
+package com.cobo.custody.api.client.impl;
+import java.util.List;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.*;
+
+public class CoboApiExample {
+    public static void main(String[] args) {
+    String apiSecret = "your_api_secret"; // your wallet api secret
+    String coin = "GETH";  // Your testing coin
+    // init cobo client
+    CoboApiRestClient client = CoboApiClientFactory.newInstance(
+        new LocalSigner(apiSecret),
+        Env.DEV,
+        false).newRestClient();
+
+    // get address history
+    ApiResponse<List<Address>> getAddressHistory = client.getAddressHistory(coin);
+    System.out.println("Addresses History:" + getAddressHistory.getResult());
+    }
+}
 ```
 </CodeGroup><br />
 <Accordion title="View Response - Custodial Wallet">
@@ -87,6 +203,52 @@ mpcClient.listAddresses("GETH");
 ```
 </Accordion>
 
+**MPC Wallet**
+<CodeGroup>
+```python Python
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+from cobo_custody.client.mpc_client import MPCClient
+
+api_secret = "your api secret"  # your wallet api secret
+
+# init cobo client
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+# get address history
+response = mpc_client.list_addresses("GETH")
+print(f"Address History: {response.result}")
+```
+```java Java
+package com.cobo.custody.api.client.impl;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.MPCAddressList;
+
+public class CobоCustodyApiClientExample {
+    public static void main(String[] args) {
+    String apiSecret = "your_api_secret"; // your wallet api secret
+    String coin = "GETH";  // Your testing coin
+
+    // init client
+    CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
+    new LocalSigner(apiSecret),
+    Env.DEV,
+    false).newMPCRestClient();
+
+    // new deposit addresses
+    ApiResponse<MPCAddressList> generateAddressResponse = mpcClient.listAddresses(coin);
+    System.out.println("Generated Address: " + generateAddressResponse.getResult());
+    }
+}
+```
+</CodeGroup><br />
 <Accordion title="View Response - MPC Wallet">
 ```json
 {
@@ -118,12 +280,46 @@ Note that because Cobo will automatically aggregate funds in deposit addresses, 
 <Tip>In Custodial Wallet, tokens deposited into these addresses will undergo automated aggregation (token sweep) by Cobo. You are exempt from the necessity to pre-fund or fund transaction fees for your deposit addresses. This translates into substantial savings in both development and operational efforts for your team.</Tip>
 <CodeGroup>
 ```python Python
-#Custodial Wallet
-client.get_account_info()
+from cobo_custody.client import Client
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+
+api_secret = "your_api_secret"  # your wallet api secret
+# init cobo client
+client = Client(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+# get account balance
+response = client.get_account_info()
+print(f"Account balance: {response.result}")
+
+
 ```
 ```java Java
-//Cusotidal Wallet
-client.getOrgInfo();
+package com.cobo.custody.api.client.impl;
+import java.util.List;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.OrgInfo;
+
+public class CoboApiExample {
+    public static void main(String[] args) {
+    String apiSecret = "your_api_secret"; // your wallet api secret
+    // init cobo client
+    CoboApiRestClient client = CoboApiClientFactory.newInstance(
+        new LocalSigner(apiSecret),
+        Env.DEV,
+        false).newRestClient();
+
+    // get account balance
+    ApiResponse<OrgInfo> getOrgInfo = client.getOrgInfo();
+    System.out.println("Addresses History:" + getAddressHistory.getResult());
+    }
+}
+
+
 ```
 </CodeGroup><br />
 <Accordion title="View Response - Custodial Wallet">
@@ -177,12 +373,47 @@ client.getOrgInfo();
 **In MPC Wallet**, you can query the balance of each address using the [Get Balances List](/api-references/mpc-wallet/mpc_list_balances) up to 50 addresses.
 <CodeGroup>
 ```python Python
-#MPC Wallet
-client.list_balances("ETH",0,50)
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+from cobo_custody.client.mpc_client import MPCClient
+
+api_secret = "your api secret"  # your wallet api secret
+
+# init cobo client
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+# get balance list
+response = client.list_balances("ETH",0,50)
+print(f"Address History: {response.result}")
 ```
 ```java Java
-//MPC Wallet
-client.listBalances("ETH",0,50);
+package com.cobo.custody.api.client.impl;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.MPCListBalances;
+
+public class CobоCustodyApiClientExample {
+    public static void main(String[] args) {
+    String apiSecret = "your_api_secret"; // your wallet api secret
+    String coin = "ETH";  // Your testing coin
+
+    // init client
+    CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
+    new LocalSigner(apiSecret),
+    Env.DEV,
+    false).newMPCRestClient();
+
+    // get balance list
+    ApiResponse<MPCListBalances> listBalances = client.listBalances(coin,0,50);
+    System.out.println("Balance List: " + generateAddressResponse.getResult());
+    }
+}
 ```
 </CodeGroup><br />
 <Accordion title="View Response - MPC Wallet">
