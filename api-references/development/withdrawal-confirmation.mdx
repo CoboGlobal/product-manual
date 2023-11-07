@@ -2,6 +2,11 @@
 title: "Withdrawal Confirmation"
 description: ""
 ---
+Upon receiving a withdrawal request, Cobo will initiate the verification process by sending a push message to a client-specified URL via HTTP(S) using the POST request method. The push message contains withdrawal data in JSON format within the HTTP message body.
+
+Upon completing the verification of the withdrawal request and associated data, the client is required to respond promptly with an HTTP status of 200. The response should include an HTTP body containing either 'ok' to indicate approval or 'deny' to signify rejection. Failure to provide this response will result in continued pushes of the same message to the designated URL. Kindly note that your timely response is crucial for the efficient processing of a withdrawal request.
+
+Upon receiving a withdrawal request for 5 LONT_ONT, for instance, Cobo will initiate an HTTP POST request to the client-designated URL. The request body will be structured as follows:
 
 ```json
 {
@@ -22,16 +27,14 @@ description: ""
   "last_time": 1537843965164
 }
 ```
-Upon receiving a withdrawal request, Cobo will check it by notifing a client-designated URL via HTTP(S), and request method is POST.  The message
-includes the withdrawal request data in the HTTP message body in JSON format. After the client receives and finishes
-checking the message, they must send an HTTP response with status=200 and http body = ok(or deny) to Cobo. Otherwise, we
-will continue to push the same message to the designated URL.
+If you approve this withdrawal request, please respond with an HTTP status of 200 and set the message body to "ok."
 
-### NOTICE
+### Things to note:
 
-1. An isolated server (e.g. risk monitor) should be used for the withdrawal confirmation in case of SPOF.
+1. To ensure system resilience against a single point of failure (SPOF), we strongly recommend using a dedicated server, such as a risk monitor, for processing withdrawal confirmations.
 
-2. Please check the request_id、to_addr、amount for each withdraw request to verify if it's a normal request.
+2. Please validate the legitimacy of each withdrawal request by carefully reviewing key parameters, including request_id, to_address, and amount.
 
-3. We recommend you to use https and Cobo pubkey for signature verification. (please refer to our SDK)
+3. For security reasons, we strongly recommend using HTTPS and Cobo's public key for signature verification. Detailed instructions can be found in our [guide](/api-references/development/callback-signature). Please ensure that you are operating in the correct environment during the verification process.
 
+For information on how to configure API callbacks, refer to this [guide](/guides/howtos/configure-api-callback).

@@ -2,25 +2,12 @@
 title: "Transaction Notification"
 description: ""
 ---
+Upon receiving a deposit or withdrawal transaction, Cobo will send a push message to a client-specified URL via HTTP(S) using the POST request method. The push message contains transaction data in JSON format within the HTTP message body.
 
-Upon receiving a successful deposit/withdrawal transaction, Cobo will notify a client-designated URL via HTTP(S), and request method is POST. The
-message includes the transaction data in the HTTP message body in JSON format. After the client receives and finishes
-processing the message, they must send an HTTP response with status code = 200 and http body = ok to Cobo. Otherwise,
-we will continue to push the same message to the designated URL (up to 14 times, if you want to re-send the push later,
-you could click on 'Resend' Button on Web: Wallet - API Callback - API Push History)
+Status = “Success”
 
-If you have ticked "Push Pending Transaction" under Transaction Notification on Cobo Custody Web,
-you will receive a push notification whenever there is a change in the number of block confirmations for a specific transaction.
-The notification will indicate the transaction status as 'pending' and include essential details such as the number of confirmed blocks and the threshold.
-Please note that each notification for a given number change will be sent only once.
+When Cobo receives a deposit of 0.000001 TRX to a recipient address associated with a Cobo client, it will send an HTTP POST request to the client's designated URL. The request body will be structured as follows:
 
-<img src="/images/pendingpushEN.png" />
-
-
-If you want to check Cobo pubkey to verify Cobo signature, please go to: Web management platform - Wallet - API
-Callback. (NOTICE they're different in Development&Production environment)
-
-### Example
 
 ```json
 {
@@ -41,6 +28,7 @@ Callback. (NOTICE they're different in Development&Production environment)
   "abs_cobo_fee": "0",
   "created_time": 1607324928585,
   "last_time": 1607324928585,
+  "request_created_time": 1607324928492,
   "confirmed_num": 27,
   "tx_detail": {
     "txid": "6c2df6f6cf7fe8fe1e8559c11679a5a5b90768d1c128ffb3dd66d6f3cb910775",
@@ -53,26 +41,32 @@ Callback. (NOTICE they're different in Development&Production environment)
   "type": "external"
 }
 ```
-Cobo receives a deposit of 0.000001 TRX to address TZAt997umXasPUfxUZYKQKcGwjmYpJzX6V. The transaction hash is
-6c2df6f6cf7fe8fe1e8559c11679a5a5b90768d1c128ffb3dd66d6f3cb910775. If the address belongs to a Cobo client, Cobo will
-send an HTTP post request to the client-designated URL with the body ->
+For the definition of parameters, please refer to this [guide](/api-references/custody-wallet/transaction#response) if you are using Cobo's Custodial Wallets and [here](/api-references/mpc-wallet/mpc_transactions_by_request_ids#response) if you are using MPC Wallets.
 
-### NOTICE
+Status = “Failed”
 
-1. After clients receive a notification from Cobo, they need to call the Cobo transaction query interface with the ID
-   from the notification to confirm the transaction's validity. **Clients should not rely on push message to confirm
-   deposits or withdrawals.**
+By default, Cobo does not send push messages for failed transactions. If you have a specific business requirement to receive push messages for transactions marked as 'failed,' please contact Cobo's customer support at custodyservice@cobo.com.  We will configure the corresponding settings tailored to meet your development needs.
 
-2. For 'successful transaction' notifications, Cobo use a 'succeed at least once' strategy. If the client does not
-   respond with a 'body data ok' or HTTP request timeout message, Cobo will consider the push as failed. After a while,
-   we will push again. However, there is a limit for push attempts. It the limit is exceeded, it will be marked as a
-   failed push.
+Status = “Pending”
 
-3. For 'pending transaction' notifications, Cobo will only send once when the confirmation number changes. No response
-   required from client.
+If you have ticked “Push Pending Transaction” under Transaction Notification on Cobo Custody Web, you will receive a push message whenever there is a change in the number of block confirmations for a specific transaction. The message will indicate the transaction status as ‘pending’ and include essential details such as the number of confirmed blocks and the threshold.
 
-4. For 'success transaction' notifications, Cobo will not push the confirmation number changes any more.
+The status will change from "pending" to "success" when the 'confirmed_num' reaches the pre-defined 'confirmed_threshold' in the message. Additionally, pending transactions include an extra field called "waiting_audit," signifying whether an approval is required.
 
-5. Use ID as unique key for each transaction, and lock your DB, in case of duplicate accounting for one transaction.
+Each push message for a specific block number change will be sent only once. Kindly note that certain blockchains may not provide block-based notifications due to their internal mechanisms.
 
-6. We recommend you to use https and Cobo pubkey for signature verification. (please refer to our SDK)
+<img src="/images/pendingpushEN.png" />
+
+### Things to note:
+
+1. Upon receiving a push notification from Cobo, it is strongly recommended to call Cobo's transaction querying endpoint with the provided ID to validate the transaction. Please refrain from relying solely on push messages for the validation of deposit or withdrawal transactions.
+
+2. Upon receiving a "success" transaction push message from Cobo, clients are required to respond with an HTTP status code of 200 and an HTTP body containing 'ok' to confirm receipt. If no response is received by Cobo after 14 push attempts, the message will be marked as failed.
+
+3. For transactions marked as "pending," Cobo will send a push message whenever there is a change in the block confirmation number. No response is required from the client.
+
+4. We recommend using the provided IDs as unique keys for each transaction to enhance database security and prevent any instances of duplicate accounting.
+
+5. For security reasons, we strongly recommend using HTTPS and Cobo's public key for signature verification. Detailed instructions can be found in our [guide](/api-references/development/callback-signature). Please ensure that you are operating in the correct environment during the verification process.
+
+For information on how to configure API callbacks, refer to this [guide](/guides/howtos/configure-api-callback).
