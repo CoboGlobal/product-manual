@@ -25,6 +25,7 @@ description: "This endpoint returns a JSON response with the details of a pendin
     <ResponseField name="source_address_detail" type="String">Separate by comma if more than one source address</ResponseField>
     <ResponseField name="side" type="enum(deposit / withdraw)">Transaction type</ResponseField>
     <ResponseField name="amount" type="String">Transaction value (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
+    <ResponseField name="decimal" type="Int">Amount decimal</ResponseField>
     <ResponseField name="abs_amount" type="String">Transaction value (Note that this is an absolute value. If you trade 1.5 BTC, then the value is 1.5)</ResponseField>
     <ResponseField name="abs_cobo_fee" type="String">lute fee value. For examle, abs_cobo_fee 0.00005 means exactly 0.00005BTC</ResponseField>
     <ResponseField name="txid" type="String">Transaction ID, which can be found on the corresponding public chain</ResponseField>

@@ -245,6 +245,7 @@
             "api-references/custody-wallet/transactions_by_request_ids",
             "api-references/custody-wallet/transaction_by_txid",
             "api-references/custody-wallet/transactions_by_time",
+            "api-references/custody-wallet/transactions_by_time_ex",
             "api-references/custody-wallet/pending_transaction",
             "api-references/custody-wallet/pending_transactions",
             "api-references/custody-wallet/transaction_history"

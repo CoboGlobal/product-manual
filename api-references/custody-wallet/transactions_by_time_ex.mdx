@@ -1,22 +1,32 @@
 ---
-title: 
-api: GET /v1/custody/pending_transactions/ 
-description: "This endpoint returns a JSON response with a list of pending transactions filtered by coin, side, max_id, min_id, and limit parameters. The response includes transaction details such as transaction ID, coin type, amount, and timestamp."
+title: Get Transactions By time and offset
+api: "GET /v1/custody/transactions_by_time_ex/"
+description: "This endpoint returns a list of transactions filtered by time range, transaction status, coins, transaction side (deposit/withdraw) and address. As the extension of ***[Get Transactions By Time](/api-references/custody-wallet/transactions_by_time)***, this endpoint introduced a new 'offset' parameter used for performing pagination query of transactions. The response includes transaction details such as transaction hash, amount, and timestamp."
 ---
 
-<Tip> FAQ：[How do I query the details of a pending transaction?](/faqs/waas#how-do-i-query-the-details-of-a-pending-transaction)</Tip>
-
-<Note>it's possible that there may be no pending transactions for various reasons.
-      Firstly, it depends on whether the customer has selected the option to receive callbacks for pending transactions.
-      Additionally, it's possible that the blockchain processing speed for this particular cryptocurrency is fast,so transactions are confirmed without going through a pending state.</Note>
-
-
 #### Request
-<ParamField query="coin" type="String" >Coin code (Does not return all currencies)</ParamField> 
-<ParamField query="side" type="enum(deposit / withdraw)" >Deposit/withdrawal</ParamField> 
-<ParamField query="max_id" type="String" >The transaction history ID limit is optional. If not included, will by default return the most recent records.(cannot be used with min_id)</ParamField> 
-<ParamField query="min_id" type="String" >Optional. If included, the sequence will be changed to time ASC. If not included, will by default return the most recent records, time DESC.(cannot be used with max_id)</ParamField> 
-<ParamField query="limit" type="Integer" >Page size is optional. If not included, the default size will be 50, and the maximum size will also be 50.</ParamField> 
+<ParamField query="coins" type="String" >Coin names. Separated by commas</ParamField>
+<ParamField query="side" type="Int" >1: TRANSACTION_DEPOSIT; 2: TRANSACTION_WITHDRAW </ParamField>
+<ParamField query="status" type="Int" >
+  | Status Type | Code |
+  | ----------- | ----------- |
+  | PENDING_APPROVAL| 101|
+  | QUEUED| 201|
+  | PENDING_SIGNATURE| 301|
+  | BROADCASTING| 401|
+  | PENDING_CONFIRMATION| 403|
+  | CONFIRMATION| 501|
+  | SUCCESS| 900|
+  | FAILED| 901|
+</ParamField>
+<ParamField query="address" type="String" >Deposit address</ParamField>
+<ParamField query="begin_time" type="Long" >Begin timestamp(milliseconds). If set, transactions whose transaction created time is greater than or equal to this will be returned.</ParamField>
+<ParamField query="end_time" type="Long" >End timestamp (milliseconds). If set, the transactions whose created time is less than this will be returned.</ParamField>
+<ParamField query="limit" type="Integer" >Page size. If not set, the default size will be 50, and the maximum size will also be 50.</ParamField>
+<ParamField query="offset" type="Integer" >Offset specifies the starting index for the current query, indicating the number of transactions to skip before fetching and returning the transactions in the result.</ParamField>
+<ParamField query="order_by" type="String" >Sorting method. Default: created_time; other option: last_time</ParamField>
+<ParamField query="order" type="String" >Sorting order. Options: ASC (default), DESC</ParamField>
+
 
 #### Response
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
@@ -24,8 +34,8 @@ description: "This endpoint returns a JSON response with a list of pending trans
   <Expandable title="object">
     <ResponseField name="id" type="String">Cobo Unique Transaction ID</ResponseField>
     <ResponseField name="coin" type="String">Coin code (Cobo has internal symbols for each coin to ensure they are all unique)</ResponseField>
-    <ResponseField name="display_code" type="String">Coin ticker symbol  (not unique, changeable, for reference only )</ResponseField>
-    <ResponseField name="description" type="String">Full name of coin  (not unique, changeable, for reference only )</ResponseField>
+    <ResponseField name="display_code" type="String">Coin ticker symbol (not unique, changeable, for reference only)</ResponseField>
+    <ResponseField name="description" type="String">Full name of coin (not unique, changeable, for reference only)</ResponseField>
     <ResponseField name="address" type="String">Deposit address</ResponseField>
     <ResponseField name="memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
     <ResponseField name="source_address" type="String">Source address</ResponseField>
@@ -38,7 +48,7 @@ description: "This endpoint returns a JSON response with a list of pending trans
     <ResponseField name="txid" type="String">Transaction ID, which can be found on the corresponding public chain</ResponseField>
     <ResponseField name="vout_n" type="String">For transactions on public blockchains that allow for multiple deposit addresses in a single transaction, this value indicates the transaction index on the corresponding public blockchain</ResponseField>
     <ResponseField name="request_id" type="String">Request ID</ResponseField>
-    <ResponseField name="status" type="enum(pending)">Transaction status</ResponseField>
+    <ResponseField name="status" type="String">Transaction status (e.g., success, failed)</ResponseField>
     <ResponseField name="request_created_time" type="Long">Withdraw request creation time</ResponseField>
     <ResponseField name="created_time" type="Long">Transaction creation time</ResponseField>
     <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
@@ -67,20 +77,31 @@ description: "This endpoint returns a JSON response with a list of pending trans
 <RequestExample>
 ```python Python
 request(
-    'GET',
-    '/v1/custody/pending_transactions/',
-    {
-        "coin": "ETH",
-        "side": "deposit"
-    },
-    api_key, api_secret, host
+  'GET',
+  '/v1/custody/transactions_by_time_ex/',
+  {
+    "coins": "BTC,ETH",
+    "side": 2,
+    "status": 900,
+    "begin_time": 1699249938000,
+    "limit": 10,
+    "offset": 0,
+    "order": "DESC",
+  },
+  api_key, api_secret, host
 )
 ```
+
 ```javascript JavaScript
-coboFetch('GET', '/v1/custody/pending_transactions/',
+coboFetch('GET', '/v1/custody/transactions_by_time_ex/',
         {
-            "coin": "ETH",
-            "side": "deposit"
+            "coins": "BTC,ETH",
+            "side": 2,
+            "status": 900,
+            "begin_time": 1699249938000,
+            "limit": 10,
+            "offset": 0,
+            "order": "DESC",
         },
         api_key, api_secret, host
     ).then(res => {
@@ -91,13 +112,20 @@ coboFetch('GET', '/v1/custody/pending_transactions/',
         console.log(err)
     });
 ```
+
 ```go Go
-Request("GET", "/v1/custody/pending_transactions/", map[string]string{
-    "coin": "ETH",
-    "side": "deposit",
+Request("GET", "/v1/custody/transactions_by_time_ex/", map[string]string{
+    "coins": "BTC,ETH",
+    "side": 2,
+    "status": 900,
+    "begin_time": 1699249938000,
+    "limit": 10,
+    "offset": 0,
+    "order": "DESC",
 })
 ```
 </RequestExample>
+
 
 <ResponseExample>
 ```json
@@ -121,9 +149,8 @@ Request("GET", "/v1/custody/pending_transactions/", map[string]string{
       "status": "success",
       "created_time": 1542191734958,
       "last_time": 1542191734958,
-      "confirming_threshold": 3,
-      "confirmed_num": 1,
       "remark":"hello test",
+      "confirmed_num": 3
     },
     {
       "id": "20181114112147059335000000359061",
@@ -142,8 +169,8 @@ Request("GET", "/v1/custody/pending_transactions/", map[string]string{
       "status": "success",
       "created_time": 1542165707058,
       "last_time": 1542165707058,
-      "confirming_threshold": 3,
-      "confirmed_num": 1
+      "remark":"hello test",
+      "confirmed_num": 3
     }
   ]
 }
