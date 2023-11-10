@@ -11,13 +11,18 @@ description: "This endpoint generates new addresses for a given chain code and r
 <ParamField body="count" type="Int" required>The number of addresses to generate.</ParamField>
 
 #### Response
-<ResponseField name="addresses" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
-        <ResponseField name="address" type="String" >The generated address.</ResponseField>
-        <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
-        <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
-    </Expandable>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="addresses" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
+                <ResponseField name="address" type="String" >The generated address.</ResponseField>
+                <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
+                <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+            </Expandable>
+        </ResponseField>
+      </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -56,20 +61,23 @@ Request("POST", "/v1/custody/mpc/generate_addresses/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "addresses": [
-    {
-      "id": 721935051680543203,
-      "address": "0xd80e19dddb11e9a91f7aa644306564538e4b8586",
-      "hd_path": "m/44/60/1/0/82",
-      "encoding": 0
-    },
-    {
-      "id": 721935051680543204,
-      "address": "0x4cc90d4cfa5765bcdcde6aaada434eba30a5c949",
-      "hd_path": "m/44/60/1/0/83",
-      "encoding": 0
-    }
-  ]
+ "success": true,
+ "result": {
+      "addresses": [
+        {
+          "id": 721935051680543203,
+          "address": "0xd80e19dddb11e9a91f7aa644306564538e4b8586",
+          "hd_path": "m/44/60/1/0/82",
+          "encoding": 0
+        },
+        {
+          "id": 721935051680543204,
+          "address": "0x4cc90d4cfa5765bcdcde6aaada434eba30a5c949",
+          "hd_path": "m/44/60/1/0/83",
+          "encoding": 0
+        }
+      ]
+   }
 }
 
 ```

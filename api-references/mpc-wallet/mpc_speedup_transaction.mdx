@@ -12,7 +12,12 @@ description: "This endpoint allows users to speed up a previously submitted tran
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model.</ParamField>
 
 #### Response
-<ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+            <ResponseField name="cobo_id" type="String" >Unique transaction ID</ResponseField>
+      </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -50,7 +55,11 @@ Request("POST", "/v1/custody/mpc/speedup_transaction/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "cobo_id": "20221227195133000378036000001822"
+  "success": true,
+  "result": {
+    "cobo_id": "20221227195133000378036000001822"
+  }
 }
+
 ```
 </ResponseExample>

@@ -11,15 +11,20 @@ description: "This endpoint returns a JSON response containing a list of wallet 
 <ParamField query="sort" type="Int" >address sorting method; 1: based on creation time, from earliest to latest; other value: based on creation time, from latest to earliest (default)</ParamField>
 
 #### Response
-<ResponseField name="total" type="Int" >Total number of addresses</ResponseField>
-<ResponseField name="addresses" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
-        <ResponseField name="address" type="String" >The generated address.</ResponseField>
-        <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
-        <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
-        <ResponseField name="description" type="String" >The address description.</ResponseField>
-    </Expandable>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="total" type="Int" >Total number of addresses</ResponseField>
+        <ResponseField name="addresses" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
+                <ResponseField name="address" type="String" >The generated address.</ResponseField>
+                <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
+                <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+                <ResponseField name="description" type="String" >The address description.</ResponseField>
+            </Expandable>
+        </ResponseField>
+      </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -67,23 +72,26 @@ Request("GET", "/v1/custody/mpc/list_addresses/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "total": 2,
-  "addresses": [
-    {
-      "id": 721941011752862138,
-      "address": "0x297db9241bfe5665641951bcf166feebd003870c",
-      "encoding": 0,
-      "hd_path": "m/44/60/1/0/85",
-      "description":""
-    },
-    {
-      "id": 721941011752862137,
-      "address": "0x14cf9de0d8062ca53af5c92dcc574c8f3acb6da5",
-      "encoding": 0,
-      "hd_path": "m/44/60/1/0/84",
-      "description":""
-    }
-  ]
+ "success": true,
+ "result": {
+      "total": 2,
+      "addresses": [
+        {
+          "id": 721941011752862138,
+          "address": "0x297db9241bfe5665641951bcf166feebd003870c",
+          "encoding": 0,
+          "hd_path": "m/44/60/1/0/85",
+          "description":""
+        },
+        {
+          "id": 721941011752862137,
+          "address": "0x14cf9de0d8062ca53af5c92dcc574c8f3acb6da5",
+          "encoding": 0,
+          "hd_path": "m/44/60/1/0/84",
+          "description":""
+        }
+      ]
+  }
 }
 
 

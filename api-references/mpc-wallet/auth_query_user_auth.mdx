@@ -8,12 +8,19 @@ description: "This endpoint is a GET request that requires a 'user_id' parameter
 <ParamField query="user_id" type="String" required>unique user ID</ParamField>
 
 #### Response
-<ResponseField name="pubkey" type="String" >The bound Auth public key, or empty if the binder_id has expired</ResponseField>
-<ResponseField name="addresses" type="object[ ]" >
-  <Expandable title="object">
-    <ResponseField name="chain_coin" type="String" >bound coin</ResponseField>
-    <ResponseField name="address" type="String" >bound address</ResponseField>
-  </Expandable>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+
+        <ResponseField name="pubkey" type="String" >The bound Auth public key, or empty if the binder_id has expired</ResponseField>
+        <ResponseField name="addresses" type="object[ ]" >
+          <Expandable title="object">
+            <ResponseField name="chain_coin" type="String" >bound coin</ResponseField>
+            <ResponseField name="address" type="String" >bound address</ResponseField>
+          </Expandable>
+        </ResponseField>
+
+       </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -51,15 +58,19 @@ Request("GET", "/v1/custody/auth/query_user_auth/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "pubkey": "480da241874516ca9a25b1776e2b3ce6d2d5ea481d9a83e28874e57d4a2786ea1db059aefb2093cf7775da68c5381cf401c821aa967927c3abc46c7545c90438",
-  "addresses": [
-    {
-      "chain_coin": "ETH",
-      "address": "0x123"
-    }
-    …
-  ]
+  "success": true,
+  "result": {
+    "pubkey": "480da241874516ca9a25b1776e2b3ce6d2d5ea481d9a83e28874e57d4a2786ea1db059aefb2093cf7775da68c5381cf401c821aa967927c3abc46c7545c90438",
+    "addresses": [
+      {
+        "chain_coin": "ETH",
+        "address": "0x123"
+      }
+      …
+    ]
+  }
 }
+
 
 ```
 </ResponseExample>

@@ -8,25 +8,32 @@ description: "This endpoint returns a JSON response containing a list of TSS (Th
 <ParamField query="status" type="int" >Request status</ParamField>
 
 #### Response
-<ResponseField name="requests" type="object[]" >
-  <Expandable title="object">
-        <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>
-        <ResponseField name="request_type" type="Int" >Request type(KEYGEN type: 1, KEYRESHARE type: 2)</ResponseField>
-        <ResponseField name="status" type="Int" >Request status（NEW: 100, WAITING_APPROVAL: 200, PENDING: 300, SUCCESS: 400, FAILED: 500）</ResponseField>
-        <ResponseField name="failed_reason" type="String" >Reason for failure</ResponseField>
-        <ResponseField name="meta" type="object[]" >
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+
+        <ResponseField name="requests" type="object[]" >
           <Expandable title="object">
-              <ResponseField name="key_gen" type="object[]" >
-              <Expandable title="object">
-                    <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>
-                    <ResponseField name="threshold" type="Int" >Signature Threshold</ResponseField>
-                    <ResponseField name="node_ids" type="String[ ]" >Request data associated with key generation (i.e. KeyGen) and soft key recovery (i.e. KeyShare)</ResponseField>
-               </Expandable>
-             </ResponseField>
+                <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>
+                <ResponseField name="request_type" type="Int" >Request type(KEYGEN type: 1, KEYRESHARE type: 2)</ResponseField>
+                <ResponseField name="status" type="Int" >Request status（NEW: 100, WAITING_APPROVAL: 200, PENDING: 300, SUCCESS: 400, FAILED: 500）</ResponseField>
+                <ResponseField name="failed_reason" type="String" >Reason for failure</ResponseField>
+                <ResponseField name="meta" type="object[]" >
+                  <Expandable title="object">
+                      <ResponseField name="key_gen" type="object[]" >
+                      <Expandable title="object">
+                            <ResponseField name="cobo_id" type="String" >Unique request ID</ResponseField>
+                            <ResponseField name="threshold" type="Int" >Signature Threshold</ResponseField>
+                            <ResponseField name="node_ids" type="String[ ]" >Request data associated with key generation (i.e. KeyGen) and soft key recovery (i.e. KeyShare)</ResponseField>
+                       </Expandable>
+                     </ResponseField>
+                  </Expandable>
+                </ResponseField>
           </Expandable>
-        </ResponseField>
-  </Expandable>
- </ResponseField>
+         </ResponseField>
+
+       </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -64,26 +71,32 @@ Request("GET", "/v1/custody/mpc/list_tss_node_requests/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "requests": [
-    {
-      "cobo_id": "20221205155958000350435000006699",
-      "request_type": 1,
-      "status": 400,
-      "failed_reason": None,
-      "meta": {
-        "key_gen": {
-          "cobo_id": "20221205155958000350435000006699",
-          "threshold": 2,
-          "node_ids": [
-            "cobo5yb7BNEBwwp5XXedbhnzQfvQtp132W4dH4Jz4x4eDp4KA",
-            "coboMbU7KqoVhXJSyyFeJ2fZWbXQWtZvs1WjmhnzXFB7CTowo",
-            "coboWS6hKma2MxxobbpjB8W2SVmpBiisaBq4rxqVpWJAZpecK"
-          ]
+  "success": true,
+  "result": {
+    "requests": [
+      {
+        "cobo_id": "20221205155958000350435000006699",
+        "request_type": 1,
+        "status": 400,
+        "failed_reason": None,
+        "meta": {
+          "key_gen": {
+            "cobo_id": "20221205155958000350435000006699",
+            "threshold": 2,
+            "node_ids": [
+              "cobo5yb7BNEBwwp5XXedbhnzQfvQtp132W4dH4Jz4x4eDp4KA",
+              "coboMbU7KqoVhXJSyyFeJ2fZWbXQWtZvs1WjmhnzXFB7CTowo",
+              "coboWS6hKma2MxxobbpjB8W2SVmpBiisaBq4rxqVpWJAZpecK"
+            ]
+          }
         }
       }
-    }
-  ]
+    ]
+  }
 }
+
+
+
 
 ```
 </ResponseExample>

@@ -8,8 +8,12 @@ description: "This endpoint allows authenticated users to change their binding t
 <ParamField body="user_id" type="String" required>unique user ID</ParamField>
 
 #### Response
-<ResponseField name="binder_id" type="String" >Binding ID, the binding ID needs to be prefixed with binder_id= to generate a QR code for the user to scan the code to bind, or the user can directly copy the binding code in the form of binder_id=xxxx to Cobo Auth for the binding operation</ResponseField>
-
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="binder_id" type="String" >Binding ID, the binding ID needs to be prefixed with binder_id= to generate a QR code for the user to scan the code to bind, or the user can directly copy the binding code in the form of binder_id=xxxx to Cobo Auth for the binding operation</ResponseField>
+      </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -46,7 +50,10 @@ Request("POST", "/v1/custody/auth/change_binding/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "binder_id": "Ph8YP+LTQyqcfHE/A+eXUw=="
+  "success": true,
+  "result": {
+    "binder_id": "Ph8YP+LTQyqcfHE/A+eXUw=="
+  }
 }
 
 ```

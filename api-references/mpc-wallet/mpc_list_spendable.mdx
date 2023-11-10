@@ -11,12 +11,19 @@ description: "This endpoint returns a JSON response containing a list of spendab
 <ParamField query="address" type="String" >The address to filter UTXOs by.</ParamField>
 
 #### Response
-<ResponseField name="tx_hash" type="String" >Transaction hash of the UTXO.</ResponseField>
-<ResponseField name="vout_n" type="Int" >Output index of the UTXO.</ResponseField>
-<ResponseField name="address" type="String" >Address of the UTXO.</ResponseField>
-<ResponseField name="amount" type="Int" >UTXO amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC).</ResponseField>
-<ResponseField name="is_coinbase" type="Bool" >Whether the UTXO is a coinbase transaction</ResponseField>
-<ResponseField name="confirmed_number" type="Int" >Number of confirmations for the UTXO.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+
+        <ResponseField name="tx_hash" type="String" >Transaction hash of the UTXO.</ResponseField>
+        <ResponseField name="vout_n" type="Int" >Output index of the UTXO.</ResponseField>
+        <ResponseField name="address" type="String" >Address of the UTXO.</ResponseField>
+        <ResponseField name="amount" type="Int" >UTXO amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC).</ResponseField>
+        <ResponseField name="is_coinbase" type="Bool" >Whether the UTXO is a coinbase transaction</ResponseField>
+        <ResponseField name="confirmed_number" type="Int" >Number of confirmations for the UTXO.</ResponseField>
+
+      </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -57,6 +64,8 @@ Request("GET", "/v1/custody/mpc/list_spendable/", map[string]string{
 <ResponseExample>
 ```json
 
-
+{ "success": true,
+  "result": {"utxos": []}
+}
 ```
 </ResponseExample>
