@@ -9,8 +9,12 @@ description: "This endpoint allows users to unbind their broker account from the
 <ParamField body="user_id" type="String" required>unique user ID</ParamField>
 
 #### Response
-
-<ResponseField name="statement_id" type="String" >unique auth statement id</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+           <ResponseField name="statement_id" type="String" >unique auth statement id</ResponseField>
+      </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -47,7 +51,13 @@ Request("POST", "/v1/custody/auth/unbind_binding/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "statement_id": "ABeWuAV7N2cwyWSxj3FW6gqcbUoqok8WzRHguqShLtXYVrmuEXWiPrcFBTJcPX24Q1CmZrxJiJCvZPTNK5ptqMhyXAuAbtRH6isJjG5Pq21jYzhCVGUoUVPHY5HTgDFCsrgFDsDVXGqUGi3ieWr26GWuAZUKX4L7s5kY"
+  "success": true,
+  "result": {
+    "statement_id": "ABeWuAV7N2cwyWSxj3FW6gqcbUoqok8WzRHguqShLtXYVrmuEXWiPrcFBTJcPX24Q1CmZrxJiJCvZPTNK5ptqMhyXAuAbtRH6isJjG5Pq21jYzhCVGUoUVPHY5HTgDFCsrgFDsDVXGqUGi3ieWr26GWuAZUKX4L7s5kY"
+  }
 }
+
+
+
 ```
 </ResponseExample>

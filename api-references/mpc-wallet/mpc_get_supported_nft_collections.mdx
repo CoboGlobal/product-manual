@@ -10,15 +10,21 @@ description: "This endpoint returns a JSON response with a list of supported NFT
 <ParamField query="chain_code" type="String" required>chain code</ParamField>
 
 #### Response
-<ResponseField name="nft_collections" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="nft_code" type="String" >NFT Token code</ResponseField>
-        <ResponseField name="chain_code" type="String" >chain code</ResponseField>
-        <ResponseField name="contract_address" type="String" >NFT contract address</ResponseField>
-        <ResponseField name="description" type="String" >NFT description</ResponseField>
-        <ResponseField name="display_code" type="String" >NFT display code</ResponseField>
-        <ResponseField name="standard" type="String" >NFT contract standard</ResponseField>
-    </Expandable>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="nft_collections" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="nft_code" type="String" >NFT Token code</ResponseField>
+                <ResponseField name="chain_code" type="String" >chain code</ResponseField>
+                <ResponseField name="contract_address" type="String" >NFT contract address</ResponseField>
+                <ResponseField name="description" type="String" >NFT description</ResponseField>
+                <ResponseField name="display_code" type="String" >NFT display code</ResponseField>
+                <ResponseField name="standard" type="String" >NFT contract standard</ResponseField>
+            </Expandable>
+        </ResponseField>
+
+      </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -54,24 +60,28 @@ Request("GET", "/v1/custody/mpc/get_supported_nft_collections/", map[string]stri
 <ResponseExample>
 ```json
 {
-  "nft_collections": [
-    {
-      "nft_code": "NFT_ETH_MOOD",
-      "chain_code": "ETH",
-      "contract_address": "0xda4c9ffb9a96ef44865114be4af25004f0ee385d",
-      "description": "Moodies",
-      "display_code": "MOOD",
-      "standard": "ERC721"
-    },
-    {
-      "nft_code": "NFT_ETH_GOBLIN",
-      "chain_code": "ETH",
-      "contract_address": "0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e",
-      "description": "",
-      "display_code": "GOBLIN",
-      "standard": "ERC721"
-    }
-  ]
+  "success": true,
+  "result": {
+    "nft_collections": [
+      {
+        "nft_code": "NFT_ETH_MOOD",
+        "chain_code": "ETH",
+        "contract_address": "0xda4c9ffb9a96ef44865114be4af25004f0ee385d",
+        "description": "Moodies",
+        "display_code": "MOOD",
+        "standard": "ERC721"
+      },
+      {
+        "nft_code": "NFT_ETH_GOBLIN",
+        "chain_code": "ETH",
+        "contract_address": "0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e",
+        "description": "",
+        "display_code": "GOBLIN",
+        "standard": "ERC721"
+      }
+    ]
+  }
 }
+
 ```
 </ResponseExample>

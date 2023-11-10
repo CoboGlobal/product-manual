@@ -19,28 +19,35 @@ description: "This endpoint estimates the fee for a given transaction. It takes 
 <ParamField query="extra_parameters" type="Json" >calldata: request data associated with an EVM transaction, type: string; input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField>
 
 #### Response
-<ResponseField name="slow" type="object">
-    <Expandable title="object">
-    <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
-    <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
-    <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
-    </Expandable>
-</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
 
-<ResponseField name="average" type="object">
-    <Expandable title="object">
-    <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
-    <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
-    <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
-    </Expandable>
-</ResponseField>
+        <ResponseField name="slow" type="object">
+            <Expandable title="object">
+            <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
+            <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
+            </Expandable>
+        </ResponseField>
 
-<ResponseField name="fast" type="object">
-    <Expandable title="object">
-    <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
-    <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
-    <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
-    </Expandable>
+        <ResponseField name="average" type="object">
+            <Expandable title="object">
+            <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
+            <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
+            </Expandable>
+        </ResponseField>
+
+        <ResponseField name="fast" type="object">
+            <Expandable title="object">
+            <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
+            <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
+            </Expandable>
+        </ResponseField>
+
+      </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -82,20 +89,23 @@ Request("GET", "/v1/custody/mpc/estimate_fee/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "slow": {
-    "fee_per_byte": 0,
-    "gas_price": 13349966041,
-    "gas_limit": 21000
-  },
-  "average": {
-    "fee_per_byte": 0,
-    "gas_price": 13349966041,
-    "gas_limit": 21000
-  },
-  "fast": {
-    "fee_per_byte": 0,
-    "gas_price": 26699932082,
-    "gas_limit": 42000
+  "success": true,
+  "result": {
+    "slow": {
+      "fee_per_byte": 0,
+      "gas_price": 13349966041,
+      "gas_limit": 21000
+    },
+    "average": {
+      "fee_per_byte": 0,
+      "gas_price": 13349966041,
+      "gas_limit": 21000
+    },
+    "fast": {
+      "fee_per_byte": 0,
+      "gas_price": 26699932082,
+      "gas_limit": 42000
+    }
   }
 }
 

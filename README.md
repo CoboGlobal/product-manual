@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.cobo.com/developers">
-    <img src="images/instroduction.png">
+    <img src="images/instroduction.png"/>
   </a>
 </p>
 

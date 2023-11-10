@@ -6,8 +6,9 @@ description: "This endpoint retries a double check for a withdrawal request with
 #### Request
 <ParamField body="request_id" type="String" required>transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField>
 
-#### Response 
-None
+#### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object">success is none. </ResponseField>
 
 <RequestExample>
 ```python Python
@@ -41,6 +42,20 @@ Request("POST", "/v1/custody/mpc/retry_double_check/", map[string]string{
 
 <ResponseExample>
 ```json
+# double check success
+{
+  "success": true,
+  "result": ""
+}
+
+# double check failed
+{
+  "success": false,
+  "error_code": 1006,
+  "error_message": "invalid request_id",
+  "error_id": "6d9fd6b4a2e346b9953a3be47ebd0700",
+  "error_description": "invalid request_id"
+}
 
 ```
 </ResponseExample>

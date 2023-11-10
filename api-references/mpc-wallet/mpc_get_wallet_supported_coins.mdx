@@ -10,19 +10,25 @@ description: "This endpoint returns a JSON response with a list of supported coi
 None
 
 #### Response
-<ResponseField name="wallet_name" type="String" >MPC wallet name (Cobo Custody)</ResponseField>
-<ResponseField name="coins" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="coin" type="String" >Name of the coin.</ResponseField>
-        <ResponseField name="chain_code" type="String" >Chain code of the coin.</ResponseField>
-        <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
-        <ResponseField name="description" type="String" >Description of the coin.</ResponseField>
-        <ResponseField name="decimal" type="String" >Decimal places of the coin.</ResponseField>
-        <ResponseField name="can_deposit" type="Bool" >Whether the coin can be deposited.</ResponseField>
-        <ResponseField name="can_withdraw" type="Bool" >Whether the coin can be withdrawn.</ResponseField>
-        <ResponseField name="confirming_threshold" type="Int" >Confirming threshold of the coin.</ResponseField>
-    </Expandable>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="wallet_name" type="String" >MPC wallet name (Cobo Custody)</ResponseField>
+        <ResponseField name="coins" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="coin" type="String" >Name of the coin.</ResponseField>
+                <ResponseField name="chain_code" type="String" >Chain code of the coin.</ResponseField>
+                <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+                <ResponseField name="description" type="String" >Description of the coin.</ResponseField>
+                <ResponseField name="decimal" type="String" >Decimal places of the coin.</ResponseField>
+                <ResponseField name="can_deposit" type="Bool" >Whether the coin can be deposited.</ResponseField>
+                <ResponseField name="can_withdraw" type="Bool" >Whether the coin can be withdrawn.</ResponseField>
+                <ResponseField name="confirming_threshold" type="Int" >Confirming threshold of the coin.</ResponseField>
+            </Expandable>
+        </ResponseField>
+     </Expandable>
 </ResponseField>
+
 
 <RequestExample>
 ```python Python
@@ -51,29 +57,32 @@ Request("GET", "/v1/custody/mpc/get_wallet_supported_coins/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "wallet_name": "Test_Wallet",
-  "coins": [
-    {
-      "coin": "GETH_UNI",
-      "chain_code": "GETH",
-      "display_code": "UNI",
-      "description": "",
-      "decimal": 18,
-      "can_deposit": True,
-      "can_withdraw": True,
-      "confirming_threshold": 32
-    },
-    {
-      "coin": "ETH",
-      "chain_code": "ETH",
-      "display_code": "ETH",
-      "description": "Ethereum",
-      "decimal": 18,
-      "can_deposit": True,
-      "can_withdraw": True,
-      "confirming_threshold": 12
-    }
-  ]
+ "success": true,
+  "result": {
+      "wallet_name": "Test_Wallet",
+      "coins": [
+        {
+          "coin": "GETH_UNI",
+          "chain_code": "GETH",
+          "display_code": "UNI",
+          "description": "",
+          "decimal": 18,
+          "can_deposit": True,
+          "can_withdraw": True,
+          "confirming_threshold": 32
+        },
+        {
+          "coin": "ETH",
+          "chain_code": "ETH",
+          "display_code": "ETH",
+          "description": "Ethereum",
+          "decimal": 18,
+          "can_deposit": True,
+          "can_withdraw": True,
+          "confirming_threshold": 12
+        }
+      ]
+  }
 }
 ```
 </ResponseExample>

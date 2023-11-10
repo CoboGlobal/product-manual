@@ -10,29 +10,36 @@ description: "This endpoint returns a JSON response with a list of token assets 
 <ParamField query="page_length" type="Int" required>Number of items to retrieve per page(max:50)</ParamField>
 
 #### Response
-<ResponseField name="coin_data" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
-        <ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
-        <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
-        <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
-        <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
-        <ResponseField name="balance" type="String" >The balance of the coin.</ResponseField>
-        <ResponseField name="decimal" type="Int" >The decimal of the coin.</ResponseField>
-    </Expandable>
-</ResponseField>
 
-<ResponseField name="nft_data" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
-        <ResponseField name="nft_code" type="String" >The NFT code.</ResponseField>
-        <ResponseField name="token_id" type="String" >The token ID of the NFT.</ResponseField>
-        <ResponseField name="contract_address" type="String" >The contract address of the NFT.</ResponseField>
-        <ResponseField name="balance" type="String" >The balance of the NFT.</ResponseField>
-        <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
-    </Expandable>
-</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
 
+        <ResponseField name="coin_data" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
+                <ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
+                <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+                <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
+                <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
+                <ResponseField name="balance" type="String" >The balance of the coin.</ResponseField>
+                <ResponseField name="decimal" type="Int" >The decimal of the coin.</ResponseField>
+            </Expandable>
+        </ResponseField>
+
+        <ResponseField name="nft_data" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
+                <ResponseField name="nft_code" type="String" >The NFT code.</ResponseField>
+                <ResponseField name="token_id" type="String" >The token ID of the NFT.</ResponseField>
+                <ResponseField name="contract_address" type="String" >The contract address of the NFT.</ResponseField>
+                <ResponseField name="balance" type="String" >The balance of the NFT.</ResponseField>
+                <ResponseField name="chain_code" type="String" >The chain code of the coin.</ResponseField>
+            </Expandable>
+        </ResponseField>
+
+      </Expandable>
+</ResponseField>
 <RequestExample>
 ```python Python
 request(
@@ -75,28 +82,31 @@ Request("GET", "/v1/custody/mpc/list_balances/", map[string]string{
 <ResponseExample>
 ```json
 {
-  "total": 2,
-  "coin_data": [
-    {
-      "address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
-      "coin": "ETH",
-      "chain_code": "ETH",
-      "display_code": "ETH",
-      "description": "Ethereum",
-      "balance": "49999999999999999986",
-      "decimal": 18
-    }
-  ],
-  "nft_data": [
-    {
-      "nft_code": "NFT_ETH_BLUE_CHURCH",
-      "token_id": "200",
-      "address": "0xcc656c94b8ec881ddd9611e8ad4a4eca9f859e7b",
-      "chain_code": "ETH",
-      "contract_address": "0x357fd2942e8ee435d7d21859ecae99bd597d8779",
-      "balance": "1"
-    }
-  ]
+ "success": true,
+ "result": {
+      "total": 2,
+      "coin_data": [
+        {
+          "address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
+          "coin": "ETH",
+          "chain_code": "ETH",
+          "display_code": "ETH",
+          "description": "Ethereum",
+          "balance": "49999999999999999986",
+          "decimal": 18
+        }
+      ],
+      "nft_data": [
+        {
+          "nft_code": "NFT_ETH_BLUE_CHURCH",
+          "token_id": "200",
+          "address": "0xcc656c94b8ec881ddd9611e8ad4a4eca9f859e7b",
+          "chain_code": "ETH",
+          "contract_address": "0x357fd2942e8ee435d7d21859ecae99bd597d8779",
+          "balance": "1"
+        }
+      ]
+ }
 }
 
 ```

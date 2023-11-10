@@ -7,7 +7,12 @@ description: "This endpoint returns a JSON response with a 'chain_codes' field c
 None
 
 #### Response
-<ResponseField name="chain_codes" type="String[ ]" >List of supported chain codes.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="chain_codes" type="String[ ]" >List of supported chain codes.</ResponseField>
+      </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -35,14 +40,17 @@ Request("GET", "/v1/custody/mpc/get_supported_chains/", map[string]string{})
 <ResponseExample>
 ```json
 {
-  "chain_codes": [
-    "BSC_BNB",
-    "ETH",
-    "GETH",
-    "TBSC_BNB",
-    "MATIC",
-    "ARBITRUM_ETH"
-  ]
+  "success": true,
+  "result":{
+      "chain_codes": [
+        "BSC_BNB",
+        "ETH",
+        "GETH",
+        "TBSC_BNB",
+        "MATIC",
+        "ARBITRUM_ETH"
+      ]
+  }
 }
 
 ```

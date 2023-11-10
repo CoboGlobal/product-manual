@@ -9,14 +9,20 @@ description: "This endpoint returns a JSON response containing a list of TSS nod
 None
 
 #### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
 
-<ResponseField name="tss_nodes" type="object[]" >
-  <Expandable title="object">
-        <ResponseField name="node_id" type="String" >Unique TSS Node ID</ResponseField>
-        <ResponseField name="type" type="Int" >TSS Node type(third party: 1, node managed by yourself: 2, Cobo: 3)</ResponseField>
-        <ResponseField name="online" type="Bool" >if TSS node is online (online: true，offline: false)</ResponseField>
-  </Expandable>
- </ResponseField>
+        <ResponseField name="tss_nodes" type="object[]" >
+          <Expandable title="object">
+                <ResponseField name="node_id" type="String" >Unique TSS Node ID</ResponseField>
+                <ResponseField name="type" type="Int" >TSS Node type(third party: 1, node managed by yourself: 2, Cobo: 3)</ResponseField>
+                <ResponseField name="online" type="Bool" >if TSS node is online (online: true，offline: false)</ResponseField>
+          </Expandable>
+         </ResponseField>
+
+       </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -45,19 +51,26 @@ Request("GET", "/v1/custody/mpc/list_tss_node/", map[string]string{})
 <ResponseExample>
 ```json
 {
-  "tss_nodes": [{
-    "node_id": "cobo7k8y49r1W9XtkSUs7v267mQmgZ7ZaV7W2noHgxA6rAJBZ",
-    "type": 2,
-    "online": true
-  }, {
-    "node_id": "coboMbU7KqoVhXJSyyFeJ2fZWbXQWtZvs1WjmhnzXFB7CTowo",
-    "type": 1,
-    "online": true
-  }, {
-    "node_id": "coboWS6hKma2MxxobbpjB8W2SVmpBiisaBq4rxqVpWJAZpecK",
-    "type": 3,
-    "online": true
-  }]
+  "success": true,
+  "result": {
+    "tss_nodes": [
+      {
+        "node_id": "cobo7k8y49r1W9XtkSUs7v267mQmgZ7ZaV7W2noHgxA6rAJBZ",
+        "type": 2,
+        "online": true
+      },
+      {
+        "node_id": "coboMbU7KqoVhXJSyyFeJ2fZWbXQWtZvs1WjmhnzXFB7CTowo",
+        "type": 1,
+        "online": true
+      },
+      {
+        "node_id": "coboWS6hKma2MxxobbpjB8W2SVmpBiisaBq4rxqVpWJAZpecK",
+        "type": 3,
+        "online": true
+      }
+    ]
+  }
 }
 
 ```

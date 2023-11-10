@@ -11,11 +11,16 @@ description: "This endpoint updates the address description. The response contai
 <ParamField body="description" type="String" required>The address description.</ParamField>
 
 #### Response
-<ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
-<ResponseField name="address" type="String" >The generated address.</ResponseField>
-<ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
-<ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
-<ResponseField name="description" type="String" >The address description.</ResponseField>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
+        <ResponseField name="address" type="String" >The generated address.</ResponseField>
+        <ResponseField name="hd_path" type="String" >The HD path of the generated address.</ResponseField>
+        <ResponseField name="encoding" type="Int" >The encoding of the generated address.</ResponseField>
+        <ResponseField name="description" type="String" >The address description.</ResponseField>
+      </Expandable>
+</ResponseField>
 
 <RequestExample>
 ```python Python
@@ -57,11 +62,14 @@ Request("POST", "/v1/custody/mpc/update_address_description/", map[string]string
 
 ```json
 {
+ "success": true,
+ "result": {
 	"id": 831483763545608598,
 	"address": "0x43dbf416b77e12eef9b3b036a503638a0bb13f8f",
 	"encoding": 0,
 	"hd_path": "m/44/60/0/0/0",
 	"description": "TestAddress01"
+ }
 }
 
 

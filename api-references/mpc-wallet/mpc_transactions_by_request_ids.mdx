@@ -23,6 +23,10 @@ description: "This endpoint returns a JSON response containing transaction infor
 </ParamField>
 
 #### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+
 <ResponseField name="total" type="Int" >Total number of transactions that meets the requirements</ResponseField>
 <ResponseField name="transactions" type="object[]" >
   <Expandable title="object">
@@ -139,6 +143,10 @@ description: "This endpoint returns a JSON response containing transaction infor
    </Expandable>
 </ResponseField>
 
+      </Expandable>
+</ResponseField>
+
+
 <RequestExample>
 ```python Python
 request(
@@ -175,26 +183,15 @@ Request("GET", "/v1/custody/mpc/transactions_by_request_ids/", map[string]string
 <ResponseExample>
 ```json
 {
-  "transactions": [
-    {
-      "cobo_id": "20221222170157000336673000008161",
-      "request_id": "web_send_by_user_915_1671699717647",
-      "status": 101,
-      "coin_detail": {
-        "coin": "GETH",
-        "display_code": "GETH",
-        "description": "Ethereum Goerli Testnet",
-        "decimal": 18,
-        "can_deposit": True,
-        "can_withdraw": True,
-        "confirming_threshold": 32
-      },
-      "amount_detail": {
-        "amount": "9000000000000000",
-        "abs_amount": "0.009"
-      },
-      "fee_detail": {
-        "fee_coin_detail": {
+  "success": true,
+  "result": {
+    "total": 28,
+    "transactions": [
+      {
+        "cobo_id": "20221222170157000336673000008161",
+        "request_id": "web_send_by_user_915_1671699717647",
+        "status": 101,
+        "coin_detail": {
           "coin": "GETH",
           "display_code": "GETH",
           "description": "Ethereum Goerli Testnet",
@@ -203,38 +200,54 @@ Request("GET", "/v1/custody/mpc/transactions_by_request_ids/", map[string]string
           "can_withdraw": True,
           "confirming_threshold": 32
         },
-        "gas_price": 300000000,
-        "gas_limit": 21000,
-        "fee_used": 0
-      },
-      "source_addresses": "",
-      "from_address": "0x3ede1e59a3f3a66de4260df7ba3029b515337e5c",
-      "to_address": "0x9414933Ff7777bb28cA22D15c178596A6e58d957",
-      "tx_hash": "",
-      "vout_n": 0,
-      "nonce": None,
-      "confirmed_number": 0,
-      "replace_cobo_id": "",
-      "transaction_type": 303,
-      "operation": 100,
-      "block_detail": {
-        "block_hash": "",
-        "block_height": 0,
-        "block_time": 0
-      },
-      "tx_detail": {
-        "tx_hash": ""
-      },
-      "extra_parameters": "",
-      "created_time": 1671699717956,
-      "updated_time": 1671699717956,
-      "failed_reason": None,
-      "max_priority_fee": None,
-      "max_fee": None,
-      "approval_process": '{"spender_result": 1, "spender_review_threshold": 1, "spender_status": [{"spender_person": "Cobo_Test_spender", "status": "approve"}], "spender_complete_time": 1681906749496, "approver_result": 1, "approver_review_threshold": 1, "approver_status": [{"approve_person": "Cobo_Test_approver", "status": "approve"}], "approver_complete_time": 1681906758619}',
-      "remark":""
-    }
-  ]
+        "amount_detail": {
+          "amount": "9000000000000000",
+          "abs_amount": "0.009"
+        },
+        "fee_detail": {
+          "fee_coin_detail": {
+            "coin": "GETH",
+            "display_code": "GETH",
+            "description": "Ethereum Goerli Testnet",
+            "decimal": 18,
+            "can_deposit": True,
+            "can_withdraw": True,
+            "confirming_threshold": 32
+          },
+          "gas_price": 300000000,
+          "gas_limit": 21000,
+          "fee_used": 0
+        },
+        "source_addresses": "",
+        "from_address": "0x3ede1e59a3f3a66de4260df7ba3029b515337e5c",
+        "to_address": "0x9414933Ff7777bb28cA22D15c178596A6e58d957",
+        "tx_hash": "",
+        "vout_n": 0,
+        "nonce": None,
+        "confirmed_number": 0,
+        "replace_cobo_id": "",
+        "transaction_type": 303,
+        "operation": 100,
+        "block_detail": {
+          "block_hash": "",
+          "block_height": 0,
+          "block_time": 0
+        },
+        "tx_detail": {
+          "tx_hash": ""
+        },
+        "extra_parameters": "",
+        "created_time": 1671699717956,
+        "updated_time": 1671699717956,
+        "failed_reason": None,
+        "max_priority_fee": None,
+        "max_fee": None,
+        "approval_process": '{"spender_result": 1, "spender_review_threshold": 1, "spender_status": [{"spender_person": "Cobo_Test_spender", "status": "approve"}], "spender_complete_time": 1681906749496, "approver_result": 1, "approver_review_threshold": 1, "approver_status": [{"approve_person": "Cobo_Test_approver", "status": "approve"}], "approver_complete_time": 1681906758619}',
+        "remark": ""
+      }
+    ]
+  }
 }
+
 ```
 </ResponseExample>

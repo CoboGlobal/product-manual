@@ -10,16 +10,23 @@ description: "This endpoint returns a JSON response containing signed messages i
 <ParamField query="request_ids" type="String" required>Sign message request IDs; separated by commas; the number of IDs must be greater than 0 and less than 50</ParamField>
 
 #### Response
-<ResponseField name="sign_messages" type="object[ ]">
-    <Expandable title="object">
-        <ResponseField name="request_id" type="String" >Unique request ID</ResponseField>
-        <ResponseField name="cobo_id" type="String" >Unique ID in Cobo</ResponseField>
-        <ResponseField name="signature" type="String" >Signature</ResponseField>
-        <ResponseField name="chain_code" type="String" >Chain code</ResponseField>
-        <ResponseField name="sign_version" type="Int" >Sign version, EIP-191: 1, EIP-712: 2</ResponseField>
-        <ResponseField name="from_address" type="String" >From address</ResponseField>
-        <ResponseField name="extra_parameters" type="Json" >raw info of the message to be sign</ResponseField>
-    </Expandable>
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+
+        <ResponseField name="sign_messages" type="object[ ]">
+            <Expandable title="object">
+                <ResponseField name="request_id" type="String" >Unique request ID</ResponseField>
+                <ResponseField name="cobo_id" type="String" >Unique ID in Cobo</ResponseField>
+                <ResponseField name="signature" type="String" >Signature</ResponseField>
+                <ResponseField name="chain_code" type="String" >Chain code</ResponseField>
+                <ResponseField name="sign_version" type="Int" >Sign version, EIP-191: 1, EIP-712: 2</ResponseField>
+                <ResponseField name="from_address" type="String" >From address</ResponseField>
+                <ResponseField name="extra_parameters" type="Json" >raw info of the message to be sign</ResponseField>
+            </Expandable>
+        </ResponseField>
+
+       </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -55,15 +62,20 @@ Request("GET", "/v1/custody/mpc/sign_messages_by_request_ids/", map[string]strin
 <ResponseExample>
 ```json
 {
-  "sign_messages": [{
-    "request_id": "1690349242683",
-    "cobo_id": "20230726132723000341052000008222",
-    "signature": "0x59328f02d00660d6c44d81e5bae985d2651614b5ee1e16764fd685530791748561b1f941a147f4e4ade4320b1c1d95179f9e058e622e632c020efbc476b2f9981c",
-    "chain_code": "ETH",
-    "from_address": "0xeea5e4a7c69e4d747a693b6fbd4211ae4843da39",
-    "sign_version": 1,
-    "extra_parameters": "{\"message\": \"YWFhYQ==\"}"
-  }]
+  "success": true,
+  "result": {
+    "sign_messages": [
+      {
+        "request_id": "1690349242683",
+        "cobo_id": "20230726132723000341052000008222",
+        "signature": "0x59328f02d00660d6c44d81e5bae985d2651614b5ee1e16764fd685530791748561b1f941a147f4e4ade4320b1c1d95179f9e058e622e632c020efbc476b2f9981c",
+        "chain_code": "ETH",
+        "from_address": "0xeea5e4a7c69e4d747a693b6fbd4211ae4843da39",
+        "sign_version": 1,
+        "extra_parameters": "{\"message\": \"YWFhYQ==\"}"
+      }
+    ]
+  }
 }
 ```
 </ResponseExample>
