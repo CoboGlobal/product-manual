@@ -12,9 +12,10 @@ Cobo servers will return the following error data when encountering an error:
   "error_description": "Unknown internal error"
 }
 ```
-
-| **HTTP Error Code** | **Description** |
+## <font color="blue"> HTTP Status Code </font>
+| **Status Code** | **Description** |
 |:----|:----|
+| 200 | OK
 | 400 | Bad request
 | 401 | Unauthorized – API key, signature, or timestamp is incorrect
 | 403 | Forbidden – No access allowed
@@ -23,12 +24,35 @@ Cobo servers will return the following error data when encountering an error:
 | 406 | Not Acceptable – Requested content format is not JSON
 | 429 | Too Many Requests – Requests are limited, please reduce the request frequency
 | 500 | Internal Server Error – Internal server error, please try again later
+| 502 | Bad Gateway
 | 503 | Service Unavailable – Service unavailable, please try again later
 
-| **Cobo Error Code** | **Description** |
+## <font color="blue"> 1XXX related error codes </font>
+| **Error Code** | **Description** |
 |:----|:----|
 | 1000 | Unknown internal error – Please contact Cobo
+| 1001 | Signature missing, format error, or mismatch
+| 1002 | Unsupported 'method' parameter
 | 1003 | API params is missing or null
+| 1004 | Unexpected parameters were provided
+| 1005 | The nonce value is invalid
+| 1006 | The parameter format or value is invalid
+| 1007 | The current user lacks the necessary permissions
+| 1010 | The request is too frequent
+| 1011 | Invalid page_index value
+| 1012 | Error request in the production environment
+| 1013 | The hash passed by the API is inconsistent with the one calculated locally
+| 1030 | Blacklisted user
+| 1031 | Unsupported region
+| 1040 | Errors related to access tokens
+| 1050 | Deprecated API
+| 1060 | No enough balance
+| 1070 | cobo card kyc status
+
+
+## <font color="blue"> 12XXX related error codes </font>
+| **Error Code** | **Description** |
+|:----|:----|
 | 12000 | Signature headers missing – API signature header is missing
 | 12001 | Signature verification failed – API signature verification fail
 | 12002 | Coin not supported
@@ -45,7 +69,11 @@ Cobo servers will return the following error data when encountering an error:
 | 12013 | Address not in whitelist
 | 12014 | Transaction fee invalid
 | 12015 | Address does not exist
+| 12016 | Insufficient Credit
+| 12021 | duplicated signature
 | 12200 | staking product not exist
 | 12201 | invalid staking amount
 | 12202 | invalid staking status
+| 12203 | Unsupported transfer from staking wallet
+
 
