@@ -210,7 +210,8 @@
         "guides/howtos/querying-deposit-transactions",
         "guides/howtos/deposit-and-withdrawal-transaction-status",
         "guides/howtos/creating-utxo-transactions",
-        "guides/howtos/creating-withdrawal-transactions"]
+        "guides/howtos/creating-withdrawal-transactions",
+        "guides/howtos/api-configuration-best-practices"]
     },
     {
       "group": "Custodial Wallet APIs",
