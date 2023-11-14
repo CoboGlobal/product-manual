@@ -117,14 +117,17 @@ public class CobоCustodyApiClientExample {
 <Accordion title="View Response - MPC Wallet">
 ```json
 {
-  "addresses": [
-    {
-      "id": 721935051680543203,
-      "address": "0xd80e19dddb11e9a91f7aa644306564538e4b8586",
-      "hd_path": "m/44/60/1/0/82",
-      "encoding": 0
-    }
-  ]
+  "success": true,
+  "result": {
+    "addresses": [
+      {
+        "id": 721935051680543203,
+        "address": "0xd80e19dddb11e9a91f7aa644306564538e4b8586",
+        "hd_path": "m/44/60/1/0/82",
+        "encoding": 0
+      }
+    ]
+  }
 }
 ```
 </Accordion>
@@ -252,21 +255,24 @@ public class CobоCustodyApiClientExample {
 <Accordion title="View Response - MPC Wallet">
 ```json
 {
-  "total": 2,
-  "addresses": [
-    {
-      "id": 721941011752862138,
-      "address": "0x297db9241bfe5665641951bcf166feebd003870c",
-      "encoding": 0,
-      "hd_path": "m/44/60/1/0/85"
-    },
-    {
-      "id": 721941011752862137,
-      "address": "0x14cf9de0d8062ca53af5c92dcc574c8f3acb6da5",
-      "encoding": 0,
-      "hd_path": "m/44/60/1/0/84"
-    }
-  ]
+  "success": true,
+  "result": {
+    "total": 2,
+    "addresses": [
+      {
+        "id": 721941011752862138,
+        "address": "0x297db9241bfe5665641951bcf166feebd003870c",
+        "encoding": 0,
+        "hd_path": "m/44/60/1/0/85"
+      },
+      {
+        "id": 721941011752862137,
+        "address": "0x14cf9de0d8062ca53af5c92dcc574c8f3acb6da5",
+        "encoding": 0,
+        "hd_path": "m/44/60/1/0/84"
+      }
+    ]
+  }
 }
 
 ```
@@ -419,28 +425,31 @@ public class CobоCustodyApiClientExample {
 <Accordion title="View Response - MPC Wallet">
 ```json
 {
-  "total": 2,
-  "coin_data": [
-    {
-      "address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
-      "coin": "ETH",
-      "chain_code": "ETH",
-      "display_code": "ETH",
-      "description": "Ethereum",
-      "balance": "49999999999999999986",
-      "decimal": 18
-    }
-  ],
-  "nft_data": [
-    {
-      "nft_code": "NFT_ETH_BLUE_CHURCH",
-      "token_id": "200",
-      "address": "0xcc656c94b8ec881ddd9611e8ad4a4eca9f859e7b",
-      "chain_code": "ETH",
-      "contract_address": "0x357fd2942e8ee435d7d21859ecae99bd597d8779",
-      "balance": "1"
-    }
-  ]
+  "success": true,
+  "result": {
+    "total": 2,
+    "coin_data": [
+      {
+        "address": "0xe0cc496b3d9b0f8019b678066b9db81261d827bc",
+        "coin": "ETH",
+        "chain_code": "ETH",
+        "display_code": "ETH",
+        "description": "Ethereum",
+        "balance": "49999999999999999986",
+        "decimal": 18
+      }
+    ],
+    "nft_data": [
+      {
+        "nft_code": "NFT_ETH_BLUE_CHURCH",
+        "token_id": "200",
+        "address": "0xcc656c94b8ec881ddd9611e8ad4a4eca9f859e7b",
+        "chain_code": "ETH",
+        "contract_address": "0x357fd2942e8ee435d7d21859ecae99bd597d8779",
+        "balance": "1"
+      }
+    ]
+  }
 }
 ```
 </Accordion>

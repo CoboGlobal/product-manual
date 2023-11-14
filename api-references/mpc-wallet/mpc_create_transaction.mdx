@@ -68,8 +68,9 @@ extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869
 extra_parameters: '{"instructions": "[{\\"accounts\\":[{\\"pubkey\\":\\"E4MhQWiqCLER3fFZNf8LyQFpLWW3BRxtsR5eps3c3vNS\\",\\"is_signer\\":true,\\"is_writable\\":true}],\\"data\\":\\"Canary TX 4, slot: 219858117\\",\\"program_id\\":\\"MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr\\"}]"}'
 ```
 </ParamField>
-<ParamField body="max_fee" type="Int" >max fee, applicable to ETH EIP 1559 transaction (only use in web3 wallet) </ParamField>
-<ParamField body="max_priority_fee" type="Int" >max priority fee, applicable to ETH EIP 1559 transaction (only use in web3 wallet)</ParamField>
+<ParamField body="max_fee" type="Int" >The maximum fee (unit is wei) refers to the highest miner fee that a user is willing to pay,the parameter is only used when users employ the EIP-1559 protocol in Web3 wallets. </ParamField>
+<ParamField body="max_priority_fee" type="Int" >The maximum priority fee (unit is wei) refers to the highest amount a user sets for the priority fee. If the total transaction fee (base fee + max priority fee) exceeds the maximum miner fee, any excess in the fee will be refunded to the user, the parameter is only used when users employ the EIP-1559 protocol in Web3 wallets.</ParamField>
+
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model</ParamField>
 <ParamField query="remark" type="String">The remark to withdraw</ParamField>
 
