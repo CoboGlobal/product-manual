@@ -7,7 +7,7 @@ description: "This endpoint returns a JSON response containing a list of spendab
 <Note>This API is only intended for MPC wallets and does not support MPC web3 wallets.</Note>
 
 #### Request
-<ParamField query="coin" type="String" required>The asset coin symbol (e.g. BTC, ETH).</ParamField>
+<ParamField query="coin" type="String" required>The asset coin symbol (e.g. BTC, LTC).</ParamField>
 <ParamField query="address" type="String" >The address to filter UTXOs by.</ParamField>
 
 #### Response
@@ -31,8 +31,7 @@ request(
     "GET",
     "/v1/custody/mpc/list_spendable/",
     {
-        "coin": "ETH",
-        "amount": 1,
+        "coin": "BTC",
         "address": ""
     },
     api_key, api_secret, host
@@ -40,8 +39,7 @@ request(
 ```
 ```javascript JavaScript
 coboFetch('GET', '/v1/custody/mpc/list_spendable/', {
-    "coin": "ETH",
-    "amount": 1,
+    "coin": "BTC",
     "address": ""
 }, api_key, api_secret, host)
     .then(res => {
@@ -54,8 +52,7 @@ coboFetch('GET', '/v1/custody/mpc/list_spendable/', {
 ```
 ```go Go
 Request("GET", "/v1/custody/mpc/list_spendable/", map[string]string{
-    "coin": "ETH",
-    "amount": 1,
+    "coin": "BTC",
     "address": ""
 })
 ```
@@ -64,8 +61,25 @@ Request("GET", "/v1/custody/mpc/list_spendable/", map[string]string{
 <ResponseExample>
 ```json
 
-{ "success": true,
-  "result": {"utxos": []}
+{
+  "success": true,
+  "result": {
+    'utxos': [{
+      'tx_hash': 'dd7e1cecf6bbde1844ee1815b780711a1e306a718bcd23cd64401b48ef88eb83',
+      'vout_n': 0,
+      'address': '2N2xFZtbCFB6Nb3Pj9Sxsx5mX2fxX3yEgkE',
+      'amount': 100000,
+      'is_coinbase': False,
+      'confirmed_number': 66716
+    }, {
+      'tx_hash': 'dd7e1cecf6bbde1844ee1815b780711a1e306a718bcd23cd64401b48ef88eb83',
+      'vout_n': 1,
+      'address': '2N2xFZtbCFB6Nb3Pj9Sxsx5mX2fxX3yEgkE',
+      'amount': 99270,
+      'is_coinbase': False,
+      'confirmed_number': 66716
+    }]
+  }
 }
 ```
 </ResponseExample>
