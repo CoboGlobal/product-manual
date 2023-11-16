@@ -17,7 +17,7 @@ description: "This endpoint allows users to create a new withdrawal request for 
 
 #### Response
 <ResponseField name="success" type="bool">true or false</ResponseField>
-<ResponseField name="result" type="String" >Success is "", failed is none.</ResponseField>
+<ResponseField name="result" type="String" >Success is "", failed is null.</ResponseField>
 
 
 <RequestExample>
@@ -75,7 +75,7 @@ Request("POST", "/v1/custody/new_withdraw_request/", map[string]string{
 # failed
 {
     "success": false,
-    "result": None,
+    "result": null,
     "errorCode":"12009",
     "errorMessage":"Request id api_request_id_123458 is duplicated",
     "errorId":"0400ccb7ad3f4ada8430f08b8f83a30d",
