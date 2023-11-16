@@ -65,14 +65,13 @@ Request("POST", "/v1/custody/new_withdraw_request/", map[string]string{
 </RequestExample>
 
 <ResponseExample>
-```json
-# success
+```json success
 {
   "success": true,
   "result": ""
 }
-
-# failed
+```
+```json failed
 {
     "success": false,
     "result": null,
