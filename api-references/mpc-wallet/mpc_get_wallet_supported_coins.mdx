@@ -1,10 +1,10 @@
 ---
 title: Get Wallet Supported Coins
 api: GET /v1/custody/mpc/get_wallet_supported_coins/ 
-description: "This endpoint returns a JSON response with a list of supported coins for a specific MPC wallet. The response includes the coin name, chain code, display code, description, decimal, and other relevant information such as whether the coin can be deposited or withdrawn, and the confirming threshold."
+description: "This endpoint returns a JSON response with a list of supported coins for a specific MPC wallet. The response includes the coin code, chain code, display code, description, decimal, and other relevant information such as whether the coin can be deposited or withdrawn, and the confirming threshold."
 ---
 
-<Note>This API is only intended for MPC wallets and does not support MPC web3 wallets.</Note>
+<Note>This API is only intended for MPC send/receive wallets and does not support MPC web3 wallets.</Note>
 
 #### Request
 None
@@ -13,10 +13,10 @@ None
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
    <ResponseField name="result" type="object">
       <Expandable title="object">
-        <ResponseField name="wallet_name" type="String" >MPC wallet name (Cobo Custody)</ResponseField>
+        <ResponseField name="wallet_name" type="String" >MPC wallet name in Cobo Custody</ResponseField>
         <ResponseField name="coins" type="object[ ]">
             <Expandable title="object">
-                <ResponseField name="coin" type="String" >Name of the coin.</ResponseField>
+                <ResponseField name="coin" type="String" >Code of the coin.</ResponseField>
                 <ResponseField name="chain_code" type="String" >Chain code of the coin.</ResponseField>
                 <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
                 <ResponseField name="description" type="String" >Description of the coin.</ResponseField>

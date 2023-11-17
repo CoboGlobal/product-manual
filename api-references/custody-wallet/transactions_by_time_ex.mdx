@@ -5,7 +5,7 @@ description: "This endpoint returns a list of transactions filtered by time rang
 ---
 
 #### Request
-<ParamField query="coins" type="String" >Coin names. Separated by commas</ParamField>
+<ParamField query="coins" type="String" >Coin codes. Separated by commas</ParamField>
 <ParamField query="side" type="Int" >1: TRANSACTION_DEPOSIT; 2: TRANSACTION_WITHDRAW </ParamField>
 <ParamField query="status" type="Int" >
   | Status Type | Code |
@@ -46,9 +46,8 @@ description: "This endpoint returns a list of transactions filtered by time rang
     <ResponseField name="vout_n" type="String">For transactions on public blockchains that allow for multiple deposit addresses in a single transaction, this value indicates the transaction index on the corresponding public blockchain</ResponseField>
     <ResponseField name="request_id" type="String">Request ID</ResponseField>
     <ResponseField name="status" type="String">Transaction status (e.g., success, failed)</ResponseField>
-    <ResponseField name="request_created_time" type="Long">Withdraw request creation time</ResponseField>
-    <ResponseField name="created_time" type="Long">Transaction creation time</ResponseField>
-    <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
+    <ResponseField name="created_time" type="Long">Transaction creation time(milliseconds)</ResponseField>
+    <ResponseField name="last_time" type="Long">Transaction success/failure time(milliseconds)</ResponseField>
     <ResponseField name="confirming_threshold" type="Int">Confirmed numbers required for a successful transaction</ResponseField>
     <ResponseField name="confirmed_num" type="Int">Confirmed numbers</ResponseField>
     <ResponseField name="remark" type="String">Transaction remark</ResponseField>
@@ -63,7 +62,7 @@ description: "This endpoint returns a list of transactions filtered by time rang
         <ResponseField name="hexstr" type="Int">original transaction</ResponseField>
       </Expandable>
      </ResponseField>
-    <ResponseField name="fee_coin" type="String">Fee coin name</ResponseField>
+    <ResponseField name="fee_coin" type="String">Fee coin code</ResponseField>
     <ResponseField name="fee_amount" type="Int">Fee amount (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
     <ResponseField name="fee_decimal" type="Int">Fee decimal</ResponseField>
     <ResponseField name="type" type="String">external, internal shows if it's a Loop tx or external(on-chain)</ResponseField>
@@ -144,8 +143,8 @@ Request("GET", "/v1/custody/transactions_by_time_ex/", map[string]string{
       "vout_n": 0,
       "request_id": null,
       "status": "success",
-      "created_time": 1542191734958,
-      "last_time": 1542191734958,
+      "created_time": 1542191734958000,
+      "last_time": 1542191734958000,
       "remark":"hello test",
       "confirmed_num": 3
     },
@@ -164,8 +163,8 @@ Request("GET", "/v1/custody/transactions_by_time_ex/", map[string]string{
       "vout_n": 0,
       "request_id": null,
       "status": "success",
-      "created_time": 1542165707058,
-      "last_time": 1542165707058,
+      "created_time": 1542165707058000,
+      "last_time": 1542165707058000,
       "remark":"hello test",
       "confirmed_num": 3
     }

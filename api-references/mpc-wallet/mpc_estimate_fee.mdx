@@ -1,22 +1,45 @@
 ---
 title: Get Estimate Fee
 api: GET /v1/custody/mpc/estimate_fee/ 
-description: "This endpoint estimates the fee for a given transaction. It takes in various parameters such as the coin type, amount, address, gas price, gas limit, and extra parameters. The response includes the fee amount in different levels such as slow, average, and fast."
+description: "This endpoint estimates the fee for a given transaction. It takes in various parameters such as the coin code, amount, address, gas price, gas limit, and extra parameters. The response includes the fee amount in different levels such as slow, average, and fast."
 ---
 
 <Tip> FAQ：[How do I query the withdrawal fees?](/faqs/waas#how-do-i-query-the-withdrawal-fees)</Tip>
 
 #### Request
-<ParamField query="coin" type="String" required>coin name</ParamField>
+<ParamField query="coin" type="String" required>coin code</ParamField>
 <ParamField query="amount" type="Int" >transaction amount in decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC)</ParamField>
-<ParamField query="address" type="String" >deposit address used for account model</ParamField>
+<ParamField query="address" type="String" >deposit address</ParamField>
 <ParamField query="replace_cobo_id" type="String" >Cobo ID of a transaction designated as RBF</ParamField>
-<ParamField query="from_address" type="String" >from address used for account model</ParamField>
-<ParamField query="to_address_details" type="Json" >list of addresses used for receiving coins associated with the UTXO model; this value must be a JSON string and has a parameter type that fits</ParamField>
+<ParamField query="from_address" type="String" >from address</ParamField>
+<ParamField query="to_address_details" type="Json" >list of addresses used for receiving coins associated with the UTXO model; this value must be a JSON string and has a parameter type that fits. Please note that the `to_address_details` parameter and `amount` parameter are alternative.</ParamField>
+```python Sample
+to_address_details: '[{"to_address": "2N4J1WajwKZKpRtzzUmaW9B5GEqkppqdVY9","amount": "547"},
+                      {"to_address": "tb1qycxy8d8jgff8hql09y62smw5s5mrf3ryn2j9lk","amount": "548"}]'
+```
 <ParamField query="fee" type="Float" >transaction fees per byte; applicable to UTXO model</ParamField>
-<ParamField query="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
-<ParamField query="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
-<ParamField query="extra_parameters" type="Json" >calldata: request data associated with an EVM transaction, type: string; input_selection: inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection</ParamField>
+<ParamField query="gas_price" type="Int" >gas price; applicable to account model; unit: wei</ParamField>
+<ParamField query="gas_limit" type="Int" >gas limit, applicable to account model</ParamField>
+<ParamField query="extra_parameters" type="Json" >
+UTXO Model:
+    1. **input_selection:** inputs to be excluded and included in transactions associated with the UTXO model; inputs must be in correspondence with from_address (if specified); it must be a JSON string and has a structure that fits InputSelection
+    2. **inputs_to_spend:** UTXO you want as input
+        - tx_hash: Transaction tx_hash
+        - vout_n: UTXO index
+ ```python Sample
+extra_parameters: '{"input_selection":
+                      {"inputs_to_spend":[
+                        {"tx_hash": "e7ddfa61cc2a78e1661da44b10cdc862256573d2dc0485dc989fb7045ed9032c", "vout_n": 1},
+                        {"tx_hash": "eabaee1f1a196b087e78303c6eaaeb9d1166de5f8d85f4ef7872b88bfcd60914", "vout_n": 2}]
+                      }
+                  }'
+```
+Web3 wallet:
+    - calldata: request data associated with an EVM contract.
+```python Sample
+extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869e4517311b190d7eb31e30eba0ef000000000000000000000000000000000000000000000000002386f26fc10000"}'
+```
+</ParamField>
 
 #### Response
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
@@ -26,24 +49,24 @@ description: "This endpoint estimates the fee for a given transaction. It takes 
         <ResponseField name="slow" type="object">
             <Expandable title="object">
             <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
-            <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
-            <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
+            <ResponseField name="gas_price" type="Int" >gas price for account model</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >gas limit for account model</ResponseField>
             </Expandable>
         </ResponseField>
 
         <ResponseField name="average" type="object">
             <Expandable title="object">
             <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
-            <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
-            <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
+            <ResponseField name="gas_price" type="Int" >gas price for account model</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >gas limit for account model</ResponseField>
             </Expandable>
         </ResponseField>
 
         <ResponseField name="fast" type="object">
             <Expandable title="object">
             <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
-            <ResponseField name="gas_price" type="Int" >ETH gas price</ResponseField>
-            <ResponseField name="gas_limit" type="Int" >ETH gas limit</ResponseField>
+            <ResponseField name="gas_price" type="Int" >gas price for account model</ResponseField>
+            <ResponseField name="gas_limit" type="Int" >gas limit for account model</ResponseField>
             </Expandable>
         </ResponseField>
 

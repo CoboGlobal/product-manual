@@ -51,7 +51,7 @@ description: "This endpoint returns a list of transactions filtered by various p
 | TRANSACTION_FROM_DEPOSIT| 1000|
 
 </ParamField>
-<ParamField query="coins" type="String" >coin names; separated by commas</ParamField>
+<ParamField query="coins" type="String" >coin codes; separated by commas</ParamField>
 <ParamField query="from_address" type="String" >from address</ParamField>
 <ParamField query="to_address" type="String" >to address</ParamField>
 <ParamField query="limit" type="Int" >entries per page; max: 50; default: 50</ParamField>
@@ -83,7 +83,7 @@ description: "This endpoint returns a list of transactions filtered by various p
             </ResponseField>
             <ResponseField name="coin_detail" type="object" >
                 <Expandable title="object">
-                    <ResponseField name="coin" type="String" >Coin name (Cobo Custody)</ResponseField>
+                    <ResponseField name="coin" type="String" >Coin code</ResponseField>
                     <ResponseField name="display_code" type="String" >Abbreviation (reference only, subject to change)</ResponseField>
                     <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
                     <ResponseField name="decimal" type="Int" >Decimal precision</ResponseField>
