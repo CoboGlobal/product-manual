@@ -3,6 +3,9 @@ title: Speedup Transaction
 api: POST /v1/custody/mpc/speedup_transaction/ 
 description: "This endpoint allows users to speed up a previously submitted transaction by replacing it with a new transaction with higher gas price. The endpoint accepts a POST request with parameters including cobo_id, request_id, fee, gas_price, gas_limit, and fee_amount. The response is a JSON object containing the updated transaction information."
 ---
+
+<Tip>Only transactions with the status 401, 402, and 403 are eligible to be replaced.</Tip>
+
 #### Request
 <ParamField body="cobo_id" type="String" required>Unique transaction ID</ParamField>
 <ParamField body="request_id" type="String" required>RBF transaction request ID (unique identifier of a transaction request, which must correspond to a client's transaction; UUID should be used and the length should be equal to or less than 120 characters)</ParamField>
