@@ -6,7 +6,7 @@ description: "This endpoint updates the address description. The response contai
 
 #### Request
 
-<ParamField body="chain_code" type="String" required>The chain code for which the address are to be updated.</ParamField>
+<ParamField body="coin" type="String" required>The coin code for which the address are to be updated.</ParamField>
 <ParamField body="address" type="String" required>The address to be updated.</ParamField>
 <ParamField body="description" type="String" required>The address description.</ParamField>
 
@@ -28,7 +28,7 @@ request(
     "POST",
     "/v1/custody/mpc/update_address_description/",
     {
-        "chain_code": "ETH",
+        "coin": "ETH",
         "address": "0x43dbf416b77e12eef9b3b036a503638a0bb13f8f",
         "description": "TestAddress01"
     },
@@ -37,7 +37,7 @@ request(
 ```
 ```javascript JavaScript
 coboFetch('POST', '/v1/custody/mpc/update_address_description/', {
-    "chain_code": "ETH",
+    "coin": "ETH",
     "address": "0x43dbf416b77e12eef9b3b036a503638a0bb13f8f",
     "description": "TestAddress01"
 }, api_key, api_secret, host)
@@ -51,7 +51,7 @@ coboFetch('POST', '/v1/custody/mpc/update_address_description/', {
 ```
 ```go Go
 Request("POST", "/v1/custody/mpc/update_address_description/", map[string]string{
-    "chain_code": "ETH",
+    "coin": "ETH",
     "address": "0x43dbf416b77e12eef9b3b036a503638a0bb13f8f",
     "description": "TestAddress01"
 })
