@@ -13,9 +13,7 @@ This guide introduces Cobo WaaS API in Python SDK, enabling developers to integr
 - Ensure that you have created an account and configured Cobo's Custodial/MPC services.
 For detailed instructions, please refer to the [Quickstart](https://www.cobo.com/developers/get-started/overview/quickstart) guide.
 
-
 - To access the API documentation, navigate to the [API references](https://www.cobo.com/developers/api-references/overview/) section.
-
 
 
 
@@ -49,10 +47,9 @@ Install from source with:
 python setup.py install
 ```
 
+## Code Sample
 
-
-
-## Generate Your API Key
+### Generate Key Pair
 For more information on the API Key, please [click here](/custodial-wallet/authentication).
 
 
@@ -63,8 +60,29 @@ from cobo_custody.config import DEV_ENV
 api_secret, api_key = generate_new_key()
 ```
 
+### Initialize ApiSigner
 
-## Custodial Wallet Sample
+`ApiSigner` can be instantiated through
+
+```python
+from cobo_custody.signer.local_signer import LocalSigner
+LocalSigner("API_SECRET")
+```
+
+In certain scenarios, the private key may be restricted from export, such as when it is stored in AWS Key Management Service (KMS).
+In such cases, please pass in a custom implementation using the ApiSigner interface:
+
+### Initialize RestClient
+
+```python
+from cobo_custody.client import Client
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+client = Client(signer=signer, env=DEV_ENV, debug=True)
+```
+
+
+### Custodial Wallet Sample
 ```python
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client import Client
@@ -75,7 +93,7 @@ client.get_account_info()
 ```
 
 
-## MPC Wallet Sample
+### MPC Wallet Sample
 ```python
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client.mpc_client import MPCClient
@@ -86,7 +104,7 @@ mpc_client.get_supported_coins()
 ```
 
 
-## Handling Response
+### Handling Response
 
 
 The response is an ApiResponse object.
@@ -98,8 +116,7 @@ singer = LocalSigner("api_secret")
 client = Client(signer=singer, env=DEV_ENV, debug=True)
 res = client.get_supported_coins()
 
-
-# Response
+''' Response
 ApiResponse(success=True,
  result= {
    'name': 'DEV_AT_Auth',
@@ -124,25 +141,19 @@ ApiResponse(success=True,
      }
    ]
  }
-, exception=None)
-```
-You can handle the response object as follows:
-```python
+, exception=None)'''
+
+# You can handle the response object as follows:
 #value is True
 print(res.success)
-
 print(res.result)
-
 #value is DEV_AT_Auth
 print(res.result["name"])
-
 print(res.exception)
 ```
 
 
-
-
-## Handling API Errors
+### Handling API Errors
 ```python
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client.mpc_client import MPCClient
@@ -152,17 +163,18 @@ client = Client(signer=singer, env=DEV_ENV, debug=True)
 res = client.get_supported_coins()
 
 
-# Reponse
+'''Reponse
 ApiResponse(success=False,
            result=None,
-           exception=ApiError(errorCode=12001,
-                              errorMessage='Signature verify fail',
-                              errorId='a0ca65be81f94a9e8046f214e0480b3a'))
-```
+           exception=ApiError(
+                errorCode=12001,
+                errorMessage='Signature verify fail',
+                errorId='a0ca65be81f94a9e8046f214e0480b3a'
+                )
+           )
+'''
 
-
-You can handle the response object as follows:
-```python
+# You can handle the response object as follows
 #value is False
 print(res.success)
 
@@ -175,4 +187,3 @@ print(res.exception["errorCode"])
 print(res.exception["errorMessage"])
 print(res.exception["errorId"])
 ```
-

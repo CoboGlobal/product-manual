@@ -1,11 +1,29 @@
 ---
 title: "Java"
 icon: "java"
-description: "If you’re working with Java, the official [cobo-java-api](https://github.com/CoboGlobal/cobo-java-api) package is the easiest way to use."
 ---
 
-## Installation
+***
+# Overview
+This guide introduces Cobo WaaS API in Java SDK, enabling developers to integrate with Cobo's Custodial/MPC services seamlessly using the Java programming language.
 
+# Before You Begin
+- Ensure that you have created an account and configured Cobo's Custodial/MPC services.
+For detailed instructions, please refer to the [Quickstart](https://www.cobo.com/developers/get-started/overview/quickstart) guide.
+
+- To access the API documentation, navigate to the [API references](https://www.cobo.com/developers/api-references/overview/) section.
+
+# Using the Cobo Java SDK
+
+## GitHub
+[The Official Java SDK for Cobo WaaS API](https://github.com/CoboGlobal/cobo-java-api).
+
+## Requirements
+- JDK8
+- JDK17 or newer
+
+
+## Installation
 Step 1. Add the JitPack repository to your build file
 
 gradle:
@@ -36,7 +54,7 @@ gradle:
 
 ```
 dependencies {
-    implementation 'com.github.CoboGlobal:cobo-java-api:v0.62'
+    implementation 'com.github.CoboGlobal:cobo-java-api:v0.64'
 }
 ```
 
@@ -46,21 +64,13 @@ maven:
 <dependency>
     <groupId>com.github.CoboGlobal</groupId>
     <artifactId>cobo-java-api</artifactId>
-    <version>v0.64</version>
+    <version>v0.62</version>
 </dependency>
 ```
 
-## Test
+## Code Sample
 
-```
- ./gradlew test -DEnv=develop/prod -DApiSecret=<yourApiSecret>
-```
-
-## Usage
-
-### Initialize
-
-#### Generate Key Pair
+### Generate Key Pair
 
 ```java
 import com.cobo.custody.api.client.impl.LocalSigner;
@@ -68,53 +78,16 @@ import com.cobo.custody.api.client.impl.LocalSigner;
 String[] key = LocalSigner.generateKeyPair();
 String secretKey = key[0];
 String apiKey = key[1];
+
 ```
+For more information on the API key, please [click here](https://www.cobo.com/developers/api-references/overview/authentication).
 
-Please refer to the [link](/custodial-wallet/authentication) for how to use apiKey
 
-#### Initialize RestClient
+### Initialize ApiSigner
+`ApiSigner` can be instantiated through `new LocalSigner("secretkey" )`
 
-These can be instantiated through the corresponding factory method of `CoboApiClientFactory`
-
-```java
-import com.cobo.custody.api.client.CoboApiClientFactory;
-import com.cobo.custody.api.client.CoboApiRestClient;
-import com.cobo.custody.api.client.CoboMPCApiRestClient;
-import com.cobo.custody.api.client.CoboMPCPrimeBrokerRestClient;
-import com.cobo.custody.api.client.config.CoboApiConfig;
-import com.cobo.custody.api.client.config.Env;
-import com.cobo.custody.api.client.impl.LocalSigner;
-
-// client for Custodial Wallet
-CoboApiRestClient client = CoboApiClientFactory.newInstance(
-                new LocalSigner("YOUR_API_SECRET"),
-                Env.DEV,
-                false).newRestClient();
-
-// client for MPC Wallet
-CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
-                new LocalSigner("YOUR_API_SECRET"),
-                TestEnv,
-                false).newMPCRestClient();
-
-// client for Prime Broker
-CoboMPCPrimeBrokerRestClient primeBrokerClient = CoboApiClientFactory.newInstance(
-                new LocalSigner("YOUR_API_SECRET"),
-                TestEnv,
-                false).newMPCPrimeBrokerRestClient();
-```
-
-#### Initialize ApiSigner
-
-`ApiSigner` can be instantiated through
-```java
-import com.cobo.custody.api.client.impl.LocalSigner;
-
-LocalSigner localSigner = new LocalSigner("YOUR_API_SECRET")
-```
-
-In some cases, your private key cannot be exported, for example, your private key is in aws kms, you should pass in your own implementation by implements `ApiSigner` interface:
-
+In certain scenarios, the private key may be restricted from export, such as when it is stored in AWS Key Management Service (KMS).
+In such cases, please pass in a custom implementation using the ApiSigner interface:
 ```java
 
 import com.cobo.custody.api.client.ApiSigner;
@@ -131,1159 +104,129 @@ new ApiSigner() {
 }
 ```
 
-### Account
-
-#### Check Account Details
+### Initialize RestClient
+These can be instantiated using the corresponding factory method provided by `CoboApiClientFactory`.
 
 ```java
-ApiResponse<OrgInfo> orgInfo = client.getOrgInfo()
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboApiRestClient;
+import com.cobo.custody.api.client.config.CoboApiConfig;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.impl.LocalSigner;
+
+CoboApiRestClient client = CoboApiClientFactory.newInstance(
+                new LocalSigner(apiSecret),
+                Env.DEV,
+                false).newRestClient();
 ```
 
-<Accordion title="View Response">
-
-
+### Custodial Wallet Sample
 ```java
-OrgInfo
-{
-name='cobo_test', 
-assets=[
-    Assets{
-        coin='ADA', 
-        display_code='ADA', 
-        description='Cardano', 
-        decimal=6, 
-        can_deposit=true, 
-        can_withdraw=true, 
-        balance='29880892', 
-        abs_balance='29.880892', 
-        fee_coin='ADA', 
-        abs_estimate_fee='1', 
-        confirming_threshold=9, 
-        dust_threshold=1000000, 
-        token_address='', 
-        require_memo=false
-        }, 
-    Assets{
-        coin='AE', 
-        display_code='AE', 
-        description='Aeternity', 
-        decimal=18, 
-        can_deposit=true, 
-        can_withdraw=true, 
-        balance='24842627669924526173', 
-        abs_balance='24.842627669924526173', 
-        fee_coin='ETH', 
-        abs_estimate_fee='0.01445', 
-        confirming_threshold=12, 
-        dust_threshold=1, 
-        token_address='0x5ca9a71b1d01849c0a95490cc00559717fcf0d1d', 
-        require_memo=false
-        }
-    ]
-}
-```
 
-</Accordion>
-
-#### Get Coin Details
-
-```java
-ApiResponse<CoinInfo> coinInfo = client.getCoinInfo("ETH")
-```
-
-<Accordion title="View Response">
-
-
-```java
-CoinInfo{
-    coin='ETH', 
-    display_code='ETH', 
-    description='Ethereum', 
-    decimal=18, 
-    can_deposit=true, 
-    can_withdraw=true, 
-    require_memo=false, 
-    balance='0', 
-    abs_balance='0', 
-    fee_coin='ETH', 
-    abs_estimate_fee='0.006069', 
-    confirming_threshold=12, 
-    ust_threshold=1, 
-    token_address=''
-}
-```
-
-</Accordion>
-
-#### Get New Deposit Address
-
-```java
-ApiResponse<Address> res = client.newAddress("ETH", false);
-```
-
-<Accordion title="View Response">
-
-
-```java
-Address{coin='ETH', address='0x6a60f0d7ef6e5d2a4a31d65c8b73ac19a020bb16'}
-```
-
-</Accordion>
-
-#### Batch New Deposit Address
-
-```java
-ApiResponse<Address> res = client.newAddress("ETH", false);
-```
-
-<Accordion title="View Response">
-
-
-```java
-NewAddresses{coin='ETH', addresses=,0x7568cd7c5b051540eaeff22becbb35d716aa063e,0x17e5bce063d14bdf75e41df8673ce0ee1978c452,0x65e7b319837edab8ce9155b87dfce5ad599ab517,0xd192fb0d43615c7743f6229b1488e1a268b3c402}
-```
-
-</Accordion>
-
-#### Verify Deposit Address
-
-```java
-ApiResponse<Address> res = client.addressInfo("ETH", "0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee");
-```
-
-<Accordion title="View Response">
-
-
-```java
-Address{coin='ETH', address='0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee'}
-```
-
-</Accordion>
-
-#### Batch Verify Deposit Address
-
-```java
-ApiResponse<List<InternalAddressInfo>> res = client.getInternalAddressInfoBatch("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a,0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a");
-```
-
-<Accordion title="View Response">
-
-
-```java
-[InternalAddressInfo{coin='ETH', address='0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a', is_internal_address=false, internal_org='null', internal_wallet='null'}, InternalAddressInfo{coin='ETH', address='0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a', is_internal_address=false, internal_org='null', internal_wallet='null'}]
-```
-
-</Accordion>
-
-#### Verify Valid Address
-
-```java
-ApiResponse<Boolean> res = client.isValidAddress("ETH", "0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d");
-```
-
-<Accordion title="View Response">
-
-
-```java
-true
-```
-
-</Accordion>
-
-#### Get Address History List
-
-```java
-ApiResponse<List<Address>> res = client.getAddressHistory("ETH");
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    Address{coin='ETH', address='0x6a60f0d7ef6e5d2a4a31d65c8b73ac19a020bb16'}, 
-    Address{coin='ETH', address='0xd192fb0d43615c7743f6229b1488e1a268b3c402'}, 
-    Address{coin='ETH', address='0x65e7b319837edab8ce9155b87dfce5ad599ab517'}, 
-    Address{coin='ETH', address='0x17e5bce063d14bdf75e41df8673ce0ee1978c452'}, 
-    Address{coin='ETH', address='0x7568cd7c5b051540eaeff22becbb35d716aa063e'}
-]
-```
-
-</Accordion>
-
-#### Get Address History List With Page
-
-```java
-ApiResponse<List<Address>> res = client.getAddressHistory("ETH" ,0, 50);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    Address{coin='ETH', address='0x6a60f0d7ef6e5d2a4a31d65c8b73ac19a020bb16'}, 
-    Address{coin='ETH', address='0xd192fb0d43615c7743f6229b1488e1a268b3c402'}, 
-    Address{coin='ETH', address='0x65e7b319837edab8ce9155b87dfce5ad599ab517'}, 
-    Address{coin='ETH', address='0x17e5bce063d14bdf75e41df8673ce0ee1978c452'}, 
-    Address{coin='ETH', address='0x7568cd7c5b051540eaeff22becbb35d716aa063e'}
-]
-```
-
-</Accordion>
-
-#### Get Address History List With Page Sort
-
-```java
-ApiResponse<List<Address>> res = client.getAddressHistory("ETH" ,0, 50, SortFlagEnum.DESCENDING);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    Address{coin='ETH', address='0x6a60f0d7ef6e5d2a4a31d65c8b73ac19a020bb16'}, 
-    Address{coin='ETH', address='0xd192fb0d43615c7743f6229b1488e1a268b3c402'}, 
-    Address{coin='ETH', address='0x65e7b319837edab8ce9155b87dfce5ad599ab517'}, 
-    ddress{coin='ETH', address='0x17e5bce063d14bdf75e41df8673ce0ee1978c452'}, 
-    Address{coin='ETH', address='0x7568cd7c5b051540eaeff22becbb35d716aa063e'}
-]
-```
-
-</Accordion>
-
-### Loop Alliance
-
-#### Check Loop Address Details
-
-```java
-ApiResponse<InternalAddressInfo> res = client.getInternalAddressInfo("ETH", "0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a");
-```
-
-<Accordion title="View Response">
-
-
-```java
-InternalAddressInfo{coin='ETH', address='0xe7ebdc5bbb6c99cc8f7f2c1c83ff38aa6647f38a', is_internal_address=false, internal_org='', internal_wallet=''}
-```
-
-</Accordion>
-
-#### Verify Loop Address List
-
-```java
-List<String> list = new ArrayList<>();
-        list.add("0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee");
-        list.add("0xe105a42297428575086387de415900a08765a8af");
-        list.add("0x641733cde30e99fe0d6082c2ed96601c37a1718b");
-        list.add("0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d");
-
-        ApiResponse<Addresses> res = client.addressesInfo("ETH", list);
-```
-
-<Accordion title="View Response">
-
-
-```java
-NewAddress{coin='ETH', addresses='0x05325e6f9d1f0437bd78a72c2ae084fbb8c039ee,0x641733cde30e99fe0d6082c2ed96601c37a1718b,0xe105a42297428575086387de415900a08765a8af,0xf3a4a281e92631cb06b53895b6db25c6ffcf7c3d'}
-```
-
-</Accordion>
-
-#### Loop Transaction Explorer
-
-To help your user to check the Loop transaction, we offer you an explorer, you may insert the following URL in your platform：https://loop.top/tx/[Loop_ID]
-e.g. https://loop.top/tx/L456e5cb652dcfe557a43fd9d8e48627
-
-### Transactions
-
-#### Get Transaction Details
-
-```java
-ApiResponse<Transaction> res = client.getTransactionById("20210422193807000343569000002370");
-```
-
-<Accordion title="View Response">
-
-
-```java
-Transaction{
-    id='20210422193807000343569000002370', 
-    coin='TETH', 
-    display_code='TETH', 
-    description='Ethereum Testnet', 
-    decimal=18, 
-    address='0x14ce095a3593db7db1d13a0765eb826e00d4fc91', 
-    source_address='0x7ca60000afea5a1730e40cf6b51abbf8b594ad91', 
-    side='withdraw', 
-    amount='210000000000000000', 
-    abs_amount='0.21', 
-    txid='0xb40d0ca5a5fadda884a67a46f979741e96be92c69f767fed57ccc000d5c0a14b', 
-    vout_n=0, 
-    request_id='web_send_by_user_424_1619091344352', 
-    status='success', 
-    abs_cobo_fee='0', 
-    created_time=1619091344501, 
-    last_time=1619091838174, 
-    confirmed_num=36, 
-    tx_detail=TxDetail{
-        txid='0xb40d0ca5a5fadda884a67a46f979741e96be92c69f767fed57ccc000d5c0a14b', 
-        blocknum=10088274, 
-        blockhash='0x1b9e862f4056cbc55fe70f817fd1b92e32ddfd7eb5092f56ffc36b91ebd69074', 
-        fee=0, actualgas=21000000000000, 
-        gasprice=1, hexstr=''
-    }, 
-    source_address_detail='0x7ca60000afea5a1730e40cf6b51abbf8b594ad91', 
-    memo='', 
-    confirming_threshold=36, 
-    fee_coin='TETH', 
-    fee_amount='4000000000000000', 
-    fee_decimal=18, 
-    type='external', 
-    waiting_audit=false
-}
-```
-
-</Accordion>
-
-#### Get Transactions By txId
-
-```java
-ApiResponse<List<Transaction>> res = client.getTransactionByTxId("0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f");
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    Transaction{id='20220620112255000399219000004796', 
-    coin='COBO_ETH', 
-    display_code='COBO_ETH', 
-    description='Cobo Ethereum Testnet', 
-    decimal=18, 
-    address='0x9e6d2c7a9561ae9c7651768038c7d40da78920c9', 
-    source_address='0x929590a1428dffa67df664482cf2cad3c230ec6d', 
-    side='withdraw', amount='100000000000000', 
-    abs_amount='0.0001', 
-    txid='0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f', 
-    vout_n=0, request_id='web_send_by_user_1272_1655694295628', 
-    status='success', abs_cobo_fee='0', created_time=1655695375730, 
-    last_time=1655695375730, 
-    confirmed_num=13, 
-    tx_detail=TxDetail{
-        txid='0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f', 
-        blocknum=8025087, 
-        blockhash='0xfef9d77a7d1e473c88272cef449fea7d5ef7eefe29f43f56ee27b8f7f1f1d8cf', 
-        fee=0, 
-        actualgas=21000000000000, 
-        gasprice=1, hexstr=''
-    }, 
-    source_address_detail='0x929590a1428dffa67df664482cf2cad3c230ec6d', 
-    memo='for test', 
-    confirming_threshold=13, 
-    fee_coin='COBO_ETH', 
-    fee_amount='21000000000000', 
-    fee_decimal=18, 
-    type='external', 
-    waiting_audit=false
-    }, 
-
-    Transaction{id='20220620112258000399219000009986', 
-    coin='COBO_ETH', 
-    display_code='COBO_ETH', 
-    description='Cobo Ethereum Testnet', 
-    decimal=18, 
-    address='0x9e6d2c7a9561ae9c7651768038c7d40da78920c9', 
-    source_address='0x929590a1428dffa67df664482cf2cad3c230ec6d', 
-    side='deposit', 
-    amount='100000000000000', 
-    abs_amount='0.0001', 
-    txid='0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f', 
-    vout_n=0, 
-    request_id='null', 
-    status='success', 
-    abs_cobo_fee='0', 
-    created_time=1655695378377, 
-    last_time=1655695378377, 
-    confirmed_num=15, 
-    tx_detail=TxDetail{
-        txid='0x5d5396c3992ed524bf68a22a7ab6ae503f0349354ad69bc5204d5214085d4e9f', 
-        blocknum=8025087, 
-        blockhash='0xfef9d77a7d1e473c88272cef449fea7d5ef7eefe29f43f56ee27b8f7f1f1d8cf', 
-        fee=0, 
-        actualgas=0, 
-        gasprice=0, 
-        hexstr=''
-    }, 
-    source_address_detail='0x929590a1428dffa67df664482cf2cad3c230ec6d', 
-    memo='null', 
-    confirming_threshold=15, 
-    fee_coin='null', 
-    fee_amount='null', 
-    fee_decimal=0, 
-    type='external', 
-    waiting_audit=false
-    }
-]
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.CoinInfo;
+import com.cobo.custody.api.client.impl.LocalSigner;
+
+String[] key = LocalSigner.generateKeyPair();
+String secretKey = key[0];
+String apiKey = key[1];
+
+CoboApiRestClient client = CoboApiClientFactory.newInstance(
+        new LocalSigner(secretKey),
+        Env.DEV,
+        false).newRestClient();
+
+ApiResponse<CoinInfo> coinInfo = client.getCoinInfo("BTC");
+System.out.println(coinInfo);
 
 ```
 
-</Accordion>
 
-#### Obtain the list of confirmed transactions through ID query(deposit&withdraw)
-
+### MPC Wallet Sample
 ```java
-ApiResponse<List<Transaction>> res = client.getTransactionsById(null, Side.Any, null, null, null, 2, null);
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.MPCChains;
+import com.cobo.custody.api.client.impl.LocalSigner;
+
+String[] key = LocalSigner.generateKeyPair();
+String secretKey = key[0];
+String apiKey = key[1];
+
+CoboMPCApiRestClient mpc_client = CoboApiClientFactory.newInstance(
+        new LocalSigner(secretKey),
+        Env.DEV,
+        false).newMPCRestClient();
+
+ApiResponse<MPCChains> chains = mpc_client.getSupportedChains();
+System.out.println(chains);
 ```
 
-<Accordion title="View Response">
 
-
-```java
-[
-    Transaction{
-        id='3228776326735331328', 
-        coin='ETH', 
-        display_code='ETH', 
-        description='Ethereum', 
-        decimal=18, 
-        address='0x62b3f5f1717e46bec22c52c1607f84a25b4e7f83', 
-        source_address='0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a', 
-        side='deposit', 
-        amount='100000000000000', 
-        abs_amount='0.0001', 
-        txid='0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568', 
-        vout_n=0, 
-        request_id='null', 
-        status='success', 
-        abs_cobo_fee='0', 
-        created_time=1539600528114, 
-        last_time=1539600528114, 
-        confirmed_num=12, 
-        tx_detail=TxDetail{
-            txid='0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568', 
-            blocknum=6519238, 
-            blockhash='0x2abf41e86a9cd37d481d7a3212ca0eab80fa2f4d10e70e94b2623c5318c383c8', 
-            fee=0, 
-            actualgas=0, 
-            gasprice=0, 
-        hexstr=''}, 
-        source_address_detail='0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a', 
-        memo='null', 
-        confirming_threshold=12, 
-        fee_coin='null', 
-        fee_amount='null', 
-        fee_decimal=0, 
-        type='external', 
-        waiting_audit=false
-    }, 
-    Transaction{
-        id='3228768325479694336', 
-        coin='BTC', 
-        display_code='BTC', 
-        description='Bitcoin', 
-        decimal=8, 
-        address='1Q1xfp8UkQagCn2pbJFpG89Cd6Ku3yUixE', 
-        source_address='185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi', 
-        side='deposit', 
-        amount='1000', 
-        abs_amount='0.00001', 
-        txid='dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b', 
-        vout_n=0, 
-        request_id='null', 
-        status='success', 
-        abs_cobo_fee='0', 
-        created_time=1539596712818, 
-        last_time=1539596712818, 
-        confirmed_num=3, 
-        tx_detail=TxDetail{
-            txid='dfa0d24c29cf39ddbeab4aad04d8883f2f544dd85d43c9db34fde968e4d9a63b', 
-            blocknum=545845, 
-            blockhash='0000000000000000001fb2c338e7aed6560d852a3a0836f8aac7409b99f8d624', 
-            fee=0, 
-            actualgas=0, 
-            gasprice=0, 
-            hexstr=''
-        }, 
-        source_address_detail='185qKpZNnwaX5ebJ4DBQ3rgy85HgRWKgEi', 
-        memo='null', 
-        confirming_threshold=3, 
-        fee_coin='null', 
-        fee_amount='null', 
-        fee_decimal=0, 
-        type='external', 
-        waiting_audit=false
-    }
-]
-```
-
-</Accordion>
-
-#### Obtain the list of confirmed transactions through time query(deposit&withdraw)
+### Handling Response
 
 ```java
-ApiResponse<List<Transaction>> res = client.getTransactionsByTime(null, Side.Any, null, 0, 0, 2, null);
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.account.MPCChains;
+import com.cobo.custody.api.client.impl.LocalSigner;
+
+CoboApiRestClient client = CoboApiClientFactory.newInstance(
+        new LocalSigner(secretKey),
+        Env.DEV,
+        false).newRestClient();
+
+ApiResponse<CoinInfo> coinInfo = client.getCoinInfo("BTC");
+System.out.println(coinInfo);
+
+/* The response like this
+"Response{success=true,
+          errorCode=0, errorMessage='null',
+          errorId='null', errorDescription='null',
+          result=CoinInfo{
+              coin='BTC', displayCode='BTC',
+              description='Bitcoin', decimal=8, canDeposit=true,
+              canWithdraw=true, requireMemo=false,
+              minimumDepositThreshold='10000',
+              balance='10000', absBalance='0.0001',
+              feeCoin='BTC', absEstimateFee='0.000948',
+              confirmingThreshold=4, dustThreshold=546',
+              tokenAddress='',
+              absEstimateFeeUsd='35.28'
+           }
+         }"
+*/
+
+ // You can handle the response object as follows:
+System.out.println(coinInfo.isSuccess());
+System.out.println(coinInfo.getResult().getCoin());
+System.out.println(coinInfo.getResult().getBalance());
 ```
 
-<Accordion title="View Response">
-
-
+### Handling API Errors
 ```java
-[
-Transaction{
-        id='20210520115758000378235000004875', 
-        coin='CKB', 
-        display_code='CKB', 
-        description='Nervos Network', 
-        decimal=8, 
-        address='ckb1qyq8a5r5hpm4zw5ugpakyc847ml36dntng9qkd76ln', 
-        source_address='ckb1qyq2ug0jlynj6n95esm5rgu6zk5l047a964s4qr3ag', 
-        side='deposit', 
-        amount='6200000000', 
-        abs_amount='62', 
-        txid='0x8cd86358ff61b17c3d453717306a919a4c2672657175306a2ce7f07f05095c45', 
-        vout_n=0, 
-        request_id='null', 
-        status='success', 
-        abs_cobo_fee='0', 
-        created_time=1621483452136, 
-        last_time=1621483452136, 
-        confirmed_num=30, 
-        tx_detail=TxDetail{
-            txid='0x8cd86358ff61b17c3d453717306a919a4c2672657175306a2ce7f07f05095c45', 
-            blocknum=4364392, 
-            blockhash='0xb40788e7185ad0d845708e0e6757fcf7817c73bb8a5fe1806da626ee5b7c4f6f', 
-            fee=0, 
-            actualgas=0, 
-            gasprice=0, 
-            hexstr=''
-        }, 
-        source_address_detail='ckb1qyq2ug0jlynj6n95esm5rgu6zk5l047a964s4qr3ag', 
-        memo='null', 
-        confirming_threshold=30, 
-        fee_coin='null', 
-        fee_amount='null', 
-        fee_decimal=0, 
-        type='external', 
-        waiting_audit=false
-    }, 
+/* The error response like this
+Response{ success=false, errorCode=1006,
+          errorMessage='Invalid api key, please use standard wallet api key',
+          errorId='fbee1201d4ee4a67aae91f05f57e0679',
+          errorDescription='Invalid api key, please use standard wallet api key',
+          result=null
+         }
+*/
 
-    Transaction{
-        id='20210520115644000378235000004289', 
-        coin='CKB', 
-        display_code='CKB', 
-        description='Nervos Network', 
-        decimal=8, 
-        address='ckb1qyq8a5r5hpm4zw5ugpakyc847ml36dntng9qkd76ln', 
-        source_address='ckb1qyq2ug0jlynj6n95esm5rgu6zk5l047a964s4qr3ag', 
-        side='withdraw', 
-        amount='6200000000', 
-        abs_amount='62', 
-        txid='0x8cd86358ff61b17c3d453717306a919a4c2672657175306a2ce7f07f05095c45', 
-        vout_n=0, 
-        request_id='ckb29398728476738', 
-        status='success', 
-        abs_cobo_fee='0', 
-        created_time=1621483451938, 
-        last_time=1621483451938, 
-        confirmed_num=30, 
-        tx_detail=TxDetail{
-            txid='0x8cd86358ff61b17c3d453717306a919a4c2672657175306a2ce7f07f05095c45', 
-            blocknum=4364392, 
-            blockhash='0xb40788e7185ad0d845708e0e6757fcf7817c73bb8a5fe1806da626ee5b7c4f6f', 
-            fee=0, 
-            actualgas=24800, 
-            gasprice=1, 
-            hexstr=''
-        }, 
-        source_address_detail='ckb1qyq2ug0jlynj6n95esm5rgu6zk5l047a964s4qr3ag', 
-        memo='', 
-        confirming_threshold=30, 
-        fee_coin='CKB', 
-        fee_amount='800000000', 
-        fee_decimal=8, 
-        type='external', 
-        waiting_audit=false
-    }
-    ]
+// You can handle the response object as follows:
+System.out.println(coinInfo.isSuccess());
+System.out.println(coinInfo.getErrorCode());
+System.out.println(coinInfo.getErrorDescription());
+System.out.println(coinInfo.getErrorId());
+System.out.println(coinInfo.getErrorMessage());
 ```
 
-</Accordion>
 
-#### Get Pending Transactions
-
-```java
-ApiResponse<List<Transaction>> pendingTransactions = client.getPendingTransactions(null, Side.Any, null, null, 50);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    Transaction{
-        id='20200630175208000359964000002754',
-        coin='TOMO',
-        display_code='TOMO',
-        description='TomoChain',
-        decimal=18,
-        address='0xab65bdd2e1fd20878d2cf8b09fe87a34059519fc',
-        source_address='0x1a7d388963fa4ea8bb7a5822802a48ccb0ff08b5',
-        side='withdraw',
-        amount='1000000000000000000',
-        abs_amount='1',
-        txid='0xc19e50b0b15116a146f033ad3f3e1e77ae84a604fca50b77b54b72dfb21cd7e5',
-        vout_n=0,
-        request_id='tool9207389726',
-        status='pending',
-        abs_cobo_fee='null',
-        created_time=1593510728558,
-        last_time=1593510728558,
-        confirmed_num=0,
-        tx_detail=TxDetail{
-            txid='0xc19e50b0b15116a146f033ad3f3e1e77ae84a604fca50b77b54b72dfb21cd7e5',
-            blocknum=0,
-            blockhash='',
-            fee=10000000000000000,
-            actualgas=0,
-            gasprice=1,
-            hexstr=''
-        },
-        source_address_detail='0x1a7d388963fa4ea8bb7a5822802a48ccb0ff08b5',
-        memo='',
-        confirming_threshold=100,
-        fee_coin='null',
-        fee_amount='null',
-        fee_decimal=0,
-        type='external',
-        waiting_audit=false
-    },
-    Transaction{
-        id='20200604173207000367545000002794',
-        coin='ETH',
-        display_code='ETH',
-        description='Ethereum',
-        decimal=18,
-        address='0x0c1a06710fac5e6ec6681c2a5a7e20b9e90319c0',
-        source_address='0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66',
-        side='withdraw',
-        amount='100000000000000000',
-        abs_amount='0.1',
-        txid='0xe433dc4cb1ac9c576b4d9c2b4c10fec1e73e92cf97ecfe4d222599a6fd0e5d2a',
-        vout_n=0,
-        request_id='web_send_by_user_194_1591263071240',
-        status='success',
-        abs_cobo_fee='null',
-        created_time=1591263127392,
-        last_time=1591263127392,
-        confirmed_num=12,
-        tx_detail=TxDetail{
-            txid='0xe433dc4cb1ac9c576b4d9c2b4c10fec1e73e92cf97ecfe4d222599a6fd0e5d2a',
-            blocknum=10198480,
-            blockhash='0x81c3da0a9aa3737bf32066a5961b489364284039a5da074fad9a69d2df5d285c',
-            fee=400000000000000,
-            actualgas
-
-```
-
-</Accordion>
-
-#### Get Pending Deposit Details
-
-```java
-ApiResponse<Transaction> res = client.getPendingTransaction("20200604171238000354106000006405");
-```
-
-<Accordion title="View Response">
-
-
-```java
-{
-  "id": "20200604171238000354106000006405",
-  "coin": "ETH_USDT",
-  "display_code": "USDT",
-  "description": "Tether",
-  "decimal": 6,
-  "address": "0x0c1a06710fac5e6ec6681c2a5a7e20b9e90319c0",
-  "source_address": "0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66",
-  "side": "withdraw",
-  "amount": "1000000",
-  "abs_amount": "1",
-  "txid": "0xe967fb51b1a32dc73c1db51395993a7ccee66645376f524df5ae7960887e2f6a",
-  "vout_n": 0,
-  "request_id": "web_send_by_user_194_1591261893993",
-  "status": "success",
-  "abs_cobo_fee": "null",
-  "created_time": 1591261958382,
-  "last_time": 1591261958382,
-  "confirmed_num": 12,
-  "tx_detail": {
-    "txid": "0xe967fb51b1a32dc73c1db51395993a7ccee66645376f524df5ae7960887e2f6a",
-    "blocknum": 10198392,
-    "blockhash": "0x3816eee4d54720ddfd14a0472061bf928bd4d8001da53c2e2ec58b03be81f0a3",
-    "fee": 600000000000000,
-    "actualgas": 2973446068854969,
-    "gasprice": 1,
-    "hexstr": ""
-  },
-  "source_address_detail": "0x93d8cbb5354d06ddd7bc50ff2c71b5c0b6e1af66",
-  "memo": "",
-  "confirming_threshold": 12,
-  "fee_coin": "null",
-  "fee_amount": "null",
-  "fee_decimal": 0,
-  "type": "external",
-  "waiting_audit": false
-}
-
-```
-
-</Accordion>
-
-#### Get Transaction History
-
-```java
-ApiResponse<List<Transaction>> res = client.getTransactionHistory("ETH", Side.Any, null, null, null, 50, 0, System.currentTimeMillis(), null);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    Transaction{
-        id='3228776326735331328',
-        coin='ETH',
-        display_code='ETH',
-        description='Ethereum',
-        decimal=18,
-        address='0x62b3f5f1717e46bec22c52c1607f84a25b4e7f83',
-        source_address='0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a',
-        side='deposit',
-        amount='100000000000000',
-        abs_amount='0.0001',
-        txid='0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568',
-        vout_n=0,
-        request_id='null',
-        status='success',
-        abs_cobo_fee='0',
-        created_time=1539600528114,
-        last_time=1539600528114,
-        confirmed_num=12,
-        tx_detail=TxDetail{
-            txid='0xe90e064eb9fbaff12501325875df722484579f451bfe1db3a227495dcc54c568',
-            blocknum=6519238,
-            blockhash='0x2abf41e86a9cd37d481d7a3212ca0eab80fa2f4d10e70e94b2623c5318c383c8',
-            fee=0,
-            actualgas=0,
-            gasprice=0,
-            hexstr=''
-        },
-        source_address_detail='0xa9c7d31bb1879bff8be25ead2f59b310a52b7c5a',
-        memo='null',
-        confirming_threshold=12,
-        fee_coin='null',
-        fee_amount='null',
-        fee_decimal=0,
-        type='external',
-        waiting_audit=false
-    },
-    Transaction{
-        id='20210108144127000380088000002302',
-        coin='ETH',
-        display_code='ETH',
-        description='Ethereum',
-        decimal=18,
-        address='0xfdf2b1f888d09fc7602f700bd214600b51d6f31a',
-        source_address='cobo_test',
-        side='withdraw',
-        amount='1000000000000000000',
-        abs_amount='1',
-        txid='L8b3e42961795285d315adad46262cfc',
-        vout_n=0,
-        request_id='web_send_by_user_427_1610088044313',
-        status='success',
-        abs_cobo_fee='0',
-        created_time=1610088044385,
-        last_time=1610088087145,
-        confirmed_num=12,
-        tx_detail=TxDetail{
-            txid='L8b3e42961795285d315adad46262cfc',
-            blocknum=0,
-            blockhash='',
-            fee=0,
-            actualgas=0,
-            gasprice=1,
-            hexstr=''
-        },
-        source_address_detail='cobo_test',
-        memo='null',
-        confirming_threshold=12,
-        fee_coin='null',
-        fee_amount='null',
-        fee_decimal=0,
-        type='internal',
-        waiting_audit=false
-    }
-]
-
-```
-
-</Accordion>
-
-### Withdrawal
-
-#### Submit Withdraw Request
-
-```java
-ApiResponse<String> res = client.withdraw("TETH",
-                "api_request_id_8888888",
-                "0xb744adc8d75e115eec8e582eb5e8d60eb0972037",
-                "1", null, "true", null);
-```
-
-<Accordion title="View Response">
-
-
-```java
-Response{success=true, error_code=0, error_message='null', error_id='null', error_description='null', result=}
-```
-
-</Accordion>
-
-#### Get Withdraw Information
-
-```java
-ApiResponse<Transaction> res = client.queryWithdrawInfo("teth29374893624");
-```
-
-<Accordion title="View Response">
-
-
-```java
-Transaction{
-    id='20210511151005000324213000009776',
-    coin='TETH',
-    display_code='TETH',
-    description='Ethereum Testnet',
-    decimal=18,
-    address='0xb744adc8d75e115eec8e582eb5e8d60eb0972037',
-    source_address='0x7ca60000afea5a1730e40cf6b51abbf8b594ad91',
-    side='withdraw',
-    amount='1',
-    abs_amount='0.000000000000000001',
-    txid='0xd67169392144c9400224f07a6fe7efcfa4bf7e19445a361359c2c9530bca64d6',
-    vout_n=0,
-    request_id='teth29374893624',
-    status='success',
-    abs_cobo_fee='0',
-    created_time=1620712218490,
-    last_time=1620724457693,
-    confirmed_num=32,
-    tx_detail=TxDetail{
-        txid='0xd67169392144c9400224f07a6fe7efcfa4bf7e19445a361359c2c9530bca64d6',
-        blocknum=10212633,
-        blockhash='0x444fe10d583194687c32223fd884dae82d0f0f2ebeacfb8040b4d83808253b59',
-        fee=0,
-        actualgas=21000000000000,
-        gasprice=1,
-        hexstr=''
-    },
-    source_address_detail='0x7ca60000afea5a1730e40cf6b51abbf8b594ad91',
-    memo='',
-    confirming_threshold=32,
-    fee_coin='TETH',
-    fee_amount='4000000000000000',
-    fee_decimal=18,
-    type='external',
-    waiting_audit=false
-}
-
-```
-
-</Accordion>
-
-### Staking
-
-#### Get a Staking Product Details
-
-```java
-ApiResponse<List<StakingProduct>> res = client.getStakingProducts(null, Lang.CHINESE);
-```
-
-<Accordion title="View Response">
-
-
-```java
-StakingProduct{
-    product_id=159145,
-    name='DASH FP TEST',
-    description='注：0.01 DASH起投，阶梯收益率，质押越多，收益率越高 质押后第二天开始产生收益，每10天根据转入时约定的收益率发放收益，选择【到期后自动续期】，无缝衔接下一期收益 随时可划出，T+1到账，收益周期内取出损失当期收益 每次取出赎回费: 0.01 DASH',
-    doc_src='https://support.cobo.com/hc/zh-cn/articles/360023826033',
-    coin='DASH',
-    coin_decimal=8,
-    reward_coin='DASH',
-    reward_coin_decimal=8,
-    unstake_fee='1000000',
-    min_amount='1000000',
-    rate='0.0002000000',
-    rate_type=1,
-    days=1,
-    stake_type='masternode',
-    lockup=true,
-    start_stake_time=1621432800000,
-    stop_stake_time=1621519200000,
-    start_staking_time=1621526400000,
-    stop_staking_time=1621612800000,
-    liquidate_time=1621612800000,
-    reward_liquidate_time=1621612800000,
-    product_group='DASHFPTEST'
-}
-
-```
-
-</Accordion>
-
-#### Get All Staking Product List
-
-```java
-ApiResponse<List<StakingProduct>> res = client.getStakingProducts(null, Lang.CHINESE);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    StakingProduct{
-        product_id=159150,
-        name='DASH FP TEST',
-        description='hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH',
-        doc_src='https://support.cobo.com/hc/en-us/articles/360023826033',
-        coin='DASH',
-        coin_decimal=8,
-        reward_coin='DASH',
-        reward_coin_decimal=8,
-        unstake_fee='1000000',
-        min_amount='1000000',
-        rate='0.0002000000',
-        rate_type=1,
-        days=1,
-        stake_type='masternode',
-        lockup=true,
-        start_stake_time=1621519200000,
-        stop_stake_time=1621605600000,
-        start_staking_time=1621612800000,
-        stop_staking_time=1621699200000,
-        liquidate_time=1621699200000,
-        reward_liquidate_time=1621699200000,
-        product_group='DASHFPTEST'
-    },
-    StakingProduct{
-        product_id=159146,
-        name='ZEL FP TEST',
-        description='Min. 30 ZEL, differential return rate, stake more, earn more Rewards start from the next day, will be released every day according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 10 ZEL',
-        doc_src='https://support.cobo.com/hc/en-us/articles/360025623054',
-        coin='ZEL',
-        coin_decimal=8,
-        reward_coin='ZEL',
-        reward_coin_decimal=8,
-        unstake_fee='1000000000',
-        min_amount='3000000000',
-        rate='0.2000000000',
-        rate_type=1,
-        days=1,
-        stake_type='masternode',
-        lockup=false,
-        start_stake_time=1621494000000,
-        stop_stake_time=1621580400000,
-        start_staking_time=1621612800000,
-        stop_staking_time=1621699200000,
-        liquidate_time=1621785600000,
-        reward_liquidate_time=1621785600000,
-        product_group='ZELFPTEST'
-    }
-]
-
-
-```
-
-</Accordion>
-
-#### Stake
-
-```java
-ApiResponse<Void> res = client.stake("159165", new BigInteger("1000000"));
-```
-
-<Accordion title="View Response">
-
-
-```java
-Response{success=true, error_code=0, error_message='null', error_id='null', error_description='null', result=null}
-```
-
-</Accordion>
-
-#### Unstake
-
-```java
-ApiResponse<Void> res = client.unstake("159165", new BigInteger("1000000"));
-```
-
-<Accordion title="View Response">
-
-
-```java
-Response{success=true, error_code=0, error_message='null', error_id='null', error_description='null', result=null}
-```
-
-</Accordion>
-
-#### Get Staking Data
-
-```java
-ApiResponse<List<StakingProduct>> res = client.getStakings(null, Lang.ENGLISG);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    StakingData{
-        staking_id=9456,
-        coin='DASH',
-        coin_decimal=8,
-        amount=2000000,
-        reward_coin='DASH',
-        reward_coin_decimal=8,
-        reward_amount=0,
-        product=StakingProduct{
-            product_id=159150,
-            name='DASH FP TEST',
-            description='hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH',
-            doc_src='https://support.cobo.com/hc/en-us/articles/360023826033',
-            coin='DASH',
-            coin_decimal=8,
-            reward_coin='DASH',
-            reward_coin_decimal=8,
-            unstake_fee='1000000',
-            min_amount='1000000',
-            rate='0.0002000000',
-            rate_type=1,
-            days=1,
-            stake_type='masternode',
-            lockup=true,
-            start_stake_time=1621519200000,
-            stop_stake_time=1621605600000,
-            start_staking_time=1621612800000,
-            stop_staking_time=1621699200000,
-            liquidate_time=1621699200000,
-            reward_liquidate_time=1621699200000,
-            product_group='DASHFPTEST'
-        }
-    }
-]
-
-```
-
-</Accordion>
-
-#### Get Unstaking Data
-
-```java
-ApiResponse<List<Unstaking>> res = client.getUnstakings(null, Lang.ENGLISG);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[]
-```
-
-</Accordion>
-
-#### Get All Staking History
-
-```java
-ApiResponse<List<StakingHistory>> res = client.getStakingHistory(null, null, null, null, null);
-```
-
-<Accordion title="View Response">
-
-
-```java
-[
-    StakingHistory{
-        activity_id='20210521155238000315481000001883',
-        coin='DASH',
-        amount='1000000',
-        type='stake',
-        time=1621583558551,
-        product=StakingProduct{
-            product_id=159150,
-            name='DASH FP TEST',
-            description='hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH',
-            doc_src='https://support.cobo.com/hc/en-us/articles/360023826033',
-            coin='DASH',
-            coin_decimal=8,
-            reward_coin='DASH',
-            reward_coin_decimal=8,
-            unstake_fee='1000000',
-            min_amount='1000000',
-            rate='0.0002000000',
-            rate_type=1,
-            days=1,
-            stake_type='masternode',
-            lockup=true,
-            start_stake_time=1621519200000,
-            stop_stake_time=1621605600000,
-            start_staking_time=1621612800000,
-            stop_staking_time=1621699200000,
-            liquidate_time=1621699200000,
-            reward_liquidate_time=1621699200000,
-            product_group='DASHFPTEST'
-        },
-        raw_type='0'
-    },
-    StakingHistory{
-        activity_id='20210521153656000323896000002896',
-        coin='DASH',
-        amount='1000000',
-        type='stake',
-        time=1621582616527,
-        product=StakingProduct{
-            product_id=159150,
-            name='DASH FP TEST',
-            description='hint: Min. 0.01 DASH, differential return rate, stake more, earn more Rewards start from the next day, will be released every 10 days according to the fixed rate, choose [Stake continuously] to earn continuously! Withdraw available anytime, return to wallet in T+1 Withdrawal fee per time: 0.01 DASH',
-            doc_src='https://support.cobo.com/hc/en-us/articles/360023826033',
-            coin='DASH',
-            coin_decimal=8,
-            reward_coin='DASH',
-            reward_coin_decimal=8,
-            unstake_fee='1000000',
-            min_amount='1000000',
-            rate='0.0002000000',
-            rate_type=1,
-            days=1,
-            stake_type='masternode',
-            lockup=true,
-            start_stake_time=1621519200000,
-            stop_stake_time=1621605600000,
-            start_staking_time=1621612800000,
-            stop_staking_time=1621699200000,
-            liquidate_time=1621699200000,
-            reward_liquidate_time=1621699200000,
-            product_group='DASHFPTEST'
-        },
-        raw_type='0'
-    }
-]
-
-```
-
-</Accordion>
