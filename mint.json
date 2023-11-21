@@ -200,18 +200,34 @@
         "faqs/api-callback"
       ]
     },
+  {
+    "group": "Wallet, Address and Transactions",
+    "pages": [
+      "guides/howtos/create-manage-deposit-addresses",
+      "guides/howtos/querying-deposit-transactions",
+      "guides/howtos/creating-withdrawal-transactions",
+      "guides/howtos/deposit-and-withdrawal-transaction-status"]
+    },
     {
-      "group": "Guides",
-      "pages": [
-        "guides/howtos/create-manage-deposit-addresses",
-        "guides/howtos/auto-token-sweeping-for-mpc-wallets",
-        "guides/howtos/api-error-handling-and-reporting",
-        "guides/howtos/configure-api-callback",
-        "guides/howtos/querying-deposit-transactions",
-        "guides/howtos/deposit-and-withdrawal-transaction-status",
-        "guides/howtos/creating-utxo-transactions",
-        "guides/howtos/creating-withdrawal-transactions",
-        "guides/howtos/api-configuration-best-practices"]
+    "group": "Events and Notifications",
+    "pages": [
+      "guides/howtos/configure-api-callback"]
+    },
+    {
+    "group": "MPC Specific",
+    "pages": [
+      "guides/howtos/auto-token-sweeping-for-mpc-wallets"]
+    },
+    {
+    "group": "Security Best Practices",
+    "pages": [
+      "guides/howtos/api-error-handling-and-reporting",
+      "guides/howtos/api-configuration-best-practices"]
+    },
+    {
+    "group": "Working with UTXO Model",
+    "pages": [
+      "guides/howtos/creating-utxo-transactions"]
     },
     {
       "group": "Custodial Wallet APIs",
