@@ -33,6 +33,7 @@ Python: https://github.com/CoboGlobal/cobo-python-api/blob/main/mpc_fund_collect
 ## Token Sweeping Logics
 
 1. Verify if the destination address is valid. If validation fails, please exit directly as the token sweeping will be marked as a failure.
+<CodeGroup>
 ```java Java
 ApiResponse<Boolean> response = mpcClient.isValidAddress(coin, toAddr);
         if (!response.isSuccess()) {
@@ -48,7 +49,10 @@ resp = self.mpc_client.is_valid_address(coin=coin, address=to_addr)
 if not resp or not resp.success or not resp.result:
 return False
 ```
+</CodeGroup>
+
 2. Query the coin type used for settling transaction fees.
+<CodeGroup>
 ```java Java
 ApiResponse<EstimateFeeDetails> feeResponse = mpcClient.estimateFee(coin, toAmount, toAddr, null);
         if (!feeResponse.isSuccess()) {
@@ -61,8 +65,9 @@ fee_resp = self.mpc_client.estimate_fee(coin=coin, amount=to_amount, address=to_
 if not resp:
        		return False
 ```
+</CodeGroup>
 3. Consolidate the balances of the queried coin type across all addresses under the MPC Wallet. If the aggregated balance falls below the estimated transaction fees amount, please exit directly as the token sweeping will be marked as a failure.
-
+<CodeGroup>
 ```java Java
    // Query the total number of addresses with remaining balances
         Integer pageIndex = 0;
@@ -92,7 +97,6 @@ if not resp:
             allBalanceAmount = allBalanceAmount.add(balance);
         }
 ```
-
 ```python Python
 
 page_index = 0
@@ -121,9 +125,11 @@ if all_balance_amount > to_amount:
                 if balance.get('address') == to_addr:
                     continue
 ```
+</CodeGroup>
 4. Transfer the balances of the specified coin type across all addresses to the destination address. The token sweeping process concludes when the total swept amount reaches the predefined threshold.
     1. When you sweep native tokens, the amount to sweep is computed based on the total address balances, your pre-set sweeping threshold, and the estimated transaction fees.
     2. When you sweep non-native tokens, verify first that "fromAddr" has sufficient balance to cover the estimated transaction fees. If insufficient, please transfer funds from "feeAddr" to "fromAddr" to ensure the success of token sweeping.
+<CodeGroup>
 ```java Java
 if (allBalanceAmount.compareTo(toAmount) >= 0) {
     BigInteger transferAllAmount = new BigInteger("0");
@@ -169,3 +175,4 @@ if all_balance_amount > to_amount:
         else:
             return False
 ```
+</CodeGroup>
