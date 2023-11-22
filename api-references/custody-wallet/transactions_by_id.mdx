@@ -19,45 +19,7 @@ description: "This endpoint returns a list of transactions filtered by various p
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
 <ResponseField name="result" type="object[ ]">
   <Expandable title="object">
-    <ResponseField name="id" type="String">Cobo Unique Transaction ID</ResponseField>
-    <ResponseField name="coin" type="String">Coin code (Cobo has internal symbols for each coin to ensure they are all unique)</ResponseField>
-    <ResponseField name="display_code" type="String">Coin ticker symbol  (not unique, changeable, for reference only )</ResponseField>
-    <ResponseField name="description" type="String">Full name of coin  (not unique, changeable, for reference only )</ResponseField>
-    <ResponseField name="address" type="String">Deposit address</ResponseField>
-    <ResponseField name="memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>
-    <ResponseField name="source_address" type="String">Source address</ResponseField>
-    <ResponseField name="source_address_detail" type="String">Separate by comma if more than one source address</ResponseField>
-    <ResponseField name="side" type="enum(deposit / withdraw)">Transaction type</ResponseField>
-    <ResponseField name="amount" type="String">Transaction value (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
-    <ResponseField name="decimal" type="Int">Amount decimal</ResponseField>
-    <ResponseField name="abs_amount" type="String">Transaction value (Note that this is an absolute value. If you trade 1.5 BTC, then the value is 1.5)</ResponseField>
-    <ResponseField name="abs_cobo_fee" type="String">lute fee value. For examle, abs_cobo_fee 0.00005 means exactly 0.00005BTC</ResponseField>
-    <ResponseField name="txid" type="String">Transaction ID, which can be found on the corresponding public chain</ResponseField>
-    <ResponseField name="vout_n" type="String">For transactions on public blockchains that allow for multiple deposit addresses in a single transaction, this value indicates the transaction index on the corresponding public blockchain</ResponseField>
-    <ResponseField name="request_id" type="String">Request ID</ResponseField>
-    <ResponseField name="status" type="enum(success / failed)">Transaction status</ResponseField>
-    <ResponseField name="request_created_time" type="Long">Withdraw request creation time</ResponseField>
-    <ResponseField name="created_time" type="Long">Transaction creation time</ResponseField>
-    <ResponseField name="last_time" type="Long">Transaction success/failure time</ResponseField>
-    <ResponseField name="confirming_threshold" type="Int">Confirmed numbers required for a successful transaction</ResponseField>
-    <ResponseField name="confirmed_num" type="Int">Confirmed numbers</ResponseField>
-    <ResponseField name="remark" type="String">Transaction remark</ResponseField>
-    <ResponseField name="tx_detail" type="object">
-      <Expandable title="object">
-        <ResponseField name="txid" type="string">transaction ID</ResponseField>
-        <ResponseField name="blocknum" type="Int">block height</ResponseField>
-        <ResponseField name="blockhash" type="string">block hash</ResponseField>
-        <ResponseField name="fee" type="Int">tx fee</ResponseField>
-        <ResponseField name="actualgas" type="Int">Actual Gas consumption, not denominated in Ethereum as a transaction fee.</ResponseField>
-        <ResponseField name="gasprice" type="Int">Gas price, not denominated in Ethereum is 1</ResponseField>
-        <ResponseField name="hexstr" type="Int">original transaction</ResponseField>
-      </Expandable>
-     </ResponseField>
-    <ResponseField name="fee_coin" type="String">Fee coin code</ResponseField>
-    <ResponseField name="fee_amount" type="Int">Fee amount (Note that the value here contains decimals. For example, a BTC value of 100,000,000 here is actually 1 BTC)</ResponseField>
-    <ResponseField name="fee_decimal" type="Int">Fee decimal</ResponseField>
-    <ResponseField name="type" type="String">external, internal shows if it's a Loop tx or external(on-chain)</ResponseField>
-    <ResponseField name="waiting_audit" type="Bool">This field is displayed when the transaction is pending, and true when the transaction is a deposit and needs to be reviewed</ResponseField>
+        <Snippet file="full_custodian_transaction_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
