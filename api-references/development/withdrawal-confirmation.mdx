@@ -29,6 +29,13 @@ Upon receiving a withdrawal request for 5 LONT_ONT, for instance, Cobo will init
 ```
 If you approve this withdrawal request, please respond with an HTTP status of 200 and set the message body to "ok."
 
+```json
+{
+  "status": 200,
+  "message": "ok"
+}
+```
+
 ### Things to note:
 
 1. To ensure system resilience against a single point of failure (SPOF), we strongly recommend using a dedicated server, such as a risk monitor, for processing withdrawal confirmations.

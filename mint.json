@@ -41,6 +41,10 @@
       "url": "api-references"
     },
     {
+      "name": "SDKs and Tools",
+      "url": "sdks-and-tools"
+    },
+    {
       "name": "Guides",
       "url": "guides"
     },
@@ -167,18 +171,18 @@
         {
           "group": "WaaS",
           "pages": [
-            "get-started/sdks/waas/python",
-            "get-started/sdks/waas/javascript",
-            "get-started/sdks/waas/java",
-            "get-started/sdks/waas/go",
-            "get-started/sdks/waas/php"
+            "sdks-and-tools/sdks/waas/python",
+            "sdks-and-tools/sdks/waas/javascript",
+            "sdks-and-tools/sdks/waas/java",
+            "sdks-and-tools/sdks/waas/go",
+            "sdks-and-tools/sdks/waas/php"
           ]
         },
         {
           "group": "Cobo Safe",
           "pages": [
-            "get-started/sdks/cobo-safe/python",
-            "get-started/sdks/cobo-safe/js"
+            "sdks-and-tools/sdks/cobo-safe/python",
+            "sdks-and-tools/sdks/cobo-safe/js"
           ]
         }
       ]
@@ -186,8 +190,8 @@
     {
       "group": "Tools",
       "pages": [
-        "get-started/tools/pycobosafe",
-        "get-started/tools/recovery-kit"
+        "sdks-and-tools/tools/pycobosafe",
+        "sdks-and-tools/tools/recovery-kit"
       ]
     },
     {
