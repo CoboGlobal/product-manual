@@ -1,6 +1,7 @@
 ---
 title: Unstake
 api: POST /v1/custody/staking_unstake/ 
+contentType: multipart/form-data
 description: "This endpoint allows users to stake or unstake a certain amount of a specified product in their custody wallet. The product_id and amount parameters are required in the POST request body. The endpoint first checks if the specified product exists, and then calls the pos_unstake method of the CustodyPosService to perform the staking or unstaking operation."
 ---
 #### Request 
