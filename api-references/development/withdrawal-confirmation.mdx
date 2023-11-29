@@ -8,7 +8,7 @@ Upon completing the verification of the withdrawal request and associated data, 
 
 Upon receiving a withdrawal request for 5 LONT_ONT, for instance, Cobo will initiate an HTTP POST request to the client-designated URL. The request body will be structured as follows:
 
-```json
+```json json
 {
   "id": "",
   "coin": "LONT_ONT",
@@ -28,6 +28,10 @@ Upon receiving a withdrawal request for 5 LONT_ONT, for instance, Cobo will init
 }
 ```
 If you approve this withdrawal request, please respond with an HTTP status of 200 and set the message body to "ok."
+
+```json json
+ok
+```
 
 ### Things to note:
 
