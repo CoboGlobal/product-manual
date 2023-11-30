@@ -1,6 +1,7 @@
 ---
 title: Transfer Among Exchange Account
 api: POST /v1/custody/trading_transfer/ 
+contentType: multipart/form-data
 description: "This endpoint allows authenticated traders to transfer funds between their exchange accounts. The request must include the 'from_exchange_account_token', 'to_exchange_account_token', 'coin', 'amount', and 'request_id' parameters. The response includes information about the transfer, such as the requested and estimated amounts, fees, and status."
 ---
 

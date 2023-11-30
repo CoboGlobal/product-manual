@@ -1,6 +1,7 @@
 ---
 title: Create Transaction
 api: POST /v1/custody/mpc/create_transaction/ 
+contentType: multipart/form-data
 description: "This endpoint creates a transaction for a given coin and request ID. The request must include the amount, from_address, and to_address. Optional parameters include fee, gas_price, gas_limit, max_fee, max_priority_fee, operation, and extra_parameters. The endpoint returns a JSON response with a 'cobo_id' field containing the ID of the created transaction."
 ---
 

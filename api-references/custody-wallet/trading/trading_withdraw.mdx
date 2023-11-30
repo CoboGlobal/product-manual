@@ -1,6 +1,7 @@
 ---
 title: Withdraw to Investor's Wallet
 api: POST /v1/custody/trading_withdraw/ 
+contentType: multipart/form-data
 description: "This endpoint allows users to withdraw funds from their exchange account. The user must provide their exchange account token, the coin they wish to withdraw, the amount they wish to withdraw, and a unique request ID. The endpoint returns a JSON response with information about the withdrawal, including the request ID, the coin, the absolute amount withdrawn, the estimated amount received, the withdrawal status, the absolute fee, and the fee."
 ---
 

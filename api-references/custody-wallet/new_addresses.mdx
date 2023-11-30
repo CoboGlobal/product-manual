@@ -1,6 +1,7 @@
 ---
 title: Get New Deposit Addresses
 api: "POST /v1/custody/new_addresses/"
+contentType: multipart/form-data
 description: "This endpoint generates new addresses for a given coin and returns them in a JSON response. The number of addresses to generate can be specified in the request body. The endpoint checks if the user has permission to add new addresses and if the requested number of addresses is within the allowed limit. It also checks if the requested coin is supported and generates the addresses using the specified wallet. The response contains the coin and a list of generated addresses."
 ---
 

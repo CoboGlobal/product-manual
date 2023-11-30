@@ -1,6 +1,7 @@
 ---
 title: Get New Deposit Address
 api: "POST /v1/custody/new_address/"
+contentType: multipart/form-data
 description: "This endpoint generates a new cryptocurrency address for a given coin and returns it in a JSON response. The endpoint requires authentication and takes in two parameters: 'coin' and 'native_segwit'. The 'coin' parameter specifies the cryptocurrency for which the address needs to be generated, and the 'native_segwit' parameter is a boolean flag indicating whether the address should be generated using native segwit format. The endpoint checks for permission and address count limits before generating the new address."
 ---
 

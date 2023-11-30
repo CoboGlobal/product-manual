@@ -1,6 +1,7 @@
 ---
 title: Speedup Transaction
 api: POST /v1/custody/mpc/speedup_transaction/ 
+contentType: multipart/form-data
 description: "This endpoint allows users to speed up a previously submitted transaction by replacing it with a new transaction with higher gas price. The endpoint accepts a POST request with parameters including cobo_id, request_id, fee, gas_price, gas_limit, and fee_amount. The response is a JSON object containing the updated transaction information."
 ---
 
