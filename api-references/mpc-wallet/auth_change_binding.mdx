@@ -1,6 +1,6 @@
 ---
 title: Change Binding
-api: POST /v1/custody/auth/change_binding/
+api: POST /v1/custody/guard/change_binding/
 contentType: multipart/form-data
 description: "This endpoint allows authenticated users to change their binding to a new Prime Broker. The user's `broker_user_id` is passed in the request body, and the new `binder_id` is returned in the JSON response."
 ---
@@ -20,7 +20,7 @@ description: "This endpoint allows authenticated users to change their binding t
 ```python Python
 request(
     "POST",
-    "/v1/custody/auth/change_binding/",
+    "/v1/custody/guard/change_binding/",
     {
         "user_id": "cobo_168108513539918"
     },
@@ -28,7 +28,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('POST', '/v1/custody/auth/change_binding/',
+coboFetch('POST', '/v1/custody/guard/change_binding/',
         {
            "user_id": "cobo_168108513539918"
         },
@@ -42,7 +42,7 @@ coboFetch('POST', '/v1/custody/auth/change_binding/',
     });
 ```
 ```go Go
-Request("POST", "/v1/custody/auth/change_binding/", map[string]string{
+Request("POST", "/v1/custody/guard/change_binding/", map[string]string{
     "user_id": "cobo_168108513539918"
 })
 ```

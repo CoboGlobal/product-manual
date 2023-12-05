@@ -1,6 +1,6 @@
 ---
 title: Bind Addresses
-api: POST /v1/custody/auth/bind_addresses/ 
+api: POST /v1/custody/guard/bind_addresses/
 contentType: multipart/form-data
 description: "This endpoint allows a prime broker to bind a list of chain addresses to a user account. The endpoint requires a POST request with a JSON payload containing the user ID and a list of chain addresses. If the payload is valid, the endpoint returns a JSON response with the result of the binding operation."
 ---
@@ -29,7 +29,7 @@ description: "This endpoint allows a prime broker to bind a list of chain addres
 ```python Python
 request(
     "POST",
-    "/v1/custody/auth/bind_addresses/",
+    "/v1/custody/guard/bind_addresses/",
     {
         "user_id": "cobo_168108513539918",
         "address": [{'chain_coin': 'VET', 'address': '0x4baf0837d4c8bccd79dfa6fd60f4985ef9b696cc'}]
@@ -38,7 +38,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('POST', '/v1/custody/auth/bind_addresses/',
+coboFetch('POST', '/v1/custody/guard/bind_addresses/',
         {
           "user_id": "cobo_168108513539918",
           "address": [{'chain_coin': 'VET', 'address': '0x4baf0837d4c8bccd79dfa6fd60f4985ef9b696cc'}]  
@@ -53,7 +53,7 @@ coboFetch('POST', '/v1/custody/auth/bind_addresses/',
     });
 ```
 ```go Go
-Request("POST", "/v1/custody/auth/bind_addresses/", map[string]string{
+Request("POST", "/v1/custody/guard/bind_addresses/", map[string]string{
     "user_id": "cobo_168108513539918",
     "address": [{'chain_coin': 'VET', 'address': '0x4baf0837d4c8bccd79dfa6fd60f4985ef9b696cc'}]
 })
