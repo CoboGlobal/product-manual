@@ -220,7 +220,10 @@
     {
     "group": "MPC Specific",
     "pages": [
-      "guides/howtos/auto-token-sweeping-for-mpc-wallets"]
+      "guides/howtos/auto-token-sweeping-for-mpc-wallets",
+      "guides/howtos/rbf"
+
+    ]
     },
     {
     "group": "Security Best Practices",

@@ -1,0 +1,104 @@
+---
+title: "Replace-By-Fee (RBF) in MPC Wallets"
+sidebarTitle: "RBF in MPC Wallets"
+---
+
+Replace-by-fee (RBF) is a feature that allows users to replace one version of an unconfirmed transaction with a different version of the transaction that pays a higher transaction fee.
+The benefits of RBF are that it allows users to modify the fee after the transaction has been broadcast to the network but before it is confirmed by miners,
+thereby enabling the acceleration of the current transaction onto the blockchain or its cancellation.
+
+RBF can be applied to transactions initiated from MPC Wallets only when they are in the following statuses:
+
+| Value | Status | Description |
+| ----------- | ----------- | ----------- |
+| 401| BROADCASTING | Broadcasting a transaction |
+| 402| BROADCAST_FAILED | Transaction failed to be broadcast on chain |
+| 403| PENDING_CONFIRMATION | Transaction has been broadcast but not yet confirmed  |
+
+Things to note:
+  - The fee for an RBF transaction needs to be 15% higher than the original transaction fee.
+  - If you have already created an RBF transaction and wish to further increase the transaction fee, we highly recommend creating a new RBF transaction based on the latest transaction, rather than directly applying RBF to the original transaction.
+    This ensures a higher transaction fee for your new transaction, increasing its likelihood of acceptance by miners.
+  - We also support reapplying RBF to the original transaction. In this case, please note that the fee for the latest RBF transaction must be at least 15% higher than that for the previous RBF transaction.
+
+
+## Code Samples
+
+### Speeding up MPC transactions with RBF
+
+If your transaction is experiencing delays in being confirmed on the blockchain, you can use RBF to accelerate the process.
+This allows you to resend the same transaction with a higher fee to replace the original one.
+
+```python Python
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+from cobo_custody.client.mpc_client import MPCClient
+
+api_secret = "your api secret"  # your wallet api secret
+
+# init cobo client
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+request_id = str(int(time.time() * 1000))
+eth_tx_cobo_id = "20231113154933000386496000009513"
+
+response = mpc_client.speedup_transaction(cobo_id=eth_tx_cobo_id, request_id=request_id,                                                  gas_price=20000, gas_limit=21000)
+print(f"speedup transaction result: {response.result}")
+```
+
+### Canceling MPC transactions with RBF
+You can use RBF to cancel an original transaction by setting the transaction amount in the new RBF transaction to zero, ensuring that the receiving address matches the sending address, and simultaneously increasing the transaction fee.
+This will render the new RBF transaction invalid while providing sufficient information to cancel the original transaction.
+
+```python Python
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+from cobo_custody.client.mpc_client import MPCClient
+
+api_secret = "your api secret"  # your wallet api secret
+
+# init cobo client
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+request_id = str(int(time.time() * 1000))
+eth_tx_cobo_id = "20231113154933000386496000009513"
+
+response = mpc_client.drop_transaction(cobo_id=eth_tx_cobo_id, request_id=request_id,                                                  gas_price=20000, gas_limit=21000)
+print(f"drop transaction result: {response.result}")
+```
+
+### Locating a transaction to apply RBF when there are multiple unconfirmed transactions for a single address
+ - Retrieve all unconfirmed transactions under the given address that have a status of 402 or 403 (Note: RBF can also be applied to transactions with a status of 401, but as transactions with a 401 status will transition to 402 or 403 shortly, there is no need to filter transactions with a 401 status).
+ - Locate all unconfirmed transactions with statuses 501 and 900, identify the transaction among these that has the largest nonce. The nonce of the transaction you are trying to locate should then be this nonce + 1.
+ - Apply RBF to the identified transaction using a higher transaction fee.
+ - Verify whether the RBF transaction has been broadcast on the blockchain and confirmed by miners. If not, reapply RBF to the identified transaction.
+
+```python Python
+from cobo_custody.config import DEV_ENV
+from cobo_custody.signer.local_signer import LocalSigner
+from cobo_custody.client.mpc_client import MPCClient
+
+api_secret = "your api secret"  # your wallet api secret
+
+# init cobo client
+mpc_client = MPCClient(signer=LocalSigner(api_secret), env=DEV_ENV, debug=False)
+
+# get transactions in status 402 and 403
+address = "you address"
+broadcast_failed_txs = mpc_client.list_transactions(from_address=address, status=402).result["transactions"]
+pending_confirmation_txs = mpc_client.list_transactions(from_address=address, status=403).result["transactions"]
+
+if broadcast_failed_txs or pending_confirmation_txs:
+    pending_txs = broadcast_failed_txs + pending_confirmation_txs
+
+    minimum_nonce = pending_txs[0]["nonce"]
+    tx_should_be_replaced = pending_txs[0]["cobo_id"]
+    for tx in pending_txs[1:]:
+        if tx["nonce"] < minimum_nonce:
+            minimum_nonce = tx["nonce"]
+            tx_should_be_replaced = tx["cobo_id"]
+
+    print("tx_should_be_replaced: ", tx_should_be_replaced)
+    print("minimum_nonce: ", minimum_nonce)
+
+    # on the next you may speedup or drop the tx with an appropriate fee
+```
