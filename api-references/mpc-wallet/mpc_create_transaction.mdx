@@ -24,6 +24,7 @@ to_address_details: '[{"to_address": "2N4J1WajwKZKpRtzzUmaW9B5GEqkppqdVY9","amou
 </ParamField>
 
 <ParamField body="fee" type="Float" >transaction fees per byte; applicable to UTXO model</ParamField>
+<Tip>If you have previously called the `estimate_fee` API to obtain an estimated fee for UTXO transactions before creating the transaction, please use the `fee_amount` parameter instead of `fee` to specify the transaction fee. Otherwise, it will re-estimate the transaction fee based on the `fee` parameter when creating the transaction.</Tip>
 <ParamField body="gas_price" type="Int" >gas price; applicable to ETH; unit: wei</ParamField>
 <ParamField body="gas_limit" type="Int" >gas limit, applicable to ETH</ParamField>
 <ParamField body="operation" type="Int" >
