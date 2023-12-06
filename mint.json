@@ -221,8 +221,8 @@
     "group": "MPC Specific",
     "pages": [
       "guides/howtos/auto-token-sweeping-for-mpc-wallets",
+      "guides/howtos/creating-web3-transactions",
       "guides/howtos/rbf"
-
     ]
     },
     {
