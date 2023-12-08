@@ -1,6 +1,6 @@
 ---
 title: Query User Auth
-api: GET /v1/custody/auth/query_user_auth/ 
+api: GET /v1/custody/guard/query_user_auth/
 description: "This endpoint is a GET request that requires a 'user_id' parameter. It returns a JSON response containing the user's authentication information queried from PrimeBrokerManager. Authentication is required to access this endpoint."
 ---
 
@@ -27,7 +27,7 @@ description: "This endpoint is a GET request that requires a 'user_id' parameter
 ```python Python
 request(
     "GET",
-    "/v1/custody/auth/query_user_auth/",
+    "/v1/custody/guard/query_user_auth/",
     {
         "user_id": "cobo_168108513539918"
     },
@@ -35,7 +35,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('GET', '/v1/custody/auth/query_user_auth/',
+coboFetch('GET', '/v1/custody/guard/query_user_auth/',
         {
             "user_id": "cobo_168108513539918"
         },
@@ -49,7 +49,7 @@ coboFetch('GET', '/v1/custody/auth/query_user_auth/',
     });
 ```
 ```go Go
-Request("GET", "/v1/custody/auth/query_user_auth/", map[string]string{
+Request("GET", "/v1/custody/guard/query_user_auth/", map[string]string{
     "user_id": "cobo_168108513539918"
 })
 ```

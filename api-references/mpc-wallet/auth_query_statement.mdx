@@ -1,6 +1,6 @@
 ---
 title: Query Statement By ID
-api: GET /v1/custody/auth/query_statement/ 
+api: GET /v1/custody/guard/query_statement/
 description: "This endpoint allows authenticated users to query a statement by providing a statement ID. The response is a JSON object containing information about the statement, including its ID, creation time, and a list of transactions. The endpoint requires the user to have query permission."
 ---
 #### Request
@@ -21,7 +21,7 @@ description: "This endpoint allows authenticated users to query a statement by p
 ```python Python
 request(
     "GET",
-    "/v1/custody/auth/query_statement/",
+    "/v1/custody/guard/query_statement/",
     {
         "statement_id": "ABeWuAV7N2cwyWSxj3FW6gqcbUoqok8WzRHguqShLtXYVrmuEXWiPrcFBTJcPX24Q1CmZrxJiJCvZPTNK5ptqMhyXAuAbtRH6isJjG5Pq21jYzhCVGUoUVPHY5HTgDFCsrgFDsDVXGqUGi3ieWr26GWuAZUKX4L7s5kY"
     },
@@ -29,7 +29,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('GET', '/v1/custody/auth/query_statement/',
+coboFetch('GET', '/v1/custody/guard/query_statement/',
         {
             "statement_id": "ABeWuAV7N2cwyWSxj3FW6gqcbUoqok8WzRHguqShLtXYVrmuEXWiPrcFBTJcPX24Q1CmZrxJiJCvZPTNK5ptqMhyXAuAbtRH6isJjG5Pq21jYzhCVGUoUVPHY5HTgDFCsrgFDsDVXGqUGi3ieWr26GWuAZUKX4L7s5kY"
         },
@@ -43,7 +43,7 @@ coboFetch('GET', '/v1/custody/auth/query_statement/',
     });
 ```
 ```go Go
-Request("GET", "/v1/custody/auth/query_statement/", map[string]string{
+Request("GET", "/v1/custody/guard/query_statement/", map[string]string{
     "statement_id": "ABeWuAV7N2cwyWSxj3FW6gqcbUoqok8WzRHguqShLtXYVrmuEXWiPrcFBTJcPX24Q1CmZrxJiJCvZPTNK5ptqMhyXAuAbtRH6isJjG5Pq21jYzhCVGUoUVPHY5HTgDFCsrgFDsDVXGqUGi3ieWr26GWuAZUKX4L7s5kY"
 })
 ```

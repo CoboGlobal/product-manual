@@ -324,6 +324,7 @@
             "api-references/mpc-wallet/mpc_list_balances",
             "api-references/mpc-wallet/mpc_list_spendable",
             "api-references/mpc-wallet/mpc_estimate_fee",
+            "api-references/mpc-wallet/mpc_get_max_send_amount",
             "api-references/mpc-wallet/mpc_get_supported_nft_collections"
           ]
         },

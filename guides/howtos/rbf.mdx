@@ -29,6 +29,7 @@ Things to note:
 If your transaction is experiencing delays in being confirmed on the blockchain, you can use RBF to accelerate the process.
 This allows you to resend the same transaction with a higher fee to replace the original one.
 
+<CodeGroup>
 ```python Python
 from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
@@ -44,11 +45,48 @@ eth_tx_cobo_id = "20231113154933000386496000009513"
 response = mpc_client.speedup_transaction(cobo_id=eth_tx_cobo_id, request_id=request_id,                                                  gas_price=20000, gas_limit=21000)
 print(f"speedup transaction result: {response.result}")
 ```
+``` java Java
+package com.cobo.custody.api.client.impl;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.transaction.MPCPostTransaction;
+
+public class CobоCustodyApiClientExample {
+    public static void main(String[] args) {
+        String apiSecret = "your_api_secret"; // your wallet api secret
+
+        // init client
+        CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
+                new LocalSigner(apiSecret),
+                Env.DEV,
+                false).newMPCRestClient();
+
+        // speedup transaction
+        String coboId = "cobo_id of the transaction to speedup";
+        String requestId = String.valueOf(System.currentTimeMillis());
+        BigDecimal fee = null;
+        BigInteger gasPrice = new BigInteger("6500000000");
+        BigInteger gasLimit = new BigInteger("21000");
+        BigInteger feeAmount = null;
+
+        ApiResponse<MPCPostTransaction> res = mpcClient.speedUpTransaction(coboId, requestId, fee, gasPrice, gasLimit, feeAmount);
+        System.out.println("speedup transaction: " + res.getResult());
+    }
+}
+```
+</CodeGroup><br />
 
 ### Canceling MPC transactions with RBF
 You can use RBF to cancel an original transaction by setting the transaction amount in the new RBF transaction to zero, ensuring that the receiving address matches the sending address, and simultaneously increasing the transaction fee.
 This will render the new RBF transaction invalid while providing sufficient information to cancel the original transaction.
 
+<CodeGroup>
 ```python Python
 from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
@@ -65,6 +103,42 @@ eth_tx_cobo_id = "20231113154933000386496000009513"
 response = mpc_client.drop_transaction(cobo_id=eth_tx_cobo_id, request_id=request_id,                                                  gas_price=20000, gas_limit=21000)
 print(f"drop transaction result: {response.result}")
 ```
+``` java Java
+package com.cobo.custody.api.client.impl;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import com.cobo.custody.api.client.CoboApiClientFactory;
+import com.cobo.custody.api.client.CoboMPCApiRestClient;
+import com.cobo.custody.api.client.config.Env;
+import com.cobo.custody.api.client.domain.ApiResponse;
+import com.cobo.custody.api.client.domain.transaction.MPCPostTransaction;
+
+public class CobоCustodyApiClientExample {
+    public static void main(String[] args) {
+        String apiSecret = "your_api_secret"; // your wallet api secret
+
+        // init client
+        CoboMPCApiRestClient mpcClient = CoboApiClientFactory.newInstance(
+                new LocalSigner(apiSecret),
+                Env.DEV,
+                false).newMPCRestClient();
+
+        // drop transaction
+        String coboId = "cobo_id of the transaction to drop";
+        String requestId = String.valueOf(System.currentTimeMillis());
+        BigDecimal fee = null;
+        BigInteger gasPrice = new BigInteger("6500000000");
+        BigInteger gasLimit = new BigInteger("21000");
+        BigInteger feeAmount = null;
+
+        ApiResponse<MPCPostTransaction> res = mpcClient.dropTransaction(coboId, requestId, fee, gasPrice, gasLimit, feeAmount);
+        System.out.println("drop transaction: " + res.getResult());
+    }
+}
+```
+</CodeGroup><br />
 
 ### Locating a transaction to apply RBF when there are multiple unconfirmed transactions for a single address
  - Retrieve all unconfirmed transactions under the given address that have a status of 402 or 403 (Note: RBF can also be applied to transactions with a status of 401, but as transactions with a 401 status will transition to 402 or 403 shortly, there is no need to filter transactions with a 401 status).
@@ -72,6 +146,7 @@ print(f"drop transaction result: {response.result}")
  - Apply RBF to the identified transaction using a higher transaction fee.
  - Verify whether the RBF transaction has been broadcast on the blockchain and confirmed by miners. If not, reapply RBF to the identified transaction.
 
+<CodeGroup>
 ```python Python
 from cobo_custody.config import DEV_ENV
 from cobo_custody.signer.local_signer import LocalSigner
@@ -102,3 +177,4 @@ if broadcast_failed_txs or pending_confirmation_txs:
 
     # on the next you may speedup or drop the tx with an appropriate fee
 ```
+</CodeGroup><br />
