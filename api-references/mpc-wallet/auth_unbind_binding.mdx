@@ -1,6 +1,6 @@
 ---
 title: Unbind Binding
-api: POST /v1/custody/auth/unbind_binding/
+api: POST /v1/custody/guard/unbind_binding/
 contentType: multipart/form-data
 description: "This endpoint allows users to unbind their broker account from their MPC Wallet account. It requires a POST request with a 'user_id' field in the request body. The response is a JSON object containing a 'statement_id' field which can be used to query the status of the unbinding process."
 ---
@@ -21,7 +21,7 @@ description: "This endpoint allows users to unbind their broker account from the
 ```python Python
 request(
     "POST",
-    "/v1/custody/auth/unbind_binding/",
+    "/v1/custody/guard/unbind_binding/",
     {
         "user_id": "cobo_168108513539918"
     },
@@ -29,7 +29,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('POST', '/v1/custody/auth/unbind_binding/',
+coboFetch('POST', '/v1/custody/guard/unbind_binding/',
         {
             "user_id": "cobo_168108513539918"
         },
@@ -43,7 +43,7 @@ coboFetch('POST', '/v1/custody/auth/unbind_binding/',
     });
 ```
 ```go Go
-Request("POST", "/v1/custody/auth/unbind_binding/", map[string]string{
+Request("POST", "/v1/custody/guard/unbind_binding/", map[string]string{
     "user_id": "cobo_168108513539918"
 })
 ```

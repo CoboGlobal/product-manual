@@ -1,6 +1,6 @@
 ---
 title: Query Binding
-api: GET /v1/custody/auth/query_binding/ 
+api: GET /v1/custody/guard/query_binding/
 description: "This endpoint returns a JSON response with the binding information for a given binder ID. The endpoint requires authentication and the user must have query permission. The binder ID is passed as a parameter in the GET request."
 ---
 
@@ -28,7 +28,7 @@ description: "This endpoint returns a JSON response with the binding information
 ```python Python
 request(
     "GET",
-    "/v1/custody/auth/query_binding/",
+    "/v1/custody/guard/query_binding/",
     {
         "binder_id": "Ph8YP+LTQyqcfHE/A+eXUw=="
     },
@@ -36,7 +36,7 @@ request(
 )
 ```
 ```javascript JavaScript
-coboFetch('GET', '/v1/custody/auth/query_binding/',
+coboFetch('GET', '/v1/custody/guard/query_binding/',
         {
             "binder_id": "Ph8YP+LTQyqcfHE/A+eXUw=="
         },
@@ -50,7 +50,7 @@ coboFetch('GET', '/v1/custody/auth/query_binding/',
     });
 ```
 ```go Go
-Request("GET", "/v1/custody/auth/query_binding/", map[string]string{
+Request("GET", "/v1/custody/guard/query_binding/", map[string]string{
     "binder_id": "Ph8YP+LTQyqcfHE/A+eXUw=="
 })
 ```
