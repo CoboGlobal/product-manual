@@ -15,7 +15,7 @@ description: "This endpoint returns a JSON response with a list of token assets 
    <ResponseField name="result" type="object">
       <Expandable title="object">
 
-        <ResponseField name="coin_data" type="object[ ]">
+        <ResponseField name="coin_data" type="object[]">
             <Expandable title="object">
                 <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
                 <ResponseField name="coin" type="String" >The asset coin of the coin.</ResponseField>
@@ -27,7 +27,7 @@ description: "This endpoint returns a JSON response with a list of token assets 
             </Expandable>
         </ResponseField>
 
-        <ResponseField name="nft_data" type="object[ ]">
+        <ResponseField name="nft_data" type="object[]">
             <Expandable title="object">
                 <ResponseField name="address" type="String" >The address of the coin.</ResponseField>
                 <ResponseField name="nft_code" type="String" >The NFT code.</ResponseField>

@@ -4,7 +4,7 @@ api: "GET /v1/custody/get_supported_coins/"
 description: This endpoint returns a JSON response with a list of supported coins for the WaaS API.
 ---
 
-<Tip> FAQ：[How do I query the minimum deposit amount for a specific coin?](/faqs/waas#how-do-i-query-the-minimum-deposit-amount-for-a-specific-coin)</Tip>
+<Tip> FAQ：[How do I query the minimum deposit amount for a specific coin?](/faqs/coin-management#how-do-i-query-the-minimum-deposit-amount-for-a-specific-coin)</Tip>
 
 
 #### Request
@@ -14,7 +14,7 @@ None
 #### Response
 
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
-<ResponseField name="result" type="object[ ]">
+<ResponseField name="result" type="object[]">
 <Expandable title="object">
 <ResponseField name="coin" type="String">The coin symbol.</ResponseField>
 <ResponseField name="display_code" type="String">Coin ticker symbol (not unique, changeable, for reference only )</ResponseField>

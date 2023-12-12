@@ -15,7 +15,7 @@ description: "This endpoint allows a prime broker to bind a list of chain addres
       <Expandable title="object">
 
         <ResponseField name="pubkey" type="String" >The bound Auth public key, or empty if the binder_id has expired</ResponseField>
-        <ResponseField name="addresses" type="object[ ]" >
+        <ResponseField name="addresses" type="object[]" >
           <Expandable title="object">
             <ResponseField name="chain_coin" type="String" >bound coin</ResponseField>
             <ResponseField name="address" type="String" >bound address</ResponseField>
