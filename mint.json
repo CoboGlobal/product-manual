@@ -222,6 +222,7 @@
     "pages": [
       "guides/howtos/auto-token-sweeping-for-mpc-wallets",
       "guides/howtos/creating-web3-transactions",
+      "guides/howtos/estimate-transaction-fees",
       "guides/howtos/rbf"
     ]
     },
