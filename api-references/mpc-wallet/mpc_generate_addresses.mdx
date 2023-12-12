@@ -4,7 +4,8 @@ api: POST /v1/custody/mpc/generate_addresses/
 contentType: multipart/form-data
 description: "This endpoint generates new addresses for a given chain code and returns a list of the generated addresses. The number of addresses to generate is specified in the 'count' parameter of the POST request. The maximum number of addresses that can be generated in one request is 200. The endpoint also checks if the organization has permission to add addresses and if the number of addresses being added exceeds the minutely limit. The response contains a list of the generated addresses along with their IDs, HD paths, and encodings."
 ---
-<Tip> FAQ：[How to batch-generate addresses?](/faqs/waas#how-to-batch-generate-addresses)</Tip>
+
+<Tip> FAQ：[How to batch-generate addresses?](/faqs/address-management#how-to-batch-generate-addresses)</Tip>
 
 #### Request
 
@@ -15,7 +16,7 @@ description: "This endpoint generates new addresses for a given chain code and r
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
    <ResponseField name="result" type="object">
       <Expandable title="object">
-        <ResponseField name="addresses" type="object[ ]">
+        <ResponseField name="addresses" type="object[]">
             <Expandable title="object">
                 <ResponseField name="id" type="String" >The ID of the generated address.</ResponseField>
                 <ResponseField name="address" type="String" >The generated address.</ResponseField>
