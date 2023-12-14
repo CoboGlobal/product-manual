@@ -49,6 +49,7 @@ extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869
         <ResponseField name="slow" type="object">
             <Expandable title="object">
             <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
+            <ResponseField name="fee_amount" type="Int" >transaction fee; applicable to the UTXO model</ResponseField>
             <ResponseField name="gas_price" type="Int" >gas price for account model</ResponseField>
             <ResponseField name="gas_limit" type="Int" >gas limit for account model</ResponseField>
             </Expandable>
@@ -57,6 +58,7 @@ extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869
         <ResponseField name="average" type="object">
             <Expandable title="object">
             <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
+            <ResponseField name="fee_amount" type="Int" >transaction fee; applicable to the UTXO model</ResponseField>
             <ResponseField name="gas_price" type="Int" >gas price for account model</ResponseField>
             <ResponseField name="gas_limit" type="Int" >gas limit for account model</ResponseField>
             </Expandable>
@@ -65,6 +67,7 @@ extra_parameters: '{"calldata": "0xa8059cbb000000000000000000000000971948873f869
         <ResponseField name="fast" type="object">
             <Expandable title="object">
             <ResponseField name="fee_per_byte" type="Int" >transaction fees per byte; applicable to the UTXO model</ResponseField>
+            <ResponseField name="fee_amount" type="Int" >transaction fee; applicable to the UTXO model</ResponseField>
             <ResponseField name="gas_price" type="Int" >gas price for account model</ResponseField>
             <ResponseField name="gas_limit" type="Int" >gas limit for account model</ResponseField>
             </Expandable>
@@ -116,16 +119,19 @@ Request("GET", "/v1/custody/mpc/estimate_fee/", map[string]string{
   "result": {
     "slow": {
       "fee_per_byte": 0,
+      "fee_amount": 0,
       "gas_price": 13349966041,
       "gas_limit": 21000
     },
     "average": {
       "fee_per_byte": 0,
+      "fee_amount": 0,
       "gas_price": 13349966041,
       "gas_limit": 21000
     },
     "fast": {
       "fee_per_byte": 0,
+      "fee_amount": 0,
       "gas_price": 26699932082,
       "gas_limit": 42000
     }
