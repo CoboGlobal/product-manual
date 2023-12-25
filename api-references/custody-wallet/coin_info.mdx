@@ -8,8 +8,8 @@ description: "This endpoint returns a JSON response with the currency rate and u
 
 
 #### Request
-
 <ParamField query="coin" type="String" required>Coin code</ParamField>
+<ParamField query="amount" type="Int">the amount you wish to send(can be used to estimate transaction fees)</ParamField>
 
 #### Response
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>
@@ -25,6 +25,7 @@ description: "This endpoint returns a JSON response with the currency rate and u
         <ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
         <ResponseField name="fee_coin" type="String">Coin used for fee</ResponseField>
         <ResponseField name="abs_estimate_fee" type="String">Estimated fee</ResponseField>
+        <ResponseField name="abs_estimate_fee_usd" type="String">Estimated fee(Convert to USD calculation) </ResponseField>
         <ResponseField name="confirming_threshold" type="Int">Confirmation threshold required for the coin</ResponseField>
         <ResponseField name="dust_threshold" type="Int">Coin minimum withdrawal threshold</ResponseField>
         <ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
@@ -39,7 +40,8 @@ request(
   "GET",
   "/v1/custody/coin_info/",
   {
-    "coin": "ETH"
+    "coin": "ETH",
+    "amount": 1000000000000000000
   },
   api_key, api_secret, host
 )
@@ -47,7 +49,8 @@ request(
 
 ```javascript JavaScript
 coboFetch('GET', '/v1/custody/coin_info/', {
-    "coin": "ETH"
+    "coin": "ETH",
+    "amount": 1000000000000000000
 }, api_key, api_secret, host)
     .then(res => {
         res.json().then((data)=>{
@@ -61,6 +64,7 @@ coboFetch('GET', '/v1/custody/coin_info/', {
 ```go Go
 Request("GET", "/v1/custody/coin_info/", map[string]string{
     "coin": "ETH",
+    "amount": 1000000000000000000
 })
 ```
 
@@ -82,6 +86,7 @@ Request("GET", "/v1/custody/coin_info/", map[string]string{
     "abs_balance": "0",
     "fee_coin": "ETH",
     "abs_estimate_fee": "0.0003648",
+    "abs_estimate_fee_usd": "5.67",
     "confirming_threshold": 12,
     "dust_threshold": 0,
     "token_address": ""
