@@ -4,7 +4,7 @@ api: "GET /v1/custody/coin_info/"
 description: "This endpoint returns a JSON response with the currency rate and unit for a given coin code. The endpoint requires authentication and takes a 'coin_code' parameter in the GET request."
 ---
 
-<Tip> FAQ：[How do I query the withdrawal fees?](/faqs/coin-management#how-do-i-query-the-withdrawal-fees)</Tip>
+<Tip> FAQ：[How do I query the withdraw fees?](/faqs/coin-management#how-do-i-query-the-withdrawal-fees)</Tip>
 
 
 #### Request
@@ -20,14 +20,14 @@ description: "This endpoint returns a JSON response with the currency rate and u
         <ResponseField name="description" type="String">Coin code</ResponseField>
         <ResponseField name="decimal" type="Int">Coin balance decimal places</ResponseField>
         <ResponseField name="can_deposit" type="bool">Deposit accessibility</ResponseField>
-        <ResponseField name="can_withdraw" type="bool">Withdrawal accessibility</ResponseField>
+        <ResponseField name="can_withdraw" type="bool">Withdraw accessibility</ResponseField>
         <ResponseField name="balance" type="String">Current balance</ResponseField>
         <ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
         <ResponseField name="fee_coin" type="String">Coin used for fee</ResponseField>
         <ResponseField name="abs_estimate_fee" type="String">Estimated fee</ResponseField>
         <ResponseField name="abs_estimate_fee_usd" type="String">Estimated fee(Convert to USD calculation) </ResponseField>
         <ResponseField name="confirming_threshold" type="Int">Confirmation threshold required for the coin</ResponseField>
-        <ResponseField name="dust_threshold" type="Int">Coin minimum withdrawal threshold</ResponseField>
+        <ResponseField name="dust_threshold" type="Int">Coin minimum withdraw threshold</ResponseField>
         <ResponseField name="minimum_deposit_threshold" type="String">Coin minimum deposit threshold</ResponseField>
         <ResponseField name="token_address" type="String">Smart contract address for token (null for main-chain token)</ResponseField>
         <ResponseField name="require_memo" type="String">Memo for specified coins(EOS,XLM,XRP,IOST)</ResponseField>

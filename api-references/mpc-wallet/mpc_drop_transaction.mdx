@@ -14,6 +14,8 @@ description: "This endpoint accepts parameters 'cobo_id' and 'request_id' as req
 <ParamField body="gas_price" type="Int" >Gas price; must be higher than the original gas price</ParamField>
 <ParamField body="gas_limit" type="Int" >Gas limit</ParamField>
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model</ParamField>
+<ParamField query="auto_fuel" type="Int">How the transaction utilizes the gas station, 0: no refueling(default); 1: passive use of the gas station; 2: active use of the gas station.</ParamField>
+<Tip>The gas station will definitely refuel for the transaction when in active use, while for passive use, refueling by the gas station occurs only when the address balance is insufficient for transaction fees.</Tip>
 
 
 #### Response

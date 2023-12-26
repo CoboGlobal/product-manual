@@ -1,19 +1,19 @@
 ---
-title: "Deposit and Withdrawal Processes"
-sidebarTitle: "Deposit and Withdrawal Processes"
-"og:title": "Deposit and Withdrawal Processes"
-"og:description": " Discover the withdrawal and deposit processes for both Custodial Wallets and MPC Wallets."
+title: "Deposit and Withdraw Processes"
+sidebarTitle: "Deposit and Withdraw Processes"
+"og:title": "Deposit and Withdraw Processes"
+"og:description": " Discover the withdraw and deposit processes for both Custodial Wallets and MPC Wallets."
 ---
 
 For digital asset custodians, crypto transactions can be broadly categorized into two types: withdrawals and deposits.
-A withdrawal transaction is initiated by the client directly on the Cobo platform.
+A withdraw transaction is initiated by the client directly on the Cobo platform.
 Conversely, a deposit transaction is initiated by a third party, wherein the receiving address is associated with a Cobo Custodial Wallet and/or an MPC Wallet.
 
-### Withdrawal process for Custodial Wallets and MPC Wallets:
+### Withdraw process for Custodial Wallets and MPC Wallets:
 
 <img src="/images/custodial-wallet-withdrawal-process.png" />
 
-Notes for withdrawal transactions initiated from Custodial Wallets:
+Notes for withdraw transactions initiated from Custodial Wallets:
  - The transaction status that can be queried includes "success" and "failed" (applicable to both API calls and API callbacks).
  - If you tick "Push Pending Transaction" under Transaction Notification on the Cobo Custody Web, you will receive a push notification whenever there is a change in the number of block confirmations for a specific transaction. The notification will indicate the transaction status as 'pending' and include essential details such as the number of confirmed blocks and the threshold. Please note that each notification for a given number change will be sent only once.
  - You can also check the number of confirmed blocks for a specific transaction by navigating to the "Transactions" tab on the Cobo Custody Web.

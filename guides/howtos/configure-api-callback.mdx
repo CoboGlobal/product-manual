@@ -5,16 +5,16 @@ sidebarTitle: "Configuring API Callback "
 "og:description": "Explore the workflow to set up API callback service on Cobo. Learn best security practices for deploying your API server. "
 ---
 
-API callback is a service provided by Cobo to its clients, delivering push messages to a client-designated callback URL when an event is triggered (e.g., a new deposit or withdrawal).
+API callback is a service provided by Cobo to its clients, delivering push messages to a client-designated callback URL when an event is triggered (e.g., a new deposit or withdraw).
 API callback is commonly used for event-driven architectures and is particularly useful when immediate responses are needed.
 To use API callback on Cobo, the client will need to first set up the API callback service and configure a specific URL on the Cobo Custody Web.
-Currently, Cobo supports two types of API callback: Transaction Notification and Withdrawal Confirmation.
+Currently, Cobo supports two types of API callback: Transaction Notification and Withdraw Confirmation.
 
-**Transaction Notification:** When a deposit/withdrawal transaction is scanned on chain by Cobo, it will send a push message to an URL specified by the client.
+**Transaction Notification:** When a deposit/withdraw transaction is scanned on chain by Cobo, it will send a push message to an URL specified by the client.
 This serves to provide clients with real-time updates on all transactions and aid in transaction reconciliation. For more information, please [click here](/api-references/development/transaction-notification).
 
-**Withdrawal Confirmation:** Cobo will send a push message to the callback URL using the POST method, containing withdrawal details.
-Clients are required to respond to Cobo in the RESPONSE format, indicating either 'OK' or 'Deny' in the message body. If no response or a 'Deny' response is provided, the withdrawal request will be rejected.
+**Withdraw Confirmation:** Cobo will send a push message to the callback URL using the POST method, containing withdraw details.
+Clients are required to respond to Cobo in the RESPONSE format, indicating either 'OK' or 'Deny' in the message body. If no response or a 'Deny' response is provided, the withdraw request will be rejected.
 For more information, please [click here](/api-references/development/withdrawal-confirmation).
 
 The following provides instructions on configuring the API callback service, along with code samples for callback endpoints.

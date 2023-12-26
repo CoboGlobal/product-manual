@@ -1,12 +1,12 @@
 ---
-title: "Withdrawal Confirmation"
+title: "Withdraw Confirmation"
 description: ""
 ---
-Upon receiving a withdrawal request, Cobo will initiate the verification process by sending a push message to a client-specified URL via HTTP(S) using the POST request method. The push message contains withdrawal data in JSON format within the HTTP message body.
+Upon receiving a withdraw request, Cobo will initiate the verification process by sending a push message to a client-specified URL via HTTP(S) using the POST request method. The push message contains withdraw data in JSON format within the HTTP message body.
 
-Upon completing the verification of the withdrawal request and associated data, the client is required to respond promptly with an HTTP status of 200. The response should include an HTTP body containing either 'ok' to indicate approval or 'deny' to signify rejection. Failure to provide this response will result in continued pushes of the same message to the designated URL. Kindly note that your timely response is crucial for the efficient processing of a withdrawal request.
+Upon completing the verification of the withdraw request and associated data, the client is required to respond promptly with an HTTP status of 200. The response should include an HTTP body containing either 'ok' to indicate approval or 'deny' to signify rejection. Failure to provide this response will result in continued pushes of the same message to the designated URL. Kindly note that your timely response is crucial for the efficient processing of a withdraw request.
 
-Upon receiving a withdrawal request for 5 LONT_ONT, for instance, Cobo will initiate an HTTP POST request to the client-designated URL. The request body will be structured as follows:
+Upon receiving a withdraw request for 5 LONT_ONT, for instance, Cobo will initiate an HTTP POST request to the client-designated URL. The request body will be structured as follows:
 
 ```json json
 {
@@ -27,7 +27,7 @@ Upon receiving a withdrawal request for 5 LONT_ONT, for instance, Cobo will init
   "last_time": 1537843965164
 }
 ```
-If you approve this withdrawal request, please respond with an HTTP status of 200 and set the message body to "ok."
+If you approve this withdraw request, please respond with an HTTP status of 200 and set the message body to "ok."
 
 ```json json
 ok
@@ -35,9 +35,9 @@ ok
 
 ### Things to note:
 
-1. To ensure system resilience against a single point of failure (SPOF), we strongly recommend using a dedicated server, such as a risk monitor, for processing withdrawal confirmations.
+1. To ensure system resilience against a single point of failure (SPOF), we strongly recommend using a dedicated server, such as a risk monitor, for processing withdraw confirmations.
 
-2. Please validate the legitimacy of each withdrawal request by carefully reviewing key parameters, including request_id, to_address, and amount.
+2. Please validate the legitimacy of each withdraw request by carefully reviewing key parameters, including request_id, to_address, and amount.
 
 3. For security reasons, we strongly recommend using HTTPS and Cobo's public key for signature verification. Detailed instructions can be found in our [guide](/api-references/development/callback-signature). Please ensure that you are operating in the correct environment during the verification process.
 
