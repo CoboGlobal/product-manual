@@ -323,6 +323,7 @@
             "api-references/mpc-wallet/mpc_get_wallet_supported_coins",
             "api-references/mpc-wallet/mpc_is_valid_address",
             "api-references/mpc-wallet/mpc_generate_addresses",
+            "api-references/mpc-wallet/mpc_generate_address_memo",
             "api-references/mpc-wallet/mpc_update_address_description",
             "api-references/mpc-wallet/mpc_list_addresses",
             "api-references/mpc-wallet/mpc_get_balance",
