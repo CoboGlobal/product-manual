@@ -1,0 +1,70 @@
+---
+title: Generate Address Memos
+api: POST /v1/custody/mpc/generate_address_memo/
+contentType: multipart/form-data
+description: "This endpoint generates new memos for a given address and returns a list of the generated memos. The number of memos to generate is specified in the 'count' parameter of the POST request. The response contains a list of the generated memos in the form of address|memo."
+---
+
+<Tip>This API is only intended for specific chains that support memo, such as XRP.</Tip>
+
+#### Request
+
+<ParamField body="chain_code" type="String" required>The chain code</ParamField>
+<ParamField body="address" type="String" required>The address for which the memos are to be generated.</ParamField>
+<ParamField body="count" type="Int" required>The number of memos to generate.</ParamField>
+
+#### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+   <ResponseField name="result" type="object">
+      <Expandable title="object">
+        <ResponseField name="addresses" type="String[ ]" >List of generated memos.</ResponseField>
+      </Expandable>
+</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+    "POST",
+    "/v1/custody/mpc/generate_address_memo/",
+    {
+        "chain_code": "XRP",
+        "address": "rGa7DmBDvJu7Tu6BixSjBq4hXA2DTWoKbe",
+        "count": 2
+    },
+    api_key, api_secret, host
+)
+```
+```javascript JavaScript
+coboFetch('POST', '/v1/custody/mpc/generate_address_memo/', {
+    "chain_code": "XRP",
+    "address": "rGa7DmBDvJu7Tu6BixSjBq4hXA2DTWoKbe",
+    "count": 2
+}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+```go Go
+Request("POST", "/v1/custody/mpc/generate_address_memo/", map[string]string{
+    "chain_code": "XRP",
+    "address": "rGa7DmBDvJu7Tu6BixSjBq4hXA2DTWoKbe",
+    "count": 2
+})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+ "success": true,
+ "result": {
+    "addresses": ["rGa7DmBDvJu7Tu6BixSjBq4hXA2DTWoKbe|1625824444", "rGa7DmBDvJu7Tu6BixSjBq4hXA2DTWoKbe|973899976"]
+  }
+}
+
+```
+</ResponseExample>
