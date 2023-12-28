@@ -135,7 +135,7 @@ public class CobоCustodyApiClientExample {
 
         ApiResponse<MPCPostTransaction> createTransactionResponse = mpcClient.createTransaction(coin, requestId, withdraw_amount, fromAddr, toAddr,
                 toAddressDetails, fee, gasPrice, gasLimit, operation, extraParameters, null, null, null);
-        System.out.println("Withdrawal: " + createTransactionResponse.getResult());
+        System.out.println("Withdraw: " + createTransactionResponse.getResult());
     }
 }
 

@@ -2,7 +2,7 @@
 title: "Transaction Notification"
 description: ""
 ---
-Upon receiving a deposit or withdrawal transaction, Cobo will send a push message to a client-specified URL via HTTP(S) using the POST request method. The push message contains transaction data in JSON format within the HTTP message body.
+Upon receiving a deposit or withdraw transaction, Cobo will send a push message to a client-specified URL via HTTP(S) using the POST request method. The push message contains transaction data in JSON format within the HTTP message body.
 
 Status = “Success”
 
@@ -59,7 +59,7 @@ Each push message for a specific block number change will be sent only once. Kin
 
 ### Things to note:
 
-1. Upon receiving a push notification from Cobo, it is strongly recommended to call Cobo's transaction querying endpoint with the provided ID to validate the transaction. Please refrain from relying solely on push messages for the validation of deposit or withdrawal transactions.
+1. Upon receiving a push notification from Cobo, it is strongly recommended to call Cobo's transaction querying endpoint with the provided ID to validate the transaction. Please refrain from relying solely on push messages for the validation of deposit or withdraw transactions.
 
 2. Upon receiving a "success" transaction push message from Cobo, clients are required to respond with an HTTP status code of 200 and an HTTP body containing 'ok' to confirm receipt. If no response is received by Cobo after 14 push attempts, the message will be marked as failed.
 

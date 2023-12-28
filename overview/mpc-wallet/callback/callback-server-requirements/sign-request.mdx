@@ -26,7 +26,7 @@ The format is a serialized JSON string of structure below.
 The format is a serialized JSON string of structure below.
 
 <ParamField body="cobo_id" type="String" required>Unique ID of the transaction signing (KeySign) request.</ParamField>
-<ParamField body="api_request_id" type="String" required><p>Request ID of the withdrawal request;</p><p>If the request is initialized via API, the value should be the same as request_id;</p><p>If the request is initialized via Cobo Custody Web, Cobo will automatically generate a Request ID.</p></ParamField>
+<ParamField body="api_request_id" type="String" required><p>Request ID of the withdraw request;</p><p>If the request is initialized via API, the value should be the same as request_id;</p><p>If the request is initialized via Cobo Custody Web, Cobo will automatically generate a Request ID.</p></ParamField>
 <ParamField body="transaction_type" type="TransactionTypeEnum" required>Please refer to TransactionTypeEnum below.</ParamField>
 <ParamField body="operation" type="TransactionOperationEnum" required>Please refer to TransactionOperationEnum below.</ParamField>
 <ParamField body="coin" type="String" required>Asset name.</ParamField>
@@ -40,7 +40,7 @@ The format is a serialized JSON string of structure below.
 <ParamField body="gas_limit" type="Int" optional>Gas limit; applicable to ETH.</ParamField>
 <ParamField body="extra_parameters" type="Json" required>Additional parameters for the transaction; for more information, please refer to the description of create_transaction.</ParamField>
 <ParamField body="replace_cobo_id" type="String" optional>ID of a Cobo transaction that has been designated as RBF.</ParamField>
-<ParamField body="api_key" type="String" optional>API_KEY of the withdrawal request initialized through API.</ParamField>
+<ParamField body="api_key" type="String" optional>API_KEY of the withdraw request initialized through API.</ParamField>
 <ParamField body="spender" type="String" optional>Email information of the withdrawer; applicable to Cobo Custody Web.</ParamField>
 <ParamField body="raw_tx" type="List[RawTx]" required>Raw transaction data.</ParamField>
 <ParamField body="note" type="String" required>Transaction remarks.</ParamField>
@@ -48,7 +48,7 @@ The format is a serialized JSON string of structure below.
 
 #### ToAddressDetail
 
-<ParamField body="to_address" type="String">Withdrawal address.</ParamField>
+<ParamField body="to_address" type="String">Withdraw address.</ParamField>
 <ParamField body="amount" type="String">Transaction amount, which contains decimal places (e.g. one bitcoin is divisible to eight decimal places, and 100000000 represents 1 BTC).</ParamField>
 
 #### extra_parameters

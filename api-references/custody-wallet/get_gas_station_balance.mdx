@@ -1,0 +1,79 @@
+---
+title: Get Gas Station Balance
+api: "GET /v1/custody/get_gas_station_balance/"
+description: "This endpoint returns a list of assets of gas station. The response includes asset details such as coin, address, and balance."
+---
+
+#### Request
+None
+
+#### Response
+<ResponseField name="success" type="bool">request successful or failed</ResponseField>
+<ResponseField name="result" type="object">
+    <Expandable title="object">
+        <ResponseField name="assets" type="object[]">
+            <Expandable title="object">
+                <ResponseField name="coin" type="String">The coin symbol</ResponseField>
+                <ResponseField name="description" type="String">Full name of coin (not unique, changeable, for reference only)</ResponseField>
+                <ResponseField name="decimal" type="String">Coin balance decimal places</ResponseField>
+                <ResponseField name="balance" type="String">Current balance</ResponseField>
+                <ResponseField name="abs_balance" type="String">Absolute value of balance</ResponseField>
+                <ResponseField name="address" type="String">Address</ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+
+<RequestExample>
+```python Python
+request(
+  'GET',
+  '/v1/custody/get_gas_station_balance/',
+  {},
+  api_key, api_secret, host
+)
+```
+
+```javascript JavaScript
+coboFetch('GET', '/v1/custody/get_gas_station_balance/', {}, api_key, api_secret, host)
+    .then(res => {
+        res.json().then((data)=>{
+            console.log(JSON.stringify(data, null, 4));
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+```
+
+```go Go
+Request("GET", "/v1/custody/get_gas_station_balance/", map[string]string{})
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "success": true,
+  "result": {
+    "assets": [
+      {
+        "coin": "ETH",
+        "description": "Ethereum",
+        "decimal": 18,
+        "balance": "446826793400000000",
+        "abs_balance": "0.4468267934",
+        "address": "0xb59c5dd6d35318937367391767a00dbdc4249041"
+      },
+      {
+        "coin": "BSC_BNB",
+        "description": "Binance Smart Chain",
+        "decimal": 18,
+        "balance": "0",
+        "abs_balance": "0",
+        "address": "0xb59c5dd6d35318937367391767a00dbdc4249041"
+      }
+    ]
+  }
+}
+```
+</ResponseExample>

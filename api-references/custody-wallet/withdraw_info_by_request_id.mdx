@@ -1,10 +1,10 @@
 ---
 title: 
 api: GET /v1/custody/withdraw_info_by_request_id/
-description: "This endpoint returns information about a withdrawal transaction given a request ID. The response is a JSON object containing details about the transaction such as the transaction hash, amount, and status."
+description: "This endpoint returns information about a withdraw transaction given a request ID. The response is a JSON object containing details about the transaction such as the transaction hash, amount, and status."
 ---
 #### Request
-<ParamField query="request_id" type="String" required>Withdrawal Request ID</ParamField>
+<ParamField query="request_id" type="String" required>Withdraw Request ID</ParamField>
 
 #### Response
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>

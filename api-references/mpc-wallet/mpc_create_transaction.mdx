@@ -73,6 +73,8 @@ extra_parameters: '{"instructions": "[{\\"accounts\\":[{\\"pubkey\\":\\"E4MhQWiq
 
 <ParamField body="fee_amount" type="Int" >transaction fee; applicable to UTXO model; use either fee or fee_amount for UTXO model</ParamField>
 <ParamField query="remark" type="String">The remark to withdraw</ParamField>
+<ParamField query="auto_fuel" type="Int">How the transaction utilizes the gas station, 0: no refueling(default); 1: passive use of the gas station; 2: active use of the gas station.</ParamField>
+<Tip>The gas station will definitely refuel for the transaction when in active use, while for passive use, refueling by the gas station occurs only when the address balance is insufficient for transaction fees.</Tip>
 
 #### Response
 <ResponseField name="success" type="bool">request successful or failed</ResponseField>

@@ -7,7 +7,7 @@ This article provides an end-to-end demonstration of creating a crypto wallet ap
 1. How to initialize RestClients with Cobo SDKs.
 2. How to create your first deposit address.
 3. How to retrieve transaction information.
-4. How to make withdrawal transactions.
+4. How to make withdraw transactions.
 
 #### Before you start:
 Make sure you have finished your wallet setup based on [Quickstart](/get-started/overview/quickstart). Before writing your first demo, make sure that the following actions have been completed:
@@ -238,9 +238,9 @@ ApiResponse<MPCTransactions> listTransactionsResponse = mpcClient.listTransactio
 
 You may find other different ways of transaction query in API References: [Custodial Wallet](/api-references/custody-wallet/transaction). [MPC Wallet](/api-references/mpc-wallet/mpc_list_transactions).
 
-### Make your first withdrawal transaction
-BBefore making the withdrawal, you may want to find out the transaction fees. In Custodial Wallet, `abs_estimate_fee` in [Get Coin Details](/api-references/custody-wallet/coin_info)
-indicates the withdrawal fees in `fee_coin`. In MPC Wallets, `gas_price` in [Get Estimate Fee](/api-references/mpc-wallet/mpc_estimate_fee)
+### Make your first withdraw transaction
+BBefore making the withdraw, you may want to find out the transaction fees. In Custodial Wallet, `abs_estimate_fee` in [Get Coin Details](/api-references/custody-wallet/coin_info)
+indicates the withdraw fees in `fee_coin`. In MPC Wallets, `gas_price` in [Get Estimate Fee](/api-references/mpc-wallet/mpc_estimate_fee)
 indicates the on-chain real-time transaction fees.
 
 **Cusotidal Wallet**
@@ -322,7 +322,7 @@ ApiResponse<EstimateFeeDetails> estimateFeeResponse = mpcClient.estimateFee(coin
 ```
 </Accordion>
 
-Now you can create your first withdrawal transaction, please use UUID for `request_id` to prevent any confusion in future reconcilation. From address is required in MPC wallets whereas exampted in Custodial wallet. Meanwhile, pay attention to `amount` value and `decimal` format of each coin (amount = abs_amount*10^decimal).
+Now you can create your first withdraw transaction, please use UUID for `request_id` to prevent any confusion in future reconcilation. From address is required in MPC wallets whereas exampted in Custodial wallet. Meanwhile, pay attention to `amount` value and `decimal` format of each coin (amount = abs_amount*10^decimal).
 <br /> Here is an example of withdrawing 0.01 GETH to an external account:
 
 **Cusotidal Wallet**
@@ -394,7 +394,7 @@ import time
 
 api_secret = "your_api_secret"  # Your wallet api secret
 coin_code = "GETH"  # Your testing coin
-amount = 10000000000000000  # Withdrawal amount：0.01GETH
+amount = 10000000000000000  # Withdraw amount：0.01GETH
 to_address = "your address"  # Your external address
 
 # Initialize Cobo Client
@@ -412,7 +412,7 @@ print(f"New Deposit Address: {response.result}")
 response = client.get_transactions_by_time(side="deposit", limit="1")
 print(f"Get Transactions By Time: {response.result}")
 
-# Get estimated withdrawal fee
+# Get estimated withdraw fee
 response = client.get_coin_info(coin=coin_code)
 print(f"Get Estimated Fee: {response.result['abs_estimate_fee']}")
 
@@ -453,7 +453,7 @@ public class CoboApiExample {
         String coin = "GETH";  // Your testing coin
         String requestId = String.valueOf(System.currentTimeMillis());  // Your custom request_id
         String toAddr = "your_address";  // Your external address
-        BigInteger withdraw_amount = new BigInteger("10000000000000000");  // Withdrawal amount：0.01GETH
+        BigInteger withdraw_amount = new BigInteger("10000000000000000");  // Withdraw amount：0.01GETH
 
         // Initialize Cobo Client
         CoboApiRestClient client = CoboApiClientFactory.newInstance(
@@ -473,7 +473,7 @@ public class CoboApiExample {
         ApiResponse<List<Transaction>> getTransactionsByTime = client.getTransactionsByTime(null, Side.Deposit, null, 0, 0, 1, null);
         System.out.println("getTransactionsByTime: " + getTransactionsByTime.getResult());
 
-        // Get estimated withdrawal fee
+        // Get estimated withdraw fee
         ApiResponse<CoinInfo> getCoinInfo = client.getCoinInfo(coin);
         System.out.println("getAbsEstimateFee:" + getCoinInfo.getResult().getAbsEstimateFee());
 
@@ -511,7 +511,7 @@ import time
 api_secret = "your api secret"  # Your wallet api secret
 chain_code = "GETH"  # Your testing chain
 coin_code = "GETH"  # Your testing coin
-amount = "10000000000000000"  # Withdrawal amount：0.01GETH
+amount = "10000000000000000"  # Withdraw amount：0.01GETH
 from_address = "your mpc wallet address"  # Your MPC wallet address
 to_address = "your address"  # Your external address
 
@@ -580,7 +580,7 @@ public class CobоCustodyApiClientExample {
         String requestId = String.valueOf(System.currentTimeMillis());  // Your custom request_id
         String fromAddr = "your_mpc_wallet_address";  // Your MPC wallet address
         String toAddr = "your address";  // Your external address
-        BigInteger withdraw_amount = new BigInteger("10000000000000000");  // Withdrawal amount：0.01GETH
+        BigInteger withdraw_amount = new BigInteger("10000000000000000");  // Withdraw amount：0.01GETH
         String toAddressDetails = null;
         BigDecimal fee = null;
         BigInteger gasPrice = null;
@@ -614,7 +614,7 @@ public class CobоCustodyApiClientExample {
         // Withdraw 0.01GETH
         ApiResponse<MPCPostTransaction> createTransactionResponse = mpcClient.createTransaction(coin, requestId, withdraw_amount, fromAddr, toAddr,
                 toAddressDetails, fee, gasPrice, gasLimit, operation, extraParameters, null, null, null);
-        System.out.println("Withdrawal: " + createTransactionResponse.getResult());
+        System.out.println("Withdraw: " + createTransactionResponse.getResult());
 
         // Get transaction by request_id
         ApiResponse<MPCTransactionInfos> transactionsByRequestIdsResponse = mpcClient.transactionsByRequestIds(requestId, null);

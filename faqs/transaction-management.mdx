@@ -4,11 +4,11 @@ description: "Frequently Asked Questions about Transaction Management"
 ---
 <Tip> Navigate to your desired sections via the sidebar   👉 </Tip>
 
-### How to query the transaction details of a batch withdrawal request?
+### How to query the transaction details of a batch withdraw request?
     <Expandable title="Answer">
         <ResponseField >
          You can use the [GET /v1/custody/transactions_by_request_ids/](/api-references/custody-wallet/transactions_by_request_ids) endpoint
-         to query the transaction details of a batch withdrawal request submitted under a Custodial Wallet. The request IDs should be provided in the `request_ids` field of the GET request, separated by commas.
+         to query the transaction details of a batch withdraw request submitted under a Custodial Wallet. The request IDs should be provided in the `request_ids` field of the GET request, separated by commas.
          For an MPC Wallet, you can use the [GET /v1/custody/mpc/transactions_by_request_ids/](/api-references/mpc-wallet/mpc_transactions_by_request_ids) endpoint instead. A maximum of 50 request IDs can be included in a single request.
         </ResponseField>
   </Expandable>
@@ -30,7 +30,7 @@ description: "Frequently Asked Questions about Transaction Management"
             There are several methods to retrieve wallet transaction records:
             - **API Callback**: Enable the Transaction Notification feature on the Cobo Custody Web and set up the Cobo API callback service to retrieve transaction records. [Click here](/api-references/development/transaction-notification) for more information.
             - **Cobo Custody Web**: Visit the Cobo Custody Web and navigate to the corresponding wallet. Switch to the "Transactions" tab and export transaction records using available filters.
-            - **API Call**: Use the "[transactions\_by\_time](/api-references/custody-wallet/transactions\_by\_time)" endpoint to fetch a transaction list that contains details such as transaction hash, amount, and timestamp. Filter the returned data using parameters such as time range, coin type, transaction type (e.g., withdrawal, deposit), and address.
+            - **API Call**: Use the "[transactions\_by\_time](/api-references/custody-wallet/transactions\_by\_time)" endpoint to fetch a transaction list that contains details such as transaction hash, amount, and timestamp. Filter the returned data using parameters such as time range, coin type, transaction type (e.g., withdraw, deposit), and address.
             - **API Call**: Use the "[transaction\_history](/api-references/custody-wallet/transaction\_history)" endpoint to query transaction records for a specific coin and address. Filter the returned data using parameters such as side, max\_id, min\_id, begin\_time, end\_time, and include\_financial. The maximum number of transactions that can be returned is 50.
         </ResponseField>
   </Expandable>

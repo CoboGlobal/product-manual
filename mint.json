@@ -281,7 +281,7 @@
           ]
         },
         {
-          "group": "Withdrawal",
+          "group": "Withdraw",
           "pages": [
             "api-references/custody-wallet/new_withdraw_request",
             "api-references/custody-wallet/withdraw_info_by_request_id"
@@ -343,7 +343,7 @@
           ]
         },
         {
-          "group": "Withdrawal",
+          "group": "Withdraw",
           "pages": [
             "api-references/mpc-wallet/mpc_create_transaction",
             "api-references/mpc-wallet/mpc_speedup_transaction",
@@ -371,6 +371,17 @@
             "api-references/mpc-wallet/auth_change_binding",
             "api-references/mpc-wallet/auth_unbind_binding",
             "api-references/mpc-wallet/auth_query_statement"
+          ]
+        },
+        {
+          "group": "Gas Station",
+          "pages": [
+            "api-references/custody-wallet/get_gas_station_balance",
+            "api-references/custody-wallet/transaction",
+            "api-references/custody-wallet/transactions_by_request_ids",
+            "api-references/custody-wallet/transaction_by_txid",
+            "api-references/custody-wallet/transactions_by_time",
+            "api-references/custody-wallet/transactions_by_id"
           ]
         }
       ]

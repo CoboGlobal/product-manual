@@ -25,7 +25,7 @@
             <ResponseField name="description" type="String" >Full name (reference only, subject to change)</ResponseField>
             <ResponseField name="decimal" type="Int" >Decimal precision</ResponseField>
             <ResponseField name="can_deposit" type="Bool" >Whether deposit is supported</ResponseField>
-            <ResponseField name="can_withdraw" type="Bool" >Whether withdrawal is supported</ResponseField>
+            <ResponseField name="can_withdraw" type="Bool" >Whether withdraw is supported</ResponseField>
             <ResponseField name="confirming_threshold" type="Int" >Number of confirmations required (may fluctuate)</ResponseField>
         </Expandable>
     </ResponseField>
@@ -46,7 +46,7 @@
                     <ResponseField name="description" type="String" >Full name of coin (not unique, changeable, for reference only )</ResponseField>
                     <ResponseField name="decimal" type="Int" >Coin balance decimal places</ResponseField>
                     <ResponseField name="can_deposit" type="Bool" >Deposit accessibility</ResponseField>
-                    <ResponseField name="can_withdraw" type="Bool" >Withdrawal accessibility</ResponseField>
+                    <ResponseField name="can_withdraw" type="Bool" >Withdraw accessibility</ResponseField>
                     <ResponseField name="confirming_threshold" type="Int" >Confirming threshold of the coin.</ResponseField>
                 </Expandable>
             </ResponseField>
@@ -109,5 +109,6 @@
     <ResponseField name="failed_reason" type="String" >Reasons for rejection</ResponseField>
     <ResponseField name="approval_process" type="Json" >Approval flow</ResponseField>
     <ResponseField name="remark" type="String" >The remark to withdraw</ResponseField>
+    <ResponseField name="gas_station_child_id" type="String" >Request ID of the corresponding gas station refueling transaction</ResponseField>
    </Expandable>
 </ResponseField>
