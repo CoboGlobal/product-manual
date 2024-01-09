@@ -320,6 +320,7 @@
           "pages": [
             "api-references/mpc-wallet/mpc_get_supported_chains",
             "api-references/mpc-wallet/mpc_get_supported_coins",
+            "api-references/mpc-wallet/mpc_coin_info",
             "api-references/mpc-wallet/mpc_get_wallet_supported_coins",
             "api-references/mpc-wallet/mpc_is_valid_address",
             "api-references/mpc-wallet/mpc_generate_addresses",
