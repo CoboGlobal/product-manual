@@ -6,32 +6,98 @@ Upon receiving a withdraw request, Cobo will initiate the verification process b
 
 Upon completing the verification of the withdraw request and associated data, the client is required to respond promptly with an HTTP status of 200. The response should include an HTTP body containing either 'ok' to indicate approval or 'deny' to signify rejection. Failure to provide this response will result in continued pushes of the same message to the designated URL. Kindly note that your timely response is crucial for the efficient processing of a withdraw request.
 
-Upon receiving a withdraw request for 5 LONT_ONT, for instance, Cobo will initiate an HTTP POST request to the client-designated URL. The request body will be structured as follows:
+When a withdrawal request for 1 BTC_USDT is submitted to a Custodial Wallet, Cobo will initiate an HTTP POST request to the client-designated URL. The request body will be structured as follows:
 
 ```json json
 {
-  "id": "",
-  "coin": "LONT_ONT",
-  "display_code": "LONT",
-  "description": "ONT Local net",
-  "address": "AJ6SScHEiXt8stDXjaUvTPKJwVGkJL4F3J",
-  "side": "withdraw",
-  "amount": "5",
-  "abs_amount": "5",
-  "decimal": 0,
-  "txid": "d9fb6178ce2ddab6ab55894947640e469021473757e42f66652c06b58daf1419",
-  "vout_n": 0,
-  "request_id": "test_request_id",
-  "status": "pending",
-  "created_time": 1537843965164,
-  "last_time": 1537843965164
+    "id": "",
+    "coin": "BTC_USDT",
+    "display_code": "USDT",
+    "description": "Tether",
+    "decimal": 8,
+    "address": "18bpqEgCJ17TwxDwT26YjQnSBFVgcLBimE",
+    "memo": "",
+    "source_address": "1F5i9mdCAsU2EfQtXYpwZgW2UFzS8A2EMn",
+    "source_address_detail": "1F5i9mdCAsU2EfQtXYpwZgW2UFzS8A2EMn",
+    "side": "withdraw",
+    "amount": "100000000",
+    "abs_amount": "1",
+    "txid": "73ea2bcb20b36115bc50588a8bcdbfbaaeb3d75656c2b104ef4a1234e5dbe550",
+    "vout_n": 0,
+    "request_id": "test_request_id",
+    "status": "pending",
+    "created_time": 1542165707058,
+    "last_time": 1542165707058,
+    "confirming_threshold": 3,
+    "remark": "hello test",
+    "confirmed_num": 0,
+    "type": "external",
+	"fee_amount": 0,
+   "fee_coin": "GETH",
+	"fee_decimal": 18,
 }
 ```
-If you approve this withdraw request, please respond with an HTTP status of 200 and set the message body to "ok."
+For more information, please refer to the response of [transactions_by_id](/api-references/custody-wallet/transactions_by_id).
+
+When a withdrawal request for 0.009 GETH is submitted to a MPC Wallet, the request body will be structured as follows:
 
 ```json json
-ok
+{
+        "cobo_id": "20221222170157000336673000008161",
+        "request_id": "web_send_by_user_915_1671699717647",
+        "status": 101,
+        "coin_detail": {
+          "coin": "GETH",
+          "display_code": "GETH",
+          "description": "Ethereum Goerli Testnet",
+          "decimal": 18,
+          "can_deposit": True,
+          "can_withdraw": True,
+          "confirming_threshold": 32
+        },
+        "amount_detail": {
+          "amount": "9000000000000000",
+          "abs_amount": "0.009"
+        },
+        "fee_detail": {
+          "fee_coin_detail": {
+            "coin": "GETH",
+            "display_code": "GETH",
+            "description": "Ethereum Goerli Testnet",
+            "decimal": 18,
+            "can_deposit": True,
+            "can_withdraw": True,
+            "confirming_threshold": 32
+          },
+          "gas_price": 300000000,
+          "gas_limit": 21000,
+          "fee_used": 0
+        },
+        "source_addresses": "",
+        "from_address": "0x3ede1e59a3f3a66de4260df7ba3029b515337e5c",
+        "to_address": "0x9414933Ff7777bb28cA22D15c178596A6e58d957",
+        "tx_hash": "",
+        "vout_n": 0,
+        "nonce": null,
+        "confirmed_number": 0,
+        "replace_cobo_id": "",
+        "transaction_type": 303,
+        "operation": 100,
+        "block_detail": {
+          "block_hash": "",
+          "block_height": 0,
+          "block_time": 0
+        },
+        "tx_detail": {
+          "tx_hash": ""
+        },
+        "extra_parameters": "",
+}
 ```
+
+For more information, please refer to the response of [transactions_by_cobo_ids](/api-references/mpc-wallet/mpc_transactions_by_cobo_ids).
+
+If you approve this withdrawal request, please respond with an HTTP status of 200 and set the message body to "ok."
 
 ### Things to note:
 
