@@ -8,7 +8,7 @@ Status = “Success”
 
 When Cobo receives a deposit of 0.000001 TRX to a recipient address associated with a Cobo client, it will send an HTTP POST request to the client's designated URL. The request body will be structured as follows:
 
-
+#### Custodial Wallet
 ```json
 {
   "id": "20201207150724000192033000003701",
@@ -41,6 +41,83 @@ When Cobo receives a deposit of 0.000001 TRX to a recipient address associated w
   "type": "external"
 }
 ```
+
+#### MPC Wallet
+```json
+{
+    "cobo_id": "20240117111135000139405000001665",
+    "request_id": "",
+    "status": 900,
+    "coin_detail":
+    {
+        "coin": "XTN",
+        "chain_code": "XTN",
+        "display_code": "XTN",
+        "description": "Bitcoin Testnet3",
+        "decimal": 8,
+        "can_deposit": true,
+        "can_withdraw": true,
+        "confirming_threshold": 3
+    },
+    "nft_detail":
+    {
+        "nft_code": "",
+        "token_id": null,
+        "chain_code": "",
+        "contract_address": ""
+    },
+    "amount_detail":
+    {
+        "amount": "100000",
+        "abs_amount": "0.001",
+        "nft_amount": 0
+    },
+    "fee_detail":
+    {
+        "fee_coin_detail":
+        {
+            "coin": "XTN",
+            "chain_code": "XTN",
+            "display_code": "XTN",
+            "description": "Bitcoin Testnet3",
+            "decimal": 8,
+            "can_deposit": true,
+            "can_withdraw": true,
+            "confirming_threshold": 3
+        },
+        "gas_price": 0,
+        "gas_limit": 0,
+        "fee_used": 845,
+        "fee": 5.0
+    },
+    "source_addresses": null,
+    "from_address": "2N2xFZtbCFB6Nb3Pj9Sxsx5mX2fxX3yEgkE",
+    "to_address": "2N2xFZtbCFB6Nb3Pj9Sxsx5mX2fxX3yEgkE",
+    "memo": "",
+    "tx_hash": "b8805bdde2e05c7392ed33069842b22317fd97882e62863756f8f84ec6bde75b",
+    "vout_n": 0,
+    "nonce": 0,
+    "confirmed_number": 3,
+    "replace_cobo_id": "",
+    "transaction_type": 1000,
+    "block_detail":
+    {
+        "block_hash": "000000000000002731780a7ec34736a63056eef5256cced316eba74df5c2a5dd",
+        "block_height": 2573189,
+        "block_time": 1705461073000
+    },
+    "tx_detail":
+    {
+        "tx_hash": "b8805bdde2e05c7392ed33069842b22317fd97882e62863756f8f84ec6bde75b"
+    },
+    "extra_parameters": "",
+    "created_time": 1705461095138,
+    "updated_time": 1705462579114,
+    "failed_reason": "",
+    "to_address_details": ""
+}
+```
+
 For the definition of parameters, please refer to this [guide](/api-references/custody-wallet/transaction#response) if you are using Cobo's Custodial Wallets and [here](/api-references/mpc-wallet/mpc_transactions_by_request_ids#response) if you are using MPC Wallets.
 
 Status = “Failed”
