@@ -87,8 +87,8 @@ client = Client(signer=signer, env=DEV_ENV, debug=True)
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client import Client
 from cobo_custody.config import DEV_ENV
-singer = LocalSigner("api_secret")
-client = Client(signer=singer, env=DEV_ENV, debug=True)
+signer = LocalSigner("api_secret")
+client = Client(signer=signer, env=DEV_ENV, debug=True)
 client.get_account_info()
 ```
 
@@ -98,7 +98,7 @@ client.get_account_info()
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client.mpc_client import MPCClient
 from cobo_custody.config import DEV_ENV
-singer = LocalSigner("api_secret")
+signer = LocalSigner("api_secret")
 mpc_client = MPCClient(signer=signer, env=DEV_ENV, debug=True)
 mpc_client.get_supported_coins()
 ```
@@ -112,8 +112,8 @@ The response is an ApiResponse object.
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client.mpc_client import MPCClient
 from cobo_custody.config import DEV_ENV
-singer = LocalSigner("api_secret")
-client = Client(signer=singer, env=DEV_ENV, debug=True)
+signer = LocalSigner("api_secret")
+client = Client(signer=signer, env=DEV_ENV, debug=True)
 res = client.get_supported_coins()
 
 ''' Response
@@ -158,8 +158,8 @@ print(res.exception)
 from cobo_custody.signer.local_signer import generate_new_key,LocalSigner
 from cobo_custody.client.mpc_client import MPCClient
 from cobo_custody.config import DEV_ENV
-singer = LocalSigner("api_secret")
-client = Client(signer=singer, env=DEV_ENV, debug=True)
+signer = LocalSigner("api_secret")
+client = Client(signer=signer, env=DEV_ENV, debug=True)
 res = client.get_supported_coins()
 
 
