@@ -1,14 +1,9 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Developer Hub",
+  "name": "Product Manuals",
   "metadata": {
-    "og:title": "Cobo Developer Hub",
-    "og:description": "An institutional-grade, open platform for Web3 developers. Browse our resources to build innovative blockchain products and secure crypto custody solutions."
-   },
-  "analytics": {
-    "ga4": {
-        "measurementId": "G-L7HJ1E4SJW"
-    }
+    "og:title": "Cobo Product Manuals",
+    "og:description": "Cobo Product Manuals"
   },
   "logo": {
     "dark": "/logo/dark.png",
@@ -31,372 +26,66 @@
     "name": "Log In",
     "url": "https://home.custody.cobo.com/#/login"
   },
+  "primaryTab": {
+    "name": "Cobo Accounts"
+  },
   "tabs": [
     {
-      "name": "Get Started",
-      "url": "get-started"
+      "name": "Cobo Guard",
+      "url": "cobo-guard"
     },
     {
-      "name": "API References",
-      "url": "api-references"
+      "name": "Cobo Portal",
+      "url": "cobo-portal"
     },
     {
-      "name": "SDKs and Tools",
-      "url": "sdks-and-tools"
+      "name": "Cobo Argus",
+      "url": "cobo-argus"
     },
     {
-      "name": "Guides",
-      "url": "guides"
+      "name": "Cobo SuperLoop",
+      "url": "cobo-superloop"
     },
     {
-      "name": "FAQs",
-      "url": "faqs"
+      "name": "Cobo Connect",
+      "url": "cobo-connect"
     }
   ],
   "navigation": [
     {
       "group": "Overview",
       "pages": [
-        "overview/introduction",
-        "overview/waas-introduction"
-      ]
-    },
-    {
-      "group": "Custodial Wallet",
-      "pages": [
-        "overview/custodial-wallet"
-      ]
-    },
-    {
-      "group": "MPC Wallet",
-      "pages": [
-        "overview/mpc-wallet/mpc-introduction",
-        {
-          "group": "TSS Node Callback",
-          "pages": [
-            "overview/mpc-wallet/callback/tss-node-callback-mechanism",
-            {
-              "group": "Callback Server Requirements",
-              "pages": [
-                "overview/mpc-wallet/callback/callback-server-requirements/callback-api",
-                "overview/mpc-wallet/callback/callback-server-requirements/keygen-request",
-                "overview/mpc-wallet/callback/callback-server-requirements/sign-request",
-                "overview/mpc-wallet/callback/callback-server-requirements/reshare-request",
-                "overview/mpc-wallet/callback/callback-server-requirements/callback-server-examples"
-              ]
-            },
-            "overview/mpc-wallet/callback/callback-server-configuration",
-            "overview/mpc-wallet/callback/tss-node-configuration-and-callback-server-startup"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Smart Contract Wallet",
-      "pages": [
-        {
-          "group": "Cobo Safe",
-          "pages": [
-            "overview/smart-contract-wallet/cobosafe",
-            {
-              "group": "Contracts",
-              "pages": [
-                "overview/smart-contract-wallet/en/1_overview",
-                {
-                  "group": "Cobo Account",
-                  "pages": [
-                    "overview/smart-contract-wallet/en/2_1_account",
-                    "overview/smart-contract-wallet/en/2_2_cobosafe",
-                    "overview/smart-contract-wallet/en/2_3_cobosmart",
-                    "overview/smart-contract-wallet/en/2_4_send_tx"
-                  ]
-                },
-                "overview/smart-contract-wallet/en/3_rolemanager",
-                {
-                  "group": "Authorizer",
-                  "pages": [
-                    "overview/smart-contract-wallet/en/4_1_authorizer",
-                    "overview/smart-contract-wallet/en/4_2_sample",
-                    "overview/smart-contract-wallet/en/4_3_ACL",
-                    "overview/smart-contract-wallet/en/4_4_hint",
-                    "overview/smart-contract-wallet/en/4_5_others"
-                  ]
-                },
-                "overview/smart-contract-wallet/en/5_argus",
-                "overview/smart-contract-wallet/en/6_audit",
-                "overview/smart-contract-wallet/en/7_deployment"
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Cobo Argus",
-          "pages": [
-            "overview/smart-contract-wallet/coboargus"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Community",
-      "pages": [
-        "community/github",
-        "community/twitter",
-        "community/linkedln",
-        "community/discord",
-        "community/telegram",
-        "community/news"
+        "cobo-accounts/introduction"
       ]
     },
     {
       "group": "Overview",
       "pages": [
-        "get-started/overview/quickstart",
-        "get-started/overview/full-custody-quick-start",
-        "get-started/overview/mpc-quick-start",
-        "get-started/overview/mpc-lite-quick-start",
-        "get-started/overview/first-wallet-tutorial"
+        "cobo-argus/introduction"
       ]
     },
     {
       "group": "Overview",
       "pages": [
-        "api-references/overview/authentication",
-        "api-references/overview/playground"
+        "cobo-connect/introduction"
       ]
     },
     {
-      "group": "SDKs",
+      "group": "Overview",
       "pages": [
-        {
-          "group": "WaaS",
-          "pages": [
-            "sdks-and-tools/sdks/waas/python",
-            "sdks-and-tools/sdks/waas/javascript",
-            "sdks-and-tools/sdks/waas/java",
-            "sdks-and-tools/sdks/waas/go",
-            "sdks-and-tools/sdks/waas/php"
-          ]
-        },
-        {
-          "group": "Cobo Safe",
-          "pages": [
-            "sdks-and-tools/sdks/cobo-safe/python",
-            "sdks-and-tools/sdks/cobo-safe/js"
-          ]
-        }
+        "cobo-guard/introduction"
       ]
     },
     {
-      "group": "Tools",
+      "group": "Overview",
       "pages": [
-        "sdks-and-tools/tools/pycobosafe",
-        "sdks-and-tools/tools/recovery-kit"
+        "cobo-portal/introduction"
       ]
     },
     {
-      "group": "FAQs",
+      "group": "Overview",
       "pages": [
-        "faqs/address-management",
-        "faqs/coin-management",
-        "faqs/transaction-management",
-        "faqs/api-key",
-        "faqs/api-callback"
-      ]
-    },
-  {
-    "group": "Wallet, Address and Transactions",
-    "pages": [
-      "guides/howtos/deposit-and-withdrawal-transaction-status",
-      "guides/howtos/create-manage-deposit-addresses",
-      "guides/howtos/querying-deposit-transactions",
-      "guides/howtos/creating-withdrawal-transactions",
-      "guides/howtos/manage-balance-and-transactions"
-    ]
-    },
-    {
-    "group": "Events and Notifications",
-    "pages": [
-      "guides/howtos/configure-api-callback",
-      "guides/howtos/api-error-handling-and-reporting"
-    ]
-    },
-    {
-    "group": "MPC Wallets Specific",
-    "pages": [
-      "guides/howtos/auto-token-sweeping-for-mpc-wallets",
-      "guides/howtos/creating-web3-transactions",
-      "guides/howtos/estimate-transaction-fees",
-      "guides/howtos/rbf"
-    ]
-    },
-    {
-    "group": "Security Best Practices",
-    "pages": [
-      "guides/howtos/api-security-key",
-      "guides/howtos/api-configuration-best-practices"]
-    },
-    {
-    "group": "Working with UTXO Model",
-    "pages": [
-      "guides/howtos/creating-utxo-transactions"]
-    },
-    {
-      "group": "Custodial Wallet APIs",
-      "pages": [
-        {
-          "group": "Account",
-          "pages": [
-            "api-references/custody-wallet/org_info",
-            "api-references/custody-wallet/coin_info",
-            "api-references/custody-wallet/get_supported_coins",
-            "api-references/custody-wallet/new_address",
-            "api-references/custody-wallet/new_addresses",
-            "api-references/custody-wallet/address_info",
-            "api-references/custody-wallet/addresses_info",
-            "api-references/custody-wallet/is_valid_address",
-            "api-references/custody-wallet/address_history"
-          ]
-        },
-        {
-          "group": "Loop Alliance",
-          "pages": [
-            "api-references/custody-wallet/internal_address_info",
-            "api-references/custody-wallet/internal_address_info_batch",
-            "api-references/custody-wallet/loop-explorer"
-          ]
-        },
-        {
-          "group": "Transactions",
-          "pages": [
-            "api-references/custody-wallet/transaction",
-            "api-references/custody-wallet/transactions_by_id",
-            "api-references/custody-wallet/transactions_by_request_ids",
-            "api-references/custody-wallet/transaction_by_txid",
-            "api-references/custody-wallet/transactions_by_time",
-            "api-references/custody-wallet/transactions_by_time_ex",
-            "api-references/custody-wallet/pending_transaction",
-            "api-references/custody-wallet/pending_transactions",
-            "api-references/custody-wallet/transaction_history"
-          ]
-        },
-        {
-          "group": "Withdraw",
-          "pages": [
-            "api-references/custody-wallet/new_withdraw_request",
-            "api-references/custody-wallet/withdraw_info_by_request_id"
-          ]
-        },
-        {
-          "group": "Staking",
-          "pages": [
-            "api-references/custody-wallet/staking/staking_product",
-            "api-references/custody-wallet/staking/staking_products",
-            "api-references/custody-wallet/staking/staking_stake",
-            "api-references/custody-wallet/staking/staking_unstake",
-            "api-references/custody-wallet/staking/stakings",
-            "api-references/custody-wallet/staking/unstakings",
-            "api-references/custody-wallet/staking/staking_history"
-          ]
-        },
-        {
-          "group": "Trading",
-          "pages": [
-            "api-references/custody-wallet/trading/trading_withdraw",
-            "api-references/custody-wallet/trading/trading_withdraw_info",
-            "api-references/custody-wallet/trading/trading_deposit",
-            "api-references/custody-wallet/trading/trading_deposit_info",
-            "api-references/custody-wallet/trading/trading_transfer",
-            "api-references/custody-wallet/trading/trading_transfer_info"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "MPC Wallet APIs",
-      "pages": [
-        {
-          "group": "Account",
-          "pages": [
-            "api-references/mpc-wallet/mpc_get_supported_chains",
-            "api-references/mpc-wallet/mpc_get_supported_coins",
-            "api-references/mpc-wallet/mpc_coin_info",
-            "api-references/mpc-wallet/mpc_get_wallet_supported_coins",
-            "api-references/mpc-wallet/mpc_is_valid_address",
-            "api-references/mpc-wallet/mpc_generate_addresses",
-            "api-references/mpc-wallet/mpc_generate_address_memo",
-            "api-references/mpc-wallet/mpc_update_address_description",
-            "api-references/mpc-wallet/mpc_list_addresses",
-            "api-references/mpc-wallet/mpc_get_balance",
-            "api-references/mpc-wallet/mpc_list_balances",
-            "api-references/mpc-wallet/mpc_list_spendable",
-            "api-references/mpc-wallet/mpc_estimate_fee",
-            "api-references/mpc-wallet/mpc_get_max_send_amount",
-            "api-references/mpc-wallet/mpc_get_supported_nft_collections"
-          ]
-        },
-        {
-          "group": "Transaction",
-          "pages": [
-            "api-references/mpc-wallet/mpc_list_transactions",
-            "api-references/mpc-wallet/mpc_transactions_by_request_ids",
-            "api-references/mpc-wallet/mpc_transactions_by_cobo_ids",
-            "api-references/mpc-wallet/mpc_transactions_by_tx_hash"
-          ]
-        },
-        {
-          "group": "Withdraw",
-          "pages": [
-            "api-references/mpc-wallet/mpc_create_transaction",
-            "api-references/mpc-wallet/mpc_speedup_transaction",
-            "api-references/mpc-wallet/mpc_drop_transaction",
-            "api-references/mpc-wallet/mpc_retry_double_check",
-            "api-references/mpc-wallet/mpc_sign_message",
-            "api-references/mpc-wallet/mpc_sign_messages_by_cobo_ids",
-            "api-references/mpc-wallet/mpc_sign_messages_by_request_ids"
-          ]
-        },
-        {
-          "group": "Tss Node",
-          "pages": [
-            "api-references/mpc-wallet/mpc_list_tss_node_requests",
-            "api-references/mpc-wallet/mpc_list_tss_node"
-          ]
-        },
-        {
-          "group": "Bind Auth",
-          "pages": [
-            "api-references/mpc-wallet/auth_create_binding",
-            "api-references/mpc-wallet/auth_query_binding",
-            "api-references/mpc-wallet/auth_query_user_auth",
-            "api-references/mpc-wallet/auth_bind_addresses",
-            "api-references/mpc-wallet/auth_change_binding",
-            "api-references/mpc-wallet/auth_unbind_binding",
-            "api-references/mpc-wallet/auth_query_statement"
-          ]
-        },
-        {
-          "group": "Gas Station",
-          "pages": [
-            "api-references/custody-wallet/get_gas_station_balance",
-            "api-references/custody-wallet/transaction",
-            "api-references/custody-wallet/transactions_by_request_ids",
-            "api-references/custody-wallet/transaction_by_txid",
-            "api-references/custody-wallet/transactions_by_time",
-            "api-references/custody-wallet/transactions_by_id"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Development",
-      "pages": [
-        "api-references/development/error-codes",
-        "api-references/development/transaction-notification",
-        "api-references/development/withdrawal-confirmation",
-        "api-references/development/callback-signature",
-        "api-references/development/testing",
-        "api-references/development/changelog"
+        "cobo-superloop/introduction"
       ]
     }
   ],
@@ -408,14 +97,5 @@
   "feedback": {
     "suggestEdit": true,
     "raiseIssue": true
-  },
-  "api": {
-    "baseUrl": "https://api.dev.cobo.com",
-    "auth": {
-      "method": "cobo"
-    },
-    "playground": {
-      "mode": "show"
-    }
   }
 }
