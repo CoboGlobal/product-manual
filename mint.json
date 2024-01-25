@@ -83,63 +83,98 @@
       ]
     },
     {
+      "group": "Organization",
+      "pages": [
+        "cobo-portal/organization/introduction"
+      ]
+    },
+    {
+      "group": "Account",
+      "pages": [
+        "cobo-portal/account/introduction"
+      ]
+    },
+    {
       "group": "Wallets",
       "pages": [
-          {
-            "group": "Custodial Wallet",
-            "pages": [
-              "cobo-portal/wallets/custodial-wallet/introduction"
-            ]
-          },
-          {
-            "group": "Exchange Wallet",
-            "pages": [
-              "cobo-portal/wallets/exchange-wallet/introduction",
-                {
-                  "group": "How To Use",
-                  "pages": [
-                    "cobo-portal/wallets/exchange-wallet/key-features",
-                    "cobo-portal/wallets/exchange-wallet/supported-exchanges",
-                    "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
-                    "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
-                  ]
-                },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "cobo-portal/wallets/exchange-wallet/common-issues",
-                    "cobo-portal/wallets/exchange-wallet/error-messages"
-                  ]
-                }
-            ]
-          },
-          {
-            "group": "Smart Contract Wallet",
-            "pages": [
-              "cobo-portal/wallets/smart-contract-wallet/introduction"
-            ]
-          },
-          {
-            "group": "MPC Wallet",
-            "pages": [
-              "cobo-portal/wallets/mpc-wallet/introduction"
-            ]
-          },
-          {
-            "group": "Address Book",
-            "pages": [
-              "cobo-portal/wallets/address-book/introduction",
-                {
-                  "group": "How To Use",
-                  "pages": [
-                    "cobo-portal/wallets/address-book/key-features",
-                    "cobo-portal/wallets/address-book/set-up-address-book",
-                    "cobo-portal/wallets/address-book/manage-address-book"
-                  ]
-                }
-            ]
-          }
-
+        {
+          "group": "Custodial Wallet",
+          "pages": [
+            "cobo-portal/wallets/custodial-wallet/introduction"
+          ]
+        },
+        {
+          "group": "Exchange Wallet",
+          "pages": [
+            "cobo-portal/wallets/exchange-wallet/introduction",
+            "cobo-portal/wallets/exchange-wallet/key-features",
+            "cobo-portal/wallets/exchange-wallet/supported-exchanges",
+            {
+              "group": "How To Use",
+              "pages": [
+                "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
+              ]
+            },
+            {
+              "group": "Troubleshoot",
+              "pages": [
+                "cobo-portal/wallets/exchange-wallet/common-issues",
+                "cobo-portal/wallets/exchange-wallet/error-messages"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Smart Contract Wallet",
+          "pages": [
+            "cobo-portal/wallets/smart-contract-wallet/introduction"
+          ]
+        },
+        {
+          "group": "MPC Wallet",
+          "pages": [
+            "cobo-portal/wallets/mpc-wallet/introduction"
+          ]
+        },
+        {
+          "group": "Address Book",
+          "pages": [
+            "cobo-portal/wallets/address-book/introduction",
+            {
+              "group": "How To Use",
+              "pages": [
+                "cobo-portal/wallets/address-book/key-features",
+                "cobo-portal/wallets/address-book/set-up-address-book",
+                "cobo-portal/wallets/address-book/manage-address-book"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Transfer",
+      "pages": [
+        "cobo-portal/transfer/introduction"
+      ]
+    },
+    {
+      "group": "Roles & Permissions",
+      "pages": [
+        "cobo-portal/roles-and-permissions/introduction"
+      ]
+    },
+    {
+      "group": "Dashboard",
+      "pages": [
+        "cobo-portal/dashboard/introduction"
+      ]
+    },
+    {
+      "group": "Policy Engine",
+      "pages": [
+        "cobo-portal/policy-engine/introduction"
       ]
     },
     {
@@ -149,15 +184,9 @@
       ]
     },
     {
-      "group": "Risk Control",
+      "group": "Bills & Payments",
       "pages": [
-        "cobo-portal/risk-control/introduction"
-      ]
-    },
-    {
-      "group": "Transactions",
-      "pages": [
-        "cobo-portal/transactions/introduction"
+        "cobo-portal/bills-and-payments/introduction"
       ]
     },
     {
