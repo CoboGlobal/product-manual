@@ -73,7 +73,34 @@
     {
       "group": "Overview",
       "pages": [
-        "cobo-guard/introduction"
+        {
+          "group": "Introduction to Cobo Guard",
+          "pages": [
+            "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
+            {
+              "group": "Key features",
+              "pages": [
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
+              ]
+            }
+          ]
+        },
+        "cobo-guard/download-the-cobo-guard-app",
+        {
+          "group": "Navigate the Cobo Guard app",
+          "pages": [
+            "cobo-guard/navigate-the-cobo-guard-app/my-accounts",
+            "cobo-guard/navigate-the-cobo-guard-app/my-pubkey",
+            "cobo-guard/navigate-the-cobo-guard-app/test-messages",
+            "cobo-guard/navigate-the-cobo-guard-app/scan-qr-code",
+            "cobo-guard/navigate-the-cobo-guard-app/pending-all-request-tabs"
+          ]
+        },
+        "cobo-guard/generate-and-back-up-your-key-shares",
+        "cobo-guard/restore-your-key-shares-from-icloud"
       ]
     },
     {
