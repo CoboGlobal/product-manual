@@ -94,7 +94,23 @@
           {
             "group": "Exchange Wallet",
             "pages": [
-              "cobo-portal/wallets/exchange-wallet/introduction"
+              "cobo-portal/wallets/exchange-wallet/introduction",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/key-features",
+                    "cobo-portal/wallets/exchange-wallet/supported-exchanges",
+                    "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                    "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/common-issues",
+                    "cobo-portal/wallets/exchange-wallet/error-messages"
+                  ]
+                }
             ]
           },
           {
