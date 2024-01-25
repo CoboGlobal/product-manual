@@ -77,9 +77,71 @@
       ]
     },
     {
-      "group": "Account Book",
+      "group": "Overview",
       "pages": [
         "cobo-portal/introduction"
+      ]
+    },
+    {
+      "group": "Wallets",
+      "pages": [
+          {
+            "group": "Custodial Wallet",
+            "pages": [
+              "cobo-portal/wallets/custodial-wallet/introduction"
+            ]
+          },
+          {
+            "group": "Exchange Wallet",
+            "pages": [
+              "cobo-portal/wallets/exchange-wallet/introduction"
+            ]
+          },
+          {
+            "group": "Smart Contract Wallet",
+            "pages": [
+              "cobo-portal/wallets/smart-contract-wallet/introduction"
+            ]
+          },
+          {
+            "group": "MPC Wallet",
+            "pages": [
+              "cobo-portal/wallets/mpc-wallet/introduction"
+            ]
+          },
+          {
+            "group": "Address Book",
+            "pages": [
+              "cobo-portal/wallets/address-book/introduction",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/address-book/key-features",
+                    "cobo-portal/wallets/address-book/set-up-address-book",
+                    "cobo-portal/wallets/address-book/manage-address-book"
+                  ]
+                }
+            ]
+          }
+
+      ]
+    },
+    {
+      "group": "Developer Centre",
+      "pages": [
+        "cobo-portal/developer-centre/introduction"
+      ]
+    },
+    {
+      "group": "Risk Control",
+      "pages": [
+        "cobo-portal/risk-control/introduction"
+      ]
+    },
+    {
+      "group": "Transactions",
+      "pages": [
+        "cobo-portal/transactions/introduction"
       ]
     },
     {
