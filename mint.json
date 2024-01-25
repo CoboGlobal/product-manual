@@ -110,6 +110,18 @@
       ]
     },
     {
+      "group": "Organization",
+      "pages": [
+        "cobo-portal/organization/introduction"
+      ]
+    },
+    {
+      "group": "Account",
+      "pages": [
+        "cobo-portal/account/introduction"
+      ]
+    },
+    {
       "group": "Wallets",
       "pages": [
         {
@@ -122,11 +134,11 @@
           "group": "Exchange Wallet",
           "pages": [
             "cobo-portal/wallets/exchange-wallet/introduction",
+            "cobo-portal/wallets/exchange-wallet/key-features",
+            "cobo-portal/wallets/exchange-wallet/supported-exchanges",
             {
               "group": "How To Use",
               "pages": [
-                "cobo-portal/wallets/exchange-wallet/key-features",
-                "cobo-portal/wallets/exchange-wallet/supported-exchanges",
                 "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
                 "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
               ]
@@ -169,21 +181,39 @@
       ]
     },
     {
+      "group": "Transfer",
+      "pages": [
+        "cobo-portal/transfer/introduction"
+      ]
+    },
+    {
+      "group": "Roles & Permissions",
+      "pages": [
+        "cobo-portal/roles-and-permissions/introduction"
+      ]
+    },
+    {
+      "group": "Dashboard",
+      "pages": [
+        "cobo-portal/dashboard/introduction"
+      ]
+    },
+    {
+      "group": "Policy Engine",
+      "pages": [
+        "cobo-portal/policy-engine/introduction"
+      ]
+    },
+    {
       "group": "Developer Centre",
       "pages": [
         "cobo-portal/developer-centre/introduction"
       ]
     },
     {
-      "group": "Risk Control",
+      "group": "Bills & Payments",
       "pages": [
-        "cobo-portal/risk-control/introduction"
-      ]
-    },
-    {
-      "group": "Transactions",
-      "pages": [
-        "cobo-portal/transactions/introduction"
+        "cobo-portal/bills-and-payments/introduction"
       ]
     },
     {
