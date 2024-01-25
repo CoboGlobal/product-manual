@@ -83,6 +83,84 @@
       ]
     },
     {
+      "group": "Wallets",
+      "pages": [
+          {
+            "group": "Custodial Wallet",
+            "pages": [
+              "cobo-portal/wallets/custodial-wallet/introduction"
+            ]
+          },
+          {
+            "group": "Exchange Wallet",
+            "pages": [
+              "cobo-portal/wallets/exchange-wallet/introduction",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/key-features",
+                    "cobo-portal/wallets/exchange-wallet/supported-exchanges",
+                    "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                    "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/common-issues",
+                    "cobo-portal/wallets/exchange-wallet/error-messages"
+                  ]
+                }
+            ]
+          },
+          {
+            "group": "Smart Contract Wallet",
+            "pages": [
+              "cobo-portal/wallets/smart-contract-wallet/introduction"
+            ]
+          },
+          {
+            "group": "MPC Wallet",
+            "pages": [
+              "cobo-portal/wallets/mpc-wallet/introduction"
+            ]
+          },
+          {
+            "group": "Address Book",
+            "pages": [
+              "cobo-portal/wallets/address-book/introduction",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/address-book/key-features",
+                    "cobo-portal/wallets/address-book/set-up-address-book",
+                    "cobo-portal/wallets/address-book/manage-address-book"
+                  ]
+                }
+            ]
+          }
+
+      ]
+    },
+    {
+      "group": "Developer Centre",
+      "pages": [
+        "cobo-portal/developer-centre/introduction"
+      ]
+    },
+    {
+      "group": "Risk Control",
+      "pages": [
+        "cobo-portal/risk-control/introduction"
+      ]
+    },
+    {
+      "group": "Transactions",
+      "pages": [
+        "cobo-portal/transactions/introduction"
+      ]
+    },
+    {
       "group": "Overview",
       "pages": [
         "cobo-superloop/introduction"
