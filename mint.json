@@ -60,17 +60,17 @@
           "pages": [
             "cobo-accounts/introduction-to-cobo-accounts/what-is-cobo-accounts",
             "cobo-accounts/introduction-to-cobo-accounts/key-features"
-      ]
-    },
-    {
-      "group": "Sign up for Cobo Accounts",
-      "pages": [
-        "cobo-accounts/sign-up-for-cobo-accounts/use-email-and-password-for-signup",
-        "cobo-accounts/sign-up-for-cobo-accounts/use-google-account-for-signup",
-        "cobo-accounts/sign-up-for-cobo-accounts/use-web3-wallets-for-signup"
-     ]
-    },
-    {
+          ]
+        },
+        {
+          "group": "Sign up for Cobo Accounts",
+          "pages": [
+            "cobo-accounts/sign-up-for-cobo-accounts/use-email-and-password-for-signup",
+            "cobo-accounts/sign-up-for-cobo-accounts/use-google-account-for-signup",
+            "cobo-accounts/sign-up-for-cobo-accounts/use-web3-wallets-for-signup"
+          ]
+        },
+        {
           "group": "Log into Cobo Accounts",
           "pages": [
             "cobo-accounts/log-in-to-cobo-accounts/use-email-and-password-for-login",
@@ -78,18 +78,38 @@
             "cobo-accounts/log-in-to-cobo-accounts/use-web3-wallets-for-login",
             "cobo-accounts/log-in-to-cobo-accounts/use-passkeys-for-login",
             "cobo-accounts/log-in-to-cobo-accounts/use-cobo-guard-for-login"
-     ]
-    },
+          ]
+        },
         {
           "group": "Set up multi-factor authentications",
           "pages": [
             "cobo-accounts/set-up-multifactor-authentication-methods/set-up-google-authenticator",
             "cobo-accounts/set-up-multifactor-authentication-methods/set-up-security-keys",
             "cobo-accounts/set-up-multifactor-authentication-methods/configure-cobo-guard"
-      ]
-        }
-      ]
-    },
+          ]
+        },
+        {
+          "group": "Manage login methods",
+          "pages": [
+            "cobo-accounts/manage-login-methods/add-passkeys-as-a-new-login-method",
+            "cobo-accounts/manage-login-methods/modify-existing-login-methods"
+          ]
+        },
+        {
+          "group": "Manage multi-factor authentications",
+          "pages": [
+            "cobo-accounts/manage-multifactor-authentication-methods/reset-google-authenticator",
+            "cobo-accounts/manage-multifactor-authentication-methods/delete-security-keys",
+            "cobo-accounts/manage-multifactor-authentication-methods/reset-cobo-guard"
+          ]
+        },
+        {
+          "group": "Troubleshoot",
+          "pages": [
+            "cobo-accounts/troubleshooting-guides/forgot-the-login-passwords",
+            "cobo-accounts/troubleshooting-guides/passkeys-failed-to-work-properly"
+          ]
+        },
         {
           "group": "Overview",
           "pages": [
@@ -252,16 +272,18 @@
           "group": "Overview",
           "pages": [
             "cobo-superloop/introduction"
-          ]
+ ]
         }
-      ],
-      "footerSocials": {
-        "twitter": "https://twitter.com/Cobo_Global",
-        "github": "https://github.com/CoboGlobal/",
-        "linkedin": "https://www.linkedin.com/company/cobo-global/"
-      },
-      "feedback": {
-        "suggestEdit": true,
-        "raiseIssue": true
-      }
+      ]
     }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/Cobo_Global",
+    "github": "https://github.com/CoboGlobal/",
+    "linkedin": "https://www.linkedin.com/company/cobo-global/"
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  }
+}
