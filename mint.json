@@ -55,181 +55,213 @@
     {
       "group": "Overview",
       "pages": [
-        "cobo-accounts/introduction"
+        {
+          "group": "Introduction to Cobo Accounts",
+          "pages": [
+            "cobo-accounts/introduction-to-cobo-accounts/what-is-cobo-accounts",
+            "cobo-accounts/introduction-to-cobo-accounts/key-features"
       ]
     },
     {
-      "group": "Overview",
+      "group": "Sign up for Cobo Accounts",
       "pages": [
-        "cobo-argus/introduction"
-      ]
+        "cobo-accounts/sign-up-for-cobo-accounts/use-email-and-password-for-signup",
+        "cobo-accounts/sign-up-for-cobo-accounts/use-google-account-for-signup",
+        "cobo-accounts/sign-up-for-cobo-accounts/use-web3-wallets-for-signup"
+     ]
     },
     {
-      "group": "Overview",
-      "pages": [
-        "cobo-connect/introduction"
-      ]
+          "group": "Log into Cobo Accounts",
+          "pages": [
+            "cobo-accounts/log-in-to-cobo-accounts/use-email-and-password-for-login",
+            "cobo-accounts/log-in-to-cobo-accounts/use-google-account-for-login",
+            "cobo-accounts/log-in-to-cobo-accounts/use-web3-wallets-for-login",
+            "cobo-accounts/log-in-to-cobo-accounts/use-passkeys-for-login",
+            "cobo-accounts/log-in-to-cobo-accounts/use-cobo-guard-for-login"
+     ]
     },
-    {
-      "group": "Overview",
-      "pages": [
         {
-          "group": "Introduction to Cobo Guard",
+          "group": "Set up multi-factor authentications",
           "pages": [
-            "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
-            {
-              "group": "Key features",
-              "pages": [
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
-              ]
-            }
-          ]
-        },
-        "cobo-guard/download-the-cobo-guard-app",
-        {
-          "group": "Navigate the Cobo Guard app",
-          "pages": [
-            "cobo-guard/navigate-the-cobo-guard-app/my-accounts",
-            "cobo-guard/navigate-the-cobo-guard-app/my-pubkey",
-            "cobo-guard/navigate-the-cobo-guard-app/test-messages",
-            "cobo-guard/navigate-the-cobo-guard-app/scan-qr-code",
-            "cobo-guard/navigate-the-cobo-guard-app/pending-all-request-tabs"
-          ]
-        },
-        "cobo-guard/generate-and-back-up-your-key-shares",
-        "cobo-guard/restore-your-key-shares-from-icloud"
+            "cobo-accounts/set-up-multifactor-authentication-methods/set-up-google-authenticator",
+            "cobo-accounts/set-up-multifactor-authentication-methods/set-up-security-keys",
+            "cobo-accounts/set-up-multifactor-authentication-methods/configure-cobo-guard"
       ]
-    },
-    {
-      "group": "Overview",
-      "pages": [
-        "cobo-portal/introduction"
-      ]
-    },
-    {
-      "group": "Organization",
-      "pages": [
-        "cobo-portal/organization/introduction"
-      ]
-    },
-    {
-      "group": "Account",
-      "pages": [
-        "cobo-portal/account/introduction"
-      ]
-    },
-    {
-      "group": "Wallets",
-      "pages": [
-        {
-          "group": "Custodial Wallet",
-          "pages": [
-            "cobo-portal/wallets/custodial-wallet/introduction"
-          ]
-        },
-        {
-          "group": "Exchange Wallet",
-          "pages": [
-            "cobo-portal/wallets/exchange-wallet/introduction",
-            "cobo-portal/wallets/exchange-wallet/key-features",
-            "cobo-portal/wallets/exchange-wallet/supported-exchanges",
-            {
-              "group": "How To Use",
-              "pages": [
-                "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
-                "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
-              ]
-            },
-            {
-              "group": "Troubleshoot",
-              "pages": [
-                "cobo-portal/wallets/exchange-wallet/common-issues",
-                "cobo-portal/wallets/exchange-wallet/error-messages"
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Smart Contract Wallet",
-          "pages": [
-            "cobo-portal/wallets/smart-contract-wallet/introduction"
-          ]
-        },
-        {
-          "group": "MPC Wallet",
-          "pages": [
-            "cobo-portal/wallets/mpc-wallet/introduction"
-          ]
-        },
-        {
-          "group": "Address Book",
-          "pages": [
-            "cobo-portal/wallets/address-book/introduction",
-            {
-              "group": "How To Use",
-              "pages": [
-                "cobo-portal/wallets/address-book/key-features",
-                "cobo-portal/wallets/address-book/set-up-address-book",
-                "cobo-portal/wallets/address-book/manage-address-book"
-              ]
-            }
-          ]
         }
       ]
     },
-    {
-      "group": "Transfer",
-      "pages": [
-        "cobo-portal/transfer/introduction"
-      ]
-    },
-    {
-      "group": "Roles & Permissions",
-      "pages": [
-        "cobo-portal/roles-and-permissions/introduction"
-      ]
-    },
-    {
-      "group": "Dashboard",
-      "pages": [
-        "cobo-portal/dashboard/introduction"
-      ]
-    },
-    {
-      "group": "Policy Engine",
-      "pages": [
-        "cobo-portal/policy-engine/introduction"
-      ]
-    },
-    {
-      "group": "Developer Centre",
-      "pages": [
-        "cobo-portal/developer-centre/introduction"
-      ]
-    },
-    {
-      "group": "Bills & Payments",
-      "pages": [
-        "cobo-portal/bills-and-payments/introduction"
-      ]
-    },
-    {
-      "group": "Overview",
-      "pages": [
-        "cobo-superloop/introduction"
-      ]
+        {
+          "group": "Overview",
+          "pages": [
+            "cobo-argus/introduction"
+          ]
+        },
+        {
+          "group": "Overview",
+          "pages": [
+            "cobo-connect/introduction"
+          ]
+        },
+        {
+          "group": "Overview",
+          "pages": [
+            {
+              "group": "Introduction to Cobo Guard",
+              "pages": [
+                "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
+                {
+                  "group": "Key features",
+                  "pages": [
+                    "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
+                    "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
+                    "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
+                    "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
+                  ]
+                }
+              ]
+            },
+            "cobo-guard/download-the-cobo-guard-app",
+            {
+              "group": "Navigate the Cobo Guard app",
+              "pages": [
+                "cobo-guard/navigate-the-cobo-guard-app/my-accounts",
+                "cobo-guard/navigate-the-cobo-guard-app/my-pubkey",
+                "cobo-guard/navigate-the-cobo-guard-app/test-messages",
+                "cobo-guard/navigate-the-cobo-guard-app/scan-qr-code",
+                "cobo-guard/navigate-the-cobo-guard-app/pending-all-request-tabs"
+              ]
+            },
+            "cobo-guard/generate-and-back-up-your-key-shares",
+            "cobo-guard/restore-your-key-shares-from-icloud"
+          ]
+        },
+        {
+          "group": "Overview",
+          "pages": [
+            "cobo-portal/introduction"
+          ]
+        },
+        {
+          "group": "Organization",
+          "pages": [
+            "cobo-portal/organization/introduction"
+          ]
+        },
+        {
+          "group": "Account",
+          "pages": [
+            "cobo-portal/account/introduction"
+          ]
+        },
+        {
+          "group": "Wallets",
+          "pages": [
+            {
+              "group": "Custodial Wallet",
+              "pages": [
+                "cobo-portal/wallets/custodial-wallet/introduction"
+              ]
+            },
+            {
+              "group": "Exchange Wallet",
+              "pages": [
+                "cobo-portal/wallets/exchange-wallet/introduction",
+                "cobo-portal/wallets/exchange-wallet/key-features",
+                "cobo-portal/wallets/exchange-wallet/supported-exchanges",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                    "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/common-issues",
+                    "cobo-portal/wallets/exchange-wallet/error-messages"
+                  ]
+                }
+              ]
+            },
+            {
+              "group": "Smart Contract Wallet",
+              "pages": [
+                "cobo-portal/wallets/smart-contract-wallet/introduction"
+              ]
+            },
+            {
+              "group": "MPC Wallet",
+              "pages": [
+                "cobo-portal/wallets/mpc-wallet/introduction"
+              ]
+            },
+            {
+              "group": "Address Book",
+              "pages": [
+                "cobo-portal/wallets/address-book/introduction",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/address-book/key-features",
+                    "cobo-portal/wallets/address-book/set-up-address-book",
+                    "cobo-portal/wallets/address-book/manage-address-book"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Transfer",
+          "pages": [
+            "cobo-portal/transfer/introduction"
+          ]
+        },
+        {
+          "group": "Roles & Permissions",
+          "pages": [
+            "cobo-portal/roles-and-permissions/introduction"
+          ]
+        },
+        {
+          "group": "Dashboard",
+          "pages": [
+            "cobo-portal/dashboard/introduction"
+          ]
+        },
+        {
+          "group": "Policy Engine",
+          "pages": [
+            "cobo-portal/policy-engine/introduction"
+          ]
+        },
+        {
+          "group": "Developer Centre",
+          "pages": [
+            "cobo-portal/developer-centre/introduction"
+          ]
+        },
+        {
+          "group": "Bills & Payments",
+          "pages": [
+            "cobo-portal/bills-and-payments/introduction"
+          ]
+        },
+        {
+          "group": "Overview",
+          "pages": [
+            "cobo-superloop/introduction"
+          ]
+        }
+      ],
+      "footerSocials": {
+        "twitter": "https://twitter.com/Cobo_Global",
+        "github": "https://github.com/CoboGlobal/",
+        "linkedin": "https://www.linkedin.com/company/cobo-global/"
+      },
+      "feedback": {
+        "suggestEdit": true,
+        "raiseIssue": true
+      }
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/Cobo_Global",
-    "github": "https://github.com/CoboGlobal/",
-    "linkedin": "https://www.linkedin.com/company/cobo-global/"
-  },
-  "feedback": {
-    "suggestEdit": true,
-    "raiseIssue": true
-  }
-}
