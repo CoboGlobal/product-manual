@@ -123,6 +123,21 @@
           ]
         },
         {
+          "group": "Introduction to Cobo Guard",
+          "pages": [
+            "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
+            {
+              "group": "Key features",
+              "pages": [
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
+              ]
+            }
+          ]
+        },
+        {
           "group": "Overview",
           "pages": [
             {
@@ -272,7 +287,7 @@
           "group": "Overview",
           "pages": [
             "cobo-superloop/introduction"
- ]
+          ]
         }
       ]
     }
