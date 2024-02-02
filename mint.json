@@ -174,7 +174,30 @@
             {
               "group": "Custodial Wallet",
               "pages": [
-                "cobo-portal/wallets/custodial-wallet/introduction"
+                "cobo-portal/wallets/custodial-wallet/introduction",
+                "cobo-portal/wallets/custodial-wallet/key-features",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/custodial-wallet/set-up-custodial-wallet",
+                    {
+                      "group": "Manage Exchange Wallet",
+                      "pages": [
+                        "cobo-portal/wallets/exchange-wallet/overview",
+                        "cobo-portal/wallets/exchange-wallet/risk-controls-permissions",
+                        "cobo-portal/wallets/exchange-wallet/transfers"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/custodial-wallet/common-issues",
+                    "cobo-portal/wallets/custodial-wallet/error-messages",
+                    "cobo-portal/wallets/custodial-wallet/faq"
+                  ]
+                }
               ]
             },
             {
@@ -187,7 +210,14 @@
                   "group": "How To Use",
                   "pages": [
                     "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
-                    "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
+                    {
+                      "group": "Manage Exchange Wallet",
+                      "pages": [
+                        "cobo-portal/wallets/exchange-wallet/overview",
+                        "cobo-portal/wallets/exchange-wallet/risk-controls-permissions",
+                        "cobo-portal/wallets/exchange-wallet/transfers"
+                      ]
+                    }
                   ]
                 },
                 {
