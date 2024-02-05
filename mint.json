@@ -207,7 +207,24 @@
             {
               "group": "Smart Contract Wallet",
               "pages": [
-                "cobo-portal/wallets/smart-contract-wallet/introduction"
+                "cobo-portal/wallets/smart-contract-wallet/introduction",
+                {
+                  "group": "Manage Delegate Addresses and Transfer Whitelists",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
+                    "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
+                    "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
+                    "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
+                    "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
+                  ]
+                },
+                {
+                  "group": "Deposit and Withdraw Assets",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
+                    "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
+                  ]
+                }
               ]
             },
             {
