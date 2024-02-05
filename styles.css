@@ -1,0 +1,23 @@
+.container {
+  width: 80%;
+  margin-top: -40px;
+  margin-bottom: -40px;
+  margin-right: 0px;
+  margin-left: 0px;
+
+}
+
+.text {
+  display: inline-block;
+
+}
+
+.icon {
+  display: inline-block;
+  width: 20px; /* Adjust as per your image size */
+  height: 20px;
+    margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}

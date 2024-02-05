@@ -123,38 +123,33 @@
           ]
         },
         {
-          "group": "Overview",
+          "group": "Introduction to Cobo Guard",
           "pages": [
+            "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
             {
-              "group": "Introduction to Cobo Guard",
+              "group": "Key features",
               "pages": [
-                "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
-                {
-                  "group": "Key features",
-                  "pages": [
-                    "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
-                    "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
-                    "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
-                    "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
-                  ]
-                }
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
+                "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
               ]
-            },
-            "cobo-guard/download-the-cobo-guard-app",
-            {
-              "group": "Navigate the Cobo Guard app",
-              "pages": [
-                "cobo-guard/navigate-the-cobo-guard-app/my-accounts",
-                "cobo-guard/navigate-the-cobo-guard-app/my-pubkey",
-                "cobo-guard/navigate-the-cobo-guard-app/test-messages",
-                "cobo-guard/navigate-the-cobo-guard-app/scan-qr-code",
-                "cobo-guard/navigate-the-cobo-guard-app/pending-all-request-tabs"
-              ]
-            },
-            "cobo-guard/generate-and-back-up-your-key-shares",
-            "cobo-guard/restore-your-key-shares-from-icloud"
+            }
           ]
         },
+        "cobo-guard/download-the-cobo-guard-app",
+        {
+          "group": "Navigate the Cobo Guard app",
+          "pages": [
+            "cobo-guard/navigate-the-cobo-guard-app/my-accounts",
+            "cobo-guard/navigate-the-cobo-guard-app/my-pubkey",
+            "cobo-guard/navigate-the-cobo-guard-app/test-messages",
+            "cobo-guard/navigate-the-cobo-guard-app/scan-qr-code",
+            "cobo-guard/navigate-the-cobo-guard-app/pending-all-request-tabs"
+          ]
+        },
+        "cobo-guard/generate-and-back-up-your-key-shares",
+        "cobo-guard/restore-your-key-shares-from-icloud",
         {
           "group": "Overview",
           "pages": [
@@ -179,7 +174,30 @@
             {
               "group": "Custodial Wallet",
               "pages": [
-                "cobo-portal/wallets/custodial-wallet/introduction"
+                "cobo-portal/wallets/custodial-wallet/introduction",
+                "cobo-portal/wallets/custodial-wallet/key-features",
+                {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/wallets/custodial-wallet/set-up-custodial-wallet",
+                    {
+                      "group": "Manage Custodial Wallet",
+                      "pages": [
+                        "cobo-portal/wallets/custodial-wallet/overview",
+                        "cobo-portal/wallets/custodial-wallet/risk-controls-permissions",
+                        "cobo-portal/wallets/custodial-wallet/transfer"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/custodial-wallet/common-issues",
+                    "cobo-portal/wallets/custodial-wallet/error-messages",
+                    "cobo-portal/wallets/custodial-wallet/faq"
+                  ]
+                }
               ]
             },
             {
@@ -192,7 +210,14 @@
                   "group": "How To Use",
                   "pages": [
                     "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
-                    "cobo-portal/wallets/exchange-wallet/manage-exchange-wallet"
+                    {
+                      "group": "Manage Exchange Wallet",
+                      "pages": [
+                        "cobo-portal/wallets/exchange-wallet/overview",
+                        "cobo-portal/wallets/exchange-wallet/risk-controls-permissions",
+                        "cobo-portal/wallets/exchange-wallet/transfers"
+                      ]
+                    }
                   ]
                 },
                 {
@@ -289,7 +314,7 @@
           "group": "Overview",
           "pages": [
             "cobo-superloop/introduction"
- ]
+          ]
         }
       ]
     }
