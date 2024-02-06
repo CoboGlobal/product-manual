@@ -239,6 +239,7 @@
                     "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
                     "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
                     "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
+                    "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
                     "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
                     "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
                   ]
