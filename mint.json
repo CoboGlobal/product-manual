@@ -250,6 +250,21 @@
                     "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
                     "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
                   ]
+                },
+                {
+                  "group": "Security Settings",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
+                    "cobo-portal/wallets/smart-contract-wallet/risk-controls-and-permissions"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/common-issues",
+                    "cobo-portal/wallets/smart-contract-wallet/error-messages",
+                    "cobo-portal/wallets/smart-contract-wallet/faqs"
+                  ]
                 }
               ]
             },
