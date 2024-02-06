@@ -1,0 +1,24 @@
+---
+title: "Introduction"
+sidebarTitle: "Introduction"
+---
+**What is a delegate address (abbreviated as delegate)?**
+
+A delegate is an address from either your Cobo Custodial Web3 Wallets or MPC Client-Controlled Wallets. These addresses are pre-authorized by the Smart Contract Wallet owners to perform single-sig operations on their behalf, such as transferring funds or interacting with decentralized applications (dApps). It is important to note that the delegate will handle gas fees during the execution of single-signature transactions.
+
+The prerequisites for using a delegate are as follows:
+
+1. On Cobo Portal, add the delegate to a Smart Contract Wallet.
+2. Head to Cobo Argus to complete the following steps:
+    - Add the delegate to Me > My Addresses.
+    - Authorize the delegate with the on-chain transfer role (i.e., Argus Token Spender).
+    - Add transfer whitelists to the Safe{Wallet}.
+    - Top up gas fees for the delegate.
+
+**What is an Argus Token Spender?**
+
+The Argus Token Spender functions as a predefined on-chain role. The delegate authorized with the Argus Token Spender role can initiate single-signature transfers.
+
+**What is an _Authorizer_?**
+
+An _Authorizer_ is a smart contract specifically designed to implement and manage on-chain access controls.
