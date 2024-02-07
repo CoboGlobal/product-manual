@@ -236,8 +236,7 @@
                   "group": "Introduction to Smart Contract Wallet",
                   "pages": [
                     "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet",
-                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features",
-                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/prerequisites"
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features"
                   ]
                 },
                 {
