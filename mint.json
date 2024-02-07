@@ -232,7 +232,24 @@
             {
               "group": "Smart Contract Wallet",
               "pages": [
-                "cobo-portal/wallets/smart-contract-wallet/introduction",
+                {
+                  "group": "Introduction to Smart Contract Wallet",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet",
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features",
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/prerequisites"
+                  ]
+                },
+                {
+                  "group": "Set up Smart Contract Wallet",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-and-enable-cobo-safe",
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
+                  ]
+                },
+                "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
                 {
                   "group": "Manage Delegate Addresses and Transfer Whitelists",
                   "pages": [
