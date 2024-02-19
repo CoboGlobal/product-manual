@@ -3,24 +3,85 @@ title: "Risk Controls & Permissions"
 sidebarTitle: "Risk Controls & Permissions"
 ---
 
-## Configure Risk Controls
-
-Initiating a transfer or contract interaction through your Custodial Wallet may be governed by a risk control policy. Cobo offers a variety of programmable risk control policies designed to safeguard your assets.
-
-You have the ability to tailor the risk control policy by creating blacklists or whitelists for transactions, specifying conditions and control measures. For instance, implementing a “Transfer Limit” policy can mitigate the risk associated with daily withdrawals. It's important to set a threshold limit that aligns with your specific business needs, ensuring effective protection of your funds.
-
-To configure the risk control policy of the selected Custodial Wallet, you may do so on the wallet interface by clicking on **View Wallet Policy** [insert icon].
-
-For more details, please refer to the **Risk Control** [insert link] guide.
-
-
-
 ## Configure Roles and Permissions
 
-The assignment of roles and permissions plays a crucial part in safeguarding your assets in the Custodial Wallet. It is vital to appropriately assign roles to team members that grant them the authority to execute sensitive operations.
+Cobo Portal offers extensive role-based access control capabilities for you to segregate duties and safeguard your assets and operations.
 
-Once a team member is designated a specific role, they are given permissions associated with that role. Prior to executing any critical operation, a verification of permissions is conducted. For example, if there is an intention to withdraw assets from the Custodial Wallet, the system first verifies if the user initiating the action possesses the requisite permission to do so.
+By assigning roles to your team members, they will be granted permissions associated with that role, governing which parts of the platform they can access and what operations they can perform. Cobo Portal offers the following preset roles. Alternatively, you can also customize your own roles to suit your unique business needs.
 
-To configure the roles and permissions of the selected Custodial Wallet, you may do so on the Cobo Portal interface by clicking on **Organization -> Roles**.
+import React from 'react';
 
-For more details, please refer to the **Organization** **(Roles)** [insert link] guide.
+export const PermissionsTable = () => (
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Permissions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Admin</td>
+        <td>
+          Freeze Organization<br />
+          Invite / Delete Member<br />
+          Assign / Edit Member Role<br />
+          Freeze / Unfreeze Member<br />
+          Add / Edit Custom Role<br />
+          Configure API & API callback<br />
+          Set up risk control policies
+        </td>
+      </tr>
+      <tr>
+        <td>Operator</td>
+        <td>Oversee & Manage all assets</td>
+      </tr>
+      <tr>
+        <td>Approver</td>
+        <td>Approve / Reject Transactions</td>
+      </tr>
+      <tr>
+        <td>Spender</td>
+        <td>Initiate Withdrawals / Transfers between Wallets on Cobo Portal</td>
+      </tr>
+      <tr>
+        <td>Viewer</td>
+        <td>Read-only Access to Designated Sections</td>
+      </tr>
+      <tr>
+        <td>Vault Admin (MPC Wallet only)</td>
+        <td>Create MPC Vault, Key Group, Wallet</td>
+      </tr>
+    </tbody>
+  </table>
+);
+
+<PermissionsTable />
+
+Before executing any transaction or operation, a thorough verification of user roles and permissions will be conducted to ensure utmost security.
+
+To configure the permissions associated with each role, click into your **Organization** > **Organization Settings** > **Roles**.
+
+<img src="/images/smart-contract-wallet/cw-roles-and-permissions-1.png"/>
+
+To assign roles to team members, click into your **Organization** > **Organization Settings** > **Members**.
+
+<img src="/images/smart-contract-wallet/cw-roles-and-permissions-2.png"/>
+
+For more details, please refer to the <u>**Organization** user manual</u> [insert link].
+
+
+## Configure Risk Controls
+
+When initiating a transfer or contract interaction with your Custodial Wallet, you can set up an extensive variety of programmable risk controls on virtually any parameter within a transaction or operation to ensure its utmost security via Cobo Portal’s **Risk Controls**.
+
+Automate governance by configuring a set of granular rules that dictate how transactions are handled and approved for every wallet, user, and transaction type. You can create address whitelists and/or blacklists, set transfer limits for a single transaction or specific time periods, and control how transactions and operations are automatically processed - rejected, approved, or subject to specific quorum requirements.
+
+To view the risk controls associated with your wallet, click on **View Wallet Policy** [insert icon] in the respective wallet.
+
+To configure the risk controls, refer to <u>**Risk Controls** user manual</u> [insert link].
+
+<img src="/images/smart-contract-wallet/cw-roles-and-permissions-3.png"/>
+
+<img src="/images/smart-contract-wallet/cw-roles-and-permissions-4.png"/>
+

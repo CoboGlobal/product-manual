@@ -185,7 +185,7 @@
                       "pages": [
                         "cobo-portal/wallets/custodial-wallet/overview",
                         "cobo-portal/wallets/custodial-wallet/risk-controls-permissions",
-                        "cobo-portal/wallets/custodial-wallet/transfer"
+                        "cobo-portal/wallets/custodial-wallet/transfers"
                       ]
                     }
                   ]
@@ -194,7 +194,6 @@
                   "group": "Troubleshoot",
                   "pages": [
                     "cobo-portal/wallets/custodial-wallet/common-issues",
-                    "cobo-portal/wallets/custodial-wallet/error-messages",
                     "cobo-portal/wallets/custodial-wallet/faq"
                   ]
                 }
@@ -220,13 +219,7 @@
                     }
                   ]
                 },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "cobo-portal/wallets/exchange-wallet/common-issues",
-                    "cobo-portal/wallets/exchange-wallet/error-messages"
-                  ]
-                }
+                "cobo-portal/wallets/exchange-wallet/troubleshoot"
               ]
             },
             {
@@ -249,6 +242,21 @@
                   "pages": [
                     "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
                     "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
+                  ]
+                },
+                {
+                  "group": "Security Settings",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
+                    "cobo-portal/wallets/smart-contract-wallet/risk-controls-and-permissions"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/common-issues",
+                    "cobo-portal/wallets/smart-contract-wallet/error-messages",
+                    "cobo-portal/wallets/smart-contract-wallet/faqs"
                   ]
                 }
               ]
