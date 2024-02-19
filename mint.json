@@ -126,28 +126,11 @@
           "group": "Introduction to Cobo Guard",
           "pages": [
             "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
-            {
-              "group": "Key features",
-              "pages": [
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-transaction-approval-application",
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-key-share-manager",
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-multi-factor-authentication-method",
-                "cobo-guard/introduction-to-cobo-guard/key-features/a-passwordless-login-mechanism"
-              ]
-            }
+            "cobo-guard/introduction-to-cobo-guard/key-features"
           ]
         },
         "cobo-guard/download-the-cobo-guard-app",
-        {
-          "group": "Navigate the Cobo Guard app",
-          "pages": [
-            "cobo-guard/navigate-the-cobo-guard-app/my-accounts",
-            "cobo-guard/navigate-the-cobo-guard-app/my-pubkey",
-            "cobo-guard/navigate-the-cobo-guard-app/test-messages",
-            "cobo-guard/navigate-the-cobo-guard-app/scan-qr-code",
-            "cobo-guard/navigate-the-cobo-guard-app/pending-all-request-tabs"
-          ]
-        },
+        "cobo-guard/manage-the-cobo-guard-app",
         "cobo-guard/generate-and-back-up-your-key-shares",
         "cobo-guard/restore-your-key-shares-from-icloud",
         {
@@ -225,7 +208,23 @@
             {
               "group": "Smart Contract Wallet",
               "pages": [
-                "cobo-portal/wallets/smart-contract-wallet/introduction",
+                {
+                  "group": "Introduction to Smart Contract Wallet",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet",
+                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features"
+                  ]
+                },
+                {
+                  "group": "Set up Smart Contract Wallet",
+                  "pages": [
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-and-enable-cobo-safe",
+                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
+                  ]
+                },
+                "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
                 {
                   "group": "Manage Delegate Addresses and Transfer Whitelists",
                   "pages": [
