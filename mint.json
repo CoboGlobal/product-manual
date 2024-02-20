@@ -191,7 +191,17 @@
                 {
                   "group": "How To Use",
                   "pages": [
-                    "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                    {
+                      "group": "Set Up Exchange Wallet",
+                      "pages": [
+                      "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                      "cobo-portal/wallets/exchange-wallet/binance-api-key",
+                        "cobo-portal/wallets/exchange-wallet/okx-api-key",
+                        "cobo-portal/wallets/exchange-wallet/deribit-api-key",
+                        "cobo-portal/wallets/exchange-wallet/bybit-api-key",
+                        "cobo-portal/wallets/exchange-wallet/gate-api-key"
+                      ]
+                    },
                     {
                       "group": "Manage Exchange Wallet",
                       "pages": [
@@ -303,7 +313,7 @@
                   "group": "How To Use",
                   "pages": [
                     "cobo-portal/dashboard/dashboard-overview",
-                    "cobo-portal/dashboard/asset-trends",
+                    "cobo-portal/dashboard/total-assets-trend",
                     "cobo-portal/dashboard/portfolio",
                     "cobo-portal/dashboard/package-usage",
                     "cobo-portal/dashboard/transaction-overview",
@@ -313,9 +323,9 @@
           ]
         },
         {
-          "group": "Policy Engine",
+          "group": "Policies",
           "pages": [
-            "cobo-portal/policy-engine/introduction"
+            "cobo-portal/policies/introduction"
           ]
         },
         {
