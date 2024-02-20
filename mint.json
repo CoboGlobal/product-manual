@@ -297,7 +297,19 @@
         {
           "group": "Dashboard",
           "pages": [
-            "cobo-portal/dashboard/introduction"
+            "cobo-portal/dashboard/introduction",
+            "cobo-portal/dashboard/key-features",
+            {
+                  "group": "How To Use",
+                  "pages": [
+                    "cobo-portal/dashboard/dashboard-overview",
+                    "cobo-portal/dashboard/asset-trends",
+                    "cobo-portal/dashboard/portfolio",
+                    "cobo-portal/dashboard/package-usage",
+                    "cobo-portal/dashboard/transaction-overview",
+                    "cobo-portal/dashboard/cobo-news"
+                  ]
+            }
           ]
         },
         {
