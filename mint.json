@@ -160,7 +160,7 @@
                 "cobo-portal/wallets/custodial-wallet/introduction",
                 "cobo-portal/wallets/custodial-wallet/key-features",
                 {
-                  "group": "How To Use",
+                  "group": "How to use",
                   "pages": [
                     "cobo-portal/wallets/custodial-wallet/set-up-custodial-wallet",
                     {
@@ -189,7 +189,7 @@
                 "cobo-portal/wallets/exchange-wallet/key-features",
                 "cobo-portal/wallets/exchange-wallet/supported-exchanges",
                 {
-                  "group": "How To Use",
+                  "group": "How to use",
                   "pages": [
                     {
                       "group": "Set Up Exchange Wallet",
@@ -218,46 +218,46 @@
             {
               "group": "Smart Contract Wallet",
               "pages": [
+                "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet",
+                "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features",
                 {
-                  "group": "Introduction to Smart Contract Wallet",
+                  "group": "How to use",
                   "pages": [
-                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet",
-                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features"
-                  ]
-                },
-                {
-                  "group": "Set up Smart Contract Wallet",
-                  "pages": [
-                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
-                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
-                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-and-enable-cobo-safe",
-                    "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
-                  ]
-                },
-                "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
-                {
-                  "group": "Manage Delegate Addresses and Transfer Whitelists",
-                  "pages": [
-                    "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
-                    "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
-                    "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
-                    "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
-                    "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
-                    "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
-                  ]
-                },
-                {
-                  "group": "Deposit and Withdraw Assets",
-                  "pages": [
-                    "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
-                    "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
-                  ]
-                },
-                {
-                  "group": "Security Settings",
-                  "pages": [
-                    "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
-                    "cobo-portal/wallets/smart-contract-wallet/risk-controls-and-permissions"
+                      {
+                        "group": "Set up Smart Contract Wallet",
+                        "pages": [
+                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
+                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
+                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-and-enable-cobo-safe",
+                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
+                        ]
+                      },
+                      "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
+                      {
+                        "group": "Manage Delegate Addresses and Transfer Whitelists",
+                        "pages": [
+                            "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
+                            "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
+                            "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
+                            "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
+                            "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
+                            "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
+                        ]
+                      },
+                      {
+                        "group": "Deposit and Withdraw Assets",
+                        "pages": [
+                          "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
+                          "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
+                        ]
+                      },
+                      {
+                        "group": "Security Settings",
+                        "pages": [
+                          "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
+                          "cobo-portal/wallets/smart-contract-wallet/risk-controls-and-permissions"
+                        ]
+                      }
                   ]
                 },
                 {
@@ -314,11 +314,10 @@
           "group": "Dashboard",
           "pages": [
             "cobo-portal/dashboard/introduction",
-            "cobo-portal/dashboard/key-features",
             {
-                  "group": "How To Use",
+                  "group": "Using the Dashboard",
                   "pages": [
-                    "cobo-portal/dashboard/dashboard-overview",
+                    "cobo-portal/dashboard/quick-snapshot",
                     "cobo-portal/dashboard/total-assets-trend",
                     "cobo-portal/dashboard/portfolio",
                     "cobo-portal/dashboard/package-usage",
@@ -329,9 +328,9 @@
           ]
         },
         {
-          "group": "Policies",
+          "group": "Transaction Policies",
           "pages": [
-            "cobo-portal/policies/introduction"
+            "cobo-portal/transaction-policies/introduction"
           ]
         },
         {
