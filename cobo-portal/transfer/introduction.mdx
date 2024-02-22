@@ -1,6 +1,24 @@
 ---
-title: "Transfer"
-sidebarTitle: "Introduction"
+title: "Overview"
+sidebarTitle: "Overview"
 ---
 
-This page shows the introduction to what Transfer is about
+The Transfer module is meticulously designed to streamline the movement of assets within, into, and out of the four wallet types featured on Cobo Portal. These encompass Custodial Wallet, MPC Wallet, Smart Contract Wallet, and Exchange Wallet. Currently, the module supports three _single_ transfer scenarios:
+
+1. From Custodial-Asset Wallet, MPC Wallet (Client-Controlled Wallet), Smart Contract Wallet (Safe&#123;Wallet&#125;), or Exchange Wallet to an external address.
+2. Between Custodial-Asset Wallet, MPC Wallet (Client-Controlled Wallet), Smart Contract Wallet (Safe&#123;Wallet&#125;), and Exchange Wallet.
+3. Between Main Accounts and Sub Accounts within the same exchange.
+
+The Transfer pop-up window includes the following fields, each with its respective definitions:
+
+- **Token**: Select the token for transfer and review its network details.
+- **From**: Select the source wallet address.
+- **To**: Select the destination wallet address.
+- **Amount**: Enter the amount to be transferred.
+- **Available**: Display the available balance from the source wallet address.
+- **Transaction Cost**: Display the transaction fee or network fee.
+- **Category (Optional)**: Add a custom category for the transfer.
+- **Description (Optional)**: Add a description for the transfer.
+- **Memo/Tag (Optional)**: For transfers out of Cobo Portal, it is highly recommended to include a memo/tag for the following chains: XRP, EOS, XLM, IOST, BNB_BNB, ATOM, LUNA, and TON.
+
+_Note: Loop Alliance and Gas Station are currently not supported by the Transfer module._
