@@ -1,0 +1,23 @@
+---
+title: "Transfer from Smart Contract Wallet (Safe{Wallet})"
+sidebarTitle: "Transfer from Smart Contract Wallet (Safe{Wallet})"
+---
+
+1. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type, click **Not enabled**. Please note that additional fees will apply.
+2. In the drop-down menu under ‘From’, select **Smart Contract Wallet (Safe&#123;Wallet&#125;)**.
+3. To find your wallet, click the text box or enter an address, Safe&#123;Wallet&#125; name or label. Smart Contract Wallet (Safe&#123;Wallet&#125;) created via both Cobo Portal Web and API will be listed.
+4. Select a Delegate address (abbreviated as Delegate). The user adds the Delegate to the Smart Contract Wallet (Safe&#123;Wallet&#125;) during the wallet setup. For more information on Delegates, please refer to [Manage Delegate Addresses and Transfer Whitelists](https://cobo-6.mintlify.app/cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate).
+    - If you haven't added any Delegates to the Smart Contract Wallet (Safe&#123;Wallet&#125;) yet, please click **Add delegates**.
+    - If the selected Delegate lacks gas tokens, please follow the on-screen instructions to top up gas fees for the Delegate first.
+5. Select a ‘To’ address from the Address Book on Cobo Portal, any of the Cobo wallets featured on Cobo, or manually enter an external address. Note that for Smart Contract Wallet (Safe&#123;Wallet&#125;), the 'To’ address must be an on-chain, whitelisted address. For more information, please refer to [Add transfer whitelists](https://cobo-6.mintlify.app/cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist).
+6. Enter the transfer amount.
+7. Review the transaction cost. Transaction fees will be displayed in 3 tiers based on transaction speeds: slow, standard, and fast. Currently, only EVM chains are supported by the Smart Contract Wallet (Safe&#123;Wallet&#125;).
+7. To customize the fee, click **Customize**.
+8. The fields will be auto populated based on the transaction speed you have selected. You may customize the gas price and gas limit based on your specific requirements.
+    - The fee will be covered by the Delegate.
+    - The estimated fee is calculated by multiplying the max fee by the gas limit: (max fee x gas limit). Please refer to the [provided table under EIP 1559](https://cobo-6.mintlify.app/cobo-portal/transfer/transfer-from-mpc) for definition of the parameters.
+    - If the Delegate lacks sufficient gas tokens, click **Top up to delegate** to deposit the required gas tokens.
+
+
+
+

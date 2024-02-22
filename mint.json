@@ -295,7 +295,13 @@
         {
           "group": "Transfer",
           "pages": [
-            "cobo-portal/transfer/introduction"
+            "cobo-portal/transfer/introduction",
+            "cobo-portal/transfer/transfer-from-custodial",
+            "cobo-portal/transfer/transfer-from-mpc",
+            "cobo-portal/transfer/transfer-from-scw",
+            "cobo-portal/transfer/transfer-from-exchange",
+            "cobo-portal/transfer/add-category",
+            "cobo-portal/transfer/submit-transfer"
           ]
         },
         {
