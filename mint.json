@@ -192,7 +192,7 @@
                   "group": "How to use",
                   "pages": [
                     {
-                      "group": "Set Up Exchange Wallet",
+                      "group": "Set up Exchange Wallet",
                       "pages": [
                       "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
                       "cobo-portal/wallets/exchange-wallet/binance-api-key",
@@ -234,7 +234,7 @@
                       },
                       "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
                       {
-                        "group": "Manage Delegate Addresses and Transfer Whitelists",
+                        "group": "Manage delegate addresses and transfer whitelists",
                         "pages": [
                             "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
                             "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
@@ -245,14 +245,14 @@
                         ]
                       },
                       {
-                        "group": "Deposit and Withdraw Assets",
+                        "group": "Deposit and withdraw assets",
                         "pages": [
                           "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
                           "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
                         ]
                       },
                       {
-                        "group": "Security Settings",
+                        "group": "Security settings",
                         "pages": [
                           "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
                           "cobo-portal/wallets/smart-contract-wallet/user-roles-tx-policies"
@@ -281,7 +281,7 @@
               "pages": [
                 "cobo-portal/wallets/address-book/introduction",
                 {
-                  "group": "How To Use",
+                  "group": "How to use",
                   "pages": [
                     "cobo-portal/wallets/address-book/key-features",
                     "cobo-portal/wallets/address-book/set-up-address-book",
@@ -305,7 +305,7 @@
           ]
         },
         {
-          "group": "Roles & Permissions",
+          "group": "Roles & permissions",
           "pages": [
             "cobo-portal/roles-and-permissions/introduction"
           ]
@@ -315,7 +315,7 @@
           "pages": [
             "cobo-portal/dashboard/introduction",
             {
-                  "group": "Using the Dashboard",
+                  "group": "Using the dashboard",
                   "pages": [
                     "cobo-portal/dashboard/quick-snapshot",
                     "cobo-portal/dashboard/total-assets-trend",
@@ -327,7 +327,7 @@
           ]
         },
         {
-          "group": "Transaction Policies",
+          "group": "Transaction policies",
           "pages": [
             "cobo-portal/transaction-policies/introduction"
           ]
@@ -339,7 +339,7 @@
           ]
         },
         {
-          "group": "Bills & Payments",
+          "group": "Bills & payments",
           "pages": [
             "cobo-portal/bills-and-payments/introduction"
           ]
