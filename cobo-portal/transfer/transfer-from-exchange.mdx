@@ -3,14 +3,16 @@ title: "Transfer from Exchange Wallet"
 sidebarTitle: "Transfer from Exchange Wallet"
 ---
 
-1. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type, click **Not enabled**. Please note that additional fees will apply.
+1. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type (fees apply), click **Not enabled**.
 2. In the drop-down menu under ‘From’, select **Exchange Wallet**.
-3. To find your exchange account, click the text box or enter a wallet name. All exchange accounts linked through Cobo Portal Web and API will be displayed.
-    - Note that transfers between Sub Accounts are not allowed. For such transfers, use the Withdraw function instead.
-    - Assets in the Sub Accounts can only be transferred to the Main Accounts within the same exchange.
-4. Select a ‘To’ address from the Address Book on Cobo Portal, any of the wallets featured on Cobo, or manually enter an external address.
-    - Note that the selected exchange may require a whitelisted address as the ‘To’ address.
-    - Only certain exchange account types allow funds to be transferred out from Main Accounts to an account other than the Sub Accounts on the same exchange. The following exchange account types permit fund withdrawals to an external address:
+3. To find your exchange account, select it from the drop-down menu or search by the wallet name. All exchange accounts linked through Cobo Portal Web and API will be displayed.
+   Notes (based on exchanges’ guidelines on transfers):
+   - Transfers from Sub Account to Sub Account are not allowed by the exchanges.
+   - Transfers from Main Account to Main Account may incur on-chain fees, which are determined and charged by the exchanges.
+   - Transfers from Sub Account to Main Account are considered "internal transfers" and are not subject to fees by the exchanges.
+   - Transfers between different accounts within the same Sub Account or Main Account are considered  "internal transfers" and are not subject to fees by the exchanges.
+   - Transfers to external wallet addresses are only allowed from Main Accounts and not from Sub Accounts.
+   - Transfers to external wallet addresses are only allowed from the following account types:
 
       | Exchange | Account Type    |
       | -------- | --------------- |
@@ -20,6 +22,8 @@ sidebarTitle: "Transfer from Exchange Wallet"
       | Bybit    | Fund Account    |
       | Gate.io  | Spot Account    |
 
+4. Select a "To" address from your Address Book or a wallet on Cobo Portal, or manually input an external address.
+    - Note that the selected exchange may require a whitelisted address as the "To" address.
 5. Enter the transfer amount.
 6. Review the transaction cost.
     - For transfers between Main Accounts and Sub Accounts on the same exchange, no fees will be incurred.
