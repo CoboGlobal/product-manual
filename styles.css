@@ -21,3 +21,13 @@
   margin-right: 5px;
   margin-left: 5px;
 }
+
+.screenshot {
+  width: 150px; /* Adjust as per your image size */
+  height: 150px;
+}
+
+.container_for_screenshot {
+  display: grid;
+  place-items: center;
+}
