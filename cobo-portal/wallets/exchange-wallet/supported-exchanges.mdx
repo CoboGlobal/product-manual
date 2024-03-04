@@ -13,7 +13,8 @@ export const MyTable = () => (
     <thead>
       <tr>
         <th>Exchange</th>
-        <th>Account Type</th>
+        <th>Main / Sub Account</th>
+        <th>Trading Account Type</th>
         <th>Asset Type</th>
       </tr>
     </thead>
@@ -23,10 +24,10 @@ export const MyTable = () => (
         <td>
           <ul>
             • Main Account <br />
-            • Sub Account <br />
-            • Spot Account
+            • Sub Account
           </ul>
         </td>
+        <td>• Spot Account</td>
         <td rowSpan={5}>• BTC<br />• ETH<br />• USDT<br />• USDC<br />• XRP<br />• BNB<br />• SOL<br />• AVAXC<br />• TRON<br />• MATIC<br /></td>
       </tr>
       <tr>
@@ -34,10 +35,11 @@ export const MyTable = () => (
         <td>
           <ul>
             • Main Account <br />
-            • Sub Account <br />
-            • Funding Account <br />
-            • Trading Account
+            • Sub Account
           </ul>
+        </td>
+        <td>• Funding Account <br />
+            • Trading Account
         </td>
       </tr>
       <tr>
@@ -47,13 +49,18 @@ export const MyTable = () => (
             • Main Account
           </ul>
         </td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>Bybit</td>
         <td>
           <ul>
             • Main Account <br />
-            • Sub Account <br />
+            • Sub Account
+          </ul>
+        </td>
+        <td>
+            <ul>
             • Classic Account <br />
                 - Spot Account <br />
                 - Derivatives Account <br />
@@ -64,9 +71,7 @@ export const MyTable = () => (
                 - Inverse Derivatives Account <br />
                 - Unified Trading Account <br />
                 - Funding Account
-
-
-          </ul>
+             </ul>
         </td>
       </tr>
       <tr>
@@ -74,10 +79,10 @@ export const MyTable = () => (
         <td>
           <ul>
             • Main Account <br />
-            • Sub Account <br />
-            • Spot Account
+            • Sub Account
           </ul>
         </td>
+        <td>• Spot Account</td>
       </tr>
     </tbody>
   </table>
