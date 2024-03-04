@@ -122,17 +122,22 @@
             "cobo-connect/introduction"
           ]
         },
+        "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
+        "cobo-guard/introduction-to-cobo-guard/key-features",
         {
-          "group": "Introduction to Cobo Guard",
+          "group": "How to use",
           "pages": [
-            "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
-            "cobo-guard/introduction-to-cobo-guard/key-features"
+            "cobo-guard/download-the-cobo-guard-app",
+            "cobo-guard/manage-the-cobo-guard-app"
           ]
         },
-        "cobo-guard/download-the-cobo-guard-app",
-        "cobo-guard/manage-the-cobo-guard-app",
+        {
+          "group": "Generate, back up, and restore your key shares",
+          "pages": [
         "cobo-guard/generate-and-back-up-your-key-shares",
-        "cobo-guard/restore-your-key-shares-from-icloud",
+        "cobo-guard/restore-your-key-shares-from-icloud"
+          ]
+        },
         {
           "group": "Overview",
           "pages": [
