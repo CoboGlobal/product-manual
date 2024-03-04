@@ -147,7 +147,32 @@
         {
           "group": "Organization",
           "pages": [
-            "cobo-portal/organization/introduction"
+            "cobo-portal/organization/introduction",
+            {
+              "group": "Settings",
+              "pages": [
+                "cobo-portal/organization/settings/manage-general-settings",
+                "cobo-portal/organization/settings/manage-members",
+                "cobo-portal/organization/settings/freeze-unfreeze-org",
+                "cobo-portal/organization/settings/manage-tx-cat"
+              ]
+            },
+            {
+              "group": "Security",
+              "pages": [
+                "cobo-portal/organization/security/user-roles-tx-policies",
+                "cobo-portal/organization/security/approval-quorum",
+                "cobo-portal/organization/security/activity-logs"
+              ]
+            },
+            {
+              "group": "Troubleshoot",
+              "pages": [
+                "cobo-portal/organization/troubleshoot/common-issues",
+                "cobo-portal/organization/troubleshoot/error-messages",
+                "cobo-portal/organization/troubleshoot/faqs"
+              ]
+            }
           ]
         },
         {
@@ -199,8 +224,8 @@
                     {
                       "group": "Set up Exchange Wallet",
                       "pages": [
-                      "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
-                      "cobo-portal/wallets/exchange-wallet/binance-api-key",
+                        "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                        "cobo-portal/wallets/exchange-wallet/binance-api-key",
                         "cobo-portal/wallets/exchange-wallet/okx-api-key",
                         "cobo-portal/wallets/exchange-wallet/deribit-api-key",
                         "cobo-portal/wallets/exchange-wallet/bybit-api-key",
@@ -228,41 +253,41 @@
                 {
                   "group": "How to use",
                   "pages": [
-                      {
-                        "group": "Set up Smart Contract Wallet",
-                        "pages": [
-                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
-                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
-                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-and-enable-cobo-safe",
-                            "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
-                        ]
-                      },
-                      "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
-                      {
-                        "group": "Manage delegate addresses and transfer whitelists",
-                        "pages": [
-                            "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
-                            "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
-                            "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
-                            "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
-                            "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
-                            "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
-                        ]
-                      },
-                      {
-                        "group": "Deposit and withdraw assets",
-                        "pages": [
-                          "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
-                          "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
-                        ]
-                      },
-                      {
-                        "group": "Security settings",
-                        "pages": [
-                          "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
-                          "cobo-portal/wallets/smart-contract-wallet/user-roles-tx-policies"
-                        ]
-                      }
+                    {
+                      "group": "Set up Smart Contract Wallet",
+                      "pages": [
+                        "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
+                        "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
+                        "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-and-enable-cobo-safe",
+                        "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
+                      ]
+                    },
+                    "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
+                    {
+                      "group": "Manage delegate addresses and transfer whitelists",
+                      "pages": [
+                        "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
+                        "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
+                        "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
+                        "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
+                        "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
+                        "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
+                      ]
+                    },
+                    {
+                      "group": "Deposit and withdraw assets",
+                      "pages": [
+                        "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
+                        "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
+                      ]
+                    },
+                    {
+                      "group": "Security settings",
+                      "pages": [
+                        "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
+                        "cobo-portal/wallets/smart-contract-wallet/user-roles-tx-policies"
+                      ]
+                    }
                   ]
                 },
                 {
@@ -278,19 +303,52 @@
             {
               "group": "MPC Wallet",
               "pages": [
-                "cobo-portal/wallets/mpc-wallet/introduction"
-              ]
-            },
-            {
-              "group": "Address Book",
-              "pages": [
-                "cobo-portal/wallets/address-book/introduction",
+                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction",
+                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/key-features",
                 {
-                  "group": "How to use",
+                  "group": "User-Controlled Wallet",
                   "pages": [
-                    "cobo-portal/wallets/address-book/key-features",
-                    "cobo-portal/wallets/address-book/set-up-address-book",
-                    "cobo-portal/wallets/address-book/manage-address-book"
+                    "cobo-portal/wallets/mpc-wallet/user-controlled-wallet/introduction"
+                  ]
+                },
+                {
+                  "group": "Organization-Controlled Wallet",
+                  "pages": [
+                    "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
+                    {
+                      "group": "How to use",
+                      "pages": [
+                        {
+                          "group": "Set up Organization-Controlled Wallet",
+                          "pages": [
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-vault",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/backup-key-share-group",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-wallet"
+                          ]
+                        },
+                        {
+                          "group": "(For API co-signer) TSS Node user guide",
+                          "pages": [
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/tss-node-user-guide/network-environments"
+                          ]
+                        },
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-mpc-vaults",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-key-groups",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-mpc-wallets",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-shares",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/user-roles-tx-policies",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/transfer"
+                      ]
+                    },
+                    {
+                      "group": "Troubleshoot",
+                      "pages": [
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/troubleshoot/common-issues",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/troubleshoot/error-messages",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/troubleshoot/faqs"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -320,14 +378,14 @@
           "pages": [
             "cobo-portal/dashboard/introduction",
             {
-                  "group": "Using the dashboard",
-                  "pages": [
-                    "cobo-portal/dashboard/quick-snapshot",
-                    "cobo-portal/dashboard/total-assets-trend",
-                    "cobo-portal/dashboard/portfolio",
-                    "cobo-portal/dashboard/package-usage",
-                    "cobo-portal/dashboard/transaction-overview"
-                  ]
+              "group": "Using the dashboard",
+              "pages": [
+                "cobo-portal/dashboard/quick-snapshot",
+                "cobo-portal/dashboard/total-assets-trend",
+                "cobo-portal/dashboard/portfolio",
+                "cobo-portal/dashboard/package-usage",
+                "cobo-portal/dashboard/transaction-overview"
+              ]
             }
           ]
         },
@@ -335,6 +393,20 @@
           "group": "Transaction policies",
           "pages": [
             "cobo-portal/transaction-policies/introduction"
+          ]
+        },
+        {
+          "group": "Address Book",
+          "pages": [
+            "cobo-portal/address-book/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "cobo-portal/address-book/key-features",
+                "cobo-portal/address-book/set-up-address-book",
+                "cobo-portal/address-book/manage-address-book"
+              ]
+            }
           ]
         },
         {
