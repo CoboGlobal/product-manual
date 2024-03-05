@@ -134,8 +134,8 @@
         {
           "group": "Generate, back up, and restore your key shares",
           "pages": [
-        "cobo-guard/generate-and-back-up-your-key-shares",
-        "cobo-guard/restore-your-key-shares-from-icloud"
+            "cobo-guard/generate-and-back-up-your-key-shares",
+            "cobo-guard/restore-your-key-shares-from-icloud"
           ]
         },
         {
@@ -173,12 +173,6 @@
                 "cobo-portal/organization/troubleshoot/faqs"
               ]
             }
-          ]
-        },
-        {
-          "group": "Account",
-          "pages": [
-            "cobo-portal/account/introduction"
           ]
         },
         {
@@ -368,12 +362,6 @@
           ]
         },
         {
-          "group": "Roles & permissions",
-          "pages": [
-            "cobo-portal/roles-and-permissions/introduction"
-          ]
-        },
-        {
           "group": "Dashboard",
           "pages": [
             "cobo-portal/dashboard/introduction",
@@ -390,9 +378,17 @@
           ]
         },
         {
-          "group": "Transaction policies",
+          "group": "Risk Controls",
           "pages": [
-            "cobo-portal/transaction-policies/introduction"
+            "cobo-portal/risk-controls/user-roles-and-permissions",
+            {
+              "group": "Transaction Policies",
+              "pages": [
+                "cobo-portal/risk-controls/transaction-policies/transfer-policies",
+                "cobo-portal/risk-controls/transaction-policies/contract-call-policies"
+              ]
+            },
+            "cobo-portal/risk-controls/governance-policies"
           ]
         },
         {
@@ -410,9 +406,9 @@
           ]
         },
         {
-          "group": "Developer Centre",
+          "group": "Developer Console",
           "pages": [
-            "cobo-portal/developer-centre/introduction"
+            "cobo-portal/developer-console/introduction"
           ]
         },
         {
