@@ -380,10 +380,12 @@
         {
           "group": "Risk Controls",
           "pages": [
+            "cobo-portal/risk-controls/introduction",
             "cobo-portal/risk-controls/user-roles-and-permissions",
             {
               "group": "Transaction Policies",
               "pages": [
+                "cobo-portal/risk-controls/transaction-policies/introduction",
                 "cobo-portal/risk-controls/transaction-policies/transfer-policies",
                 "cobo-portal/risk-controls/transaction-policies/contract-call-policies"
               ]
