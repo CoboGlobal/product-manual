@@ -160,9 +160,22 @@
             {
               "group": "Security",
               "pages": [
-                "cobo-portal/organization/security/user-roles-tx-policies",
-                "cobo-portal/organization/security/approval-quorum",
-                "cobo-portal/organization/security/activity-logs"
+                {
+                  "group": "User roles and transaction policies",
+                  "pages": [
+                    "cobo-portal/organization/security/overview1",
+                    "cobo-portal/organization/security/assign-user-roles-to-members",
+                    "cobo-portal/organization/security/create-customized-user-roles"
+                  ]
+                },
+                {
+                  "group": "Governance policies",
+                  "pages": [
+                    "cobo-portal/organization/security/overview2",
+                    "cobo-portal/organization/security/edit-governance-policies",
+                    "cobo-portal/organization/security/view-approval-notifications"
+                  ]
+                }
               ]
             },
             {
