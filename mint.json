@@ -335,15 +335,20 @@
                           ]
                         },
                         {
-                          "group": "(For API co-signer) TSS Node user guide",
+                          "group": "Manage Organization-Controlled Wallet",
+                          "pages": [
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-vaults",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-wallets"
+                          ]
+                        },
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-key-share-groups",
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-groups",
+                        {
+                          "group": "(For API co-signer) Technical setup",
                           "pages": [
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/tss-node-user-guide/network-environments"
                           ]
                         },
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-mpc-vaults",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-key-groups",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-mpc-wallets",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-shares",
                         "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/user-roles-tx-policies",
                         "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/transfer"
                       ]
