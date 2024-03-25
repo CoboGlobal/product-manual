@@ -175,7 +175,8 @@
                     "cobo-portal/organization/security/edit-governance-policies",
                     "cobo-portal/organization/security/view-approval-notifications"
                   ]
-                }
+                },
+                "cobo-portal/organization/security/activity-logs"
               ]
             },
             {
@@ -192,7 +193,7 @@
           "group": "Wallets",
           "pages": [
             {
-              "group": "Custodial Wallet",
+              "group": "Custodial Wallets",
               "pages": [
                 "cobo-portal/wallets/custodial-wallet/introduction",
                 "cobo-portal/wallets/custodial-wallet/key-features",
@@ -220,7 +221,7 @@
               ]
             },
             {
-              "group": "Exchange Wallet",
+              "group": "Exchange Wallets",
               "pages": [
                 "cobo-portal/wallets/exchange-wallet/introduction",
                 "cobo-portal/wallets/exchange-wallet/key-features",
@@ -253,7 +254,7 @@
               ]
             },
             {
-              "group": "Smart Contract Wallet",
+              "group": "Smart Contract Wallets",
               "pages": [
                 "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet",
                 "cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/key-features",
@@ -308,18 +309,18 @@
               ]
             },
             {
-              "group": "MPC Wallet",
+              "group": "MPC Wallets",
               "pages": [
                 "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction",
                 "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/key-features",
                 {
-                  "group": "User-Controlled Wallet",
+                  "group": "User-Controlled Wallets",
                   "pages": [
                     "cobo-portal/wallets/mpc-wallet/user-controlled-wallet/introduction"
                   ]
                 },
                 {
-                  "group": "Organization-Controlled Wallet",
+                  "group": "Organization-Controlled Wallets",
                   "pages": [
                     "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
                     {
@@ -428,7 +429,51 @@
         {
           "group": "Developer Console",
           "pages": [
-            "cobo-portal/developer-console/introduction"
+            "cobo-portal/developer-console/introduction",
+            "cobo-portal/developer-console/key-features",
+            {
+              "group": "Using the Developer Console",
+              "pages": [
+                "cobo-portal/developer-console/using-the-developer-console/overview",
+                {
+                  "group": "API keys",
+                  "pages": [
+                    "cobo-portal/developer-console/using-the-developer-console/api-keys/why-create-api-keys",
+                    "cobo-portal/developer-console/using-the-developer-console/api-keys/create-an-api-key",
+                    "cobo-portal/developer-console/using-the-developer-console/api-keys/manage-api-keys"
+                  ]
+                },
+                {
+                  "group": "Webhooks",
+                  "pages": [
+                    "cobo-portal/developer-console/using-the-developer-console/webhooks/what-are-webhooks",
+                    "cobo-portal/developer-console/using-the-developer-console/webhooks/available-event-notification-subscriptions",
+                    "cobo-portal/developer-console/using-the-developer-console/webhooks/create-a-webhook",
+                    "cobo-portal/developer-console/using-the-developer-console/webhooks/manage-webhook"
+                  ]
+                },
+                {
+                  "group": "Callbacks",
+                  "pages": [
+                    "cobo-portal/developer-console/using-the-developer-console/callbacks/what-are-callbacks",
+                    "cobo-portal/developer-console/using-the-developer-console/callbacks/available-event-notification-subscriptions",
+                    "cobo-portal/developer-console/using-the-developer-console/callbacks/register-a-callback",
+                    "cobo-portal/developer-console/using-the-developer-console/callbacks/manage-callbacks"
+                  ]
+                },
+                "cobo-portal/developer-console/using-the-developer-console/api-logs",
+                "cobo-portal/developer-console/using-the-developer-console/webhook-events",
+                "cobo-portal/developer-console/using-the-developer-console/callback-messages"
+              ]
+            },
+            {
+              "group": "Troubleshoot",
+              "pages": [
+                "cobo-portal/developer-console/troubleshoot/common-issues",
+                "cobo-portal/developer-console/troubleshoot/error-messages",
+                "cobo-portal/developer-console/troubleshoot/faqs"
+              ]
+            }
           ]
         },
         {
