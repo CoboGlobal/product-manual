@@ -329,6 +329,7 @@
                         {
                           "group": "Set up Organization-Controlled Wallet",
                           "pages": [
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/introduction",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-vault",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/backup-key-share-group",

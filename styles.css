@@ -10,6 +10,7 @@
 .text {
   display: inline-block;
 
+
 }
 
 .icon {
@@ -30,4 +31,30 @@
 .container_for_screenshot {
   display: grid;
   place-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #A9A9A9;
+}
+
+th, td {
+  padding: 8px;
+  display: table-cell;
+}
+
+table tr:first-child th {
+  font-weight: bold;
+  vertical-align: middle; /* Center vertically */
+  text-align: center;
+}
+
+table tr td:first-child {
+  font-weight: bold;
+  vertical-align: middle; /* Center vertically */
+  text-align: center;
 }
