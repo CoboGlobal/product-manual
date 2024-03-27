@@ -1,0 +1,14 @@
+---
+title: "Types of transaction policies"
+sidebarTitle: "Types of transaction policies"
+---
+
+Currently, Cobo Portal supports three types of transaction policies:
+
+**Transfer**: Applicable to regular token transfers.<br/>
+**Transaction-signing**: Applicable to transactions involving smart contract calls.<br/>
+**Sign message**: Applicable to dApps that require message signing for confirming user identity, authenticating transactions, and interacting with smart contracts.
+
+
+Each organization manages a list of transaction policies. When a transaction is initiated, it undergoes a matching process against the ordered policies in the list. If a matching policy is identified, the corresponding preset action will be executed, potentially resulting in auto approval, auto rejection, or the activation of an approval quorum.
+

@@ -37,18 +37,6 @@
     {
       "name": "Cobo Portal",
       "url": "cobo-portal"
-    },
-    {
-      "name": "Cobo Argus",
-      "url": "cobo-argus"
-    },
-    {
-      "name": "Cobo SuperLoop",
-      "url": "cobo-superloop"
-    },
-    {
-      "name": "Cobo Connect",
-      "url": "cobo-connect"
     }
   ],
   "navigation": [
@@ -202,7 +190,7 @@
                   "pages": [
                     "cobo-portal/wallets/custodial-wallet/set-up-custodial-wallet",
                     {
-                      "group": "Manage Custodial Wallet",
+                      "group": "Manage Custodial Wallets",
                       "pages": [
                         "cobo-portal/wallets/custodial-wallet/overview",
                         "cobo-portal/wallets/custodial-wallet/user-roles-tx-policies",
@@ -230,7 +218,7 @@
                   "group": "How to use",
                   "pages": [
                     {
-                      "group": "Set up Exchange Wallet",
+                      "group": "Set up Exchange Wallets",
                       "pages": [
                         "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
                         "cobo-portal/wallets/exchange-wallet/binance-api-key",
@@ -241,7 +229,7 @@
                       ]
                     },
                     {
-                      "group": "Manage Exchange Wallet",
+                      "group": "Manage Exchange Wallets",
                       "pages": [
                         "cobo-portal/wallets/exchange-wallet/overview",
                         "cobo-portal/wallets/exchange-wallet/user-roles-tx-policies",
@@ -250,7 +238,14 @@
                     }
                   ]
                 },
-                "cobo-portal/wallets/exchange-wallet/troubleshoot"
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "cobo-portal/wallets/exchange-wallet/common-issues",
+                    "cobo-portal/wallets/exchange-wallet/error-messages",
+                    "cobo-portal/wallets/exchange-wallet/faqs"
+                  ]
+                }
               ]
             },
             {
@@ -262,7 +257,7 @@
                   "group": "How to use",
                   "pages": [
                     {
-                      "group": "Set up Smart Contract Wallet",
+                      "group": "Set up Smart Contract Wallets",
                       "pages": [
                         "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/create-a-safe-wallet",
                         "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/import-safe-wallet-to-cobo-argus",
@@ -327,7 +322,7 @@
                       "group": "How to use",
                       "pages": [
                         {
-                          "group": "Set up Organization-Controlled Wallet",
+                          "group": "Set up Organization-Controlled Wallets",
                           "pages": [
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/introduction",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-vault",
@@ -337,7 +332,7 @@
                           ]
                         },
                         {
-                          "group": "Manage Organization-Controlled Wallet",
+                          "group": "Manage Organization-Controlled Wallets",
                           "pages": [
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-vaults",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-wallets"
@@ -401,16 +396,27 @@
           "group": "Risk Controls",
           "pages": [
             "cobo-portal/risk-controls/introduction",
-            "cobo-portal/risk-controls/user-roles-and-permissions",
             {
               "group": "Transaction Policies",
               "pages": [
-                "cobo-portal/risk-controls/transaction-policies/introduction",
-                "cobo-portal/risk-controls/transaction-policies/transfer-policies",
-                "cobo-portal/risk-controls/transaction-policies/contract-call-policies"
+                "cobo-portal/risk-controls/transaction-policies/types-of-tx-policies",
+                "cobo-portal/risk-controls/transaction-policies/set-up-transfer-policy",
+                "cobo-portal/risk-controls/transaction-policies/manage-transfer-policy",
+                "cobo-portal/risk-controls/transaction-policies/set-up-tx-signing",
+                "cobo-portal/risk-controls/transaction-policies/manage-tx-signing"
               ]
             },
-            "cobo-portal/risk-controls/governance-policies"
+            "cobo-portal/risk-controls/governance-policies",
+            "cobo-portal/risk-controls/user-roles-and-permissions",
+            "cobo-portal/risk-controls/address-list",
+            {
+              "group": "Troubleshoot",
+              "pages": [
+                "cobo-portal/risk-controls/troubleshoot/common-issues",
+                "cobo-portal/risk-controls/troubleshoot/error-messages",
+                "cobo-portal/risk-controls/troubleshoot/faqs"
+              ]
+            }
           ]
         },
         {
@@ -478,9 +484,39 @@
           ]
         },
         {
-          "group": "Bills & payments",
+          "group": "Bills & Payments",
           "pages": [
-            "cobo-portal/bills-and-payments/introduction"
+            "cobo-portal/bills-and-payments/introduction",
+            {
+              "group": "Purchase a pricing plan",
+              "pages": [
+                "cobo-portal/bills-and-payments/purchase-pricing-plan/overview",
+                "cobo-portal/bills-and-payments/purchase-pricing-plan/prerequisites",
+                "cobo-portal/bills-and-payments/purchase-pricing-plan/procedures"
+              ]
+            },
+            {
+              "group": "Manage your pricing plans",
+              "pages": [
+                "cobo-portal/bills-and-payments/manage-pricing-plan/view-pricing-plan",
+                "cobo-portal/bills-and-payments/manage-pricing-plan/upgrade-pricing-plan",
+                "cobo-portal/bills-and-payments/manage-pricing-plan/purchase-add-on-usages"
+              ]
+            },
+            {
+              "group": "Manage your bills",
+              "pages": [
+                "cobo-portal/bills-and-payments/manage-bills/view-bills",
+                "cobo-portal/bills-and-payments/manage-bills/change-payment-plan",
+                "cobo-portal/bills-and-payments/manage-bills/change-billing-emails"
+              ]
+            },
+            {
+              "group": "Troubleshoot",
+              "pages": [
+                "cobo-portal/bills-and-payments/troubleshoot/faqs"
+              ]
+            }
           ]
         },
         {
