@@ -225,13 +225,13 @@
               "group": "How to use",
               "pages": [
                 {
-                  "group": "Transaction Policies",
+                  "group": "Transaction policies",
                   "pages": [
-                "cobo-portal/risk-controls/transaction-policies/types-of-tx-policies",
-                "cobo-portal/risk-controls/transaction-policies/set-up-transfer-policy",
-                "cobo-portal/risk-controls/transaction-policies/manage-transfer-policy",
-                "cobo-portal/risk-controls/transaction-policies/set-up-tx-signing",
-                "cobo-portal/risk-controls/transaction-policies/manage-tx-signing"
+                    "cobo-portal/risk-controls/transaction-policies/types-of-tx-policies",
+                    "cobo-portal/risk-controls/transaction-policies/set-up-transfer-policy",
+                    "cobo-portal/risk-controls/transaction-policies/manage-transfer-policy",
+                    "cobo-portal/risk-controls/transaction-policies/set-up-tx-signing",
+                    "cobo-portal/risk-controls/transaction-policies/manage-tx-signing"
                   ]
                 },
                 "cobo-portal/risk-controls/governance-policies",
@@ -360,27 +360,32 @@
           "pages": [
             "cobo-portal/bills-and-payments/introduction",
             {
-              "group": "Purchase a pricing plan",
+              "group": "How to use",
               "pages": [
-                "cobo-portal/bills-and-payments/purchase-pricing-plan/overview",
-                "cobo-portal/bills-and-payments/purchase-pricing-plan/prerequisites",
-                "cobo-portal/bills-and-payments/purchase-pricing-plan/procedures"
-              ]
-            },
-            {
-              "group": "Manage your pricing plans",
-              "pages": [
-                "cobo-portal/bills-and-payments/manage-pricing-plan/view-pricing-plan",
-                "cobo-portal/bills-and-payments/manage-pricing-plan/upgrade-pricing-plan",
-                "cobo-portal/bills-and-payments/manage-pricing-plan/purchase-add-on-usages"
-              ]
-            },
-            {
-              "group": "Manage your bills",
-              "pages": [
-                "cobo-portal/bills-and-payments/manage-bills/view-bills",
-                "cobo-portal/bills-and-payments/manage-bills/change-payment-plan",
-                "cobo-portal/bills-and-payments/manage-bills/change-billing-emails"
+                {
+                  "group": "Purchase a pricing plan",
+                  "pages": [
+                    "cobo-portal/bills-and-payments/purchase-pricing-plan/overview",
+                    "cobo-portal/bills-and-payments/purchase-pricing-plan/prerequisites",
+                    "cobo-portal/bills-and-payments/purchase-pricing-plan/procedures"
+                  ]
+                },
+                {
+                  "group": "Manage your pricing plans",
+                  "pages": [
+                    "cobo-portal/bills-and-payments/manage-pricing-plan/view-pricing-plan",
+                    "cobo-portal/bills-and-payments/manage-pricing-plan/upgrade-pricing-plan",
+                    "cobo-portal/bills-and-payments/manage-pricing-plan/purchase-add-on-usages"
+                  ]
+                },
+                {
+                  "group": "Manage your bills",
+                  "pages": [
+                    "cobo-portal/bills-and-payments/manage-bills/view-bills",
+                    "cobo-portal/bills-and-payments/manage-bills/change-payment-plan",
+                    "cobo-portal/bills-and-payments/manage-bills/change-billing-emails"
+                  ]
+                }
               ]
             }
           ]
