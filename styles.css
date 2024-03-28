@@ -33,6 +33,7 @@
   place-items: center;
 }
 
+/*
 table {
   border-collapse: collapse;
   width: 100%;
@@ -49,12 +50,16 @@ th, td {
 
 table tr:first-child th {
   font-weight: bold;
-  vertical-align: middle; /* Center vertically */
+  vertical-align: middle; */
+/* Center vertically *//*
+
   text-align: center;
 }
 
 table tr td:first-child {
   font-weight: bold;
-  vertical-align: middle; /* Center vertically */
+  vertical-align: middle; */
+/* Center vertically *//*
+
   text-align: center;
-}
+}*/

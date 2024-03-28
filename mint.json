@@ -27,156 +27,23 @@
     "url": "https://home.custody.cobo.com/#/login"
   },
   "primaryTab": {
-    "name": "Cobo Accounts"
+    "name": "Cobo Portal"
   },
   "tabs": [
     {
-      "name": "Cobo Guard",
-      "url": "cobo-guard"
+      "name": "Cobo Accounts",
+      "url": "cobo-accounts"
     },
     {
-      "name": "Cobo Portal",
-      "url": "cobo-portal"
+      "name": "Cobo Guard",
+      "url": "cobo-guard"
     }
   ],
   "navigation": [
     {
       "group": "Overview",
       "pages": [
-        {
-          "group": "Introduction to Cobo Accounts",
-          "pages": [
-            "cobo-accounts/introduction-to-cobo-accounts/what-is-cobo-accounts",
-            "cobo-accounts/introduction-to-cobo-accounts/key-features"
-          ]
-        },
-        {
-          "group": "Sign up for Cobo Accounts",
-          "pages": [
-            "cobo-accounts/sign-up-for-cobo-accounts/use-email-and-password-for-signup",
-            "cobo-accounts/sign-up-for-cobo-accounts/use-google-account-for-signup",
-            "cobo-accounts/sign-up-for-cobo-accounts/use-web3-wallets-for-signup"
-          ]
-        },
-        {
-          "group": "Log into Cobo Accounts",
-          "pages": [
-            "cobo-accounts/log-in-to-cobo-accounts/use-email-and-password-for-login",
-            "cobo-accounts/log-in-to-cobo-accounts/use-google-account-for-login",
-            "cobo-accounts/log-in-to-cobo-accounts/use-web3-wallets-for-login",
-            "cobo-accounts/log-in-to-cobo-accounts/use-passkeys-for-login",
-            "cobo-accounts/log-in-to-cobo-accounts/use-cobo-guard-for-login"
-          ]
-        },
-        {
-          "group": "Set up multi-factor authentications",
-          "pages": [
-            "cobo-accounts/set-up-multifactor-authentication-methods/set-up-google-authenticator",
-            "cobo-accounts/set-up-multifactor-authentication-methods/set-up-security-keys",
-            "cobo-accounts/set-up-multifactor-authentication-methods/configure-cobo-guard"
-          ]
-        },
-        {
-          "group": "Manage login methods",
-          "pages": [
-            "cobo-accounts/manage-login-methods/add-passkeys-as-a-new-login-method",
-            "cobo-accounts/manage-login-methods/modify-existing-login-methods"
-          ]
-        },
-        {
-          "group": "Manage multi-factor authentications",
-          "pages": [
-            "cobo-accounts/manage-multifactor-authentication-methods/reset-google-authenticator",
-            "cobo-accounts/manage-multifactor-authentication-methods/delete-security-keys",
-            "cobo-accounts/manage-multifactor-authentication-methods/reset-cobo-guard"
-          ]
-        },
-        {
-          "group": "Troubleshoot",
-          "pages": [
-            "cobo-accounts/troubleshooting-guides/forgot-the-login-passwords",
-            "cobo-accounts/troubleshooting-guides/passkeys-failed-to-work-properly"
-          ]
-        },
-        {
-          "group": "Overview",
-          "pages": [
-            "cobo-argus/introduction"
-          ]
-        },
-        {
-          "group": "Overview",
-          "pages": [
-            "cobo-connect/introduction"
-          ]
-        },
-        "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
-        "cobo-guard/introduction-to-cobo-guard/key-features",
-        {
-          "group": "How to use",
-          "pages": [
-            "cobo-guard/download-the-cobo-guard-app",
-            "cobo-guard/manage-the-cobo-guard-app"
-          ]
-        },
-        {
-          "group": "Generate, back up, and restore your key shares",
-          "pages": [
-            "cobo-guard/generate-and-back-up-your-key-shares",
-            "cobo-guard/restore-your-key-shares-from-icloud"
-          ]
-        },
-        {
-          "group": "Overview",
-          "pages": [
-            "cobo-portal/introduction"
-          ]
-        },
-        {
-          "group": "Organization",
-          "pages": [
-            "cobo-portal/organization/introduction",
-            {
-              "group": "Settings",
-              "pages": [
-                "cobo-portal/organization/settings/manage-general-settings",
-                "cobo-portal/organization/settings/manage-members",
-                "cobo-portal/organization/settings/freeze-unfreeze-org",
-                "cobo-portal/organization/settings/manage-tx-cat"
-              ]
-            },
-            {
-              "group": "Security",
-              "pages": [
-                {
-                  "group": "User roles and transaction policies",
-                  "pages": [
-                    "cobo-portal/organization/security/overview1",
-                    "cobo-portal/organization/security/assign-user-roles-to-members",
-                    "cobo-portal/organization/security/create-customized-user-roles"
-                  ]
-                },
-                {
-                  "group": "Governance policies",
-                  "pages": [
-                    "cobo-portal/organization/security/overview2",
-                    "cobo-portal/organization/security/edit-governance-policies",
-                    "cobo-portal/organization/security/view-approval-notifications"
-                  ]
-                },
-                "cobo-portal/organization/security/activity-logs"
-              ]
-            },
-            {
-              "group": "Troubleshoot",
-              "pages": [
-                "cobo-portal/organization/troubleshoot/common-issues",
-                "cobo-portal/organization/troubleshoot/error-messages",
-                "cobo-portal/organization/troubleshoot/faqs"
-              ]
-            }
-          ]
-        },
+        "cobo-portal/introduction",
         {
           "group": "Wallets",
           "pages": [
@@ -198,52 +65,51 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "cobo-portal/wallets/custodial-wallet/common-issues",
-                    "cobo-portal/wallets/custodial-wallet/faq"
-                  ]
                 }
               ]
             },
             {
-              "group": "Exchange Wallets",
+              "group": "MPC Wallets",
               "pages": [
-                "cobo-portal/wallets/exchange-wallet/introduction",
-                "cobo-portal/wallets/exchange-wallet/key-features",
-                "cobo-portal/wallets/exchange-wallet/supported-exchanges",
+                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction",
+                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/key-features",
                 {
-                  "group": "How to use",
+                  "group": "Organization-Controlled Wallets",
                   "pages": [
+                    "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
                     {
-                      "group": "Set up Exchange Wallets",
+                      "group": "How to use",
                       "pages": [
-                        "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
-                        "cobo-portal/wallets/exchange-wallet/binance-api-key",
-                        "cobo-portal/wallets/exchange-wallet/okx-api-key",
-                        "cobo-portal/wallets/exchange-wallet/deribit-api-key",
-                        "cobo-portal/wallets/exchange-wallet/bybit-api-key",
-                        "cobo-portal/wallets/exchange-wallet/gate-api-key"
-                      ]
-                    },
-                    {
-                      "group": "Manage Exchange Wallets",
-                      "pages": [
-                        "cobo-portal/wallets/exchange-wallet/overview",
-                        "cobo-portal/wallets/exchange-wallet/user-roles-tx-policies",
-                        "cobo-portal/wallets/exchange-wallet/transfers"
+                        {
+                          "group": "Set up Organization-Controlled Wallet",
+                          "pages": [
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/introduction",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-vault",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/backup-key-share-group",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-wallet"
+                          ]
+                        },
+                        {
+                          "group": "Manage Organization-Controlled Wallet",
+                          "pages": [
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-vaults",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-wallets",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-key-share-groups",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-groups",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/tss-node-user-guide/network-environments",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/user-roles-tx-policies",
+                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/transfer"
+                          ]
+                        }
                       ]
                     }
                   ]
                 },
                 {
-                  "group": "Troubleshoot",
+                  "group": "User-Controlled Wallets",
                   "pages": [
-                    "cobo-portal/wallets/exchange-wallet/common-issues",
-                    "cobo-portal/wallets/exchange-wallet/error-messages",
-                    "cobo-portal/wallets/exchange-wallet/faqs"
+                    "cobo-portal/wallets/mpc-wallet/user-controlled-wallet/introduction"
                   ]
                 }
               ]
@@ -265,99 +131,69 @@
                         "cobo-portal/wallets/smart-contract-wallet/set-up-smart-contract-wallet/set-up-smart-contract-wallet-on-cobo-portal"
                       ]
                     },
-                    "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
                     {
-                      "group": "Manage delegate addresses and transfer whitelists",
+                      "group": "Manage Smart Contract Wallet",
                       "pages": [
-                        "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
-                        "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
-                        "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
-                        "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
-                        "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
-                        "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
-                      ]
-                    },
-                    {
-                      "group": "Deposit and withdraw assets",
-                      "pages": [
-                        "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
-                        "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
-                      ]
-                    },
-                    {
-                      "group": "Security settings",
-                      "pages": [
-                        "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
-                        "cobo-portal/wallets/smart-contract-wallet/user-roles-tx-policies"
+                        "cobo-portal/wallets/smart-contract-wallet/manage-smart-contract-wallet/manage-smart-contract-wallet",
+                        {
+                          "group": "Manage delegate addresses and transfer whitelists",
+                          "pages": [
+                            "cobo-portal/wallets/smart-contract-wallet/introduction-to-delegate",
+                            "cobo-portal/wallets/smart-contract-wallet/add-delegate-scw",
+                            "cobo-portal/wallets/smart-contract-wallet/add-delegate-to-my-address",
+                            "cobo-portal/wallets/smart-contract-wallet/authorize-delegate",
+                            "cobo-portal/wallets/smart-contract-wallet/add-transfer-whitelist",
+                            "cobo-portal/wallets/smart-contract-wallet/top-up-gas-fees"
+                          ]
+                        },
+                        {
+                          "group": "Deposit and withdraw assets",
+                          "pages": [
+                            "cobo-portal/wallets/smart-contract-wallet/deposit-assets",
+                            "cobo-portal/wallets/smart-contract-wallet/withdraw-assets"
+                          ]
+                        },
+                        {
+                          "group": "Security settings",
+                          "pages": [
+                            "cobo-portal/wallets/smart-contract-wallet/on-chain-risk-policy",
+                            "cobo-portal/wallets/smart-contract-wallet/user-roles-tx-policies"
+                          ]
+                        }
                       ]
                     }
-                  ]
-                },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "cobo-portal/wallets/smart-contract-wallet/common-issues",
-                    "cobo-portal/wallets/smart-contract-wallet/error-messages",
-                    "cobo-portal/wallets/smart-contract-wallet/faqs"
                   ]
                 }
               ]
             },
             {
-              "group": "MPC Wallets",
+              "group": "Exchange Wallets",
               "pages": [
-                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction",
-                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/key-features",
+                "cobo-portal/wallets/exchange-wallet/introduction",
+                "cobo-portal/wallets/exchange-wallet/key-features",
                 {
-                  "group": "User-Controlled Wallets",
+                  "group": "How to use",
                   "pages": [
-                    "cobo-portal/wallets/mpc-wallet/user-controlled-wallet/introduction"
-                  ]
-                },
-                {
-                  "group": "Organization-Controlled Wallets",
-                  "pages": [
-                    "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
                     {
-                      "group": "How to use",
+                      "group": "Set up Exchange Wallet",
                       "pages": [
-                        {
-                          "group": "Set up Organization-Controlled Wallets",
-                          "pages": [
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/introduction",
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-vault",
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group",
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/backup-key-share-group",
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-wallet"
-                          ]
-                        },
-                        {
-                          "group": "Manage Organization-Controlled Wallets",
-                          "pages": [
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-vaults",
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-wallets"
-                          ]
-                        },
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-key-share-groups",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-groups",
-                        {
-                          "group": "(For API co-signer) Technical setup",
-                          "pages": [
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/tss-node-user-guide/network-environments"
-                          ]
-                        },
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/user-roles-tx-policies",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/transfer"
+                        "cobo-portal/wallets/exchange-wallet/set-up-exchange-wallet",
+                        "cobo-portal/wallets/exchange-wallet/binance-api-key",
+                        "cobo-portal/wallets/exchange-wallet/okx-api-key",
+                        "cobo-portal/wallets/exchange-wallet/deribit-api-key",
+                        "cobo-portal/wallets/exchange-wallet/bybit-api-key",
+                        "cobo-portal/wallets/exchange-wallet/gate-api-key"
                       ]
                     },
                     {
-                      "group": "Troubleshoot",
+                      "group": "Manage Exchange Wallet",
                       "pages": [
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/troubleshoot/common-issues",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/troubleshoot/error-messages",
-                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/troubleshoot/faqs"
+                        "cobo-portal/wallets/exchange-wallet/overview",
+                        "cobo-portal/wallets/exchange-wallet/user-roles-tx-policies",
+                        "cobo-portal/wallets/exchange-wallet/transfers"
                       ]
-                    }
+                    },
+                    "cobo-portal/wallets/exchange-wallet/supported-exchanges"
                   ]
                 }
               ]
@@ -368,12 +204,83 @@
           "group": "Transfer",
           "pages": [
             "cobo-portal/transfer/introduction",
-            "cobo-portal/transfer/transfer-from-custodial",
-            "cobo-portal/transfer/transfer-from-mpc",
-            "cobo-portal/transfer/transfer-from-scw",
-            "cobo-portal/transfer/transfer-from-exchange",
-            "cobo-portal/transfer/add-category",
-            "cobo-portal/transfer/submit-transfer"
+            {
+              "group": "How to use",
+              "pages": [
+                "cobo-portal/transfer/transfer-from-custodial",
+                "cobo-portal/transfer/transfer-from-mpc",
+                "cobo-portal/transfer/transfer-from-scw",
+                "cobo-portal/transfer/transfer-from-exchange",
+                "cobo-portal/transfer/add-category",
+                "cobo-portal/transfer/submit-transfer"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Risk Controls",
+          "pages": [
+            "cobo-portal/risk-controls/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                {
+                  "group": "Transaction policies",
+                  "pages": [
+                    "cobo-portal/risk-controls/transaction-policies/types-of-tx-policies",
+                    "cobo-portal/risk-controls/transaction-policies/set-up-transfer-policy",
+                    "cobo-portal/risk-controls/transaction-policies/manage-transfer-policy",
+                    "cobo-portal/risk-controls/transaction-policies/set-up-tx-signing",
+                    "cobo-portal/risk-controls/transaction-policies/manage-tx-signing"
+                  ]
+                },
+                "cobo-portal/risk-controls/governance-policies",
+                "cobo-portal/risk-controls/user-roles-and-permissions",
+                "cobo-portal/risk-controls/address-list"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Organization",
+          "pages": [
+            "cobo-portal/organization/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                {
+                  "group": "Settings",
+                  "pages": [
+                    "cobo-portal/organization/settings/manage-general-settings",
+                    "cobo-portal/organization/settings/manage-members",
+                    "cobo-portal/organization/settings/freeze-unfreeze-org",
+                    "cobo-portal/organization/settings/manage-tx-cat"
+                  ]
+                },
+                {
+                  "group": "Security",
+                  "pages": [
+                    {
+                      "group": "User roles and permissions",
+                      "pages": [
+                        "cobo-portal/organization/security/overview1",
+                        "cobo-portal/organization/security/assign-user-roles-to-members",
+                        "cobo-portal/organization/security/create-customized-user-roles"
+                      ]
+                    },
+                    {
+                      "group": "Governance policies",
+                      "pages": [
+                        "cobo-portal/organization/security/overview2",
+                        "cobo-portal/organization/security/edit-governance-policies",
+                        "cobo-portal/organization/security/view-approval-notifications"
+                      ]
+                    },
+                    "cobo-portal/organization/security/activity-logs"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -381,7 +288,7 @@
           "pages": [
             "cobo-portal/dashboard/introduction",
             {
-              "group": "Using the dashboard",
+              "group": "How to use",
               "pages": [
                 "cobo-portal/dashboard/quick-snapshot",
                 "cobo-portal/dashboard/total-assets-trend",
@@ -393,40 +300,13 @@
           ]
         },
         {
-          "group": "Risk Controls",
-          "pages": [
-            "cobo-portal/risk-controls/introduction",
-            {
-              "group": "Transaction Policies",
-              "pages": [
-                "cobo-portal/risk-controls/transaction-policies/types-of-tx-policies",
-                "cobo-portal/risk-controls/transaction-policies/set-up-transfer-policy",
-                "cobo-portal/risk-controls/transaction-policies/manage-transfer-policy",
-                "cobo-portal/risk-controls/transaction-policies/set-up-tx-signing",
-                "cobo-portal/risk-controls/transaction-policies/manage-tx-signing"
-              ]
-            },
-            "cobo-portal/risk-controls/governance-policies",
-            "cobo-portal/risk-controls/user-roles-and-permissions",
-            "cobo-portal/risk-controls/address-list",
-            {
-              "group": "Troubleshoot",
-              "pages": [
-                "cobo-portal/risk-controls/troubleshoot/common-issues",
-                "cobo-portal/risk-controls/troubleshoot/error-messages",
-                "cobo-portal/risk-controls/troubleshoot/faqs"
-              ]
-            }
-          ]
-        },
-        {
           "group": "Address Book",
           "pages": [
             "cobo-portal/address-book/introduction",
+            "cobo-portal/address-book/key-features",
             {
               "group": "How to use",
               "pages": [
-                "cobo-portal/address-book/key-features",
                 "cobo-portal/address-book/set-up-address-book",
                 "cobo-portal/address-book/manage-address-book"
               ]
@@ -439,7 +319,7 @@
             "cobo-portal/developer-console/introduction",
             "cobo-portal/developer-console/key-features",
             {
-              "group": "Using the Developer Console",
+              "group": "How to use",
               "pages": [
                 "cobo-portal/developer-console/using-the-developer-console/overview",
                 {
@@ -472,14 +352,6 @@
                 "cobo-portal/developer-console/using-the-developer-console/webhook-events",
                 "cobo-portal/developer-console/using-the-developer-console/callback-messages"
               ]
-            },
-            {
-              "group": "Troubleshoot",
-              "pages": [
-                "cobo-portal/developer-console/troubleshoot/common-issues",
-                "cobo-portal/developer-console/troubleshoot/error-messages",
-                "cobo-portal/developer-console/troubleshoot/faqs"
-              ]
             }
           ]
         },
@@ -488,41 +360,120 @@
           "pages": [
             "cobo-portal/bills-and-payments/introduction",
             {
-              "group": "Purchase a pricing plan",
+              "group": "How to use",
               "pages": [
-                "cobo-portal/bills-and-payments/purchase-pricing-plan/overview",
-                "cobo-portal/bills-and-payments/purchase-pricing-plan/prerequisites",
-                "cobo-portal/bills-and-payments/purchase-pricing-plan/procedures"
+                {
+                  "group": "Purchase a pricing plan",
+                  "pages": [
+                    "cobo-portal/bills-and-payments/purchase-pricing-plan/overview",
+                    "cobo-portal/bills-and-payments/purchase-pricing-plan/prerequisites",
+                    "cobo-portal/bills-and-payments/purchase-pricing-plan/procedures"
+                  ]
+                },
+                {
+                  "group": "Manage your pricing plans",
+                  "pages": [
+                    "cobo-portal/bills-and-payments/manage-pricing-plan/view-pricing-plan",
+                    "cobo-portal/bills-and-payments/manage-pricing-plan/upgrade-pricing-plan",
+                    "cobo-portal/bills-and-payments/manage-pricing-plan/purchase-add-on-usages"
+                  ]
+                },
+                {
+                  "group": "Manage your bills",
+                  "pages": [
+                    "cobo-portal/bills-and-payments/manage-bills/view-bills",
+                    "cobo-portal/bills-and-payments/manage-bills/change-payment-plan",
+                    "cobo-portal/bills-and-payments/manage-bills/change-billing-emails"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "cobo-accounts/introduction-to-cobo-accounts/what-is-cobo-accounts",
+        "cobo-accounts/introduction-to-cobo-accounts/key-features",
+        {
+          "group": "How to use",
+          "pages": [
+            {
+              "group": "Set up Cobo Accounts",
+              "pages": [
+                {
+                  "group": "Sign up for Cobo Accounts",
+                  "pages": [
+                    "cobo-accounts/sign-up-for-cobo-accounts/use-email-and-password-for-signup",
+                    "cobo-accounts/sign-up-for-cobo-accounts/use-google-account-for-signup",
+                    "cobo-accounts/sign-up-for-cobo-accounts/use-web3-wallets-for-signup"
+                  ]
+                },
+                {
+                  "group": "Log into Cobo Accounts",
+                  "pages": [
+                    "cobo-accounts/log-in-to-cobo-accounts/use-email-and-password-for-login",
+                    "cobo-accounts/log-in-to-cobo-accounts/use-google-account-for-login",
+                    "cobo-accounts/log-in-to-cobo-accounts/use-web3-wallets-for-login",
+                    "cobo-accounts/log-in-to-cobo-accounts/use-passkeys-for-login",
+                    "cobo-accounts/log-in-to-cobo-accounts/use-cobo-guard-for-login"
+                  ]
+                },
+                {
+                  "group": "Set up multi-factor authentications",
+                  "pages": [
+                    "cobo-accounts/set-up-multifactor-authentication-methods/set-up-google-authenticator",
+                    "cobo-accounts/set-up-multifactor-authentication-methods/set-up-security-keys",
+                    "cobo-accounts/set-up-multifactor-authentication-methods/configure-cobo-guard"
+                  ]
+                }
               ]
             },
             {
-              "group": "Manage your pricing plans",
+              "group": "Manage Cobo Accounts",
               "pages": [
-                "cobo-portal/bills-and-payments/manage-pricing-plan/view-pricing-plan",
-                "cobo-portal/bills-and-payments/manage-pricing-plan/upgrade-pricing-plan",
-                "cobo-portal/bills-and-payments/manage-pricing-plan/purchase-add-on-usages"
-              ]
-            },
-            {
-              "group": "Manage your bills",
-              "pages": [
-                "cobo-portal/bills-and-payments/manage-bills/view-bills",
-                "cobo-portal/bills-and-payments/manage-bills/change-payment-plan",
-                "cobo-portal/bills-and-payments/manage-bills/change-billing-emails"
+                {
+                  "group": "Manage login methods",
+                  "pages": [
+                    "cobo-accounts/manage-login-methods/add-passkeys-as-a-new-login-method",
+                    "cobo-accounts/manage-login-methods/modify-existing-login-methods"
+                  ]
+                },
+                {
+                  "group": "Manage multi-factor authentications",
+                  "pages": [
+                    "cobo-accounts/manage-multifactor-authentication-methods/reset-google-authenticator",
+                    "cobo-accounts/manage-multifactor-authentication-methods/delete-security-keys",
+                    "cobo-accounts/manage-multifactor-authentication-methods/reset-cobo-guard"
+                  ]
+                }
               ]
             },
             {
               "group": "Troubleshoot",
               "pages": [
-                "cobo-portal/bills-and-payments/troubleshoot/faqs"
+                "cobo-accounts/troubleshooting-guides/forgot-the-login-passwords",
+                "cobo-accounts/troubleshooting-guides/passkeys-failed-to-work-properly"
               ]
             }
           ]
         },
+        "cobo-guard/introduction-to-cobo-guard/what-is-cobo-guard",
+        "cobo-guard/introduction-to-cobo-guard/key-features",
         {
-          "group": "Overview",
+          "group": "How to use",
           "pages": [
-            "cobo-superloop/introduction"
+            "cobo-guard/download-the-cobo-guard-app",
+            {
+              "group": "Manage the Cobo Guard app",
+              "pages": [
+                "cobo-guard/manage-the-cobo-guard-app",
+                {
+                  "group": "Generate, back up, and restore your key shares",
+                  "pages": [
+                    "cobo-guard/generate-and-back-up-your-key-shares",
+                    "cobo-guard/restore-your-key-shares-from-icloud"
+                  ]
+                }
+              ]
+            }
           ]
         }
       ]
