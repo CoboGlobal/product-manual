@@ -72,14 +72,15 @@
               "group": "MPC Wallets",
               "pages": [
                 "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction",
+                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/types-of-mpc-wallet",
                 "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/key-features",
                 {
-                  "group": "Organization-Controlled Wallets",
+                  "group": "How to use",
                   "pages": [
-                    "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
                     {
-                      "group": "How to use",
+                      "group": "Organization-Controlled Wallets",
                       "pages": [
+                        "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
                         {
                           "group": "Set up Organization-Controlled Wallet",
                           "pages": [
@@ -96,20 +97,27 @@
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-vaults",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-wallets",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage-key-share-groups",
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-groups",
+                            {
+                              "group": "Recover key share groups",
+                              "pages": [
+                                "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-group/restore-key-shares-from-backup-file",
+                                "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-group/active-key-share-group",
+                                "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-group/recover-root-extended-private-keys"
+                              ]
+                            },
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/tss-node-user-guide/network-environments",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/user-roles-tx-policies",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/transfer"
                           ]
                         }
                       ]
+                    },
+                    {
+                      "group": "User-Controlled Wallets",
+                      "pages": [
+                        "cobo-portal/wallets/mpc-wallet/user-controlled-wallet/introduction"
+                      ]
                     }
-                  ]
-                },
-                {
-                  "group": "User-Controlled Wallets",
-                  "pages": [
-                    "cobo-portal/wallets/mpc-wallet/user-controlled-wallet/introduction"
                   ]
                 }
               ]
