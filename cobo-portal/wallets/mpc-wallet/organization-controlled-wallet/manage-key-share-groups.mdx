@@ -1,0 +1,25 @@
+---
+title: "Manage key share groups"
+sidebarTitle: "Manage key share groups"
+---
+
+### <u>**View root extended public keys**</u>
+
+1. Click **MPC** > **Organization-Controlled Vaults** and select your vault.
+2. Click the **key share groups management icon** on the upper right hand corner.
+3. Depending on the number of cryptographic algorithms supported on Cobo Portal, a set of root extended public keys associated with your vault will be displayed. Note that all public keys for MPC Wallets in this vault are derived from these root extended public keys.
+
+### <u>**Manage Main Group**</u>
+Under the "Main Group" tab, you can view information such as its creation time, key share holders, their TSS Node IDs, group status, and Group IDs.
+
+### <u>**Manage Signing Groups**</u>
+Under the "Signing Group" tab, you can view or delete existing Signing Groups, create new Signing Groups, or upgrade a Signing Group to function as the Main Group.
+Notes:
+- Upon deletion, the key share holders in the designated Signing Group will no longer receive any signature requests. In the event that key holders associated with the deleted Signing Group require reinstatement for receiving signature requests, they must undergo a new key generation process.
+- Upon upgrading, the designated Signing Group will assume the responsibilities of the original Main Group, such as aiding in the creation of new Signing Groups and Recovery Groups. The original Main Group will be automatically deleted.
+
+### <u>**Manage Recovery Groups**</u>
+Under the "Recovery Group" tab, you can view or delete existing Recovery Groups, create new Recovery Groups, or use a Recovery Group to reshare a new Main Group.
+Notes:
+- Upon deletion, the key share holders in the designated Recovery Group can no longer be used to reshare a new Main Group. In the event that key holders associated with the deleted Recovery Group require reinstatement, they must undergo a new key generation process.
+- Upon resharing, the original Main Group will be automatically deleted and replaced by the new Main Group. This new Main Group can then be used to facilitate the creation of new Signing Groups and Recovery Groups.
