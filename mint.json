@@ -82,7 +82,7 @@
                       "pages": [
                         "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/introduction",
                         {
-                          "group": "Set up Organization-Controlled Wallet",
+                          "group": "Set up Organization-Controlled Wallets",
                           "pages": [
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/introduction",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-mpc-vault",
@@ -92,7 +92,7 @@
                           ]
                         },
                         {
-                          "group": "Manage Organization-Controlled Wallet",
+                          "group": "Manage Organization-Controlled Wallets",
                           "pages": [
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-vaults",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/manage/manage-mpc-wallets",
@@ -105,7 +105,6 @@
                                 "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/recover-key-share-group/recover-root-extended-private-keys"
                               ]
                             },
-                            "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/tss-node-user-guide/network-environments",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/user-roles-tx-policies",
                             "cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/transfer"
                           ]
