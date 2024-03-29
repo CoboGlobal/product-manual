@@ -3,4 +3,57 @@ title: "Introduction to Cobo Portal"
 sidebarTitle: "Introduction"
 ---
 
-[Insert Cobo Portal Overview]
+## What is Cobo Portal
+
+Cobo Portal is an all-in-one platform designed to provide a secure and efficient way to manage your digital assets. With its battle-tested security architecture and unparalleled support for tokens and chains, Cobo Portal offers a range of crypto wallets to cater to your specific needs. Additionally, it offers a wide array of features including comprehensive risk controls, seamless access to Web3/DeFi networks, intuitive data dashboards, and a rich selection of both Cobo and third-party applications.
+
+Cobo Portal is designed to serve various participants in the Web3 ecosystem:
+
+- Asset management companies, private banks, and family offices: If you are looking for a secure storage solution for your digital assets, Cobo Portal enables you to create vaults and wallets and carry out daily transactions directly within the platform.
+- Exchanges and wallet providers: Cobo offers Wallet-as-a-Service (WaaS) APIs that allow you to integrate powerful wallet capabilities into your own applications. By utilizing Cobo Portal, you can easily set up your account, manage API keys, view API logs, and access a range of other essential functionalities.
+- Web3 developers: Cobo Portal provides you with the opportunity to build and deploy additional functionalities as Cobo Portal Apps. These apps will empower digital asset businesses by equipping them with the necessary tools and resources to thrive in the Web3 landscape.
+
+
+<img src="/images/portal-overview.png" />
+
+
+
+## Key features
+
+### An all-in-one wallet platform
+
+Cobo Portal combines all four wallet technologies in one platform with state-of-the-art security architecture and the industry’s widest coverage of chains and tokens.
+
+- [Custodial Wallets](/cobo-portal/wallets/custodial-wallet/introduction): Custodial Wallets utilize advanced encryption techniques and risk control engines to ensure that your funds are protected against unauthorized access and potential attacks. It implements a robust 3-tier (hot-warm-cold) private key storage architecture with 95% of funds securely stored in cold wallets and only 5% in hot and warm wallets.
+- [MPC Wallets](/cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction): Multi-Party Computation (MPC) is an advanced cryptographic technology utilized for key management on the blockchain. Cobo Portal offers two types of MPC Wallets: Organization-Controlled Wallets, providing organizations with complete control of their own funds or their end users’ assets, and User-Controlled Wallets, giving end users full control of their digital assets.
+- [Smart Contract Wallets](/cobo-portal/wallets/smart-contract-wallet/introduction-to-smart-contract-wallet/what-is-smart-contract-wallet): This wallet type supports a myriad of smart contract wallets, prominently featuring Safe\{Wallet\} alongside other Account Abstraction-based smart wallets. It also allows the flexibility to delegate an Externally Owned Accounts (EOA) wallet to interact seamlessly with the smart contract ecosystem.
+- [Exchange Wallets](/cobo-portal/wallets/exchange-wallet/introduction): Exchange Wallets are your one-stop solution for managing multiple exchange accounts effortlessly. It brings all of your exchange accounts together in a single, user-friendly interface, providing a seamless experience for viewing, monitoring, and managing your assets across various exchanges. 
+
+
+The following table lists the main characteristics of each wallet type:
+
+|                                                                                                       | Custodial Wallets                                                                                                                                          | MPC Wallets                                                                                                                                                  | Smart Contract Wallets                                                                                                                                  | Exchange Wallets                                                                        |
+| ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| Main benefits                                                                                         | - Convenient: Cobo manages the private keys on your behalf.<br></br><br></br>- Mitigated internal risks: Reduced threats from insiders or human errors within your team. | Complete control over your assets: You hold at least one private key, ensuring that no transactions can be conducted without your signature.                | Minimum internal and external risks: Private keys are stored in on-chain smart contracts.                                                              | A single place for managing exchange accounts: Includes an easy-to-use user interface. |
+| Typical customers                                                                                     | - Digital asset exchanges<br></br><br></br>- Asset management companies                                                                                                  | - Quantitative trading firms<br></br><br></br>- Asset management companies looking to minimize the risk of a single party doing evil by adopting a multi-signature method | DeFi trading firms                                                                                                                                     | CeFi trading firms                                                                     |
+| Key storage and signature                                                                             | Private keys are stored solely by Cobo. Transactions are approved by you and then signed by Cobo.                                                          | Private keys are co-managed with Cobo, with flexible quorum approval schemes of ''m out of n'' key shares.                                                  | Private keys are stored in smart contracts, offering flexible approval schemes including single-signature operations through pre-authorized delegates. | Cobo retains your API keys, allowing for the operation of your exchange accounts.      |
+| Chain support | 70+ chains, 2000+ tokens                                                                                                                                   | 30+ chains, 2000+ tokens                                                                                                                                    | 9 chains                                                                                                                                               | Dependent on the corresponding exchanges                                               |
+| KYC                                                                                                   | Required for Enterprise plan                                                                                                                               | Required for Enterprise plan                                                                                                                                | Not required                                                                                                                                           | Not required                                                                           |
+
+### <u>Comprehensive risk controls</u>
+On Cobo Portal, risk controls encompass a set of strategies tailored to managing and mitigating risks associated with digital asset transactions and custody. These controls are executed through [transaction policies](/cobo-portal/risk-controls/transaction-policies/types-of-tx-policies), [governance policies](/cobo-portal/risk-controls/governance-policies), and [user roles and permissions](/cobo-portal/risk-controls/user-roles-and-permissions).
+
+### <u>Web3/DeFi access</u>
+Custodial Wallets (Web3 Wallets), MPC Wallets, and Smart Contract Wallets provide you with secure and scalable gateways to Web3 and DeFi, allowing you to transfer funds into and out of decentralized applications and financial services, all while ensuring the security of your assets.
+
+### <u>Developer Console</u>
+Cobo Portal's Developer Console serves as a one-stop solution for developers looking to control and optimize their workflows. It delivers a comprehensive experience for managing API keys, tracking API logs, overseeing webhook events, and handling callback messages. For example, the log viewer provides in-depth insights into your entire API request history, equipped with a range of powerful filters such as request method, API key, and status code. These capabilities enable effortless debugging, troubleshooting, and auditing with just a few clicks.
+
+### <u>Data dashboard and reports</u>
+Cobo Portal’s Dashboard is your central hub for monitoring and managing your digital assets. It provides a comprehensive overview of your total asset value, asset allocations and transactions, your pricing plan usage, and the latest Cobo ecosystem updates.
+
+### <u>Cobo Portal Apps</u>
+Cobo Portal Apps are applications developed by Cobo or third parties that are embedded within Cobo Portal. You can authorize these applications to access and utilize the digital assets stored on Cobo Portal. Additionally, you have the freedom to develop and deploy your own applications on Cobo Portal, making them accessible to the public or exclusive for your own use.
+
+
+
