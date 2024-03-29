@@ -72,7 +72,6 @@
               "group": "MPC Wallets",
               "pages": [
                 "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/introduction",
-                "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/types-of-mpc-wallet",
                 "cobo-portal/wallets/mpc-wallet/introduction-to-mpc-wallet/key-features",
                 {
                   "group": "How to use",
