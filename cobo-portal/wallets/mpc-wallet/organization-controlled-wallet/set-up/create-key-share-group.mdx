@@ -13,10 +13,10 @@ After creating a vault, you now need to create key share groups. There are 3 typ
 | Max Quantity per Vault | 1 | 1 or more | 1 (recommended) or more
 
 
-### Main Group
+## Main Group
 Creating a Main Group is mandatory before you can create an MPC wallet. You may begin to use the MPC Wallet once the Main Group is successfully created. As best security practices and to ensure the utmost safety for your assets, it is a good idea to set up your Signing Group and Recovery Group as soon as you can, and back up all key share groups. You can create multiple Signing Groups to cater to your business requirements, but it is recommended to create only one Recovery Group. (Best security practices for your key share groups available soon on our Developer Hub.)
 
-#### Create a Main Group <a id="create-a-main-group"></a>
+### Create a Main Group <a id="create-a-main-group"></a>
 When creating the Main Group for your MPC vault, you have the option to choose either mobile co-signer or API co-signer. Make sure you understand the primary purposes and prerequisites of each co-signer type in the table below before proceeding further.
 
 |        Co-Signer Type     | Mobile Co-Signer | API Co-Signer |
@@ -42,10 +42,10 @@ After you've chosen a co-signer type and set up the prerequisites, follow the in
 
 6. Once the key generation process is complete, the **Status** will show as **Active**. **Note:** a default wallet will be automatically created for this vault upon successful key generation.
 
-### Signing Group
+## Signing Group
 Signing Groups are created using the Main Group. You can create multiple Signing Groups for different members depending on your business needs.
 
-#### Create a Signing Group
+### Create a Signing Group
 Similar to creating the Main Group, you have the option to choose either mobile co-signer or API co-signer when creating the Signing Group. Make sure you understand the primary purposes and prerequisites of each co-signer type in the table below before proceeding further.
 
 |        Co-Signer Type     | Mobile Co-Signer | API Co-Signer |
@@ -59,8 +59,8 @@ After you've chosen a co-signer type and set up the prerequisites, follow the in
 
 2. The Signing Group creation process is the same as the Main Group creation process. See [Create Main Group](/cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group#on-the-create-main-group-dialog) for detailed instructions.
 
-#### Manage Signing Group
-##### Convert Signing Group into Main Group
+### Manage Signing Group
+#### Convert Signing Group into Main Group
 In certain situations, you may want to convert a Signing Group into the Main Group. For example, if the current owner of the Main Group is leaving the organization and you need to assign a new person to own the Main Group, you may choose to convert a specific Signing Group into the new Main Group.
 
 Follow the instructions below to convert a Signing Group into a Main Group.
@@ -71,7 +71,7 @@ Follow the instructions below to convert a Signing Group into a Main Group.
 
 3. The Signing Group is now the Main Group. **Note:** If there were only one Signing Group before the conversion, the list of Signing Groups will become empty post-conversion.
 
-##### Delete a Signing Group
+#### Delete a Signing Group
 Follow the instructions below if you want to delete a Signing Group.
 
 1. On Cobo Portal, click the Wallet icon, then click **MPC** > **[your-vault-name]** > **Signing Groups** > **[the-signing-group-to-be-deleted]** > **Delete Group**.
@@ -80,7 +80,7 @@ Follow the instructions below if you want to delete a Signing Group.
 
 3. The specified Signing Group is now deleted.
 
-### Recovery Group
+## Recovery Group
 Recovery Groups serve two main purposes: Recover the whole private key and create a new Main Group if your Main Group and backup copy are lost or compromised. To learn more about backup and recovery, see "Back up key share groups" and "Recover key shares".
 
 Similar to creating the Main Group and Signing Group, you have the option to choose either mobile co-signer or API co-signer when creating the Recovery Group. Make sure you understand the primary purposes and prerequisites of each co-signer type in the table below before proceeding further.
@@ -92,7 +92,7 @@ Similar to creating the Main Group and Signing Group, you have the option to cho
 
 After you've chosen a co-signer type and set up the prerequisites, follow the instructions below to create a Recovery Group. **Note:** Only the users who have been assigned [the Operator user role in the organization](/cobo-portal/organization/security/overview1) can create a Recovery Group.
 
-#### Create a Recovery Group
+### Create a Recovery Group
 Follow the instructions below to create a Recovery Group.
 
 1. On Cobo Portal, click the Wallet icon, then click **MPC** > **[your-vault-name]** > **Create**.
@@ -109,7 +109,7 @@ Follow the instructions below to create a Recovery Group.
     - To use **Self Recovery**, see [Self Recovery](/cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group#self-recovery).
     - To use **Third-Party Recovery**, see [Third-Party Recovery](/cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group#third-party-recovery).
 
-##### Self Recovery <a id="self-recovery"></a>
+#### Self Recovery <a id="self-recovery"></a>
 If you choose Self Recovery, you will control both private key shares of the Recovery Group. Follow the instructions below to set up Self Recovery.
 1. On the **Create a Recovery Group** dialog, select **Key Holder 1** and **Key Holder 2** using the following instructions:
     - To use **Mobile Co-Signer**, select a **Holder** (the **TSS Node ID** will be filled in automatically), then click **Confirm**.
@@ -117,7 +117,7 @@ If you choose Self Recovery, you will control both private key shares of the Rec
 2. The status will show “Pending Key Holder Confirmation”. Inform all key share holders to confirm on their ends. See [Generate and back up your key shares](/cobo-guard/generate-and-back-up-your-key-shares) for instructions on how key share holders can conduct this confirmation process.
 3. Once all key share holders have confirmed on their Cobo Guard apps, wait for the key generation process to conclude, then the Recovery Group will be created.
 
-##### Third-Party Recovery <a id="third-party-recovery"></a>
+#### Third-Party Recovery <a id="third-party-recovery"></a>
 If you choose Third-Party Recovery, you will control one of the two private key shares and an entrusted third party will control another private key share. Follow the instructions below to set up Third-Party Recovery.
 
 **Note:** Some examples of entrusted third parties you might choose from include Coincover, Nemean Services, and MetaRisk.
@@ -129,7 +129,7 @@ If you choose Third-Party Recovery, you will control one of the two private key 
 2. The status will show “Pending Key Holder Confirmation”. Inform all key share holders to confirm on their ends. See [Generate and back up your key shares](/cobo-guard/generate-and-back-up-your-key-shares) for instructions on how key share holders can conduct this confirmation process.
 3. Once all key share holders have confirmed on their Cobo Guard apps, wait for the key generation process to conclude, then the Recovery Group will be created.
 
-#### Delete a Recovery Group
+### Delete a Recovery Group
 Follow the instructions below if you want to delete a Recovery Group.
 1. On Cobo Portal, click the Wallet icon, then click **MPC** > **[your-vault-name]** > **Recovery Groups** > **[the-recovery-group-to-be-deleted]** > **Delete Group**.
 2. Click **Yes** to delete the specified Recovery Group.

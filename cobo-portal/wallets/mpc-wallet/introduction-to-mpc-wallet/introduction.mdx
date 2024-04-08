@@ -3,9 +3,9 @@ title: "Introduction to MPC Wallets"
 sidebarTitle: "Introduction"
 ---
 
-### What are MPC Wallets?
+## What are MPC Wallets?
 
-<u>MPC Technology</u>
+### MPC Technology
 
 Multi-Party Computation (MPC) is an advanced cryptographic technology utilized for key management on the blockchain. With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. These parties will jointly sign transactions without ever exposing their key shares or materializing a private key at any time.
 
@@ -13,17 +13,17 @@ This means that the private key that executes transactions never exists or lives
 
 <img src="/images/mpc-wallet/1.png"/>
 
-#### <u>Threshold Signature Scheme (TSS)</u>
+### Threshold Signature Scheme (TSS)
 
 A Threshold Signature Scheme (TSS) is a type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible threshold signature scheme (''m out of n'' key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
 
 <img src="/images/mpc-wallet/2.png"/>
 
-### Types of MPC Wallet on Cobo Portal
+## Types of MPC Wallet on Cobo Portal
 
 Cobo Portal offers two types of MPC Wallets: Organization-Controlled Wallets and User-Controlled Wallets.
 
-#### <u>Organization-Controlled Wallets</u>
+### Organization-Controlled Wallets
 
 In an Organization-Controlled Wallet, the management and control of the wallet lie with the organization itself. This setup allows organizations to securely custody and maintain complete control of their own funds or their end users’ assets.
 
@@ -37,7 +37,7 @@ An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with the orga
 
 <img src="/images/mpc-wallet/4.png"/>
 
-#### <u>User-Controlled Wallets</u>
+### User-Controlled Wallets
 
 In an User-Controlled Wallet, end users of the organization are given full control of their digital assets. In this setup, each end user of the organization holds their own unique private key share to their MPC Wallet.
 
