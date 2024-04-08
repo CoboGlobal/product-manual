@@ -13,9 +13,9 @@ This means that the private key that executes transactions never exists or lives
 
 <img src="/images/mpc-wallet/1.png"/>
 
-### Threshold Signature Scheme (TSS) and approval quorum
+### Threshold Signature Scheme (TSS)
 
-A Threshold Signature Scheme (TSS) is a type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible quorum approval scheme (''m out of n'' key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
+A Threshold Signature Scheme (TSS) is a type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible threshold signature scheme (''m out of n'' key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
 
 <img src="/images/mpc-wallet/2.png"/>
 
@@ -41,7 +41,7 @@ An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with the orga
 
 In an User-Controlled Wallet, end users of the organization are given full control of their digital assets. In this setup, each end user of the organization holds their own unique private key share to their MPC Wallet.
 
-With a flexible quorum approval scheme (''m out of n'' key shares), User-Controlled Wallets allow the organization to customize how transactions are signed. For example, under a 3-3 signature scheme, the organization, the end user, and Cobo each hold a key share and all three key shares must collectively sign transactions. Alternatively, a 2-3 signature scheme can be implemented, where the organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
+With a flexible threshold signature scheme (''m out of n'' key shares), User-Controlled Wallets allow the organization to customize how transactions are signed. For example, under a 3-3 signature scheme, the organization, the end user, and Cobo each hold a key share and all three key shares must collectively sign transactions. Alternatively, a 2-3 signature scheme can be implemented, where the organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
 
 To integrate non-custodial MPC Wallets into your applications, a 2-2 signature can be implemented, where the end user and Cobo each hold a key share, while the organization holds none.
 
