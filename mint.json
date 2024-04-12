@@ -382,32 +382,9 @@
             {
               "group": "Set up Cobo Accounts",
               "pages": [
-                {
-                  "group": "Sign up for Cobo Accounts",
-                  "pages": [
-                    "cobo-accounts/sign-up-for-cobo-accounts/use-email-and-password-for-signup",
-                    "cobo-accounts/sign-up-for-cobo-accounts/use-google-account-for-signup",
-                    "cobo-accounts/sign-up-for-cobo-accounts/use-web3-wallets-for-signup"
-                  ]
-                },
-                {
-                  "group": "Log into Cobo Accounts",
-                  "pages": [
-                    "cobo-accounts/log-in-to-cobo-accounts/use-email-and-password-for-login",
-                    "cobo-accounts/log-in-to-cobo-accounts/use-google-account-for-login",
-                    "cobo-accounts/log-in-to-cobo-accounts/use-web3-wallets-for-login",
-                    "cobo-accounts/log-in-to-cobo-accounts/use-passkeys-for-login",
-                    "cobo-accounts/log-in-to-cobo-accounts/use-cobo-guard-for-login"
-                  ]
-                },
-                {
-                  "group": "Set up multi-factor authentications",
-                  "pages": [
-                    "cobo-accounts/set-up-multifactor-authentication-methods/set-up-google-authenticator",
-                    "cobo-accounts/set-up-multifactor-authentication-methods/set-up-security-keys",
-                    "cobo-accounts/set-up-multifactor-authentication-methods/configure-cobo-guard"
-                  ]
-                }
+                "cobo-accounts/log-in-to-cobo-accounts/log-into-cobo-accounts",
+                "cobo-accounts/sign-up-for-cobo-accounts/sign-up-cobo-accounts",
+                "cobo-accounts/set-up-multifactor-authentication-methods/2fa-cobo-accounts"
               ]
             },
             {
