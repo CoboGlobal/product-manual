@@ -4,18 +4,15 @@
   margin-bottom: -40px;
   margin-right: 0px;
   margin-left: 0px;
-
 }
 
 .text {
   display: inline-block;
-
-
 }
 
 .icon {
   display: inline-block;
-  width: 20px; /* Adjust as per your image size */
+  width: 20px;
   height: 20px;
     margin-top: 0px;
   margin-bottom: 0px;
@@ -24,8 +21,17 @@
 }
 
 .screenshot {
-  width: 150px; /* Adjust as per your image size */
-  height: 150px;
+    border: 1px solid transparent; /* Set image border style */
+    border-radius: 10px; /* Give images rounded edge */
+    border-color: #EDEEF3; /* Image border color */
+
+    /* Force image to keep original width and height */
+    width: auto;
+    height: auto;
+
+    /* Center the image */
+    display: block;
+    margin: auto;
 }
 
 .container_for_screenshot {
