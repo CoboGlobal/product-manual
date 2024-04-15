@@ -450,13 +450,13 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Private Content",
+          "pages": [
+            "private/introduction"
+          ]
         }
-      ]
-    },
-    {
-      "group": "Private Content",
-      "pages": [
-        "private/introduction"
       ]
     }
   ],
