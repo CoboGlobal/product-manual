@@ -46,7 +46,7 @@
     },
     {
       "name": "Access Private Content",
-      "url": "https://cobo-oauth.vercel.app/cobo-guard",
+      "url": "https://cobo-oauth.vercel.app/private",
       "icon": "right-to-bracket"
     },
     {
