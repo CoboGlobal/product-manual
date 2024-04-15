@@ -40,7 +40,7 @@
     },
     {
       "name": "Cobo Guard",
-      "url": "cobo-guard"
+      "url": "https://cobo-oauth.vercel.app/cobo-guard"
     }
   ],
   "navigation": [
