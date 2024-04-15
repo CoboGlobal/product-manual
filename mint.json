@@ -48,6 +48,7 @@
       "group": "Overview",
       "pages": [
         "cobo-portal/introduction",
+        "cobo-portal/quick-start-guide",
         {
           "group": "Wallets",
           "pages": [
