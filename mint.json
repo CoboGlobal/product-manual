@@ -33,7 +33,7 @@
   "primaryTab": {
     "name": "Cobo Portal"
   },
-  "tabs": [
+  "anchors": [
     {
       "name": "Cobo Accounts",
       "url": "cobo-accounts"
@@ -41,6 +41,11 @@
     {
       "name": "Cobo Guard",
       "url": "https://cobo-oauth.vercel.app/cobo-guard"
+    },
+    {
+      "name": "Cobo Guard",
+      "url": "cobo-guard",
+      "isDefaultHidden": true
     }
   ],
   "navigation": [
