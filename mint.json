@@ -40,15 +40,20 @@
       "icon": "users"
     },
     {
+      "name": "Cobo Guard",
+      "url": "cobo-guard",
+      "icon": "shield-halved"
+    },
+    {
       "name": "Access Private Content",
       "url": "https://cobo-oauth.vercel.app/cobo-guard",
       "icon": "right-to-bracket"
     },
     {
       "name": "Private Content",
-      "url": "cobo-guard",
+      "url": "private",
       "isDefaultHidden": true,
-      "icon": "shield-halved"
+      "icon": "lock"
     }
   ],
   "navigation": [
@@ -445,6 +450,12 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "group": "Private Content",
+      "pages": [
+        "/private/introduction"
       ]
     }
   ],
