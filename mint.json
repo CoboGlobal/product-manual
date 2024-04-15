@@ -46,7 +46,7 @@
     },
     {
       "name": "Access Private Content",
-      "url": "https://cobo-oauth.vercel.app/private",
+      "url": "https://cobo-oauth.vercel.app/private/introduction",
       "icon": "right-to-bracket"
     },
     {
@@ -450,13 +450,13 @@
               ]
             }
           ]
-        },
-        {
-          "group": "Private Content",
-          "pages": [
-            "private/introduction"
-          ]
         }
+      ]
+    },
+    {
+      "group": "Private Content",
+      "pages": [
+        "private/introduction"
       ]
     }
   ],
