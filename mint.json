@@ -40,7 +40,7 @@
       "icon": "users"
     },
     {
-      "name": "Login to Access",
+      "name": "Access Private Content",
       "url": "https://cobo-oauth.vercel.app/cobo-guard",
       "icon": "right-to-bracket"
     },
