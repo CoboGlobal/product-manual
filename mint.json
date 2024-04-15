@@ -382,9 +382,9 @@
             {
               "group": "Set up Cobo Accounts",
               "pages": [
-                "cobo-accounts/log-in-to-cobo-accounts/log-into-cobo-accounts",
-                "cobo-accounts/sign-up-for-cobo-accounts/sign-up-cobo-accounts",
-                "cobo-accounts/set-up-multifactor-authentication-methods/2fa-cobo-accounts"
+                "cobo-accounts/set-up-cobo-accounts/sign-up-cobo-accounts",
+                "cobo-accounts/set-up-cobo-accounts/log-into-cobo-accounts",
+                "cobo-accounts/set-up-cobo-accounts/2fa-cobo-accounts"
               ]
             },
             {
