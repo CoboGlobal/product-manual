@@ -52,7 +52,6 @@
     {
       "name": "Private Content",
       "url": "private",
-      "isDefaultHidden": true,
       "icon": "lock"
     }
   ],
