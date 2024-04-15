@@ -36,16 +36,19 @@
   "anchors": [
     {
       "name": "Cobo Accounts",
-      "url": "cobo-accounts"
+      "url": "cobo-accounts",
+      "icon": "users"
     },
     {
-      "name": "Cobo Guard",
-      "url": "https://cobo-oauth.vercel.app/cobo-guard"
+      "name": "Login to Access",
+      "url": "https://cobo-oauth.vercel.app/cobo-guard",
+      "icon": "shield-halved"
     },
     {
       "name": "Cobo Guard",
       "url": "cobo-guard",
-      "isDefaultHidden": true
+      "isDefaultHidden": true,
+      "icon": "shield-halved"
     }
   ],
   "navigation": [
