@@ -20,12 +20,7 @@ sidebarTitle: "Recover root extended private keys"
 1. Complete necessary pre-preparations.
 
 - Ensure accessibility to the secrets.db database files and the corresponding passwords for the two private key shares associated with your selected Recovery Group.
-- Obtain the recovery kit from the open-source repository: [cobo-mpc-recovery-kits](https://github.com/CoboGlobal/cobo-mpc-recovery-kits). Prior to compilation of cobo-mpc-recovery-tool, familiarize yourself with the instructions in the README.md file. Alternatively, download the latest version of cobo-mpc-recovery-tool [here](https://github.com/CoboGlobal/cobo-mpc-recovery-kits/releases).
 - Record the root extended public keys after jointly generating each set of private key shares. Once generated, these root extended public keys will remain constant.
-- Save the wallet addresses associated with each vault using one of the following methods:
-   - Retrieve AddressDetail via the generate_addresses API during key generation. The HD path corresponding to each address will be included in the response.
-   - Retrieve AddressDetail via the list_addresses API regularly. The HD path corresponding to each address will be included in the response.
-   - Manually export all address information associated with a vault by clicking the export icon on Cobo Portal.
 
 2. Prepare the recovery environment.
 
@@ -57,26 +52,36 @@ Ensure that the root extended public keys in the output match those saved during
 
 7. Enter a new password to encrypt the private key share in each exported file. Please note that once set, this password cannot be modified. In the event of a lost password, the exported private key share file will become inaccessible and must be exported again. It is recommended to set a complex password between 16-32 characters using a password manager (e.g., 1Password) and store the password on a secure device.
 
-8. The private key shares will be automatically exported as JSON files. Please verify the accuracy of the root extended public keys and group ID in the exported files.
+8. The private key shares will automatically be exported as JSON files.
 
-## Step 2: Reconstruct all private key shares and derive the private keys for all wallet addresses associated with the vault (applicable to both mobile co-signer and API co-signer).
+9. Please verify the accuracy of the root extended public keys and group ID in the exported files.
 
-1. (For third-party recovery only) Obtain the private key share exported by your entrusted third party. The private key share file exported by your entrusted third party will also be in JSON format. Please verify that the root extended public keys in the files exported by you and your entrusted third party are identical.
+## Step 2: Reconstruct all private key shares and derive the private keys for all wallet addresses associated with the vault (applicable to both mobile co-signer and API co-signer)
 
-2. Create a new recovery folder at the same directory level as cobo-mpc-recovery-tool. Paste the two exported private key share files under the recovery folder.
+1. Complete necessary pre-preparations.
+
+- Obtain the recovery kit from the [open-source repository](https://github.com/CoboGlobal/cobo-mpc-recovery-kits). Prior to compiling cobo-mpc-recovery-tool, ensure you are familiar with the instructions provided in the README.md file. Alternatively, you can download the latest version of cobo-mpc-recovery-tool [here](https://github.com/CoboGlobal/cobo-mpc-recovery-kits/releases).
+- Save the wallet addresses associated with each vault using one of the following methods:
+    - Retrieve AddressDetail via the generate_addresses API during key generation. The HD path corresponding to each address will be included in the response.
+    - Retrieve AddressDetail via the list_addresses API regularly. The HD path corresponding to each address will be included in the response.
+    - Manually export all address information associated with a vault by clicking the export icon on Cobo Portal.
+
+2. (For third-party recovery only) Obtain the private key share exported by your entrusted third party. The private key share file exported by your entrusted third party will also be in JSON format. Please verify that the root extended public keys in the files exported by you and your entrusted third party are identical.
+
+3. Create a new recovery folder at the same directory level as cobo-mpc-recovery-tool. Paste the two exported private key share files under the recovery folder.
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
 ├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
 └── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
 ```
-3. Execute the following commands using the actual group IDs and private key share files.
+4. Execute the following commands using the actual group IDs and private key share files.
 ```
 ./cobo-mpc-recovery-tool verify \
 --group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
 --group-id <GROUP_ID>
 ```
-4. Wait for the MPC recovery tool to automatically complete the verification process.
+5. Wait for the MPC recovery tool to automatically complete the verification process.
 - The cobo-mpc-recovery-tool will verify the keys/values associated with the first private key share file.
 - The cobo-mpc-recovery-tool will derive and verify the root extended public keys using the "participants" information in the first private key share file.
 - You need to manually enter the password associated with the first private key share file to decrypt it. The cobo-mpc-recovery-tool will then derive and verify the corresponding public keys.
@@ -85,7 +90,7 @@ Ensure that the root extended public keys in the output match those saved during
 - The cobo-mpc-recovery-tool will derive and verify the root extended public keys using the "participants" information in the second private key share file.
 - You need to manually enter the password associated with the second private key share file to decrypt it. The cobo-mpc-recovery-tool will then derive and verify the corresponding public keys.
 
-5. Place the address.csv file exported during pre-preparations under the recovery folder.
+6. Place the address.csv file exported during pre-preparations under the recovery folder.
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
@@ -94,7 +99,7 @@ Ensure that the root extended public keys in the output match those saved during
 └── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
 ```
 
-6. Execute the following commands using the actual group ID and private key share files.
+7. Execute the following commands using the actual group ID and private key share files.
 
 - Enter the passwords to decrypt the two private key share files.
 - The root extended private keys and the root extended public keys will be reconstructed.
