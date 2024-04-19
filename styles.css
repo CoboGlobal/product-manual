@@ -11,13 +11,11 @@
 }
 
 .icon {
-  display: inline-block;
+  display: inline;
   width: 30px;
   height: 30px;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-right: 5px;
-  margin-left: 5px;
 }
 
 .screenshot_full_screen {
