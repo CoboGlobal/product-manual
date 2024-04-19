@@ -45,78 +45,14 @@
   ],
   "navigation": [
     {
-      "group": "Overview",
+      "group": "OVERVIEW",
       "pages": [
         "portal/introduction",
-        "portal/quick-start-guide",
-        "accounts/introduction",
-        "accounts/key-features",
-        {
-          "group": "How to use",
-          "pages": [
-            {
-              "group": "Set up Cobo Accounts",
-              "pages": [
-                "accounts/sign-up",
-                "accounts/log-in",
-                "accounts/set-up-2fa"
-              ]
-            },
-            {
-              "group": "Manage Cobo Accounts",
-              "pages": [
-                {
-                  "group": "Manage login methods",
-                  "pages": [
-                    "accounts/add-passkey-as-login-method",
-                    "accounts/modify-existing-login-methods"
-                  ]
-                },
-                {
-                  "group": "Manage multi-factor authentications",
-                  "pages": [
-                    "accounts/reset-google-authenticator",
-                    "accounts/delete-security-keys",
-                    "accounts/reset-cobo-guard"
-                  ]
-                },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "accounts/forgot-password",
-                    "accounts/passkeys-failed"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "guard/introduction",
-        "guard/key-features",
-        {
-          "group": "How to use",
-          "pages": [
-            "guard/download",
-            {
-              "group": "Manage the Cobo Guard app",
-              "pages": [
-                "guard/manage",
-                {
-                  "group": "Generate, back up, and restore your key shares",
-                  "pages": [
-                    "guard/generate-and-back-up-key-shares",
-                    "guard/restore-key-shares-from-icloud"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-
+        "portal/quick-start-guide"
       ]
     },
     {
-      "group": "Wallets & Transactions",
+      "group": "WALLETS & TRANSACTIONS",
       "pages": [
         {
           "group": "Wallets",
@@ -129,7 +65,7 @@
                 {
                   "group": "How to use",
                   "pages": [
-                    "portal/custodial-wallets/set-up-custodial-wallet",
+                    "portal/custodial-wallets/set-up",
                     {
                       "group": "Manage Custodial Wallets",
                       "pages": [
@@ -145,8 +81,8 @@
             {
               "group": "MPC Wallets",
               "pages": [
-                "portal/mpc-wallets/introduction-to-mpc-wallet/introduction",
-                "portal/mpc-wallets/introduction-to-mpc-wallet/key-features",
+                "portal/mpc-wallets/introduction",
+                "portal/mpc-wallets/key-features",
                 {
                   "group": "How to use",
                   "pages": [
@@ -160,7 +96,7 @@
                             "portal/mpc-wallets/ocw/set-up",
                             "portal/mpc-wallets/ocw/create-mpc-vault",
                             "portal/mpc-wallets/ocw/create-key-share-groups",
-                            "portal/mpc-wallets/ocw/backup-key-share-groups",
+                            "portal/mpc-wallets/ocw/back-up-key-share-groups",
                             "portal/mpc-wallets/ocw/create-mpc-wallet"
                           ]
                         },
@@ -324,7 +260,7 @@
       ]
     },
     {
-      "group": "Manage Your Accounts",
+      "group": "MANAGE YOUR ACCOUNTS",
       "pages": [
         {
           "group": "Dashboard",
@@ -377,7 +313,7 @@
                         "portal/organization/governance-notifications"
                       ]
                     },
-                    "portal/organization/governance-activity-logs"
+                    "portal/organization/activity-logs"
                   ]
                 }
               ]
@@ -410,7 +346,7 @@
       ]
     },
     {
-      "group": "Develop With Cobo",
+      "group": "DEVELOP WITH COBO",
       "pages": [
         {
           "group": "Developer Console",
@@ -450,6 +386,74 @@
                 "portal/developer-console/api-logs",
                 "portal/developer-console/webhook-events",
                 "portal/developer-console/callback-messages"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
+        "accounts/introduction",
+        "accounts/key-features",
+        {
+          "group": "How to use",
+          "pages": [
+            {
+              "group": "Set up Cobo Accounts",
+              "pages": [
+                "accounts/sign-up",
+                "accounts/log-in",
+                "accounts/set-up-2fa"
+              ]
+            },
+            {
+              "group": "Manage Cobo Accounts",
+              "pages": [
+                {
+                  "group": "Manage login methods",
+                  "pages": [
+                    "accounts/add-passkey-as-login-method",
+                    "accounts/modify-existing-login-methods"
+                  ]
+                },
+                {
+                  "group": "Manage multi-factor authentications",
+                  "pages": [
+                    "accounts/reset-google-authenticator",
+                    "accounts/delete-security-keys",
+                    "accounts/reset-cobo-guard"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "accounts/forgot-password",
+                    "accounts/passkeys-failed"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "guard/introduction",
+        "guard/key-features",
+        {
+          "group": "How to use",
+          "pages": [
+            "guard/download",
+            {
+              "group": "Manage the Cobo Guard app",
+              "pages": [
+                "guard/manage",
+                {
+                  "group": "Generate, back up, and restore your key shares",
+                  "pages": [
+                    "guard/generate-and-back-up-key-shares",
+                    "guard/restore-key-shares-from-icloud"
+                  ]
+                }
               ]
             }
           ]
