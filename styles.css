@@ -11,16 +11,14 @@
 }
 
 .icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-    margin-top: 0px;
+  display: inline;
+  width: 30px;
+  height: 30px;
+  margin-top: 0px;
   margin-bottom: 0px;
-  margin-right: 5px;
-  margin-left: 5px;
 }
 
-.screenshot {
+.screenshot_full_screen {
     border: 1px solid transparent; /* Set image border style */
     border-radius: 10px; /* Give images rounded edge */
     border-color: #EDEEF3; /* Image border color */
@@ -34,10 +32,52 @@
     margin: auto;
 }
 
-.container_for_screenshot {
+.screenshot_nav_bar {
+    border: 1px solid transparent; /* Set image border style */
+    border-radius: 10px; /* Give images rounded edge */
+    border-color: #EDEEF3; /* Image border color */
+
+    /* Force image to keep original width and height */
+    width: 60px;
+    height: auto;
+
+    /* Center the image */
+    display: block;
+    margin: auto;
+}
+
+.screenshot_modal {
+    border: 1px solid transparent; /* Set image border style */
+    border-radius: 10px; /* Give images rounded edge */
+    border-color: #EDEEF3; /* Image border color */
+
+    /* Force image to keep original width and height */
+    width: 450px;
+    height: auto;
+
+    /* Center the image */
+    display: block;
+    margin: auto;
+}
+
+/*.screenshot {
+    border: 1px solid transparent; *//* Set image border style *//*
+    border-radius: 10px; *//* Give images rounded edge *//*
+    border-color: #EDEEF3; *//* Image border color *//*
+
+    *//* Force image to keep original width and height *//*
+    width: 400px;
+    height: auto;
+
+    *//* Center the image *//*
+    display: block;
+    margin: auto;
+}*/
+
+/*.container_for_screenshot {
   display: grid;
   place-items: center;
-}
+}*/
 
 /*
 table {
