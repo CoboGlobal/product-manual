@@ -33,26 +33,22 @@
   "primaryTab": {
     "name": "Cobo Portal"
   },
-  "anchors": [
+  "tabs": [
     {
       "name": "Cobo Accounts",
-      "url": "cobo-accounts",
-      "icon": "users"
+      "url": "cobo-accounts"
     },
     {
       "name": "Cobo Guard",
-      "url": "cobo-guard",
-      "icon": "shield-halved"
+      "url": "cobo-guard"
     },
     {
       "name": "Access Private Content",
-      "url": "https://cobo-oauth.vercel.app/private",
-      "icon": "right-to-bracket"
+      "url": "https://cobo-oauth.vercel.app/private"
     },
     {
       "name": "Private Content",
       "url": "private",
-      "icon": "lock",
       "isDefaultHidden": true
     }
   ],
