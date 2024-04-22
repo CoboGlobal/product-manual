@@ -405,7 +405,7 @@
               "pages": [
                 "accounts/sign-up",
                 "accounts/log-in",
-                "accounts/set-up-2fa"
+                "accounts/set-up-mfa"
               ]
             },
             {
