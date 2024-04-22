@@ -243,11 +243,22 @@
                 {
                   "group": "Transaction policies",
                   "pages": [
-                    "portal/risk-controls/transaction-types",
-                    "portal/risk-controls/transaction-set-up-transfer",
-                    "portal/risk-controls/transaction-manage-transfer",
-                    "portal/risk-controls/transaction-set-up-tx-signing",
-                    "portal/risk-controls/transaction-manage-tx-signing"
+                    {
+                      "group": "On-chain transaction policies",
+                      "pages": [
+                        "portal/risk-controls/on-chain-tx-type"
+                      ]
+                    },
+                    {
+                      "group": "Off-chain transaction policies",
+                      "pages": [
+                        "portal/risk-controls/off-chain-tx-types",
+                        "portal/risk-controls/off-chain-tx-set-transfer",
+                        "portal/risk-controls/off-chain-tx-manage-transfer",
+                        "portal/risk-controls/off-chain-tx-set-contract-call",
+                        "portal/risk-controls/off-chain-tx-manage-contract-call"
+                      ]
+                    }
                   ]
                 },
                 "portal/risk-controls/governance-policies",
