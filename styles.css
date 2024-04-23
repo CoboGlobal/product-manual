@@ -12,11 +12,14 @@
 
 .icon {
   display: inline;
-  width: 30px;
   height: 30px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+.diagram {
+}
+
 
 .screenshot_full_screen {
     border: 1px solid transparent; /* Set image border style */
