@@ -41,82 +41,27 @@
     {
       "name": "Cobo Guard",
       "url": "guard"
+    },
+    {
+      "name": "Access Private Content",
+      "url": "https://cobo-oauth.vercel.app/private"
+    },
+    {
+      "name": "Private Content",
+      "url": "private",
+      "isDefaultHidden": true
     }
   ],
   "navigation": [
     {
-      "group": "Overview",
+      "group": "OVERVIEW",
       "pages": [
         "portal/introduction",
-        "portal/quick-start-guide",
-        "accounts/introduction",
-        "accounts/key-features",
-        {
-          "group": "How to use",
-          "pages": [
-            {
-              "group": "Set up Cobo Accounts",
-              "pages": [
-                "accounts/sign-up",
-                "accounts/log-in",
-                "accounts/set-up-2fa"
-              ]
-            },
-            {
-              "group": "Manage Cobo Accounts",
-              "pages": [
-                {
-                  "group": "Manage login methods",
-                  "pages": [
-                    "accounts/add-passkey-as-login-method",
-                    "accounts/modify-existing-login-methods"
-                  ]
-                },
-                {
-                  "group": "Manage multi-factor authentications",
-                  "pages": [
-                    "accounts/reset-google-authenticator",
-                    "accounts/delete-security-keys",
-                    "accounts/reset-cobo-guard"
-                  ]
-                },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "accounts/forgot-password",
-                    "accounts/passkeys-failed"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "guard/introduction",
-        "guard/key-features",
-        {
-          "group": "How to use",
-          "pages": [
-            "guard/download",
-            {
-              "group": "Manage the Cobo Guard app",
-              "pages": [
-                "guard/manage",
-                {
-                  "group": "Generate, back up, and restore your key shares",
-                  "pages": [
-                    "guard/generate-and-back-up-key-shares",
-                    "guard/restore-key-shares-from-icloud"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-
+        "portal/quick-start-guide"
       ]
     },
     {
-      "group": "Wallets & Transactions",
+      "group": "WALLETS & TRANSACTIONS",
       "pages": [
         {
           "group": "Wallets",
@@ -129,7 +74,7 @@
                 {
                   "group": "How to use",
                   "pages": [
-                    "portal/custodial-wallets/set-up-custodial-wallet",
+                    "portal/custodial-wallets/set-up",
                     {
                       "group": "Manage Custodial Wallets",
                       "pages": [
@@ -145,8 +90,8 @@
             {
               "group": "MPC Wallets",
               "pages": [
-                "portal/mpc-wallets/introduction-to-mpc-wallet/introduction",
-                "portal/mpc-wallets/introduction-to-mpc-wallet/key-features",
+                "portal/mpc-wallets/introduction",
+                "portal/mpc-wallets/key-features",
                 {
                   "group": "How to use",
                   "pages": [
@@ -160,7 +105,7 @@
                             "portal/mpc-wallets/ocw/set-up",
                             "portal/mpc-wallets/ocw/create-mpc-vault",
                             "portal/mpc-wallets/ocw/create-key-share-groups",
-                            "portal/mpc-wallets/ocw/backup-key-share-groups",
+                            "portal/mpc-wallets/ocw/back-up-key-share-groups",
                             "portal/mpc-wallets/ocw/create-mpc-wallet"
                           ]
                         },
@@ -251,6 +196,7 @@
               "pages": [
                 "portal/exchange-wallets/introduction",
                 "portal/exchange-wallets/key-features",
+                "portal/exchange-wallets/supported-exchanges",
                 {
                   "group": "How to use",
                   "pages": [
@@ -266,14 +212,14 @@
                       ]
                     },
                     {
-                      "group": "Manage Exchange Wallet",
+                      "group": "Manage Exchange Wallets",
                       "pages": [
                         "portal/exchange-wallets/manage",
                         "portal/exchange-wallets/roles-and-policies",
-                        "portal/exchange-wallets/transfers"
+                        "portal/exchange-wallets/transfers",
+                        "portal/exchange-wallets/troubleshoot"
                       ]
-                    },
-                    "portal/exchange-wallets/supported-exchanges"
+                    }
                   ]
                 }
               ]
@@ -307,11 +253,22 @@
                 {
                   "group": "Transaction policies",
                   "pages": [
-                    "portal/risk-controls/transaction-types",
-                    "portal/risk-controls/transaction-set-up-transfer",
-                    "portal/risk-controls/transaction-manage-transfer",
-                    "portal/risk-controls/transaction-set-up-tx-signing",
-                    "portal/risk-controls/transaction-manage-tx-signing"
+                    {
+                      "group": "On-chain transaction policies",
+                      "pages": [
+                        "portal/risk-controls/on-chain-tx-type"
+                      ]
+                    },
+                    {
+                      "group": "Off-chain transaction policies",
+                      "pages": [
+                        "portal/risk-controls/off-chain-tx-types",
+                        "portal/risk-controls/off-chain-tx-set-transfer",
+                        "portal/risk-controls/off-chain-tx-manage-transfer",
+                        "portal/risk-controls/off-chain-tx-set-contract-call",
+                        "portal/risk-controls/off-chain-tx-manage-contract-call"
+                      ]
+                    }
                   ]
                 },
                 "portal/risk-controls/governance-policies",
@@ -324,7 +281,7 @@
       ]
     },
     {
-      "group": "Manage Your Accounts",
+      "group": "MANAGE YOUR ACCOUNTS",
       "pages": [
         {
           "group": "Dashboard",
@@ -377,7 +334,7 @@
                         "portal/organization/governance-notifications"
                       ]
                     },
-                    "portal/organization/governance-activity-logs"
+                    "portal/organization/activity-logs"
                   ]
                 }
               ]
@@ -410,7 +367,7 @@
       ]
     },
     {
-      "group": "Develop With Cobo",
+      "group": "DEVELOP WITH COBO",
       "pages": [
         {
           "group": "Developer Console",
@@ -454,6 +411,80 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
+        "accounts/introduction",
+        "accounts/key-features",
+        {
+          "group": "How to use",
+          "pages": [
+            {
+              "group": "Set up Cobo Accounts",
+              "pages": [
+                "accounts/sign-up",
+                "accounts/log-in",
+                "accounts/set-up-mfa"
+              ]
+            },
+            {
+              "group": "Manage Cobo Accounts",
+              "pages": [
+                {
+                  "group": "Manage login methods",
+                  "pages": [
+                    "accounts/add-passkey-as-login-method",
+                    "accounts/modify-existing-login-methods"
+                  ]
+                },
+                {
+                  "group": "Manage multi-factor authentications",
+                  "pages": [
+                    "accounts/reset-google-authenticator",
+                    "accounts/delete-security-keys",
+                    "accounts/reset-cobo-guard"
+                  ]
+                },
+                {
+                  "group": "Troubleshoot",
+                  "pages": [
+                    "accounts/forgot-password",
+                    "accounts/passkeys-failed"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "guard/introduction",
+        "guard/key-features",
+        {
+          "group": "How to use",
+          "pages": [
+            "guard/download",
+            {
+              "group": "Manage the Cobo Guard app",
+              "pages": [
+                "guard/manage",
+                {
+                  "group": "Generate, back up, and restore your key shares",
+                  "pages": [
+                    "guard/generate-and-back-up-key-shares",
+                    "guard/restore-key-shares-from-icloud"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Private Content",
+      "pages": [
+        "private/introduction"
       ]
     }
   ],
