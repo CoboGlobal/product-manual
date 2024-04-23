@@ -196,6 +196,7 @@
               "pages": [
                 "portal/exchange-wallets/introduction",
                 "portal/exchange-wallets/key-features",
+                "portal/exchange-wallets/supported-exchanges",
                 {
                   "group": "How to use",
                   "pages": [
@@ -211,14 +212,14 @@
                       ]
                     },
                     {
-                      "group": "Manage Exchange Wallet",
+                      "group": "Manage Exchange Wallets",
                       "pages": [
                         "portal/exchange-wallets/manage",
                         "portal/exchange-wallets/roles-and-policies",
-                        "portal/exchange-wallets/transfers"
+                        "portal/exchange-wallets/transfers",
+                        "portal/exchange-wallets/troubleshoot"
                       ]
-                    },
-                    "portal/exchange-wallets/supported-exchanges"
+                    }
                   ]
                 }
               ]
