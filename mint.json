@@ -7,14 +7,14 @@
   },
   "logo": {
     "dark": "/logo/dark.png",
-    "light": "/logo/light.png",
+    "light": "/logo/light.svg",
     "href": "https://www.cobo.com"
   },
   "favicon": "/logo/cobo.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#1F32D6",
+    "light": "#1F32D6",
+    "dark": "#1F32D6"
   },
   "modeToggle": {
     "default": "light",
