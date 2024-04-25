@@ -80,7 +80,15 @@
                       "pages": [
                         "portal/custodial-wallets/manage",
                         "portal/custodial-wallets/roles-and-policies",
-                        "portal/custodial-wallets/transfers"
+                        "portal/custodial-wallets/transfers",
+                        {
+                          "group": "Troubleshoot",
+                          "pages": [
+                            "portal/custodial-wallets/unable-to-create-wallet",
+                            "portal/custodial-wallets/unsupported-tokens-and-chains",
+                            "portal/custodial-wallets/transaction-not-processed-successfully"
+                          ]
+                        }
                       ]
                     }
                   ]
