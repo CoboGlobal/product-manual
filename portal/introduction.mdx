@@ -9,12 +9,12 @@ Cobo Portal is an all-in-one platform designed to provide a secure and efficient
 
 Cobo Portal is designed to serve various participants in the Web3 ecosystem:
 
-- Asset management companies, private banks, and family offices: If you are looking for a secure storage solution for your digital assets, Cobo Portal enables you to create vaults and wallets and carry out daily transactions directly within the platform.
-- Exchanges and wallet providers: Cobo offers Wallet-as-a-Service (WaaS) APIs that allow you to integrate powerful wallet capabilities into your own applications. By utilizing Cobo Portal, you can easily set up your account, manage API keys, view API logs, and access a range of other essential functionalities.
+- DeFi & staking funds, trading firms, institutional investors, and financial services: If you are looking for a secure storage solution for your digital assets, Cobo Portal enables you to create vaults and wallets and carry out daily transactions directly within the platform.
+- Exchanges, crypto native firms, OTC & brokerages, and retail platforms: Cobo offers Wallet-as-a-Service (WaaS) APIs that allow you to integrate powerful wallet capabilities into your own applications. By utilizing Cobo Portal, you can easily set up your account, manage API keys, view API logs, and access a range of other essential functionalities.
 - Web3 developers: Cobo Portal provides you with the opportunity to build and deploy additional functionalities as Cobo Portal Apps. These apps will empower digital asset businesses by equipping them with the necessary tools and resources to thrive in the Web3 landscape.
 
 
-<img src="/images/portal-overview.png" />
+<img src="/images/exchange-wallet/overview.jpg" className="screenshot_full_screen"/>
 
 
 
@@ -32,16 +32,11 @@ Cobo Portal combines all four wallet technologies in one platform with state-of-
 
 The following table lists the main characteristics of each wallet type:
 
-|                           | **Custodial Wallets**                                        | **MPC Wallets**                                              | **Smart Contract Wallets**                                   | **Exchange Wallets**                                         |
-| ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Main benefits             | - Institutional-grade wallet security combined with a three-tier hot-warm-cold infrastructure<br></br><br></br>- Customizable access controls and risk policies<br></br><br></br>- Automated token sweep from all your end users | - No single point of failure<br></br><br></br>- Key shares can be flexibly distributed amongst multiple parties according to your requirements<br></br><br></br>- Robust asset recovery capabilities | - Seamless CeFi-DeFi single-signature fund transfers<br></br><br></br>- Comprehensive on-chain asset management<br></br><br></br>- On- and off-chain risk controls<br></br><br></br>- Operation delegation | - Easily move assets in and out of multiple exchanges from a single dashboard<br></br><br></br>- Customize security settings across multiple exchange accounts from a single interface<br></br><br></br>- Enhanced portfolio oversight |
-| Typical customers         | Users seeking ease of use and convenience, and those who prefer having a trusted specialist handle the security of their wallet. | Users who want more control over their private keys and assets and privacy, and those who prefer a more decentralized approach to custody. | Users who prefer non-custodial wallets powered by smart contracts, and those who seek transparency, automation, programmability, and on-chain role-based access controls. | Users who trade on centralized exchanges but aim to manage exchange counterparty exposure and minimize the risk of leaving assets on exchanges. |
-| Key storage and signature | Private keys are managed solely by Cobo. Transactions are approved by you and then signed by Cobo. | Private keys are co-managed with Cobo, with flexible threshold signature schemes of ''m out of n'' key shares for signing any transactions or messages. | Private keys are safely stored in smart contracts and multiple signatures are required to sign transactions or messages. For higher efficiency, single-signature operations can be performed by pre-authorized delegates. | Cobo retains your API keys, allowing for the operation of your exchange accounts through Cobo Portal. |
-| Chain support             | 70+ chains, 2000+ tokens                                     | 30+ chains, 2000+ tokens                                     | 9 chains                                                     | Dependent on the corresponding exchanges                     |
-| KYC                       | Required                                                     | Not required for Starter and Standard plans                  | Not required                                                 | Not required                                                 |
+<img src="/images/exchange-wallet/overviewtable.jpg" className="screenshot_full_screen"/>
+
 
 ### Comprehensive risk controls
-On Cobo Portal, risk controls encompass a set of strategies tailored to managing and mitigating risks associated with digital asset transactions and custody. These controls are executed through [transaction policies](/cobo-portal/risk-controls/transaction-policies/types-of-tx-policies), [governance policies](/cobo-portal/risk-controls/governance-policies), and [user roles and permissions](/cobo-portal/risk-controls/user-roles-and-permissions).
+On Cobo Portal, risk controls encompass a set of strategies tailored to managing and mitigating risks associated with digital asset transactions and custody. These controls are executed through [transaction policies](/portal/risk-controls/off-chain-tx-types), [governance policies](/portal/risk-controls/governance-policies), and [user roles and permissions](/portal/risk-controls/roles-and-permissions).
 
 ### Web3/DeFi access
 Custodial Wallets (Web3 Wallets), MPC Wallets, and Smart Contract Wallets provide you with secure and scalable gateways to Web3 and DeFi, allowing you to transfer funds into and out of decentralized applications and financial services, all while ensuring the security of your assets.
@@ -50,7 +45,7 @@ Custodial Wallets (Web3 Wallets), MPC Wallets, and Smart Contract Wallets provid
 Cobo Portal's Developer Console serves as a one-stop solution for developers looking to control and optimize their workflows. It delivers a comprehensive experience for managing API keys, tracking API logs, overseeing webhook events, and handling callback messages. For example, the log viewer provides in-depth insights into your entire API request history, equipped with a range of powerful filters such as request method, API key, and status code. These capabilities enable effortless debugging, troubleshooting, and auditing with just a few clicks.
 
 ### Data dashboard and reports
-Cobo Portal’s Dashboard is your central hub for monitoring and managing your digital assets. It provides a comprehensive overview of your total asset value, asset allocations and transactions, your pricing plan usage, and the latest Cobo ecosystem updates.
+Cobo Portal’s [Dashboard](/portal/dashboard/introduction) is your central hub for monitoring and managing your digital assets. It provides a comprehensive overview of your total asset value, asset allocations and transactions, your pricing plan usage, and the latest Cobo ecosystem updates.
 
 ### Cobo Portal Apps
 Cobo Portal Apps are applications developed by Cobo or third parties that are embedded within Cobo Portal. You can authorize these applications to access and utilize the digital assets stored on Cobo Portal. Additionally, you have the freedom to develop and deploy your own applications on Cobo Portal, making them accessible to the public or exclusive for your own use.
