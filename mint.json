@@ -7,14 +7,14 @@
   },
   "logo": {
     "dark": "/logo/dark.png",
-    "light": "/logo/light.png",
+    "light": "/logo/light.svg",
     "href": "https://www.cobo.com"
   },
-  "favicon": "/logo/cobo.png",
+  "favicon": "/logo/cobo.svg",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#1F32D6",
+    "light": "#1F32D6",
+    "dark": "#1F32D6"
   },
   "modeToggle": {
     "default": "light",
@@ -80,7 +80,15 @@
                       "pages": [
                         "portal/custodial-wallets/manage",
                         "portal/custodial-wallets/roles-and-policies",
-                        "portal/custodial-wallets/transfers"
+                        "portal/custodial-wallets/transfers",
+                        {
+                          "group": "Troubleshoot",
+                          "pages": [
+                            "portal/custodial-wallets/unable-to-create-wallet",
+                            "portal/custodial-wallets/unsupported-tokens-and-chains",
+                            "portal/custodial-wallets/transaction-not-processed-successfully"
+                          ]
+                        }
                       ]
                     }
                   ]
