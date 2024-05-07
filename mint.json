@@ -245,8 +245,7 @@
                 "portal/transfers/from-mpc-wallets",
                 "portal/transfers/from-smart-contract-wallets",
                 "portal/transfers/from-exchange-wallets",
-                "portal/transfers/add-category",
-                "portal/transfers/submit-request"
+                "portal/transfers/add-category"
               ]
             }
           ]
