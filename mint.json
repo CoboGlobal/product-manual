@@ -260,16 +260,16 @@
                 {
                   "group": "Transaction policies",
                   "pages": [
+                    "portal/risk-controls/tx-policies-overview",
                     {
                       "group": "On-chain transaction policies",
                       "pages": [
                         "portal/risk-controls/on-chain-tx-type"
-                      ]
+                        ]
                     },
                     {
                       "group": "Off-chain transaction policies",
                       "pages": [
-                        "portal/risk-controls/off-chain-tx-types",
                         "portal/risk-controls/off-chain-tx-set-transfer",
                         "portal/risk-controls/off-chain-tx-manage-transfer",
                         "portal/risk-controls/off-chain-tx-set-contract-call",
