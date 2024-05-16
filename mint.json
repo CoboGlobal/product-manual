@@ -57,6 +57,7 @@
       "group": "OVERVIEW",
       "pages": [
         "portal/introduction",
+        "portal/release-notes",
         "portal/quick-start-guide"
       ]
     },
