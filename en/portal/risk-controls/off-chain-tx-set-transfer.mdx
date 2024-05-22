@@ -1,0 +1,48 @@
+---
+title: "Set up token transfer policy"
+sidebarTitle: "Set up token transfer policy"
+---
+
+## Create a token transfer policy
+
+1. Log into Cobo Portal.
+2. Click **Wallets** > **Transaction Policies** in the main menu on the left hand side.
+3. Click **Create Policy** > **Token Transfers**.
+4. Enter a name for the policy. The name should not exceed 30 characters.
+5. Select all the wallets that are applicable to the policy you are about to create.
+6. Click **+Add Condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. Refer to the **Select condition template** section below for more information.<br/>
+&emsp;a. You have the option to skip setting any conditions and proceed directly to the next step. This means that any token transfers associated with the applicable wallets will trigger this policy.
+7. Select the action to be taken if the policy is triggered (i.e., auto approval, auto rejection, approval quorum, custom workflow). Refer to the **Set approval action** section below for more information.
+8. Adjust and review the priority of your policies. Transactions will be matched with policies in the list based on their priority order.
+Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
+By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
+9. Click **Submit** and, if required, complete the 2FA verification.
+
+## Select condition template
+
+**Initiators**: The policy will be triggered only if the transaction is initiated by designated parties. You can choose between API initiators or web initiators.
+- API Initiators: You can specify whether any team members, or only specific members, are allowed to initiate transactions via APIs.
+- Web Initiators: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
+
+**Token transfers**: The policy will be triggered only if the transaction is associated with specific token types, amounts, and frequencies.
+- Token: You can specify the type of token available for transactions.
+- Transfer Amount: You can set the maximum transaction amount.
+- Frequency: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
+
+**Receiving addresses**: The policy will be triggered only if the receiving addresses of the transaction meet the specified criteria.
+- In address lists: The receiving addresses must be included in the selected address lists.
+- Not in address lists: The receiving addresses should not be included in the selected address lists.
+
+**Token types**: The policy will be triggered only if the tokens being transferred meet the specified criteria.
+- Include: The tokens to be transferred must be included in the selected token lists.
+- Do not include: The tokens to be transferred should not be included in the selected token lists.
+
+## Set approval action
+
+Currently, Cobo Portal supports four types of approval actions:
+
+**Auto Approval**: Transactions meeting the above conditions will be automatically approved.<br/><br/>
+**Auto Rejection**: Transactions meeting the above conditions will be automatically rejected.<br/><br/>
+**Approval Quorum**: Transactions meeting the above conditions will require a specified number of approvals to proceed. Please click **+Add approvers** to add one or more team members as approvers. You can choose by role types or member names. Then, set the approval threshold.<br/><br/>
+**Custom Workflow**: Click **+Set workflow** to configure a custom workflow and enhance the flexibility of your action strategies.
+
