@@ -1,0 +1,19 @@
+---
+title: "Recover key shares from another active key share group"
+sidebarTitle: "Recover key shares from another active key share group"
+---
+
+**Note**: If the locally stored private key share is lost and the backed-up data file is no longer accessible, the key share holder can recover their private key share with the assistance of another active key share group. Unlike restoration, recovery relies on the support from another key share group.
+
+## If Main Group is lost or compromised
+
+Upgrade an active Signing Group to function as the Main Group. The original Main Group will be automatically deleted. For more information, please refer to [Manage Signing Groups](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-signing-groups).
+Use an active Recovery Group to reshare a new Main Group. The original Main Group will be automatically deleted. For more information, please refer to [Manage Recovery Groups](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-recovery-groups).
+
+## If Signing Group is lost or compromised
+
+Use the active Main Group to generate a new Signing Group. For more information, please refer to [Manage Signing Groups](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-signing-groups).
+
+## If Recovery Group is lost or compromised
+
+Use the active Main Group to generate a new Recovery Group. For more information, please refer to [Manage Recovery Groups](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-recovery-groups).
