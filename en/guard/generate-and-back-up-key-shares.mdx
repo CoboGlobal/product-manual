@@ -1,0 +1,71 @@
+---
+title: Generate and back up your key shares
+---
+To showcase how Cobo Guard can serve as a key share manager, this section guides you through the key share generation and backup processes from the perspective of a key holder operating on a Cobo Guard app.
+
+The key share generation process is initiated on Cobo Portal by an admin. The participants selected by the admin as key share holders will receive a confirmation on their Cobo Guard to become key share holders. Once all selected participants have confirmed to become key share holders, key shares are generated on the key share holders’ Cobo Guard. After the key shares have been generated, key share holders can back up their key shares to iCloud using Cobo Guard.
+
+## Initiate the key generation process
+The key share generation process is initiated by the admins on Cobo Portal, and the keys would be categorized into one of the three groups: Main Group, Signing Group, and Recovery Group. We will use the Main Group to illustrate the process.
+{/*
+<br />
+ <div class="container">
+    <p class="text">On Cobo Portal, admins would create a Main Group by clicking </p>
+    <img src="/images/cobo-guard/common/wallet-icon.png" class="icon"> </img>
+    <p class="text">.</p>
+</div>
+
+*/}
+
+On Cobo Portal, admins would create a Main Group by clicking **Wallet**.
+Then, admins would click **MPC** > **[their-vault-name]** > **Create Main Group**.
+
+During the Main Group creation process, the admins would select participants to become key share holders. **Note**: Selected participants' Cobo Guard will have to already be bound to the admin’s organization for the admin to be able to select them as a key share holder on this screen.
+
+Once the Main Group creation is initiated by the admins, selected participants will be notified on Cobo Guard to confirm whether to become key share holders.
+
+As a selected participant, you will receive a notification on Cobo Guard to confirm whether to become a key share holder. Tap the request to open the **Details** page.
+
+On the **Details** page, tap **Approve** to confirm your willingness to become a key share holder. You will need to authenticate yourself with Face ID.
+
+When you see the **Approved** message, you’ve successfully become a key share holder. You can confirm the status of this operation by tapping **All** on Cobo Guard’s main screen.
+
+Once all selected participants have agreed to become key share holders, the key generation process will start automatically. You will receive a notification on Cobo Guard to start generating key shares.
+
+## Generate key shares using Cobo Guard
+Tap the request to enter the Generate Private Key Shares screen, then tap **Start** to authenticate yourself through Face ID and start generating the key shares.
+
+Once all key share holders are online, the key generation process will begin. When you see the green Private Key Shares Generated message, tap **OK** to return to My Accounts and inspect the details of your newly generated key.
+
+## Back up your key shares
+Return to the home screen of Cobo Guard. Access My Accounts by tapping the menu icon, then tap **My Accounts**.
+
+{/*
+ <div class="container">
+    <p class="text">Then, access My Accounts by tapping </p>
+    <img src="/images/cobo-guard/common/menu-icon.png" class="icon"> </img>
+    <p class="text">> My Accounts.</p>
+</div>
+
+<br />
+*/}
+
+{/*
+<br />
+
+ <div class="container">
+    <p class="text">Enter the Back Up Your Private Key Shares screen by tapping </p>
+    <img src="/images/cobo-guard/common/backup-icon.png" class="icon"> </img>
+    <p class="text">.</p>
+</div>
+*/}
+
+Enter the Back Up Your Private Key Shares screen by tapping the cloud icon on the upper right.
+
+**Note**: If you’ve recently generated key shares, you can also tap **Back up Now** instead.
+
+On the Back Up Your Private Key Shares screen, tap **Start**, then authenticate yourself using Face ID.
+
+On the Set Recovery Passphrase screen, set a recovery passphrase that will be used to access your backups when restoring key shares from iCloud, then tap **Continue**.
+
+On the **Backup Successful** dialog, tap OK to complete the backup process.

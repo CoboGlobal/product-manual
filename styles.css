@@ -6,6 +6,17 @@
   margin-left: 0px;
 }
 
+/*
+#navbar {
+  background: linear-gradient(
+    135deg,
+    #61155c1a 7%,
+    #ba2cb01a 50%,
+    #d037c51a 300%
+  );
+}
+*/
+
 .text {
   display: inline-block;
 }
