@@ -3,24 +3,40 @@ title: "Portfolio"
 sidebarTitle: "Portfolio"
 ---
 
-View the breakdown of your portfolio by assets, wallet types on Cobo Portal, and networks, to gain insights into the distribution of your digital assets.
+View your portfolio's breakdown by **Assets**, **Wallets**, or **Networks** to gain insights into the distribution of your digital assets.
 
-**Notes**:
-
-- **Breakdown by Assets**: Each token type is aggregated across all blockchains and linked exchange accounts.
-- **Breakdown by Wallets**: Wallets include all wallet types available on Cobo Portal including the following:
-    - Exchange Wallet
-    - Custodial Wallet
-        - Asset Wallet
-        - Web3 Wallet
-    - MPC Wallet
-        - Client-Controlled Wallet
-        - User-Controlled Wallet
-    - Smart Contract Wallets
-        - Safe&#123;Wallet&#125;
-- **Breakdown by Networks**: Networks encompass blockchain networks and exchanges.
-- Pie charts display up to 8 categories. Categories exceeding 8 will be grouped together as “Others”.
-- To hide or display specific categories, simply uncheck or check the corresponding category.
+<img src="/images/dashboard/portfolio.svg" className="screenshot_modal"/> <br />
 
 
+<AccordionGroup>
+  <Accordion title="Breakdown by Assets">
+Each token type is aggregated across all blockchains and linked exchange accounts.
+  </Accordion>
 
+  <Accordion title="Breakdown by Wallets">
+Wallets include all wallet types available on Cobo Portal including the following:
+    <CardGroup cols={2}>
+  <Card title="Custodial Wallets" icon="square-1">
+Asset Wallets
+
+Web3 Wallets
+  </Card>
+  <Card title="MPC Wallets" icon="square-2">
+Organization-Controlled Wallets
+User-Controlled Wallets
+  </Card>
+  <Card title="Smart Contract Wallets" icon="square-3">
+    Safe\{Wallet\}
+  </Card>
+  <Card title="Exchange Wallets" icon="square-4">
+  </Card>
+</CardGroup>
+  </Accordion>
+
+  <Accordion title="Breakdown by Networks">
+    Networks encompass blockchain networks and exchanges.
+  </Accordion>
+</AccordionGroup>
+
+<Note>Pie charts display up to 8 categories. Categories exceeding 8 will be grouped together as “Other”.</Note>
+<Note>No data will be shown if your account has no recorded transactions or deposits. Please add funds to start tracking transactions and account activities.</Note>
