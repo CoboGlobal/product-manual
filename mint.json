@@ -343,7 +343,8 @@
                 "en/portal/dashboard/total-assets-trend",
                 "en/portal/dashboard/portfolio",
                 "en/portal/dashboard/package-usage",
-                "en/portal/dashboard/transaction-overview"
+                "en/portal/dashboard/transaction-overview",
+                "en/portal/dashboard/cobo-news"
               ]
             }
           ]
@@ -791,7 +792,8 @@
                 "cn/portal/dashboard/total-assets-trend",
                 "cn/portal/dashboard/portfolio",
                 "cn/portal/dashboard/package-usage",
-                "cn/portal/dashboard/transaction-overview"
+                "cn/portal/dashboard/transaction-overview",
+                "cn/portal/dashboard/cobo-news"
               ]
             }
           ]
