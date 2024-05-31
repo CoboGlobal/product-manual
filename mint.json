@@ -159,6 +159,18 @@
                           ]
                         },
                         {
+                          "group": "(For API co-signer) Technical setup",
+                          "pages": [
+                            "en/portal/mpc-wallets/ocw/network-environments",
+                            "en/portal/mpc-wallets/ocw/server-environments",
+                            "en/portal/mpc-wallets/ocw/tss-node-deployment",
+                            "en/portal/mpc-wallets/ocw/tss-node-callback",
+                            "en/portal/mpc-wallets/ocw/tss-node-update",
+                            "en/portal/mpc-wallets/ocw/appendix",
+                            "en/portal/mpc-wallets/ocw/tss-node-release-notes"
+                          ]
+                        },
+                        {
                           "group": "Manage Organization-Controlled Wallets",
                           "pages": [
                             "en/portal/mpc-wallets/ocw/manage-vaults",
@@ -605,6 +617,18 @@
                             "cn/portal/mpc-wallets/ocw/create-key-share-groups",
                             "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
                             "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
+                          ]
+                        },
+                        {
+                          "group": "(For API co-signer) Technical setup",
+                          "pages": [
+                            "cn/portal/mpc-wallets/ocw/network-environments",
+                            "cn/portal/mpc-wallets/ocw/server-environments",
+                            "cn/portal/mpc-wallets/ocw/tss-node-deployment",
+                            "cn/portal/mpc-wallets/ocw/tss-node-callback",
+                            "cn/portal/mpc-wallets/ocw/tss-node-update",
+                            "cn/portal/mpc-wallets/ocw/appendix",
+                            "cn/portal/mpc-wallets/ocw/tss-node-release-notes"
                           ]
                         },
                         {

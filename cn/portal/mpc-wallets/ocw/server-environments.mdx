@@ -1,0 +1,198 @@
+---
+title: "Server environments"
+sidebarTitle: "Server environments"
+---
+
+## Intel® SGX
+
+### Introduction to Intel® SGX
+
+Intel® Software Guard Extensions (SGX) offers hardware-based memory encryption that isolates specific application code and data in memory. SGX allows client-level code to allocate private regions of memory, called enclaves, which are designed to be protected from processes running at higher privilege levels. It offers a granular level of control and protection against many known and active threats. For more information on Intel® SGX, please [click here](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html). 
+
+### SGX-ready server types
+
+#### Azure Confidential Computing (Virtual Machine)
+
+The required settings to configure a SGX-ready server are as follows:
+
+- Select resource group: Ubuntu 20.04 LTS 
+- Enter a virtual machine name machine name (e.g. CoboTSSNode)
+- Select the Azure region
+- Choose image: Ubuntu 18.04 LTS - Gen2
+- Select virtual machine size: Standard DC1ds v3 (1 vcpu, 8 GiB memory)
+
+For more information on how to deploy a SGX-ready server using the Azure portal, please [click here](https://learn.microsoft.com/en-us/azure/confidential-computing/quick-create-portal).
+
+#### Alibaba Cloud Elastic Compute Service
+
+The following settings are required to build an encrypted computing environment on a g7t, c7t, or r7t instance (vSGX instance):
+
+- Version: Ubuntu 20.04 64-bit that works with UEFI  
+- Recommended memory: 8GB and above
+- Memory (encrypted data): 4GB 
+- Hard disk: 64G SSD
+
+For more information on how to deploy a SGX-ready server using the Alibaba Cloud Elastic Compute Service, please [click here](https://www.alibabacloud.com/help/en/ecs/user-guide/build-an-sgx-encrypted-computing-environment).
+
+#### SGX-Ready Physical Server (on premise)  
+
+Please check the processors that support SGX: 
+
+- Head to [https://ark.intel.com/content/www/us/en/ark.html ](https://ark.intel.com/content/www/us/en/ark.html)
+- Click **Find products by feature** at the bottom
+- Switch to the Processors tab and select **Intel® Software Guard Extensions (Intel® SGX)** in the drop-down menu.
+- Select **Yes with both Intel® SPS and Intel® ME**
+- Review the product specifications and configure the following settings
+  - BIOS Settings: Enable Intel SGX (Software Guard Extension)
+  - Enable DCAP (FLC)
+  - Disable hyperthreading
+  - Operating system: Ubuntu Server 20.04 LTS or 22.04 LTS
+  - Recommended memory: 8GB RAM 
+  - Recommended storage: 128GB SSD 
+  - Minimum memory (encrypted data): 2GB EPC
+
+### SGX status check
+
+Once the encrypted SGX environment has been set up, you can check the SGX status via CPUID. Please execute the following shell commands.
+
+```
+udo apt update
+sudo apt install cpuid
+cpuid -1 | grep SGX
+```
+
+If the output shows three true statuses as displayed below, SGX is successfully enabled. All other false statuses are negligible.
+
+```
+SGX: Software Guard Extensions supported = true
+SGX_LC: SGX launch config supported = true
+SGX capability (0x12/0):
+SGX1 supported = true
+```
+
+### **SGX driver installation**
+
+The SGX driver should have already been installed by default. During TSS Node initialization, you will be prompted to approve the auto installation of the SGX driver (Intel DCAP 1.41). To verify the installation, execute the following command.
+
+```
+ls /dev/sgx*
+```
+
+If two or more nodes are displayed, it confirms that the SGX driver has been successfully installed.
+
+```
+/dev/sgx_enclave /dev/sgx_provision
+```
+
+For more information on the manual installation of a SGX driver, please refer to the following:
+
+By default, the SGX driver is integrated into the Linux kernel starting from version 5.1 and above. It is recommended to use Linux 5.1 or above.
+
+- Ubuntu 22.04 LTS server + default kernel
+- Ubuntu 20.04 LTS server + HWE[ rolling update model](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+
+Alternatively, you can install the DCAP driver and OOT (legacy) provided by Intel. Please note that TSS Node exclusively supports the DCAP driver. You can follow the steps below to manually install the Ubuntu 20.04 DCAP 1.41 driver. For other versions, please refer to the guide above.
+
+1. Update the package resource list for APT.
+
+```
+sudo apt update
+```
+
+2. Install dependencies.
+
+```
+sudo apt install build-essential ocaml automake autoconf libtool \
+wget python libssl-dev dkms -y
+```
+
+3. Download the Intel SGX DCAP drive. 
+
+```
+wget \ https://download.01.org/intel-sgx/latest/linux-latest/distro/ubuntu20.04-server/sgx_linux_x64_driver_1.41.bin
+```
+
+4. Modify permissions to the driver installation packages of Intel SGX DCAP.
+
+```
+chmod a+x sgx_linux_x64_driver_1.41.bin
+```
+
+5. Install Intel SGX DCAP drive. 
+
+```
+sudo ./sgx_linux_x64_driver_1.41.bin
+```
+
+6. Check whether the installation is successful.
+
+```
+$ ls /dev/sgx*
+/dev/sgx_enclave /dev/sgx_provision
+```
+
+### **Docker Engine installation**
+
+Docker Engine is required for running the TSS Node. During TSS Node initialization, you will be asked to approve the auto installation of Docker Engine. It is recommended to manually install and configure Docker Engine if your organization follows specific best practices. For more information on how to manually install the Docker Engine on Ubuntu, please [click here](https://docs.docker.com/engine/install/ubuntu/).
+
+## Off-The-Shelf Server
+
+### **Introduction to off-the-shelf server**
+
+An off-the-shelf server is any server that satisfies the minimum configuration prerequisites for the TSS Node, such as Elastic Compute or a physical server managed by the client. While an off-the-shelf server can host the TSS Node, it lacks the distinctive security features inherent in an SGX-ready server.
+
+### **Minimum requirements**
+
+- CPU: AMD64 or ARM64, 2 cores, a clock speed of 2.5 GHz 
+- Memory: 4G
+- Hard disk: 64G SSD
+- Operating system: Ubuntu Server 20.04 LTS or above
+
+### **Recommended settings** 
+
+- CPU: AMD64 or ARM64, 4 cores, a clock speed of 3.0 GHz 
+- Memory: 8G
+- Hard disk: 128G SSD
+- Operating system: Ubuntu Server 20.04 LTS or above
+
+### **Docker Engine installation**
+
+Docker Engine is required for running the TSS Node. During TSS Node initialization, you will be asked to approve the auto installation of Docker Engine. It is recommended to manually install and configure Docker Engine if your organization follows specific best practices. For more information on how to manually install the Docker Engine on Ubuntu, please [click here](https://docs.docker.com/engine/install/ubuntu/).
+
+## Apple MacBook
+
+Please prepare a new Apple MacBook, upgrade the operating system to the [latest macOS version](https://support.apple.com/en-sg/109033) and perform the necessary security configurations.
+
+### **Things to note**
+
+- Avoid using unknown portable storage devices. 
+- Prevent your computer from syncing with iCloud. 
+- Refrain from logging into your Apple ID on this computer.
+
+### **Security configurations**
+
+- Disable Bluetooth.
+- Turn off AirDrop.
+- Activate FileVault for disk encryption.
+- Enable the Firewall.
+- Establish a complex administrator password using a password manager (e.g., 1Password).
+- Set up a Lock Screen.
+- Disable Handoff.
+
+### **Advanced configurations**
+
+If utilizing a third-party management system (e.g., Jamf), consider configuring advanced security settings:
+
+- Ensure your computer password is a minimum of 12 characters, including at least one letter, one number, and one special character.
+- Prohibit using the same password consecutively three times.
+- Set a password expiration period of 90 days, and change the password when prompted.
+- Disable iCloud, Apple ID, and Family Sharing.
+- Turn off the App Store.
+- Disable internet accounts and logins via local mail clients.
+- Configure privacy settings to prevent automatic data transfer to Apple.
+- Deactivate all sharing services (e.g., tethering, Bluetooth sharing, file sharing, screen sharing).
+- Turn off all remote software.
+
+### **Docker Engine installation**
+
+Ensure Docker Engine is installed for running the TSS Node. Follow the official Docker website [instructions](https://docs.docker.com/desktop/install/mac-install/) to complete the installation of Docker Desktop for Apple MacBook.

@@ -1,0 +1,292 @@
+---
+title: "TSS Node deployment"
+sidebarTitle: "TSS Node deployment"
+---
+
+## TSS Node package 
+
+The TSS Node package is available in two versions based on deployment methods:
+
+- SGX security enhanced version: Suited for SGX-ready servers, the package is named cobo-tss-node-linux-sgx-\<VERSION\>.tgz.
+- Off-the-shelf version: Designed for off-the-shelf servers or Apple MacBooks, the package is named cobo-tss-node-generic-\<VERSION\>.tgz.
+
+To obtain the appropriate TSS Node package for your deployment method, please reach out to Cobo's customer support at [support@cobo.com]. The subsequent example employs the off-the-shelf version of the TSS Node package.
+
+```
+cobo-tss-node-generic-<VERSION>.tgz (TSS Node file)
+
+packagecobo-tss-node-generic-<VERSION>.tgz.sha256 (hash file）
+```
+
+To verify the validity of the TSS Node package, please check the SHA256 (256-bit) checksums.
+
+```
+sha256sum cobo-tss-node-generic-<VERSION>.tgz
+```
+
+Note: If you are using an Apple MacBook, please execute the following command to check the SHA256 (256-bit) checksums.
+
+```
+shasum -a 256 cobo-tss-node-generic-<VERSION>.tgz
+```
+
+The SHA256 (256-bit) checksums must match the corresponding file hash value. 
+
+```
+$ cat cobo-tss-node-generic-<VERSION>.tgz.sha256
+
+7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic-<VERSION>.tgz
+
+$ sha256sum cobo-tss-node-generic-<VERSION>.tgz
+
+7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic-<VERSION>.tgz
+```
+
+After verification, please execute the following command to unzip the TSS Node package.
+
+```
+tar -xzf cobo-tss-node-generic-<VERSION>.tgz
+```
+
+Upon extracting the TSS Node package, the following directory will be shown.
+
+```
+cobo-tss-node-generic
+
+├── configs
+
+│ └── cobo-tss-node-config.yaml.template （default config file template）
+
+└── tss-node.sh （startup script）
+```
+
+Unless stated otherwise, please execute all subsequent commands in this user guide under the root directory of the unzipped TSS Node package. For example, navigate to the **cobo-tss-node-generic** path before running any further commands.
+
+```
+cobo-tss-node-generic
+
+├── configs
+
+│ └── cobo-tss-node-config.yaml.template （default config file template）
+
+└── tss-node.sh （startup script）
+```
+
+### **TSS Node command lines**
+
+The TSS Node command lines remain consistent across all three operating environments, namely the SGX-ready server, off-the-shelf server, and Apple MacBook. However, the execution of command lines may vary slightly. For both SGX-ready servers and off-the-shelf servers, sudo access is essential for deploying and running TSS Node. In other words, ensure that sudo commands are inserted.
+
+```
+sudo ./tss-node.sh status
+```
+
+For the Apple MacBook, no sudo access is required. 
+
+```
+./tss-node.sh status
+```
+
+Unless explicitly stated otherwise, all subsequent commands in this user guide will use the off-the-shelf server as an example.
+
+### **TSS Node container images**
+
+Please execute the following command to verify the installation of necessary dependencies and drivers. If this marks the initial configuration of the TSS Node, the command will also automatically fetch the latest container images.
+
+```
+sudo ./tss-node.sh status
+```
+
+The output example is as follows.
+
+```
+$ sudo ./tss-node.sh status
+
+[sudo] password for ubuntu: (ubuntu account password)
+
+Checking docker engine ... OK, version: 20.10.22
+
+Checking container image ... Image not found: coboglobal/tss-node:v0.7.0
+
+Going to pull container image coboglobal/tss-node:v0.7.0 ...
+
+Login Succeeded
+
+v0.7.0: Pulling from coboglobal/tss-node
+
+4e7e0215f4ad: Pull complete
+
+7fd35d9d7f31: Pull complete
+
+86c277e0f34d: Pull complete
+
+4f4fb700ef54: Pull complete
+
+Digest: sha256:9dd6c67522b6f36df61e2a945d6093683fd4c980e5e15d3bcdd661ca8e062578
+
+Status: Downloaded newer image for coboglobal/tss-node:v0.7.0
+
+docker.io/coboglobal/tss-node:v0.7.0
+
+Checking container image ... OK, id: sha256:8ab0c7353f5b62cdff5bdc6d9a436f0d99079d404b080aa6a61f594fe6446ba8
+
+Checking TSS-node daemon ... not running
+
+Please use './tss-node.sh start' to start the daemon.
+
+Please use './tss-node.sh init' if the tss-node is not initialized yet.
+```
+
+As of now, all dependencies are considered successfully configured, and the TSS Node is ready for initialization.
+
+### **TSS Node package description**
+
+**Default config file: configs/cobo-tss-node-config.yaml.template.**
+
+The TSS Node is configured to connect to the development environment by default, requiring no additional config file for it to run. However, if you wish to connect to the production environment, manual modification of the config file is necessary. 
+
+To initiate this, create a duplicate of cobo-tss-node-config.yaml.template, renaming it as cobo-tss-node-config.yaml. Paste the new file into the configs directory. For instructions, please refer to the **TSS node configuration method**. Remember to restart the TSS Node package once the config file is modified.
+
+**Startup script: tss-node.sh**
+
+The TSS Node package incorporates a startup script that serves the following purposes: 
+
+- Checks whether the required software and drivers are successfully installed. 
+- Pulls container images of the TSS Node. 
+- Manages the running status of containers. 
+
+The startup script will pass in most commands and parameters to the cobo-tss-node program within the containers.
+
+## TSS Node initialization
+
+Please execute the following command.
+
+```
+sudo ./tss-node.sh init
+```
+
+The output example is as follows.
+
+```
+$ sudo ./tss-node.sh init
+
+[sudo] password for ubuntu: (ubuntu account password)
+
+Type password (at least 8 characters): (enter password)
+
+Retype password: (re-enter password)
+
+INFO[2023-01-13T05:12:04Z] Initialize database: db/secrets.db
+
+INFO[2023-01-13T05:12:04Z] Initialize Node ID: cobo73VA6C6WvofPg8tWYmqvdUF1cPYhd7EmGUxTexz5HCzYe
+
+INFO[2023-01-13T05:12:04Z] Generate callback public key:
+
+-----BEGIN PUBLIC KEY-----
+
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAomg0FRc8qm/vdNnjBDBv
+
+DzKK7cZeeoRFAw2xcuaKWyCRHazERYAmICWG+q6dGZ8eS0C8AUqeqf23LlY3gDtr
+
+KSkCvW/r78nkDgg+LH3rK3S0wdOfNFO21D3d3iKlOf6tLVvywfLsza7zwCx5dIKg
+
+v+Z8ZEsy0/Qo4chS6OYAQntu8CYitzdVoDdm0pXxBFy4woKy7nkJZEMhAe/8nXDQ
+
+Y6Xk1s3U/NT+q/zP3/3PVzu4ALnAEAA5jLV20cAiEPyrN0vZGPP4/rgpEfOlDEVp
+
+jSGfW+Tui7RhmLZQhq9iQyaZlXCojbTuZJkjwjCGsd/T3UjT4FR3Kiofsf3i4RVR
+
+TQIDAQAB
+
+-----END PUBLIC KEY-----
+
+INFO[2023-01-13T05:12:04Z] Start to initialize TSS parameters; the process may take several minutes
+
+INFO[2023-01-13T05:12:11Z] Complete initialization of TSS parameters
+
+INFO[2023-01-13T05:12:11Z] Complete initialization of TSS Node keys and data
+```
+
+Execution Workflow:
+
+- During TSS Node initialization, the system will verify the successful installation of Docker Engine and proceed to build the container image. You will be prompted to approve the auto installation of Docker Engine.
+- If an SGX-ready server is utilized, the system will additionally verify the successful installation of the SGX driver. You will be prompted to approve the auto installation of the Intel DCAP 1.41 driver.
+- Set a password to encrypt the data generated during TSS Node initialization. In the event of lost access or the need to modify the password, please refer to [Recover root extended private keys](/en/portal/mpc-wallets/ocw/recover-root-key). It is recommended to set a complex password with a length between 16-32 characters, utilizing a password manager (e.g., 1Password), and securely store the password on a trusted device.
+- The database file will be automatically generated with the default path being db/secrets.db.
+- The Node ID will be automatically generated (e.g., cobo73VA6C6WvofPg8tWYmqvdUF1cPYhd7EmGUxTexz5HCzYe) and functions as the unique identifier of the TSS Node. 
+- The callback key will be automatically generated and printed. For more information, please refer to **TSS Node callback**.
+
+## TSS Node startup
+
+Please execute the following command.
+
+```
+sudo ./tss-node.sh start
+```
+
+The output example is as follows.
+
+```
+$ sudo ./tss-node.sh start
+
+Container started: 4d33d31066279927bd0f9e283aa60454ac02a040a6f49e684ee372321bd41065
+
+Wait a few seconds ..
+
+Enter TSS Node password: (enter password)
+
+cobo-tss-node
+
+Version: v0.7.0
+
+Build mode: prod
+
+Git commit: 45431a4b3d4ad8ddf4a52aab619f41353310f0ba
+
+Build time: 20230112T111204
+
+INFO[2023-01-13T05:13:32Z] Waiting for password input on HTTP endpoint.
+
+Embedded Risk Control Rule:
+
+|__ Enable: false
+
+INFO[2023-01-13T05:15:09Z] TSS Node ID: cobo73VA6C6WvofPg8tWYmqvdUF1cPYhd7EmGUxTexz5HCzYe
+
+INFO[2023-01-13T05:15:09Z] WebSocket connecting to wss://ws.tss.dev.cobo.com/ws
+
+INFO[2023-01-13T05:15:10Z] Start to register service
+```
+
+If the TSS Node has not been configured on **Cobo Portal** > **MPC Wallet**, the registration status will be returned as **failed**. You can proceed with the subsequent steps first. Upon successful configuration of the TSS Node on Cobo Portal, the registration status will be updated to the following:
+
+```
+INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
+```
+
+You can press Ctrl+C to exit, and the TSS Node will continue to run in the background. For more information on checking the running status of the TSS Node, please refer to the **appendix**.
+
+```
+sudo ./tss-node.sh init
+```
+
+## TSS Node on Cobo Portal & MPC Root Extended Public Key 
+
+*Note: Only the client with Vault Admin rights is authorized to add the TSS Node ID to Cobo Portal.*
+
+1. Log in to Cobo Portal.
+2. Click **Wallets** in the main menu on the left hand side.
+3. Select **MPC** and switch to **Organization-Controlled Wallet.**
+4. Click **Create Main Group.**
+5. Ensure that the TSS Node managed by Cobo is online to jointly generate the root extended public key.
+6. Select **API Co-Signer.**
+7. Enter a name for this API Co-Signer.
+8. Enter the TSS Node ID of this API Co-Signer and click **Confirm**.
+9. Ensure that the root extended public key displayed on Cobo Portal matches the one shown in the TSS Node log. This key can be used to generate all wallet addresses under this MPC Organization-Controlled Wallet using BIP 32.
+
+![img](https://lh7-us.googleusercontent.com/goJ5sSXRCe4YIlvQE4Ln0MG2nHUs6vfSUXbCytDLSMTBgQjl-dXLJBfpHE4VuwJuEx4O40EmeqQcMqxC2WsdFi0yo-ygfiHIbfQSEDkhXUnHsFeUrR5ISu68GgO0S90hA5Z46k_LMHBSJ7MtnLxfZBo)
+
+ 
+
+### **Private key share management** 
+
+The successfully generated private key shares will be encrypted and stored locally in the database file of the TSS Node package. The default path is db/secrets.db. It is highly recommended to create backups of the database file and the password used for encryption during the initialization of the TSS Node. The backup files should be stored on separate devices for enhanced security. For more information, please refer to **Back up key share groups.** 
