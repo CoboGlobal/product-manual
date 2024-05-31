@@ -1,0 +1,59 @@
+---
+title: "TSS Node release notes"
+sidebarTitle: "TSS Node release notes"
+---
+
+Version 0.7.0:
+
+- Implemented security enhancements for specific modules
+- Enhanced the "migrate" command to include data migration and optimization
+- Adjusted the priorities of configuration files and command lines
+- Added the capability to notify clients when the callback service rejects a request
+- Improved overall system performance and reliability
+- Addressed bug fixes
+
+Version 0.6.0 (*recommended):
+
+- Revamped the underlying MPC protocol implementation to reinforce security
+- Established default connectivity to the development environment
+- Upgraded system message formats and encryption methods
+- Refactored the TSS Node registration mechanism
+- Introduced Canonical Group ID and Protocol Group ID
+- Enabled automated handling of sessions with abnormal statuses
+- Expanded recovery file data fields
+- Refactored the risk control callback mechanism
+- Optimized database structure and log system
+- Enhanced overall system performance and reliability
+
+Version 0.5.6:
+
+- Uncompleted sessions will resume upon TSS Node restarts
+- Password no longer required when querying public information via command lines
+- Modification to data exported using the export-share command
+- Modification to request details in API callback parameters
+- Modification to log display in files
+- Optimization of system reliability and performance
+
+Version 0.4.1:
+
+- Code refactoring
+- Added support for Ed25519 signature scheme
+- "sign" sub-command now supported for periodic MPC key share checkup
+- Database migration of TSS Node group data
+- Performance optimization and bug fixes
+
+Version 0.3.0:
+
+- Group info now displays elliptic curve name, participants info, creation time, and more
+- Random generation of cryptographic salt during database encryption now supported
+- Added support for Ed25519 signature scheme
+- Optimized "export-share" sub-command 
+- TSS Node script file optimization
+- Performance optimization and bug fixes
+
+Version 0.2.7:
+
+- Group info now displays chaincode, key share ID, public key info associated with the MPC key share, and more
+- "export-share" sub-command now supported 
+- Container image packaging and publishing now supported
+- Performance optimization and bug fixes

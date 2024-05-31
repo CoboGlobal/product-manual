@@ -1,0 +1,255 @@
+---
+title: "Appendix"
+sidebarTitle: "Appendix"
+---
+
+## TSS Node configuration methods
+
+Currently, cobo-tss-node offers two configuration methods: 
+
+- Command lines 
+  - Example: ./tss-node.sh start --ws-url=ws://ws.example.com/ws 
+- Config files
+
+Recommended Priority: *Configuration Files* *>* *Command Lines* 
+
+### **Config file modifications** 
+
+1. Navigate to the configs directory. 
+2. Copy and paste the file cobo-tss-node-config.yaml.template. 
+3. Rename the copied file to cobo-tss-node-config.yaml. The directory structure will appear as follows:
+
+```
+cobo-tss-node-generic
+
+├── configs
+
+│ ├── cobo-tss-node-config.yaml
+
+│ └── cobo-tss-node-config.yaml.template (default configuration file template)
+
+└── tss-node.sh (startup script)
+```
+
+4. Edit the cobo-tss-node-config.yaml file by following these steps: 
+   1. Open the file in a text editor. 
+   2. Locate the config item that needs modification (e.g., "env"). 
+   3. Remove any remarks associated with the config item. 
+   4. Update the content of the configuration item. For instance, change "env" to "production".
+
+```
+env: production # development; production
+
+#db:
+
+# path: db/secrets.db
+
+# key_file: configs/password.key # (optional) load password from file
+
+#callback:
+```
+
+Please be aware that configuration for the TSS Node is not mandatory. All items listed below are optional.
+
+| **Configuration Item**             | **Command Line**     | **Description**                                              |
+| ---------------------------------- | -------------------- | ------------------------------------------------------------ |
+| env                                | dev / prod           | Operating environment.                                       |
+| db/path                            | db                   | Database file that should *not* be modified.                 |
+| callback/cb_server/service_address | cb-address           | A list of callback server addresses.                         |
+| callback/cb_server/pubkey_path     | cb-pubkey            | A list of callback server RSA public keys corresponding to the callback server addresses. |
+| callback/token_expire_minutes      | cb-token-expire      | Timeout period for callback server's JWT: Default value: 2Unit: minutes |
+| callback/retry_times               | cb-retry-times       | Number of retries for callback server requests: Default value is 2. |
+| callback/sleep_seconds             | cb-sleep-seconds     | Time interval between each retry if the callback server fails.  Default value:15 Unit: seconds |
+| callback/request_timeout           | cb-request-timeout   | Timeout period for HTTP request Default value: 10Unit: seconds |
+| websocket/url                      | ws-url               | No configuration is required. The WebSocket server will be connected based on the environment. If a URL is configured, it will be connected by default. |
+| log/std/enable                     | log-std-enable       | Whether to output the log.                                   |
+| log/file/enable                    | log-file-enable      | Whether to save the log.                                     |
+| log/file/filename                  | log-file-name        | Log file name.                                               |
+| log/file/maxsize                   | log-file-maxsize     | Maximum size of the log file.                                |
+| log/file/max_backups               | log-file-max-backups | Number of backups for each log file.                         |
+
+## TSS Node command lines 
+
+- *Init: initialize the TSS Node.*
+
+```
+sudo ./tss-node.sh init
+```
+
+You can initialize the TSS Node and create a database file. The execution will fail if the database file already exists. For more information, please refer to **TSS Node initialization**.
+
+- *Info: view the information.*
+
+```
+sudo ./tss-node.sh info
+```
+
+You can review the information associated with the TSS Node, including TSS Node ID and callback server’s RSA public key. 
+
+The output example is as follows. 
+
+```
+$ sudo ./tss-node.sh info
+
+Container started: 5c3819f6bf9425312ad5fe9561a9d8a4ae7145e05f73b3998a3a8112d7056653
+
+Wait a few seconds ..
+
+INFO[2022-12-14T09:12:11Z] Node ID: coboXNCDGc4eWaWYTbbgH3Q5jmNNRpZzVatRXyanYeC2XjkJb
+
+INFO[2022-12-14T09:12:11Z] Callback public key:
+
+-----BEGIN PUBLIC KEY-----
+
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz13MMDtCMdmBci/f7boS
+
+……
+
+gQIDAQAB
+
+-----END PUBLIC KEY-----
+
+5c3819f6bf9425312ad5fe9561a9d8a4ae7145e05f73b3998a3a8112d7056653
+```
+
+- *Info group: view the group information* 
+
+```
+sudo ./tss-node.sh info group [group_id]
+```
+
+You can use the info group command to query the following group information:
+
+| **Item**                 | **Value**                               | **Description**                                              |
+| ------------------------ | --------------------------------------- | ------------------------------------------------------------ |
+| Group ID                 | vnJShriEOIzBLaOUxUDs                    | Unique identifier of each group.                             |
+| Created Time             | 2023-01-11 14:36:42.179778596 +0000 UTC | Creation time of the group.                                  |
+| Root Extended Public Key | xpub661MyMwAq……Mcet8                    | Root extended public key corresponds to the private key shares under the current group. |
+| ChainCode                | 0x098a……9dd9                            | ChainCode corresponds to the root extended public key, in hexadecimal format. |
+| Share ID                 | 121637……483926                          | Share ID of an MPC key share, in decimal format.             |
+| Share Public Key         | 0x0231adf……d2773                        | Public key corresponds to the private key share: Default value: compressed public key, in hexadecimal format. |
+| Type                     | 1                                       | Default value is 1.                                          |
+| Curve                    | secp256k1                               | Signature algorithm that has been used.                      |
+| Threshold                | 2                                       | Minimum number of private key shares required for each transaction signing. |
+| Local Node ID            | coboA1B2C3D4                            | Node ID of the locally stored TSS Node.                      |
+| Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | Node ID of the TSS Node managed by the other party.          |
+| Participants:            | 3                                       | Total number of private key shares, Node IDs, and key share IDs. |
+
+- *Start: start up the TSS Node* 
+
+```
+sudo ./tss-node.sh start
+```
+
+The cobo-tss-node will start running. For more information, please refer to **TSS Node startup**.
+
+- *Version: query TSS Node version*
+
+```
+sudo ./tss-node.sh version
+```
+
+- *Status: check the running status*
+
+```
+sudo ./tss-node.sh status
+```
+
+The output example is as follows.
+
+```
+$ sudo ./tss-node.sh status
+
+Checking docker engine ... OK, version: 19.03.6
+
+Checking container image ... OK, id: sha256:4ff66478be3f193293fbaf85ce764734dab14eff002699636d1329a16f1ce57b
+
+=================================================================
+
+Recent logs from TSS-node daemon container cefc3335c10b (Running)
+
+-----------------------------------------------------------------
+
+INFO[2022-12-14T09:00:37Z] Failed to register service: invalid TSS Node, please initial TSS Node on Cobo MPC Server first
+
+INFO[2022-12-14T09:00:52Z] Start to register service
+
+INFO[2022-12-14T09:00:52Z] Failed to register service: invalid TSS Node,please initial TSS Node on Cobo MPC Server first
+
+INFO[2022-12-14T09:01:07Z] Start to register service
+
+INFO[2022-12-14T09:01:07Z] Failed to register service: invalid TSS Node, please initial TSS Node on Cobo MPC Server first
+```
+
+Execution workflow:
+
+- Verify the successful installation of Docker Engine and ensure the client has the necessary permissions. 
+- Check the status of the SGX driver (applicable to an SGX-ready version). 
+- Confirm the existence of the built container image. 
+- Inspect containers for any errors. 
+- Monitor the currently running TSS Node container and display the latest five logs.
+
+- *Log: view container logs*
+
+```
+sudo ./tss-node.sh log
+```
+
+- *Stop: stop the TSS Node*
+
+```
+sudo ./tss-node.sh stop
+```
+
+## TSS Node risk controls
+
+The TSS Node features an integrated risk control mechanism designed to evaluate key generation (KeyGen), key signing (KeySign), or key recovery (KeyReshare) requests before initiating a callback. The system applies predefined risk control policies to these requests, approving only those that align with the specified policies. Requests failing to meet the criteria will be rejected. 
+
+For optimal alignment with your business requirements, the configuration of TSS Node risk control policies can be tailored. This customization is facilitated through the configs/cobo-tss-node-config.yaml file. To define specific configuration parameters, navigate to embedded_risk_control_rules and refer to the following example:
+
+```
+embedded_risk_control_rules:
+
+enable: false （whether to enable risk control; false by default）
+
+key_gen: （KeyGen risk control policies）
+
+reject_all: false （true: all KeyGen requests will be rejected; false: KeyGen requests will be check with following policies）
+
+allow_list: （Risk control policies for KeyGen; request will be approved only if policies are matched）
+
+- threshold: 2 （Signature threshold for KeyGen）
+
+node_ids: （Node IDs of parties allowed in KeyGen）
+
+- <Cobo TSS Node ID>
+
+- <ThirdParty TSS Node ID>
+
+- <Customer TSS Node ID>
+
+key_sign: （KeySign risk control policies）
+
+reject_all: true （true: all KeySign requests will be rejected; false: KeySign requests will be approved）
+
+key_reshare: （KeyReShare risk control policies）
+
+reject_all: false （true: all KeyReShare requests will be rejected; false: KeyReShare requests will be check with following policies）
+
+allow_list: （Risk control policies for KeyReShare; request will be approved only if policies are matched）
+
+- xpubkey: <EXTENDED_ROOT_PUBKEY> （Root extended public key for KeyReshare）
+
+new_threshold: 2 （New signature threshold for KeyReshare）
+
+new_node_ids: （Node IDs of parties allowed in KeyReshare）
+
+- <Cobo TSS Node ID>
+
+- <ThirdParty TSS Node ID>
+
+- <Customer TSS Node ID>
+```
+
+Please be aware that you need to replace the placeholders \<EXTENDED_ROOT_PUBKEY\>, \<Cobo TSS Node ID\>, \<ThirdParty TSS Node ID\>, and \<Customer TSS Node ID\> with their actual values. Exclude the "\<\>" symbols when inputting these parameters.
+
