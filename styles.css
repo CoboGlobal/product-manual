@@ -52,7 +52,7 @@
     border-color: #EDEEF3; /* Image border color */
 
     /* Force image to keep original width and height */
-    width: 60px;
+    width: 180px;
     height: auto;
 
     /* Center the image */
