@@ -269,7 +269,9 @@
                         "en/portal/exchange-wallets/generate-okx-api-key",
                         "en/portal/exchange-wallets/generate-deribit-api-key",
                         "en/portal/exchange-wallets/generate-bybit-api-key",
-                        "en/portal/exchange-wallets/generate-gate-api-key"
+                        "en/portal/exchange-wallets/generate-gate-api-key",
+                        "en/portal/exchange-wallets/generate-bitget-api-key"
+
                       ]
                     },
                     {
@@ -730,7 +732,9 @@
                         "cn/portal/exchange-wallets/generate-okx-api-key",
                         "cn/portal/exchange-wallets/generate-deribit-api-key",
                         "cn/portal/exchange-wallets/generate-bybit-api-key",
-                        "cn/portal/exchange-wallets/generate-gate-api-key"
+                        "cn/portal/exchange-wallets/generate-gate-api-key",
+                        "cn/portal/exchange-wallets/generate-bitget-api-key"
+
                       ]
                     },
                     {

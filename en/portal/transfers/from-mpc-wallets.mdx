@@ -1,9 +1,11 @@
 ---
-title: "Transfer from MPC Wallets (Organization-Controlled Wallets)"
-sidebarTitle: "Transfer from MPC Wallets (Organization-Controlled Wallets)"
+title: "Transfer from MPC Wallets (Organization-Controlled)"
+sidebarTitle: "Transfer from MPC Wallets (Organization-Controlled)"
 ---
 
-To make a transfer from MPC Wallets (Organization-Controlled Wallets), log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
+<Note>Prerequisite: Before making a transfer from MPC Wallets (Organization-Controlled), please make sure that you have set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer) (recommended) and [deposited](/en/portal/mpc-wallets/ocw/transfers) funds into the MPC Wallets (Organization-Controlled).</Note>
+
+To make a transfer from MPC Wallets (Organization-Controlled), log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
 
 <img src="/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
  
@@ -11,14 +13,14 @@ To make a transfer from MPC Wallets (Organization-Controlled Wallets), log in to
 Then, fill in the required information as follows:
 
 1. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type (fees apply), click **Not enabled**.
-2. In the drop-down menu under "From", select **MPC Wallet (Organization-Controlled Wallet)**.
-3. To find your wallet, select it from the drop-down menu or search by the address, vault name, wallet name, or label. MPC Wallet (Organization-Controlled Wallet) created via both Cobo Portal and WaaS 2.0 API will be listed.
+2. In the drop-down menu under "From", select **MPC Wallet (Organization-Controlled)**.
+3. To find your wallet, select it from the drop-down menu or search by the address, vault name, wallet name, or label. MPC Wallet (Organization-Controlled) created via both Cobo Portal and WaaS 2.0 API will be listed.
 4. Select a "To" address from your Address Book or a wallet on Cobo Portal, or manually input an external address.
     <img src="/images/transfers/to-address.png" className="screenshot_modal"/>
     - **Address Book**: Only addresses associated with the blockchain network of the selected token will be listed.
     - **My Wallet**: Select a wallet type and then click on the specific wallet you would like to transfer to.
     - **Other**: Manually enter an external address as the destination address under "To". If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
-5. Enter the transfer amount. Please note that for DOT, XRP, or KSM tokens, a minimum balance must be maintained in the selected MPC Wallet (Organization-Controlled Wallet). For DOT, reserve a minimum of 1 DOT; for XRP, 10 XRP; and for KSM, 0.000333333 KSM.
+5. Enter the transfer amount. Please note that for DOT, XRP, or KSM tokens, a minimum balance must be maintained in the selected MPC Wallet (Organization-Controlled). For DOT, reserve a minimum of 1 DOT; for XRP, 10 XRP; and for KSM, 0.000333333 KSM.
 6. Review the transaction cost. Network fees will be displayed in 3 tiers based on transaction speeds: slow, standard, and fast.
 7. To adjust the fees, click the button highlighted below. All fields are mandatory and will be auto-populated based on the transaction speed you have selected. You may edit the parameters based on your specific requirements.
     <img src="/images/transfers/customize-fees.png" className="screenshot_modal"/>
