@@ -10,9 +10,9 @@ sidebarTitle: "Set up token transfer policy"
 <img src="/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**, then click **Next**. The name should not exceed 30 characters.
 5. Select all the wallets under **Applicable Wallets** that are applicable to the policy you are about to create, then click **Next**.
-6. Click **+ Add Condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-transfer#select-condition-template).
+6. Under **If**, click **+ Add Condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-transfer#select-condition-template).
    - You have the option to skip setting any conditions and proceed directly to the next step. This means that any token transfers associated with the applicable wallets will trigger this policy.
-7. Select the **Action** to be taken if the policy is triggered (i.e., **Auto Approval**, **Auto Rejection**, **Approval Quorum**, and **Customized Workflow**), then click **Next**. To learn more about approval actions, see [Set approval action](/en/portal/risk-controls/off-chain-tx-set-transfer#set-approval-action).
+7. Under **Then**, Select the action to be taken if the policy is triggered (i.e., **Auto Approval**, **Auto Rejection**, and **Approval Quorum**), then click **Next**. To learn more about approval actions, see [Set approval action](/en/portal/risk-controls/off-chain-tx-set-transfer#set-approval-action).
 8. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
    - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
    - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
@@ -21,31 +21,30 @@ sidebarTitle: "Set up token transfer policy"
 
 ## Select condition template <a id="select-condition-template"></a>
 
-**Initiator limits**: The policy will be triggered only if the transaction is initiated by designated parties. You can choose between **API initiators** or **Web initiators**.
-- **API initiators**: You can specify whether any team members, or only specific members, are allowed to initiate transactions via APIs.
-- **Web initiators**: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
+**Initiator**: The policy will be triggered only if the transaction is initiated by designated parties. You can choose between **API Initiators** or **Web Initiators**.
+- **API Initiators**: You can specify whether any team members, or only specific members, are allowed to initiate transactions via API.
+- **Web Initiators**: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
 <img src="/images/risk-controls/initiator-limits.png" className="screenshot_full_screen"/>
 
-**Spending limits**: You can set the maximum spending amount for a specified time-frame or per transaction.
-- **Tokens**: You can specify the type of token available for transactions.
-- **Limit Type**: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
-- **Amount**: You can set the maximum transaction amount.
+**Amounts**: You can set the maximum spending amount for a specified time-frame or per transaction.
+- **Token Types**: You can specify the types of tokens available for transactions.
+- **Conditions**: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
+- **Amounts**: You can set the maximum transaction amount.
 <img src="/images/risk-controls/spending-limits.png" className="screenshot_full_screen"/>
 
-**Receiving addresses limits**: You can limit withdrawal transactions to specific receiving addresses.
-- **In address lists**: The receiving addresses must be included in the selected address lists.
-- **Not in address lists**:  The receiving addresses should not be included in the selected address lists.
+**Receiving Addresses**: You can limit withdrawal transactions to specific receiving addresses.
+- **In Address Lists**: The receiving addresses must be included in the selected address lists.
+- **Not in Address Lists**:  The receiving addresses should not be included in the selected address lists.
 <img src="/images/risk-controls/receiving-address.png" className="screenshot_full_screen"/>
 
-**Token limits**: You can limit which tokens can be sent in withdrawal transactions.
-- **In token lists**: The tokens to be transferred must be included in the selected token lists.
-- **Not in token lists**: The tokens to be transferred should not be included in the selected token lists.
+**Token Types**: You can limit which tokens can be sent in withdrawal transactions.
+- **Include**: The tokens to be transferred must be included in the selected token lists.
+- **Do not Include**: The tokens to be transferred should not be included in the selected token lists.
 <img src="/images/risk-controls/token-limits.png" className="screenshot_full_screen"/>
 
 ## Set approval action <a id="set-approval-action"></a>
 Currently, Cobo Portal supports four types of approval actions:
 - **Auto Approval**: Transactions meeting the above conditions will be automatically approved.
 - **Auto Rejection**: Transactions meeting the above conditions will be automatically rejected.
-- **Approval Quorum**: Transactions meeting the above conditions will require a specified number of approvals to proceed. Please click **+Select approvers** to add one or more team members as approvers. You can select by **Roles** or **Users**. Then, set the approval quorum.
-- **Customized Workflow**: Configure a custom workflow and enhance the flexibility of your action strategies.
+- **Approval Quorum**: Transactions meeting the above conditions will require a specified number of approvals to proceed. Please click **+ Select Approvers** to add one or more team members as approvers. You can select by **User Roles** or **Users**. Then, set the approval quorum.
 <img src="/images/risk-controls/approval-action.png" className="screenshot_full_screen"/>
