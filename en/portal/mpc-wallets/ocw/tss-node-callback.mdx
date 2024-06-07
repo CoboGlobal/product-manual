@@ -61,7 +61,7 @@ The callback server will structure and send the HTTP response in the following m
 | Parameter      | Type   | Description                                                  |
 | -------------- | ------ | ------------------------------------------------------------ |
 | request_id     | string | Unique ID of the callback request.                           |
-| request_type   | int    | The types of callback requests are enumerated as follows: TypeKeyGen: 1 TypeKeySign: 2 TypeKeyReshare: 3 |
+| request_type   | int    | The types of callback requests are enumerated as follows: <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
 | request_detail | string | The specifics of the callback request. Each type of callback request includes a distinct request_detail structure. The format for this information is a serialized JSON string. |
 | extra_info     | string | Additional information associated with the callback request. Each type of callback request includes a unique extra_info structure. The format for this information is a serialized JSON string. |
 
@@ -71,7 +71,7 @@ When **request_type** is equal to **TypeKeyGen**, the structure of **request_det
 | ------------- | -------- | ------------------------------------------------------------ |
 | threshold     | int      | Signature threshold.                                         |
 | node_ids      | []string | Node IDs associated with the generation of all private key shares under the MPC wallet. |
-| curve         | int      | Signature algorithm that has been used: 0: SECP256K12: ED25519 |
+| curve         | int      | Signature algorithm that has been used: <br></br>0: SECP256K1<br></br>2: ED25519 |
 
 The structure of **extra_info** is as follow:
 
@@ -96,8 +96,8 @@ The structure of **extra_info** is as follow:
 | ------------------ | ------------------------ | ------------------------------------------------------------ |
 | cobo_id            | string                   | Unique ID of the transaction signing (KeySign) request.      |
 | api_request_id     | string                   | Request ID of the withdrawal request. If the request is initialized via API, the value should be the same as request_id. If the request is initialized via Cobo Portal, Cobo will automatically generate a Request ID. |
-| transaction_type   | TransactionTypeEnum      | Please refer to TransactionTypeEnum.                         |
-| operation          | TransactionOperationEnum | Please refer to TransactionOperationEnum.                    |
+| transaction_type   | TransactionTypeEnum      | Please refer to [TransactionTypeEnum](#TransactionTypeEnum).                         |
+| operation          | TransactionOperationEnum | Please refer to [TransactionOperationEnum](#TransactionOperationEnum).                    |
 | coin               | string                   | Asset name.                                                  |
 | decimal            | int                      | Decimal precision.                                           |
 | from_address       | string                   | The address from which assets are withdrawn.                 |
@@ -136,7 +136,7 @@ The structure of **input** is as follows:
 | tx_hash       | string   | Transaction hash.            |
 | vout_n        | int      | Transaction index or number. |
 
-The structure of **TransactionTypeEnum** is as follows:
+<a name="TransactionTypeEnum"></a>The structure of **TransactionTypeEnum** is as follows:
 
 | **Value** | **Name**                    | **Description**                                              |
 | --------- | --------------------------- | ------------------------------------------------------------ |
@@ -147,7 +147,7 @@ The structure of **TransactionTypeEnum** is as follows:
 | 105       | TRANSACTION_RBF_API_DROP    | The transaction to cancel, which was initiated via API.      |
 | 106       | TRANSACTION_RBF_WEB_DROP    | The transaction to cancel, which was initiated via Cobo Portal. |
 
-The structure of **TransactionOperationEnum** is as follows:
+<a name="TransactionOperationEnum"></a>The structure of **TransactionOperationEnum** is as follows:
 
 | **Value** | **Name**      | **Description**       |
 | --------- | ------------- | --------------------- |
@@ -167,7 +167,7 @@ When **request_type** is equal to **TypeKeyReshare**, the structure of **request
 | ------------- | -------- | ------------------------------------------------------------ |
 | old_group_id  | string   | Previous group ID.                                           |
 | root_pub_key  | string   | Root extended public key.                                    |
-| curve         | int      | Signature algorithm that has been used: 0: SECP256K12: ED25519 |
+| curve         | int      | Signature algorithm that has been used: <br></br>0: SECP256K1<br></br>2: ED25519 |
 | used_node_ids | []string | Selected Node IDs from the previous group that have been used for soft key recovery. |
 | old_threshold | int      | Previous signature threshold.                                |
 | new_threshold | int      | New Signature Threshold.                                     |
@@ -186,14 +186,14 @@ The structure of **extra_info** is as follows:
 | ------------- | -------- | ------------------------------------------------------------ |
 | status        | int      | If the status is 0, it indicates that the callback server is normal. Other values suggest that the callback server has encountered an error. |
 | request_id    | string   | Request ID of the callback. The value must be the same as the request_id in CallbackRequest. |
-| action        | string   | Instructions for task execution, represented as an enum with two possible values:  APPROVE: The task should be executed. REJECT: The task should be rejected, and the reason can be retrieved from the error field. |
+| action        | string   | Instructions for task execution, represented as an enum with two possible values:  <br></br>APPROVE: The task should be executed.<br></br>REJECT: The task should be rejected, and the reason can be retrieved from the error field. |
 | error         | string   | If the returned status is not 0, it indicates an error within the callback server. If the returned status is 0 and the action returns a “REJECT,” it provides the reason for task rejection. |
 
 ### **Callback server examples**
 
 Cobo Portal offers callback server examples in various programming languages. You can [refer to these examples ](https://github.com/CoboGlobal/cobo-mpc-callback-server-examples) to swiftly deploy a callback server. Alternatively, JWT code libraries are available for multiple programming languages. You can refer to [JWT’s official website](https://jwt.io/libraries) to deploy a callback server.
 
-*Note: In the event that the TSS Node fails to receive the HTTP response, it will continue to send requests to the callback server. In these instances, when the maximum number of retries is reached, the response will be categorized as "REJECT."*
+<Note>In the event that the TSS Node fails to receive the HTTP response, it will continue to send requests to the callback server. In these instances, when the maximum number of retries is reached, the response will be categorized as "REJECT."</Note>
 
 ## Callback server configuration
 
@@ -299,11 +299,11 @@ callback:
 
 cb_server:
 
-\- service_address: http://callback-server-01:8080/v1/check
+- service_address: http://callback-server-01:8080/v1/check
 
 pubkey_path: configs/callback-server-pub-01.key
 
-\- service_address: http://callback-server-02:8080/v1/check
+- service_address: http://callback-server-02:8080/v1/check
 
 pubkey_path: configs/callback-server-pub-02.key
 

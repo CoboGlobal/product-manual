@@ -23,8 +23,7 @@ To verify the validity of the TSS Node package, please check the SHA256 (256-bit
 ```
 sha256sum cobo-tss-node-generic-<VERSION>.tgz
 ```
-
-Note: If you are using an Apple MacBook, please execute the following command to check the SHA256 (256-bit) checksums.
+<Note>If you are using an Apple MacBook, please execute the following command to check the SHA256 (256-bit) checksums.</Note>
 
 ```
 shasum -a 256 cobo-tss-node-generic-<VERSION>.tgz
@@ -144,7 +143,7 @@ As of now, all dependencies are considered successfully configured, and the TSS 
 
 The TSS Node is configured to connect to the development environment by default, requiring no additional config file for it to run. However, if you wish to connect to the production environment, manual modification of the config file is necessary. 
 
-To initiate this, create a duplicate of cobo-tss-node-config.yaml.template, renaming it as cobo-tss-node-config.yaml. Paste the new file into the configs directory. For instructions, please refer to the **TSS node configuration method**. Remember to restart the TSS Node package once the config file is modified.
+To initiate this, create a duplicate of cobo-tss-node-config.yaml.template, renaming it as cobo-tss-node-config.yaml. Paste the new file into the configs directory. For instructions, please refer to the [TSS node configuration method](/en/portal/mpc-wallets/ocw/appendix#tss-node-configuration-methods). Remember to restart the TSS Node package once the config file is modified.
 
 **Startup script: tss-node.sh**
 
@@ -213,7 +212,7 @@ Execution Workflow:
 - Set a password to encrypt the data generated during TSS Node initialization. In the event of lost access or the need to modify the password, please refer to [Recover root extended private keys](/en/portal/mpc-wallets/ocw/recover-root-key). It is recommended to set a complex password with a length between 16-32 characters, utilizing a password manager (e.g., 1Password), and securely store the password on a trusted device.
 - The database file will be automatically generated with the default path being db/secrets.db.
 - The Node ID will be automatically generated (e.g., cobo73VA6C6WvofPg8tWYmqvdUF1cPYhd7EmGUxTexz5HCzYe) and functions as the unique identifier of the TSS Node. 
-- The callback key will be automatically generated and printed. For more information, please refer to **TSS Node callback**.
+- The callback key will be automatically generated and printed. For more information, please refer to [TSS Node callback](/en/portal/mpc-wallets/ocw/tss-node-callback).
 
 ## TSS Node startup
 
@@ -263,7 +262,7 @@ If the TSS Node has not been configured on **Cobo Portal** > **MPC Wallet**, the
 INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
 ```
 
-You can press Ctrl+C to exit, and the TSS Node will continue to run in the background. For more information on checking the running status of the TSS Node, please refer to the **appendix**.
+You can press Ctrl+C to exit, and the TSS Node will continue to run in the background. For more information on checking the running status of the TSS Node, please refer to [Appendix](/en/portal/mpc-wallets/ocw/appendix).
 
 ```
 sudo ./tss-node.sh init
@@ -271,7 +270,7 @@ sudo ./tss-node.sh init
 
 ## TSS Node on Cobo Portal & MPC Root Extended Public Key 
 
-*Note: Only the client with Vault Admin rights is authorized to add the TSS Node ID to Cobo Portal.*
+<Note>Only the client with Vault Admin rights is authorized to add the TSS Node ID to Cobo Portal.</Note>
 
 1. Log in to Cobo Portal.
 2. Click **Wallets** in the main menu on the left hand side.
@@ -289,4 +288,4 @@ sudo ./tss-node.sh init
 
 ### **Private key share management** 
 
-The successfully generated private key shares will be encrypted and stored locally in the database file of the TSS Node package. The default path is db/secrets.db. It is highly recommended to create backups of the database file and the password used for encryption during the initialization of the TSS Node. The backup files should be stored on separate devices for enhanced security. For more information, please refer to **Back up key share groups.** 
+The successfully generated private key shares will be encrypted and stored locally in the database file of the TSS Node package. The default path is db/secrets.db. It is highly recommended to create backups of the database file and the password used for encryption during the initialization of the TSS Node. The backup files should be stored on separate devices for enhanced security. For more information, please refer to [Back up key share groups](/en/portal/mpc-wallets/ocw/back-up-key-share-groups).
