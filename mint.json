@@ -97,7 +97,14 @@
       "pages": [
         "en/portal/introduction",
         "en/portal/release-notes",
-        "en/portal/quick-start-guide"
+        "en/portal/quick-start-guide",
+            {
+              "group": "Supported tokens and chains",
+              "pages": [
+                "en/portal/supported-tokens-custodial",
+                "en/portal/supported-tokens-mpc"
+              ]
+        }
       ],
       "version": "English"
     },
