@@ -1,33 +1,33 @@
 ---
-title: "Transfer from Smart Contract Wallets (Safe{Wallet})"
-sidebarTitle: "Transfer from Smart Contract Wallets (Safe{Wallet})"
+title:“从智能合约钱包 (Safe{Wallet}) 转账”
+sidebarTitle:“从智能合约钱包 (Safe{Wallet}) 转账”
 ---
 
-To make a transfer from Smart Contract Wallets (Safe\{Wallet\}), log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
+要从智能合约钱包 (Safe{Wallet}) 转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/images/transfers/transfer-button.svg" className="icon"></img>。
 
 <img src="/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
  
 
-Then, fill in the required information as follows:
+然后填写所需的信息，具体如下：
 
-1. Select the token type for the transfer. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type (fees apply), click **Not Enabled**.
-2. In the drop-down menu under "From", select **Smart Contract Wallet (Safe&#123;Wallet&#125;)**.
-3. To find your wallet, select it from the drop-down menu or search by the address, Safe&#123;Wallet&#125; name or label. Smart Contract Wallets (Safe&#123;Wallet&#125;) created via both Cobo Portal and WaaS 2.0 API will be listed.
-4. Select a Delegate address (abbreviated as Delegate). For more information on Delegates, see [Manage delegate addresses and transfer whitelists](/cn/portal/smart-contract-wallets/delegate-intro).
-    - If you have not added any Delegates to the Smart Contract Wallet (Safe&#123;Wallet&#125;) yet, please click **add Delegate**.
-    - If the selected Delegate lacks gas tokens, please follow the on-screen instructions to top up gas fees for the Delegate first.
+1.选择转账的代币类型。选择转账的代币类型。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请点击**未启用**.
+2.在“转出”选项的下拉菜单中选择**智能合约钱包 (Safe&#123;Wallet&#125;)**。
+3.要找到您的钱包，请从下拉菜单中选择，也可以直接搜索地址、Safe&#123;Wallet&#125; 名称或标签。结果中将列出通过 Cobo Portal 和 WaaS 2.0 API 创建的智能合约钱包 (Safe&#123;Wallet&#125;)。
+4.选择 Delegate 地址（简写为 Delegate）。有关 Delegate 的更多信息，请参见[管理 Delegate 地址和转账白名单](/en/portal/smart-contract-wallets/delegate-intro)。
+    - 如果您尚未向智能合约钱包 (Safe&#123;Wallet&#125;) 中添加任何 Delegate，请点击**添加 Delegate**。
+    - 如果所选 Delegate 的 gas 代币不足，请先按照屏幕说明为该 Delegate 充入 gas 费用。
     <img src="/images/transfers/add-delegate.png" className="screenshot_modal"/>
-5. Select a "To" address from your Address Book or a wallet on Cobo Portal, or manually input an external address. Note that for Smart Contract Wallets (Safe&#123;Wallet&#125;), the 'To’ address must be an on-chain, whitelisted address. For more information, see [Add transfer whitelists](/cn/portal/smart-contract-wallets/transfer-whitelists).
-6. Enter the transfer amount.
-7. Review the transaction cost. Network fees will be displayed in 3 tiers based on transaction speeds: slow, standard, and fast.
-8. To customize the fee, click **Customize**.
-9. The fields will be auto populated based on the transaction speed you have selected. You may customize the gas price and gas limit based on your specific requirements.
-    - The fee will be covered by the Delegate.
-    - The estimated fee is calculated by multiplying the max fee by the gas limit: (max fee * gas limit). See [provided table under EIP 1559](/cn/portal/transfers/from-mpc-wallets#eip1559) for definition of the parameters.
-    - If the Delegate lacks sufficient gas tokens, click **Top up to Delegate** to deposit the required gas tokens.
-10. (Optional) Add category or description to your transaction. For details, see [Add category and description](/cn/portal/transfers/add-category).
-11. Click **Submit**.
-12. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
+5.从地址簿或 Cobo Portal 上的钱包中选择“转入”的地址，也可以手动输入外部地址。注意，对于智能合约钱包 (Safe&#123;Wallet&#125;)，“转入”地址必须为链上白名单地址。有关更多信息，请参见[添加转账白名单](/en/portal/smart-contract-wallets/transfer-whitelists)。
+6.输入转账金额。
+7.查看交易费用。根据交易速度，网络费用分为三个级别：慢速、标准和快速。
+8.要定制该费用，请点击**定制**。
+9.这些字段将根据您选择的交易速度自动填充。您可以根据自己的具体要求定制 gas 价格和 gas 限额。
+    - Delegate 将涵盖该费用。
+    - 预估费用的计算方式是最高费用乘以 gas 限额：（最高费用 x gas 限额）。请参见 [EIP 1559 表格](/en/portal/transfers/from-mpc-wallets#eip1559)，了解各个参数的定义。
+    - 如果 Delegate 的 gas 代币不足，请点击**为 Delegate 充币**，向其中充入所需数量的 gas 代币。
+10.（可选）为交易添加类别或描述。详情请参见[添加类别和描述](/en/portal/transfers/add-category)。
+11.点击**提交**。
+12.在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
 
 
 

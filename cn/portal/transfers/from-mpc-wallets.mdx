@@ -1,56 +1,59 @@
 ---
-title: "Transfer from MPC Wallets (Organization-Controlled Wallets)"
-sidebarTitle: "Transfer from MPC Wallets (Organization-Controlled Wallets)"
+title:“从 MPC 钱包（机构钱包）转账”
+sidebarTitle:“从 MPC 钱包（机构钱包）转账”
 ---
 
-To make a transfer from MPC Wallets (Organization-Controlled Wallets), log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
+要从 MPC 钱包（机构钱包）转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/images/transfers/transfer-button.svg" className="icon"></img>。
 
 <img src="/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
  
 
-Then, fill in the required information as follows:
+然后填写所需的信息，具体如下：
 
-1. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type (fees apply), click **Not Enabled**.
-2. In the drop-down menu under "From", select **MPC Wallet (Organization-Controlled Wallet)**.
-3. To find your wallet, select it from the drop-down menu or search by the address, vault name, wallet name, or label. MPC Wallet (Organization-Controlled Wallet) created via both Cobo Portal and WaaS 2.0 API will be listed.
-4. Select a "To" address from your Address Book or a wallet on Cobo Portal, or manually input an external address.
+1.选择转账的代币类型。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请点击**未启用**.
+
+2.在“转出”选项的下拉菜单中选择* MPC 钱包（机构钱包）**。
+
+3.要找到您的钱包，请从下拉菜单中选择，也可以直接搜索地址、vault 名称、钱包名称或标签。结果中将列出通过 Cobo Portal 和 WaaS 2.0 API 创建的 MPC 钱包（机构钱包）。
+
+4.从地址簿或 Cobo Portal 上的钱包中选择“转入”的地址，也可以手动输入外部地址。
     <img src="/images/transfers/to-address.png" className="screenshot_modal"/>
-    - **Address Book**: Only addresses associated with the blockchain network of the selected token will be listed.
-    - **My Wallet**: Select a wallet type and then click on the specific wallet you would like to transfer to.
-    - **Other Addresses**: Manually enter an external address as the destination address under "To". If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
-5. Enter the transfer amount. Please note that for DOT, XRP, or KSM tokens, a minimum balance must be maintained in the selected MPC Wallet (Organization-Controlled Wallet). For DOT, reserve a minimum of 1 DOT; for XRP, 10 XRP; and for KSM, 0.000333333 KSM.
-6. Review the transaction cost. Network fees will be displayed in 3 tiers based on transaction speeds: slow, standard, and fast.
-7. To adjust the fees, click the button highlighted below. All fields are mandatory and will be auto-populated based on the transaction speed you have selected. You may edit the parameters based on your specific requirements.
+    - **地址簿**：仅列出与所选代币的区块链网络相关联的地址。
+    - **我的钱包**：选择钱包类别，然后点击您希望转入的钱包。
+    - **其他**：手动输入外部地址，作为“转入”的目标地址。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
+5.输入转账金额。注意，对于 DOT、XRP 或 KSM 代币，所选的 MPC 钱包（机构钱包）中持有的余额必须满足最低要求。DOT 代币的最低余额为 1 DOT，XRP 为 10 XRP，KSM 为 0.000333333 KSM。
+6.查看交易费用。根据交易速度，网络费用分为三个级别：慢速、标准和快速。
+7.要调整该费用，请点击下图圈出的按钮。所有字段都是必填项，并将根据您选择的交易速度自动填充。您可以根据自己的具体要求编辑各个参数。
     <img src="/images/transfers/customize-fees.png" className="screenshot_modal"/>
-    - EVM  chains: For EVM chains, transaction fees vary between the EIP1559 and Legacy methods.
+    - EVM 链：对于 EVM 链，EIP1559 和 Legacy 方式的交易费用有所不同。
         - EIP 1559
-            - Under the EIP1559 method, users can customize 3 parameters: max priority fee (gwei), max fee, and gas limit.
-            - The estimated fee is calculated by multiplying the max fee by the gas limit: (max fee * gas limit).
-            - For Mantle and Optimism, the displayed fee amount pertains to Layer 2 only. After you submit the transaction, Layer 1 fees will be auto deducted from your source wallet address. Please ensure that your address has sufficient gas tokens to cover all fees.
-            - There are no fees for Chiliz, whereas fees apply to Chiliz Chain 2.0.
+            - 在 EIP1559 方式下，用户可以定制 3 个参数：最高优先费用 (gwei)、最高费用和 gas 限额。
+            - 预估费用的计算方式是最高费用乘以 gas 限额：（最高费用 x gas 限额）。
+            - 对于 Mantle 和 Optimism，显示的费用仅涵盖 Layer 2。提交交易后，Layer 1 费用将自动从您的来源钱包地址扣除。请确保您的地址有足够的 gas 代币以支付所有费用。
+            - Chiliz 不收取费用，但 Chiliz Chain 2.0 收费。
 
             <a id="eip1559"></a>	
-            | Parameter        | Definition                                                                                                                                                                                                                             |
+            | 参数        | 定义                                                                                                                                                                                                                             |
             | --------         | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
-            | Max Priority Fee | The priority fee, often referred to as the 'miner tip,' serves as an incentive for miners to prioritize your transaction. The max priority fee represents the highest amount of miner tips you are willing to pay for your transaction.|
-            | Max Fee          | The max fee represents the total gas price you are willing to pay for your transaction.                                                                                                                                                |
-            | Gas Limit        | The gas limit represents the max number of gas units you are willing to pay for the execution of a transaction or Ethereum Virtual Machine (EVM) operation. Different operations require varying quantities of gas units.              |
+            | 最高优先费用 | 最高优先费用通常也被称为“矿工小费”，支付给矿工，激励他们优先处理您的交易。最高优先费用是您愿意为交易支付的最高矿工小费。
+            | 最高费用          | 最高费用是您愿意为交易支付的 gas 总价。                                                                                                                                                |
+            | gas 限额        | gas 限额是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最高 gas 单位数量。不同的运行方式需要消耗不同数量的 gas 单位。              |
 
         - Legacy
-            - Under the Legacy method, users can customize 2 parameters: gas price (gwei) and gas limit.
-            - The estimated fee is calculated by multiplying the gas price by the gas limit: (gas price * gas limit).
+            - 在 Legacy 方式下，用户可以定义 2 个参数：gas 价格 (gwei) 和 gas 限额。
+            - 预估费用的计算方式是 gas 价格乘以 gas 限额：（gas 价格 x gas 限额）。
 
-            | Parameter | Definition                                                                                                                                                  |
+            | 参数 | 定义                                                                                                                                                  |
             | --------  | ----------------------------------------------------------------------------------------------------------------------------------------------------------  |
-            | Gas Price | The gas price represents the amount of ETH (in a smaller unit known as gwei) that must be paid to validators for processing transactions.                   |
-            | Gas Limit | The gas limit represents the max number of gas units you are willing to pay for the execution of a transaction or Ethereum Virtual Machine (EVM) operation. |                                                                                              |
-    - UTXO-based chains
-        - Users can customize the fee rate (sat/vByte).
-        - The estimated fee is calculated by multiplying the fee rate by the transaction size: (fee rate * transaction size).
+            | gas 价格 | gas 价格是必须支付给验证者以便处理交易的 ETH（单位较小，称为 gwei）数量。                   |
+            | gas 限额 | gas 限额是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最高 gas 单位数量。 |                                                                                              |
+    - 基于 UTXO 的链
+        - 用户可以定制费率 (sat/vByte)。
+        - 预估费用的计算方式是费率乘以交易数额：（费率 x 交易数额）。
 
-            | Parameter | Definition                                                                                                                               |
+            | 参数 | 定义                                                                                                                               |
             | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
-            | Fee Rate  | The fee rate is calculated in satoshis per unit of data that your transaction will consume on the blockchain, abbreviated as sats/vByte. |
-8. (Optional) Add category or description to your transaction. For details, see [Add category and description](/cn/portal/transfers/add-category).
-9. Click **Submit**.
-10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
+            | 费率  | 费率的计算方式是您的交易在区块链上消耗的每单位数据对应多少 satoshis（缩写为 sats/vByte）。|
+8.（可选）为交易添加类别或描述。详情请参见[添加类别和描述](/en/portal/transfers/add-category)。
+9.点击**提交**。
+10.在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
