@@ -583,7 +583,7 @@
                 "cn/portal/custodial-wallets/introduction",
                 "cn/portal/custodial-wallets/key-features",
                 {
-                  "group": "How to use",
+                  "group": "使用说明",
                   "pages": [
                     "cn/portal/custodial-wallets/set-up",
                     {
@@ -612,7 +612,7 @@
                 "cn/portal/mpc-wallets/introduction",
                 "cn/portal/mpc-wallets/key-features",
                 {
-                  "group": "How to use",
+                  "group": "使用说明",
                   "pages": [
                     {
                       "group": "Organization-Controlled Wallets",
@@ -676,7 +676,7 @@
                 "cn/portal/smart-contract-wallets/introduction",
                 "cn/portal/smart-contract-wallets/key-features",
                 {
-                  "group": "How to use",
+                  "group": "使用说明",
                   "pages": [
                     {
                       "group": "Set up Smart Contract Wallets",
@@ -729,7 +729,7 @@
                 "cn/portal/exchange-wallets/key-features",
                 "cn/portal/exchange-wallets/supported-exchanges",
                 {
-                  "group": "How to use",
+                  "group": "使用说明",
                   "pages": [
                     {
                       "group": "Set up Exchange Wallets",
@@ -764,7 +764,7 @@
           "pages": [
             "cn/portal/transfers/introduction",
             {
-              "group": "How to use",
+              "group": "使用说明",
               "pages": [
                 "cn/portal/transfers/from-custodial-wallets",
                 "cn/portal/transfers/from-mpc-wallets",
@@ -780,7 +780,7 @@
           "pages": [
             "cn/portal/risk-controls/introduction",
             {
-              "group": "How to use",
+              "group": "使用说明",
               "pages": [
                 {
                   "group": "Transaction policies",
@@ -821,7 +821,7 @@
           "pages": [
             "cn/portal/dashboard/introduction",
             {
-              "group": "How to use",
+              "group": "使用说明",
               "pages": [
                 "cn/portal/dashboard/quick-snapshot",
                 "cn/portal/dashboard/total-assets-trend",
@@ -838,7 +838,7 @@
           "pages": [
             "cn/portal/organization/introduction",
             {
-              "group": "How to use",
+              "group": "使用说明",
               "pages": [
                 {
                   "group": "Settings",
@@ -881,7 +881,7 @@
             "cn/portal/address-book/introduction",
             "cn/portal/address-book/key-features",
             {
-              "group": "How to use",
+              "group": "使用说明",
               "pages": [
                 "cn/portal/address-book/set-up",
                 "cn/portal/address-book/manage"
@@ -910,7 +910,7 @@
             "cn/portal/developer-console/introduction",
             "cn/portal/developer-console/key-features",
             {
-              "group": "How to use",
+              "group": "使用说明",
               "pages": [
                 "cn/portal/developer-console/overview",
                 {
@@ -955,7 +955,7 @@
         "cn/accounts/introduction",
         "cn/accounts/key-features",
         {
-          "group": "How to use",
+          "group": "使用说明",
           "pages": [
             {
               "group": "Set up Cobo Accounts",
@@ -997,7 +997,7 @@
         "cn/guard/introduction",
         "cn/guard/key-features",
         {
-          "group": "How to use",
+          "group": "使用说明",
           "pages": [
             "cn/guard/download",
             {
