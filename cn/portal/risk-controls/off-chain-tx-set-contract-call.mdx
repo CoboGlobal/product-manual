@@ -6,9 +6,9 @@ sidebarTitle: "设置合约风控"
 ## 创建合约签名风控
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+2. 点击左侧主菜单中的 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
 3. 点击**创建交易风控规则** > **合约交互**。
-<img src="/images/risk-controls/create_policy_cn.png" className="screenshot_full_screen"/>
+<img src="/cn/images/risk-controls/create_policy_cn.png" className="screenshot_full_screen"/>
 4. 输入**交易风控规则名称**。名称不得超过 30 个字符。
 5. 选择您要创建的风控所适用的所有**适用钱包**。
 6. 选择您要创建的风控所适用的所有**适用链**。
@@ -27,7 +27,7 @@ sidebarTitle: "设置合约风控"
 
 - API 发起者：您可以指定是允许任何团队成员还是仅允许特定成员通过 API 发起交易。
 - Web 发起者：您可以指定是允许任何团队成员还是仅允许特定成员通过 Web 控制台发起交易。
-<img src="/images/risk-controls/initiators-cn.png" className="screenshot_full_screen"/>
+<img src="/cn/images/risk-controls/initiators-cn.png" className="screenshot_full_screen"/>
 
 
 **代币授权**：只有当代币授权与特定类型的代币、提币员和金额相关时，风控才会被触发。
@@ -35,7 +35,7 @@ sidebarTitle: "设置合约风控"
 - **频率**：您可以定义每笔交易的最大金额，或在指定时间窗口内（以小时为单位)的最大交易额。
 - **金额**：您可以指定提币员每笔交易的最大支出金额。
 - **提币员地址**：您可以指定与代币授权相关联的提币员地址。注意，您只能选择已添加到地址列表中的地址。要了解关于地址列表的更多信息，请查看[创建地址列表](/cn/portal/risk-controls/address-list)。
-<img src="/images/risk-controls/token-approval-cn.png" className="screenshot_full_screen"/>
+<img src="/cn/images/risk-controls/token-approval-cn.png" className="screenshot_full_screen"/>
 
 
 **代币转账**：只有当代币转账与特定的代币类型、频率、金额和接收地址相关时，风控才会被触发。
@@ -44,7 +44,7 @@ sidebarTitle: "设置合约风控"
 - **频率**：您可以定义每笔交易的最大金额，或在指定时间窗口内（以小时为单位）的最大交易额。
 - **转账金额**：您可以设置每笔交易的最大金额。
 - **接收地址**：您可以指定转账的接收地址。注意，您只能选择已添加到地址列表中的地址。有关更多信息，请参见[创建地址列表](/cn/portal/risk-controls/address-list)。
-<img src="/images/risk-controls/token-transfers-cn.png" className="screenshot_full_screen"/>
+<img src="/cn/images/risk-controls/token-transfers-cn.png" className="screenshot_full_screen"/>
 
 
 **自定义合约交互**：只有当智能合约交互满足指定条件时，风控才会被触发。您可以在**合约级**、**方法级**或**参数级**选择粒度。
@@ -58,11 +58,11 @@ sidebarTitle: "设置合约风控"
   - 同一组内的参数关系默认是“且”，可以切换为“或”。
   - 不同组之间的参数关系默认是“或”，可以切换为“且”。
   - 您可以通过**简单模式**界面配置参数，或点击**专家模式**手动输入条件表达式。
-<img src="/images/risk-controls/contract-call-cn.png" className="screenshot_full_screen"/>
+<img src="/cn/images/risk-controls/contract-call-cn.png" className="screenshot_full_screen"/>
 
 ## 设置审批动作<a id="set-approval-action"></a>
 目前，Cobo Portal 支持四种类型的审批动作：
 - **自动通过**：符合上述条件的交易将被自动拒绝。
 - **自动批准**：符合上述条件的交易将被自动批准。
 - **审批门槛**：符合上述条件的交易将需要指定数量的批准方能继续。请点击 **+ 添加审批员**添加一个或多个团队成员作为审批员。您可以按角色类型或成员姓名选择。然后设置审批门槛。
-<img src="/images/risk-controls/customized-workflow-cn.png" className="screenshot_modal"/>
+<img src="/cn/images/risk-controls/customized-workflow-cn.png" className="screenshot_modal"/>
