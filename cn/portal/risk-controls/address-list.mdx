@@ -1,33 +1,44 @@
 ---
-title: "Address list"
-sidebarTitle: "Address list"
+title: "地址列表"
+sidebarTitle: "地址列表"
 ---
 
-## Create an address list
+## 创建地址列表
 
-Note: Deletion of created lists is currently not supported.
+<Note>目前不支持删除已创建的列表。</Note>
 
-1. Log into Cobo Portal.
-2. Click **Wallets** > **Transaction Policies**.
-3. Switch to the "Address Lists" tab.
-4. Click **Create List**.
-5. Enter a name for your address list. The name should not exceed 30 characters and must be unique within your organization.
-6. Click **Confirm**.
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)
+2. 点击 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**地址列表**标签页。
+4. 点击**创建列表**。
+<img src="/images/risk-controls/create-an-address-list-cn.png" className="screenshot_full_screen"/>
+5. 输入地址列表的名称。名称不得超过 30 个字符且不得与您团队內的其他地址列表名称重复。
+6. 点击**确认**。
 
-## Batch upload addresses to an address list
 
-1. Under "Action", click the **edit icon** next to the address list you would like to manage.
-2. Click **Batch Upload**.
-3. Download the template file, which outlines the format requirements for uploading addresses. The template includes a column labeled "address," where you can directly input or paste your address data.
-4. Click **Choose File** to select and upload your address file. Please ensure that the file is in CSV format and does not exceed 1MB in size.
-5. Upon successful upload, the name of the uploaded file will be displayed. If you wish to replace the currently uploaded file with a new one, click **Choose File** again.<br/>
-&emsp;a. If the uploaded file contains addresses that already exist in the current address list, the system will automatically filter out these duplicate addresses, retaining only the new addresses.
-7. Click **Upload** and, if required, complete the 2FA verification.
 
-## Manually add addresses to an address list
 
-1. Under "Action", click the **edit icon** next to the address list you would like to manage.
-2. Click **Add Address**.
-3. In the pop-up window, manually enter an address. To add more than one address, click **+Add**.<br/>
-&emsp;a. If the address entered by the user already exists in the address list or has been added in the current pop-up window, an error message will appear and the addition will fail.
-4. Click **Submit** and, if required, complete the 2FA verification.
+## 批量上传地址到地址列表
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)
+2. 点击 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**地址列表**标签页。
+4. 点击您要管理的地址列表。
+5. 点击**批量上传**。
+<img src="/images/risk-controls/batch-upload-cn.png" className="screenshot_full_screen"/>
+6. 下载模板文件，该文件概述了上传地址的格式要求。模板包含一个标有“地址”的列，您可以直接在该列中输入或粘贴您的地址数据。
+7. 点击**选择文件**来选择并上传您的地址文件。请确保文件为 CSV 格式且大小不超过 1MB。
+8. 上传成功后，将显示已上传文件的名称。如果想用新文件替换当前上传的文件，请再次点击**选择文件**。
+   - 如果上传的文件中包含当前地址列表中已存在的地址，系统会自动过滤掉这些重复地址，仅保留新地址。
+9. 点击**上传**，并完成 2FA 验证（如需要）。
+
+## 手动添加地址至地址列表
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)
+2. 点击 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**地址列表**标签页。
+4. 点击您要管理的地址列表。
+5. 点击**添加地址**。
+<img src="/images/risk-controls/batch-upload-cn.png" className="screenshot_full_screen"/>
+6. 在弹出窗口中手动输入地址。要添加多个地址，点击 **+ 添加**。
+   - 如果用户输入的地址已存在于地址列表中或已添加到当前的弹出窗口中，将显示错误消息，提示添加失败。
+7. 点击**提交**，并完成 2FA 验证（如需要）。

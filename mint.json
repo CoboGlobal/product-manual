@@ -572,7 +572,7 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "钱包 & 交易",
+      "group": "钱包与交易",
       "pages": [
         {
           "group": "钱包",
@@ -593,7 +593,7 @@
                         "cn/portal/custodial-wallets/roles-and-policies",
                         "cn/portal/custodial-wallets/transfers",
                         {
-                          "group": "疑难解答",
+                          "group": "问题排查",
                           "pages": [
                             "cn/portal/custodial-wallets/unable-to-create-wallet",
                             "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
@@ -776,24 +776,24 @@
           ]
         },
         {
-          "group": "Risk Controls",
+          "group": "风险控制",
           "pages": [
             "cn/portal/risk-controls/introduction",
             {
               "group": "使用说明",
               "pages": [
                 {
-                  "group": "Transaction policies",
+                  "group": "交易风控",
                   "pages": [
                     "cn/portal/risk-controls/tx-policies-overview",
                     {
-                      "group": "On-chain transaction policies",
+                      "group": "链上交易风控",
                       "pages": [
                         "cn/portal/risk-controls/on-chain-tx-type"
                       ]
                     },
                     {
-                      "group": "Off-chain transaction policies",
+                      "group": "链下交易风控",
                       "pages": [
                         "cn/portal/risk-controls/off-chain-tx-set-transfer",
                         "cn/portal/risk-controls/off-chain-tx-manage-transfer",
@@ -902,7 +902,7 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "用 COBO 开发",
+      "group": "开发者专区",
       "pages": [
         {
           "group": "Developer Console",
@@ -984,7 +984,7 @@
                   ]
                 },
                 {
-                  "group": "疑难解答",
+                  "group": "问题排查",
                   "pages": [
                     "cn/accounts/forgot-password",
                     "cn/accounts/passkeys-failed"

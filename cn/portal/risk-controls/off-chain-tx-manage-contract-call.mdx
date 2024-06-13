@@ -1,37 +1,54 @@
 ---
-title: "Manage contract call policy"
-sidebarTitle: "Manage contract call policy"
+title: "管理合约风控"
+sidebarTitle: "管理合约风控"
 ---
 
-## Edit a contract call policy
+## 编辑合约风控
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**风控**标签页。
+4. 点击右侧的 <img src="/images/common/icon_filter_cn.svg" className="icon"/>，按 **类型**、**钱包**、**条件**、**操作**和 **状态** 筛选风控。
+5. 在**操作**下，点击您要修改的风控旁的 <img src="/images/common/icon_more.svg" className="icon"/> > <img src="/images/common/icon_edit.svg" className="icon"/>**编辑**。
+6. 在弹出窗口中，您可以修改**交易风控规则名称**和**适用钱包**、添加或删除条件模板，以及修改风控触发时采取的动作。
+7. 点击**保存**，并完成 2FA 验证（如需要）。
+<img src="/images/risk-controls/edit-transfer-policy-cn.png" className="screenshot_full_screen"/>
 
-Note: A contract call policy can be deleted only if its status is active.
+## 删除合约风控
 
-1. Log into Cobo Portal.
-2. Click **Wallets** > **Transaction Policies** in the main menu on the left hand side.
-3. Switch to the "Policies" tab.
-4. Click the **filter icon** on the right side to filter the policies by type, condition template, or network.
-5. Under "Operations", click **Edit** next to the policy you want to modify.
-6. In the pop-up window, you can modify the policy name, applicable wallets, add or delete condition templates, and modify the action to be taken if the policy is triggered.
-7. Click **Save** and, if required, complete the 2FA verification.
+<Note>合约风控只有在处于生效状态时才能被删除。</Note>
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**风控**标签页。
+4. 点击右侧的 <img src="/images/common/icon_filter.svg" className="icon"/>，按 **类型**、**钱包**、**条件**、**操作**和 **状态** 筛选风控。
+5. 在**操作**下，点击您要删除的风控旁的 <img src="/images/common/icon_more.svg" className="icon"/> > <img src="/images/common/icon_delete.svg" className="icon"/>**删除**。
+6. 在弹出窗口中，确认是否要删除所选风控。
+7. 点击**确认**，并完成 2FA 验证（如需要）。
+<img src="/images/risk-controls/edit-transfer-policy-cn.png" className="screenshot_full_screen"/>
 
-## Delete a contract call policy
+## 查看版本历史
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**风控**标签页。
+4. 点击右侧的 <img src="/images/common/icon_filter_cn.svg" className="icon"/>，按 **类型**、**钱包**、**条件**、**操作**和 **状态** 筛选风控。
+5. 在**操作**下，点击您要查看修订历史的风控旁的 <img src="/images/common/icon_more.svg" className="icon"/> > <img src="/images/common/icon_revisions.svg" className="icon"/>**版本**。
+6. 查看所选风控的修订历史。
+   - 您可以查看历史生效的风控版本以及已删除的版本。列表不包含当前生效的版本或任何正在创建或编辑的版本。
+   - 您还可以查看修改者、修改时间以及与历史风控版本相关的交易记录等详细信息。
+<img src="/images/risk-controls/edit-transfer-policy-cn.png" className="screenshot_full_screen"/>
 
-1. Log into Cobo Portal.
-2. Click **Wallets** > **Transaction Policies** in the main menu on the left hand side.
-3. Switch to the "Policies" tab.
-4. Click the **filter icon** on the right side to filter the policies by type, condition template, or network.
-5. Under "Operations", click **Delete** next to the policy you want to delete.
-6. In the pop-up window, confirm whether you would like to delete the selected policy.
-7. Click **Yes** and, if required, complete the 2FA verification.
 
-## View revision history
+## 查看交易记录
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**风控**标签页。
+4. 点击右侧的 <img src="/images/common/icon_filter_cn.svg" className="icon"/>，按 **类型**、**钱包**、**条件**、**操作**和 **状态** 筛选风控。
+5. 在**操作**下，点击您要查看修订历史的风控旁的 <img src="/images/common/icon_more.svg" className="icon"/> > <img src="/images/common/icon_view transactions.svg" className="icon"/>**交易记录** 以查看相关交易记录。
+<img src="/images/risk-controls/edit-transfer-policy-cn.png" className="screenshot_full_screen"/>
 
-1. Log into Cobo Portal.
-2. Click **Wallets** >  **Transaction Policies** in the main menu on the left hand side.
-3. Switch to the "Policies" tab.
-4. Click the **filter icon** on the right side to filter the policies by type, condition template, or network.
-5. Under "Operations", click **Revisions** next to the policy for which you want to view the revision history.
-6. View the revision history of the selected policy.<br/>
-&emsp;a. You can see past versions of the policy that were in effect, as well as deleted versions. The list will not include the currently active version of the policy or any versions that are being created or edited.<br/>
-&emsp;b. You can also view details such as the modifiers, modification times, as well as transactions associated with the past versions of the policy.
+## 查看风控详情
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 切换到**风控**标签页。
+4. 点击右侧的 <img src="/images/common/icon_filter_cn.svg" className="icon"/>，按 **类型**、**钱包**、**条件**、**操作**和 **状态** 筛选风控。
+5. 在**操作**下，点击您要查看修订历史的风控旁的 <img src="/images/common/icon_more.svg" className="icon"/> > <img src="/images/common/icon_view.svg" className="icon"/>**查看详情** 以查看您想查看的风控详情。
+<img src="/images/risk-controls/edit-transfer-policy-cn.png" className="screenshot_full_screen"/>

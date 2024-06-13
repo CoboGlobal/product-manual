@@ -1,58 +1,68 @@
 ---
-title: "Set up contract call policy"
-sidebarTitle: "Set up contract call policy"
+title: "设置合约风控"
+sidebarTitle: "设置合约风控"
 ---
 
-## Create a contract call policy
+## 创建合约签名风控
 
-1. Log into Cobo Portal.
-2. Click **Wallets** > **Transaction Policies** in the main menu on the left hand side.
-3. Click **Create Policy** > **Contract Call**.
-4. Enter a name for the policy. The name should not exceed 30 characters.
-5. Select all the wallets that are applicable to the policy you are about to create.
-6. Select a blockchain network that is applicable to the policy you are about to create.
-7. Click **+Add condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. Refer to the **Select condition template** section below for more information. <br/>
-&emsp;a. You have the option to skip setting any conditions and proceed directly to the next step. This means that any transaction signing associated with the applicable wallets will trigger this policy.
-8. Select the action to be taken if the policy is triggered (i.e., auto approval, auto rejection, quorum, custom workflow). Refer to the **Set approval action** section below for more information.
-9. Adjust and review the priority of your policies. Transactions will be matched with policies in the list based on their priority order.<br/>
-&emsp;a. Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.<br/>
-&emsp;b. By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
-10. Click **Submit** and, if required, complete the 2FA verification.
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+3. 点击**创建交易风控规则** > **合约交互**。
+<img src="/images/risk-controls/create_policy_cn.png" className="screenshot_full_screen"/>
+4. 输入**交易风控规则名称**。名称不得超过 30 个字符。
+5. 选择您要创建的风控所适用的所有**适用钱包**。
+6. 选择您要创建的风控所适用的所有**适用链**。
+7. 点击 **+ 添加条件**选择条件模板。您可以为每个风控添加一个或多个条件。如果应用了多个条件，只有当交易满足所有条件时，风控才会被触发。要了解关于条件的更多信息，请查看[选择条件模板](/cn/portal/risk-controls/off-chain-tx-set-contract-call#select-condition-template)。
+   - 您可以选择跳过条件设置，直接进入下一步。这样与适用钱包相关的所有交易签名都将触发此风控。
+8. 选择在风控触发时采取的动作（即**自动批准**、**自动拒绝**和**审批门槛**），然后点击**下一页**。要了解关于审批动作的更多信息，请查看[设置审批动作](/cn/portal/risk-controls/off-chain-tx-set-contract-call#set-approval-action)。
+9. 审查并确认风控，然后点击**下一页**。
+10. 调整并查看风控优先级。交易将根据风控列表中的优先顺序与风控匹配。
+    - 一旦触发了优先级较高的风控，排序靠后的风控将不再触发。
+    - 新创建的风控将默认置于风控列表的顶部并高亮显示。您可以通过拖放来更改风控顺序。
+11. 点击**提交**，并完成 2FA 验证（如需要）。
 
-## Select condition template
+#### 选择条件模板<a id="select-condition-template"></a>
 
-**Initiators**: The policy will be triggered only if the transaction is initiated by designated parties. You can choose between API initiators or web initiators.
-- API Initiators: You can specify whether any team members, or only specific members, are allowed to initiate transactions via APIs.
-- Web Initiators: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
+**发起者**：只有当交易由指定方发起时，风控才会被触发。您可以在 API 发起者或 Web 发起者之间进行选择。
 
-**Token transfers**: The policy will be triggered only if a token transfer is associated with specific token types, amounts, and frequencies.
-- Tokens: You can specify the types of tokens available for transactions.
-- Transfer Amount: You can set the maximum transaction amount.
-- Frequency: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
-- Receiving Addresses: You can specify the receiving addresses for the transfer. Note that you can only select addresses already added to the address lists.
+- API 发起者：您可以指定是允许任何团队成员还是仅允许特定成员通过 API 发起交易。
+- Web 发起者：您可以指定是允许任何团队成员还是仅允许特定成员通过 Web 控制台发起交易。
+<img src="/images/risk-controls/initiators-cn.png" className="screenshot_full_screen"/>
 
-**Token approval**: The policy will be triggered only if a token approval is associated with specific types of tokens, spenders, and amounts.
-- Tokens: You can specify the types of tokens the spenders are allowed to spend.
-- Amount: You can specify the maximum amount for the spender to spend.
-- Frequency: You can define either the maximum amount applied per transaction or within a specified time window, denominated in hours.
-- Spender Addresses: You can specify the spender addresses associated with the token approval. Note that you can only select addresses already added to the address lists.
 
-**Contract call**: The policy will be triggered only if a smart contract call meets the specified criteria. You can select granularity at the contract-level, method-level, or parameter-level.
-- Contract-level: You can specify the smart contract addresses for the call. The policy will be triggered when the "to" address of the contract call matches one of the specified addresses. Please note that you will need to manually enter the contract addresses.
-- Method-level: You can specify the smart contract address and methods for the call. The policy will be triggered if both the "to" address and one of the call methods match the specified criteria.<br/>
-&emsp;- If the displayed methods are incorrect, you can obtain the Contract Application Binary Interface (ABI) from the blockchain explorer or manually enter an ABI.
-- Parameter-level: You can specify the smart contract address, method, and parameter(s) for the call. The policy will be triggered only if the contract call address, method, and parameter(s) match the specified criteria.<br/>
-&emsp;- To add one parameter, click **Create**.<br/>
-&emsp;- To add multiple parameters, click **+ Add parameter** in the pop-up window. If you would like to add a Boolean group, click **+ Add group**.<br/>
-&emsp;- The relationship between parameters within the same group defaults to "And" and can be switched to "Or" by clicking.<br/>
-&emsp;- The relationship between different groups defaults to "Or" and can be switched to "And" by clicking.<br/>
-&emsp;- You can configure the condition templates through the interface or manually enter condition expression statements by clicking **Switch to expert mode**.
+**代币授权**：只有当代币授权与特定类型的代币、提币员和金额相关时，风控才会被触发。
+- **代币类型**：您可以指定提币员允许支出的代币类型。
+- **频率**：您可以定义每笔交易的最大金额，或在指定时间窗口内（以小时为单位)的最大交易额。
+- **金额**：您可以指定提币员每笔交易的最大支出金额。
+- **提币员地址**：您可以指定与代币授权相关联的提币员地址。注意，您只能选择已添加到地址列表中的地址。要了解关于地址列表的更多信息，请查看[创建地址列表](/cn/portal/risk-controls/address-list)。
+<img src="/images/risk-controls/token-approval-cn.png" className="screenshot_full_screen"/>
 
-## Set approval action
 
-Currently, Cobo Portal supports four types of approval actions:
+**代币转账**：只有当代币转账与特定的代币类型、频率、金额和接收地址相关时，风控才会被触发。
 
-**Auto Approval**: Transactions meeting the above conditions will be automatically approved.<br/><br/>
-**Auto Rejection**: Transactions meeting the above conditions will be automatically rejected.<br/><br/>
-**Approval Quorum**: Transactions meeting the above conditions will require a specified number of approvals to proceed. Please click **+Add approvers** to add one or more team members as approvers. You can choose by role types or member names. Then, set the approval threshold.<br/><br/>
-**Custom Workflow**: Click **+Set workflow** to configure a custom workflow and enhance the flexibility of your action strategies.
+- **代币类型**：您可以指定可用于交易的代币类型。
+- **频率**：您可以定义每笔交易的最大金额，或在指定时间窗口内（以小时为单位）的最大交易额。
+- **转账金额**：您可以设置每笔交易的最大金额。
+- **接收地址**：您可以指定转账的接收地址。注意，您只能选择已添加到地址列表中的地址。有关更多信息，请参见[创建地址列表](/cn/portal/risk-controls/address-list)。
+<img src="/images/risk-controls/token-transfers-cn.png" className="screenshot_full_screen"/>
+
+
+**自定义合约交互**：只有当智能合约交互满足指定条件时，风控才会被触发。您可以在**合约级**、**方法级**或**参数级**选择粒度。
+
+- **合约级**：您可以指定合约调用的智能合约地址。当合约调用的**目标合约**与其中一个指定地址匹配时，风控将被触发。注意，您需要手动输入合约地址。
+- **方法级**：您可以指定合约调用的智能合约地址和方法。当合约调用的**目标合约**和其中一个**方法**均匹配指定条件时，风控将被触发。
+  - 如果显示的方法不正确，您可以从区块链浏览器获取合约应用二进制接口 (ABI)，或手动输入 ABI。
+- **参数级**：您可以指定合约调用的**目标合约**、**方法**和**参数**。只有当**目标合约**的智能合约地址、**方法**和**参数**均匹配指定条件时，风控才会被触发。
+  - 要添加一个**参数**，点击**创建**。
+  - 要添加多个**参数**，在弹出窗口中点击 **+ 添加参数**。如果想添加布尔组，点击 **+ 添加组**。
+  - 同一组内的参数关系默认是“且”，可以切换为“或”。
+  - 不同组之间的参数关系默认是“或”，可以切换为“且”。
+  - 您可以通过**简单模式**界面配置参数，或点击**专家模式**手动输入条件表达式。
+<img src="/images/risk-controls/contract-call-cn.png" className="screenshot_full_screen"/>
+
+## 设置审批动作<a id="set-approval-action"></a>
+目前，Cobo Portal 支持四种类型的审批动作：
+- **自动通过**：符合上述条件的交易将被自动拒绝。
+- **自动批准**：符合上述条件的交易将被自动批准。
+- **审批门槛**：符合上述条件的交易将需要指定数量的批准方能继续。请点击 **+ 添加审批员**添加一个或多个团队成员作为审批员。您可以按角色类型或成员姓名选择。然后设置审批门槛。
+<img src="/images/risk-controls/customized-workflow-cn.png" className="screenshot_modal"/>
