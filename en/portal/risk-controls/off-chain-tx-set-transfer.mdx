@@ -5,9 +5,9 @@ sidebarTitle: "Set up token transfer policy"
 
 ## Create a transfer policy
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
+2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
 3. Click **Create Policy** > **Transfer**.
-<img src="/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**, then click **Next**. The name should not exceed 30 characters.
 5. Select all the wallets under **Applicable Wallets** that are applicable to the policy you are about to create, then click **Next**.
 6. Under **If**, click **+ Add Condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-transfer#select-condition-template).
@@ -24,27 +24,27 @@ sidebarTitle: "Set up token transfer policy"
 **Initiator**: The policy will be triggered only if the transaction is initiated by designated parties. You can choose between **API Initiators** or **Web Initiators**.
 - **API Initiators**: You can specify whether any team members, or only specific members, are allowed to initiate transactions via API.
 - **Web Initiators**: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
-<img src="/images/risk-controls/initiator-limits.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/initiator-limits.png" className="screenshot_full_screen"/>
 
 **Amounts**: You can set the maximum spending amount for a specified time-frame or per transaction.
 - **Token Types**: You can specify the types of tokens available for transactions.
 - **Conditions**: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
 - **Amounts**: You can set the maximum transaction amount.
-<img src="/images/risk-controls/spending-limits.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/spending-limits.png" className="screenshot_full_screen"/>
 
 **Receiving Addresses**: You can limit withdrawal transactions to specific receiving addresses.
 - **In Address Lists**: The receiving addresses must be included in the selected address lists.
 - **Not in Address Lists**:  The receiving addresses should not be included in the selected address lists.
-<img src="/images/risk-controls/receiving-address.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/receiving-address.png" className="screenshot_full_screen"/>
 
 **Token Types**: You can limit which tokens can be sent in withdrawal transactions.
 - **Include**: The tokens to be transferred must be included in the selected token lists.
 - **Do not Include**: The tokens to be transferred should not be included in the selected token lists.
-<img src="/images/risk-controls/token-limits.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/token-limits.png" className="screenshot_full_screen"/>
 
 ## Set approval action <a id="set-approval-action"></a>
 Currently, Cobo Portal supports four types of approval actions:
 - **Auto Approval**: Transactions meeting the above conditions will be automatically approved.
 - **Auto Rejection**: Transactions meeting the above conditions will be automatically rejected.
 - **Approval Quorum**: Transactions meeting the above conditions will require a specified number of approvals to proceed. Please click **+ Select Approvers** to add one or more team members as approvers. You can select by **User Roles** or **Users**. Then, set the approval quorum.
-<img src="/images/risk-controls/approval-action.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/approval-action.png" className="screenshot_full_screen"/>

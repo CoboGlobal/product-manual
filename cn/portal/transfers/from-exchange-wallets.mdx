@@ -1,42 +1,42 @@
 ---
-title: "Transfer from Exchange Wallets"
-sidebarTitle: "Transfer from Exchange Wallets"
+title:“从交易所钱包转账”
+sidebarTitle:“从交易所钱包转账”
 ---
-To make a transfer from Exchange Wallets, log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
+要从交易所钱包转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
 
-<img src="/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
+<img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
  
 
-Then, fill in the required information as follows:
+然后填写所需的信息，具体如下：
 
-1. Select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type (fees apply), click **Not Enabled**.
-2. In the drop-down menu under ‘From’, select **Exchange Wallet**.
-3. To find your exchange account, select it from the drop-down menu or search by the wallet name. All exchange accounts linked through Cobo Portal and WaaS 2.0 API will be displayed.
-   - Main Account: All deposits and withdrawals can only be done on the Main Account.
-   - Sub Account: To fund a Sub Account, transfer funds into your Main Account and then to your Sub Account. To withdraw from a Sub Account, transfer funds to your Main Account and then to your destination address.
-   - Trading account types: Different exchanges offer different trading account types. Transfers from / to these trading accounts can only be done with their associated Main Account.
-   - Notes (based on exchanges’ guidelines on transfers):
-        - Transfers from Sub Account to Sub Account are not allowed by the exchanges.
-        - Transfers from Main Account to Main Account may incur on-chain fees, which are determined and charged by the exchanges.
-        - Transfers from Sub Account to Main Account are considered "internal transfers" and are not subject to fees by the exchanges.
-        - Transfers to external wallet addresses are only allowed from Main Accounts and not from Sub Accounts.
-        - Transfers to external wallet addresses are only allowed from the following account types:
+1.选择转账的代币类型。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请点击**未启用**.
+2.在“转出”选项的下拉菜单中选择**交易所钱包**。
+3.要找到您的交易所钱包，请从下拉菜单中选择，也可以直接搜索钱包名称。结果中将列出所有通过 Cobo Portal 和 WaaS 2.0 API 链接的交易所账户。
+   - 主账户：只能在主账户中进行所有充币和提币操作。
+   - 子账户：要向子账户中存入资金，请先向主账户中转入资金，然后再向子账户中转入资金。要从子账户中提取资金，请先向主账户中转入资金，然后再向目标地址中转入资金。
+   - 交易账户类型：不同的交易所提供不同的交易账户类型。只能通过相应的主账户从这些交易账户转出/转入资金。
+   - 注意（依据交易所的转账说明）：
+        - 交易所不允许子账户之间进行转账。
+        - 主账户之间的转账可能会产生链上费用，具体由交易所决定并由其收取。
+        - 从子账户转账到主账户被视为“内部转账”，交易所不对此收取费用。
+        - 只能从主账户（而非子账户）向外部钱包地址转账。
+        - 只能从下列账户类型向外部钱包地址转账：
 
-            | Exchange | Account Type    |
+            | 交易所 | 账户类型    |
             | -------- | --------------- |
-            | Binance  | Spot Account    |
-            | OKX      | Funding Account |
-            | Deribit  | N/A             |
-            | Bybit    | Fund Account    |
-            | Gate.io  | Spot Account    |
+            | 币安  | 现货账户    |
+            | OKX      | 资金账户 |
+            | Deribit  | 不适用            |
+            | Bybit    | 资金账户    |
+            | Gate.io  | 现货账户    |
 
-4. Select a "To" address from your Address Book or a wallet on Cobo Portal, or manually input an external address. Note that the selected exchange may require a whitelisted address as the "To" address.
-5. Enter the transfer amount.
-6. Review the transaction cost.
-    - For transfers between Main Accounts and Sub Accounts on the same exchange, no fees will be incurred.
-    - For transfers between Main Accounts and an account other than the Sub Accounts on the same exchange, a fixed fee applies, which cannot be modified by the user. The fee token corresponds to the withdrawal token type.
-7. (Optional) Add category or description to your transaction. For details, see [Add category and description](/cn/portal/transfers/add-category).
-8. Click **Submit**.
-9. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
+4.从地址簿或 Cobo Portal 上的钱包中选择“转入”的地址，也可以手动输入外部地址。注意，所选交易所可能要求先将“转入”地址添加到白名单。
+5.输入转账金额。
+6.查看交易费用。
+    - 在同一交易所进行主账户与子账户之间的转账，不会产生任何费用。
+    - 在同一交易所进行主账户与子账户之外的其他账户之间的转账，会收取固定费用，用户无法修改。费用代币与提币代币类型一致。
+7.（可选）为交易添加类别或描述。详情请参见[添加类别和描述](/en/portal/transfers/add-category)。
+8.点击**提交**。
+9.在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
 
-Note: For the list of exchanges supported by Cobo Portal, please refer to [Supported exchanges](/cn/portal/exchange-wallets/supported-exchanges).
+注意：有关 Cobo Portal 支持的交易所列表，请参见[支持的交易所](/en/portal/exchange-wallets/supported-exchanges)。

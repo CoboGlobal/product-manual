@@ -1,23 +1,23 @@
 ---
-title: "Appendix"
-sidebarTitle: "Appendix"
+title:“附录”
+sidebarTitle:“附录”
 ---
 
-## TSS Node configuration methods
+## TSS 节点配置方法
 
-Currently, cobo-tss-node offers two configuration methods: 
+目前，cobo-tss-node 提供两种配置方法： 
 
-- Command lines 
-  - Example: ./tss-node.sh start --ws-url=ws://ws.example.com/ws 
-- Config files
+- 命令行 
+  - 示例：. ./tss-node.sh start --ws-url=ws://ws.example.com/ws 
+- 配置文件
 
-Recommended Priority: *Configuration Files* *>* *Command Lines* 
+推荐优先级：*配置文件* *>* *命令行* 
 
-### **Config file modifications** 
+### **配置文件修改** 
 
-1. Navigate to the configs directory. 
-2. Copy and paste the file cobo-tss-node-config.yaml.template. 
-3. Rename the copied file to cobo-tss-node-config.yaml. The directory structure will appear as follows:
+1.导航至 configs 目录。 
+2.复制并粘贴 cobo-tss-node-config.yaml.template 文件。 
+3.将复制的文件重命名为 cobo-tss-node-config.yaml。目录结构如下：
 
 ```
 cobo-tss-node-generic
@@ -31,11 +31,11 @@ cobo-tss-node-generic
 └── tss-node.sh (startup script)
 ```
 
-4. Edit the cobo-tss-node-config.yaml file by following these steps: 
-   1. Open the file in a text editor. 
-   2. Locate the config item that needs modification (e.g., "env"). 
-   3. Remove any remarks associated with the config item. 
-   4. Update the content of the configuration item. For instance, change "env" to "production".
+4.按照以下步骤编辑 cobo-tss-node-config.yaml 文件： 
+   1.用文本编辑器打开该文件。 
+   2.找到需要修改的配置项（如“env”）。 
+   3.删除与该配置项相关的任何备注。 
+   4.更新配置项的内容。例如，将“env”改为“production”。
 
 ```
 env: production # development; production
@@ -49,44 +49,44 @@ env: production # development; production
 #callback:
 ```
 
-Please be aware that configuration for the TSS Node is not mandatory. All items listed below are optional.
+注意，TSS 节点的配置不是强制性的。下面列出的所有项目均为可选项。
 
-| **Configuration Item**             | **Command Line**     | **Description**                                              |
+| **配置项**             | **命令行**     | **描述**                                              |
 | ---------------------------------- | -------------------- | ------------------------------------------------------------ |
-| env                                | dev / prod           | Operating environment.                                       |
-| db/path                            | db                   | Database file that should *not* be modified.                 |
-| callback/cb_server/service_address | cb-address           | A list of callback server addresses.                         |
-| callback/cb_server/pubkey_path     | cb-pubkey            | A list of callback server RSA public keys corresponding to the callback server addresses. |
-| callback/token_expire_minutes      | cb-token-expire      | Timeout period for callback server's JWT: Default value: 2Unit: minutes |
-| callback/retry_times               | cb-retry-times       | Number of retries for callback server requests: Default value is 2. |
-| callback/sleep_seconds             | cb-sleep-seconds     | Time interval between each retry if the callback server fails.  Default value:15 Unit: seconds |
-| callback/request_timeout           | cb-request-timeout   | Timeout period for HTTP request Default value: 10Unit: seconds |
-| websocket/url                      | ws-url               | No configuration is required. The WebSocket server will be connected based on the environment. If a URL is configured, it will be connected by default. |
-| log/std/enable                     | log-std-enable       | Whether to output the log.                                   |
-| log/file/enable                    | log-file-enable      | Whether to save the log.                                     |
-| log/file/filename                  | log-file-name        | Log file name.                                               |
-| log/file/maxsize                   | log-file-maxsize     | Maximum size of the log file.                                |
-| log/file/max_backups               | log-file-max-backups | Number of backups for each log file.                         |
+| env                                | dev / prod           | 运行环境。                                       |
+| db/path                            | db                   | *不应*修改的数据库文件。                 |
+| callback/cb_server/service_address | cb-address           | Callback 服务器地址列表。                         |
+| callback/cb_server/pubkey_path     | cb-pubkey            | 与 Callback 服务器地址相对应的 Callback 服务器 RSA 公钥列表。|
+| callback/token_expire_minutes      | cb-token-expire      | Callback 服务器 JWT 的超时时间：默认值：2 单位：分钟 |
+| callback/retry_times               | cb-retry-times       | Callback 服务器请求的重试次数：默认值为 2。|
+| callback/sleep_seconds             | cb-sleep-seconds     | Callback 服务器失败的情况下，每次重试之间的时间间隔。  默认值：15 单位：秒 |
+| callback/request_timeout           | cb-request-timeout   | HTTP 请求的超时时间段 默认值：10 单位：秒 |
+| websocket/url                      | ws-url               | 无需配置。WebSocket 服务器将根据环境进行连接。如果配置了 URL，则默认连接该 URL。|
+| log/std/enable                     | log-std-enable       | 是否输出日志。                                   |
+| log/file/enable                    | log-file-enable      | 是否保存日志。                                     |
+| log/file/filename                  | log-file-name        | 日志文件名。                                               |
+| log/file/maxsize                   | log-file-maxsize     | 日志文件的最大大小。                                |
+| log/file/max_backups               | log-file-max-backups | 每个日志文件的备份数。                         |
 
-## TSS Node command lines 
+## TSS 节点命令行 
 
-- *Init: initialize the TSS Node.*
+- *Init：初始化 TSS 节点。*
 
 ```
 sudo ./tss-node.sh init
 ```
 
-You can initialize the TSS Node and create a database file. The execution will fail if the database file already exists. For more information, please refer to **TSS Node initialization**.
+您可以初始化 TSS 节点并创建数据库文件。如果数据库文件已经存在，则执行将失败。有关更多信息，请参阅 [TSS 节点初始化](/en/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-initialization)。
 
-- *Info: view the information.*
+- *Info：查看信息。*
 
 ```
 sudo ./tss-node.sh info
 ```
 
-You can review the information associated with the TSS Node, including TSS Node ID and callback server’s RSA public key. 
+您可以查看与 TSS 节点相关的信息，包括 TSS 节点 ID 和 Callback 服务器的 RSA 公钥。 
 
-The output example is as follows. 
+输出示例如下。 
 
 ```
 $ sudo ./tss-node.sh info
@@ -112,50 +112,50 @@ gQIDAQAB
 5c3819f6bf9425312ad5fe9561a9d8a4ae7145e05f73b3998a3a8112d7056653
 ```
 
-- *Info group: view the group information* 
+- *Info group：查看组信息* 
 
 ```
 sudo ./tss-node.sh info group [group_id]
 ```
 
-You can use the info group command to query the following group information:
+您可以使用 info group 命令查询以下组信息：
 
-| **Item**                 | **Value**                               | **Description**                                              |
+| **项目**                 | **值**                               | **描述**                                              |
 | ------------------------ | --------------------------------------- | ------------------------------------------------------------ |
-| Group ID                 | vnJShriEOIzBLaOUxUDs                    | Unique identifier of each group.                             |
-| Created Time             | 2023-01-11 14:36:42.179778596 +0000 UTC | Creation time of the group.                                  |
-| Root Extended Public Key | xpub661MyMwAq……Mcet8                    | Root extended public key corresponds to the private key shares under the current group. |
-| ChainCode                | 0x098a……9dd9                            | ChainCode corresponds to the root extended public key, in hexadecimal format. |
-| Share ID                 | 121637……483926                          | Share ID of an MPC key share, in decimal format.             |
-| Share Public Key         | 0x0231adf……d2773                        | Public key corresponds to the private key share: Default value: compressed public key, in hexadecimal format. |
-| Type                     | 1                                       | Default value is 1.                                          |
-| Curve                    | secp256k1                               | Signature algorithm that has been used.                      |
-| Threshold                | 2                                       | Minimum number of private key shares required for each transaction signing. |
-| Local Node ID            | coboA1B2C3D4                            | Node ID of the locally stored TSS Node.                      |
-| Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | Node ID of the TSS Node managed by the other party.          |
-| Participants:            | 3                                       | Total number of private key shares, Node IDs, and key share IDs. |
+| Group ID                 | vnJShriEOIzBLaOUxUDs                    | 每个组的唯一标识符。                             |
+| Created Time             | 2023-01-11 14:36:42.179778596 +0000 UTC | 组的创建时间                                  |
+| Root Extended Public Key | xpub661MyMwAq……Mcet8                    | 根扩展公钥对应当前组下的私钥分片。|
+| ChainCode                | 0x098a……9dd9                            | ChainCode 对应根扩展公钥，为十六进制格式。|
+| Share ID                 | 121637……483926                          | MPC 私钥分片的分片 ID，为十进制格式。             |
+| Share Public Key         | 0x0231adf……d2773                        | 公钥与私钥分片相对应：默认值：压缩公钥，为十六进制格式。|
+| Type                     | 1                                       | 默认值为 1。                                          |
+| Curve                    | secp256k1                               | 使用的签名算法。                      |
+| Threshold                | 2                                       | 每笔交易签名所需的最小私钥分片数量。|
+| Local Node ID            | coboA1B2C3D4                            | 本地存储的 TSS 节点的节点 ID。                      |
+| Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | 对方管理的 TSS 节点的节点 ID。          |
+| Participants：            | 3                                       | 私钥分片总数、节点 ID 和私钥分片 ID。|
 
-- *Start: start up the TSS Node* 
+- *Start：启动 TSS 节点* 
 
 ```
 sudo ./tss-node.sh start
 ```
 
-The cobo-tss-node will start running. For more information, please refer to **TSS Node startup**.
+cobo-tss-node 将开始运行。有关更多信息，请参阅 [TSS 节点启动](/en/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-startup)。
 
-- *Version: query TSS Node version*
+- *Version：查询 TSS 节点版本*
 
 ```
 sudo ./tss-node.sh version
 ```
 
-- *Status: check the running status*
+- *Status：检查运行状态*
 
 ```
 sudo ./tss-node.sh status
 ```
 
-The output example is as follows.
+输出示例如下。
 
 ```
 $ sudo ./tss-node.sh status
@@ -181,75 +181,75 @@ INFO[2022-12-14T09:01:07Z] Start to register service
 INFO[2022-12-14T09:01:07Z] Failed to register service: invalid TSS Node, please initial TSS Node on Cobo MPC Server first
 ```
 
-Execution workflow:
+执行工作流程：
 
-- Verify the successful installation of Docker Engine and ensure the client has the necessary permissions. 
-- Check the status of the SGX driver (applicable to an SGX-ready version). 
-- Confirm the existence of the built container image. 
-- Inspect containers for any errors. 
-- Monitor the currently running TSS Node container and display the latest five logs.
+- 验证 Docker Engine 安装是否成功，并确保客户端拥有必要的权限。 
+- 检查 SGX 驱动程序的状态（适用于支持 SGX 的版本）。 
+- 确认已构建的容器映像是否存在。 
+- 检查容器是否有任何错误。 
+- 监控当前运行的 TSS 节点容器并显示最新的五个日志。
 
-- *Log: view container logs*
+- *Log：查看容器日志*
 
 ```
 sudo ./tss-node.sh log
 ```
 
-- *Stop: stop the TSS Node*
+- *Stop：停止 TSS 节点*
 
 ```
 sudo ./tss-node.sh stop
 ```
 
-## TSS Node risk controls
+## TSS 节点风险控制
 
-The TSS Node features an integrated risk control mechanism designed to evaluate key generation (KeyGen), key signing (KeySign), or key recovery (KeyReshare) requests before initiating a callback. The system applies predefined risk control policies to these requests, approving only those that align with the specified policies. Requests failing to meet the criteria will be rejected. 
+TSS 节点具有集成的风险控制机制，可在启动 Callback 之前评估私钥生成（KeyGen）、私钥签名（KeySign）或私钥恢复（KeyReshare）请求。系统对这些请求应用预定义的风险控制策略，只批准符合指定策略的请求。不符合标准的请求将被拒绝。 
 
-For optimal alignment with your business requirements, the configuration of TSS Node risk control policies can be tailored. This customization is facilitated through the configs/cobo-tss-node-config.yaml file. To define specific configuration parameters, navigate to embedded_risk_control_rules and refer to the following example:
+您可以根据您的业务要求，定制 TSS 节点风险控制策略的配置，使二者保持最佳的一致性。为此，可通过 configs/cobo-tss-node-config.yaml 文件进行定制配置。要定义特定的配置参数，请导航至 embedded_risk_control_rules，并参考以下示例：
 
 ```
 embedded_risk_control_rules:
 
-enable: false （whether to enable risk control; false by default）
+enable: false （是否启用风险控制；默认为“false”）
 
-key_gen: （KeyGen risk control policies）
+key_gen: （KeyGen 风险控制策略）
 
-reject_all: false （true: all KeyGen requests will be rejected; false: KeyGen requests will be check with following policies）
+reject_all: false （true：将拒绝所有 KeyGen 请求；false：将按照以下策略检查所有 KeyGen 请求）
 
-allow_list: （Risk control policies for KeyGen; request will be approved only if policies are matched）
+allow_list: （KeyGen 的风险控制策略；仅当符合策略时，才会批准请求）
 
-- threshold: 2 （Signature threshold for KeyGen）
+- threshold: 2 （KeyGen 的签名阈值）
 
-node_ids: （Node IDs of parties allowed in KeyGen）
+node_ids: （KeyGen 中允许的相关方的节点 ID）
 
-- <Cobo TSS Node ID>
+- <Cobo TSS 节点 ID>
 
-- <ThirdParty TSS Node ID>
+- <第三方 TSS 节点 ID>
 
-- <Customer TSS Node ID>
+- <客户 TSS 节点 ID>
 
-key_sign: （KeySign risk control policies）
+key_sign: （KeySign 风险控制策略）
 
-reject_all: true （true: all KeySign requests will be rejected; false: KeySign requests will be approved）
+reject_all: true （true：将拒绝所有 KeySign 请求；false：将批准 KeySign 请求）
 
-key_reshare: （KeyReShare risk control policies）
+key_reshare: （KeyReShare风险控制策略）
 
-reject_all: false （true: all KeyReShare requests will be rejected; false: KeyReShare requests will be check with following policies）
+reject_all: false （true：将拒绝所有 KeyReShare 请求；false：将根据以下策略检查 KeyReShare 请求）
 
-allow_list: （Risk control policies for KeyReShare; request will be approved only if policies are matched）
+allow_list: （KeyReShare 的风险控制策略；仅当符合策略时，才会批准请求）
 
-- xpubkey: <EXTENDED_ROOT_PUBKEY> （Root extended public key for KeyReshare）
+- xpubkey: <EXTENDED_ROOT_PUBKEY> （KeyReshare 的根扩展公钥）
 
-new_threshold: 2 （New signature threshold for KeyReshare）
+new_threshold: 2 （KeyReshare 的新签名阈值）
 
-new_node_ids: （Node IDs of parties allowed in KeyReshare）
+new_node_ids: （KeyReshare 中允许的相关方的 ID）
 
-- <Cobo TSS Node ID>
+- <Cobo TSS 节点 ID>
 
-- <ThirdParty TSS Node ID>
+- <第三方 TSS 节点 ID>
 
-- <Customer TSS Node ID>
+- <客户 TSS 节点 ID>
 ```
 
-Please be aware that you need to replace the placeholders \<EXTENDED_ROOT_PUBKEY\>, \<Cobo TSS Node ID\>, \<ThirdParty TSS Node ID\>, and \<Customer TSS Node ID\> with their actual values. Exclude the "\<\>" symbols when inputting these parameters.
+注意，需要将占位符 \<EXTENDED_ROOT_PUBKEY\>、\<Cobo TSS 节点 ID\>、\<第三方 TSS 节点 ID\> 和 \<客户 TSS 节点 ID\> 替换为实际值。输入这些参数后，删除“\<\>”符号。
 

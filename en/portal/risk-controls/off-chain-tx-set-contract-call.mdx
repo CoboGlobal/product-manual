@@ -6,9 +6,9 @@ sidebarTitle: "Set up contract call policy"
 ## Create a contract-signing policy
 
 1. Log into Cobo Portal.
-2. Click <img src="/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
+2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
 3. Click **Create Policy** > **Contract Call.**
-<img src="/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**. The name should not exceed 30 characters.
 5. Select all the **Applicable Wallets** that are applicable to the policy you are about to create.
 6. Select a **Applicable Network** that is applicable to the policy you are about to create.
@@ -27,7 +27,7 @@ sidebarTitle: "Set up contract call policy"
 
 - API Initiators: You can specify whether any team members, or only specific members, are allowed to initiate transactions via APIs.
 - Web Initiators: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
-<img src="/images/risk-controls/initiators.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/initiators.png" className="screenshot_full_screen"/>
 
 
 **Token Approval**: The policy will be triggered only if a token approval is associated with specific types of tokens, spenders, and amounts.
@@ -35,7 +35,7 @@ sidebarTitle: "Set up contract call policy"
 - **Frequency**: You can define either the maximum amount applied per transaction or within a specified time window, denominated in hours.
 - **Amounts**: You can specify the maximum amount for the spender to spend per transaction.
 - **Approved Spenders**: You can specify the spender addresses associated with the token approval. Note that you can only select addresses already added to the address lists. To learn more about address lists, see [Create an address list](/en/portal/risk-controls/address-list).
-<img src="/images/risk-controls/token-approval.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/token-approval.png" className="screenshot_full_screen"/>
 
 
 **Token Transfers**: The policy will be triggered only if a token transfer is associated with specific token types, frequency, transfer amounts, and receiving addresses.
@@ -43,7 +43,7 @@ sidebarTitle: "Set up contract call policy"
 - **Frequency**: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
 - **Transfer Amounts**: You can set the maximum transaction amount.
 - **Receiving Addresses**: You can specify the receiving addresses for the transfer. Note that you can only select addresses already added to the address lists. Refer to the [Create an address list](/en/portal/risk-controls/address-list) section for more information.
-<img src="/images/risk-controls/token-transfers.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/token-transfers.png" className="screenshot_full_screen"/>
 
 
 
@@ -58,11 +58,11 @@ sidebarTitle: "Set up contract call policy"
   - The relationship between parameters within the same group defaults to "And" and can be switched to "Or".
   - The relationship between different groups defaults to "Or" and can be switched to "And".
   - You can configure the parameters through the **Easy Mode** interface or manually enter condition expression statements by clicking **Expert Mode**.
-<img src="/images/risk-controls/contract-call.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/contract-call.png" className="screenshot_full_screen"/>
 
 ## Set approval action <a id="set-approval-action"></a>
 Currently, Cobo Portal supports four types of approval actions:
 - **Auto Approval**: Transactions meeting the above conditions will be automatically approved.
 - **Auto Rejection**: Transactions meeting the above conditions will be automatically rejected.
 - **Approval Quorum**: Transactions meeting the above conditions will require a specified number of approvals to proceed. Please click **+ Set Approvers** to add one or more team members as approvers. You can choose by role types or member names. Then, set the approval quorum.
-<img src="/images/risk-controls/customized-workflow.png" className="screenshot_full_screen"/>
+<img src="/en/images/risk-controls/customized-workflow.png" className="screenshot_full_screen"/>
