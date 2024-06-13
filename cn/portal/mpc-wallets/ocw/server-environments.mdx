@@ -1,59 +1,59 @@
 ---
-title: "Server environments"
-sidebarTitle: "Server environments"
+title: "服务器环境"
+sidebarTitle: "服务器环境"
 ---
 
 ## Intel® SGX
 
-### Introduction to Intel® SGX
+### Intel® SGX 简介
 
-Intel® Software Guard Extensions (SGX) offers hardware-based memory encryption that isolates specific application code and data in memory. SGX allows client-level code to allocate private regions of memory, called enclaves, which are designed to be protected from processes running at higher privilege levels. It offers a granular level of control and protection against many known and active threats. For more information on Intel® SGX, please [click here](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html). 
+Intel® Software Guard Extensions (SGX) 提供基于硬件的内存加密，可隔离内存中的特定应用程序代码和数据。SGX 允许执行客户端代码，分配私有内存区域，称为 enclave。enclave 是专门设计的受保护部分，可防止更高特权级别的进程访问这些内存区域。它可以提供粒度级别的控制和保护，抵御许多已知的、活跃的威胁。要了解有关 Intel® SGX 的更多信息，请[点击此处](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html)。 
 
-### SGX-ready server types
+### 支持 SGX 的服务器类型
 
-#### Azure Confidential Computing (Virtual Machine)
+#### Azure 机密计算（虚拟机）
 
-The required settings to configure a SGX-ready server are as follows:
+配置支持 SGX 的服务器需要满足以下设置：
 
-- Select resource group: Ubuntu 20.04 LTS 
-- Enter a virtual machine name machine name (e.g. CoboTSSNode)
-- Select the Azure region
-- Choose image: Ubuntu 18.04 LTS - Gen2
-- Select virtual machine size: Standard DC1ds v3 (1 vcpu, 8 GiB memory)
+- 选择资源组： Ubuntu 20.04 LTS 
+- 输入虚拟机名称（如 CoboTSSNode）
+- 选择 Azure 区域
+- 选择镜像： Ubuntu 18.04 LTS - Gen2
+- 选择虚拟机大小：标准 DC1ds v3（1 vcpu、8 GiB 内存）
 
-For more information on how to deploy a SGX-ready server using the Azure portal, please [click here](https://learn.microsoft.com/en-us/azure/confidential-computing/quick-create-portal).
+要详细了解如何使用 Azure 门户部署支持 SGX 的服务器，请[点击此处](https://learn.microsoft.com/en-us/azure/confidential-computing/quick-create-portal)。
 
-#### Alibaba Cloud Elastic Compute Service
+#### 阿里云弹性计算服务
 
-The following settings are required to build an encrypted computing environment on a g7t, c7t, or r7t instance (vSGX instance):
+在 g7t、c7t 或 r7t 实例（vSGX 实例）上构建加密计算环境需要满足以下设置：
 
-- Version: Ubuntu 20.04 64-bit that works with UEFI  
-- Recommended memory: 8GB and above
-- Memory (encrypted data): 4GB 
-- Hard disk: 64G SSD
+- 版本：Ubuntu 20.04 64 位，支持 UEFI  
+- 建议内存：8GB 及以上
+- 内存（加密数据）：4GB 
+- 硬盘：64G SSD
 
-For more information on how to deploy a SGX-ready server using the Alibaba Cloud Elastic Compute Service, please [click here](https://www.alibabacloud.com/help/en/ecs/user-guide/build-an-sgx-encrypted-computing-environment).
+要详细了解如何使用阿里云弹性计算服务部署支持 SGX 的服务器，请[点击此处](https://www.alibabacloud.com/help/en/ecs/user-guide/build-an-sgx-encrypted-computing-environment)。
 
-#### SGX-Ready Physical Server (on premise)  
+#### 支持 SGX 的物理服务器（本地部署）  
 
-Please check the processors that support SGX: 
+检查处理器是否支持 SGX： 
 
-- Head to [https://ark.intel.com/content/www/us/en/ark.html ](https://ark.intel.com/content/www/us/en/ark.html)
-- Click **Find products by feature** at the bottom
-- Switch to the Processors tab and select **Intel® Software Guard Extensions (Intel® SGX)** in the drop-down menu.
-- Select **Yes with both Intel® SPS and Intel® ME**
-- Review the product specifications and configure the following settings
-  - BIOS Settings: Enable Intel SGX (Software Guard Extension)
-  - Enable DCAP (FLC)
-  - Disable hyperthreading
-  - Operating system: Ubuntu Server 20.04 LTS or 22.04 LTS
-  - Recommended memory: 8GB RAM 
-  - Recommended storage: 128GB SSD 
-  - Minimum memory (encrypted data): 2GB EPC
+- 访问 [https://ark.intel.com/content/www/us/en/ark.html ](https://ark.intel.com/content/www/us/en/ark.html)
+- 单击底部的**按功能查找产品**
+- 切换到处理器标签页，在下拉菜单中选择 **Intel® Software Guard Extensions (Intel® SGX)**。
+- 选择**是，同时查找 Intel® SPS 和 Intel® ME**
+- 查看产品规格并配置以下设置
+  - BIOS 设置：启用 Intel SGX (Software Guard Extension)
+  - 启用 DCAP (FLC)
+  - 禁用超线程
+  - 操作系统：Ubuntu 服务器 20.04 LTS 或 22.04 LTS
+  - 建议内存： 8GB RAM 
+  - 推荐内存：128GB SSD 
+  - 最小内存（加密数据）：2GB EPC
 
-### SGX status check
+### SGX 状态检查
 
-Once the encrypted SGX environment has been set up, you can check the SGX status via CPUID. Please execute the following shell commands.
+加密 SGX 环境设置完成后，可以通过 CPUID 检查 SGX 状态。请执行以下 shell 命令。
 
 ```
 udo apt update
@@ -61,7 +61,7 @@ sudo apt install cpuid
 cpuid -1 | grep SGX
 ```
 
-If the output shows three true statuses as displayed below, SGX is successfully enabled. All other false statuses are negligible.
+如果如下所示，输出显示三个 true 状态，则表示 SGX 已成功启用。其他错误状态均可忽略。
 
 ```
 SGX: Software Guard Extensions supported = true
@@ -70,129 +70,129 @@ SGX capability (0x12/0):
 SGX1 supported = true
 ```
 
-### **SGX driver installation**
+### **SGX 驱动程序安装**
 
-The SGX driver should have already been installed by default. During TSS Node initialization, you will be prompted to approve the auto installation of the SGX driver (Intel DCAP 1.41). To verify the installation, execute the following command.
+默认情况下，已经安装 SGX 驱动程序。在 TSS Node 初始化过程中，系统将提示您同意自动安装 SGX 驱动程序 (Intel DCAP 1.41)。要验证是否安装，请执行以下命令。
 
 ```
 ls /dev/sgx*
 ```
 
-If two or more nodes are displayed, it confirms that the SGX driver has been successfully installed.
+如果显示两个或更多节点，则表明 SGX 驱动程序已成功安装。
 
 ```
 /dev/sgx_enclave /dev/sgx_provision
 ```
 
-For more information on the manual installation of a SGX driver, please refer to the following:
+有关手动安装 SGX 驱动程序的详细信息，请参阅下文：
 
-By default, the SGX driver is integrated into the Linux kernel starting from version 5.1 and above. It is recommended to use Linux 5.1 or above.
+默认情况下，5.1 及以上版本的 SGX 驱动程序已集成到 Linux 内核中。建议使用 Linux 5.1 或更高版本。
 
-- Ubuntu 22.04 LTS server + default kernel
-- Ubuntu 20.04 LTS server + HWE[ rolling update model](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
+- Ubuntu 22.04 LTS 服务器 + 默认内核
+- Ubuntu 20.04 LTS 服务器 + HWE [滚动更新模式](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
 
-Alternatively, you can install the DCAP driver and OOT (legacy) provided by Intel. Please note that TSS Node exclusively supports the DCAP driver. You can follow the steps below to manually install the Ubuntu 20.04 DCAP 1.41 driver. For other versions, please refer to the guide above.
+或者，您也可以安装 Intel 提供的 DCAP 驱动程序和 OOT (legacy)。注意，TSS Node 只支持 DCAP 驱动程序。可以按照以下步骤手动安装 Ubuntu 20.04 DCAP 1.41 驱动程序。对于其他版本，请参阅上述指南。
 
-1. Update the package resource list for APT.
+1.更新 APT 的软件包资源列表。
 
 ```
 sudo apt update
 ```
 
-2. Install dependencies.
+2.安装依赖项。
 
 ```
 sudo apt install build-essential ocaml automake autoconf libtool \
 wget python libssl-dev dkms -y
 ```
 
-3. Download the Intel SGX DCAP drive. 
+3.下载 Intel SGX DCAP 驱动器。 
 
 ```
 wget \ https://download.01.org/intel-sgx/latest/linux-latest/distro/ubuntu20.04-server/sgx_linux_x64_driver_1.41.bin
 ```
 
-4. Modify permissions to the driver installation packages of Intel SGX DCAP.
+4.修改 Intel SGX DCAP 驱动程序安装包的权限。
 
 ```
 chmod a+x sgx_linux_x64_driver_1.41.bin
 ```
 
-5. Install Intel SGX DCAP drive. 
+5.安装 Intel SGX DCAP 驱动程序。 
 
 ```
 sudo ./sgx_linux_x64_driver_1.41.bin
 ```
 
-6. Check whether the installation is successful.
+6.检查安装是否成功。
 
 ```
 $ ls /dev/sgx*
 /dev/sgx_enclave /dev/sgx_provision
 ```
 
-### **Docker Engine installation**
+### **Docker Engine 安装**
 
-Docker Engine is required for running the TSS Node. During TSS Node initialization, you will be asked to approve the auto installation of Docker Engine. It is recommended to manually install and configure Docker Engine if your organization follows specific best practices. For more information on how to manually install the Docker Engine on Ubuntu, please [click here](https://docs.docker.com/engine/install/ubuntu/).
+运行 TSS Node 需要使用 Docker Engine。在 TSS Node 初始化过程中，系统将提示您同意自动安装 Docker Engine。如果您的团队遵循特定的最佳实践，建议您手动安装和配置 Docker Engine。要详细了解如何在 Ubuntu 上手动安装 Docker Engine，请[点击此处](https://docs.docker.com/engine/install/ubuntu/)。
 
-## Off-The-Shelf Server
+### 现成服务器
 
-### **Introduction to off-the-shelf server**
+### **现成服务器简介**
 
-An off-the-shelf server is any server that satisfies the minimum configuration prerequisites for the TSS Node, such as Elastic Compute or a physical server managed by the client. While an off-the-shelf server can host the TSS Node, it lacks the distinctive security features inherent in an SGX-ready server.
+现成服务器是指满足 TSS Node 最低配置前提的任何服务器，如弹性计算服务器或由客户端托管的物理服务器。虽然现成服务器可以托管 TSS Node，但它缺乏 SGX 服务器特有的安全功能。
 
-### **Minimum requirements**
+### **最低要求**
 
-- CPU: AMD64 or ARM64, 2 cores, a clock speed of 2.5 GHz 
-- Memory: 4G
-- Hard disk: 64G SSD
-- Operating system: Ubuntu Server 20.04 LTS or above
+- CPU：AMD64 或 ARM64，2 个内核，主频 2.5 GHz 
+- 内存：4G
+- 硬盘：64G SSD
+- 操作系统：Ubuntu 服务器 20.04 LTS 或更高版本
 
-### **Recommended settings** 
+### **建议设置** 
 
-- CPU: AMD64 or ARM64, 4 cores, a clock speed of 3.0 GHz 
-- Memory: 8G
-- Hard disk: 128G SSD
-- Operating system: Ubuntu Server 20.04 LTS or above
+- CPU：AMD64 或 ARM64，4 个内核，主频 3.0 GHz 
+- 内存：8G
+- 硬盘：128G SSD
+- 操作系统：Ubuntu 服务器 20.04 LTS 或更高版本
 
-### **Docker Engine installation**
+### **Docker Engine 安装**
 
-Docker Engine is required for running the TSS Node. During TSS Node initialization, you will be asked to approve the auto installation of Docker Engine. It is recommended to manually install and configure Docker Engine if your organization follows specific best practices. For more information on how to manually install the Docker Engine on Ubuntu, please [click here](https://docs.docker.com/engine/install/ubuntu/).
+运行 TSS Node 需要使用 Docker Engine。在 TSS Node 初始化过程中，系统将提示您同意自动安装 Docker Engine。如果您的团队遵循特定的最佳实践，建议您手动安装和配置 Docker Engine。要详细了解如何在 Ubuntu 上手动安装 Docker Engine，请[点击此处](https://docs.docker.com/engine/install/ubuntu/)。
 
 ## Apple MacBook
 
-Please prepare a new Apple MacBook, upgrade the operating system to the [latest macOS version](https://support.apple.com/en-sg/109033) and perform the necessary security configurations.
+请准备一台新的 Apple MacBook，将操作系统升级到[最新的 macOS 版本](https://support.apple.com/en-sg/109033)，并执行必要的安全配置。
 
-### **Things to note**
+### **注意事项**
 
-- Avoid using unknown portable storage devices. 
-- Prevent your computer from syncing with iCloud. 
-- Refrain from logging into your Apple ID on this computer.
+- 避免使用未知的便携式存储设备。 
+- 防止电脑与 iCloud 同步。 
+- 避免在此电脑上登录 Apple ID。
 
-### **Security configurations**
+### **安全配置**
 
-- Disable Bluetooth.
-- Turn off AirDrop.
-- Activate FileVault for disk encryption.
-- Enable the Firewall.
-- Establish a complex administrator password using a password manager (e.g., 1Password).
-- Set up a Lock Screen.
-- Disable Handoff.
+- 禁用蓝牙。
+- 关闭 AirDrop。
+- 激活 FileVault 进行磁盘加密。
+- 启用防火墙。
+- 使用密码管理程序（如 1Password）设置复杂的管理员密码。
+- 设置锁定屏幕。
+- 禁用 Handoff。
 
-### **Advanced configurations**
+### **高级配置**
 
-If utilizing a third-party management system (e.g., Jamf), consider configuring advanced security settings:
+如果使用第三方管理系统（如 Jamf），请考虑配置高级安全设置：
 
-- Ensure your computer password is a minimum of 12 characters, including at least one letter, one number, and one special character.
-- Prohibit using the same password consecutively three times.
-- Set a password expiration period of 90 days, and change the password when prompted.
-- Disable iCloud, Apple ID, and Family Sharing.
-- Turn off the App Store.
-- Disable internet accounts and logins via local mail clients.
-- Configure privacy settings to prevent automatic data transfer to Apple.
-- Deactivate all sharing services (e.g., tethering, Bluetooth sharing, file sharing, screen sharing).
-- Turn off all remote software.
+- 确保电脑密码至少包含 12 个字符，其中至少包括一个字母、一个数字和一个特殊字符。
+- 禁止连续三次使用相同的密码。
+- 将密码有效期设定为 90 天，并在出现提示时更改密码。
+- 禁用 iCloud、Apple ID 和家庭共享。
+- 关闭 App Store。
+- 禁用互联网账户和通过本地邮件客户端登录。
+- 配置隐私设置，防止自动向 Apple 传输数据。
+- 停用所有共享服务（例如，网络共享、蓝牙共享、文件共享、屏幕共享）。
+- 关闭所有远程软件。
 
-### **Docker Engine installation**
+### **Docker Engine 安装**
 
-Ensure Docker Engine is installed for running the TSS Node. Follow the official Docker website [instructions](https://docs.docker.com/desktop/install/mac-install/) to complete the installation of Docker Desktop for Apple MacBook.
+确保安装了用于运行 TSS Node 的 Docker Engine。按照 Docker 官方网站[说明](https://docs.docker.com/desktop/install/mac-install/)在 Apple MacBook 上安装 Docker Desktop。

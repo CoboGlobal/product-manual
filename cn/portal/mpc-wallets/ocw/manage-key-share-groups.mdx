@@ -1,32 +1,32 @@
 ---
-title: "Manage key share groups"
-sidebarTitle: "Manage key share groups"
+title: "管理私钥分片组"
+sidebarTitle: "管理私钥分片组"
 ---
 
-Follow the steps below to navigate to the **Key Share Group Management** page:
+按照以下步骤，导航至**私钥分片组管理**页面：
 
-1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
-3. Select your vault.
-4. Click <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
+1.登录 [Cobo Portal](https://portal.cobo.com/login)。
+2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3.选择您的 vault。
+4.点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
 
 <img src="/cn/images/mpc-wallet/manage-key-share-groups.png" className="screenshot_full_screen"/>
 
 
-## View root extended public keys
-Depending on the number of cryptographic algorithms supported on Cobo Portal, a set of root extended public keys associated with your vault will be displayed. Note that all public keys for MPC Wallets in this vault are derived from these root extended public keys.
+## 查看根扩展公钥
+基于 Cobo Portal 支持的加密算法数量，页面将显示一组与您的 vault 相关的根扩展公钥。注意，该 vault 中所有 MPC 钱包的公钥都来自这些根扩展公钥。
 
-## Manage Main Group
-Under the **Main Group** tab, you can view information such as its creation time, key share holders, their TSS Node IDs, group status, and Group IDs.
+## 管理主控组
+在**主控组**标签页下，可以查看创建时间、私钥分片持有方、其 TSS Node ID、组状态和组 ID 等信息。
 
-## Manage Signing Groups
-Under the **Signing Group** tab, you can view or delete existing Signing Groups, create new Signing Groups, or upgrade a Signing Group to function as the Main Group.
-Notes:
-- Upon deletion, the key share holders in the designated Signing Group will no longer receive any signature requests. In the event that key holders associated with the deleted Signing Group require reinstatement for receiving signature requests, they must undergo a new key generation process.
-- Upon upgrading, the designated Signing Group will assume the responsibilities of the original Main Group, such as aiding in the creation of new Signing Groups and Recovery Groups. The original Main Group will be automatically deleted.
+## 管理签名组
+在**签名组**标签页下，可以查看或删除现有签名组、创建新签名组，或将签名组升级为主控组。
+注意：
+- 删除签名组后，指定签名组中的私钥分片持有方将不会再收到任何签名请求。如果与已删除的签名组相关联的私钥持有方需要重新接收签名请求，则必须完成新的密钥生成流程。
+- 签名组升级后，指定的签名组将承担原主控组的职责，如协助创建新的签名组和恢复组。将自动删除原主控组。
 
-## Manage Recovery Groups
-Under the **Recovery Group** tab, you can view or delete existing Recovery Groups, create new Recovery Groups, or use a Recovery Group to reshare a new Main Group.
-Notes:
-- Upon deletion, the key share holders in the designated Recovery Group can no longer be used to reshare a new Main Group. In the event that key holders associated with the deleted Recovery Group require reinstatement, they must undergo a new key generation process.
-- Upon resharing, the original Main Group will be automatically deleted and replaced by the new Main Group. This new Main Group can then be used to facilitate the creation of new Signing Groups and Recovery Groups.
+## 管理恢复组
+在**恢复组**标签页下，可以查看或删除现有的恢复组、创建新的恢复组，或使用恢复组重新共享一个新的主控组。
+注意：
+- 删除恢复组后，指定恢复组中的私钥分片持有方将无法用于重新分片新的主控组。如果与已删除的恢复组相关联的私钥持有方需要恢复原有权限，则必须完成新的密钥生成流程。
+- 主控组重新共享后，原始主控组将自动删除，并由新的主控组取代。新的主控组可用于协助创建新的签名组和恢复组。

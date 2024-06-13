@@ -1,17 +1,17 @@
 ---
-title: "Network environments"
-sidebarTitle: "Network environments"
+title: "网络环境"
+sidebarTitle: "网络环境"
 ---
 
-TSS Node is a program provided by Cobo Portal for clients to manage and use their private key shares. It serves two main functions: 1) generate and manage private key shares, and 2) complete transaction signing. TSS Node requires the following network environments to run optimally:
+TSS Node 是 Cobo Portal 为客户提供的程序，用于管理和使用私钥分片。它有两个主要功能：1) 生成和管理私钥分片；2) 完成交易签署。TSS Node 需要以下网络环境以实现最佳运行：
 
-- No inbound connections are required
-- When the server is being installed or upgraded:
-  - Able to access the apt sources of the system to install all necessary dependencies (only applicable if a SGX-ready server or an off-the-shelf server is used)
-  - Able to access the Docker Engine installation files to install the Docker Engine
-  - Able to access docker.io registry (the public Docker registry)
-  - Able to access the Intel website to download the driver (applicable to a SGX-ready server)
-- When the server is running:
-  - Development environment: able to access port 443 of ws.tss.dev.cobo.com
-  - Production environment: able to access port 443 of ws.tss.cobo.com
-  - Able to access the callback server set up by the client 
+- 无需入站连接
+- 服务器正在安装或升级时：
+  - 能够访问系统的 apt 源，以安装所有必要的依赖项（仅适用于使用支持 SGX 的服务器或现成服务器的情况）
+  - 能够访问 Docker Engine 安装文件，以安装 Docker Engine
+  - 能够访问 docker.io 注册表（公共 Docker 注册表）
+  - 能够访问 Intel 网站以下载驱动程序（适用于支持 SGX 的服务器）
+- 服务器运行时：
+  - 开发环境：能够访问 ws.tss.dev.cobo.com 的 443 端口
+  - 正式环境：能够访问 ws.tss.cobo.com 的 443 端口
+  - 能够访问客户端设置的 callback 服务器 

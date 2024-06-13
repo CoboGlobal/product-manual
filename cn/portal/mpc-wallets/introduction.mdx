@@ -1,58 +1,58 @@
 ---
-title: "Introduction to MPC Wallets"
-sidebarTitle: "Introduction"
+title: "MPC 钱包简介"
+sidebarTitle: "简介"
 ---
 
-## What are MPC Wallets?
+## 什么是 MPC 钱包？
 
-### MPC Technology
+### MPC 技术
 
-Multi-Party Computation (MPC) is an advanced cryptographic technology utilized for key management on the blockchain. With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. These parties will jointly sign transactions without ever exposing their key shares or materializing a private key at any time.
+多方计算 (MPC) 是一种用于区块链私钥管理的先进加密技术。利用 MPC 技术，私钥分片在独立的安全环境中单独生成并进行加密，然后在多方之间分配。各方将共同签署交易，整个过程既不会暴露私钥分片，也不会在一个地方形成整个私钥。
 
-This means that the private key that executes transactions never exists or lives in any one device at any point in time — rather, it is decentralized and held across multiple parties / devices. MPC technology ensures that no single party can unilaterally move funds, eliminating a single point of failure and making key theft and internal fraud and collusion much more challenging for malicious actors.
+这意味着，执行交易的私钥在任何时间点都不会存在或存储于任何一台设备中，而是被去中心化，由多方/多台设备持有。MPC 技术确保任何一方都无法单方面转移资金，从而消除了单点故障，使不法分子更难窃取密钥、进行内部欺诈和串通作案。
 
 <img src="/cn/images/mpc-wallet/MPC technology.svg"/>
 
-### Threshold Signature Scheme (TSS)
+### 门限签名机制 (TSS)
 
-A Threshold Signature Scheme (TSS) is a type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible threshold signature scheme (''m out of n'' key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
+门限签名机制 (TSS) 是 MPC 钱包使用的一种数字签名协议，允许分布式各方共同签署交易。在 MPC-TSS 设置中，可以实施灵活的门限签名方案（“M-of-N”私钥分片）。例如，在 2-2 签名机制中，将独立生成两个私钥分片，对于任何一笔交易，都需要这两个私钥分片进行签名。
 
 <img src="/cn/images/mpc-wallet/TSS.svg"/>
 
-## Types of MPC Wallets on Cobo Portal
+## Cobo Portal 上的 MPC 钱包类型
 
-Cobo Portal offers two types of MPC Wallets: Organization-Controlled Wallets and User-Controlled Wallets.
+Cobo Portal 提供了两种类型的 MPC 钱包：机构钱包和终端用户钱包。
 
-### Organization-Controlled Wallets
+### 机构钱包
 
-In an Organization-Controlled Wallet, the management and control of the wallet lie with the organization itself. This setup allows organizations to securely custody and maintain complete control of their own funds or their end users’ assets.
+在机构钱包中，团队拥有钱包的管理和控制权。这种设置允许团队安全地保管和完全控制自己的资金或终端用户的资产。
 
-An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with the organization and Cobo each holding a key share for transaction signing.
+机构钱包采用 2-2 签名机制，团队和 Cobo 各持一个密钥分片，用于签署交易。
 
-**MPC Wallets for your organization’s own funds**:
+**用于管理团队资金的 MPC 钱包**：
 
 <img src="/cn/images/mpc-wallet/MPC wallet for your organization’s own funds.svg"/>
 
-**MPC Wallets for your end users’ assets**:
+**用于管理终端用户资产的 MPC 钱包**：
 
 <img src="/cn/images/mpc-wallet/MPC wallet for your end users’ assets.svg"/>
 
-### User-Controlled Wallets
+### 终端用户钱包
 
-In an User-Controlled Wallet, end users of the organization are given full control of their digital assets. In this setup, each end user of the organization holds their own unique private key share to their MPC Wallet.
+在终端用户钱包中，团队的终端用户对其数字资产拥有完全控制权。在这种设置中，团队的每个终端用户持有各自 MPC 钱包的唯一私钥分片。
 
-With a flexible threshold signature scheme (''m out of n'' key shares), User-Controlled Wallets allow the organization to customize how transactions are signed. For example, under a 3-3 signature scheme, the organization, the end user, and Cobo each hold a key share and all three key shares must collectively sign transactions. Alternatively, a 2-3 signature scheme can be implemented, where the organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
+通过灵活的门限签名机制（“m of n”秘钥分片），终端用户钱包允许团队定制交易的签署方式。例如，在 3-3 签名机制下，团队、终端用户和 Cobo 各持有一个密钥分片，必须同时使用所有三个密钥分片来签署交易。或者，也可以采用 2-3 签名机制，即团队离线持有一个密钥分片，仅在特定情况下使用，如处理争议或关键事件。
 
-To integrate non-custodial MPC Wallets into your applications, a 2-2 signature can be implemented, where the end user and Cobo each hold a key share, while the organization holds none.
+要将非全托管 MPC 钱包集成到 App 中，可采用 2-2 签名机制，即终端用户和 Cobo 各持有一份密钥分片，而团队不持有任何密钥分片。
 
-**3-3 signature scheme**:
+**3-3 签名机制**：
 
 <img src="/cn/images/mpc-wallet/3-3 signature scheme.svg"/>
 
-**2-3 signature scheme**:
+**2-3 签名机制**：
 
 <img src="/cn/images/mpc-wallet/2-3 signature scheme.svg"/>
 
-**2-2 signature scheme**:
+**2-2 签名机制**：
 
 <img src="/cn/images/mpc-wallet/2-2 signature scheme.svg"/>

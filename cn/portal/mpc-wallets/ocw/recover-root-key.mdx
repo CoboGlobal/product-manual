@@ -1,30 +1,30 @@
 ---
-title: "Recover root extended private keys"
-sidebarTitle: "Recover root extended private keys"
+title: "恢复根扩展私钥"
+sidebarTitle: "恢复根扩展私钥"
 ---
 
-**Note**: In the unlikely event of Cobo Portal discontinuing its services, you can reconstruct the root extended private keys corresponding to the vault by utilizing an active Recovery Group. All private keys linked to the wallet addresses within this vault can be derived from these root extended private keys. Unlike restoration, recovery relies on the support from another key share group.
+**注意**：万一 Cobo Portal 停止服务，您可以利用活跃的恢复组重建与 vault 相对应的根扩展私钥。与该 vault 内钱包地址相链接的所有私钥都可以从这些根扩展私钥中获取。与还原不同，恢复需要依赖另一个私钥分片组的支持。
 
-## Step 1: Export private key shares
+## 步骤 1：导出私钥分片
 
-#### For mobile co-signers
+#### 针对移动端签名人
 
-1. Go to [iCloud.com](https://www.icloud.com/) and sign in with your Apple ID and password.
-2. Open iCloud Drive.
-3. Find and select the backed-up data file you want to export.
-4. Click the **Download** icon at the top of the page or double-click the backed-up data file.
-5. The file will be downloaded to your default download location.
+1.访问 [iCloud.com](https://www.icloud.com/) 并使用 Apple ID 和密码登录。
+2.打开 iCloud Drive。
+3.找到并选择要导出的备份数据文件。
+4.单击页面顶部的**下载**图标或双击备份的数据文件。
+5.文件将下载到您的默认下载位置。
 
-#### For API co-signers
+#### 针对 API 签名人
 
-1. Complete necessary pre-preparations.
+1.完成必要的前期准备工作。
 
-- Ensure accessibility to the secrets.db database files and the corresponding passwords for the two private key shares associated with your selected Recovery Group.
-- Record the root extended public keys after jointly generating each set of private key shares. Once generated, these root extended public keys will remain constant.
+- 确保可以访问 secrets.db 数据库文件以及与所选恢复组相关联的两个私钥分片的相应密码。
+- 共同生成每组私钥分片后，记录下根扩展公钥。根扩展公钥一旦生成，将保持不变。
 
-2. Prepare the recovery environment.
+2.准备恢复环境。
 
-The server hosting your TSS Node must be offline or in a secure environment. Please ensure that your TSS Node package and the database files are readily available. The directory structure of your TSS Node package is as follows.
+托管 TSS Node 的服务器必须处于离线状态或安全环境中。请确保您的 TSS Node 包和数据库文件随时可用。TSS Node 包的目录结构如下。
 ```
 cobo-tss-node-generic
 ├── configs
@@ -34,66 +34,66 @@ cobo-tss-node-generic
 ├── recovery (default folder where the exported private key shares will be stored)
 └── tss-node.sh
 ```
-3. Verify private key shares information.
+3.验证私钥分片信息。
 
-Enter the `cobo-tss-node-generic` directory to retrieve the group information.
+进入 `cobo-tss-node-generic` 目录，获取组信息。
 ```
 sudo ./tss-node.sh info group
 ```
-Ensure that the root extended public keys in the output match those saved during pre-preparations. If the TSS Node manages multiple private key shares, locate the group with the correct root extended public keys and take note of the Group ID.
+确保输出中的根扩展公钥与前期准备时保存的公钥一致。如果 TSS Node 管理多个私钥分片，请找到具有正确根扩展公钥的组，并记下组 ID。
 
-4. (For third-party recovery only) Share with your entrusted third party the root extended public keys linked to the specific private key share you intend to export. Your entrusted third party will utilize this information to verify their private key share information.
+4.（仅限第三方恢复）与受托第三方分享与您打算导出的特定私钥分片链接的根扩展公钥。受托第三方将利用此信息验证其私钥分片信息。
 
-5. In an offline or secure network environment, run the following command in the root directory of your TSS Node to export the private key shares.
+5.在离线或安全的网络环境中，在 TSS Node 的根目录下运行以下命令，导出私钥分片。
 ```
 ./tss-node.sh export-share --group-id <GROUP_ID>
 ```
-6. Enter the password you set to during the initialization of your TSS Node.
+6.输入在初始化 TSS Node 时设置的密码。
 
-7. Enter a new password to encrypt the private key share in each exported file. Please note that once set, this password cannot be modified. In the event of a lost password, the exported private key share file will become inaccessible and must be exported again. It is recommended to set a complex password between 16-32 characters using a password manager (e.g., 1Password) and store the password on a secure device.
+7.输入新密码，对每个导出文件中的私钥分片进行加密。注意，密码设置后将无法修改。如果密码丢失，将无法访问导出的私钥分片文件，且必须重新导出。建议使用密码管理程序（如 1Password）设置 16-32 个字符的复杂密码，并将密码存储在安全设备上。
 
-8. The private key shares will automatically be exported as JSON files.
+8.私钥分片将自动导出为 JSON 文件。
 
-9. Please verify the accuracy of the root extended public keys and group ID in the exported files.
+9.请验证导出文件中根扩展公钥和组 ID 是否准确无误。
 
-## Step 2: Reconstruct all private key shares and derive the private keys for all wallet addresses
+## 步骤 2：重新构建所有私钥分片并获取所有钱包地址的私钥
 
-Follow the instructions below to reconstruct all private key shares and derive the private keys for all wallet addresses associated with the vault. The instructions are applicable for both Mobile Co-signer and API Co-signer.
+请按照以下说明重新构建所有私钥分片，并获取与 vault 相关联的所有钱包地址的私钥。本说明适用于移动端签名人和 API 签名人。
 
 
-1. Complete necessary pre-preparations.
+1.完成必要的前期准备工作。
 
-- Obtain the recovery kit from the [open-source repository](https://github.com/CoboGlobal/cobo-mpc-recovery-kits). Prior to compiling cobo-mpc-recovery-tool, ensure you are familiar with the instructions provided in the `README.md` file. Alternatively, you can download the latest version of cobo-mpc-recovery-tool [here](https://github.com/CoboGlobal/cobo-mpc-recovery-kits/releases).
-- Save the wallet addresses associated with each vault using one of the following methods:
-    - Retrieve `AddressDetail` via the generate_addresses operation during key generation. The HD path corresponding to each address will be included in the response.
-    - Retrieve `AddressDetail` via the list_addresses operation regularly. The HD path corresponding to each address will be included in the response.
-    - Manually export all address information associated with a vault by clicking the export icon on Cobo Portal.
+- 从 [open-source repository](https://github.com/CoboGlobal/cobo-mpc-recovery-kits) 获取恢复工具包。编译 cobo-mpc-recovery-tool 之前，请先阅读 `README.md` 文件中提供的说明。或者，您也可以[点击此处](https://github.com/CoboGlobal/cobo-mpc-recovery-kits/releases)下载最新版本的 cobo-mpc-recovery-tool。
+- 使用以下任一方法保存与每个 vault 相关联的钱包地址：
+    - 在私钥生成过程中，通过 generate_addresses 操作检索 `AddressDetail`。返回的结果中每个地址对应的 HD 路径。
+    - 定期通过 list_addresses 操作检索 `AddressDetail。返回的结果中每个地址对应的 HD 路径。
+    - 点击 Cobo Portal 上的导出图标，手动导出与 vault 相关的所有地址信息。
 
-2. (For third-party recovery only) Obtain the private key share exported by your entrusted third party. The private key share file exported by your entrusted third party will also be in JSON format. Please verify that the root extended public keys in the files exported by you and your entrusted third party are identical.
+2.（仅限第三方恢复）获取受托第三方导出的私钥分片。受托第三方导出的私钥分片文件也是 JSON 格式。请验证您和受托第三方导出的文件中的根扩展公钥是否相同。
 
-3. Create a new recovery folder at the same directory level as `cobo-mpc-recovery-tool`. Paste the two exported private key share files under the recovery folder.
+3.在与 `cobo-mpc-recovery-tool` 相同的目录级别创建一个新的恢复文件夹。将导出的两个私钥分片文件粘贴到恢复文件夹中。
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
 ├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
 └── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
 ```
-4. Execute the following commands using the actual group IDs and private key share files.
+4.使用实际的组 ID 和私钥分片文件执行以下命令。
 ```
 ./cobo-mpc-recovery-tool verify \
 --group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
 --group-id <GROUP_ID>
 ```
-5. Wait for the MPC recovery tool to automatically complete the verification process.
-- The cobo-mpc-recovery-tool will verify the keys/values associated with the first private key share file.
-- The cobo-mpc-recovery-tool will derive and verify the root extended public keys using the "participants" information in the first private key share file.
-- You need to manually enter the password associated with the first private key share file to decrypt it. The cobo-mpc-recovery-tool will then derive and verify the corresponding public keys.
-- The cobo-mpc-recovery-tool will verify the keys/values associated with the second private key share file.
-- The cobo-mpc-recovery-tool will verify whether the keys/values in the first private key share file are consistent with those in the second private key share file.
-- The cobo-mpc-recovery-tool will derive and verify the root extended public keys using the "participants" information in the second private key share file.
-- You need to manually enter the password associated with the second private key share file to decrypt it. The cobo-mpc-recovery-tool will then derive and verify the corresponding public keys.
+5.等待 MPC 恢复工具自动完成验证过程。
+- cobo-mpc-recovery-tool 将验证与第一个私钥分片文件相关联的私钥/值。
+- cobo-mpc-recovery-tool 将使用第一个私钥分片文件中的“participants”信息生成并验证根扩展公钥。
+- 需要手动输入与第一个私钥分片文件相关的密码解密。然后，cobo-mpc-recovery-tool 会生成并验证相应的公钥。
+- cobo-mpc-recovery-tool 将验证与第二个私钥分片文件相关联的密钥/值。
+- cobo-mpc-recovery-tool 将验证第一个私钥分片文件中的密钥/值与第二个私钥分片文件中的密钥/值是否一致。
+- cobo-mpc-recovery-tool 将使用第二个私钥分片文件中的“participants”信息生成并验证根扩展公钥。
+- 需要手动输入与第二个私钥分片文件相关的密码进行解密。然后，cobo-mpc-recovery-tool 会生成并验证相应的公钥。
 
-6. Place the `address.csv` file exported during pre-preparations under the recovery folder.
+6.将进行前期准备工作时导出的 `address.csv` 文件移动到恢复文件夹下。
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
@@ -102,13 +102,13 @@ Follow the instructions below to reconstruct all private key shares and derive t
 └── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
 ```
 
-7. Execute the following commands using the actual group ID and private key share files.
+7.使用实际的组 ID 和私钥分片文件执行以下命令。
 
-- Enter the passwords to decrypt the two private key share files.
-- The root extended private keys and the root extended public keys will be reconstructed.
-- Ensure that the root extended public keys in the output are the same as the root extended public keys you saved during pre-preparations.
-- The address.csv file will be automatically imported, and the system will generate a `recovery/address-recovery.csv` file based on the HD paths in the address.csv file.
-- Upon completion of the execution, all private keys associated with the wallet addresses in this vault will be stored in plain text within the `recovery/address-recovery.csv` file. Please ensure that all data is stored securely.
+- 输入密码解密出两个私钥分片文件。
+- 将重新构建根扩展私钥和根扩展公钥。
+- 确保输出中的根扩展公钥与您在前期准备工作中保存的根扩展公钥相同。
+- 将自动导入 address.csv 文件，系统将根据 address.csv 文件中的 HD 路径生成 `recovery/address-recovery.csv` 文件。
+- 执行完成后，与该 vault 中钱包地址相关的所有私钥将以纯文本形式存储在 `recovery/address-recovery.csv` 文件中。请确保安全存储所有数据。
 
 ```
 ./cobo-mpc-recovery-tool \

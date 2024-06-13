@@ -1,13 +1,13 @@
 ---
-title: "Introduction to Organization-Controlled Wallets"
-sidebarTitle: "Introduction"
+title: "机构钱包简介"
+sidebarTitle: "简介"
 ---
 
-## What are Organization-Controlled Wallets?
+## 什么是机构钱包？
 
-Organization-Controlled Wallets are MPC-based wallets where the management and control of the digital assets lie with the organization itself. By leveraging MPC technology to fragment the private key into encrypted shares distributed across multiple parties, organizations can enhance security and maintain complete control over their own funds or the assets of their end users. Organization-Controlled Wallets utilize a 2-2 signature scheme, where the organization and Cobo each hold a key share for transaction signing.
+机构钱包是基于 MPC 的钱包，团队拥有数字资产的管理和控制权。团队可以利用 MPC 技术将私钥分割成多方分别持有的加密分片，增强安全性，并保持对自身资金或终端用户资产的完全控制权。机构钱包采用 2-2 签名机制，团队和 Cobo 各持一个密钥分片，用于签署交易。
 
-Organization-Controlled Wallets are created within an Organization-Controlled Vault. Each Organization-Controlled Vault corresponds to a root extended private key (essentially, the master private key in the MPC framework will generate a series of child keys for each corresponding vault). You can set up multiple vaults, and create multiple wallets under each vault to meet the specific requirements of your business.
+机构钱包在机构 Vault 内创建。每个机构 Vault 对应一个根扩展私钥（基本上，MPC 框架中的主私钥会为每个对应的 Vault 生成一系列子私钥）。您可以设置多个 Vault，并在每个 Vault 下创建多个钱包，以满足具体的业务要求。
 
 <img src="/cn/images/mpc-wallet/OCW.svg"/>
 
