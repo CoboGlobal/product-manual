@@ -1,59 +1,59 @@
 ---
-title: "TSS Node release notes"
-sidebarTitle: "TSS Node release notes"
+title:“TSS Node 版本说明”
+sidebarTitle:“TSS Node 版本说明”
 ---
 
-Version 0.7.0:
+版本 0.7.0：
 
-- Implemented security enhancements for specific modules
-- Enhanced the "migrate" command to include data migration and optimization
-- Adjusted the priorities of configuration files and command lines
-- Added the capability to notify clients when the callback service rejects a request
-- Improved overall system performance and reliability
-- Addressed bug fixes
+- 增强了特定模块的安全性
+- 增强了“migrate”命令，纳入数据迁移和优化
+- 调整了配置文件和命令行的优先级
+- 增加了在 callback 服务拒绝某项请求时通知用户的功能
+- 提高了系统的整体性能和可靠性
+- 修正了错误
 
-Version 0.6.0 (*recommended):
+版本 0.6.0（*推荐使用）：
 
-- Revamped the underlying MPC protocol implementation to reinforce security
-- Established default connectivity to the development environment
-- Upgraded system message formats and encryption methods
-- Refactored the TSS Node registration mechanism
-- Introduced Canonical Group ID and Protocol Group ID
-- Enabled automated handling of sessions with abnormal statuses
-- Expanded recovery file data fields
-- Refactored the risk control callback mechanism
-- Optimized database structure and log system
-- Enhanced overall system performance and reliability
+- 改进了底层 MPC 协议的实现，以增强安全性
+- 建立了与开发环境的默认连接
+- 升级了系统消息格式和加密方法
+- 重构了 TSS Node 注册机制
+- 引入了规范组 ID 和协议组 ID
+- 支持自动处理状态异常的会话
+- 扩展了恢复文件数据字段
+- 重构了风险控制 callback 机制
+- 优化了数据库结构和日志系统
+- 增强了系统整体性能和可靠性
 
-Version 0.5.6:
+版本 0.5.6：
 
-- Uncompleted sessions will resume upon TSS Node restarts
-- Password no longer required when querying public information via command lines
-- Modification to data exported using the export-share command
-- Modification to request details in API callback parameters
-- Modification to log display in files
-- Optimization of system reliability and performance
+- TSS Node 重新启动时将恢复未完成的会话
+- 通过命令行查询公共信息时不再需要密码
+- 修改了使用 export-share 命令导出的数据
+- 修改了 API callback 参数中的请求详细信息
+- 修改了文件中的日志显示
+- 优化了系统可靠性和性能
 
-Version 0.4.1:
+版本 0.4.1：
 
-- Code refactoring
-- Added support for Ed25519 signature scheme
-- "sign" sub-command now supported for periodic MPC key share checkup
-- Database migration of TSS Node group data
-- Performance optimization and bug fixes
+- 代码重构
+- 添加了对 Ed25519 签名机制的支持
+- 支持“sign”子命令，用于定期检查 MPC 私钥分片
+- TSS Node 组数据的数据库迁移
+- 性能优化和错误修复
 
-Version 0.3.0:
+版本 0.3.0：
 
-- Group info now displays elliptic curve name, participants info, creation time, and more
-- Random generation of cryptographic salt during database encryption now supported
-- Added support for Ed25519 signature scheme
-- Optimized "export-share" sub-command 
-- TSS Node script file optimization
-- Performance optimization and bug fixes
+- 组信息可显示椭圆曲线名称、参与者信息、创建时间等信息
+- 支持在数据库加密过程中随机生成加密盐
+- 添加了对 Ed25519 签名机制的支持
+- 优化了“export-share”子命令 
+- 优化了 TSS Node 脚本文件
+- 性能优化和错误修复
 
-Version 0.2.7:
+版本 0.2.7：
 
-- Group info now displays chaincode, key share ID, public key info associated with the MPC key share, and more
-- "export-share" sub-command now supported 
-- Container image packaging and publishing now supported
-- Performance optimization and bug fixes
+- 组信息可显示链码、私钥分片 ID、与 MPC 私钥分片关联的公钥信息等内容
+- 支持 “export-share”子命令 
+- 支持容器镜像打包和发布
+- 性能优化和错误修复

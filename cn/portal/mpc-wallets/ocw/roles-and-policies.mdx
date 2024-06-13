@@ -1,36 +1,32 @@
 ---
-title: "User roles and transaction policies"
-sidebarTitle: "User roles and transaction policies"
+title:“用户角色和交易风控”
+sidebarTitle:“用户角色和交易风控”
 ---
 
-## Configure user roles and permissions
+## 配置用户角色和权限
 
-Cobo Portal offers extensive role-based access control capabilities for you to segregate duties and safeguard your assets and operations.
+Cobo Portal 提供了很多基于角色的访问控制功能，允许您分离职责，以保护您的资产和操作安全。
 
-By assigning roles to your team members, they will be granted permissions associated with that role, governing which parts of the platform they can access and what operations they can perform. Cobo Portal offers preset user roles, such as Admin, Approver, Spender, Viewer. Alternatively, you can also customize your own roles to suit your unique business needs.
+您可以为团队成员分配角色，进而授予他们与这些角色相关联的权限，这些权限规定了他们可以访问平台的哪些部分以及可以执行哪些操作。Cobo Portal 提供了一系列预设用户角色，包括管理员、审批员、提币员和观察员。或者，您也可以根据自己的业务需求定制角色。
 
-Before executing any transaction or operation, a thorough verification of user roles and permissions will be conducted to ensure utmost security.
+要查看预设角色和/或创建定制角色，请点击**团队管理** > **角色**。
 
-To configure the permissions associated with each role, click **Organization** > **Roles**.
+<img src="/images/mpc-wallet/user-roles.png" className="screenshot_nav_bar"/>
 
-<img src="/cn/images/mpc-wallet/user-roles.png" className="screenshot_nav_bar"/>
+要为团队成员分配角色，请点击**团队管理** > **成员**。
 
+<img src="/images/mpc-wallet/member.png" className="screenshot_nav_bar"/>
 
-To assign roles to team members, click **Organization** > **Members**.
-
-<img src="/cn/images/mpc-wallet/member.png" className="screenshot_nav_bar"/>
-
-To learn more about configuring user roles and permissions, see [Introduction to Organization](/cn/portal/organization/introduction).
+详情请参阅[**团队管理**](/en/portal/organization/introduction)。
 
 
-## Configure transaction policies
+## 配置链下交易风控
 
-When initiating a transfer or contract interaction with your MPC Wallet, you can set up an extensive variety of programmable transaction policies on virtually any parameter within a transaction or operation to ensure its utmost security via Cobo Portal’s Transaction Policies.
+您可以轻松设置和编辑链下交易风控。注意，链下交易风控由 Cobo Portal 的后端系统管理。您还可以通过设置审批动作来自动处理每笔交易。审批动作包括自动批准、自动拒绝、审批门槛和定制工作流。
 
-Automate governance by configuring a set of granular rules that dictate how transactions are handled and approved for every wallet, user, and transaction type. You can create address whitelists and/or blacklists, set transfer limits for a single transaction or specific time periods, configure approval workflows, and control how transactions and operations are automatically processed - rejected, approved, or subject to specific quorum requirements.
+每个团队都管理着一份链下交易风控列表。发起交易时将会根据列表中的风控顺序进行匹配。一旦识别到匹配风控，将自动执行相应的审批动作。
 
-To view transaction policies, click **Transaction Policies**.
 
-<img src="/cn/images/mpc-wallet/transaction-policies.png" className="screenshot_nav_bar"/>
+要了解如何配置链下交易风控，请参见[**链下交易风控**](/en/portal/risk-controls/off-chain-tx-set-transfer)。
 
-To learn how to configure the transaction policies, see [Overview](/cn/portal/risk-controls/tx-policies-overview).
+<img src="/images/mpc-wallet/transaction-policies.png" className="screenshot_nav_bar"/>

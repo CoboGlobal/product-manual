@@ -1,30 +1,30 @@
 ---
-title: "TSS Node update"
-sidebarTitle: "TSS Node update"
+title: "TSS Node 更新"
+sidebarTitle: "TSS Node 更新"
 ---
-When new versions of the TSS Node are released, it is highly recommended to stay updated by upgrading to the latest version. For major releases involving key feature upgrades, Cobo’s customer support will provide advance notification. After downloading a new version of the TSS Node package, please ensure to complete the following steps.
+当 TSS Node 发布新版本时，强烈建议升级到最新版本。对于涉及关键功能升级的重大版本发布，Cobo 客服会提前发出通知。下载新版本的 TSS Node 软件包后，请确保完成以下步骤。
 
-1. Stop the old TSS Node. 
+1.停用旧版 TSS Node。 
 
 ```
 sudo ./tss-node.sh stop
 ```
 
-2. Back up key data (e.g. db/secrets.db, passwords, config files, and keys under configs/).
+2.备份关键数据（如 configs/ 目录下的 db/secrets.db、密码、配置文件和密钥）。
 
-3. Unzip the new version of the TSS Node package and overwrite the files in the old version. Ensure that the new version is unzipped in the same folder used by the previous TSS Node. 
+3.解压缩新版本的 TSS Node 软件包并覆盖旧版本中的文件。确保将新版本解压到旧版 TSS Node 使用的同一文件夹中。 
 
 ```
 tar -xzf cobo-tss-node-generic.tgz
 ```
 
-4. To ensure the proper functioning of the TSS Node, check its operating environment and pull the necessary container images.
+4.为确保 TSS Node 正常运行，请检查其运行环境并提取必要的容器镜像。
 
 ```
 sudo ./tss-node.sh status
 ```
 
-5. Initiate the new version of the TSS Node, and verify its successful startup by ensuring that the version number and key data (such as the TSS Node ID) in the log match the expected values.
+5.启动新版本的 TSS Node，确保日志中的版本号和关键数据（如 TSS Node ID）与预期的一致，以此来验证其新版本否成功启动。
 
 ```
 sudo ./tss-node.sh start

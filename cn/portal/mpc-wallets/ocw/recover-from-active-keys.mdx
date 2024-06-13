@@ -1,19 +1,19 @@
 ---
-title: "Recover key shares from another active key share group"
-sidebarTitle: "Recover key shares from another active key share group"
+title:“从另一个活跃的私钥分片组恢复私钥分片”
+sidebarTitle:“从另一个活跃的私钥分片组恢复私钥分片”
 ---
 
-**Note**: If the locally stored private key share is lost and the backed-up data file is no longer accessible, the key share holder can recover their private key share with the assistance of another active key share group. Unlike restoration, recovery relies on the support from another key share group.
+**注意**：如果本地存储的私钥分片丢失，且备份的数据文件无法访问，私钥分片持有方可借助另一个活跃私钥分片组恢复其私钥分片。与还原不同，恢复需要依赖另一个私钥分片组的支持。
 
-## If Main Group is lost or compromised
+## 如果主控组丢失或受损
 
-Upgrade an active Signing Group to function as the Main Group. The original Main Group will be automatically deleted. For more information, please refer to [Manage Signing Groups](/cn/portal/mpc-wallets/ocw/manage-key-share-groups#manage-signing-groups).
-Use an active Recovery Group to reshare a new Main Group. The original Main Group will be automatically deleted. For more information, please refer to [Manage Recovery Groups](/cn/portal/mpc-wallets/ocw/manage-key-share-groups#manage-recovery-groups).
+将一个活跃的签名组升级为主控组。将自动删除原主控组。有关更多信息，请参阅[管理签名组](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-signing-groups)。
+使用活跃的恢复组重新分享新的主控组。将自动删除原主控组。有关更多信息，请参阅[管理恢复组](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-recovery-groups)。
 
-## If Signing Group is lost or compromised
+## 如果签名组丢失或受损
 
-Use the active Main Group to generate a new Signing Group. For more information, please refer to [Manage Signing Groups](/cn/portal/mpc-wallets/ocw/manage-key-share-groups#manage-signing-groups).
+使用活跃的主控组生成新的签名组。有关更多信息，请参阅[管理签名组](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-signing-groups)。
 
-## If Recovery Group is lost or compromised
+## 如果恢复组丢失或受损
 
-Use the active Main Group to generate a new Recovery Group. For more information, please refer to [Manage Recovery Groups](/cn/portal/mpc-wallets/ocw/manage-key-share-groups#manage-recovery-groups).
+使用活跃的主控组生成新的恢复组。有关更多信息，请参阅[管理恢复组](/en/portal/mpc-wallets/ocw/manage-key-share-groups#manage-recovery-groups)。
