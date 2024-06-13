@@ -563,7 +563,7 @@
       "version": "English"
     },
     {
-      "group": "OVERVIEW",
+      "group": "概览",
       "pages": [
         "cn/portal/introduction",
         "cn/portal/release-notes",
@@ -572,13 +572,13 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "WALLETS & TRANSACTIONS",
+      "group": "钱包 & 交易",
       "pages": [
         {
-          "group": "Wallets",
+          "group": "钱包",
           "pages": [
             {
-              "group": "Custodial Wallets",
+              "group": "全托管钱包",
               "pages": [
                 "cn/portal/custodial-wallets/introduction",
                 "cn/portal/custodial-wallets/key-features",
@@ -587,13 +587,13 @@
                   "pages": [
                     "cn/portal/custodial-wallets/set-up",
                     {
-                      "group": "Manage Custodial Wallets",
+                      "group": "管理全托管钱包",
                       "pages": [
                         "cn/portal/custodial-wallets/manage",
                         "cn/portal/custodial-wallets/roles-and-policies",
                         "cn/portal/custodial-wallets/transfers",
                         {
-                          "group": "Troubleshoot",
+                          "group": "疑难解答",
                           "pages": [
                             "cn/portal/custodial-wallets/unable-to-create-wallet",
                             "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
@@ -814,7 +814,7 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "MANAGE YOUR ACCOUNTS",
+      "group": "账户管理",
       "pages": [
         {
           "group": "Dashboard",
@@ -902,7 +902,7 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "DEVELOP WITH COBO",
+      "group": "用 COBO 开发",
       "pages": [
         {
           "group": "Developer Console",
