@@ -607,7 +607,7 @@
               ]
             },
             {
-              "group": "MPC Wallets",
+              "group": "MPC 钱包",
               "pages": [
                 "cn/portal/mpc-wallets/introduction",
                 "cn/portal/mpc-wallets/key-features",
@@ -615,11 +615,11 @@
                   "group": "使用说明",
                   "pages": [
                     {
-                      "group": "Organization-Controlled Wallets",
+                      "group": "机构钱包",
                       "pages": [
                         "cn/portal/mpc-wallets/ocw/introduction",
                         {
-                          "group": "Set up Organization-Controlled Wallets",
+                          "group": "创建机构钱包",
                           "pages": [
                             "cn/portal/mpc-wallets/ocw/set-up",
                             "cn/portal/mpc-wallets/ocw/create-mpc-vault",
@@ -629,7 +629,7 @@
                           ]
                         },
                         {
-                          "group": "(For API co-signer) Technical setup",
+                          "group": "(API 签名人) 配置说明",
                           "pages": [
                             "cn/portal/mpc-wallets/ocw/network-environments",
                             "cn/portal/mpc-wallets/ocw/server-environments",
@@ -641,13 +641,13 @@
                           ]
                         },
                         {
-                          "group": "Manage Organization-Controlled Wallets",
+                          "group": "管理机构钱包",
                           "pages": [
                             "cn/portal/mpc-wallets/ocw/manage-vaults",
                             "cn/portal/mpc-wallets/ocw/manage-wallets",
                             "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
                             {
-                              "group": "Recover key share groups",
+                              "group": "恢复私钥分片组",
                               "pages": [
                                 "cn/portal/mpc-wallets/ocw/restore-from-backup",
                                 "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
@@ -661,7 +661,7 @@
                       ]
                     },
                     {
-                      "group": "User-Controlled Wallets",
+                      "group": "终端用户钱包",
                       "pages": [
                         "cn/portal/mpc-wallets/ucw/introduction"
                       ]
@@ -760,7 +760,7 @@
           ]
         },
         {
-          "group": "Transfers",
+          "group": "转账",
           "pages": [
             "cn/portal/transfers/introduction",
             {
@@ -902,10 +902,10 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "DEVELOP WITH COBO",
+      "group": "开发者专区",
       "pages": [
         {
-          "group": "Developer Console",
+          "group": "开发者控制台",
           "pages": [
             "cn/portal/developer-console/introduction",
             "cn/portal/developer-console/key-features",
