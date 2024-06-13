@@ -563,19 +563,26 @@
       "version": "English"
     },
     {
-      "group": "OVERVIEW",
+      "group": "概览",
       "pages": [
         "cn/portal/introduction",
         "cn/portal/release-notes",
-        "cn/portal/quick-start-guide"
+        "cn/portal/quick-start-guide",
+            {
+              "group": "支持的代币与链",
+              "pages": [
+                "cn/portal/supported-tokens-custodial",
+                "cn/portal/supported-tokens-mpc"
+              ]
+        }
       ],
       "version": "简体中文（建设中）"
     },
     {
-      "group": "WALLETS & TRANSACTIONS",
+      "group": "钱包与交易",
       "pages": [
         {
-          "group": "Wallets",
+          "group": "钱包",
           "pages": [
             {
               "group": "Custodial Wallets",
@@ -814,7 +821,7 @@
       "version": "简体中文（建设中）"
     },
     {
-      "group": "MANAGE YOUR ACCOUNTS",
+      "group": "账户管理",
       "pages": [
         {
           "group": "Dashboard",
