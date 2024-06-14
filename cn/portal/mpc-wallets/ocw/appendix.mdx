@@ -15,9 +15,9 @@ sidebarTitle: "附录"
 
 ### **配置文件修改** 
 
-1.导航至 configs 目录。 
-2.复制并粘贴 cobo-tss-node-config.yaml.template 文件。 
-3.将复制的文件重命名为 cobo-tss-node-config.yaml。目录结构如下：
+1. 导航至 configs 目录。 
+2. 复制并粘贴 cobo-tss-node-config.yaml.template 文件。 
+3. 将复制的文件重命名为 cobo-tss-node-config.yaml。目录结构如下：
 
 ```
 cobo-tss-node-generic
@@ -31,11 +31,11 @@ cobo-tss-node-generic
 └── tss-node.sh (startup script)
 ```
 
-4.按照以下步骤编辑 cobo-tss-node-config.yaml 文件： 
-   1.用文本编辑器打开该文件。 
-   2.找到需要修改的配置项（如“env”）。 
-   3.删除与该配置项相关的任何备注。 
-   4.更新配置项的内容。例如，将“env”改为“production”。
+4. 按照以下步骤编辑 cobo-tss-node-config.yaml 文件： 
+   1. 用文本编辑器打开该文件。 
+   2. 找到需要修改的配置项（如“env”）。 
+   3. 删除与该配置项相关的任何备注。 
+   4. 更新配置项的内容。例如，将“env”改为“production”。
 
 ```
 env: production # development; production
@@ -76,7 +76,7 @@ env: production # development; production
 sudo ./tss-node.sh init
 ```
 
-您可以初始化 TSS 节点并创建数据库文件。如果数据库文件已经存在，则执行将失败。有关更多信息，请参阅 [TSS 节点初始化](/en/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-initialization)。
+您可以初始化 TSS 节点并创建数据库文件。如果数据库文件已经存在，则执行将失败。有关更多信息，请参阅 [TSS 节点初始化](/cn/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-initialization)。
 
 - *Info：查看信息。*
 
@@ -141,7 +141,7 @@ sudo ./tss-node.sh info group [group_id]
 sudo ./tss-node.sh start
 ```
 
-cobo-tss-node 将开始运行。有关更多信息，请参阅 [TSS 节点启动](/en/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-startup)。
+cobo-tss-node 将开始运行。有关更多信息，请参阅 [TSS 节点启动](/cn/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-startup)。
 
 - *Version：查询 TSS 节点版本*
 
