@@ -1,10 +1,12 @@
 ---
-title: "Introduction to transaction policies"
-sidebarTitle: "Introduction"
+title: "交易风控简介"
+sidebarTitle: "简介"
 ---
 
-You can effortlessly set up and edit both off-chain and on-chain transaction policies. Note that on-chain transaction policies are governed by smart contracts on the blockchain networks, whereas off-chain transaction policies are managed by the backend system of Cobo Portal.
+<Note>前提条件：请将[操作员](/cn/portal/organization/roles-and-permissions)角色分配给将设置交易政策的指定团队成员。</Note>
 
-You can also automate how each transaction will be handled by setting up an approval action. This could include auto approval, auto rejection, approval quorum, and customized workflows.
+您可以轻松设置和编辑链下和链上的交易风控。注意，链上交易风控由区块链网络上的智能合约管理，而链下交易风控由 Cobo Portal 的后端系统管理。
 
-Each organization manages a list of off-chain and/or on-chain transaction policies. When a transaction is initiated, it undergoes a matching process against the ordered policies in the list. If a matching policy is identified, the corresponding approval action will be automatically executed.
+您还可以通过设置审批动作来自动处理每笔交易。审批动作包括自动批准、自动拒绝、审批门槛和定制工作流。
+
+每个团队都管理着一份链下和/或链上交易风控列表。发起交易时将会根据列表中的风控顺序进行匹配。一旦识别到匹配风控，将自动执行相应的审批动作。

@@ -585,7 +585,7 @@
           "group": "钱包",
           "pages": [
             {
-              "group": "Custodial Wallets",
+              "group": "全托管钱包",
               "pages": [
                 "cn/portal/custodial-wallets/introduction",
                 "cn/portal/custodial-wallets/key-features",
@@ -594,13 +594,13 @@
                   "pages": [
                     "cn/portal/custodial-wallets/set-up",
                     {
-                      "group": "Manage Custodial Wallets",
+                      "group": "管理全托管钱包",
                       "pages": [
                         "cn/portal/custodial-wallets/manage",
                         "cn/portal/custodial-wallets/roles-and-policies",
                         "cn/portal/custodial-wallets/transfers",
                         {
-                          "group": "Troubleshoot",
+                          "group": "问题排查",
                           "pages": [
                             "cn/portal/custodial-wallets/unable-to-create-wallet",
                             "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
@@ -783,24 +783,24 @@
           ]
         },
         {
-          "group": "Risk Controls",
+          "group": "风险控制",
           "pages": [
             "cn/portal/risk-controls/introduction",
             {
               "group": "使用说明",
               "pages": [
                 {
-                  "group": "Transaction policies",
+                  "group": "交易风控",
                   "pages": [
                     "cn/portal/risk-controls/tx-policies-overview",
                     {
-                      "group": "On-chain transaction policies",
+                      "group": "链上交易风控",
                       "pages": [
                         "cn/portal/risk-controls/on-chain-tx-type"
                       ]
                     },
                     {
-                      "group": "Off-chain transaction policies",
+                      "group": "链下交易风控",
                       "pages": [
                         "cn/portal/risk-controls/off-chain-tx-set-transfer",
                         "cn/portal/risk-controls/off-chain-tx-manage-transfer",
@@ -965,7 +965,7 @@
           "group": "使用说明",
           "pages": [
             {
-              "group": "Set up Cobo Accounts",
+              "group": "设置 Cobo Accounts",
               "pages": [
                 "cn/accounts/sign-up",
                 "cn/accounts/log-in",
@@ -973,17 +973,17 @@
               ]
             },
             {
-              "group": "Manage Cobo Accounts",
+              "group": "管理 Cobo Accounts",
               "pages": [
                 {
-                  "group": "Manage login methods",
+                  "group": "管理登录方式",
                   "pages": [
                     "cn/accounts/add-passkey-as-login-method",
                     "cn/accounts/modify-existing-login-methods"
                   ]
                 },
                 {
-                  "group": "Manage multi-factor authentications",
+                  "group": "管理多重验证 (MFA) 方式",
                   "pages": [
                     "cn/accounts/reset-google-authenticator",
                     "cn/accounts/delete-security-keys",
@@ -991,7 +991,7 @@
                   ]
                 },
                 {
-                  "group": "Troubleshoot",
+                  "group": "问题排查",
                   "pages": [
                     "cn/accounts/forgot-password",
                     "cn/accounts/passkeys-failed"
