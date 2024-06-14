@@ -824,7 +824,7 @@
       "group": "账户管理",
       "pages": [
         {
-          "group": "Dashboard",
+          "group": "数据概览",
           "pages": [
             "cn/portal/dashboard/introduction",
             {
@@ -883,7 +883,7 @@
           ]
         },
         {
-          "group": "Address Book",
+          "group": "地址簿",
           "pages": [
             "cn/portal/address-book/introduction",
             "cn/portal/address-book/key-features",

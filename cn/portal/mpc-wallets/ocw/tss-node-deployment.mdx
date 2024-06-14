@@ -143,7 +143,7 @@ Please use './tss-node.sh init' if the tss-node is not initialized yet.
 
 TSS Node 默认配置为连接到开发环境，无需额外的配置文件即可运行。如果希望连接到正式环境，需要手动修改配置文件。 
 
-为此，请复制一个 cobo-tss-node-config.yaml.template 文件，将其重命名为 cobo-tss-node-config.yaml。将新文件粘贴到 configs 目录中。有关说明，请参阅 [TSS Node 配置方法](/en/portal/mpc-wallets/ocw/appendix#tss-node-configuration-methods)。配置文件修改完毕后，切记重新启动 TSS Node 软件包。
+为此，请复制一个 cobo-tss-node-config.yaml.template 文件，将其重命名为 cobo-tss-node-config.yaml。将新文件粘贴到 configs 目录中。有关说明，请参阅 [TSS Node 配置方法](/cn/portal/mpc-wallets/ocw/appendix#tss-node-configuration-methods)。配置文件修改完毕后，切记重新启动 TSS Node 软件包。
 
 **启动脚本：tss-node.sh**
 
@@ -209,10 +209,10 @@ INFO[2023-01-13T05:12:11Z] Complete initialization of TSS Node keys and data
 
 - 在 TSS Node 初始化过程中，系统将验证 Docker Engine 是否安装成功，然后继续构建容器镜像。系统将提示您同意自动安装 Docker Engine。
 - 如果使用的是支持 SGX 的服务器，系统还会验证 SGX 驱动程序是否安装成功。系统将提示您同意自动安装 Intel DCAP 1.41 驱动程序。
-- 设置密码，对 TSS Node 初始化过程中生成的数据进行加密。如果密码丢失或需要修改密码，请参阅[恢复根扩展私钥](/en/portal/mpc-wallets/ocw/recover-root-key)。建议使用密码管理程序（如 1Password）设置 16-32 个字符的复杂密码，并将密码存储在安全可信的设备上。
+- 设置密码，对 TSS Node 初始化过程中生成的数据进行加密。如果密码丢失或需要修改密码，请参阅[恢复根扩展私钥](/cn/portal/mpc-wallets/ocw/recover-root-key)。建议使用密码管理程序（如 1Password）设置 16-32 个字符的复杂密码，并将密码存储在安全可信的设备上。
 - 将自动生成数据库文件，默认路径为 db/secrets.db。
 - 将自动生成节点 ID （如 cobo73VA6C6WvofPg8tWYmqvdUF1cPYhd7EmGUxTexz5HCzYe），这是 TSS Node 的唯一标识符。 
-- 将自动生成并打印 callbeck 密钥。有关更多信息，请参阅 [TSS Node callback](/en/portal/mpc-wallets/ocw/tss-node-callback)。
+- 将自动生成并打印 callbeck 密钥。有关更多信息，请参阅 [TSS Node callback](/cn/portal/mpc-wallets/ocw/tss-node-callback)。
 
 ## TSS Node 启动
 
@@ -262,7 +262,7 @@ INFO[2023-01-13T05:15:10Z] Start to register service
 INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
 ```
 
-可以按 Ctrl+C 退出，TSS Node 将继续在后台运行。有关检查 TSS Node 运行状态的详细信息，请参阅[附录](/en/portal/mpc-wallets/ocw/appendix)。
+可以按 Ctrl+C 退出，TSS Node 将继续在后台运行。有关检查 TSS Node 运行状态的详细信息，请参阅[附录](/cn/portal/mpc-wallets/ocw/appendix)。
 
 ```
 sudo ./tss-node.sh init
@@ -272,20 +272,19 @@ sudo ./tss-node.sh init
 
 <Note>仅拥有 vault 管理权限的用户有权限将 TSS Node ID 添加到 Cobo Portal。</Note>
 
-1.登录 Cobo Portal。
-2.点击左侧主菜单中的**钱包**。
-3.选择**MPC**并切换到**机构钱包。
-4.点击**创建主控组**。
-5.确保 Cobo 管理的 TSS Node 在线，以便共同生成根扩展公钥。
-6.选择**API 签名人。
-7.输入此 API 签名人的名称。
-8.输入此 API 签名者的 TSS Node ID，然后单击**确认**。
-9.确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。此密钥可用于使用 BIP 32 生成此 MPC 机构钱包下的所有钱包地址。
+1. 登录 Cobo Portal。
+2. 点击左侧主菜单中的**钱包**。
+3. 选择**MPC**并切换到**机构钱包。
+4. 点击**创建主控组**。
+5. 确保 Cobo 管理的 TSS Node 在线，以便共同生成根扩展公钥。
+6. 选择**API 签名人。
+7. 输入此 API 签名人的名称。
+8. 输入此 API 签名者的 TSS Node ID，然后单击**确认**。
+9. 确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。此密钥可用于使用 BIP 32 生成此 MPC 机构钱包下的所有钱包地址。
 
-![img](https://lh7-us.googleusercontent.com/goJ5sSXRCe4YIlvQE4Ln0MG2nHUs6vfSUXbCytDLSMTBgQjl-dXLJBfpHE4VuwJuEx4O40EmeqQcMqxC2WsdFi0yo-ygfiHIbfQSEDkhXUnHsFeUrR5ISu68GgO0S90hA5Z46k_LMHBSJ7MtnLxfZBo)
 
  
 
 ### **私钥分片管理** 
 
-成功生成的私钥分片将被加密，并存储在 TSS Node 软件包的本地数据库文件中。默认路径为 db/secrets.db。强烈建议在初始化 TSS Node 时备份数据库文件和用于加密的密码。备份文件应存储在不同的设备上，以提高安全性。有关更多信息，请参阅[备份私钥分片组](/en/portal/mpc-wallets/ocw/back-up-key-share-groups)。
+成功生成的私钥分片将被加密，并存储在 TSS Node 软件包的本地数据库文件中。默认路径为 db/secrets.db。强烈建议在初始化 TSS Node 时备份数据库文件和用于加密的密码。备份文件应存储在不同的设备上，以提高安全性。有关更多信息，请参阅[备份私钥分片组](/cn/portal/mpc-wallets/ocw/back-up-key-share-groups)。
