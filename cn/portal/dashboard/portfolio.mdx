@@ -1,26 +1,42 @@
 ---
-title: "Portfolio"
-sidebarTitle: "Portfolio"
+title: "投资组合"
+sidebarTitle: "投资组合"
 ---
 
-View the breakdown of your portfolio by assets, wallet types on Cobo Portal, and networks, to gain insights into the distribution of your digital assets.
+您可以按**资产**、**钱包**或**网络**查看您的投资组合细分情况，深入了解您的数字资产分布。
 
-**Notes**:
-
-- **Breakdown by Assets**: Each token type is aggregated across all blockchains and linked exchange accounts.
-- **Breakdown by Wallets**: Wallets include all wallet types available on Cobo Portal including the following:
-    - Exchange Wallet
-    - Custodial Wallet
-        - Asset Wallet
-        - Web3 Wallet
-    - MPC Wallet
-        - Client-Controlled Wallet
-        - User-Controlled Wallet
-    - Smart Contract Wallets
-        - Safe&#123;Wallet&#125;
-- **Breakdown by Networks**: Networks encompass blockchain networks and exchanges.
-- Pie charts display up to 8 categories. Categories exceeding 8 will be grouped together as “Others”.
-- To hide or display specific categories, simply uncheck or check the corresponding category.
+<img src="/cn/images/dashboard/portfolio.svg" className="screenshot_modal"/> <br />
 
 
+<AccordionGroup>
+  <Accordion title="按币种统计分类">
+每种代币类型的数量是跨所有区块链和关联交易所账户进行综合统计的。
+  </Accordion>
 
+  <Accordion title="按钱包类型统计分类">
+钱包包括 Cobo Portal 上所有可用钱包类型，如下：
+    <CardGroup cols={2}>
+  <Card title="全托管钱包" icon="square-1">
+资产钱包
+
+Web3 钱包
+  </Card>
+  <Card title="MPC 钱包" icon="square-2">
+机构钱包
+终端用户钱包
+  </Card>
+  <Card title="智能合约钱包" icon="square-3">
+    Safe\{Wallet\}
+  </Card>
+  <Card title="交易所钱包" icon="square-4">
+  </Card>
+</CardGroup>
+  </Accordion>
+
+  <Accordion title="按所在链分类">
+    网络涵盖区块链网络和交易所。
+  </Accordion>
+</AccordionGroup>
+
+<Note>饼图最多显示 8 个类别。超过 8 个类别的，将被归入“其他”类别。</Note>
+<Note>如果您的账户没有交易或充币记录，将不会显示任何数据。请转入资金以开启对交易和账户活动的追踪。</Note>
