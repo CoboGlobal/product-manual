@@ -29,22 +29,22 @@ sidebarTitle: "创建私钥分片组"
 选择完签名人类型并设置好使用前提后，请按照以下说明创建主控组。**注意：**只有拥有[团队操作员用户角色](/en/portal/organization/roles-and-permissions)的用户能够创建主控组。
 
 
-1.登录 [Cobo Portal](https://portal.cobo.com/login)。
-2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3.选择 vault，然后点击 vault 名称下的**创建主控组**。
-<img src="/cn/images/mpc-wallet/create-main-key-group.png" className="screenshot_modal"/>
-4.在**创建主控组**对话框中，前往**私钥分片持有方 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3. 选择 vault，然后点击 vault 名称下的**创建主控组**。
+<img src="/cn/images/mpc-wallet/create-main-key-group.png" className="screenshot_full_screen"/>
+4. 在**创建主控组**对话框中，前往**私钥分片持有方 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。（后续我们将在开发者中心提供 TSS 节点技术设置指南）。
-5.状态将显示为“等待私钥分片持有方确认”。请通知相关的私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参阅 [生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
+5. 状态将显示为“等待私钥分片持有方确认”。请通知相关的私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参阅 [生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
     - **注意：**
         - 如果使用移动端签名人，私钥分片持有方会在 Cobo Guard 上收到一条信息，他们需要在 24 小时内完成确认。
         - 如果使用 API 签名人，请确保在 24 小时内让 TSS 节点上线。TSS 节点上线后，确认流程即告完成。
 
-6.私钥分片持有方确认后，将开始生成私钥。
+6. 私钥分片持有方确认后，将开始生成私钥。
 
-7.私钥生成过程完成后，**状态**将显示为**已激活**。**注意：**私钥成功生成后，将自动为该 vault 创建一个默认钱包。
-<img src="/cn/images/mpc-wallet/main-group-active.png" className="screenshot_modal"/>
+7. 私钥生成过程完成后，**状态**将显示为**已激活**。**注意：**私钥成功生成后，将自动为该 vault 创建一个默认钱包。
+<img src="/cn/images/mpc-wallet/main-group-active.png" className="screenshot_full_screen"/>
 
 ## 签名组
 签名组是使用主控组创建的。可根据业务需要为不同成员创建多个签名组。
@@ -56,14 +56,14 @@ sidebarTitle: "创建私钥分片组"
 选择完签名人类型并设置好使用前提后，按照以下说明创建签名组。**注意：**只有拥有[团队操作员用户角色](/en/portal/organization/roles-and-permissions)的用户能够创建签名组。
 
 
-1.登录 [Cobo Portal](https://portal.cobo.com/login)。
-2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3.选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
-4.在**私钥组管理**页面，点击**签名组** > **创建签名组**。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3. 选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
+4. 在**私钥组管理**页面，点击**签名组** > **创建签名组**。
 
 <img src="/cn/images/mpc-wallet/create-signing-group.png" className="screenshot_modal"/>
 
-5.签名组创建过程与主控组创建过程相同。详细说明请参见[创建主控组](/en/portal/mpc-wallets/ocw/create-key-share-groups#on-the-create-main-group-dialog)。
+5. 签名组创建过程与主控组创建过程相同。详细说明请参见[创建主控组](/en/portal/mpc-wallets/ocw/create-key-share-groups#on-the-create-main-group-dialog)。
 
 ### 管理签名组
 #### 将签名组转换为主控组
@@ -71,32 +71,32 @@ sidebarTitle: "创建私钥分片组"
 
 要将签名组转换为主控组，请按照以下说明操作。
 
-1.登录 [Cobo Portal](https://portal.cobo.com/login)。
-2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3.选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
-4.在**私钥组管理**页面，点击**签名组**，然后选择要转换的签名组。
-5.点击**升级为主控组**。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3. 选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
+4. 在**私钥组管理**页面，点击**签名组**，然后选择要转换的签名组。
+5. 点击**升级为主控组**。
 
 <img src="/cn/images/mpc-wallet/upgrade-to-main-group.png" className="screenshot_modal"/>
 
-6.点击**是**，将签名组升级为主控组。
+6. 点击**是**，将签名组升级为主控组。
 
-7.签名组现在已变成主控组。**注意：**如果转换前只有一个签名组，则转换后签名组列表将变为空。
+7. 签名组现在已变成主控组。**注意：**如果转换前只有一个签名组，则转换后签名组列表将变为空。
 
 #### 删除签名组
 要删除签名组，请按照以下说明操作。
 
 
-1.登录 [Cobo Portal](https://portal.cobo.com/login)。
-2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3.选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
-4.在**私钥组管理**页面，点击**签名组**，然后选择要删除的签名组。
-5.点击**删除组**。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3. 选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
+4. 在**私钥组管理**页面，点击**签名组**，然后选择要删除的签名组。
+5. 点击**删除组**。
 <img src="/cn/images/mpc-wallet/delete-sign-group.png" className="screenshot_modal"/>
 
-6.点击**是**删除指定的签名组。
+6. 点击**是**删除指定的签名组。
 
-7.指定的签名组现已删除。
+7. 指定的签名组现已删除。
 
 ## 恢复组
 恢复组有两个主要用途：如果主控组和备份副本丢失或损坏，恢复组可用于恢复整个私钥并创建新的主控组。要了解有关备份和恢复的更多信息，请参阅[备份私钥分片组](/en/portal/mpc-wallets/ocw/back-up-key-share-groups)和[恢复私钥分片](/en/portal/mpc-wallets/ocw/restore-from-backup)。
@@ -110,15 +110,15 @@ sidebarTitle: "创建私钥分片组"
 要创建恢复组，请按照以下说明操作。
 
 
-1.登录 [Cobo Portal](https://portal.cobo.com/login)。
-2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3.选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
-4.在**私钥组管理**页面，点击**恢复组**，然后点击**创建恢复组**。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3. 选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
+4. 在**私钥组管理**页面，点击**恢复组**，然后点击**创建恢复组**。
     - **注意：**在创建恢复组之前，必须先创建主控组。
 
         <img src="/cn/images/mpc-wallet/create-recovery-group.png" className="screenshot_modal"/>
 
-5.选择**自行恢复**或**第三方恢复**，然后点击**下一步**。
+5. 选择**自行恢复**或**第三方恢复**，然后点击**下一步**。
     - **注意：**
         - 如果选择**自行恢复**，您将控制恢复组的两个私钥分片。
         - 如果选择**第三方恢复**，您将控制两个私钥分片中的一个，而受托第三方将控制另一个私钥分片。
@@ -127,32 +127,32 @@ sidebarTitle: "创建私钥分片组"
 
 #### 自行恢复<a id="self-recovery"></a>。
 如果选择自行恢复，您将控制恢复组的两个私钥分片。请按照以下说明设置自行恢复。
-1.在**创建恢复组**对话框中，按照以下说明选择**私钥持有方 1**和**私钥持有方 2**：
+1. 在**创建恢复组**对话框中，按照以下说明选择**私钥持有方 1**和**私钥持有方 2**：
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。
-2.状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
-3.所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
+2. 状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
+3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
 #### 第三方恢复<a id="third-party-recovery"></a>
 如果选择第三方恢复，您将控制两个私钥分片中的一个，而受托第三方将控制另一个私钥分片。请按照以下说明设置第三方恢复。
 
 **注意：**可以选择的受托第三方包括 Coincover、Nemean Services 和 MetaRisk 等。
-1.在**创建恢复组**对话框中：
+1. 在**创建恢复组**对话框中：
     - 对于**私钥持有方 1**，输入**持有方**名称，并要求受托第三方提供 **TSS 节点 ID**。
     - 对于** 私钥持有方 2**，按照以下说明输入信息：
         - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击“确认”。
         - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。
-2.状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
-3.所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
+2. 状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
+3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
 ### 删除恢复组
 要删除恢复组，请按照以下说明操作。
 
-1.登录 [Cobo Portal](https://portal.cobo.com/login)。
-2.点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3.选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
-4.在**私钥组管理**页面，点击**恢复组**，然后选择要删除的恢复组。
-5.点击**删除组**。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
+3. 选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
+4. 在**私钥组管理**页面，点击**恢复组**，然后选择要删除的恢复组。
+5. 点击**删除组**。
 <img src="/cn/images/mpc-wallet/delete-recovery-group.png" className="screenshot_modal"/>
-6.点击**是**删除指定的恢复组。
-7.指定的恢复组现已删除。
+6. 点击**是**删除指定的恢复组。
+7. 指定的恢复组现已删除。
