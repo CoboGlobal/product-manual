@@ -1,71 +1,51 @@
 ---
-title: Generate and back up your key shares
+title: "生成并备份私钥分片"
+sidebarTitle: "生成并备份私钥分片"
 ---
-To showcase how Cobo Guard can serve as a key share manager, this section guides you through the key share generation and backup processes from the perspective of a key holder operating on a Cobo Guard app.
+为了演示 Cobo Guard 如何充当私钥分片管理器，本部分将从私钥持有方操作 Cobo Guard App 的角度指导您完成私钥分片的生成和备份过程。
 
-The key share generation process is initiated on Cobo Portal by an admin. The participants selected by the admin as key share holders will receive a confirmation on their Cobo Guard to become key share holders. Once all selected participants have confirmed to become key share holders, key shares are generated on the key share holders’ Cobo Guard. After the key shares have been generated, key share holders can back up their key shares to iCloud using Cobo Guard.
+私钥分片的生成过程由管理员在 Cobo Portal 上启动。管理员选择作为私钥分片持有方的参与方，这些参与方将在其 Cobo Guard App 上收到通知，需要点击确认成为私钥分片持有方。所有选定的参与者必须先确认才能开始私钥生成过程。一旦生成了私钥分片，私钥分片持有方可以使用 Cobo Guard 将其备份到 iCloud。
 
-## Initiate the key generation process
-The key share generation process is initiated by the admins on Cobo Portal, and the keys would be categorized into one of the three groups: Main Group, Signing Group, and Recovery Group. We will use the Main Group to illustrate the process.
-{/*
-<br />
- <div class="container">
-    <p class="text">On Cobo Portal, admins would create a Main Group by clicking </p>
-    <img src="/cn/images/cobo-guard/common/wallet-icon.png" class="icon"> </img>
-    <p class="text">.</p>
-</div>
+## 发起私钥分片生成过程
 
-*/}
+私钥分片生成过程由 Cobo Portal 上的管理员发起。私钥分片将归类到以下三组之一：主控组、签名组和恢复组。我们将用主控组来说明这一过程。
 
-On Cobo Portal, admins would create a Main Group by clicking **Wallet**.
-Then, admins would click **MPC** > **[their-vault-name]** > **Create Main Group**.
+在 Cobo Portal 上, 管理员将通过点击 **MPC 钱包** > **[vault-name]** > **创建主控组**来完成主控组的创建.
 
-During the Main Group creation process, the admins would select participants to become key share holders. **Note**: Selected participants' Cobo Guard will have to already be bound to the admin’s organization for the admin to be able to select them as a key share holder on this screen.
+<img src="/en/images/cobo-guard/common/createmaingroup.png" className="screenshot_full_screen"></img>
 
-Once the Main Group creation is initiated by the admins, selected participants will be notified on Cobo Guard to confirm whether to become key share holders.
+在主控组创建过程中，管理员会选择要成为私钥分片持有方的参与方。**注**：所选参与方的 Cobo Guard 必须已绑定到管理员的团队账号，这样他们才有资格被选为私钥分片持有方。
 
-As a selected participant, you will receive a notification on Cobo Guard to confirm whether to become a key share holder. Tap the request to open the **Details** page.
+管理员发起主控组创建过程后，选定的参与方将通过其 Cobo Guard 收到通知。点击请求即可打开**详细信息**页面。
 
-On the **Details** page, tap **Approve** to confirm your willingness to become a key share holder. You will need to authenticate yourself with Face ID.
+<img src="/en/images/cobo-guard/common/become.png" className="screenshot_nav_bar"></img>
 
-When you see the **Approved** message, you’ve successfully become a key share holder. You can confirm the status of this operation by tapping **All** on Cobo Guard’s main screen.
+在**详细信息**页面上，点击**审批**确认您是否愿意成为私钥分片持有方。您需要使用 Face ID 进行身份验证。
 
-Once all selected participants have agreed to become key share holders, the key generation process will start automatically. You will receive a notification on Cobo Guard to start generating key shares.
+<img src="/en/images/cobo-guard/common/become1.png" className="screenshot_nav_bar"></img>
 
-## Generate key shares using Cobo Guard
-Tap the request to enter the Generate Private Key Shares screen, then tap **Start** to authenticate yourself through Face ID and start generating the key shares.
+看到**已审批**消息时，即表示您已成功成为私钥分片持有方。点击 Cobo Guard App 主屏幕上的**全部**可查看此操作的状态。
 
-Once all key share holders are online, the key generation process will begin. When you see the green Private Key Shares Generated message, tap **OK** to return to My Accounts and inspect the details of your newly generated key.
+## 使用 Cobo Guard 生成私钥分片
 
-## Back up your key shares
-Return to the home screen of Cobo Guard. Access My Accounts by tapping the menu icon, then tap **My Accounts**.
+点击请求进入**生成私钥分片**屏幕，然后点击**开始**，通过 Face ID 进行身份验证。注：当所有参与方均在线时，私钥生成过程将自动开启。
 
-{/*
- <div class="container">
-    <p class="text">Then, access My Accounts by tapping </p>
-    <img src="/cn/images/cobo-guard/common/menu-icon.png" class="icon"> </img>
-    <p class="text">> My Accounts.</p>
-</div>
+<img src="/en/images/cobo-guard/common/keygen.png" className="screenshot_nav_bar"></img>
 
-<br />
-*/}
+看到绿色的**私钥分片已生成**消息时，点击**确定**，返回“我的账户”，并查看新生成的私钥分片的详细信息。
 
-{/*
-<br />
+## 备份私钥分片
 
- <div class="container">
-    <p class="text">Enter the Back Up Your Private Key Shares screen by tapping </p>
-    <img src="/cn/images/cobo-guard/common/backup-icon.png" class="icon"> </img>
-    <p class="text">.</p>
-</div>
-*/}
+返回到 Cobo Guard 的主屏幕。点按**菜单** > **我的账户**，访问“我的账户”。
 
-Enter the Back Up Your Private Key Shares screen by tapping the cloud icon on the upper right.
+点击右上方的<img src="/cn/images/cobo-guard/common/icon_cloud.svg" className="icon"></img>，进入**备份私钥分片**屏幕。
 
-**Note**: If you’ve recently generated key shares, you can also tap **Back up Now** instead.
+**注**：如果您最近生成了私钥分片，也可以改为点按**立即备份**。
 
-On the Back Up Your Private Key Shares screen, tap **Start**, then authenticate yourself using Face ID.
+在**备份私钥分片**屏幕上，点击**开始**，然后使用 Face ID 进行身份验证。
 
-On the Set Recovery Passphrase screen, set a recovery passphrase that will be used to access your backups when restoring key shares from iCloud, then tap **Continue**.
+<img src="/en/images/cobo-guard/common/backup.png" className="screenshot_nav_bar"></img>
 
-On the **Backup Successful** dialog, tap OK to complete the backup process.
+在**设置恢复口令**屏幕上，设置一个恢复口令。该口令将用于授予备份访问权限，以便在从 iCloud 恢复私钥分片时使用。然后点击**继续**。
+
+在**备份成功**对话框中，点击**确定**，完成备份过程。
