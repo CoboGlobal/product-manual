@@ -24,9 +24,9 @@ sidebarTitle: "创建私钥分片组"
 |        签名人类型 | 移动端签名人 | API 签名人 |
 |------------------------|------------|-------------|
 | 主要用途       | 移动端签名人是一名团队成员，负责安全签署通过 Cobo Portal 发起的交易。其 TSS 节点 ID 由 Cobo Guard App 生成，并将自动填入。| API 签名人是一个服务器节点，用于自动签署通过 API 发起的交易。其 TSS 节点 ID 使用提供的 TSS 节点软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见“TSS 节点技术设置”。|
-| 前提步骤 | 您选择的私钥分片持有方需要完成以下操作：<ol><li>[下载 Cobo Guard](/en/guard/download)。</li><li>[将 Cobo Guard 设置为 Cobo Accounts 的多重身份验证 (MFA) 方法](/en/accounts/set-up-mfa#set-up-cobo-guard)。</li><li>被[添加为您的团队成员](/en/portal/organization/manage-members)。</li></ol>| 您选择的私钥分片持有方需要向您提供他们生成的 TSS 节点 ID。（后续我们将在开发者中心提供 TSS 节点技术设置指南。）|
+| 前提步骤 | 您选择的私钥分片持有方需要完成以下操作：<ol><li>[下载 Cobo Guard](/cn/guard/download)。</li><li>[将 Cobo Guard 设置为 Cobo Accounts 的多重身份验证 (MFA) 方法](/cn/accounts/set-up-mfa#set-up-cobo-guard)。</li><li>被[添加为您的团队成员](/cn/portal/organization/manage-members)。</li></ol>| 您选择的私钥分片持有方需要向您提供他们生成的 TSS 节点 ID。访问了解如何配置 TSS 节点。）|
 
-选择完签名人类型并设置好使用前提后，请按照以下说明创建主控组。**注意：**只有拥有[团队操作员用户角色](/en/portal/organization/roles-and-permissions)的用户能够创建主控组。
+选择完签名人类型并设置好使用前提后，请按照以下说明创建主控组。**注意：**只有拥有[团队操作员用户角色](/cn/portal/organization/roles-and-permissions)的用户能够创建主控组。
 
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
@@ -36,7 +36,7 @@ sidebarTitle: "创建私钥分片组"
 4. 在**创建主控组**对话框中，前往**私钥分片持有方 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。（后续我们将在开发者中心提供 TSS 节点技术设置指南）。
-5. 状态将显示为“等待私钥分片持有方确认”。请通知相关的私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参阅 [生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
+5. 状态将显示为“等待私钥分片持有方确认”。请通知相关的私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参阅 [生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
     - **注意：**
         - 如果使用移动端签名人，私钥分片持有方会在 Cobo Guard 上收到一条信息，他们需要在 24 小时内完成确认。
         - 如果使用 API 签名人，请确保在 24 小时内让 TSS 节点上线。TSS 节点上线后，确认流程即告完成。
@@ -53,7 +53,7 @@ sidebarTitle: "创建私钥分片组"
 与创建主控组类似，在创建签名组时，可以选择使用移动端签名人或 API 签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
 
 
-选择完签名人类型并设置好使用前提后，按照以下说明创建签名组。**注意：**只有拥有[团队操作员用户角色](/en/portal/organization/roles-and-permissions)的用户能够创建签名组。
+选择完签名人类型并设置好使用前提后，按照以下说明创建签名组。**注意：**只有拥有[团队操作员用户角色](/cn/portal/organization/roles-and-permissions)的用户能够创建签名组。
 
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
@@ -61,9 +61,9 @@ sidebarTitle: "创建私钥分片组"
 3. 选择 vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
 4. 在**私钥组管理**页面，点击**签名组** > **创建签名组**。
 
-<img src="/cn/images/mpc-wallet/create-signing-group.png" className="screenshot_modal"/>
+<img src="/cn/images/mpc-wallet/create-signing-group.png" className="screenshot_full_screen"/>
 
-5. 签名组创建过程与主控组创建过程相同。详细说明请参见[创建主控组](/en/portal/mpc-wallets/ocw/create-key-share-groups#on-the-create-main-group-dialog)。
+5. 签名组创建过程与主控组创建过程相同。详细说明请参见[创建主控组](/cn/portal/mpc-wallets/ocw/create-key-share-groups#on-the-create-main-group-dialog)。
 
 ### 管理签名组
 #### 将签名组转换为主控组
@@ -99,12 +99,12 @@ sidebarTitle: "创建私钥分片组"
 7. 指定的签名组现已删除。
 
 ## 恢复组
-恢复组有两个主要用途：如果主控组和备份副本丢失或损坏，恢复组可用于恢复整个私钥并创建新的主控组。要了解有关备份和恢复的更多信息，请参阅[备份私钥分片组](/en/portal/mpc-wallets/ocw/back-up-key-share-groups)和[恢复私钥分片](/en/portal/mpc-wallets/ocw/restore-from-backup)。
+恢复组有两个主要用途：如果主控组和备份副本丢失或损坏，恢复组可用于恢复整个私钥并创建新的主控组。要了解有关备份和恢复的更多信息，请参阅[备份私钥分片组](/cn/portal/mpc-wallets/ocw/back-up-key-share-groups)和[恢复私钥分片](/cn/portal/mpc-wallets/ocw/restore-from-backup)。
 
 与创建主控组和签名组类似，在创建恢复组时，也可以选择移动端签名人或 API 签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
 
 
-选择完签名人类型并设置好使用前提后，按照以下说明创建恢复组。**注意：**只有拥有[团队操作员用户角色](/en/portal/organization/roles-and-permissions)的用户能够创建恢复组。
+选择完签名人类型并设置好使用前提后，按照以下说明创建恢复组。**注意：**只有拥有[团队操作员用户角色](/cn/portal/organization/roles-and-permissions)的用户能够创建恢复组。
 
 #### 创建恢复组
 要创建恢复组，请按照以下说明操作。
@@ -130,7 +130,7 @@ sidebarTitle: "创建私钥分片组"
 1. 在**创建恢复组**对话框中，按照以下说明选择**私钥持有方 1**和**私钥持有方 2**：
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。
-2. 状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
+2. 状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
 3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
 #### 第三方恢复<a id="third-party-recovery"></a>
@@ -142,7 +142,7 @@ sidebarTitle: "创建私钥分片组"
     - 对于** 私钥持有方 2**，按照以下说明输入信息：
         - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击“确认”。
         - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。
-2. 状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/en/guard/generate-and-back-up-key-shares)。
+2. 状态将显示为“等待私钥持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
 3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
 ### 删除恢复组
