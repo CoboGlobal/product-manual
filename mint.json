@@ -1008,11 +1008,11 @@
           "pages": [
             "cn/guard/download",
             {
-              "group": "Manage the Cobo Guard app",
+              "group": "管理 Cobo Guard App",
               "pages": [
                 "cn/guard/manage",
                 {
-                  "group": "Generate, back up, and restore your key shares",
+                  "group": "生成、备份和恢复您的密钥分片",
                   "pages": [
                     "cn/guard/generate-and-back-up-key-shares",
                     "cn/guard/restore-key-shares-from-icloud"
