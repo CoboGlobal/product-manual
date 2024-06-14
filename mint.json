@@ -730,7 +730,7 @@
               ]
             },
             {
-              "group": "Exchange Wallets",
+              "group": "交易所账户",
               "pages": [
                 "cn/portal/exchange-wallets/introduction",
                 "cn/portal/exchange-wallets/key-features",
@@ -739,7 +739,7 @@
                   "group": "使用说明",
                   "pages": [
                     {
-                      "group": "Set up Exchange Wallets",
+                      "group": "设置交易所账户",
                       "pages": [
                         "cn/portal/exchange-wallets/set-up",
                         "cn/portal/exchange-wallets/generate-binance-api-key",
@@ -752,7 +752,7 @@
                       ]
                     },
                     {
-                      "group": "Manage Exchange Wallets",
+                      "group": "管理交易所账户",
                       "pages": [
                         "cn/portal/exchange-wallets/manage",
                         "cn/portal/exchange-wallets/roles-and-policies",
@@ -824,7 +824,7 @@
       "group": "账户管理",
       "pages": [
         {
-          "group": "Dashboard",
+          "group": "数据概览",
           "pages": [
             "cn/portal/dashboard/introduction",
             {
@@ -841,14 +841,14 @@
           ]
         },
         {
-          "group": "Organization",
+          "group": "团队管理",
           "pages": [
             "cn/portal/organization/introduction",
             {
               "group": "使用说明",
               "pages": [
                 {
-                  "group": "Settings",
+                  "group": "设置",
                   "pages": [
                     "cn/portal/organization/manage-general-settings",
                     "cn/portal/organization/manage-members",
@@ -857,10 +857,10 @@
                   ]
                 },
                 {
-                  "group": "Security",
+                  "group": "安全",
                   "pages": [
                     {
-                      "group": "User roles and permissions",
+                      "group": "用户角色与权限",
                       "pages": [
                         "cn/portal/organization/roles-and-permissions",
                         "cn/portal/organization/assign-roles-to-members",
@@ -868,7 +868,7 @@
                       ]
                     },
                     {
-                      "group": "Governance policies",
+                      "group": "业务风控",
                       "pages": [
                         "cn/portal/organization/governance-intro",
                         "cn/portal/organization/governance-edit",
@@ -883,7 +883,7 @@
           ]
         },
         {
-          "group": "Address Book",
+          "group": "地址簿",
           "pages": [
             "cn/portal/address-book/introduction",
             "cn/portal/address-book/key-features",
@@ -897,7 +897,7 @@
           ]
         },
         {
-          "group": "Bills & Payments",
+          "group": "账单与支付",
           "pages": [
             "cn/portal/bills-and-payments/introduction",
             "cn/portal/bills-and-payments/purchase-pricing-plan",

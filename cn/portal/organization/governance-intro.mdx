@@ -1,28 +1,12 @@
 ---
-title: "Introduction to governance policies"
-sidebarTitle: "Overview"
+title: "业务风控介绍"
+sidebarTitle: "介绍"
 ---
 
+业务风控确定了批准或拒绝某项操作所依据的审批规则。审批规则包括自动拒绝、自动通过、审批门槛和定制工作流。业务风控分为五种类型：成员、团队、钱包、开发者和用户角色。
 
-Governance policies decide under what approval rule an operation will be approved or rejected. Approval rules include auto rejection, auto approval, subject to approval quorum, and subject to customized workflow. Governance policies can be categorized into 5 categories: Members, Organizations, Wallets, Developers, and User Roles.
+下表列出了每个类别中所有可用的业务风控：
 
-Below is a table of all available governance policies within each category:
+<img src="/cn/images/organization/org9.svg" className="diagram"/>
 
-| Categories   | Operations             | Descriptions                                       | Default Approval Quorums        |
-|--------------|------------------------|----------------------------------------------------|---------------------------------|
-| Members      | 1. Invite Members      | Invite new members to your organization.           | At least 50% of Admins          |
-|              | 2. Delete Members      | Remove members from your organization.             | At least 50% of Admins          |
-|              | 3. Freeze Members      | Freeze members' accounts and reject their login attempts to the organizations. | Any 1 Admin                   |
-|              | 4. Unfreeze Members    | Unfreeze members' accounts and accept their login attempts to the organizations. | At least 50% of Admins        |
-|              | 5. Change Members' User Roles | Add or remove members' user roles.            | At least 50% of Admins          |
-| Organization | 1. Edit Governance Policies | Edit governance policies for organizations.    | At least 50% of Admins          |
-|              | 2. Freeze Organizations | Freeze organizations and reject critical operations such as creating wallets, initiating withdrawals, setting policies, and managing members. | Any 1 Admin                  |
-|              | 3. Unfreeze Organizations | Unfreeze organizations and allow critical operations such as creating wallets, initiating withdrawals, setting policies, and managing members. | At least 50% of Admins        |
-| Wallets      | 1. Manage Transaction Policies | Create, delete, or modify transaction policies to safeguard critical transactions. | At least 50% of Admins        |
-|              | 2. Manage Addresses in Address List | Add or delete addresses in Address List. Examples of Address List include customized lists such as "whitelist" that you can select from when creating transaction policies. | At least 50% of Admins       |
-| Developers   | 1. Manage API Keys     | Add or delete API keys or modify the IP whitelists for the API keys. | At least 50% of Admins         |
-|              | 2. Manage API Callback | Add or delete API callbacks.                        | At least 50% of Admins          |
-|              | 3. Manage Webhooks     | Add or delete webhooks.                             | At least 50% of Admins          |
-| User Roles   | 1. Edit Custom User Roles | Modify custom user roles' names, descriptions, and permissions. | At least 50% of Admins          |
-
-You can get a clear overview of the governance policies by clicking **Organization** > **Security** > **Governance Policies**. Then, click either the Members, User Roles, Organization, Wallets, or Developers tab to view the associated governance policies and their status.
+您可以点击**团队** > **业务风控**来获得业务风控的清晰概览。然后，切换到“成员”、“用户角色”、“团队”、“钱包”或“开发者”标签页，查看关联的业务风控及其状态。
