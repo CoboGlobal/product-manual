@@ -9,20 +9,20 @@ sidebarTitle: "恢复根扩展私钥"
 
 #### 针对移动端签名人
 
-1.访问 [iCloud.com](https://www.icloud.com/) 并使用 Apple ID 和密码登录。
-2.打开 iCloud Drive。
-3.找到并选择要导出的备份数据文件。
-4.单击页面顶部的**下载**图标或双击备份的数据文件。
-5.文件将下载到您的默认下载位置。
+1. 访问 [iCloud.com](https://www.icloud.com/) 并使用 Apple ID 和密码登录。
+2. 打开 iCloud Drive。
+3. 找到并选择要导出的备份数据文件。
+4. 单击页面顶部的**下载**图标或双击备份的数据文件。
+5. 文件将下载到您的默认下载位置。
 
 #### 针对 API 签名人
 
-1.完成必要的前期准备工作。
+1. 完成必要的前期准备工作。
 
 - 确保可以访问 secrets.db 数据库文件以及与所选恢复组相关联的两个私钥分片的相应密码。
 - 共同生成每组私钥分片后，记录下根扩展公钥。根扩展公钥一旦生成，将保持不变。
 
-2.准备恢复环境。
+2. 准备恢复环境。
 
 托管 TSS Node 的服务器必须处于离线状态或安全环境中。请确保您的 TSS Node 包和数据库文件随时可用。TSS Node 包的目录结构如下。
 ```
@@ -34,7 +34,7 @@ cobo-tss-node-generic
 ├── recovery (default folder where the exported private key shares will be stored)
 └── tss-node.sh
 ```
-3.验证私钥分片信息。
+3. 验证私钥分片信息。
 
 进入 `cobo-tss-node-generic` 目录，获取组信息。
 ```
@@ -42,26 +42,26 @@ sudo ./tss-node.sh info group
 ```
 确保输出中的根扩展公钥与前期准备时保存的公钥一致。如果 TSS Node 管理多个私钥分片，请找到具有正确根扩展公钥的组，并记下组 ID。
 
-4.（仅限第三方恢复）与受托第三方分享与您打算导出的特定私钥分片链接的根扩展公钥。受托第三方将利用此信息验证其私钥分片信息。
+4. （仅限第三方恢复）与受托第三方分享与您打算导出的特定私钥分片链接的根扩展公钥。受托第三方将利用此信息验证其私钥分片信息。
 
-5.在离线或安全的网络环境中，在 TSS Node 的根目录下运行以下命令，导出私钥分片。
+5. 在离线或安全的网络环境中，在 TSS Node 的根目录下运行以下命令，导出私钥分片。
 ```
 ./tss-node.sh export-share --group-id <GROUP_ID>
 ```
-6.输入在初始化 TSS Node 时设置的密码。
+6. 输入在初始化 TSS Node 时设置的密码。
 
-7.输入新密码，对每个导出文件中的私钥分片进行加密。注意，密码设置后将无法修改。如果密码丢失，将无法访问导出的私钥分片文件，且必须重新导出。建议使用密码管理程序（如 1Password）设置 16-32 个字符的复杂密码，并将密码存储在安全设备上。
+7. 输入新密码，对每个导出文件中的私钥分片进行加密。注意，密码设置后将无法修改。如果密码丢失，将无法访问导出的私钥分片文件，且必须重新导出。建议使用密码管理程序（如 1Password）设置 16-32 个字符的复杂密码，并将密码存储在安全设备上。
 
-8.私钥分片将自动导出为 JSON 文件。
+8. 私钥分片将自动导出为 JSON 文件。
 
-9.请验证导出文件中根扩展公钥和组 ID 是否准确无误。
+9. 请验证导出文件中根扩展公钥和组 ID 是否准确无误。
 
 ## 步骤 2：重新构建所有私钥分片并获取所有钱包地址的私钥
 
 请按照以下说明重新构建所有私钥分片，并获取与 vault 相关联的所有钱包地址的私钥。本说明适用于移动端签名人和 API 签名人。
 
 
-1.完成必要的前期准备工作。
+1. 完成必要的前期准备工作。
 
 - 从 [open-source repository](https://github.com/CoboGlobal/cobo-mpc-recovery-kits) 获取恢复工具包。编译 cobo-mpc-recovery-tool 之前，请先阅读 `README.md` 文件中提供的说明。或者，您也可以[点击此处](https://github.com/CoboGlobal/cobo-mpc-recovery-kits/releases)下载最新版本的 cobo-mpc-recovery-tool。
 - 使用以下任一方法保存与每个 vault 相关联的钱包地址：
@@ -69,22 +69,22 @@ sudo ./tss-node.sh info group
     - 定期通过 list_addresses 操作检索 `AddressDetail。返回的结果中每个地址对应的 HD 路径。
     - 点击 Cobo Portal 上的导出图标，手动导出与 vault 相关的所有地址信息。
 
-2.（仅限第三方恢复）获取受托第三方导出的私钥分片。受托第三方导出的私钥分片文件也是 JSON 格式。请验证您和受托第三方导出的文件中的根扩展公钥是否相同。
+2. （仅限第三方恢复）获取受托第三方导出的私钥分片。受托第三方导出的私钥分片文件也是 JSON 格式。请验证您和受托第三方导出的文件中的根扩展公钥是否相同。
 
-3.在与 `cobo-mpc-recovery-tool` 相同的目录级别创建一个新的恢复文件夹。将导出的两个私钥分片文件粘贴到恢复文件夹中。
+3. 在与 `cobo-mpc-recovery-tool` 相同的目录级别创建一个新的恢复文件夹。将导出的两个私钥分片文件粘贴到恢复文件夹中。
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
 ├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
 └── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
 ```
-4.使用实际的组 ID 和私钥分片文件执行以下命令。
+4. 使用实际的组 ID 和私钥分片文件执行以下命令。
 ```
 ./cobo-mpc-recovery-tool verify \
 --group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
 --group-id <GROUP_ID>
 ```
-5.等待 MPC 恢复工具自动完成验证过程。
+5. 等待 MPC 恢复工具自动完成验证过程。
 - cobo-mpc-recovery-tool 将验证与第一个私钥分片文件相关联的私钥/值。
 - cobo-mpc-recovery-tool 将使用第一个私钥分片文件中的“participants”信息生成并验证根扩展公钥。
 - 需要手动输入与第一个私钥分片文件相关的密码解密。然后，cobo-mpc-recovery-tool 会生成并验证相应的公钥。
@@ -93,7 +93,7 @@ sudo ./tss-node.sh info group
 - cobo-mpc-recovery-tool 将使用第二个私钥分片文件中的“participants”信息生成并验证根扩展公钥。
 - 需要手动输入与第二个私钥分片文件相关的密码进行解密。然后，cobo-mpc-recovery-tool 会生成并验证相应的公钥。
 
-6.将进行前期准备工作时导出的 `address.csv` 文件移动到恢复文件夹下。
+6. 将进行前期准备工作时导出的 `address.csv` 文件移动到恢复文件夹下。
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
@@ -101,8 +101,8 @@ sudo ./tss-node.sh info group
 ├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
 └── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
 ```
-
-7.使用实际的组 ID 和私钥分片文件执行以下命令。
+ 
+7. 使用实际的组 ID 和私钥分片文件执行以下命令。
 
 - 输入密码解密出两个私钥分片文件。
 - 将重新构建根扩展私钥和根扩展公钥。
