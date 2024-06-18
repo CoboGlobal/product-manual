@@ -678,7 +678,7 @@
               ]
             },
             {
-              "group": "Smart Contract Wallets",
+              "group": "智能合约钱包",
               "pages": [
                 "cn/portal/smart-contract-wallets/introduction",
                 "cn/portal/smart-contract-wallets/key-features",
@@ -686,7 +686,7 @@
                   "group": "使用说明",
                   "pages": [
                     {
-                      "group": "Set up Smart Contract Wallets",
+                      "group": "设置智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
                         "cn/portal/smart-contract-wallets/import",
@@ -695,11 +695,11 @@
                       ]
                     },
                     {
-                      "group": "Manage Smart Contract Wallet",
+                      "group": "管理智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/manage",
                         {
-                          "group": "Manage delegate addresses and transfer whitelists",
+                          "group": "管理 Delegate 地址和转账白名单",
                           "pages": [
                             "cn/portal/smart-contract-wallets/delegate-intro",
                             "cn/portal/smart-contract-wallets/delegate-to-scw",
@@ -710,14 +710,14 @@
                           ]
                         },
                         {
-                          "group": "Deposit and withdraw assets",
+                          "group": "充值和提取资产",
                           "pages": [
                             "cn/portal/smart-contract-wallets/deposit-assets",
                             "cn/portal/smart-contract-wallets/withdraw-assets"
                           ]
                         },
                         {
-                          "group": "Security settings",
+                          "group": "安全设置",
                           "pages": [
                             "cn/portal/smart-contract-wallets/on-chain-policies",
                             "cn/portal/smart-contract-wallets/roles-and-policies"
