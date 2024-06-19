@@ -26,9 +26,9 @@ cobo-tss-node-generic
 
 │ ├── cobo-tss-node-config.yaml
 
-│ └── cobo-tss-node-config.yaml.template (default configuration file template)
+│ └── cobo-tss-node-config.yaml.template (默认配置文件模板)
 
-└── tss-node.sh (startup script)
+└── tss-node.sh (启动脚本)
 ```
 
 4. 按照以下步骤编辑 cobo-tss-node-config.yaml 文件： 
@@ -61,6 +61,7 @@ env: production # development; production
 | callback/retry_times               | cb-retry-times       | Callback 服务器请求的重试次数：默认值为 2。|
 | callback/sleep_seconds             | cb-sleep-seconds     | Callback 服务器失败的情况下，每次重试之间的时间间隔。  默认值：15 单位：秒 |
 | callback/request_timeout           | cb-request-timeout   | HTTP 请求的超时时间段 默认值：10 单位：秒 |
+| callback/monitor_interval          | cb-monitor-interval  | 回调监控间隔时间，默认为空，表示关闭，举例：10s |
 | websocket/url                      | ws-url               | 无需配置。WebSocket 服务器将根据环境进行连接。如果配置了 URL，则默认连接该 URL。|
 | log/std/enable                     | log-std-enable       | 是否输出日志。                                   |
 | log/file/enable                    | log-file-enable      | 是否保存日志。                                     |
@@ -128,8 +129,8 @@ sudo ./tss-node.sh info group [group_id]
 | ChainCode                | 0x098a……9dd9                            | ChainCode 对应根扩展公钥，为十六进制格式。|
 | Share ID                 | 121637……483926                          | MPC 私钥分片的分片 ID，为十进制格式。             |
 | Share Public Key         | 0x0231adf……d2773                        | 公钥与私钥分片相对应：默认值：压缩公钥，为十六进制格式。|
-| Type                     | 1                                       | 默认值为 1。                                          |
-| Curve                    | secp256k1                               | 使用的签名算法。                      |
+| Type                     | 1                                       | 类型，1 表示 ECDSA，2 表示 EdDSA。                 |
+| Curve                    | secp256k1                               | 支持的签名曲线。                  |
 | Threshold                | 2                                       | 每笔交易签名所需的最小私钥分片数量。|
 | Local Node ID            | coboA1B2C3D4                            | 本地存储的 TSS 节点的节点 ID。                      |
 | Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | 对方管理的 TSS 节点的节点 ID。          |
