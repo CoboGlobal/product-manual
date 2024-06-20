@@ -28,10 +28,10 @@ The server hosting your TSS Node must be offline or in a secure environment. Ple
 ```
 cobo-tss-node-generic
 ├── configs
-│ └── cobo-tss-node-config.yaml.template
+│   └── cobo-tss-node-config.yaml.template
 ├── db
-│ └── secrets.db
-├── recovery (default folder where the exported private key shares will be stored)
+│   └── secrets.db
+├── recovery  (default folder where the exported MPC key shares will be stored)
 └── tss-node.sh
 ```
 3. Verify private key shares information.
@@ -46,7 +46,7 @@ Ensure that the root extended public keys in the output match those saved during
 
 5. In an offline or secure network environment, run the following command in the root directory of your TSS Node to export the private key shares.
 ```
-./tss-node.sh export-share --group-id <GROUP_ID>
+./tss-node.sh export-share --group-ids <groupID>
 ```
 6. Enter the password you set to during the initialization of your TSS Node.
 
@@ -59,7 +59,6 @@ Ensure that the root extended public keys in the output match those saved during
 ## Step 2: Reconstruct all private key shares and derive the private keys for all wallet addresses
 
 Follow the instructions below to reconstruct all private key shares and derive the private keys for all wallet addresses associated with the vault. The instructions are applicable for both Mobile Co-signer and API Co-signer.
-
 
 1. Complete necessary pre-preparations.
 
@@ -75,14 +74,14 @@ Follow the instructions below to reconstruct all private key shares and derive t
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
-├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
-└── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
+    ├── recovery-secrets-<nodeID1>-<time1>
+    └── recovery-secrets-<nodeID2>-<time2>
 ```
 4. Execute the following commands using the actual group IDs and private key share files.
 ```
 ./cobo-mpc-recovery-tool verify \
---group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
---group-id <GROUP_ID>
+    --recovery-group-files recovery/recovery-secrets-<nodeID1>-<time1>,recovery/recovery-secrets-<nodeID2>-<time2> \
+    --group-id <groupID>
 ```
 5. Wait for the MPC recovery tool to automatically complete the verification process.
 - The cobo-mpc-recovery-tool will verify the keys/values associated with the first private key share file.
@@ -97,9 +96,9 @@ Follow the instructions below to reconstruct all private key shares and derive t
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
-├── address.csv
-├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
-└── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
+    ├── address.csv
+    ├── recovery-secrets-<nodeID1>-<time1>
+    └── recovery-secrets-<nodeID2>-<time2>
 ```
 
 7. Execute the following commands using the actual group ID and private key share files.
@@ -112,10 +111,8 @@ Follow the instructions below to reconstruct all private key shares and derive t
 
 ```
 ./cobo-mpc-recovery-tool \
---group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
---group-id <GROUP_ID> \
---csv-file recovery/address.csv \
---show-root-private-key
+    --recovery-group-files recovery/recovery-secrets-<nodeID1>-<time1>,recovery/recovery-secrets-<nodeID2>-<time2> \
+    --group-id <groupID> \
+    --csv-file recovery/address.csv \
+    --show-root-private-key
 ```
-
-

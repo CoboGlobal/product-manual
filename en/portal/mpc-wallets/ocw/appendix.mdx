@@ -57,10 +57,11 @@ Please be aware that configuration for the TSS Node is not mandatory. All items 
 | db/path                            | db                   | Database file that should *not* be modified.                 |
 | callback/cb_server/service_address | cb-address           | A list of callback server addresses.                         |
 | callback/cb_server/pubkey_path     | cb-pubkey            | A list of callback server RSA public keys corresponding to the callback server addresses. |
-| callback/token_expire_minutes      | cb-token-expire      | Timeout period for callback server's JWT: Default value: 2Unit: minutes |
-| callback/retry_times               | cb-retry-times       | Number of retries for callback server requests: Default value is 2. |
-| callback/sleep_seconds             | cb-sleep-seconds     | Time interval between each retry if the callback server fails.  Default value:15 Unit: seconds |
-| callback/request_timeout           | cb-request-timeout   | Timeout period for HTTP request Default value: 10Unit: seconds |
+| callback/token_expire_minutes      | cb-token-expire      | Timeout period for callback server's JWT. Default value is 2. Unit is minutes. |
+| callback/retry_times               | cb-retry-times       | Number of retries for callback server requests. Default value is 2. |
+| callback/sleep_seconds             | cb-sleep-seconds     | Time interval between each retry if the callback server fails. Default value is 15. Unit is seconds. |
+| callback/request_timeout           | cb-request-timeout   | Timeout period for HTTP request. Default value is 10. Unit is seconds. |
+| callback/monitor_interval          | cb-monitor-interval  | Callback monitoring interval time (e.g. 10s). Default value is empty, indicating it is not enabled. |
 | websocket/url                      | ws-url               | No configuration is required. The WebSocket server will be connected based on the environment. If a URL is configured, it will be connected by default. |
 | log/std/enable                     | log-std-enable       | Whether to output the log.                                   |
 | log/file/enable                    | log-file-enable      | Whether to save the log.                                     |
@@ -128,8 +129,8 @@ You can use the info group command to query the following group information:
 | ChainCode                | 0x098a……9dd9                            | ChainCode corresponds to the root extended public key, in hexadecimal format. |
 | Share ID                 | 121637……483926                          | Share ID of an MPC key share, in decimal format.             |
 | Share Public Key         | 0x0231adf……d2773                        | Public key corresponds to the private key share: Default value: compressed public key, in hexadecimal format. |
-| Type                     | 1                                       | Default value is 1.                                          |
-| Curve                    | secp256k1                               | Signature algorithm that has been used.                      |
+| Type                     | 1                                       | Type: 1 represents ECDSA, and 2 represents EdDSA.               |
+| Curve                    | secp256k1                               | Supported signature algorithm.                                 |
 | Threshold                | 2                                       | Minimum number of private key shares required for each transaction signing. |
 | Local Node ID            | coboA1B2C3D4                            | Node ID of the locally stored TSS Node.                      |
 | Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | Node ID of the TSS Node managed by the other party.          |

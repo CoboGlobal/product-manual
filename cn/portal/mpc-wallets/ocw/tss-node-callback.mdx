@@ -61,7 +61,7 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | 参数      | 类型   | 描述                                                  |
 | -------------- | ------ | ------------------------------------------------------------ |
 | request_id     | string | callback 请求的唯一 ID。                           |
-| request_type   | int    | callback 请求的类型枚举如下： <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
+| request_type   | int    | callback 请求的类型枚举如下： <br></br>TypePing: 0 <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
 | request_detail | string | callback 请求的详细信息。每种类型的 callback 请求都包含一个独特的 request_detail 结构。该信息的格式是序列化的 JSON 字符串。|
 | extra_info     | string | 与 callback 请求相关的附加信息。每种类型的 callback 请求都包含一个独特的 extra_info 结构。该信息的格式是序列化的 JSON 字符串。|
 
@@ -72,6 +72,7 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | threshold     | int      | 签名阈值。                                         |
 | node_ids      | []string | 与 MPC 钱包下所有私钥分片生成相关联的节点 ID。|
 | curve         | int      | 使用的签名算法： <br></br>0: SECP256K1<br></br>2: ED25519 |
+| task_id         | string      | Task ID |
 
 **extra_info** 的结构如下：
 
@@ -89,6 +90,9 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | used_node_ids   | []string | 交易签署时使用的 TSS Node ID。|
 | bip32_path_list | []string | 地址路径（BIP32）。                        |
 | msg_hash_list   | []string | 待签名的哈希值。                          |
+| tweak_list   | []string | 待签名的 tweak 列表。                          |
+| task_id   | string | 任务 ID。                         |
+
 
 **extra_info** 的结构如下：
 
@@ -111,7 +115,7 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | replace_cobo_id    | string                   | （可选）被指定为“费用替换（RBF）”的 Cobo 交易的 ID。|
 | api_key            | string                   | （可选）通过 API 初始化的提币请求的 API_KEY。|
 | spender            | string                   | （可选）提币人的电子邮件信息。适用于通过 Cobo Portal 发起的提币。|
-| raw_tx             | list[RawTx]              | 原始交易数据。                                        |
+| raw_tx_hex         | string                   | 交易哈希。                                        |
 | note               | string                   | 交易备注。                                         |
 | raw_tx_info        | json                     | 构建待签署的交易所需的原始信息。|
 
@@ -154,13 +158,6 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | 100       | TRANSFER      | 转账。             |
 | 200       | CONTRACT_CALL | 智能合约调用。|
 
-**RawTx**的结构如下：
-
-| **参数**   | **类型** | **描述**                                              |
-| --------------- | -------- | ------------------------------------------------------------ |
-| raw_tx          | string   | 十六进制编码的交易信息。                         |
-| derivation_path | string   | 待签名的派生路径。例如，"m/44/60/3/0/1"。|
-
 当**request_type**等于**TypeKeyReshare**时，**request_detail**的结构如下：
 
 | **参数** | **类型** | **描述**                                              |
@@ -172,6 +169,7 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | old_threshold | int      | 以前的签名阈值。                                |
 | new_threshold | int      | 新签名阈值。                                     |
 | new_node_ids  | []string | 与 MPC 钱包下所有私钥分片生成相关的新 TSS Node ID。|
+| task_id  | string | 任务 ID。|
 
 **extra_info**的结构如下：
 
