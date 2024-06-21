@@ -34,11 +34,11 @@ callback 服务器将按以下方式发送 HTTP 请求：
 - 生成 CallbackRequest。
 - 序列化 CallbackRequest，生成 CallbackRequestJsonString。
 - 使用 CallbackRequestJsonString 作为 JWT 有效负载，并使用其 RSA 私钥对其进行签名，以创建 JWT。
-- 通过 HTML 表单提交 HTTP POST 请求，将 TSS_JWT_MSG 作为密钥，将 JWT 作为值。
+- 通过 HTML 表单提交 HTTP POST 请求，将 TSS_JWT_MSG 作为私钥，将 JWT 作为值。
 
 Callback 服务器将按以下方式处理 HTTP 请求：
 
-- 使用 TSS_JWT_MSG 作为密钥，JWT 作为值，读取 HTTP POST 请求中的数据。
+- 使用 TSS_JWT_MSG 作为私钥，JWT 作为值，读取 HTTP POST 请求中的数据。
 - 使用 TSS Node 的 RSA 公钥验证已签名的 JWT。
 - 读取 JWT 中的有效负载，并使用 CallbackRequest 对其进行反序列化。
 - 反序列化元字段，以获取请求中的信息。
@@ -78,7 +78,7 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 
 | **参数**  | **类型** | **描述**                                              |
 | -------------- | -------- | ------------------------------------------------------------ |
-| cobo_id        | string   | 密钥生成（KeyGen）请求的唯一 ID。            |
+| cobo_id        | string   | 私钥生成（KeyGen）请求的唯一 ID。            |
 | api_request_id | string   | 客户端使用 API 传递的请求 ID，如果请求不是通过 API 发送，Cobo 将自动生成一个请求 ID。|
 
 当**request_type**等于**TypeKeySign**时，request_detail 的结构如下：

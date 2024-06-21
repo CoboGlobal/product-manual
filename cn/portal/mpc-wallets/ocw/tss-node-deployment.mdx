@@ -212,7 +212,7 @@ INFO[2023-01-13T05:12:11Z] Complete initialization of TSS Node keys and data
 - 设置密码，对 TSS Node 初始化过程中生成的数据进行加密。如果密码丢失或需要修改密码，请参阅[恢复根扩展私钥](/cn/portal/mpc-wallets/ocw/recover-root-key)。建议使用密码管理程序（如 1Password）设置 16-32 个字符的复杂密码，并将密码存储在安全可信的设备上。
 - 将自动生成数据库文件，默认路径为 db/secrets.db。
 - 将自动生成节点 ID （如 cobo73VA6C6WvofPg8tWYmqvdUF1cPYhd7EmGUxTexz5HCzYe），这是 TSS Node 的唯一标识符。 
-- 将自动生成并打印 callbeck 密钥。有关更多信息，请参阅 [TSS Node callback](/cn/portal/mpc-wallets/ocw/tss-node-callback)。
+- 将自动生成并打印 callbeck 私钥。有关更多信息，请参阅 [TSS Node callback](/cn/portal/mpc-wallets/ocw/tss-node-callback)。
 
 ## TSS Node 启动
 
@@ -280,7 +280,7 @@ sudo ./tss-node.sh init
 6. 选择**API 签名人。
 7. 输入此 API 签名人的名称。
 8. 输入此 API 签名者的 TSS Node ID，然后单击**确认**。
-9. 确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。此密钥可用于使用 BIP 32 生成此 MPC 机构钱包下的所有钱包地址。
+9. 确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。此私钥可用于使用 BIP 32 生成此 MPC 机构钱包下的所有钱包地址。
 
 ### **私钥分片管理** 
 
