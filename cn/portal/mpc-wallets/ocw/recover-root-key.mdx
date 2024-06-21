@@ -28,10 +28,10 @@ sidebarTitle: "恢复根扩展私钥"
 ```
 cobo-tss-node-generic
 ├── configs
-│ └── cobo-tss-node-config.yaml.template
+│   └── cobo-tss-node-config.yaml.template
 ├── db
-│ └── secrets.db
-├── recovery (default folder where the exported private key shares will be stored)
+│   └── secrets.db
+├── recovery  （导出私钥分片所在的文件夹，无需手动新建）
 └── tss-node.sh
 ```
 3. 验证私钥分片信息。
@@ -46,7 +46,7 @@ sudo ./tss-node.sh info group
 
 5. 在离线或安全的网络环境中，在 TSS Node 的根目录下运行以下命令，导出私钥分片。
 ```
-./tss-node.sh export-share --group-id <GROUP_ID>
+./tss-node.sh export-share --group-ids <groupID>
 ```
 6. 输入在初始化 TSS Node 时设置的密码。
 
@@ -59,7 +59,6 @@ sudo ./tss-node.sh info group
 ## 步骤 2：重新构建所有私钥分片并派生所有钱包地址的私钥
 
 请按照以下说明重新构建所有私钥分片，并派生出与 Vault 相关联的所有钱包地址的私钥。本说明适用于移动端签名人和 API 签名人。
-
 
 1. 完成必要的前期准备工作。
 
@@ -75,14 +74,14 @@ sudo ./tss-node.sh info group
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
-├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
-└── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
+    ├── recovery-secrets-<nodeID1>-<time1>
+    └── recovery-secrets-<nodeID2>-<time2>
 ```
 4. 使用实际的组 ID 和私钥分片文件执行以下命令。
 ```
 ./cobo-mpc-recovery-tool verify \
---group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
---group-id <GROUP_ID>
+    --recovery-group-files recovery/recovery-secrets-<nodeID1>-<time1>,recovery/recovery-secrets-<nodeID2>-<time2> \
+    --group-id <groupID>
 ```
 5. 等待 MPC 恢复工具自动完成验证过程。
 - cobo-mpc-recovery-tool 将验证与第一个私钥分片文件相关联的私钥/值。
@@ -97,9 +96,9 @@ sudo ./tss-node.sh info group
 ```
 ├── cobo-mpc-recovery-tool
 └── recovery
-├── address.csv
-├── tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>
-└── tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2>
+    ├── address.csv
+    ├── recovery-secrets-<nodeID1>-<time1>
+    └── recovery-secrets-<nodeID2>-<time2>
 ```
  
 7. 使用实际的组 ID 和私钥分片文件执行以下命令。
@@ -112,10 +111,10 @@ sudo ./tss-node.sh info group
 
 ```
 ./cobo-mpc-recovery-tool \
---group-recovery-files recovery/tss-group-<GROUP_ID>-node-<NODE_ID1>-recovery-<TIME1>,recovery/tss-group-<GROUP_ID>-node-<NODE_ID2>-recovery-<TIME2> \
---group-id <GROUP_ID> \
---csv-file recovery/address.csv \
---show-root-private-key
+    --recovery-group-files recovery/recovery-secrets-<nodeID1>-<time1>,recovery/recovery-secrets-<nodeID2>-<time2> \
+    --group-id <groupID> \
+    --csv-file recovery/address.csv \
+    --show-root-private-key
 ```
 
 

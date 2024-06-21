@@ -13,9 +13,9 @@ sidebarTitle: "TSS Node 部署"
 要获取适合您的部署方法的 TSS Node 软件包，请联系 Cobo 客服，联系方式：[support@cobo.com]。下面的示例使用了适用于现成的服务器的 TSS Node 软件包。
 
 ```
-cobo-tss-node-generic-<VERSION>.tgz (TSS Node file)
+cobo-tss-node-generic-<VERSION>.tgz (TSS Node 软件包)
 
-packagecobo-tss-node-generic-<VERSION>.tgz.sha256 (hash file）
+packagecobo-tss-node-generic-<VERSION>.tgz.sha256 (TSS Node 软件包哈希文件）
 ```
 
 要验证 TSS Node 软件包的有效性，请检查 SHA256（256 位）校验和。
@@ -54,7 +54,7 @@ cobo-tss-node-generic
 
 ├── configs
 
-│ └── cobo-tss-node-config.yaml.template （default config file template）
+│ └── cobo-tss-node-config.yaml.template （默认配置文件模板）
 
 └──tss-node.sh（启动脚本）
 ```
@@ -66,7 +66,7 @@ cobo-tss-node-generic
 
 ├── configs
 
-│ └── cobo-tss-node-config.yaml.template （default config file template）
+│ └── cobo-tss-node-config.yaml.template （默认配置文件模板）
 
 └──tss-node.sh（启动脚本）
 ```
@@ -100,7 +100,7 @@ sudo ./tss-node.sh status
 ```
 $ sudo ./tss-node.sh status
 
-[sudo] password for ubuntu: (ubuntu account password)
+[sudo] password for ubuntu: (ubuntu账户密码)
 
 Checking docker engine ...OK, version: 20.10.22
 
@@ -168,11 +168,11 @@ sudo ./tss-node.sh init
 ```
 $ sudo ./tss-node.sh init
 
-[sudo] password for ubuntu: (ubuntu account password)
+[sudo] password for ubuntu: (ubuntu账户密码)
 
-Type password (at least 8 characters): (enter password)
+Type password (at least 16 characters): (设置密码)
 
-Retype password: (re-enter password)
+Retype password: (再次输入密码)
 
 INFO[2023-01-13T05:12:04Z] Initialize database: db/secrets.db
 
@@ -231,7 +231,7 @@ Container started: 4d33d31066279927bd0f9e283aa60454ac02a040a6f49e684ee372321bd41
 
 Wait a few seconds ..
 
-Enter TSS Node password: (enter password)
+Enter password: (输入密码)
 
 cobo-tss-node
 
@@ -281,9 +281,6 @@ sudo ./tss-node.sh init
 7. 输入此 API 签名人的名称。
 8. 输入此 API 签名者的 TSS Node ID，然后单击**确认**。
 9. 确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。此私钥可用于使用 BIP 32 生成此 MPC 机构钱包下的所有钱包地址。
-
-
- 
 
 ### **私钥分片管理** 
 

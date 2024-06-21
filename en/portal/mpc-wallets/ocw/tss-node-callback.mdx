@@ -61,7 +61,7 @@ The callback server will structure and send the HTTP response in the following m
 | Parameter      | Type   | Description                                                  |
 | -------------- | ------ | ------------------------------------------------------------ |
 | request_id     | string | Unique ID of the callback request.                           |
-| request_type   | int    | The types of callback requests are enumerated as follows: <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
+| request_type   | int    | The types of callback requests are enumerated as follows: <br></br>TypePing: 0 <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
 | request_detail | string | The specifics of the callback request. Each type of callback request includes a distinct request_detail structure. The format for this information is a serialized JSON string. |
 | extra_info     | string | Additional information associated with the callback request. Each type of callback request includes a unique extra_info structure. The format for this information is a serialized JSON string. |
 
@@ -72,6 +72,7 @@ When **request_type** is equal to **TypeKeyGen**, the structure of **request_det
 | threshold     | int      | Signature threshold.                                         |
 | node_ids      | []string | Node IDs associated with the generation of all private key shares under the MPC Wallet. |
 | curve         | int      | Signature algorithm that has been used: <br></br>0: SECP256K1<br></br>2: ED25519 |
+| task_id         | string      | Task ID |
 
 The structure of **extra_info** is as follow:
 
@@ -89,6 +90,8 @@ When **request_type** is equal to **TypeKeySign**, the structure of request_deta
 | used_node_ids   | []string | TSS Node IDs used during transaction signing. |
 | bip32_path_list | []string | Address paths (BIP32).                        |
 | msg_hash_list   | []string | Hashes to be signed.                          |
+| tweak_list   | []string | Tweaks to be signed.                          |
+| task_id   | string | Task ID.                      |
 
 The structure of **extra_info** is as follow:
 
@@ -111,7 +114,7 @@ The structure of **extra_info** is as follow:
 | replace_cobo_id    | string                   | (Optional) ID of a Cobo transaction that has been designated as Replace-By-Fee (RBF). |
 | api_key            | string                   | (Optional) API_KEY of the withdrawal request initialized through APIs. |
 | spender            | string                   | (Optional) Email information of the withdrawer. This is applicable when the withdrawal is initiated through Cobo Portal. |
-| raw_tx             | list[RawTx]              | Raw transaction data.                                        |
+| raw_tx_hex         | string                   | Transaction hash.                                        |
 | note               | string                   | Transaction remarks.                                         |
 | raw_tx_info        | json                     | Raw information necessary for constructing the transaction to be signed. |
 
@@ -154,24 +157,18 @@ The structure of **input** is as follows:
 | 100       | TRANSFER      | Transfer.             |
 | 200       | CONTRACT_CALL | Smart contract calls. |
 
-The structure of **RawTx** is as follows:
-
-| **Parameter**   | **Type** | **Description**                                              |
-| --------------- | -------- | ------------------------------------------------------------ |
-| raw_tx          | string   | Hex-encoded transaction information.                         |
-| derivation_path | string   | The derivation path to be signed. For example, "m/44/60/3/0/1". |
-
 When **request_type** is equal to **TypeKeyReshare**, the structure of **request_detail** is as follows:
 
 | **Parameter** | **Type** | **Description**                                              |
 | ------------- | -------- | ------------------------------------------------------------ |
-| old_group_id  | string   | Previous group ID.                                           |
+| old_group_id  | string   | Old group ID.                                           |
 | root_pub_key  | string   | Root extended public key.                                    |
 | curve         | int      | Signature algorithm that has been used: <br></br>0: SECP256K1<br></br>2: ED25519 |
 | used_node_ids | []string | Selected Node IDs from the previous group that have been used for soft key recovery. |
-| old_threshold | int      | Previous signature threshold.                                |
-| new_threshold | int      | New Signature Threshold.                                     |
+| old_threshold | int      | Old signature threshold.                                |
+| new_threshold | int      | New signature Threshold.                                     |
 | new_node_ids  | []string | New TSS Node IDs associated with the generation of all private key shares under the MPC Wallet. |
+| task_id  | string | Task ID.|
 
 The structure of **extra_info** is as follows:
 

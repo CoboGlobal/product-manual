@@ -1,17 +1,22 @@
 ---
-title: Introduction to Cobo Guard
-sidebarTitle: "Introduction"
+title: "Cobo Guard 介绍"
+sidebarTitle: "简介"
 ---
 
 <Warning>中文版本正在建设中，敬请期待！</Warning>
 
-## What is Cobo Guard
-Cobo Guard is a multifunctional security iOS application designed to elevate the safety and protection of your digital assets on the go. It functions as a transaction approval application, an MPC key share manager, as well as a Multi-Factor Authentication (MFA) method and a passwordless login mechanism for Cobo Accounts.
+<Note>目前，Cobo Guard 仅支持 iOS 系统。该 App 与 iPhone 6s 及更新型号兼容，且操作系统必须为 iOS 13.0 或更高版本。</Note>
 
-## Why did we design the Cobo Guard?
-### Asymmetric encryption for asset safety
-Cobo Guard utilizes asymmetric encryption to ensure the safety of your assets. Your public key is shared with Cobo, while your private key is securely stored in your iPhone’s native Secure Enclave. This ensures that all operation approvals are signed by your private key and authenticated through the public key by Cobo.
+## 什么是 Cobo Guard
 
-<img src="/cn/images/organization/flow.svg" className="diagram"></img>
+Cobo Guard 是一款多功能的 iOS 安全应用程序，旨在增强数字资产的传输安全性。它不仅充当交易审批应用程序和 MPC 私钥分片管理器，还支持作为 Cobo Accounts 的多重身份验证器（MFA），同时提供无密码登录机制。
 
-**Note**: We take security very seriously. After thorough evaluation, we have determined that we are unable to offer an Android version of Cobo Guard that meets with our rigorous security standards.
+## Cobo Guard 的设计初衷
+
+### 用于保护资产安全的非对称（密钥）加密
+
+Cobo Guard 采用非对称加密来保护您的资产安全。您的公钥与 Cobo 共享，而私钥则安全存储在您 iPhone 的原生 Secure Enclave 中。这种设置确保所有操作审批均通过您的私钥进行签名，并使用您与 Cobo 共享的公钥进行身份验证。
+
+<img src="/cn/images/cobo-guard/common/guard1.png" className="diagram"></img>
+
+**注**：我们的安全标准非常严格。经过全面评估，我们决定暂时无法提供符合我们严格安全标准的 Android 版 Cobo Guard。
