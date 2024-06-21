@@ -3,7 +3,7 @@ title: "恢复根扩展私钥"
 sidebarTitle: "恢复根扩展私钥"
 ---
 
-**注意**：万一 Cobo Portal 停止服务，您可以利用活跃的恢复组重建与 vault 相对应的根扩展私钥。与该 vault 内钱包地址相链接的所有私钥都可以从这些根扩展私钥中获取。与还原不同，恢复需要依赖另一个私钥分片组的支持。
+**注意**：如果 Cobo Portal 在极端情况下停止服务，您可以利用活跃的恢复组重建与 Vault 相对应的根扩展私钥。与该 Vault 内钱包地址相关联的所有私钥都可以从这些根扩展私钥中获取。与还原不同，恢复需要依赖另一个私钥分片组的支持。
 
 ## 步骤 1：导出私钥分片
 
@@ -42,7 +42,7 @@ sudo ./tss-node.sh info group
 ```
 确保输出中的根扩展公钥与前期准备时保存的公钥一致。如果 TSS Node 管理多个私钥分片，请找到具有正确根扩展公钥的组，并记下组 ID。
 
-4. （仅限第三方恢复）与受托第三方分享与您打算导出的特定私钥分片链接的根扩展公钥。受托第三方将利用此信息验证其私钥分片信息。
+4. （仅限第三方恢复）与受托第三方分享与您打算导出的私钥分片相关联的根扩展公钥。受托第三方将利用此信息验证其私钥分片信息。
 
 5. 在离线或安全的网络环境中，在 TSS Node 的根目录下运行以下命令，导出私钥分片。
 ```
@@ -56,18 +56,18 @@ sudo ./tss-node.sh info group
 
 9. 请验证导出文件中根扩展公钥和组 ID 是否准确无误。
 
-## 步骤 2：重新构建所有私钥分片并获取所有钱包地址的私钥
+## 步骤 2：重新构建所有私钥分片并派生所有钱包地址的私钥
 
-请按照以下说明重新构建所有私钥分片，并获取与 vault 相关联的所有钱包地址的私钥。本说明适用于移动端签名人和 API 签名人。
+请按照以下说明重新构建所有私钥分片，并派生出与 Vault 相关联的所有钱包地址的私钥。本说明适用于移动端签名人和 API 签名人。
 
 
 1. 完成必要的前期准备工作。
 
 - 从 [open-source repository](https://github.com/CoboGlobal/cobo-mpc-recovery-kits) 获取恢复工具包。编译 cobo-mpc-recovery-tool 之前，请先阅读 `README.md` 文件中提供的说明。或者，您也可以[点击此处](https://github.com/CoboGlobal/cobo-mpc-recovery-kits/releases)下载最新版本的 cobo-mpc-recovery-tool。
-- 使用以下任一方法保存与每个 vault 相关联的钱包地址：
-    - 在私钥生成过程中，通过 generate_addresses 操作检索 `AddressDetail`。返回的结果中每个地址对应的 HD 路径。
-    - 定期通过 list_addresses 操作检索 `AddressDetail。返回的结果中每个地址对应的 HD 路径。
-    - 点击 Cobo Portal 上的导出图标，手动导出与 vault 相关的所有地址信息。
+- 使用以下任一方法保存与每个 Vault 相关联的钱包地址：
+    - 在私钥生成过程中，通过 generate_addresses 操作检索 `AddressDetail`。返回的结果中会包含每个地址对应的 HD 路径。
+    - 定期通过 list_addresses 操作检索 `AddressDetail`。返回的结果中会包含每个地址对应的 HD 路径。
+    - 点击 Cobo Portal 上的导出图标，手动导出与 Vault 相关的所有地址信息。
 
 2. （仅限第三方恢复）获取受托第三方导出的私钥分片。受托第三方导出的私钥分片文件也是 JSON 格式。请验证您和受托第三方导出的文件中的根扩展公钥是否相同。
 
@@ -86,12 +86,12 @@ sudo ./tss-node.sh info group
 ```
 5. 等待 MPC 恢复工具自动完成验证过程。
 - cobo-mpc-recovery-tool 将验证与第一个私钥分片文件相关联的私钥/值。
-- cobo-mpc-recovery-tool 将使用第一个私钥分片文件中的“participants”信息生成并验证根扩展公钥。
-- 需要手动输入与第一个私钥分片文件相关的密码解密。然后，cobo-mpc-recovery-tool 会生成并验证相应的公钥。
-- cobo-mpc-recovery-tool 将验证与第二个私钥分片文件相关联的密钥/值。
-- cobo-mpc-recovery-tool 将验证第一个私钥分片文件中的密钥/值与第二个私钥分片文件中的密钥/值是否一致。
-- cobo-mpc-recovery-tool 将使用第二个私钥分片文件中的“participants”信息生成并验证根扩展公钥。
-- 需要手动输入与第二个私钥分片文件相关的密码进行解密。然后，cobo-mpc-recovery-tool 会生成并验证相应的公钥。
+- cobo-mpc-recovery-tool 将使用第一个私钥分片文件中的“participants”信息派生并验证根扩展公钥。
+- 需要手动输入与第一个私钥分片文件相关的密码解密。然后，cobo-mpc-recovery-tool 会派生并验证相应的公钥。
+- cobo-mpc-recovery-tool 将验证与第二个私钥分片文件相关联的私钥/值。
+- cobo-mpc-recovery-tool 将验证第一个私钥分片文件中的私钥/值与第二个私钥分片文件中的私钥/值是否一致。
+- cobo-mpc-recovery-tool 将使用第二个私钥分片文件中的“participants”信息派生并验证根扩展公钥。
+- 需要手动输入与第二个私钥分片文件相关的密码进行解密。然后，cobo-mpc-recovery-tool 会派生并验证相应的公钥。
 
 6. 将进行前期准备工作时导出的 `address.csv` 文件移动到恢复文件夹下。
 ```
@@ -108,7 +108,7 @@ sudo ./tss-node.sh info group
 - 将重新构建根扩展私钥和根扩展公钥。
 - 确保输出中的根扩展公钥与您在前期准备工作中保存的根扩展公钥相同。
 - 将自动导入 address.csv 文件，系统将根据 address.csv 文件中的 HD 路径生成 `recovery/address-recovery.csv` 文件。
-- 执行完成后，与该 vault 中钱包地址相关的所有私钥将以纯文本形式存储在 `recovery/address-recovery.csv` 文件中。请确保安全存储所有数据。
+- 执行完成后，与该 Vault 中钱包地址相关的所有私钥将以纯文本形式存储在 `recovery/address-recovery.csv` 文件中。请确保安全存储所有数据。
 
 ```
 ./cobo-mpc-recovery-tool \
