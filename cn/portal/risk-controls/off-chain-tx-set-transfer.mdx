@@ -6,9 +6,9 @@ sidebarTitle: "设置代币转账风控"
 ## 创建转账风控
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 2. 点击左侧主菜单中的 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
-3. 点击**创建交易风控规则** > **转账**。
+3. 点击**创建交易风控规则** > **代币转账**。
 <img src="/cn/images/risk-controls/create_policy_cn.png" className="screenshot_full_screen"/>
-4. 输入**交易风控规则名称**，然后点击**下一页**。名称不得超过 30 个字符。
+4. 输入**交易风控规则名称**，然后点击**下一页**。名称不得超过 50 个字符。
 5. 选择您要创建的风控所适用的所有**适用钱包**，然后点击**下一页**。
 6. 在**如果**下，点击 **+ 添加条件**选择条件模板。您可以为每个风控添加一个或多个条件。如果应用了多个条件，只有当交易满足所有条件时，风控才会被触发。要了解关于条件的更多信息，请查看[选择条件模板](/cn/portal/risk-controls/off-chain-tx-set-transfer#select-condition-template)。
    - 您可以选择跳过条件设置，直接进入下一步。这样与适用钱包相关联的任何代币转账都会触发此风控。
@@ -21,9 +21,9 @@ sidebarTitle: "设置代币转账风控"
 
 ## 选择条件模板<a id="select-condition-template"></a>
 
-**发起者**：只有当交易由指定方发起时，风控才会被触发。您可以在**API 发起者**或**Web 发起者**之间进行选择。
+**发起者**：只有当交易由指定方发起时，风控才会被触发。您可以在 **API 发起者**或 **Web 发起者**之间进行选择。
 - **API 发起者**：您可以指定是允许任何团队成员还是仅允许特定成员通过 API 发起交易。
-- **Web 发起者**：您可以指定是允许任何团队成员还是仅允许特定成员通过 Web 控制台发起交易。
+- **Web 发起者**：您可以指定是允许任何团队成员还是仅允许特定成员通过 Web 端发起交易。
 <img src="/cn/images/risk-controls/initiator-limits-cn.png" className="screenshot_full_screen"/>
 
 **数量**：您可以为指定时间段或每笔交易设置最大支出金额。
@@ -43,8 +43,8 @@ sidebarTitle: "设置代币转账风控"
 <img src="/cn/images/risk-controls/token-limits-cn.png" className="screenshot_full_screen"/>
 
 ## 设置审批动作<a id="set-approval-action"></a>
-目前，Cobo Portal 支持四种类型的审批动作：
+目前，Cobo Portal 支持三种类型的审批动作：
 - **自动通过**：符合上述条件的交易将被自动批准。
 - **自动拒绝**：符合上述条件的交易将被自动拒绝。
-- **审批门槛**：符合上述条件的交易将需要指定数量的批准方能继续。请点击 **+选择审批员**添加一个或多个团队成员作为审批员。您可以按**角色**或**用户**选择。然后设置审批门槛。
+- **审批门槛**：符合上述条件的交易将需要指定数量的批准方能继续。请点击 **+选择审批员**添加一个或多个团队成员作为审批员。您可以按**用户角色**或**用户**选择。然后设置审批门槛。
 <img src="/cn/images/risk-controls/approval-action-cn.png" className="screenshot_full_screen"/>
