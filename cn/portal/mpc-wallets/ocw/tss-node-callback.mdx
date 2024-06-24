@@ -1,23 +1,23 @@
 ---
-title: "TSS Node callback"
-sidebarTitle: "TSS Node callback"
+title: "TSS Node Callback"
+sidebarTitle: "TSS Node Callback"
 ---
 
-## TSS Node callback 机制
+## TSS Node Callback 机制
 
 成功设置 TSS Node 后，它将自动与 Cobo Portal 建立连接，并等待 Cobo Portal 后端发送任务。目前有三种任务类型：私钥生成（KeyGen）、交易签署（KeySign）和私钥恢复（KeyReshare）。
 
-在未配置 callback 机制的情况下，TSS Node 会在收到 Cobo Portal 后端发送的任务后立即执行每项任务。如果启用了 callback 机制，TSS Node 会在收到任务后向 callback 服务器发送批准请求。在得到 callback 服务器的批准后才会执行任务。
+在未配置 Callback 机制的情况下，TSS Node 会在收到 Cobo Portal 后端发送的任务后立即执行每项任务。如果启用了 Callback 机制，TSS Node 会在收到任务后向 Callback 服务器发送批准请求。在得到 Callback 服务器的批准后才会执行任务。
 
-TSS Node 和 callback 服务器之间的通信使用 HTTP 协议，Cobo Portal 采用 RS256 算法签署 JSON Web Token (JWT)。要了解有关 JWT 的更多信息，请[点击此处](https://jwt.io/introduction)。
+TSS Node 和 Callback 服务器之间的通信使用 HTTP 协议，Cobo Portal 采用 RS256 算法签署 JSON Web Token (JWT)。要了解有关 JWT 的更多信息，请[点击此处](https://jwt.io/introduction)。
 
-- 在 TSS Node 初始化过程中，TSS Node 和 callback 服务器都会生成并配置 RSA 私钥/公钥对。 
-- 任务接收后，TSS Node 会构建一个 CallbackRequest，并使用其 RSA 私钥生成一个 JWT 令牌。然后通过 HTTP POST 方法将该请求发送到 callback 服务器。
+- 在 TSS Node 初始化过程中，TSS Node 和 Callback 服务器都会生成并配置 RSA 私钥/公钥对。 
+- 任务接收后，TSS Node 会构建一个 CallbackRequest，并使用其 RSA 私钥生成一个 JWT 令牌。然后通过 HTTP POST 方法将该请求发送到 Callback 服务器。
 - Callback 服务器收到请求后，会使用 TSS Node 的 RSA 公钥验证 JWT 签名。Callback 服务器会构建一个 CallbackRequest，并使用自己的 RSA 私钥对其进行签名，然后将 JWT 发回给 TSS Node 。
-- 收到 HTTP 响应后，TSS Node 使用 callback 服务器的 RSA 公钥验证 JWT 签名。 
-- 验证完成后，TSS Node 会根据从 callback 服务器收到的响应执行或拒绝任务。
+- 收到 HTTP 响应后，TSS Node 使用 Callback 服务器的 RSA 公钥验证 JWT 签名。 
+- 验证完成后，TSS Node 会根据从 Callback 服务器收到的响应执行或拒绝任务。
 
-## callback 服务器要求
+## Callback 服务器要求
 
 ### **HTTP API**
 
@@ -29,43 +29,43 @@ Callback 服务器作为 HTTP 服务器运行，支持以下端点：
 
 ### **HTTP 请求解析**
 
-callback 服务器将按以下方式发送 HTTP 请求：
+Callback 服务器将按以下方式发送 HTTP 请求：
 
 - 生成 CallbackRequest。
 - 序列化 CallbackRequest，生成 CallbackRequestJsonString。
-- 使用 CallbackRequestJsonString 作为 JWT 有效负载，并使用其 RSA 私钥对其进行签名，以创建 JWT。
-- 通过 HTML 表单提交 HTTP POST 请求，将 TSS_JWT_MSG 作为私钥，将 JWT 作为值。
+- 使用 CallbackRequestJsonString 作为 JWT 的 Payload，并使用其 RSA 私钥对其进行签名，以创建 JWT。
+- 通过 HTML 表单提交 HTTP POST 请求，将 TSS_JWT_MSG 作为键，将 JWT 作为值。
 
 Callback 服务器将按以下方式处理 HTTP 请求：
 
-- 使用 TSS_JWT_MSG 作为私钥，JWT 作为值，读取 HTTP POST 请求中的数据。
+- 使用 TSS_JWT_MSG 作为键，JWT 作为值，读取 HTTP POST 请求中的数据。
 - 使用 TSS Node 的 RSA 公钥验证已签名的 JWT。
-- 读取 JWT 中的有效负载，并使用 CallbackRequest 对其进行反序列化。
-- 反序列化元字段，以获取请求中的信息。
+- 读取 JWT 中的 Payload，并使用 CallbackRequest 对其进行反序列化。
+- 反序列化 meta 字段，以获取请求中的信息。
 
 ### **风险控制**
 
-对于每个 CallbackRequest，必须根据团队的安全要求进行风险控制评估。这一步骤对于确保请求的有效性至关重要。
+对于每个 CallbackRequest，根据团队的安全要求进行风险控制评估非常重要。这一步骤对于确保请求的有效性至关重要。
 
 ### **HTTP 响应**
 
 Callback 服务器将按以下方式构建和发送 HTTP 响应： 
 
 - 生成 CallbackResponse。 
-- 序列化 CallbackResponse，生成 CallbackResponseJsonString。 
-- 使用 CallbackResponseJsonString 作为 JWT 有效负载，并使用其 RSA 私钥对其进行签名，以创建 JWT。 
+- 序列化 CallbackResponse，派生出 CallbackResponseJsonString。 
+- 使用 CallbackResponseJsonString 作为 JWT 的 Payload，并使用其 RSA 私钥对其进行签名，以创建 JWT。 
 - 使用 JWT 作为 HTTP 响应，并将其返回给 TSS Node。
 
 ### **CallbackRequest 描述**
 
 | 参数      | 类型   | 描述                                                  |
 | -------------- | ------ | ------------------------------------------------------------ |
-| request_id     | string | callback 请求的唯一 ID。                           |
-| request_type   | int    | callback 请求的类型枚举如下： <br></br>TypePing: 0 <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
-| request_detail | string | callback 请求的详细信息。每种类型的 callback 请求都包含一个独特的 request_detail 结构。该信息的格式是序列化的 JSON 字符串。|
-| extra_info     | string | 与 callback 请求相关的附加信息。每种类型的 callback 请求都包含一个独特的 extra_info 结构。该信息的格式是序列化的 JSON 字符串。|
+| request_id     | string | Callback 请求的唯一 ID。                           |
+| request_type   | int    | Callback 请求的类型枚举如下： <br></br>TypePing: 0 <br></br>TypeKeyGen: 1 <br></br>TypeKeySign: 2 <br></br>TypeKeyReshare: 3 |
+| request_detail | string | Callback 请求的详细信息。每种类型的 Callback 请求都包含一个独特的 request_detail 结构。该信息的格式是序列化的 JSON 字符串。|
+| extra_info     | string | 与 Callback 请求相关的附加信息。每种类型的 Callback 请求都包含一个独特的 extra_info 结构。该信息的格式是序列化的 JSON 字符串。|
 
-当**request_type**等于**TypeKeyGen**时，**request_detail**的结构如下：
+当 **request_type** 等于 **TypeKeyGen** 时，**request_detail** 的结构如下：
 
 | **参数** | **类型** | **描述**                                              |
 | ------------- | -------- | ------------------------------------------------------------ |
@@ -81,7 +81,7 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | cobo_id        | string   | 私钥生成（KeyGen）请求的唯一 ID。            |
 | api_request_id | string   | 客户端使用 API 传递的请求 ID，如果请求不是通过 API 发送，Cobo 将自动生成一个请求 ID。|
 
-当**request_type**等于**TypeKeySign**时，request_detail 的结构如下：
+当 **request_type** 等于 **TypeKeySign** 时，request_detail 的结构如下：
 
 | **参数**   | **类型** | **描述**                               |
 | --------------- | -------- | --------------------------------------------- |
@@ -99,21 +99,21 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | **参数**      | **类型**                 | **描述**                                              |
 | ------------------ | ------------------------ | ------------------------------------------------------------ |
 | cobo_id            | string                   | 交易签署（KeySign）请求的唯一 ID。      |
-| api_request_id     | string                   | 提币请求的请求 ID。如果请求通过 API 初始化，其值应与 request_id 相同。如果请求通过 Cobo Portal 初始化，Cobo 将自动生成一个请求 ID。|
+| api_request_id     | string                   | 提币请求的请求 ID。如果请求通过 API 发起，其值应与 request_id 相同。如果请求通过 Cobo Portal 发起，Cobo 将自动生成一个请求 ID。|
 | transaction_type   | TransactionTypeEnum      | 请参阅 [TransactionTypeEnum](#TransactionTypeEnum)。                         |
 | operation          | TransactionOperationEnum | 请参阅 [TransactionOperationEnum](#TransactionOperationEnum)。                    |
 | coin               | string                   | 资产名称。                                                  |
 | decimal            | int                      | 十进制精度。                                           |
 | from_address       | string                   | 提取资产的地址。                 |
-| amount             | string                   | （可选）该交易金额可以包含小数位（例如，将 1 BTC 除到小数点后八位，100,000,000 代表 1 BTC）。|
+| amount             | string                   | （可选）该交易金额可以包含小数位（例如，1 BTC 可以被除到小数点后八位，100,000,000 代表 1 BTC）。|
 | to_address         | string                   | 收币地址。                                             |
 | to_address_details | json                     | （可选）适用于 UTXO 模型的收币地址列表。该值必须符合 list[ToAddressDetail] 的 JSON 结构。|
-| fee                | int                      | 对于 BTC 交易，该字段返回每个字节的交易费用，单位为 satoshi。|
-| gas_price          | int                      | （可选）对于 ETH 交易，该字段返回 gas 费用，单位为 gwei。|
+| fee                | int                      | （可选）对于 BTC 交易，该字段返回每个字节的交易费用，单位为 satoshi。|
+| gas_price          | int                      | （可选）对于 ETH 交易，该字段返回 gas 费，单位为 gwei。|
 | gas_limit          | int                      | （可选）对于 ETH 交易，该字段返回 gas 限额。|
 | extra_parameters   | json                     | 交易的附加参数。请参阅 create_transaction 的说明。|
-| replace_cobo_id    | string                   | （可选）被指定为“费用替换（RBF）”的 Cobo 交易的 ID。|
-| api_key            | string                   | （可选）通过 API 初始化的提币请求的 API_KEY。|
+| replace_cobo_id    | string                   | （可选）被指定为 RBF 的 Cobo 交易的 ID。|
+| api_key            | string                   | （可选）通过 API 发起的提币请求的 API_KEY。|
 | spender            | string                   | （可选）提币人的电子邮件信息。适用于通过 Cobo Portal 发起的提币。|
 | raw_tx_hex         | string                   | 交易哈希。                                        |
 | note               | string                   | 交易备注。                                         |
@@ -124,21 +124,21 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | **参数** | **类型** | **描述**                                              |
 | ------------- | -------- | ------------------------------------------------------------ |
 | to_address    | string   | 提币地址。                                          |
-| amount        | string   | （可选）该交易金额可以包含小数位（例如，将 1 BTC 除到小数点后八位，100,000,000 代表 1 BTC）。|
+| amount        | string   | （可选）该交易金额可以包含小数位（例如，1 BTC 可以被除到小数点后八位，100,000,000 代表 1 BTC）。|
 
 **extra_parameters** 的结构如下：
 
 | **参数**     | **类型**    | **描述**                                              |
 | ----------------- | ----------- | ------------------------------------------------------------ |
-| inputs_to_spend   | list[Input] | 待支出的未支出交易输出 (UTXO)。适用于 UTXO 类型的区块链，如比特币。|
-| inputs_to_exclude | list[Input] | 要从支出中排除的未支出交易输出 (UTXO)。适用于 UTXO 类型的区块链，如比特币。|
+| inputs_to_spend   | list[Input] | 未被支出的 UTXO。适用于 UTXO 类型的区块链，如比特币。|
+| inputs_to_exclude | list[Input] | 要从支出中排除的 UTXO。适用于 UTXO 类型的区块链，如比特币。|
 
-**input**的结构如下：
+**input** 的结构如下：
 
 | **参数** | **类型** | **描述**              |
 | ------------- | -------- | ---------------------------- |
 | tx_hash       | string   | 交易哈希值。            |
-| vout_n        | int      | 交易哈希值。|
+| vout_n        | int      | 交易 index 或 number。|
 
 <a name="TransactionTypeEnum"></a>**TransactionTypeEnum**的结构如下：
 
@@ -151,24 +151,24 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | 105       | TRANSACTION_RBF_API_DROP    | 通过 API 发起的要取消的交易。      |
 | 106       | TRANSACTION_RBF_WEB_DROP    | 通过 Cobo Portal 发起的要取消的交易。|
 
-<a name="TransactionOperationEnum"></a>**TransactionOperationEnum**的结构如下：
+<a name="TransactionOperationEnum"></a>**TransactionOperationEnum** 的结构如下：
 
 | **值** | **名称**      | **描述**       |
 | --------- | ------------- | --------------------- |
 | 100       | TRANSFER      | 转账。             |
 | 200       | CONTRACT_CALL | 智能合约调用。|
 
-当**request_type**等于**TypeKeyReshare**时，**request_detail**的结构如下：
+当 **request_type** 等于 **TypeKeyReshare** 时，**request_detail** 的结构如下：
 
 | **参数** | **类型** | **描述**                                              |
 | ------------- | -------- | ------------------------------------------------------------ |
-| old_group_id  | string   | 以前的组 ID。                                           |
+| old_group_id  | string   | 旧的组 ID。                                           |
 | root_pub_key  | string   | 根扩展公钥。                                    |
 | curve         | int      | 使用的签名算法：<br></br>0: SECP256K1<br></br>2: ED25519 |
-| used_node_ids | []string | 用于私钥恢复的上一个组的选定节点 ID。|
-| old_threshold | int      | 以前的签名阈值。                                |
+| used_node_ids | []string | 旧的组当中曾用于私钥恢复的的节点 ID。|
+| old_threshold | int      | 旧签名阈值。                                |
 | new_threshold | int      | 新签名阈值。                                     |
-| new_node_ids  | []string | 与 MPC 钱包下所有私钥分片生成相关的新 TSS Node ID。|
+| new_node_ids  | []string | 参与该 MPC 钱包下所有私钥分片生成的新 TSS Node IDs。|
 | task_id  | string | 任务 ID。|
 
 **extra_info**的结构如下：
@@ -182,28 +182,28 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 
 | **参数** | **类型** | **描述**                                              |
 | ------------- | -------- | ------------------------------------------------------------ |
-| status        | int      | 如果状态为 0，表示 callback 服务器正常。其他值表示 callback 服务器出现错误。|
-| request_id    | string   | callback 的请求 ID。该值必须与 CallbackRequest 中的 request_id 相同。|
+| status        | int      | 如果状态为 0，表示 Callback 服务器正常。其他值表示 Callback 服务器出现错误。|
+| request_id    | string   | Callback 的请求 ID。该值必须与 CallbackRequest 中的 request_id 相同。|
 | action        | string   | 任务执行指令，以枚举形式表示，有两个可能的值：  <br></br>APPROVE：任务应被执行。<br></br>REJECT：任务应被拒绝，原因可从错误字段中获取。|
-| error         | string   | 如果返回的状态不是 0，则表示 callback 服务器内部出错。如果返回状态为 0 且动作返回“REJECT”，则会提供任务被拒绝的原因。|
+| error         | string   | 如果返回的状态不是 0，则表示 Callback 服务器内部出错。如果返回状态为 0 且动作返回 “REJECT”，则会提供任务被拒绝的原因。|
 
-### **callback 服务器示例**
+### **Callback 服务器示例**
 
-Cobo Portal 提供支持各种编程语言的 callback 服务器示例。您可以[参考这些示例](https://github.com/CoboGlobal/cobo-mpc-callback-server-examples)，快速部署 callback 服务器。另外，JWT 代码库支持多种编程语言。您可以参考 [JWT 的官方网站](https://jwt.io/libraries)，部署 callback 服务器。
+Cobo Portal 提供支持各种编程语言的 Callback 服务器示例。您可以[参考这些示例](https://github.com/CoboGlobal/cobo-mpc-callback-server-examples)，快速部署 Callback 服务器。另外，JWT 代码库支持多种编程语言。您可以参考 [JWT 的官方网站](https://jwt.io/libraries)，部署 Callback 服务器。
 
-<Note>如果 TSS Node 未收到 HTTP 响应，将继续向 callback 服务器发送请求。在这种情况下，当达到重试次数上限时，响应将被归类为“REJECT”。</Note>
+<Note>如果 TSS Node 未收到 HTTP 响应，将继续向 Callback 服务器发送请求。在这种情况下，当达到重试次数上限时，响应将被归类为“REJECT”。</Note>
 
-## callback 服务器配置
+## Callback 服务器配置
 
-在部署了 callback 服务器的服务器上，您需要完成以下配置。
+在部署了 Callback 服务器的服务器上，您需要完成以下配置。
 
-1.生成 callback 服务器的 RSA 私钥。
+1.生成 Callback 服务器的 RSA 私钥。
 
 ```
 openssl genrsa -out callback-server-pri.pem 4096
 ```
 
-2.导出 callback 服务器的 RSA 公钥。 
+2.导出 Callback 服务器的 RSA 公钥。 
 
 ```
 openssl rsa -in callback-server-pri.pem -pubout >callback-server-pub.key
@@ -211,8 +211,8 @@ openssl rsa -in callback-server-pri.pem -pubout >callback-server-pub.key
 
 3.将导出的 RSA 公钥（即 callback-server-pub.key 文件）复制到部署了 TSS Node 的服务器上。 
 
-4.将 TSS Node 的 RSA 公钥复制到 callback 服务器的配置文件中。
-   - 如果使用 Cobo Portal 提供的 callback 服务器代码，请参阅示例中提供的配置说明。
+4.将 TSS Node 的 RSA 公钥复制到 Callback 服务器的配置文件中。
+   - 如果使用 Cobo Portal 提供的 Callback 服务器代码，请参阅示例中提供的配置说明。
 
 5.成功完成 TSS Node 初始化后，使用以下命令查询 TSS Node 的 RSA 公钥：
 
@@ -254,13 +254,13 @@ s8wADQvpbJTyPkkMyq/i5SkCAwEAAQ==
 -----END PUBLIC KEY----- 
 ```
 
-### TSS Node 配置和 callback 服务器启动
+## TSS Node 配置和 Callback 服务器启动
 
 ### **TSS Node 配置**
 
-在部署了 callback 服务器的服务器上，您需要完成以下配置。
+在部署了 Callback 服务器的服务器上，您需要完成以下配置。
 
-1.将 callback 服务器的 RSA 公钥文件复制到 TSS Node 的 configs 目录。 
+1.将 Callback 服务器的 RSA 公钥文件复制到 TSS Node 的 configs 目录。 
 
 ```
 cobo-tss-node-generic
@@ -275,22 +275,22 @@ cobo-tss-node-generic
 2.修改 cobo-tss-node-config.yaml 文件。
 
    - cb_server
-     - service_address 表示 callback 服务器地址。
-     - pubkey_path 表示 callback 服务器 RSA 的文件路径。
+     - service_address 表示 Callback 服务器地址。
+     - pubkey_path 表示 Callback 服务器 RSA 的文件路径。
 
    - token_expire_minutes 表示 JWT 的超时时间（单位：分钟）。
 
-   - retry_time 表示 callback 请求失败时的重试次数。
+   - retry_time 表示 Callback 请求失败时的重试次数。
 
    - sleep_seconds 表示每次重试之间的时间间隔（单位：分钟）。
 
-可以配置多个 callback 服务器。下面的输出以两个 callback 服务器为例：
+可以配置多个 Callback 服务器。下面的输出以两个 Callback 服务器为例：
 
 ```
 sudo ./tss-node.sh init
 ```
 
-可以配置多个 callback 服务器。下面的输出以两个 callback 服务器为例：
+可以配置多个 Callback 服务器。下面的输出以两个 Callback 服务器为例：
 
 ```
 callback:
@@ -312,4 +312,4 @@ retry_times: 60
 sleep_seconds: 60
 ```
 
-完成上述配置后，即可发起 callback 服务器和 TSS Node 启动过程。 
+完成上述配置后，即可发起 Callback 服务器和 TSS Node 启动过程。 
