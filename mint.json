@@ -21,7 +21,7 @@
   },
   "versions": [
     "English",
-    "简体中文（建设中）"
+    "简体中文"
   ],
   "topbarLinks": [
     {
@@ -67,28 +67,28 @@
     {
       "name": "Cobo Portal",
       "url": "cn/portal",
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "name": "Cobo Accounts",
       "url": "cn/accounts",
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "name": "Cobo Guard",
       "url": "cn/guard",
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "name": "Access Private Content",
       "url": "https://cobo-oauth.vercel.app/private",
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "name": "Private Content",
       "url": "private",
       "isDefaultHidden": true,
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     }
   ],
   "navigation": [
@@ -576,7 +576,7 @@
               ]
         }
       ],
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "group": "钱包与交易",
@@ -818,7 +818,7 @@
           ]
         }
       ],
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "group": "账户管理",
@@ -906,7 +906,7 @@
           ]
         }
       ],
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "group": "开发者专区",
@@ -954,7 +954,7 @@
           ]
         }
       ],
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "group": "",
@@ -1023,14 +1023,14 @@
           ]
         }
       ],
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     },
     {
       "group": "Private Content",
       "pages": [
         "cn/private/introduction"
       ],
-      "version": "简体中文（建设中）"
+      "version": "简体中文"
     }
   ],
   "footerSocials": {
