@@ -7,13 +7,13 @@ sidebarTitle: "服务器环境"
 
 ### Intel® SGX 简介
 
-Intel® Software Guard Extensions (SGX) 提供基于硬件的内存加密，可隔离内存中的特定应用程序代码和数据。SGX 允许执行客户端代码，分配私有内存区域，称为 enclave。enclave 是专门设计的受保护部分，可防止更高特权级别的进程访问这些内存区域。它可以提供粒度级别的控制和保护，抵御许多已知的、活跃的威胁。要了解有关 Intel® SGX 的更多信息，请[点击此处](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html)。 
+Intel® Software Guard Extensions (SGX) 提供基于硬件的内存加密，可隔离内存中的特定应用程序代码和数据。SGX 允许执行客户端代码，分配私有内存区域，称为 Enclave。Enclave 是专门设计的受保护部分，可防止更高权限级别的进程访问这些内存区域。它可以提供细颗粒度的控制和保护，抵御许多已知的、活跃的威胁。要了解有关 Intel® SGX 的更多信息，请[点击此处](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html)。 
 
-### 支持 SGX 的服务器类型
+### SGX 服务器类型
 
 #### Azure 机密计算（虚拟机）
 
-配置支持 SGX 的服务器需要满足以下设置：
+配置 SGX 服务器需要满足以下设置：
 
 - 选择资源组： Ubuntu 20.04 LTS 
 - 输入虚拟机名称（如 CoboTSSNode）
@@ -21,7 +21,7 @@ Intel® Software Guard Extensions (SGX) 提供基于硬件的内存加密，可�
 - 选择镜像： Ubuntu 18.04 LTS - Gen2
 - 选择虚拟机大小：标准 DC1ds v3（1 vcpu、8 GiB 内存）
 
-要详细了解如何使用 Azure 门户部署支持 SGX 的服务器，请[点击此处](https://learn.microsoft.com/en-us/azure/confidential-computing/quick-create-portal)。
+要详细了解如何使用 Azure 门户部署 SGX 服务器，请[点击此处](https://learn.microsoft.com/en-us/azure/confidential-computing/quick-create-portal)。
 
 #### 阿里云弹性计算服务
 
@@ -32,7 +32,7 @@ Intel® Software Guard Extensions (SGX) 提供基于硬件的内存加密，可�
 - 内存（加密数据）：4GB 
 - 硬盘：64G SSD
 
-要详细了解如何使用阿里云弹性计算服务部署支持 SGX 的服务器，请[点击此处](https://www.alibabacloud.com/help/en/ecs/user-guide/build-an-sgx-encrypted-computing-environment)。
+要详细了解如何使用阿里云弹性计算服务部署 SGX 服务器，请[点击此处](https://www.alibabacloud.com/help/en/ecs/user-guide/build-an-sgx-encrypted-computing-environment)。
 
 #### 支持 SGX 的物理服务器（本地部署）  
 
@@ -41,14 +41,14 @@ Intel® Software Guard Extensions (SGX) 提供基于硬件的内存加密，可�
 - 访问 [https://ark.intel.com/content/www/us/en/ark.html ](https://ark.intel.com/content/www/us/en/ark.html)
 - 单击底部的**按功能查找产品**
 - 切换到处理器标签页，在下拉菜单中选择 **Intel® Software Guard Extensions (Intel® SGX)**。
-- 选择**是，同时查找 Intel® SPS 和 Intel® ME**
+- 选择 **Yes with both Intel® SPS and Intel® ME**
 - 查看产品规格并配置以下设置
   - BIOS 设置：启用 Intel SGX (Software Guard Extension)
   - 启用 DCAP (FLC)
   - 禁用超线程
   - 操作系统：Ubuntu 服务器 20.04 LTS 或 22.04 LTS
   - 建议内存： 8GB RAM 
-  - 推荐内存：128GB SSD 
+  - 建议存储：128GB SSD 
   - 最小内存（加密数据）：2GB EPC
 
 ### SGX 状态检查
@@ -72,7 +72,7 @@ SGX1 supported = true
 
 ### **SGX 驱动程序安装**
 
-默认情况下，已经安装 SGX 驱动程序。在 TSS Node 初始化过程中，系统将提示您同意自动安装 SGX 驱动程序 (Intel DCAP 1.41)。要验证是否安装，请执行以下命令。
+默认情况下，SGX 驱动程序应已安装完毕。在 TSS Node 初始化过程中，系统将提示您同意自动安装 SGX 驱动程序 (Intel DCAP 1.41)。要验证是否安装，请执行以下命令。
 
 ```
 ls /dev/sgx*
@@ -86,45 +86,45 @@ ls /dev/sgx*
 
 有关手动安装 SGX 驱动程序的详细信息，请参阅下文：
 
-默认情况下，5.1 及以上版本的 SGX 驱动程序已集成到 Linux 内核中。建议使用 Linux 5.1 或更高版本。
+默认情况下，Linux 5.1 或更高版本中，SGX 驱动程序已集成到 Linux 内核中。建议使用 Linux 5.1 或更高版本。
 
 - Ubuntu 22.04 LTS 服务器 + 默认内核
 - Ubuntu 20.04 LTS 服务器 + HWE [滚动更新模式](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
 
 或者，您也可以安装 Intel 提供的 DCAP 驱动程序和 OOT (legacy)。注意，TSS Node 只支持 DCAP 驱动程序。可以按照以下步骤手动安装 Ubuntu 20.04 DCAP 1.41 驱动程序。对于其他版本，请参阅上述指南。
 
-1.更新 APT 的软件包资源列表。
+1. 更新 APT 的软件包资源列表。
 
 ```
 sudo apt update
 ```
 
-2.安装依赖项。
+2. 安装依赖项。
 
 ```
 sudo apt install build-essential ocaml automake autoconf libtool \
 wget python libssl-dev dkms -y
 ```
 
-3.下载 Intel SGX DCAP 驱动器。 
+3. 下载 Intel SGX DCAP 驱动器。 
 
 ```
 wget \ https://download.01.org/intel-sgx/latest/linux-latest/distro/ubuntu20.04-server/sgx_linux_x64_driver_1.41.bin
 ```
 
-4.修改 Intel SGX DCAP 驱动程序安装包的权限。
+4. 修改 Intel SGX DCAP 驱动程序安装包的权限。
 
 ```
 chmod a+x sgx_linux_x64_driver_1.41.bin
 ```
 
-5.安装 Intel SGX DCAP 驱动程序。 
+5. 安装 Intel SGX DCAP 驱动程序。 
 
 ```
 sudo ./sgx_linux_x64_driver_1.41.bin
 ```
 
-6.检查安装是否成功。
+6. 检查安装是否成功。
 
 ```
 $ ls /dev/sgx*
@@ -135,11 +135,11 @@ $ ls /dev/sgx*
 
 运行 TSS Node 需要使用 Docker Engine。在 TSS Node 初始化过程中，系统将提示您同意自动安装 Docker Engine。如果您的团队遵循特定的最佳实践，建议您手动安装和配置 Docker Engine。要详细了解如何在 Ubuntu 上手动安装 Docker Engine，请[点击此处](https://docs.docker.com/engine/install/ubuntu/)。
 
-## 现成服务器
+## 通用服务器
 
-### **现成服务器简介**
+### **通用服务器简介**
 
-现成服务器是指满足 TSS Node 最低配置前提的任何服务器，如弹性计算服务器或由客户端托管的物理服务器。虽然现成服务器可以托管 TSS Node，但它缺乏 SGX 服务器特有的安全功能。
+通用服务器是指满足 TSS Node 最低配置要求的任何服务器，如弹性计算服务器或由客户端管理的物理服务器。虽然通用服务器可以托管 TSS Node，但它缺乏 SGX 服务器特有的安全功能。
 
 ### **最低要求**
 
