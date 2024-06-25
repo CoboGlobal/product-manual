@@ -54,11 +54,6 @@
       "version": "English"
     },
     {
-      "name": "Access Private Content",
-      "url": "https://cobo-oauth.vercel.app/private",
-      "version": "English"
-    },
-    {
       "name": "Private Content",
       "url": "private",
       "isDefaultHidden": true,
@@ -77,11 +72,6 @@
     {
       "name": "Cobo Guard",
       "url": "cn/guard",
-      "version": "简体中文"
-    },
-    {
-      "name": "Access Private Content",
-      "url": "https://cobo-oauth.vercel.app/private",
       "version": "简体中文"
     },
     {
