@@ -85,7 +85,7 @@ sudo ./tss-node.sh init
 sudo ./tss-node.sh info
 ```
 
-您可以查看与 TSS 节点相关的信息，包括 TSS 节点 ID 和 Callback 服务器的 RSA 公钥。 
+您可以查看与 TSS 节点相关的信息，包括 TSS Node ID 和 Callback 服务器的 RSA 公钥。 
 
 输出示例如下。 
 
@@ -223,11 +223,11 @@ allow_list: （KeyGen 的风险控制规则；仅当符合规则时，才会批�
 
 node_ids: （KeyGen 中允许的相关方的节点 ID）
 
-- <Cobo TSS 节点 ID>
+- <Cobo TSS Node ID>
 
-- <第三方 TSS 节点 ID>
+- <第三方 TSS Node ID>
 
-- <客户 TSS 节点 ID>
+- <客户 TSS Node ID>
 
 key_sign: （KeySign 风险控制规则）
 
@@ -245,12 +245,12 @@ new_threshold: 2 （KeyReshare 的新签名阈值）
 
 new_node_ids: （KeyReshare 中允许的相关方的 ID）
 
-- <Cobo TSS 节点 ID>
+- <Cobo TSS Node ID>
 
-- <第三方 TSS 节点 ID>
+- <第三方 TSS Node ID>
 
-- <客户 TSS 节点 ID>
+- <客户 TSS Node ID>
 ```
 
-注意，需要将占位符 \<EXTENDED_ROOT_PUBKEY\>、\<Cobo TSS 节点 ID\>、\<第三方 TSS 节点 ID\> 和 \<客户 TSS 节点 ID\> 替换为实际值。输入这些参数后，删除“\<\>”符号。
+注意，需要将占位符 \<EXTENDED_ROOT_PUBKEY\>、\<Cobo TSS Node ID\>、\<第三方 TSS Node ID\> 和 \<客户 TSS Node ID\> 替换为实际值。输入这些参数后，删除“\<\>”符号。
 
