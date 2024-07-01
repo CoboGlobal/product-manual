@@ -24,8 +24,8 @@ sidebarTitle: "创建私钥分片组"
 <a id="signer-type"></a>
 |        签名人类型 | 移动端签名人 | API 签名人 |
 |------------------------|------------|-------------|
-| 主要用途       | 移动端签名人是一名团队成员，负责安全签署通过 Cobo Portal 发起的交易。其 TSS 节点 ID 由 Cobo Guard App 生成，并将自动填入。| API 签名人是一个服务器节点，用于自动签署通过 API 发起的交易。其 TSS 节点 ID 通过 Cobo 提供的 TSS 节点软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。|
-| 前提步骤 | 您选择的私钥分片持有方需要完成以下操作：<ol><li>[下载 Cobo Guard](/cn/guard/download)。</li><li>[将 Cobo Guard 设置为 Cobo Accounts 多重身份验证 (MFA) 方法之一](/cn/accounts/set-up-mfa#set-up-cobo-guard)。</li><li>被[添加为您的团队成员](/cn/portal/organization/manage-members)。</li></ol>| 您选择的私钥分片持有方需要向您提供他们生成的 TSS 节点 ID。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。|
+| 主要用途       | 移动端签名人是一名团队成员，负责安全签署通过 Cobo Portal 发起的交易。其 TSS Node ID 由 Cobo Guard App 生成，并将自动填入。| API 签名人是一个服务器节点，用于自动签署通过 API 发起的交易。其 TSS Node ID 通过 Cobo 提供的 TSS 节点软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。|
+| 前提步骤 | 您选择的私钥分片持有方需要完成以下操作：<ol><li>[下载 Cobo Guard](/cn/guard/download)。</li><li>[将 Cobo Guard 设置为 Cobo Accounts 多重身份验证 (MFA) 方法之一](/cn/accounts/set-up-mfa#set-up-cobo-guard)。</li><li>被[添加为您的团队成员](/cn/portal/organization/manage-members)。</li></ol>| 您选择的私钥分片持有方需要向您提供他们生成的 TSS Node ID。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。|
 
 选择完签名人类型并完成前提步骤后，请按照以下说明创建主控组。
 <Note>注意：只有拥有[操作员](/cn/portal/organization/roles-and-permissions)角色的用户能够创建主控组。</Note>
@@ -36,8 +36,8 @@ sidebarTitle: "创建私钥分片组"
 3. 选择 Vault，然后点击 Vault 名称下的**生成主控组私钥分片**。
 <img src="/cn/images/mpc-wallet/create-main-key-group.png" className="screenshot_full_screen"/>
 4. 在**生成主控组私钥分片**对话框中，前往**私钥分片持有方 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
-    - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击**确认**。
-    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。
+    - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
+    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。
 5. 状态将显示为“等待私钥分片持有方确认”。请通知相关的私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参阅[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
     - **注意：**
         - 如果使用移动端签名人，私钥分片持有方会在 Cobo Guard 上收到一条信息，他们需要在 24 小时内完成确认。
@@ -134,8 +134,8 @@ sidebarTitle: "创建私钥分片组"
 #### 自恢复<a id="self-recovery"></a>
 如果选择自行恢复，您将控制恢复组的两个私钥分片。请按照以下说明设置自行恢复。
 1. 在**创建恢复组**对话框中，按照以下说明选择**私钥分片持有方 1**和**私钥分片持有方 2**：
-    - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击**确认**。
-    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。
+    - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
+    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
 2. 状态将显示为“等待私钥分片持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
 3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
@@ -144,10 +144,10 @@ sidebarTitle: "创建私钥分片组"
 
 <Note>可以选择的受托第三方包括 Coincover、Nemean Services 和 MetaRisk 等。</Note>
 1. 在**创建恢复组**对话框中：
-    - 对于**私钥分片持有方 1**，输入**持有方**名称，并要求受托第三方提供 **TSS 节点 ID**。
+    - 对于**私钥分片持有方 1**，输入**持有方**名称，并要求受托第三方提供 **TSS Node ID**。
     - 对于**私钥分片持有方 2**，按照以下说明输入信息：
-        - 要使用**移动端签名人**，选择一个**持有方**（**TSS 节点 ID** 将自动填入），然后点击“确认”。
-        - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS 节点 ID**，然后点击**确认**。
+        - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击“确认”。
+        - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
 2. 状态将显示为“等待私钥分片持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
 3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
