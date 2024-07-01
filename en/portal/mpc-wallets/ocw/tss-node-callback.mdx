@@ -91,6 +91,8 @@ When **request_type** is equal to **TypeKeySign**, the structure of request_deta
 | bip32_path_list | []string | Address paths (BIP32).                        |
 | msg_hash_list   | []string | Hashes to be signed.                          |
 | tweak_list   | []string | Tweaks to be signed.                          |
+| signature_type   | int32 | Signature algorithm that has been used: <br></br>1: ECDSA<br></br>2: EdDSA<br></br>3: Schnorr |
+| tss_protocol   | int32 | TSS signature protocol that has been used: <br></br>0: Unknown<br></br>1: GG18<br></br>2: Lindell<br></br>3: EDDSATss |
 | task_id   | string | Task ID.                      |
 
 The structure of **extra_info** is as follow:
@@ -115,6 +117,8 @@ The structure of **extra_info** is as follow:
 | api_key            | string                   | (Optional) API_KEY of the withdrawal request initialized through APIs. |
 | spender            | string                   | (Optional) Email information of the withdrawer. This is applicable when the withdrawal is initiated through Cobo Portal. |
 | raw_tx_hex         | string                   | Transaction hash.                                        |
+| custody_wallet_name         | string                   | Wallet name.                                        |
+| gas_station_child_id         | string                   | Cobo ID for gas station transactions.                                        |
 | note               | string                   | Transaction remarks.                                         |
 | raw_tx_info        | json                     | Raw information necessary for constructing the transaction to be signed. |
 

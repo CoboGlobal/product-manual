@@ -91,6 +91,8 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | bip32_path_list | []string | 地址路径（BIP32）。                        |
 | msg_hash_list   | []string | 待签名的哈希值。                          |
 | tweak_list   | []string | 待签名的 tweak 列表。                          |
+| signature_type   | int32 | 使用的签名算法: <br></br>1: ECDSA<br></br>2: EdDSA<br></br>3: Schnorr |
+| tss_protocol   | int32 | 使用的TSS签名协议: <br></br>0: Unknown<br></br>1: GG18<br></br>2: Lindell<br></br>3: EDDSATss |
 | task_id   | string | 任务 ID。                         |
 
 
@@ -115,6 +117,8 @@ Callback 服务器将按以下方式构建和发送 HTTP 响应：
 | replace_cobo_id    | string                   | （可选）被指定为 RBF 的 Cobo 交易的 ID。|
 | api_key            | string                   | （可选）通过 API 发起的提币请求的 API_KEY。|
 | spender            | string                   | （可选）提币人的电子邮件信息。适用于通过 Cobo Portal 发起的提币。|
+| custody_wallet_name         | string                   | 钱包名称。                                        |
+| gas_station_child_id         | string                   | Gas Station 交易的 Cobo ID。                                        |
 | raw_tx_hex         | string                   | 交易哈希。                                        |
 | note               | string                   | 交易备注。                                         |
 | raw_tx_info        | json                     | 构建待签署的交易所需的原始信息。|
