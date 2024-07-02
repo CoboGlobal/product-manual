@@ -215,11 +215,11 @@
                       ]
                     },
                     {
-                      "group": "Manage Smart Contract Wallet",
+                      "group": "Manage Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/manage",
                         {
-                          "group": "Manage delegate addresses and transfer whitelists",
+                          "group": "Manage Delegates and transfer whitelists",
                           "pages": [
                             "en/portal/smart-contract-wallets/delegate-intro",
                             "en/portal/smart-contract-wallets/delegate-to-scw",
