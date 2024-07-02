@@ -472,6 +472,19 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Cobo Portal Apps",
+          "pages": [
+            "en/portal/portal-apps/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/portal/portal-apps/browse-and-install",
+                "en/portal/portal-apps/build"
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
