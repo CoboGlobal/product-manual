@@ -316,7 +316,9 @@
                     {
                       "group": "On-chain transaction policies",
                       "pages": [
-                        "en/portal/risk-controls/on-chain-tx-type"
+                        "en/portal/risk-controls/on-chain-tx-type",
+                        "en/portal/risk-controls/create-on-chain-policy",
+                        "en/portal/risk-controls/manage-on-chain-policy"
                       ]
                     },
                     {
