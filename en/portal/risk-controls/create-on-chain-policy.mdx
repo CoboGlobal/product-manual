@@ -1,0 +1,48 @@
+---
+title: "Create contract call policy"
+sidebarTitle: "Create contract call policy"
+---
+
+<Note>Prerequisite: Please make sure that you have already [created](/en/portal/risk-controls/on-chain-tx-type) a Delegate Key and added assets to the selected wallet.</Note>
+
+1. Log into Cobo Portal.
+2. Click **Wallets**> **Smart Contract Wallets** in the main menu on the left-hand side.
+3. Click on the Safe&#123;Wallet&#125; you have connected to or created on the Cobo Portal.
+4. Enter a name for your on-chain transaction policy, with a maximum of 50 characters.
+5. Select the Delegates to which this policy will apply. Note that each Delegate is an EOA address. Upon successful creation of an on-chain transaction policy, your selected Delegates will also be authorized to perform single-signature operations such as token transfers and custom contract calls.
+- My Wallets: Select addresses from your MPC Wallets (Organization-Controlled) and designate them as your Delegates.
+- Other Addresses: Manually enter EOA addresses to designate them as your Delegates.
+6. Click **+ Add Condition** to select an If condition.
+- Token approvals: You can specify which tokens can be spent, the spenders authorized to spend them, the maximum spending amount per transaction or per specified time period.
+- Token transfers: You can specify which types of tokens can be transferred, the receiving addresses, the maximum transfer amount per transaction or per specified time period.
+- Custom contract calls: You can specify the smart contract to call, the functions to use, and the parameters to include in each transaction.
+7. (For token approvals only) Please fill in the following fields:
+- Tokens: In the drop-down menu, click **Include** to select the list of tokens approved for spending.
+- Amount: In the drop-down menu, select **Any Amount** if there is no upper limit on the number of tokens approved for spending. Select **Count by Number** to specify the exact number of tokens approved for spending.
+- Frequency: In the drop-down menu, select **No Frequency Limit** if the maximum spending amount applies to the total number of transactions from the approved spenders. Select **Per Transaction** if the maximum spending amount applies to each transaction, or select **By Hour** to specify the number of hours for which the maximum spending amount applies.
+- Approved Spenders: In the drop-down menu, select **Any Address** to allow any address to spend the approved tokens. Select **In Address Lists** to restrict spending to an address added to your [Address Lists](/en/portal/risk-controls/address-list).
+8. (For token transfers only) Please fill in the following fields:
+- Tokens: In the drop-down menu, click **Include** to select the list of tokens approved for spending.
+- Transfer Amount: In the drop-down menu, select **Any Amount** if there is no upper limit on the transfer amount. Select **Count by Number** to specify the maximum transfer amount.
+- Frequency: In the drop-down menu, select **No Frequency Limit** if the maximum transfer amount applies to the total number of transactions. Select **Per Transaction** if the maximum transfer amount applies to each transaction, or select **By Hour** to specify the number of hours for which the maximum transfer amount applies.
+- Receiving Addresses: In the drop-down menu, select **Any Address** to allow the tokens to be transferred to any address. Select **In Address Lists** to restrict spending to an address added to your [Address Lists](/en/portal/risk-controls/address-list).
+9. (For custom contract calls only) Select whether the smart contract call will be made at the contract level, method level, or parameter level. Then, fill in the corresponding fields:
+- Contract-Level:
+   - If you have added target contracts before, search for them in the drop-down menu. Otherwise, key in the contract address in the text box within the drop-down menu and click **Add Address**.
+- Method-Level:
+   - If you have added target contracts before, search for them in the drop-down menu. Otherwise, key in the contract address in the text box within the drop-down menu and click **Add Address**.
+   - Select the methods you need. If the displayed methods are incorrect, click **Edit Contract ABI**. In the pop-up window, either edit the text manually or upload a JSON file from your device.
+- Parameter-Level:
+   - If you have added target contracts before, search for them in the drop-down menu. Otherwise, key in the contract address in the text box within the drop-down menu and click **Add Address**.
+   - Select a method from the drop-down menu. If the displayed methods are incorrect, click Edit Contract ABI. In the pop-up window, either edit the text manually or upload a JSON file from your device.
+   - Click **Create** to edit the parameters. In the pop-up window, specify the parameter, operator, and value based on your contract call requirements. Click **+ Add Group** if you want to add a set of parameters.
+10. Review the Then condition and click **Next**. Note that setting up an on-chain transaction policy for Smart Contract Wallets is similar to granting on-chain permissions. As a result, any on-chain transaction triggered under this policy will be automatically approved.
+11. Click **Next** to review the policy you have configured.
+12. If you want to make edits to the policy, click **Cancel**.
+13. A multi-sig confirmation from Safe&#123;Wallet&#125; signers is required. Click **Submit** to initiate the multi-sig transaction. Alternatively, click **Add to Queue** and later navigate to Smart Contract Wallets > On-Chain Transaction Policies > Queue to batch-submit all multi-sig confirmation requests in the queue.
+
+
+
+
+
+
