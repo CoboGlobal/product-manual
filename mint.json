@@ -429,6 +429,13 @@
       "version": "English"
     },
     {
+        "group": "COBO PORTAL APPS",
+        "pages": [
+          "en/portal/portal-apps/introduction",
+          "en/portal/portal-apps/browse-and-install"
+        ]
+    },
+    {
       "group": "DEVELOP WITH COBO",
       "pages": [
         {
@@ -473,19 +480,7 @@
             }
           ]
         },
-        {
-          "group": "Cobo Portal Apps",
-          "pages": [
-            "en/portal/portal-apps/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/portal/portal-apps/browse-and-install",
-                "en/portal/portal-apps/build"
-              ]
-            }
-          ]
-        }
+        "en/portal/portal-apps/build"
       ],
       "version": "English"
     },
@@ -912,6 +907,14 @@
       "version": "简体中文"
     },
     {
+      "group": "COBO PORTAL APPS",
+      "pages": [
+        "cn/portal/portal-apps/introduction",
+        "cn/portal/portal-apps/browse-and-install"
+      ],
+      "version": "简体中文"
+    },
+    {
       "group": "开发者专区",
       "pages": [
         {
@@ -955,7 +958,8 @@
               ]
             }
           ]
-        }
+        },
+        "cn/portal/portal-apps/build"
       ],
       "version": "简体中文"
     },
