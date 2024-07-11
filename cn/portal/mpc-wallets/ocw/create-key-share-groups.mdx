@@ -113,43 +113,30 @@ sidebarTitle: "创建私钥分片组"
 <Note>注意：只有拥有[操作员](/cn/portal/organization/roles-and-permissions)角色的用户能够创建恢复组。</Note>
 
 ### 创建恢复组
-要创建恢复组，请按照以下说明操作。
-
+<Note>在创建恢复组之前，必须先创建主控组。要创建恢复组，请按照以下说明操作。</Note>
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
 3. 选择 Vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
-4. 在**私钥分片管理**页面，点击**恢复组**，然后点击**创建恢复组**。
-<Note>在创建恢复组之前，必须先创建主控组。</Note>
-
-<img src="/cn/images/mpc-wallet/create-recovery-group.png" className="screenshot_full_screen"/>
-
-5. 选择**自恢复**或**第三方恢复**，然后点击**下一步**。
-    - **注意：**
-        - 如果选择**自恢复**，您将控制恢复组的两个私钥分片。
-        - 如果选择**第三方恢复**，您将控制两个私钥分片中的一个，而受托第三方将控制另一个私钥分片。
-    - 要使用**自恢复**，请参见[自行恢复](#self-recovery)。
-    - 要使用**第三方恢复**，请参见[第三方恢复](#third-party-recovery)。
-
-#### 自恢复<a id="self-recovery"></a>
-如果选择自行恢复，您将控制恢复组的两个私钥分片。请按照以下说明设置自行恢复。
-1. 在**创建恢复组**对话框中，按照以下说明选择**私钥分片持有方 1**和**私钥分片持有方 2**：
+4. 在弹出窗口中，选择恢复组模式并点击**确认**。
+- 有 Cobo 参与：将使用 2-3 签名方案。Cobo 持有一个私钥分片，其余两个私钥分片由您的团队独自持有或与第三方共同持有。
+- 无 Cobo 参与：将使用 2-2 签名方案。Cobo 不持有任何私钥分片。两个私钥分片由您的团队独自持有或与第三方共同持有。
+<img src="/cn/images/mpc-wallet/recoverymode.png" className="screenshot_modal"/>
+5. 如果选择有 Cobo 参与，请按照以下说明完成创建：
+- 选择**自恢复**或**第三方恢复**。自恢复需要由 Cobo 和您的团队所持有的私钥分片，而第三方恢复需要由 Cobo、您的团队和您信任的第三方所持有的私钥分片。
+- 选择您的私钥分片持有方。
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
-2. 状态将显示为“等待私钥分片持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
-3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
-
-#### 第三方恢复<a id="third-party-recovery"></a>
-如果选择第三方恢复，您将控制两个私钥分片中的一个，而受托第三方将控制另一个私钥分片。请按照以下说明设置第三方恢复。
-
-<Note>可以选择的受托第三方包括 Coincover、Nemean Services 和 MetaRisk 等。</Note>
-1. 在**创建恢复组**对话框中：
-    - 对于**私钥分片持有方 1**，输入**持有方**名称，并要求受托第三方提供 **TSS Node ID**。
-    - 对于**私钥分片持有方 2**，按照以下说明输入信息：
-        - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击“确认”。
-        - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
-2. 状态将显示为“等待私钥分片持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
-3. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
+<img src="/cn/images/mpc-wallet/recoverytype.png" className="screenshot_modal"/>
+6. 如果选择无 Cobo 参与，请按照以下说明完成创建：
+- 选择**自恢复**或**第三方恢复**。自恢复需要您的团队所持有的私钥分片，而第三方恢复需要由您的团队和您信任的第三方所持有的私钥分片。
+- 选择您的私钥分片持有方。
+    - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
+    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
+<img src="/cn/images/mpc-wallet/recoverytype1.png" className="screenshot_modal"/>
+7. 点击**确认**。
+8. 状态将显示为“等待私钥分片持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
+9. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
 ### 删除恢复组
 要删除恢复组，请按照以下说明操作。
