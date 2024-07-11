@@ -1,5 +1,27 @@
 ---
-title: "Coming Soon"
-sidebarTitle: "Coming Soon"
+title: "Set up Delegate Key"
+sidebarTitle: "Set up Delegate Key"
 ---
-The product manual for on-chain transaction policies will be going live soon. Stay tuned for updates!
+
+<Note>Prerequisite: Please create a [Smart Contract Wallet](/en/portal/smart-contract-wallets/introduction). Note that on-chain transaction policies apply only to Smart Contract Wallets.</Note>
+
+To create an on-chain transaction policy, you must first set up a Delegate Key. The Delegate Key is an address created and assigned by Cobo Portal. It will be used to initiate, but not sign, multi-sig transactions on behalf of Safe{Wallet} signers.
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/risk-controls/wallet.svg" className="icon"></img> > **Smart Contract Wallets** in the main menu on the left-hand side.
+3. Click <img src="/en/images/risk-controls/key.svg" className="icon"></img> next to the Safe&#123;Wallet&#125; you have connected to or created on the Cobo Portal (you may skip to step 6). Alternatively, click into the Safe&#123;Wallet&#125;.
+<img src="/en/images/risk-controls/5.png" className="screenshot_full_screen"></img>
+4. Switch to the On-Chain Transaction Policies tab and click <img src="/en/images/risk-controls/create.svg" className="icon"></img>.
+5. In the pop-up window, click **Set Up Delegate Key**.
+<img src="/en/images/risk-controls/6.png" className="screenshot_modal"></img>
+6. Click <img src="/en/images/risk-controls/copy.svg" className="icon"></img> to copy the link shown in the pop-up window. Then, send it to any of your Safe{Wallet} signers to sign. Alternatively, click **Copy All and Close** to copy all information, including the Safe&#123;Wallet&#125; address, Delegate Key, and URL.
+<img src="/en/images/risk-controls/7.png" className="screenshot_modal"></img>
+7. (For Safe&#123;Wallet&#125; signer) Navigate to the link provided and connect to your wallet associated with the Safe&#123;Wallet&#125;.
+8. (For Safe&#123;Wallet&#125; signer) In the pop-up window, review the auto-filled fields and enter a label for the Delegate Key. Then, click **Sign Message**.
+<img src="/en/images/risk-controls/8.png" className="screenshot_modal"></img>
+9. (For Safe&#123;Wallet&#125; signer) Sign a message in your connected wallet.
+10. The new Delegate Key will be displayed on the homepage.
+
+
+
+
