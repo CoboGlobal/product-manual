@@ -107,43 +107,30 @@ Similar to creating the Main Group and Signing Group, you have the option to cho
 After you've chosen a co-signer type and set up the prerequisites, follow the instructions below to create a Recovery Group. **Note:** Only the users who have been assigned [the Operator user role in the organization](/en/portal/organization/roles-and-permissions) can create a Recovery Group.
 
 ### Create a Recovery Group
-Follow the instructions below to create a Recovery Group.
-
+ **Note:** You must first create the Main Group before creating a Recovery group. Follow the instructions below to create a Recovery Group.
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
 3. Select your vault and then click <img src="/en/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
-4. In the **Key Group Management** page, click **Recovery Groups** and then click **Create Recovery Group**.
-    - **Note:** You must first create the Main Group before creating a Recovery group.
-
-        <img src="/en/images/mpc-wallet/create-recovery-group.png" className="screenshot_full_screen"/>
-
-5. Choose between **Self Recovery** and **Third-Party Recovery**, then click **Next**.
-    - **Notes:**
-        - If you choose **Self Recovery**, you will control both private key shares of the Recovery Group.
-        - If you choose **Third-Party Recovery**, you will control one of the two private key shares and an entrusted third party will control another private key share.
-    - To use **Self Recovery**, see [Self Recovery](#self-recovery).
-    - To use **Third-Party Recovery**, see [Third-Party Recovery](#third-party-recovery).
-
-#### Self Recovery <a id="self-recovery"></a>
-If you choose Self Recovery, you will control both private key shares of the Recovery Group. Follow the instructions below to set up Self Recovery.
-1. On the **Create Recovery Group** dialog, select **Key Holder 1** and **Key Holder 2** using the following instructions:
-    - To use **Mobile Co-Signer**, select a **Holder** (the **TSS Node ID** will be filled in automatically), then click **Confirm**.
-    - To use **API Co-Signer**, enter a **Holder** name, fill in the **TSS Node ID** generated using the TSS Node software package, then click **Confirm**.
-2. The status will show “Pending Key Holder Confirmation”. Inform all key share holders to confirm on their ends. See [Generate and back up your key shares](/en/guard/generate-and-back-up-key-shares) for instructions on how key share holders can conduct this confirmation process.
-3. Once all key share holders have confirmed on their Cobo Guard apps, wait for the key generation process to conclude, then the Recovery Group will be created.
-
-#### Third-Party Recovery <a id="third-party-recovery"></a>
-If you choose Third-Party Recovery, you will control one of the two private key shares and an entrusted third party will control another private key share. Follow the instructions below to set up Third-Party Recovery.
-
-**Note:** Some examples of entrusted third parties you might choose from include Coincover, Nemean Services, and MetaRisk.
-1. On the **Create a Recovery Group** dialog:
-    - For **Key Holder 1**, enter a **Holder** name, and ask your entrusted third party for the **TSS Node ID**.
-    - For **Key Holder 2**, enter the information using the following instructions:
-        - To use **Mobile Co-Signer**, select a **Holder** (the **TSS Node ID** will be filled in automatically), then click Confirm.
-        - To use **API Co-Signer**, enter a **Holder** name, fill in the **TSS Node ID** generated using the TSS Node software package, then click **Confirm**.
-2. The status will show “Pending Key Holder Confirmation”. Inform all key share holders to confirm on their ends. See [Generate and back up your key shares](/en/guard/generate-and-back-up-key-shares) for instructions on how key share holders can conduct this confirmation process.
-3. Once all key share holders have confirmed on their Cobo Guard apps, wait for the key generation process to conclude, then the Recovery Group will be created.
+4. In the pop-up window, select a Recovery Group mode and click **Confirm**.
+- With Cobo Participation: A 2-3 signature scheme will be used. Cobo holds one key share, and the remaining two key shares are held either exclusively by your Organization or jointly with a third party.
+- Without Cobo Participation: A 2-2 signature scheme will be used. Cobo does not hold any key shares. The two key shares are held either exclusively by your Organization or jointly with a third party.
+<img src="/en/images/mpc-wallet/recoverymode.png" className="screenshot_modal"/>
+5. If you select **With Cobo Participation**, follow the instructions below to complete the creation:
+- Select either **Self Recovery** or **Third-Party Recovery**. Self Recovery requires key shares held by Cobo and your Organization, while Third-Party Recovery requires key shares held by Cobo, your Organization, and your trusted third-party.
+- Select your key share holders.
+    - To use **Mobile Co-Signer**, select a **Holder** (the **TSS Node ID** will be filled in automatically).
+    - To use **API Co-Signer**, enter a **Holder** name, fill in the **TSS Node ID** generated using the TSS Node software package.
+<img src="/en/images/mpc-wallet/recoverytype.png" className="screenshot_modal"/>
+6. If you select **Without Cobo Participation**, follow the instructions below to complete the creation:
+- Select either **Self Recovery** or **Third-Party Recovery**. Self Recovery requires key shares held by your Organization, while Third-Party Recovery requires key shares held by your Organization and your trusted third-party.
+- Select your key share holders.
+    - To use **Mobile Co-Signer**, select a **Holder** (the **TSS Node ID** will be filled in automatically).
+    - To use **API Co-Signer**, enter a **Holder** name, fill in the **TSS Node ID** generated using the TSS Node software package.
+<img src="/en/images/mpc-wallet/recoverytype1.png" className="screenshot_modal"/>
+7. Click **Confirm**.
+8. The status will show “Pending Key Holder Confirmation”. Inform all key share holders to confirm on their ends. See [Generate and back up your key shares](/en/guard/generate-and-back-up-key-shares) for instructions on how key share holders can conduct this confirmation process.
+9. Once all key share holders have confirmed on their Cobo Guard apps, wait for the key generation process to conclude, then the Recovery Group will be created.
 
 ### Delete a Recovery Group
 Follow the instructions below if you want to delete a Recovery Group.
