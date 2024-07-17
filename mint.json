@@ -423,7 +423,8 @@
             "en/portal/bills-and-payments/introduction",
             "en/portal/bills-and-payments/purchase-pricing-plan",
             "en/portal/bills-and-payments/manage-pricing-plan",
-            "en/portal/bills-and-payments/manage-bills"
+            "en/portal/bills-and-payments/manage-bills",
+            "en/portal/bills-and-payments/payment-methods"
           ]
         }
       ],
