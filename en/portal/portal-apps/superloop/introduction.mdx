@@ -1,0 +1,42 @@
+---
+title: "Introduction to SuperLoop"
+sidebarTitle: "Introduction"
+---
+
+SuperLoop is the first [Cobo Portal App](/en/portal/portal-apps/introduction) developed by Cobo. SuperLoop is an off-exchange settlement network that allows institutions to trade on exchanges without worrying about counterparty risks.
+
+<img src="/en/images/portal-apps/superloop/superloop-in-app-store.png" className="screenshot_modal" alt="Image showing SuperLoop appears as a Cobo Portal App."/>
+
+## Key features
+
+### For asset managers
+
+- Increased confidence: Trade on exchanges with greater confidence and efficiency.
+- Minimized counterparty risk: Remove the need to pre-fund on exchanges, reducing exposure to counterparty risk.
+- Capital efficiency: Allocate assets to supported exchanges instantly, reducing delays from on-chain transfers.
+- Regulatory compliance: SuperLoop adds an extra layer of security and helps meet regulatory requirements.
+
+### For exchanges
+
+- Increased trading activity: Attract more asset managers and higher trading volumes by eliminating pre-funding requirements.
+- Counterparty risk mitigation: Ensure asset managers can meet their obligations before executing trades, mitigating counterparty risk.
+- Regulatory compliance: SuperLoop enhances security measures and supports compliance with regulatory standards.
+
+## How it works
+
+### Pre-trade
+
+- Asset managers link[ Exchange Wallets](/en/portal/exchange-wallets/introduction) to SuperLoop on [Cobo Portal](https://portal.cobo.com/login). <Note>The Exchange Wallets must have already been set up. See [Set up Exchange Wallets](/en/portal/exchange-wallets/set-up).</Note>
+- Asset managers request to mirror assets on linked exchange accounts via SuperLoop. The mirrored assets will come from one of the asset managers' chosen [Custodial Wallets](/en/portal/custodial-wallets/introduction) or [MPC Wallets](/en/portal/mpc-wallets/introduction).
+- Assets will be locked in SuperLoop and mirrored 1:1 on linked exchange accounts.
+
+### During-trade
+
+- Asset managers submit trade orders to the exchanges and trade as per usual.
+
+### Post-trade
+
+- Automated settlements take place periodically.
+- Exchanges provide net settlement amount to Cobo.
+
+<img src="/en/images/portal-apps/superloop/superloop-how-it-works.svg" className="screenshot_full_screen" alt="Image showing how SuperLoop works" />
