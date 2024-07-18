@@ -209,9 +209,7 @@
                       "group": "Set up Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
-                        "en/portal/smart-contract-wallets/import",
-                        "en/portal/smart-contract-wallets/cobo-safe",
-                        "en/portal/smart-contract-wallets/set-up"
+                        "en/portal/smart-contract-wallets/import"
                       ]
                     },
                     {
@@ -219,17 +217,20 @@
                       "pages": [
                         "en/portal/smart-contract-wallets/manage",
                         {
-                          "group": "Manage Delegates and transfer whitelists",
+                          "group": "Delegate Keys",
                           "pages": [
-                            "en/portal/smart-contract-wallets/delegate-intro",
-                            "en/portal/smart-contract-wallets/delegate-to-scw",
-                            "en/portal/smart-contract-wallets/delegate-to-address",
-                            "en/portal/smart-contract-wallets/authorize-delegate",
-                            "en/portal/smart-contract-wallets/transfer-whitelists",
-                            "en/portal/smart-contract-wallets/top-up-gas-fees"
+                            "en/portal/smart-contract-wallets/set-up-delegate-keys",
+                            "en/portal/smart-contract-wallets/manage-delegate-keys"
                           ]
                         },
                         {
+                          "group": "Delegates",
+                          "pages": [
+                            "en/portal/smart-contract-wallets/set-up-delegates",
+                            "en/portal/smart-contract-wallets/manage-delegates"
+                          ]
+                        },
+                                                {
                           "group": "Deposit and withdraw assets",
                           "pages": [
                             "en/portal/smart-contract-wallets/deposit-assets",
