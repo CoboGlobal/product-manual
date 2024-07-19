@@ -817,7 +817,9 @@
                     {
                       "group": "链上交易风控",
                       "pages": [
-                        "cn/portal/risk-controls/on-chain-tx-type"
+                        "cn/portal/risk-controls/on-chain-tx-type",
+                        "cn/portal/risk-controls/create-on-chain-policy",
+                        "cn/portal/risk-controls/manage-on-chain-tx-policy"
                       ]
                     },
                     {
