@@ -700,24 +700,16 @@
                       "group": "设置智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
-                        "cn/portal/smart-contract-wallets/import"
+                        "cn/portal/smart-contract-wallets/import",
+                        "cn/portal/smart-contract-wallets/set-up-delegate-keys",
+                        "cn/portal/smart-contract-wallets/set-up-delegates"
                       ]
                     },
                     {
                       "group": "管理智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/manage",
-                        {
-                          "group": "管理 Delegate 地址和转账白名单",
-                          "pages": [
-                            "cn/portal/smart-contract-wallets/delegate-intro",
-                            "cn/portal/smart-contract-wallets/delegate-to-scw",
-                            "cn/portal/smart-contract-wallets/delegate-to-address",
-                            "cn/portal/smart-contract-wallets/authorize-delegate",
-                            "cn/portal/smart-contract-wallets/transfer-whitelists",
-                            "cn/portal/smart-contract-wallets/top-up-gas-fees"
-                          ]
-                        },
+                        "cn/portal/smart-contract-wallets/manage-delegate-keys",
                         {
                           "group": "充币和提币",
                           "pages": [
