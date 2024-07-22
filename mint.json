@@ -209,27 +209,16 @@
                       "group": "Set up Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
-                        "en/portal/smart-contract-wallets/import"
+                        "en/portal/smart-contract-wallets/import",
+                        "en/portal/smart-contract-wallets/set-up-delegate-keys",
+                        "en/portal/smart-contract-wallets/set-up-delegates"
                       ]
                     },
                     {
                       "group": "Manage Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/manage",
-                        {
-                          "group": "Delegate Keys",
-                          "pages": [
-                            "en/portal/smart-contract-wallets/set-up-delegate-keys",
-                            "en/portal/smart-contract-wallets/manage-delegate-keys"
-                          ]
-                        },
-                        {
-                          "group": "Delegates",
-                          "pages": [
-                            "en/portal/smart-contract-wallets/set-up-delegates",
-                            "en/portal/smart-contract-wallets/manage-delegates"
-                          ]
-                        },
+                        "en/portal/smart-contract-wallets/manage-delegate-keys",
                                                 {
                           "group": "Deposit and withdraw assets",
                           "pages": [
@@ -240,7 +229,7 @@
                         {
                           "group": "Security settings",
                           "pages": [
-                            "en/portal/smart-contract-wallets/on-chain-policies",
+                            "en/portal/smart-contract-wallets/off-chain-policies",
                             "en/portal/smart-contract-wallets/roles-and-policies"
                           ]
                         }
@@ -711,9 +700,7 @@
                       "group": "设置智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
-                        "cn/portal/smart-contract-wallets/import",
-                        "cn/portal/smart-contract-wallets/cobo-safe",
-                        "cn/portal/smart-contract-wallets/set-up"
+                        "cn/portal/smart-contract-wallets/import"
                       ]
                     },
                     {
@@ -732,7 +719,7 @@
                           ]
                         },
                         {
-                          "group": "充值和提取资产",
+                          "group": "充币和提币",
                           "pages": [
                             "cn/portal/smart-contract-wallets/deposit-assets",
                             "cn/portal/smart-contract-wallets/withdraw-assets"
@@ -741,7 +728,7 @@
                         {
                           "group": "安全设置",
                           "pages": [
-                            "cn/portal/smart-contract-wallets/on-chain-policies",
+                            "cn/portal/smart-contract-wallets/off-chain-policies",
                             "cn/portal/smart-contract-wallets/roles-and-policies"
                           ]
                         }
