@@ -1,10 +1,24 @@
 ---
-title: "Create a Safe{Wallet}"
-sidebarTitle: "Create a Safe{Wallet}"
+title: "Create a Smart Contract Wallet"
+sidebarTitle: "Create a Smart Contract Wallet"
 ---
 
-<Note>Prerequisite: Set up your account and complete other required steps following the [Quick start guide](/en/portal/quick-start-guide).</Note>
+<note>Prerequisite: Set up your account and complete other required steps following the [Quick start guide](/en/portal/quick-start-guide).</note>
 
-To use Smart Contract Wallets, you will have to be a Cobo Argus user who has already set up Safe&#123;Wallet&#125; with Cobo Safe enabled. Follow the instructions below to set up these prerequisites.
+Note: Currently, creating a Smart Contract Wallet on Cobo Portal is akin to setting up a Safe&#123;Wallet&#125; with Cobo Safe enabled.
 
-Create a Safe&#123;Wallet&#125; by following the instructions. See [Creating a Safe on a Web browser](https://help.safe.global/en/articles/40868-creating-a-safe-on-a-web-browser).
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **Smart Contract Wallets** > <img src="/en/images/smart-contract-wallet/button_create.svg" className="icon"></img>.
+3. In the pop-up window, select a network where your Safe&#123;Wallet&#125; will be based.
+4. Enter a name for your Safe&#123;Wallet&#125;.
+5. Select signer addresses. These addresses will be used to sign multi-sig transactions on the Safe&#123;Wallet&#125;.
+- My Wallets: Select addresses from your MPC Wallets (Organization-Controlled).
+- Address Book: Select MPC Wallets (Organization-Controlled) or EOA addresses listed in your Address Book.
+- Other: Manually enter EOA addresses.
+6. Enter a signing threshold. The threshold in a Safe&#123;Wallet&#125; specifies the number of signers required to sign a multi-sig transaction before it can be executed
+7. Enter an optional label for your Safe&#123;Wallet&#125;. Please note that your Safe&#123;Wallet&#125; address will only be added to the Address Book if you provide a label in this step.
+8. Select an initiator address from your MPC Wallets (Organization-Controlled). This address will be used to cover the network fee when creating your new Safe&#123;Wallet&#125;.
+9. Click **Next**.
+<img src="/en/images/smart-contract-wallet/1.png" className="screenshot_modal"></img>
+10. Please confirm on your Cobo Guard that you initiated this request.
+11. Your Safe&#123;Wallet&#125; is successfully created.

@@ -1,0 +1,45 @@
+---
+title: "Overview"
+sidebarTitle: "Overview"
+---
+
+To manage SuperLoop, click <img src="/en/images/common/icon_apps.svg" className="icon" alt="Icon showing the Apps tab"/> on [Cobo Portal](https://portal.cobo.com/login), find **SuperLoop**, then click **Open** to open SuperLoop.
+
+<img src="/en/images/portal-apps/superloop/superloop-overview.svg" className="screenshot_full_screen" alt="Image showing an overview of SuperLoop" />
+
+
+## Mirror Stats dashboard
+
+On the **Mirror Stats** dashboard, you will find the following [Organization](https://manuals.cobo.com/en/portal/organization/introduction)-wide balances:
+
+1. **Total Balance** - The total balance of assets in SuperLoop denominated in USD, including funds locked in mirroring and available balance.
+2. **Mirroring Balance** - The total amount of assets mirrored from SuperLoop, denominated in USD.
+3. **Exchange Balance** - The total balance as reported by exchange accounts, denominated in USD.
+4. **Active Exchange Account** - The number of exchange accounts with the **Active** status.
+
+## Fee Reserve dashboard
+
+On the **Fee Reserve** section, you will find the following information:
+
+1. **Total Balance** - The total balance of reserved fees in SuperLoop, denominated in USD.
+2. **Low Balance Asset** - A number indicating the current count of Fee Reserve token types that have triggered a balance alert. There are two types of alert triggers:
+   1. Negative balance: During outgoing settlement, when SuperLoop transfers to the exchanges, if the Fee Reserve balance is insufficient to cover the transaction fees, SuperLoop will cover the shortfall after depleting the remaining balance, resulting in a negative balance.
+   2. Low balance: During incoming settlement, if you've chosen to let SuperLoop auto-transfer the settled assets into one of your [MPC Wallets](/en/portal/mpc-wallets/introduction), but the reserved fee balance is insufficient to cover the transaction fee, the settled assets are retained in SuperLoop as available balance.
+
+To manage your reserved fees, click **Manage** next to **Fee Reserve**. To learn more about Fee Reserve and managing Fee Reserve, see [Introduction to Fee Reserve](/en/portal/portal-apps/superloop/manage-fee-reserve).
+
+## Exchange accounts dashboard
+
+On the exchange accounts section, you will find relevant features and information such as a search bar, an **+ Exchange Account** button, **Exchange** name, **Account Names**, API key **Status**, **Total Balance**, **Mirroring Balance**, **Exchange Balance**, **Ongoing Asset Mirroring**, and the **Manage** account button under **Action**.
+
+**Notes:**
+
+1. For API key **Status**, there are 3 possible statuses:
+   1. **Active**: This indicates that the API key is valid and has all the required SuperLoop permissions.
+   2. **API Not Found**: This indicates that your API key has been unlinked in the [Exchange Wallets](/en/portal/exchange-wallets/introduction), preventing SuperLoop from using it.
+   3. **Invalid API Key**: This indicates that the API key is invalid. Possible reasons include the key's permission has been modified, or the key has been deleted in the exchanges.
+2. **Total Balance** is the total balance of the exchange account's assets in SuperLoop denominated in USD, including funds locked in mirroring and available balance, excluding reserved fees.
+3. **Mirroring Balance** is the total amount of all mirrored assets in the exchange account, denominated in USD.
+4. **Exchange Balance** is the total balance as reported by the exchange account, denominated in USD.
+5. **Ongoing Asset Mirroring** is the number of mirrored asset types in the exchange account.
+6. To manage an individual exchange account, click **Manage** under **Action** for the targeted account. See [Manage an exchange account](/en/portal/portal-apps/superloop/manage-an-exchange-account).

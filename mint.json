@@ -88,12 +88,12 @@
         "en/portal/introduction",
         "en/portal/release-notes",
         "en/portal/quick-start-guide",
-            {
-              "group": "Supported tokens and chains",
-              "pages": [
-                "en/portal/supported-tokens-custodial",
-                "en/portal/supported-tokens-mpc"
-              ]
+        {
+          "group": "Supported tokens and chains",
+          "pages": [
+            "en/portal/supported-tokens-custodial",
+            "en/portal/supported-tokens-mpc"
+          ]
         }
       ],
       "version": "English"
@@ -210,26 +210,16 @@
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
                         "en/portal/smart-contract-wallets/import",
-                        "en/portal/smart-contract-wallets/cobo-safe",
-                        "en/portal/smart-contract-wallets/set-up"
+                        "en/portal/smart-contract-wallets/set-up-delegate-keys",
+                        "en/portal/smart-contract-wallets/set-up-delegates"
                       ]
                     },
                     {
                       "group": "Manage Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/manage",
-                        {
-                          "group": "Manage Delegates and transfer whitelists",
-                          "pages": [
-                            "en/portal/smart-contract-wallets/delegate-intro",
-                            "en/portal/smart-contract-wallets/delegate-to-scw",
-                            "en/portal/smart-contract-wallets/delegate-to-address",
-                            "en/portal/smart-contract-wallets/authorize-delegate",
-                            "en/portal/smart-contract-wallets/transfer-whitelists",
-                            "en/portal/smart-contract-wallets/top-up-gas-fees"
-                          ]
-                        },
-                        {
+                        "en/portal/smart-contract-wallets/manage-delegate-keys",
+                                                {
                           "group": "Deposit and withdraw assets",
                           "pages": [
                             "en/portal/smart-contract-wallets/deposit-assets",
@@ -239,7 +229,7 @@
                         {
                           "group": "Security settings",
                           "pages": [
-                            "en/portal/smart-contract-wallets/on-chain-policies",
+                            "en/portal/smart-contract-wallets/off-chain-policies",
                             "en/portal/smart-contract-wallets/roles-and-policies"
                           ]
                         }
@@ -268,7 +258,6 @@
                         "en/portal/exchange-wallets/generate-bybit-api-key",
                         "en/portal/exchange-wallets/generate-gate-api-key",
                         "en/portal/exchange-wallets/generate-bitget-api-key"
-
                       ]
                     },
                     {
@@ -424,18 +413,40 @@
             "en/portal/bills-and-payments/introduction",
             "en/portal/bills-and-payments/purchase-pricing-plan",
             "en/portal/bills-and-payments/manage-pricing-plan",
-            "en/portal/bills-and-payments/manage-bills"
+            "en/portal/bills-and-payments/manage-bills",
+            "en/portal/bills-and-payments/payment-methods"
           ]
         }
       ],
       "version": "English"
     },
     {
-        "group": "COBO PORTAL APPS",
-        "pages": [
-          "en/portal/portal-apps/introduction",
-          "en/portal/portal-apps/browse-and-install"
-        ]
+      "group": "COBO PORTAL APPS",
+      "pages": [
+        "en/portal/portal-apps/introduction",
+        "en/portal/portal-apps/browse-and-install",
+        {
+          "group": "SuperLoop",
+          "pages": [
+            "en/portal/portal-apps/superloop/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/portal/portal-apps/superloop/set-up",
+                {
+                  "group": "Manage SuperLoop",
+                  "pages": [
+                    "en/portal/portal-apps/superloop/manage-overview",
+                    "en/portal/portal-apps/superloop/manage-fee-reserve",
+                    "en/portal/portal-apps/superloop/manage-an-exchange-account",
+                    "en/portal/portal-apps/superloop/manage-superloop-supported-exchanges"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "group": "DEVELOP WITH COBO",
@@ -568,12 +579,12 @@
         "cn/portal/introduction",
         "cn/portal/release-notes",
         "cn/portal/quick-start-guide",
-            {
-              "group": "支持的代币与链",
-              "pages": [
-                "cn/portal/supported-tokens-custodial",
-                "cn/portal/supported-tokens-mpc"
-              ]
+        {
+          "group": "支持的代币与链",
+          "pages": [
+            "cn/portal/supported-tokens-custodial",
+            "cn/portal/supported-tokens-mpc"
+          ]
         }
       ],
       "version": "简体中文"
@@ -690,27 +701,17 @@
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
                         "cn/portal/smart-contract-wallets/import",
-                        "cn/portal/smart-contract-wallets/cobo-safe",
-                        "cn/portal/smart-contract-wallets/set-up"
+                        "cn/portal/smart-contract-wallets/set-up-delegate-keys",
+                        "cn/portal/smart-contract-wallets/set-up-delegates"
                       ]
                     },
                     {
                       "group": "管理智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/manage",
+                        "cn/portal/smart-contract-wallets/manage-delegate-keys",
                         {
-                          "group": "管理 Delegate 地址和转账白名单",
-                          "pages": [
-                            "cn/portal/smart-contract-wallets/delegate-intro",
-                            "cn/portal/smart-contract-wallets/delegate-to-scw",
-                            "cn/portal/smart-contract-wallets/delegate-to-address",
-                            "cn/portal/smart-contract-wallets/authorize-delegate",
-                            "cn/portal/smart-contract-wallets/transfer-whitelists",
-                            "cn/portal/smart-contract-wallets/top-up-gas-fees"
-                          ]
-                        },
-                        {
-                          "group": "充值和提取资产",
+                          "group": "充币和提币",
                           "pages": [
                             "cn/portal/smart-contract-wallets/deposit-assets",
                             "cn/portal/smart-contract-wallets/withdraw-assets"
@@ -719,7 +720,7 @@
                         {
                           "group": "安全设置",
                           "pages": [
-                            "cn/portal/smart-contract-wallets/on-chain-policies",
+                            "cn/portal/smart-contract-wallets/off-chain-policies",
                             "cn/portal/smart-contract-wallets/roles-and-policies"
                           ]
                         }
@@ -748,7 +749,6 @@
                         "cn/portal/exchange-wallets/generate-bybit-api-key",
                         "cn/portal/exchange-wallets/generate-gate-api-key",
                         "cn/portal/exchange-wallets/generate-bitget-api-key"
-
                       ]
                     },
                     {
@@ -796,7 +796,9 @@
                     {
                       "group": "链上交易风控",
                       "pages": [
-                        "cn/portal/risk-controls/on-chain-tx-type"
+                        "cn/portal/risk-controls/on-chain-tx-type",
+                        "cn/portal/risk-controls/create-on-chain-policy",
+                        "cn/portal/risk-controls/manage-on-chain-tx-policy"
                       ]
                     },
                     {
@@ -912,7 +914,13 @@
       "group": "COBO PORTAL APPS",
       "pages": [
         "cn/portal/portal-apps/introduction",
-        "cn/portal/portal-apps/browse-and-install"
+        "cn/portal/portal-apps/browse-and-install",
+        {
+          "group": "SuperLoop",
+          "pages": [
+            "cn/portal/portal-apps/superloop/introduction"
+          ]
+        }
       ],
       "version": "简体中文"
     },
