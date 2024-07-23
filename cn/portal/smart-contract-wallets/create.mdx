@@ -1,10 +1,24 @@
 ---
-title: "创建 Safe{Wallet}"
-sidebarTitle: "创建 Safe{Wallet}"
+title: "创建智能合约钱包"
+sidebarTitle: "创建智能合约钱包"
 ---
 
-<Warning>中文版本正在建设中，敬请期待！</Warning>
+<note>前提条件：请根据[快速入门指南](/cn/portal/quick-start-guide)设置您的账户并完成其他必要步骤。</note>
 
-To use Smart Contract Wallets, you will have to be a Cobo Argus user who has already set up Safe&#123;Wallet&#125; with Cobo Safe enabled. Follow the instructions below to set up these prerequisites.
+注意： 在 Cobo Portal 上创建智能合约钱包等同于设置一个已启用了 Cobo Safe 的 Safe&#123;Wallet&#125;。
 
-Create a Safe&#123;Wallet&#125; by following the instructions. See [Creating a Safe on a Web browser](https://help.safe.global/en/articles/40868-creating-a-safe-on-a-web-browser).
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **智能合约钱包** > <img src="/cn/images/smart-contract-wallet/button_create.svg" className="icon"></img>。
+3. 在弹出窗口中，选择 Safe&#123;Wallet&#125; 所在的网络。
+4. 为 Safe&#123;Wallet&#125; 设置名称。
+5. 选择签名人地址，这些地址将用于在 Safe{Wallet} 上提议、签署并执行已获得所需确认数量的多签交易。
+- 我的钱包：从您的 MPC 钱包（机构钱包）中选择地址。
+- 地址簿：从您的地址簿中选择 MPC 钱包（机构钱包）地址或 EOA 地址。
+- 自定义地址：手动输入 EOA 地址。
+6. 输入签名阈值。Safe&#123;Wallet&#125; 的阈值指定了签署多签交易所需的签名人人数。
+7. （可选）为 Safe{Wallet} 设置标签。请注意，只有在此步骤中提供标签，您的 Safe&#123;Wallet&#125; 地址才会被添加到地址簿中。
+8. 从您的 MPC 钱包（机构钱包）中选择一个发起钱包地址。该地址将用于支付创建新 Safe&#123;Wallet&#125; 的网络费用。
+<img src="/cn/images/smart-contract-wallet/1.png" className="screenshot_modal"></img>
+9. 点击**下一页**。
+10. 请在 Cobo Guard 上确认您已发起此请求。
+11. 您的 Safe&#123;Wallet&#125; 已成功创建。

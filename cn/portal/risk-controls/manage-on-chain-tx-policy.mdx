@@ -1,0 +1,18 @@
+---
+title: "管理链上合约交互风控规则"
+sidebarTitle: "管理链上合约交互风控规则"
+---
+
+您可以通过前往**智能合约钱包** > **链上交易风控**来管理链上交易风控规则。**当前**标签页显示所有生效中的规则，**队列**标签页显示等待批量提交以获得 Safe{Wallet} 签名人多签确认的规则，**历史**标签页列出了所有已提交的多签请求。
+
+## 在**当前**标签页下
+- 查看规则详情 <img src="/cn/images/risk-controls/view policy.svg" className="icon"></img>: 查看链上交易风控规则的详细信息，包括规则名称、状态以及条件。
+- 编辑 <img src="/cn/images/risk-controls/edit.svg" className="icon"></img>：修改链上交易风控规则的详细信息，例如 Delegate 地址以及条件。请注意，一旦链上交易风控规则提交，任何修改都需要提交重新多签请求。
+- 删除 <img src="/cn/images/risk-controls/delete.svg" className="icon"></img>：移除当前使用中的链上交易风控规则。请注意，删除操作也需要重新提交多签请求。
+
+## 在**队列**标签页下
+- 查看 <img src="/cn/images/risk-controls/view policy.svg" className="icon"></img>: 查看链上交易风控规则的详细信息，包括规则名称、状态以及条件。
+- 撤销 <img src="/cn/images/risk-controls/revoke.svg" className="icon"></img>: 取消当前正在等待批量提交至 Safe&#123;Wallet&#125; 签名人进行多签确认的请求。
+
+## 在**历史**标签页下
+- 查看 <img src="/cn/images/risk-controls/view policy.svg" className="icon"></img>: 查看已提交的多签请求的详细信息，包括 Safe&#123;Wallet&#125; 交易哈希值、Nonce、Delegate 地址以及条件。

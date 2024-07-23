@@ -1,26 +1,31 @@
 ---
-title: "提取资产"
-sidebarTitle: "提取资产"
+title: "提币"
+sidebarTitle: "提币"
 ---
 
-<Warning>中文版本正在建设中，敬请期待！</Warning>
+#### 按照代币类型进行提币
+1. 在 Cobo Portal 中点击进入一个智能合约钱包，并切换到**资产**标签页。
+2. 要提取特定代币，请点击相应代币（例如 ETH）旁边的 <img src="/cn/images/smart-contract-wallet/button_withdraw.svg" className="icon"></img>。
+3. 在弹出窗口中，检查**代币**类型和**出金钱包/地址**的默认填写内容。
+4. 选择 **Delegate** 地址并输入您的**接收地址**。请注意，Delegate 只能将授权的代币提取到在设置代币转账链上交易风控规则时指定的接收地址。有关更多信息，请参考[创建链上合约交互风控规则](/cn/portal/risk-controls/create-on-chain-policy)。
+5. 输入提币金额，并查看交易费用。
+6. （可选）输入交易分类和描述。
+<img src="/cn/images/smart-contract-wallet/11.png" className="screenshot_modal"></img>
+7. 点击**提交**。
 
-## Withdraw by assets
+#### 直接从 Safe&#123;Wallet&#125; 提币
+1. 要直接从您的 Safe&#123;Wallet&#125; 提币，请点击**资产总额**旁边的 <img src="/cn/images/smart-contract-wallet/button_withdraw.svg" className="icon"></img>。
+<img src="/cn/images/smart-contract-wallet/12.png" className="screenshot_full_screen"></img>
+2. 在弹出窗口中，检查**出金钱包/地址**的默认填写内容。
+3. 选择 **Delegate** 地址，输入您要提取的**代币**类型和**接收地址**。请注意，Delegate 只能将授权的代币提取到在设置代币转账链上交易风控规则时指定的接收地址。有关更多信息，请参考[创建链上合约交互风控规则](/cn/portal/risk-controls/create-on-chain-policy)。
+4. 输入提币金额，并查看交易费用。
+5. （可选）输入交易分类和描述。
+6. 点击**提交**。
 
-1. Click into a Smart Contract Wallet on Cobo Portal and switch to the **Assets** section.
-2. To withdraw a specific token, click the **withdrawal icon** next to the respective token.
-3. In the pop-up window, review the default entries for **token** type, **From** wallet/address, and **delegate** address.
-4. Enter your **To** address. Note that the delegate can only withdraw the authorized tokens to an address listed in transfer whitelists on Cobo Argus. For more information, please refer to [**Add transfer whitelists**](/cn/portal/smart-contract-wallets/transfer-whitelists).
-5. Enter your transfer amount and select a desired transaction speed (e.g., slow, standard, fast). Alternatively, you can click the **customize icon** to adjust the network fee.
-6. Review your transaction cost and click **Submit**.
+#### 通过转账模块进行提币
 
-## Withdraw directly from Safe&#123;Wallet&#125;
-1. To make a withdrawal directly from your Safe&#123;Wallet&#125;, click the **withdrawal icon** next to Total Balance.
-2. In the pop-up window, review the default entries for **From** wallet/address and **delegate** address.
-3. Select the **token** type for withdrawal and enter your **To** address. Note that the delegate can only withdraw the authorized tokens to an address listed in transfer whitelists on Cobo Argus. For more information, please refer to [**Add transfer whitelists**](/cn/portal/smart-contract-wallets/transfer-whitelists).
-4. Enter your transfer amount and select a desired transaction speed (e.g., slow, standard, fast). Alternatively, you can click the **customize** icon to adjust the network fee.
-5. Review your transaction cost and click **Submit**.
-
-## Withdraw via Transfer module
-1. Click the **transfer icon** in the main menu on the left hand side.
-2. In the pop-up window, select the **token** type for withdrawal, **From** address/wallet, **delegate** address, and **To** address.
+1. 点击左侧主菜单中的 <img src="/cn/images/smart-contract-wallet/button_transfer.svg" className="icon"></img>。
+2. 在弹出窗口中，选择您要提取的**代币**类型、**出金地址/钱包**、**Delegate** 地址和**接收地址**。
+3. 输入提币金额并查看交易费用。
+4. （可选）输入交易分类和描述。
+5. 点击**提交**。

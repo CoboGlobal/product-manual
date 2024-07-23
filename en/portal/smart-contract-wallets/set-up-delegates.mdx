@@ -1,0 +1,22 @@
+---
+title: "Set up on-chain transaction policies for token transfers"
+sidebarTitle: "Set up on-chain transaction policies"
+
+---
+
+<note>Prerequisite: Please make sure that you have already created a Delegate Key and added assets to the associated wallet.</note>
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **Smart Contract Wallets**.
+3. Click into a Safe&#123;Wallet&#125; and switch to the **On-Chain Transaction Policies** tab.
+4. Click <img src="/en/images/smart-contract-wallet/button_create policy.svg" className="icon"></img>.
+5. Set up an on-chain transaction policy for token transfers. For step-to-step guides, refer to [Create contract call policy](/en/portal/risk-controls/create-on-chain-policy). Upon successful creation of an on-chain transaction policy, your selected Delegates will be authorized to perform single-signature operations such as token transfers and custom contract calls.
+<img src="/en/images/smart-contract-wallet/9.png" className="screenshot_modal"></img>
+
+#### What is a Delegate?
+
+Delegate can either be an address from your MPC Wallets (Organization-Controlled) or an EOA address. It is pre-authorized by Safe&#123;Wallet&#125; signers to perform single-signature operations, such as transferring funds or interacting with dApps. Importantly, the Delegate is responsible for handling gas fees during the execution of single-signature transactions.
+
+<img src="/en/images/smart-contract-wallet/8.png" className="screenshot"></img>
+
+On Cobo Portal, you can set up Delegates by creating on-chain transaction policies for Smart Contract Wallets. The addresses entered during setup will automatically be designated as Delegates for performing single-signature operations.

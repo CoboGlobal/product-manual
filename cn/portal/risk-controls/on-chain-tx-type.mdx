@@ -1,5 +1,23 @@
 ---
-title: "即将上线"
-sidebarTitle: "即将上线"
+title: "设置 Delegate Key"
+sidebarTitle: "设置 Delegate Key"
 ---
-链上交易风控的产品手册即将上线。敬请期待更新！
+
+<Note>设置前：请先创建一个[智能合约钱包](/cn/portal/smart-contract-wallets/introduction)。注意，链上交易风控仅适用于智能合约钱包。</Note>
+
+要创建链上交易风控，必须先设置一个 Delegate Key。Delegate Key 是由 Cobo Portal 创建和分配的地址。它将用于代表 Safe&#123;Wallet&#125; 签名人发起（但不签名）多签交易。
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/cn/images/risk-controls/button_wallet.svg" className="icon"></img> > **智能合约钱包**。
+3. 点击您在 Cobo Portal 上已经连接或创建的 Safe&#123;Wallet&#125; 旁边的 <img src="/cn/images/risk-controls/button_key.svg" className="icon"></img>（您可以跳至第 6 步）。或者，直接点击进入 Safe&#123;Wallet&#125;。
+<img src="/cn/images/risk-controls/1.png" className="screenshot_full_screen"></img>
+4. 切换到**链上交易风控**标签页，然后点击 <img src="/cn/images/risk-controls/button_create.svg" className="icon"></img>。
+5. 在弹窗中，点击**设置 Delegate Key**。
+<img src="/cn/images/risk-controls/2.png" className="screenshot_modal"></img>
+6. 点击 <img src="/cn/images/risk-controls/button_copy.svg" className="icon"></img>，复制弹出窗口中显示的链接。然后，将其发送给您的任意 Safe&#123;Wallet&#125; 签名人进行签署。或者，点击**复制全部并关闭**，复制所有信息，包括 Safe&#123;Wallet&#125; 地址、Delegate Key 和 URL。
+<img src="/cn/images/risk-controls/3.png" className="screenshot_modal"></img>
+7. （如果您是 Safe&#123;Wallet&#125; 签名人）导航至提供的链接，并连接到与 Safe&#123;Wallet&#125; 所关联的钱包。
+8. （如果您是 Safe&#123;Wallet&#125; 签名人）在弹出窗口中，查看自动填写的字段，并输入为 Delegate Key 设置的标签。然后，点击**签署消息**。
+<img src="/cn/images/risk-controls/4.png" className="screenshot_modal"></img>
+9. （如果您是 Safe&#123;Wallet&#125; 签名人）在您连接的钱包中签署消息。
+10. 主页上将显示您新建的 Delegate Key。

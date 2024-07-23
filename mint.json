@@ -210,26 +210,16 @@
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
                         "en/portal/smart-contract-wallets/import",
-                        "en/portal/smart-contract-wallets/cobo-safe",
-                        "en/portal/smart-contract-wallets/set-up"
+                        "en/portal/smart-contract-wallets/set-up-delegate-keys",
+                        "en/portal/smart-contract-wallets/set-up-delegates"
                       ]
                     },
                     {
                       "group": "Manage Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/manage",
-                        {
-                          "group": "Manage Delegates and transfer whitelists",
-                          "pages": [
-                            "en/portal/smart-contract-wallets/delegate-intro",
-                            "en/portal/smart-contract-wallets/delegate-to-scw",
-                            "en/portal/smart-contract-wallets/delegate-to-address",
-                            "en/portal/smart-contract-wallets/authorize-delegate",
-                            "en/portal/smart-contract-wallets/transfer-whitelists",
-                            "en/portal/smart-contract-wallets/top-up-gas-fees"
-                          ]
-                        },
-                        {
+                        "en/portal/smart-contract-wallets/manage-delegate-keys",
+                                                {
                           "group": "Deposit and withdraw assets",
                           "pages": [
                             "en/portal/smart-contract-wallets/deposit-assets",
@@ -239,7 +229,7 @@
                         {
                           "group": "Security settings",
                           "pages": [
-                            "en/portal/smart-contract-wallets/on-chain-policies",
+                            "en/portal/smart-contract-wallets/off-chain-policies",
                             "en/portal/smart-contract-wallets/roles-and-policies"
                           ]
                         }
@@ -711,27 +701,17 @@
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
                         "cn/portal/smart-contract-wallets/import",
-                        "cn/portal/smart-contract-wallets/cobo-safe",
-                        "cn/portal/smart-contract-wallets/set-up"
+                        "cn/portal/smart-contract-wallets/set-up-delegate-keys",
+                        "cn/portal/smart-contract-wallets/set-up-delegates"
                       ]
                     },
                     {
                       "group": "管理智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/manage",
+                        "cn/portal/smart-contract-wallets/manage-delegate-keys",
                         {
-                          "group": "管理 Delegate 地址和转账白名单",
-                          "pages": [
-                            "cn/portal/smart-contract-wallets/delegate-intro",
-                            "cn/portal/smart-contract-wallets/delegate-to-scw",
-                            "cn/portal/smart-contract-wallets/delegate-to-address",
-                            "cn/portal/smart-contract-wallets/authorize-delegate",
-                            "cn/portal/smart-contract-wallets/transfer-whitelists",
-                            "cn/portal/smart-contract-wallets/top-up-gas-fees"
-                          ]
-                        },
-                        {
-                          "group": "充值和提取资产",
+                          "group": "充币和提币",
                           "pages": [
                             "cn/portal/smart-contract-wallets/deposit-assets",
                             "cn/portal/smart-contract-wallets/withdraw-assets"
@@ -740,7 +720,7 @@
                         {
                           "group": "安全设置",
                           "pages": [
-                            "cn/portal/smart-contract-wallets/on-chain-policies",
+                            "cn/portal/smart-contract-wallets/off-chain-policies",
                             "cn/portal/smart-contract-wallets/roles-and-policies"
                           ]
                         }
@@ -816,7 +796,9 @@
                     {
                       "group": "链上交易风控",
                       "pages": [
-                        "cn/portal/risk-controls/on-chain-tx-type"
+                        "cn/portal/risk-controls/on-chain-tx-type",
+                        "cn/portal/risk-controls/create-on-chain-policy",
+                        "cn/portal/risk-controls/manage-on-chain-tx-policy"
                       ]
                     },
                     {
