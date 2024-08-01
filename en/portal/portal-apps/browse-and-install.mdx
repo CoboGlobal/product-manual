@@ -5,30 +5,43 @@ sidebarTitle: "Browse and install apps"
 This article describes how to browse and install Cobo Portal Apps.
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/portal-apps/icon-apps.svg" className="icon" alt="the apps button"></img> in the main menu on the left-hand side.
+
+2. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the apps button"></img> in the main menu on the left-hand side.
 
     The **All Apps** section displays all available Cobo Portal Apps.
     <img src="/en/images/portal-apps/apps-overview.png" className="screenshot_full_screen" alt="Screenshot of Cobo Portal Apps" />
     
-3. In the **All Apps** section, click an app card or the **View Details** button, then, you can find the overview information and required permissions for the app.
-4. Click **Install** to initiate the installation process. A dialog that lists required permissions appears.
+3. In the **All Apps** section, click an app or the **View Details** button, then, you can find the overview and permissions information of the app.
+
+4. Click **Install** to open a dialog containing information regarding permissions and wallet scopes.
 
     <img src="/en/images/portal-apps/install.png" className="screenshot_full_screen" alt="Install button on the app" />
 
-5. In the dialog, click **Confirm** to proceed with the installation.
+<a id="confirm"></a>
 
-    <img src="/en/images/portal-apps/confirm-install.png" className="screenshot_full_screen" alt="Dialog of confirming installation" />
+5. The dialog lists the required and optional permissions the app needs to access your [organization](/en/portal/organization/introduction)’s resources. You can select optional permissions and wallets you want to allow the app to access. By clicking **Submit**, you authorize the app to access the required and optionally selected organization resources.
 
-    **Note**: Depending on the [Risk Controls](/en/portal/risk-controls/introduction) policies in your [organization](/en/portal/organization/introduction), the installation might require approvals from your organization [admin](/en/portal/organization/roles-and-permissions). When you click **Confirm**, your organization admin will receive an approval request for the installation.
+    <img src="/en/images/portal-apps/confirm-install.png" className="screenshot_full_screen" alt="Dialog of installation" />
 
-6. You can hover over the **Installing** to view the approval progress. Once the request is approved, the app will begin installing. 
+    <Note>You can change these settings later after the installation, which might require approvals from your organization <a href="/en/portal/organization/roles-and-permissions">admin</a>.</Note>
+
+6. Click **Submit** to open a confirmation dialog.
+
+7. In the dialog, click **Confirm** to proceed with the installation.
+
+    <img src="/en/images/portal-apps/confirm-dialog.png" className="screenshot_full_screen" alt="Dialog of installation confirmation" />
+
+    <Note>Depending on the <a href="/en/portal/organization/governance-intro">governance policies</a> of your organization, the installation might require approval from your organization admin. When you click <b>Confirm</b>, your organization admin might receive an approval request for the installation.</Note>
+
+8. The **Installation in Progress** dialog appears, which indicates the app is waiting for your organization admin’s approval. Click **OK** to proceed.
+    <img src="/en/images/portal-apps/in-progress.png" className="screenshot_full_screen" alt="Dialog of installation in progress" />
+
+9. You can hover over the **Pending Approval** or the clock icon <img src="/en/images/portal-apps/icon-pending.png" className="icon" alt="the clock icon"></img> to view the approval progress. Once the request is approved, the app will begin installing. 
 
     <img src="/en/images/portal-apps/installing.png" className="screenshot_full_screen" alt="The app is installing" />
 
-7. Once the installation is completed, click **Open** to start using the app.
-
-    <img src="/en/images/portal-apps/open.png" className="screenshot_full_screen" alt="Open button on the app" />
-
-    You can also navigate to the **Apps** page, where you can see the installed Cobo Portal App displayed in the **Installed Apps** section.
+10.  Once the installation is completed, you can click **Open** to start using the app.
 
     <img src="/en/images/portal-apps/installed.png" className="screenshot_full_screen" alt="The Installed Apps section" />
+
+    <Note>It is highly recommended that you set up <a href="/en/portal/risk-controls/tx-policies-overview">transaction policies</a> for the app first. You can click <b>Set Up</b> in the reminder message to navigate to the <b>App Management</b> page. For more details, see <a href="transaction-policies">Set up and update transaction policies</a>.</Note>
