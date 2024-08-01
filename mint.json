@@ -446,8 +446,9 @@
             }
           ]
         }
-      ]
-    },
+      ],
+      "version": "English"
+    },    
     {
       "group": "DEVELOP WITH COBO",
       "pages": [
