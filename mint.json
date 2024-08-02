@@ -426,6 +426,13 @@
         "en/portal/portal-apps/introduction",
         "en/portal/portal-apps/browse-and-install",
         {
+          "group": "Manage your apps",
+          "pages": [
+            "en/portal/portal-apps/transaction-policies",
+            "en/portal/portal-apps/app-settings"
+          ]
+        },
+        {
           "group": "SuperLoop",
           "pages": [
             "en/portal/portal-apps/superloop/introduction",
