@@ -329,7 +329,7 @@
           ]
         },
         {
-          "group": "Cobo Connect Chrome Extension",
+          "group": "Cobo Connect",
           "pages": [
             "en/portal/cobo-connect/introduction",
             {
