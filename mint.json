@@ -327,6 +327,19 @@
               ]
             }
           ]
+        }，
+        {
+          "group": "Cobo Connect Chrome Extension",
+          "pages": [
+            "en/portal/cobo-connect/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/portal/cobo-connect/set-up",
+                "en/portal/cobo-connect/interact-with-dapps"
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
