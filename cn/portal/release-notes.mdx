@@ -1,29 +1,31 @@
 ---
-title: "版本说明"
-sidebarTitle: "版本说明"
+title: "文档变更日志"
+sidebarTitle: "文档变更日志"
 ---
 
-## 2024 年 7 月 17 日
+#### Cobo Portal 功能的文档添加和更新
 
-该版本新增了多项新功能：
+<Steps>
+    <Step title="2024 年 8 月 9 日" icon="star">
+    - **Staking** *(即将在 [Cobo Portal](https://portal.cobo.com/login) 推出)*：这是由 Cobo 开发的一款 [Cobo Portal App](/cn/portal/portal-apps/introduction) ，让您能够直接在 Cobo Portal 钱包内使用  [Babylon 比特币质押协议（Babylon Bitcoin staking protocol）](https://docs.babylonchain.io/docs/introduction/btc-staking)等协议进行质押。
+    - [Cobo Connect](/cn/portal/cobo-connect/introduction) *(即将在 [Cobo Portal](https://portal.cobo.com/login) 推出)*：这是一款 [Chrome 扩展程序](https://chromewebstore.google.com/category/extensions)，能够让您将 Cobo Portal 钱包与 dApps 连接起来。连接后，Cobo Connect 将识别每个来自 dApps 的交易和消息，并根据您在 Cobo Portal 中预先配置的[风险控制规则](/cn/portal/risk-controls/introduction) 进行处理。
+    - **Fee Station**：Fee Station 是您的全方位费用管理解决方案。它能自动结算您的 Cobo 账单、服务费和 [MPC 钱包](/cn/portal/mpc-wallets/introduction)的手续费，所有操作都在一个集成账户中完成。
+    - [Cobo Portal Apps](/cn/portal/portal-apps/introduction)：对于每个 App，您现在可以管理其可选权限、适用钱包和交易风控规则。
+    - [支持的代币与链](/cn/portal/supported-tokens-custodial)：您现在可以在产品手册中查看 Cobo 对[全托管钱包](/cn/portal/supported-tokens-custodial)和 [MPC 钱包](/cn/portal/supported-tokens-mpc)支持的代币与链。
+  </Step>
+  <Step title="2024 年 7 月 17 日" icon="star">
+    - [智能合约钱包](/cn/portal/smart-contract-wallets/introduction): 该钱包类型支持各种智能合约钱包，主要包括 Safe\{Wallet\} 以及其他账户抽象钱包。它还支持灵活地 delegate 外部账户 (EOA) 钱包来与智能合约生态系统进行无缝交互。
+    - [交易所钱包](/cn/portal/exchange-wallets/introduction): 交易所钱包是轻松管理多个交易所账户的一站式解决方案。它将所有交易所账户集中呈现在用户友好的单一界面中，让您能够无缝查看、监控和管理各个交易所中的资产。
+    - [Cobo Portal Apps](/cn/portal/portal-apps/introduction)：基于 WaaS 2.0 API，Cobo 与各类第三方提供商合作，打造了一个强大的商业应用生态系统 Cobo Portal Apps，旨在丰富用户数字资产的投资、交易和管理方式。
+    - [SuperLoop](/cn/portal/portal-apps/superloop/introduction)：SuperLoop 是 Cobo 开发的首个 Cobo Portal App，这是一个场外结算网络，允许机构在交易所进行交易且无需担心交易对手风险。
+    - [用量套餐](/cn/portal/bills-and-payments/introduction)：您可以根据不同的业务需求选择不同的付费套餐和免费试用套餐。
+  </Step>
+  <Step title="2024 年 6 月 10 日" icon="star">
+    此为 [Cobo Portal](/cn/portal/introduction) 第一版。Cobo Portal 是一个可用于安全高效管理数字资产的一站式平台。此版 Cobo Portal 有以下功能：
 
-- [智能合约钱包](/cn/portal/smart-contract-wallets/introduction): 该钱包类型支持各种智能合约钱包，主要包括 Safe\{Wallet\} 以及其他账户抽象钱包。它还支持灵活地 delegate 外部账户 (EOA) 钱包来与智能合约生态系统进行无缝交互。
-- [交易所钱包](/cn/portal/exchange-wallets/introduction): 交易所钱包是轻松管理多个交易所账户的一站式解决方案。它将所有交易所账户集中呈现在用户友好的单一界面中，让您能够无缝查看、监控和管理各个交易所中的资产。
-- [Cobo Portal Apps](/cn/portal/portal-apps/introduction)：基于 WaaS 2.0 API，Cobo 与各类第三方提供商合作，打造了一个强大的商业应用生态系统 Cobo Portal Apps，旨在丰富用户数字资产的投资、交易和管理方式。 
-- [SuperLoop](/cn/portal/portal-apps/superloop/introduction)：SuperLoop 是 Cobo 开发的首个 Cobo Portal App，这是一个场外结算网络，允许机构在交易所进行交易且无需担心交易对手风险。
-
-- [用量套餐](/cn/portal/bills-and-payments/introduction)：您可以根据不同的业务需求选择不同的付费套餐和免费试用套餐。 
-
-- [Fee Station](/cn/portal/bills-and-payments/payment-methods)：Fee Station 是一个专用于费用支付的钱包。目前您可以使用 Fee Station 支付付费套餐、用量包和账单。
-
-## 2024 年 6 月 10 日
-
-此为 [Cobo Portal](/cn/portal/introduction) 第一版。Cobo Portal 是一个可用于安全高效管理数字资产的一站式平台。此版 Cobo Portal 有以下功能：
-
-- [全托管钱包](/cn/portal/custodial-wallets/introduction)和 [MPC 钱包](/cn/portal/mpc-wallets/introduction)，单一平台一站提供。
-- [风险控制](/cn/portal/risk-controls/introduction)，提供全面的风控机制，以应对数字资产存储、管理和转移中的挑战，包括链下交易风控、业务风控以及用户角色与权限管理。
-
-- [开发者控制台](/cn/portal/developer-console/introduction)，一个面向开发者可用于管理 API Key、跟踪 API 日志、监督 Webhook 事件和处理 Callback 消息的中心枢纽。
-- [业务数据概览](/cn/portal/dashboard/introduction)，提供总资产价值、资产分配、交易、定价方案套餐及最新 Cobo 生态系统动态的全面概览。
-
-要了解关于 Cobo Portal 的更多信息，请查看 [Cobo Portal 简介](/cn/portal/introduction)。
+    - [全托管钱包](/cn/portal/custodial-wallets/introduction)和 [MPC 钱包](/cn/portal/mpc-wallets/introduction)，单一平台一站提供。
+    - [风险控制](/cn/portal/risk-controls/introduction)，提供全面的风控机制，以应对数字资产存储、管理和转移中的挑战，包括链下交易风控、业务风控以及用户角色与权限管理。
+    - [开发者控制台](/cn/portal/developer-console/introduction)，一个面向开发者可用于管理 API Key、跟踪 API 日志、监督 Webhook 事件和处理 Callback 消息的中心枢纽。
+    - [业务数据概览](/cn/portal/dashboard/introduction)，提供总资产价值、资产分配、交易、定价方案套餐及最新 Cobo 生态系统动态的全面概览。
+  </Step>
+</Steps>
