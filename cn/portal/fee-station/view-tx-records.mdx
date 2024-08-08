@@ -1,0 +1,19 @@
+---
+title: "查看交易流水"
+sidebarTitle: "查看交易流水"
+---
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的用户名，选择**团队** > **Fee Station**。
+3. 切换到**交易流水**标签页。目前 Fee Station 展示三种类型的交易流水：
+- 交易手续费支付：指 Fee Station 自动向您的 MPC 钱包地址支付的交易手续费。
+- Cobo 账单支付：指 Fee Station 自动结算的 Cobo 账单。Fee Station 支持以下资产类型来支付 Cobo 账单，支付顺序为：TRON_USDC、TRON_USDT、ETH_USDC 和 ETH_USDT。Fee Station 支持使用这些资产中的一种或多种进行支付。例如，如果某笔 Cobo 账单金额为 300 美元，而您的 Fee Station 余额仅包括 100 TRON_USDC、50 TRON_USDT 和 40,000 ETH_USDC，则支付将按以下方式进行，并生成三条交易流水：
+- 首先会扣除 100 TRON_USDC。
+- 接着会扣除 50 TRON_USDT。
+- 剩余的 150 美元将从 ETH_USDC 中扣除。
+4. 退款：
+- 如果您从 MPC 钱包发起的 TRON 交易失败，相应的交易手续费将退还到您的 Fee Station。不过，对于 EVM 链上的 MPC 交易失败，交易手续费会保留在您对应的 MPC 钱包中，不会退还到 Fee Station。
+- Cobo 账单也可能会有退款。
+<img src="/cn/images/fee-station/4.png" className="screenshot_full_screen"/>
+5. 点击一笔交易流水旁的<img src="/cn/images/fee-station/view.svg" className="icon"></img>以查看详细信息。您可以查看交易 ID、发起人等基本信息，以及金额等支付详情。要为此笔流水添加自定义分类和描述，请点击<img src="/en/images/fee-station/edit.svg" className="icon"></img>。
+<img src="/cn/images/fee-station/3.png" className="screenshot_modal"/>
