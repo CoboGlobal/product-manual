@@ -1,0 +1,24 @@
+---
+title: "Set up Fee Station for Transaction Fee Payment of MPC Wallets"
+sidebarTitle: "Set up Fee Station for MPC transactions"
+---
+
+Note: Please make sure that your Fee Station has a sufficient balance of fee tokens to cover the MPC transaction fees. When you create transactions from MPC Wallets, you will be able to view your Fee Station balance and whether a top-up is necessary.
+
+Once you set up Fee Station for MPC Wallets, the payment methods differ depending on the blockchain:
+
+- EVM chains: Fee Station automatically manages transaction fees by preloading the required amount into your MPC Wallet. For example, if you initiate a transaction of 1,000 ETH from your MPC Wallet and the fee is 0.05 ETH, but your wallet does not have enough funds to cover the fee, Fee Station will automatically transfer 0.05 ETH to your wallet. This ensures that your MPC transaction proceeds without interruption.
+- TRON chain: The transaction fee is directly deducted from Fee Station. This fee is a fixed amount of 15 TRON, regardless of the transaction size.
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Switch to the **Payment Preferences** tab and click **Expand**.
+4. (For EVM chains) Select either **Do Not Use Fee Station** or **Use Fee Station**.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet itself.
+- Use Fee Station: If the fee token balance in your MPC Wallet is insufficient, the transaction fee will be paid using Fee Station. If your MPC Wallet has sufficient fee tokens, the transaction fee will be paid by the MPC Wallet itself.
+5. (For the TRON chain) Select either **Do Not Use Fee Station** or **Use Fee Station**.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet itself.
+- Use Fee Station: The transaction fee will be paid using Fee Station, regardless of whether your MPC Wallet has sufficient fee tokens.
+<img src="/en/images/fee-station/1.png" className="screenshot_full_screen"/>
+6. Click **Save Changes**.
+7. Finish the setup by completing your security verification.
