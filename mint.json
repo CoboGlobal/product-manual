@@ -932,6 +932,43 @@
             }
           ]
         },
+                {
+          "group": "账单与支付",
+          "pages": [
+            "cn/portal/bills-and-payments/introduction",
+            "cn/portal/bills-and-payments/purchase-pricing-plan",
+            "cn/portal/bills-and-payments/manage-pricing-plan",
+            "cn/portal/bills-and-payments/manage-bills",
+            "cn/portal/bills-and-payments/payment-methods"
+          ]
+        },
+                        {
+          "group": "Fee Station",
+          "pages": [
+            "cn/portal/fee-station/introduction",
+            "cn/portal/fee-station/key-features",
+            {
+              "group": "使用说明",
+              "pages": [
+                {
+                  "group": "设置 Fee Station",
+                  "pages": [
+                    "cn/portal/fee-station/overview",
+                    "cn/portal/fee-station/set-up-mpc"
+                  ]
+                },
+                {
+                  "group": "管理 Fee Station",
+                  "pages": [
+                    "cn/portal/fee-station/manage",
+                    "cn/portal/fee-station/deposit",
+                    "cn/portal/fee-station/view-tx-records"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "group": "地址簿",
           "pages": [
@@ -945,17 +982,8 @@
               ]
             }
           ]
-        },
-        {
-          "group": "账单与支付",
-          "pages": [
-            "cn/portal/bills-and-payments/introduction",
-            "cn/portal/bills-and-payments/purchase-pricing-plan",
-            "cn/portal/bills-and-payments/manage-pricing-plan",
-            "cn/portal/bills-and-payments/manage-bills",
-            "cn/portal/bills-and-payments/payment-methods"
-          ]
         }
+
       ],
       "version": "简体中文"
     },
