@@ -1025,7 +1025,22 @@
         {
           "group": "SuperLoop",
           "pages": [
-            "cn/portal/portal-apps/superloop/introduction"
+            "cn/portal/portal-apps/superloop/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/portal/portal-apps/superloop/set-up",
+                {
+                  "group": "管理 SuperLoop",
+                  "pages": [
+                    "cn/portal/portal-apps/superloop/manage-overview",
+                    "cn/portal/portal-apps/superloop/manage-fee-reserve",
+                    "cn/portal/portal-apps/superloop/manage-an-exchange-account",
+                    "cn/portal/portal-apps/superloop/manage-superloop-supported-exchanges"
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
