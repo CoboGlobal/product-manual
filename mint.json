@@ -925,6 +925,13 @@
         "cn/portal/portal-apps/introduction",
         "cn/portal/portal-apps/browse-and-install",
         {
+          "group": "管理应用",
+          "pages": [
+            "cn/portal/portal-apps/transaction-policies",
+            "cn/portal/portal-apps/app-settings"
+          ]
+        },
+        {
           "group": "SuperLoop",
           "pages": [
             "cn/portal/portal-apps/superloop/introduction"
