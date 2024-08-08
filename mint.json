@@ -219,7 +219,7 @@
                       "pages": [
                         "en/portal/smart-contract-wallets/manage",
                         "en/portal/smart-contract-wallets/manage-delegate-keys",
-                                                {
+                        {
                           "group": "Deposit and withdraw assets",
                           "pages": [
                             "en/portal/smart-contract-wallets/deposit-assets",
@@ -407,6 +407,43 @@
           ]
         },
         {
+          "group": "Bills & Payments",
+          "pages": [
+            "en/portal/bills-and-payments/introduction",
+            "en/portal/bills-and-payments/purchase-pricing-plan",
+            "en/portal/bills-and-payments/manage-pricing-plan",
+            "en/portal/bills-and-payments/manage-bills",
+            "en/portal/bills-and-payments/payment-methods"
+          ]
+        },
+        {
+          "group": "Fee Station",
+          "pages": [
+            "en/portal/fee-station/introduction",
+            "en/portal/fee-station/key-features",
+            {
+              "group": "How to use",
+              "pages": [
+                {
+                  "group": "Set up Fee Station",
+                  "pages": [
+                    "en/portal/fee-station/set-up",
+                    "en/portal/fee-station/set-up-for-mpc"
+                  ]
+                },
+                {
+                  "group": "Manage Fee Station",
+                  "pages": [
+                    "en/portal/fee-station/manage",
+                    "en/portal/fee-station/deposit",
+                    "en/portal/fee-station/transaction-records"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "group": "Address Book",
           "pages": [
             "en/portal/address-book/introduction",
@@ -418,16 +455,6 @@
                 "en/portal/address-book/manage"
               ]
             }
-          ]
-        },
-        {
-          "group": "Bills & Payments",
-          "pages": [
-            "en/portal/bills-and-payments/introduction",
-            "en/portal/bills-and-payments/purchase-pricing-plan",
-            "en/portal/bills-and-payments/manage-pricing-plan",
-            "en/portal/bills-and-payments/manage-bills",
-            "en/portal/bills-and-payments/payment-methods"
           ]
         }
       ],
@@ -468,7 +495,7 @@
         }
       ],
       "version": "English"
-    },    
+    },
     {
       "group": "DEVELOP WITH COBO",
       "pages": [

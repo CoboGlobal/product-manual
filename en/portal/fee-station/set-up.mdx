@@ -1,0 +1,24 @@
+---
+title: "Overview"
+sidebarTitle: "Overview"
+---
+
+Fee Station offers a streamlined solution for automating your expense management. It can be used to automatically handle a range of payments, including:
+
+- Cobo Bill Payments:
+    - Standard monthly bills based on your selected pricing plan
+    - Overage charges
+    - Add-on packages
+
+- MPC Transaction Fee Payments:
+    - Transaction fees for MPC Wallets
+
+Fee Station does not support partial payments. For example, if you have a transaction fee payment and the balance in your Fee Station is insufficient to cover the full amount, the payment cannot be made using Fee Station. To avoid such issues, ensure that you always maintain a sufficient balance in your Fee Station.
+
+With a sufficient balance, Fee Station will automatically settle payments for your Cobo bills. Manual configuration is only required if you want to use Fee Station to pay MPC transaction fees.
+
+For Cobo bills, Fee Station accepts the following payment assets and will use them in the order listed: TRON_USDC, TRON_USDT, ETH_USDC, and ETH_USDT. For MPC transaction fees, Fee Station can automatically settle fees incurred on both EVM and TRON chains, and will accept their respective fee tokens.
+
+Currently, withdrawals from Fee Station are not supported. In the event of account closure, any remaining balance can be transferred to an address you provide.
+
+The Fee Station service itself is free of charge, and Cobo does not impose additional fees for transactions processed within Fee Station. If a transaction is recorded on-chain, only blockchain fees will apply. Transactions that are not recorded on-chain will not incur any extra fees.
