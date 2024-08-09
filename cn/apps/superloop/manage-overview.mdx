@@ -1,0 +1,45 @@
+﻿---
+title: "概览"
+sidebarTitle: "概览"
+---
+
+要管理 SuperLoop，请点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="Icon showing the Apps tab"/>，找到 **SuperLoop**，然后点击**打开**，以打开 SuperLoop。
+
+<img src="/cn/images/portal-apps/superloop/superloop-overview.png" className="screenshot_full_screen" alt="Image showing an overview of SuperLoop" />
+
+
+## 镜像统计面板（Mirroring Statistics）
+
+在**镜像统计**面板，您可以查看以下[团队](/cn/portal/organization/introduction)范围内的余额：
+
+- **资产余额**（Total Balance）- SuperLoop 中以美元计的资产总余额，包括锁定在镜像中的资金和可用余额。
+- **镜像余额**（Mirroring Balance）- 从 SuperLoop 创建的镜像资产总额，以美元计。
+- **交易所余额**（Exchange Balance）- 交易所账户回报的总余额，以美元计。
+- **活跃交易所账户**（Active Exchange Accounts）- 状态为**活跃**的交易所账户数量。
+
+## 预留费用面板（Fee Reserve）
+
+在**预留费用**部分，可以查看以下信息：
+
+- **资产余额**（Total Balance）- SuperLoop 中的预留费用总余额，以美元计。
+- **低余额资产**（Low Balance Asset）- 表示已触发余额警报之预留费用代币的当前计数。有两种类型的警报触发条件：
+   - 余额为负：在出账结算过程中，当 SuperLoop 向交易所转账时，如果预留费用的余额不足以支付交易费用，SuperLoop 将在耗尽剩余余额后补足差额，从而导致余额为负的情况。
+   - 余额不足：在入账结算期间，如果您选择让 SuperLoop 自动将结算的资产转入您的其中一个 [MPC 钱包](/cn/portal/mpc-wallets/introduction)，但预留费用的余额不足以支付交易费用，则结算资产将作为可用余额保留在 SuperLoop 中。
+
+要管理您的预留费用，请点击**预留费用**（Fee Reserve）旁边的**管理**（Manage)。要了解有关预留费用和管理预留费用的更多信息，请参阅[预留费用简介](/cn/apps/superloop/manage-fee-reserve)。
+
+## 交易所账户面板
+
+在交易所账户部分，您可以找到相关的功能和信息，如搜索栏、**+ 交易所账户**（Exchange Account）按钮、**交易所**（Exchange）名称、**账户名称**（Account Name）、API Key **状态**（Status）、**资产余额**（Total Balance）、**镜像余额**（Mirroring Balance）、**交易所余额**（Exchange Balance）、**进行中的资产镜像**（Ongoing Asset Mirroring），以及**操作**（Action）下的**管理**账户 <img src="/en/images/common/icon_advanced.svg" className="icon" alt="Gear icon"/> 按钮。
+
+**注意：**
+
+- 对于 API Key **状态**（Status），有 3 种可能的状态：
+   - **活跃**（Active）：表明 API Key 是有效的，并具有所有必要的 SuperLoop 权限。
+   - **API 未找到**（API Not Found）：表明您的 API Key 在[交易所钱包](/cn/portal/exchange-wallets/introduction)中已被取消链接，SuperLoop 无法使用该 API Key。
+   - **API Key 无效**（Invalid API Key）：表明 API Key 无效。可能的原因包括 API Key 的权限已被修改，或 API Key 在交易所中被删除。
+- **资产余额**（Total Balance）是交易所账户在 SuperLoop 中以美元计的总资产余额，包括锁定在镜像中的资金和可用余额，不包括预留费用。
+- **镜像余额**（Mirroring Balance）是交易所账户中所有镜像资产的总额，以美元计。
+- **交易所余额**（Exchange Balance）是交易所账户回报的总资产余额，以美元计。
+- **进行中的资产镜像**（Ongoing Asset Mirroring）是交易所账户中镜像资产类型的数量。
+- 要管理单个交易所账户，请找到目标账户的**操作**（Action）按钮，然后点击下面的 <img src="/en/images/common/icon_advanced.svg" className="icon" alt="Gear icon"/>。请参阅[管理交易所账户](/cn/apps/superloop/manage-an-exchange-account)。
