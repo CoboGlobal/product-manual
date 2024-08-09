@@ -25,13 +25,13 @@
   ],
   "topbarLinks": [
     {
-      "name": "Explore Cobo",
-      "url": "https://www.cobo.com"
+      "name": "Go to Developer Hub",
+      "url": "https://www.cobo.com/developers/v2/guides/overview/introduction"
     }
   ],
   "topbarCtaButton": {
-    "name": "Log In",
-    "url": "https://home.custody.cobo.com/#/login"
+    "name": "Log In to Cobo Portal",
+    "url": "https://portal.cobo.com/login"
   },
   "primaryTab": {
     "name": "",
@@ -44,6 +44,11 @@
       "version": "English"
     },
     {
+      "name": "Cobo Portal Apps",
+      "url": "en/apps",
+      "version": "English"
+    },
+    {
       "name": "Cobo Accounts",
       "url": "en/accounts",
       "version": "English"
@@ -51,6 +56,11 @@
     {
       "name": "Cobo Guard",
       "url": "en/guard",
+      "version": "English"
+    },
+    {
+      "name": "Cobo Connect",
+      "url": "en/cobo-connect",
       "version": "English"
     },
     {
@@ -65,6 +75,11 @@
       "version": "简体中文"
     },
     {
+      "name": "Cobo Portal Apps",
+      "url": "cn/apps",
+      "version": "简体中文"
+    },
+    {
       "name": "Cobo Accounts",
       "url": "cn/accounts",
       "version": "简体中文"
@@ -72,6 +87,11 @@
     {
       "name": "Cobo Guard",
       "url": "cn/guard",
+      "version": "简体中文"
+    },
+    {
+      "name": "Cobo Connect",
+      "url": "cn/cobo-connect",
       "version": "简体中文"
     },
     {
@@ -86,7 +106,6 @@
       "group": "OVERVIEW",
       "pages": [
         "en/portal/introduction",
-        "en/portal/release-notes",
         "en/portal/quick-start-guide",
         {
           "group": "Supported tokens and chains",
@@ -94,7 +113,8 @@
             "en/portal/supported-tokens-custodial",
             "en/portal/supported-tokens-mpc"
           ]
-        }
+        },
+        "en/portal/release-notes"
       ],
       "version": "English"
     },
@@ -327,19 +347,6 @@
               ]
             }
           ]
-        },
-        {
-          "group": "Cobo Connect",
-          "pages": [
-            "en/portal/cobo-connect/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/portal/cobo-connect/set-up",
-                "en/portal/cobo-connect/interact-with-dapps"
-              ]
-            }
-          ]
         }
       ],
       "version": "English"
@@ -471,50 +478,6 @@
             "en/portal/portal-apps/transaction-policies",
             "en/portal/portal-apps/app-settings"
           ]
-        },
-        {
-          "group": "SuperLoop",
-          "pages": [
-            "en/portal/portal-apps/superloop/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/portal/portal-apps/superloop/set-up",
-                {
-                  "group": "Manage SuperLoop",
-                  "pages": [
-                    "en/portal/portal-apps/superloop/manage-overview",
-                    "en/portal/portal-apps/superloop/manage-fee-reserve",
-                    "en/portal/portal-apps/superloop/manage-an-exchange-account",
-                    "en/portal/portal-apps/superloop/manage-superloop-supported-exchanges"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Staking",
-          "pages": [
-            "en/portal/portal-apps/staking/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/portal/portal-apps/staking/set-up",
-                {
-                  "group": "Manage Staking",
-                  "pages": [
-                    "en/portal/portal-apps/staking/overview",
-                    "en/portal/portal-apps/staking/stake",
-                    "en/portal/portal-apps/staking/unstake",
-                    "en/portal/portal-apps/staking/withdraw",
-                    "en/portal/portal-apps/staking/view",
-                    "en/portal/portal-apps/staking/supported"
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ],
       "version": "English"
@@ -565,6 +528,56 @@
           ]
         },
         "en/portal/portal-apps/build"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "BUILT BY COBO",
+      "pages": [
+        {
+          "group": "SuperLoop",
+          "pages": [
+            "en/apps/superloop/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/superloop/set-up",
+                {
+                  "group": "Manage SuperLoop",
+                  "pages": [
+                    "en/apps/superloop/manage-overview",
+                    "en/apps/superloop/manage-fee-reserve",
+                    "en/apps/superloop/manage-an-exchange-account",
+                    "en/apps/superloop/manage-superloop-supported-exchanges"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "en/apps/staking/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/staking/set-up",
+                {
+                  "group": "Manage Staking",
+                  "pages": [
+                    "en/apps/staking/overview",
+                    "en/apps/staking/stake",
+                    "en/apps/staking/unstake",
+                    "en/apps/staking/withdraw",
+                    "en/apps/staking/view",
+                    "en/apps/staking/supported"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ],
       "version": "English"
     },
@@ -638,6 +651,20 @@
       "version": "English"
     },
     {
+      "group": "",
+      "pages": [
+        "en/cobo-connect/introduction",
+        {
+          "group": "How to use",
+          "pages": [
+            "en/cobo-connect/set-up",
+            "en/cobo-connect/interact-with-dapps"
+          ]
+        }
+      ],
+      "version": "English"
+    },
+    {
       "group": "Private Content",
       "pages": [
         "en/private/introduction"
@@ -648,7 +675,6 @@
       "group": "概览",
       "pages": [
         "cn/portal/introduction",
-        "cn/portal/release-notes",
         "cn/portal/quick-start-guide",
         {
           "group": "支持的代币与链",
@@ -656,7 +682,8 @@
             "cn/portal/supported-tokens-custodial",
             "cn/portal/supported-tokens-mpc"
           ]
-        }
+        },
+        "cn/portal/release-notes"
       ],
       "version": "简体中文"
     },
@@ -955,7 +982,7 @@
             }
           ]
         },
-                {
+        {
           "group": "账单与支付",
           "pages": [
             "cn/portal/bills-and-payments/introduction",
@@ -965,7 +992,7 @@
             "cn/portal/bills-and-payments/payment-methods"
           ]
         },
-                        {
+        {
           "group": "Fee Station",
           "pages": [
             "cn/portal/fee-station/introduction",
@@ -1006,7 +1033,6 @@
             }
           ]
         }
-
       ],
       "version": "简体中文"
     },
@@ -1020,12 +1046,6 @@
           "pages": [
             "cn/portal/portal-apps/transaction-policies",
             "cn/portal/portal-apps/app-settings"
-          ]
-        },
-        {
-          "group": "SuperLoop",
-          "pages": [
-            "cn/portal/portal-apps/superloop/introduction"
           ]
         }
       ],
@@ -1077,6 +1097,33 @@
           ]
         },
         "cn/portal/portal-apps/build"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "COBO 出品",
+      "pages": [
+        {
+          "group": "SuperLoop",
+          "pages": [
+            "cn/apps/superloop/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/superloop/set-up",
+                {
+                  "group": "管理 SuperLoop",
+                  "pages": [
+                    "cn/apps/superloop/manage-overview",
+                    "cn/apps/superloop/manage-fee-reserve",
+                    "cn/apps/superloop/manage-an-exchange-account",
+                    "cn/apps/superloop/manage-superloop-supported-exchanges"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ],
       "version": "简体中文"
     },
@@ -1146,6 +1193,13 @@
             }
           ]
         }
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "",
+      "pages": [
+        "cn/cobo-connect/introduction"
       ],
       "version": "简体中文"
     },
