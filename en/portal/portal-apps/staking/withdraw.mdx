@@ -1,0 +1,30 @@
+---
+title: "Withdraw"
+sidebarTitle: "Withdraw"
+---
+<Info>Currently, the Staking app is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
+
+Babylon offers two methods to withdraw assets:
+
+- Early unstaking: You need to [unstake](/en/portal/portal-apps/staking/unstake) (officially referred to as **unbond** by Babylon) first and then withdraw.
+- Natural expiration: You can directly withdraw your assets without the need to unstake first.
+
+Follow these steps to withdraw assets.
+
+<Note>Prerequisite 1: You have unstaked BTC or BTC that has naturally expired in an MPC Wallet in an Organization-Controlled Vault.</Note>
+
+<Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to withdraw assets.</Note>
+
+1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+2. Click **View** under **Actions** in the row of the protocol that you want to withdraw from.
+3. Click **Withdraw** in the row of the staking position from which you want to withdraw. The **Withdraw** button appears only in the rows of the staking positions with the status **Withdrawable**.
+4. Review the information in the pop-up window. Select a receiving wallet. For **Transaction Cost**, select from **Slow**, **Standard**, and **Fast** for **Network Fee**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. 
+5. Click **Submit**. You need to have sufficient balance for the network fee to submit the transaction.
+6. In the **Withdrawal Request Submitted** window, click **Staking Activity** to go to the staking details page.
+7. On the staking details page, new records are created for the withdrawal.
+
+    - Under **Staking Positions**, a record is created, and its **Position Status** is **Withdrawal in Progress**.
+        - If the withdrawal succeeds, the **Position Status** becomes **Closed**. The assets are transferred back to your wallet.
+        - If the withdrawal fails, the **Position Status** changes back to **Withdrawable**, and the **Withdraw** button appears under **Actions**.
+    - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the staking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. When the transaction goes on-chain, the status will be **Success**.
+        <Info>: Withdrawal does not require confirmation from Babylon.</Info>
