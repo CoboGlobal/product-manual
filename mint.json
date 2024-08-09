@@ -492,6 +492,29 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "en/portal/portal-apps/staking/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/portal/portal-apps/staking/set-up",
+                {
+                  "group": "Manage Staking",
+                  "pages": [
+                    "en/portal/portal-apps/staking/overview",
+                    "en/portal/portal-apps/staking/stake",
+                    "en/portal/portal-apps/staking/unstake",
+                    "en/portal/portal-apps/staking/withdraw",
+                    "en/portal/portal-apps/staking/view",
+                    "en/portal/portal-apps/staking/supported"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
