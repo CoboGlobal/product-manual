@@ -478,50 +478,6 @@
             "en/portal/portal-apps/transaction-policies",
             "en/portal/portal-apps/app-settings"
           ]
-        },
-        {
-          "group": "SuperLoop",
-          "pages": [
-            "en/portal/portal-apps/superloop/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/portal/portal-apps/superloop/set-up",
-                {
-                  "group": "Manage SuperLoop",
-                  "pages": [
-                    "en/portal/portal-apps/superloop/manage-overview",
-                    "en/portal/portal-apps/superloop/manage-fee-reserve",
-                    "en/portal/portal-apps/superloop/manage-an-exchange-account",
-                    "en/portal/portal-apps/superloop/manage-superloop-supported-exchanges"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Staking",
-          "pages": [
-            "en/portal/portal-apps/staking/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/portal/portal-apps/staking/set-up",
-                {
-                  "group": "Manage Staking",
-                  "pages": [
-                    "en/portal/portal-apps/staking/overview",
-                    "en/portal/portal-apps/staking/stake",
-                    "en/portal/portal-apps/staking/unstake",
-                    "en/portal/portal-apps/staking/withdraw",
-                    "en/portal/portal-apps/staking/view",
-                    "en/portal/portal-apps/staking/supported"
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ],
       "version": "English"
@@ -593,6 +549,29 @@
                     "en/apps/superloop/manage-fee-reserve",
                     "en/apps/superloop/manage-an-exchange-account",
                     "en/apps/superloop/manage-superloop-supported-exchanges"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "en/apps/staking/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/staking/set-up",
+                {
+                  "group": "Manage Staking",
+                  "pages": [
+                    "en/apps/staking/overview",
+                    "en/apps/staking/stake",
+                    "en/apps/staking/unstake",
+                    "en/apps/staking/withdraw",
+                    "en/apps/staking/view",
+                    "en/apps/staking/supported"
                   ]
                 }
               ]
