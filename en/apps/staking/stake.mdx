@@ -1,0 +1,44 @@
+---
+title: "Stake"
+sidebarTitle: "Stake"
+---
+<Info>Currently, the Staking app is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
+
+Follow these steps to stake assets.
+
+<Note>Prerequisite 1: You have created an MPC Wallet in an Organization-Controlled Vault and deposited BTC.</Note>
+
+<Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to stake assets.</Note>
+
+1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+2. Click **Stake** under **Actions** in the row of the protocol that you want to use.
+3. In the pop-up window, fill in the following information.
+
+    - **PoS Chain:** Select a Proof of Stake (PoS) chain.
+    - **Finality Provider:** You can either select a finality provider from the drop-down list or customize your finality provider by clicking **Customize** and entering the public key.
+    - **Staking Wallet:** Select an address from the drop-down list. The addresses are listed in descending order based on the amount available to stake.
+    - **Amount:** Enter the amount that you want to stake. Ensure that the amount is within the protocol's allowed range and does not exceed the amount available to stake.
+    - **Staking Period:** Enter the number of days you want to stake for.
+    - **Transaction Cost:** Select from **Slow**, **Standard**, and **Fast** for **Network Fee**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. The network fee is deducted from your balance in addition to the specified amount to stake.
+
+4. When you complete the form, click **Preview**. The following items will be checked and hints will appear under any fields with errors.
+
+    - **Finality Provider:** Whether the public key is valid if you have chosen to customize the finality provider.
+    - **Amount:** Whether the amount is within the protocol's allowed range and does not exceed the amount available to stake.
+    - **Staking Period:** Whether the number of days is within the protocol's allowed duration.
+    - **Transaction Cost:** Whether your balance is sufficient to cover the network fee.
+
+5. Modify your input according to the hints, then click **Preview** again. 
+6. If all checks pass, you will see a preview of all the information, including **Staking Waiting time**. Review the information and click **Submit**.
+7. In the **Staking Request Submitted** window, click **Staking Activity** to go to the staking details page.
+8. On the staking details page, new records are created for the staking transaction.
+
+    - Under **Staking Positions**, a record is created, and its **Position Status** is **Staking in Progress**. The final **Position Status** varies depending on the staking result, as the following table shows.
+        
+        <img src="/en/images/portal-apps/staking/BTC/staking_position_status.svg" className="diagram" alt="Staking result and status"/>
+
+        - If you get the **Rejected** status, you can restart the staking process.
+        - If you get the **Limit exceeded** status, you can unstake and withdraw the assets.
+        - If you get the **Invalid** status, it means that Babylon has upgraded its staking protocol but Cobo hasn't updated accordingly, and therefore, Babylon could not confirm the transaction. You need to work with Babylon to withdraw your assets.
+
+    - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the staking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. Depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.

@@ -1,0 +1,42 @@
+﻿---
+title: "SuperLoop 简介"
+sidebarTitle: "简介"
+---
+
+SuperLoop 是由 Cobo 开发的首个 [Cobo Portal App](/cn/portal/portal-apps/introduction)。SuperLoop 是一个场外结算网络，允许机构在交易所进行交易，且无需担心交易对手风险。
+
+<img src="/en/images/portal-apps/superloop/superloop-in-app-store.png" className="screenshot_modal" alt="Image showing SuperLoop appears as a Cobo Portal App."/>
+
+## 主要特点
+
+### 对于资产管理人
+
+- 增强信心：更有信心、更高效地在交易所进行交易。
+- 最大程度降低交易对手风险：无需在交易所预付资金，降低交易对手风险。
+- 资本效率：将资产立即分配到支持的交易所，减少链上转账带来的延迟。
+- 监管合规：SuperLoop 增加了一层额外的安全性，有助于满足监管要求。
+
+### 对于交易所
+
+- 增加交易活动：免除了预付资金的要求，有利于吸引更多资产管理人，提升交易量。
+- 降低交易对手风险：确保资产管理人在执行交易前履行义务，降低交易对手风险。
+- 监管合规：SuperLoop 可增强安全措施，支持监管标准合规。
+
+## 运作模式
+
+### 交易之前
+
+- 资产管理人将[交易所钱包](/cn/portal/exchange-wallets/introduction)链接到 [Cobo Portal](https://portal.cobo.com/login) 上的 SuperLoop。<Note>交易所钱包必须已完成设置。请参阅[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。</Note>
+- 资产管理人请求通过 SuperLoop 在链接的交易所账户上创建镜像资产。镜像资产的来源是资产管理人选择的[全托管钱包](/cn/portal/custodial-wallets/introduction)或 [MPC 钱包](/cn/portal/mpc-wallets/introduction)。
+- 资产在 SuperLoop 中锁定，并在链接的交易所账户上创建 1:1 的镜像资产。
+
+### 交易期间
+
+- 资产管理人向交易所提交交易指令，并按常规流程进行交易。
+
+### 交易之后
+
+- 定期进行自动结算。
+- 交易所向 Cobo 提供结算净额。
+
+<img src="/cn/images/portal-apps/superloop/superloop-how-it-works.svg" className="screenshot_full_screen" alt="Image showing how SuperLoop works" />

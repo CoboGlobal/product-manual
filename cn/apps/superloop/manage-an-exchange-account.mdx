@@ -1,0 +1,27 @@
+﻿---
+title: "管理交易所账户"
+sidebarTitle: "管理交易所账户"
+---
+
+要管理交易所账户，请点击 Cobo Portal 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="Icon showing the Apps tab"/>，找到 **SuperLoop**，然后点击**打开**。然后，在目标交易所账户上找到**操作**（Action），点击下面的**管理**（Manage) <img src="/en/images/common/icon_advanced.svg" className="icon" alt="Gear icon"/>，进入交易所账户管理页面，如下图所示。
+
+<img src="/cn/images/portal-apps/superloop/manage-exchange-account.svg" className="screenshot_full_screen" alt="Image showing the exchange account management page" />
+
+在交易所账户页面上，可以找到与该交易所账户相关的功能和信息，如**镜像总余额**（Mirrored Balance）、**最后更新时间**（Last Update Time）、**刷新**（Refresh）<img src="/en/images/common/icon_refresh.svg" className="icon" alt="Icon showing the Refresh button"/>、**结算详情**（Settlement Details）<img src="/en/images/common/icon_settlement_details.svg" className="icon" alt="Icon showing the Settlement Details button"/>、**结算历史**（Settlement History）<img src="/en/images/common/icon_settlement_history.svg" className="icon" alt="Icon showing the Settlement History button"/>、搜索栏、**筛选**（Filter）、**排序**（Sort）、**资产**（Asset）名称、**资产余额**（Total Balance）、**可用余额**（Available Balance）、**镜像余额**（Mirroring Balance）、**交易所余额**（Exchange Balance）、**下次结算**（Next Settlement）时间和状态、**操作历史**（Action History）<img src="/en/images/common/icon_view_transactions.svg" className="icon" alt="Icon showing the View Transactions button"/>、**镜像**（Mirror）<img src="/en/images/common/icon_mirror.svg" className="icon" alt="Icon showing the Mirror button"/>、**取消镜像**（Un-mirror）<img src="/en/images/common/icon_unmirror.svg" className="icon" alt="Icon showing the Un-mirror button"/>、**入账结算方式**（Incoming Settlement Method）<img src="/en/images/common/icon_settlement_methods.svg" className="icon" alt="Icon showing the Settlement Methods button"/>（位于 <img src="/en/images/common/icon_more.svg" className="icon" alt="Icon showing the More button"/> 下方）和**提币**<img src="/en/images/common/icon_withdraw.svg" className="icon" alt="Icon showing the Withdraw button"/>（位于 <img src="/en/images/common/icon_more.svg" className="icon" alt="Icon showing the More button"/> 下方）。
+
+**注意：**
+- **镜像总余额**（Mirrored Balance）是当前交易所账户中所有镜像资产的总额。
+- 点击**结算详情**（Settlement Details）<img src="/en/images/common/icon_settlement_details.svg" className="icon" alt="Icon showing the Settlement Details button"/> 可以查看链接的交易所的结算详情，例如**结算模式**（Settlement Model）、**结算时间**（Settlement Time）、**结算明细**（Settlement Detail）、**出账结算**（Outgoing Settlement）和**入账结算**（Incoming Settlement）。
+- **结算历史**（Settlement History）<img src="/en/images/common/icon_settlement_history.svg" className="icon" alt="Icon showing the Settlement History button"/> 显示与该交易所账户相关的所有结算历史详情，例如**结算时间**（Settlement Time）、**方向**（Direction）（出账或入账）、**结算方式**（Settlement Method）、**结算金额、指定钱包和地址**（Settlement Amount, Designated Wallet & Address）以及**结算交易费用**（Settlement Transaction Fee）。
+- **操作历史**（Action History）<img src="/en/images/common/icon_view_transactions.svg" className="icon" alt="Icon showing the View Transactions button"/> 显示创建镜像、取消镜像和提币的历史详情，如**创建时间**（Created Time）、**类型**（Type）（创建镜像 Mirror、取消镜像 Un-mirror 或提币 Withdraw）、**金额**（Amount）、**指定钱包和地址**（Designated Wallet & Address）、**状态**（Status）和**发起人**（Initiator）。
+- **资产余额**（Total Balance）是交易所账户在 SuperLoop 中的资产总余额，包括镜像锁定的资金和可用余额。
+- **可用余额**（Available Balance）是交易所账户在 SuperLoop 中的可用资产余额，即总资产余额减去镜像金额。结算后，SuperLoop 持有的任何可用余额都可以提取到您的[全托管钱包](/cn/portal/custodial-wallets/introduction)或 [MPC 钱包](/cn/portal/mpc-wallets/introduction)中或为之创建镜像。
+- **镜像余额**（Mirroring Balance）<img src="/en/images/common/icon_mirror.svg" className="icon" alt="Icon showing the Mirror button"/> - 当前在交易所账户中创建镜像的总资产余额。
+- **交易所余额**（Exchange Balance）- 交易所账户报告的资产余额。
+- 点击**镜像**（Mirror）可以选择[全托管钱包](/cn/portal/custodial-wallets/introduction)、[MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)或 SuperLoop 帐户中的可用余额，将其作为将资金转入 SuperLoop 帐户的来源，然后在交易所创建相应的镜像，并在交易所确认资金后可供交易。要创建资金的镜像，请选择**资产**（Asset）、**来源钱包和地址**（Resource Wallet & Address）以及**镜像金额**（Mirror Amount），然后点击**确认**（Confirm）。注意，如果[预留费用](/cn/apps/superloop/manage-fee-reserve)（Fee Reserve）余额为负数，则无法创建资金镜像。
+- **取消镜像**（Un-mirror）<img src="/en/images/common/icon_unmirror.svg" className="icon" alt="Icon showing the Un-mirror button"/> 用于取消在交易所中创建的资金镜像。未创建镜像的资金将显示为**可用余额**（Available Balance），并保留在 SuperLoop 中。要取消资金镜像，请选择**资产**（Asset）和**取消镜像金额**(un-mirror Amount)，然后点击**确认**(Confirm)。
+- **提币**（Withdraw）<img src="/en/images/common/icon_withdraw.svg" className="icon" alt="Icon showing the Withdraw button"/>用于将资金从 SuperLoop 提取到您的[全托管钱包](/cn/portal/custodial-wallets/introduction)或 [MPC 钱包](/cn/portal/mpc-wallets/introduction)。所产生的任何链上交易费用将从您的[预留费用](/cn/apps/superloop/manage-fee-reserve)中扣除。提取的金额将从 SuperLoop 的**可用余额**中扣除。注意，如果预留费用余额为负数，则无法提币。要进行提币，请选择**资产**(Asset)、**目标地址**（Destinated Address）和**提币金额**（Withdraw Amount），然后点击**确认**（Confirm）。
+- 在**入账结算方式**（Incoming Settlement Method）<img src="/en/images/common/icon_settlement_methods.svg" className="icon" alt="Icon showing the Settlement Methods button"/>下，可以选择**资产**（Asset）和**入账结算方式**（Incoming Settlement Method）。对于**入账结算方式**（Incoming Settlement Method），有两个选项：
+    - 如果选择**留在 SuperLoop**（Leave in SuperLoop），SuperLoop 在结算后从交易所收到的任何金额将作为**可用余额**（Available Balance）保留在 SuperLoop 中。然后，可以选择提币或为这些资金创建镜像。
+    - 如果选择**自动转账**（Auto Transfer），SuperLoop 在结算后从交易所收到的任何金额将自动转入指定的全托管钱包或 MPC 钱包。
+
