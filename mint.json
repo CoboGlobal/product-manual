@@ -107,13 +107,7 @@
       "pages": [
         "en/portal/introduction",
         "en/portal/quick-start-guide",
-        {
-          "group": "Supported tokens and chains",
-          "pages": [
-            "en/portal/supported-tokens-custodial",
-            "en/portal/supported-tokens-mpc"
-          ]
-        },
+        "en/portal/supported-tokens",
         "en/portal/release-notes"
       ],
       "version": "English"
@@ -676,13 +670,7 @@
       "pages": [
         "cn/portal/introduction",
         "cn/portal/quick-start-guide",
-        {
-          "group": "支持的代币与链",
-          "pages": [
-            "cn/portal/supported-tokens-custodial",
-            "cn/portal/supported-tokens-mpc"
-          ]
-        },
+        "cn/portal/supported-tokens",
         "cn/portal/release-notes"
       ],
       "version": "简体中文"
