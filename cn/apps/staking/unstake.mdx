@@ -30,7 +30,7 @@ Babylon 提供两种赎回方法：
 
 6.在质押详情页面，将为该笔解除质押交易创建新的记录。
 
-   - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**取消质押中**（Unstaking in Progress）。
+   - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**解除质押中**（Unstaking in Progress）。
       - 如果解除质押成功，**仓位状态**（Position Status）将变为**可赎回**（Withdrawable），并且在**操作**下会出现**赎回**（Withdraw）按钮。
       - 如果解除质押失败，**仓位状态**（Position Status）将变回**已启动**（Active），**操作**下会出现**解除质押**（Unstake）按钮。
    - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了解除质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。
