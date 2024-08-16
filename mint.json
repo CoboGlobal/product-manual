@@ -1111,6 +1111,29 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "cn/apps/staking/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/staking/set-up",
+                {
+                  "group": "管理 Staking",
+                  "pages": [
+                    "cn/apps/staking/overview",
+                    "cn/apps/staking/stake",
+                    "cn/apps/staking/unstake",
+                    "cn/apps/staking/withdraw",
+                    "cn/apps/staking/view",
+                    "cn/apps/staking/supported"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "简体中文"
@@ -1187,7 +1210,14 @@
     {
       "group": "",
       "pages": [
-        "cn/cobo-connect/introduction"
+        "cn/cobo-connect/introduction",
+        {
+          "group": "使用说明",
+          "pages": [
+            "cn/cobo-connect/set-up",
+            "cn/cobo-connect/interact-with-dapps"
+          ]
+        }
       ],
       "version": "简体中文"
     },
