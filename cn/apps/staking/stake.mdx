@@ -1,0 +1,49 @@
+﻿---
+title: "质押"
+sidebarTitle: "质押"
+---
+<Info>目前，Staking App 支持[机构Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)，并且支持支持 [Babylon 协议](https://babylonlabs.io/)下的 BTC 质押。</Info>
+
+请按照以下步骤进行资产质押。
+
+<Note>前提条件 1：您已在机构 Vault 中创建了一个 MPC 钱包，并充入了 BTC。</Note>
+
+<Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能进行资产质押。</Note>
+
+1.点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+
+2.找到要使用的协议，在同一行中点击**操作**下的**质押**（Stake）按钮。
+
+3.在弹出的窗口中填写以下信息。
+
+    - **PoS 链**（Pos Chain）：选择一个权益证明 (PoS) 链。
+    - **最终确认提供者**（Finality Provider）：您可以从下拉列表中选择一个 Finality Provider，也可以点击**自定义**（Customize）并输入公钥，设置自定义的 Finality Provider。
+    - **质押钱包**（Staking Wallet）：从下拉列表中选择一个地址。地址根据可质押金额从高到低排列。
+    - **金额**（Amount）：输入您要质押的金额。确保金额在协议允许范围内，且不得超过可质押金额。
+    - **质押期限**（Staking Period）：输入您希望质押的天数。
+    - **交易费用**（Transaction Cost）：在**慢速**（Slow）、**标准**（Standard）和**快速**（Fast）中选择一种，作为**网络费用**。您也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>自定义费用。网络费用将额外扣除，不从指定的质押金额扣除。
+
+4.表格填写完成后，点击**预览**。系统将检查以下项目，如果字段有错误，将显示提示。
+
+    - **最终确认提供者**（Finality Provider）：**如果您选择自定义 Finality Provider，将检查公钥是否有效。
+    - **金额**（Amount）：检查金额是否在协议允许的范围内，且不超过可质押金额。
+    - **质押期限**（Staking Period）：检查天数是否在协议允许的期限内。
+    - **交易费用**（Transaction Cost）（Transaction Cost）：检查您的余额是否足以支付网络费用。
+
+5.根据提示修改输入内容，然后再次点击**预览**。 
+
+6.如果所有检查都通过，将显示所有信息的预览，包括**质押等待时间**（Staking Waiting time）。查看信息并点击**提交**。
+
+7.在**质押请求已提交**（Staking Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
+
+8.在质押详情页面，将为该笔质押交易创建新的记录。
+
+    - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**质押中**（Staking in Progress）。最终的**仓位状态**（Position Status）会根据质押结果而定，如下表所示。
+        
+        <img src="/cn/images/portal-apps/staking/BTC/staking_position_status.svg" className="diagram" alt="Staking result and status"/>
+
+        - 如果状态为**已拒绝**（Rejected），则可以重新启动质押过程。
+        - 如果状态为**超出限额**（Limit Exceeded），则可以解除质押并进行赎回。
+        - 如果状态为**无效**（Invalid），则表示 Babylon 质押协议已升级，但 Cobo 没有进行相应更新，因此 Babylon 无法确认交易。您需要联系 Babylon 进行赎回。
+
+    - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。

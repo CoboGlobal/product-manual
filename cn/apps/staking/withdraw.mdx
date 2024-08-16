@@ -1,0 +1,36 @@
+﻿---
+title: "赎回"
+sidebarTitle: "赎回"
+---
+<Info>目前，Staking App 支持[机构Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)，并且支持支持 [Babylon 协议](https://babylonlabs.io/)下的 BTC 质押。</Info>
+
+Babylon 提供两种赎回方法：
+
+- 提前解除质押：您需要先[解除质押](/cn/apps/staking/unstake)（Babylon 官方称为**Unbond**），然后再进行赎回。
+- 自然到期：您可以直接赎回，无需先解除质押。
+
+请按照以下步骤进行赎回。
+
+<Note>前提条件 1：您在机构 Vault 中的 MPC 钱包中拥有解除质押的 BTC 或自然到期的 BTC。</Note>
+
+<Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能赎回。</Note>
+
+1.点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+
+2.找到要赎回的协议，在同一行中点击**操作**下的**查看**按钮 。
+
+3.找到要赎回的质押仓位，在同一行中点击**赎回**。只有状态为**可赎回**（Withdrawable）的质押仓位，才会出现**赎回**（Withdraw）按钮。
+
+4.查看弹出窗口中的信息。选择接收赎回的钱包。对于**交易费用**（Transaction Cost），从**慢速**（Slow）、**标准**（Standard）和**快速**（Fast）中选择一种，作为**网络费用**。您也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>自定义费用。 
+
+5.点击**提交**。您需要有足够的余额支付网络费用才能提交交易。
+
+6.在**赎回请求已提交**（Withdrawal Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
+
+7.在质押详情页面，将为该笔赎回创建新的记录。
+
+    - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态（Staking Position）**为**赎回中**。
+        - 如果赎回成功，**仓位状态**（Position Status）将变为**已平仓**（Closed）。资产将转回您的钱包。
+        - 如果赎回失败，**仓位状态**（Position Status）将变回**可赎回**（Withdrawable），**操作**下将出现**赎回**（Withdraw）按钮。
+    - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。交易转入链上后，状态将变为**成功**（Success）。
+        <Info> 赎回无需 Babylon 确认。</Info>
