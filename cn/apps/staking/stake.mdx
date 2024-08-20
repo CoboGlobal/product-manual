@@ -6,7 +6,7 @@ sidebarTitle: "质押"
 
 请按照以下步骤进行资产质押。
 
-<Note>前提条件 1：您已在机构 Vault 中创建了一个 MPC 钱包，并充入了 BTC。</Note>
+<Note>前提条件 1：您已在机构 Vault 中创建了一个 MPC 钱包，并充入了 BTC。你已将该钱包加入 Staking 可访问的[**钱包范围**](/cn/portal/portal-apps/app-settings)。</Note>
 
 <Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能进行资产质押。</Note>
 
@@ -44,6 +44,6 @@ sidebarTitle: "质押"
 
         - 如果状态为**已拒绝**（Rejected），则可以重新启动质押过程。
         - 如果状态为**超出限额**（Limit Exceeded），则可以解除质押并进行赎回。
-        - 如果状态为**无效**（Invalid），则表示 Babylon 质押协议已升级，但 Cobo 没有进行相应更新，因此 Babylon 无法确认交易。您需要联系 Babylon 进行赎回。
+        - 如果状态为**无效**（Invalid），则表示 Babylon 质押协议已升级，但 Cobo 没有进行相应更新，因此 Babylon 无法确认交易。请通过 [help@cobo.com](mailto:help@cobo.com) 联系我们的客服团队以取回您的资产。
 
     - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。
