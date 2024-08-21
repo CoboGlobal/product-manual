@@ -823,7 +823,7 @@
               ]
             },
             {
-              "group": "交易所账户",
+              "group": "交易所钱包",
               "pages": [
                 "cn/portal/exchange-wallets/introduction",
                 "cn/portal/exchange-wallets/key-features",
@@ -832,7 +832,7 @@
                   "group": "使用说明",
                   "pages": [
                     {
-                      "group": "设置交易所账户",
+                      "group": "设置交易所钱包",
                       "pages": [
                         "cn/portal/exchange-wallets/set-up",
                         "cn/portal/exchange-wallets/generate-binance-api-key",
@@ -844,7 +844,7 @@
                       ]
                     },
                     {
-                      "group": "管理交易所账户",
+                      "group": "管理交易所钱包",
                       "pages": [
                         "cn/portal/exchange-wallets/manage",
                         "cn/portal/exchange-wallets/roles-and-policies",
