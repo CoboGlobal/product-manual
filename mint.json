@@ -542,7 +542,13 @@
                     "en/apps/superloop/manage-overview",
                     "en/apps/superloop/manage-fee-reserve",
                     "en/apps/superloop/manage-an-exchange-account",
-                    "en/apps/superloop/manage-superloop-supported-exchanges"
+                    "en/apps/superloop/manage-superloop-supported-exchanges",
+                    {
+                      "group": "SuperLoop-supported tokens & chains",
+                      "pages": [
+                        "en/apps/superloop/manage-superloop-supported-tokens-and-chains-bitget"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -1105,7 +1111,13 @@
                     "cn/apps/superloop/manage-overview",
                     "cn/apps/superloop/manage-fee-reserve",
                     "cn/apps/superloop/manage-an-exchange-account",
-                    "cn/apps/superloop/manage-superloop-supported-exchanges"
+                    "cn/apps/superloop/manage-superloop-supported-exchanges",
+                    {
+                      "group": "SuperLoop 支持的代币与链",
+                      "pages": [
+                        "cn/apps/superloop/manage-superloop-supported-tokens-and-chains-bitget"
+                      ]
+                    }
                   ]
                 }
               ]
