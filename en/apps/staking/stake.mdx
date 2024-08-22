@@ -11,25 +11,25 @@ Follow these steps to stake assets.
 <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to stake assets.</Note>
 
 1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
-2. Click **Stake** under **Actions** in the row of the protocol that you want to use.
+2. Click **Stake** under **Actions** in the row for Babylon.
 3. In the pop-up window, fill in the following information.
 
     - **PoS Chain:** Select a Proof of Stake (PoS) chain.
     - **Finality Provider:** You can either select a finality provider from the drop-down list or customize your finality provider by clicking **Customize** and entering the public key.
     - **Staking Wallet:** Select an address from the drop-down list. The addresses are listed in descending order based on the amount available to stake.
-    - **Amount:** Enter the amount that you want to stake. Ensure that the amount is within the protocol's allowed range and does not exceed the amount available to stake.
+    - **Amount:** Enter the amount that you want to stake. You cannot enter the amount until the remaining staking cap for Babylon is retrieved. If the remaining staking cap is 0, staking is not allowed. Ensure that the amount you enter is within Babylon's allowed range and does not exceed the remaining staking cap or the amount available to stake. You can click **Max** to automatically enter the maximum allowed amount, which is the smallest value among the remaining staking cap, the maximum one-time staking amount allowed by Babylon, and the amount available to stake.
     - **Staking Period:** Enter the number of days you want to stake for.
-    - **Transaction Cost:** Select from **Slow**, **Standard**, and **Fast** for **Network Fee**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. The network fee is deducted from your balance in addition to the specified amount to stake.
+    - **Network Fee:** Select from **Slow**, **Standard**, and **Fast**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. The network fee is deducted from your balance in addition to the specified amount to stake.
 
 4. When you complete the form, click **Preview**. The following items will be checked and hints will appear under any fields with errors.
 
     - **Finality Provider:** Whether the public key is valid if you have chosen to customize the finality provider.
-    - **Amount:** Whether the amount is within the protocol's allowed range and does not exceed the amount available to stake.
-    - **Staking Period:** Whether the number of days is within the protocol's allowed duration.
-    - **Transaction Cost:** Whether your balance is sufficient to cover the network fee.
+    - **Amount:** Whether the amount is within Babylon's allowed range and does not exceed the amount available to stake.
+    - **Staking Period:** Whether the number of days is within Babylon's allowed duration.
+    - **Network Fee:** Whether your balance is sufficient to cover the network fee.
 
 5. Modify your input according to the hints, then click **Preview** again. 
-6. If all checks pass, you will see a preview of all the information, including **Staking Waiting time**. Review the information and click **Submit**.
+6. If all checks pass, you will see a preview of all the information, including **Staking Waiting time**. Review the information and click **Submit**. Another check will be performed to see if the staking amount exceeds Babylon's remaining staking cap. If it does, you can go back and edit the amount. Otherwise, you can successfully submit the request.
 7. In the **Staking Request Submitted** window, click **Staking Activity** to go to the staking details page.
 8. On the staking details page, new records are created for the staking transaction.
 
@@ -37,7 +37,6 @@ Follow these steps to stake assets.
         
         <img src="/en/images/portal-apps/staking/BTC/staking_position_status.svg" className="diagram" alt="Staking result and status"/>
 
-        - If you get the **Rejected** status, you can restart the staking process.
         - If you get the **Limit exceeded** status, you can unstake and withdraw the assets.
         - If you get the **Invalid** status, it means that Babylon has upgraded its staking protocol but Cobo hasn't updated accordingly, and therefore, Babylon could not confirm the transaction. Please contact Cobo's customer support at [help@cobo.com](mailto:help@cobo.com) to recover your assets.
 
