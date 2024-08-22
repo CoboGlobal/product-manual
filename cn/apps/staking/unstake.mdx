@@ -1,0 +1,36 @@
+﻿---
+title: "解除质押"
+sidebarTitle: "解除质押"
+---
+<Info>目前，Staking App 支持[机构Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)，并且支持支持 [Babylon 协议](https://babylonlabs.io/)下的 BTC 质押。</Info>
+
+Babylon 提供两种赎回方法：
+
+- 提前解除质押：您需要先解除质押（Babylon 官方称为**Unbond**），然后再进行赎回。
+- 自然到期：您可以直接赎回，无需先解除质押。
+
+请按照以下步骤在到期前解除资产质押。
+
+<Note>前提条件 1：您在机构 Vault 中的 MPC 钱包中拥有[质押的](/cn/apps/staking/stake) BTC。该钱包没有被移出 Staking 可访问的[**钱包范围**](/cn/portal/portal-apps/app-settings)。</Note>
+
+<Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能解除资产质押。</Note>
+
+1.点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+
+2.找到要解除质押的协议，在同一行中点击**操作**下的**查看**按钮。
+
+3.在质押详情页面，找到要解除质押的质押仓位，在同一行中点击**操作**下的**解除质押**（Unstake）按钮。 
+
+   - 只有状态为**已启动**（Active）或**超出限额**（Limit Exceeded）的质押仓位，才会出现**解除质押**（Unstake）按钮。
+   - 在 Babylon 协议下，您只能对每笔进行完整的解除质押，不允许部分解除质押。
+
+4.查看弹出窗口中的信息，然后点击**提交**。请注意，Babylon 协议不支持自定义解押费率。另外，您需要有足够的余额支付网络费用才能提交交易。
+
+5.在**解除质押请求已提交**（Unstaking Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
+
+6.在质押详情页面，将为该笔解除质押交易创建新的记录。
+
+   - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**解除质押中**（Unstaking in Progress）。
+      - 如果解除质押成功，**仓位状态**（Position Status）将变为**可赎回**（Withdrawable），并且在**操作**下会出现**赎回**（Withdraw）按钮。
+      - 如果解除质押失败，**仓位状态**（Position Status）将变回**已启动**（Active），**操作**下会出现**解除质押**（Unstake）按钮。
+   - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了解除质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。

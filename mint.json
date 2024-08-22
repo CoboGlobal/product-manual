@@ -107,13 +107,7 @@
       "pages": [
         "en/portal/introduction",
         "en/portal/quick-start-guide",
-        {
-          "group": "Supported tokens and chains",
-          "pages": [
-            "en/portal/supported-tokens-custodial",
-            "en/portal/supported-tokens-mpc"
-          ]
-        },
+        "en/portal/supported-tokens",
         "en/portal/release-notes"
       ],
       "version": "English"
@@ -547,10 +541,16 @@
                   "pages": [
                     "en/apps/superloop/manage-overview",
                     "en/apps/superloop/manage-fee-reserve",
-                    "en/apps/superloop/manage-an-exchange-account",
-                    "en/apps/superloop/manage-superloop-supported-exchanges"
+                    "en/apps/superloop/manage-an-exchange-account"
                   ]
                 }
+              ]
+            },
+            {
+              "group": "Supported exchanges",
+              "pages": [
+                "en/apps/superloop/supported-exchanges-overview",
+                "en/apps/superloop/supported-exchanges-bitget"
               ]
             }
           ]
@@ -676,13 +676,7 @@
       "pages": [
         "cn/portal/introduction",
         "cn/portal/quick-start-guide",
-        {
-          "group": "支持的代币与链",
-          "pages": [
-            "cn/portal/supported-tokens-custodial",
-            "cn/portal/supported-tokens-mpc"
-          ]
-        },
+        "cn/portal/supported-tokens",
         "cn/portal/release-notes"
       ],
       "version": "简体中文"
@@ -829,7 +823,7 @@
               ]
             },
             {
-              "group": "交易所账户",
+              "group": "交易所钱包",
               "pages": [
                 "cn/portal/exchange-wallets/introduction",
                 "cn/portal/exchange-wallets/key-features",
@@ -838,7 +832,7 @@
                   "group": "使用说明",
                   "pages": [
                     {
-                      "group": "设置交易所账户",
+                      "group": "设置交易所钱包",
                       "pages": [
                         "cn/portal/exchange-wallets/set-up",
                         "cn/portal/exchange-wallets/generate-binance-api-key",
@@ -850,7 +844,7 @@
                       ]
                     },
                     {
-                      "group": "管理交易所账户",
+                      "group": "管理交易所钱包",
                       "pages": [
                         "cn/portal/exchange-wallets/manage",
                         "cn/portal/exchange-wallets/roles-and-policies",
@@ -1116,8 +1110,37 @@
                   "pages": [
                     "cn/apps/superloop/manage-overview",
                     "cn/apps/superloop/manage-fee-reserve",
-                    "cn/apps/superloop/manage-an-exchange-account",
-                    "cn/apps/superloop/manage-superloop-supported-exchanges"
+                    "cn/apps/superloop/manage-an-exchange-account"
+                  ]
+                }
+              ]
+            },
+            {
+              "group": "支持的交易所",
+              "pages": [
+                "cn/apps/superloop/supported-exchanges-overview",
+                "cn/apps/superloop/supported-exchanges-bitget"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "cn/apps/staking/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/staking/set-up",
+                {
+                  "group": "管理 Staking",
+                  "pages": [
+                    "cn/apps/staking/overview",
+                    "cn/apps/staking/stake",
+                    "cn/apps/staking/unstake",
+                    "cn/apps/staking/withdraw",
+                    "cn/apps/staking/view",
+                    "cn/apps/staking/supported"
                   ]
                 }
               ]
@@ -1199,7 +1222,14 @@
     {
       "group": "",
       "pages": [
-        "cn/cobo-connect/introduction"
+        "cn/cobo-connect/introduction",
+        {
+          "group": "使用说明",
+          "pages": [
+            "cn/cobo-connect/set-up",
+            "cn/cobo-connect/interact-with-dapps"
+          ]
+        }
       ],
       "version": "简体中文"
     },
@@ -1218,6 +1248,7 @@
   },
   "feedback": {
     "suggestEdit": true,
-    "raiseIssue": true
+    "raiseIssue": true,
+    "thumbsRating": true
   }
 }

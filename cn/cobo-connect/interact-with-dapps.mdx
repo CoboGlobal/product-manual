@@ -1,0 +1,38 @@
+﻿---
+title: "通过 Cobo Connect 与 dApp 交互"
+sidebarTitle: "与 dApps 交互"
+---
+
+## 发起交易或消息签名流程
+
+在 dApp 网站上发起交易或对消息签名之前，您需要连接您的钱包。许多 dApp 网站都有**连接**或**连接钱包**按钮。点击该按钮并选择 Cobo Connect 作为您的钱包服务。从 Cobo Connect 中选择您想在 dApp 网站上使用的 Cobo Portal 钱包地址。
+
+当您在 dApp 网站上发起交易（例如交换代币）或对消息签名时，Cobo Connect 将打开一个窗口显示详细信息。查看信息，然后点击**确认**。 
+
+需满足以下条件才能成功启动上述流程。
+
+- 选择正确的网络
+
+    如果 Cobo Connect 中的当前账户不支持您选择的网络，系统将提示您切换到另一个网络。
+
+- 登录 Cobo Portal
+
+    如果您尚未登录 Cobo Portal，页面会重定向至 Cobo Portal。重定向后，Cobo Connect 窗口将关闭。登录后，您需要重新开始发起交易或消息签名的流程。
+
+- 设置 [Cobo Guard](/cn/guard/introduction)
+
+    系统将提示您在 Cobo Guard 上确认您在 dApp 发起的操作。如果您尚未设置 Cobo Guard，页面会重定向至 Cobo Portal。重定向后，Cobo Connect 窗口将关闭。设置 Cobo Guard 后，您需要重新开始发起交易或消息签名的流程。
+
+## 完成交易或签名
+
+成功发起交易或签名流程后，请在 Cobo Guard 上确认操作。
+
+Cobo Connect 会检查您是否拥有使用 [MPC 钱包](/cn/portal/mpc-wallets/introduction)与 dApps 进行交互的权限。如果您不具备[提币员](/cn/portal/organization/roles-and-permissions)角色，操作将被拒绝，无法进入下一步。
+
+如果您拥有所需的权限，流程将根据预先配置的[风险控制策略](/cn/portal/risk-controls/introduction)进行下去。如果需要进入审批流程，您可以在 Cobo Connect 中查看每个审批人的回复。
+
+如果没有风险控制策略的限制，也不需要审批，交易将直接转入链上，或消息将直接签名。 
+
+您可以在 Cobo Connect 的**活动**（Activity）选项卡中查看交易状态。要查看某一条活动的更多详细信息，请在 Cobo Connect 上点击该活动，然后点击请求 ID（蓝色超链接文本）以打开 Cobo Portal 的**交易历史**（Transaction History）页面。在**交易历史**（Transaction History）页面，点击 <img src="/en/images/common/icon_view.svg" className="icon" alt="View details icon" /> 查看交易详情，如下图所示。
+
+<img src="/cn/images/cobo-connect/transaction-details.png" className="screenshot_full_screen" alt="Transaction details in Cobo Portal" />

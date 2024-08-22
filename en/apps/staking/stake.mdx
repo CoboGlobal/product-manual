@@ -2,11 +2,11 @@
 title: "Stake"
 sidebarTitle: "Stake"
 ---
-<Info>Currently, the Staking app is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
+<Info>Currently, the Staking App is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
 
 Follow these steps to stake assets.
 
-<Note>Prerequisite 1: You have created an MPC Wallet in an Organization-Controlled Vault and deposited BTC.</Note>
+<Note>Prerequisite 1: You have created an MPC Wallet in an Organization-Controlled Vault and deposited BTC. You have added the wallet in [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
 
 <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to stake assets.</Note>
 
@@ -39,6 +39,6 @@ Follow these steps to stake assets.
 
         - If you get the **Rejected** status, you can restart the staking process.
         - If you get the **Limit exceeded** status, you can unstake and withdraw the assets.
-        - If you get the **Invalid** status, it means that Babylon has upgraded its staking protocol but Cobo hasn't updated accordingly, and therefore, Babylon could not confirm the transaction. You need to work with Babylon to withdraw your assets.
+        - If you get the **Invalid** status, it means that Babylon has upgraded its staking protocol but Cobo hasn't updated accordingly, and therefore, Babylon could not confirm the transaction. Please contact Cobo's customer support at [help@cobo.com](mailto:help@cobo.com) to recover your assets.
 
     - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the staking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. Depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.

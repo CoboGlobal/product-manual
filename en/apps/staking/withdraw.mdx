@@ -2,7 +2,7 @@
 title: "Withdraw"
 sidebarTitle: "Withdraw"
 ---
-<Info>Currently, the Staking app is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
+<Info>Currently, the Staking App is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
 
 Babylon offers two methods to withdraw assets:
 
@@ -11,7 +11,7 @@ Babylon offers two methods to withdraw assets:
 
 Follow these steps to withdraw assets.
 
-<Note>Prerequisite 1: You have unstaked BTC or BTC that has naturally expired in an MPC Wallet in an Organization-Controlled Vault.</Note>
+<Note>Prerequisite 1: You have unstaked BTC or BTC that has naturally expired in an MPC Wallet in an Organization-Controlled Vault. The wallet has not been moved out of [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
 
 <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to withdraw assets.</Note>
 
@@ -26,5 +26,5 @@ Follow these steps to withdraw assets.
     - Under **Staking Positions**, a record is created, and its **Position Status** is **Withdrawal in Progress**.
         - If the withdrawal succeeds, the **Position Status** becomes **Closed**. The assets are transferred back to your wallet.
         - If the withdrawal fails, the **Position Status** changes back to **Withdrawable**, and the **Withdraw** button appears under **Actions**.
-    - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the staking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. When the transaction goes on-chain, the status will be **Success**.
-        <Info>: Withdrawal does not require confirmation from Babylon.</Info>
+    - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the withdrawl request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. When the transaction goes on-chain, the status will be **Success**.
+        <Info> Withdrawal does not require confirmation from Babylon.</Info>
