@@ -265,13 +265,18 @@
                     {
                       "group": "Set up Exchange Wallets",
                       "pages": [
-                        "en/portal/exchange-wallets/set-up",
-                        "en/portal/exchange-wallets/generate-binance-api-key",
-                        "en/portal/exchange-wallets/generate-okx-api-key",
-                        "en/portal/exchange-wallets/generate-deribit-api-key",
-                        "en/portal/exchange-wallets/generate-bybit-api-key",
-                        "en/portal/exchange-wallets/generate-gate-api-key",
-                        "en/portal/exchange-wallets/generate-bitget-api-key"
+                        {
+                          "group": "Generate an API key",
+                          "pages": [
+                            "en/portal/exchange-wallets/generate-binance-api-key",
+                            "en/portal/exchange-wallets/generate-bitget-api-key",
+                            "en/portal/exchange-wallets/generate-bybit-api-key",
+                            "en/portal/exchange-wallets/generate-deribit-api-key",
+                            "en/portal/exchange-wallets/generate-gate-api-key",
+                            "en/portal/exchange-wallets/generate-okx-api-key"
+                          ]
+                        },
+                        "en/portal/exchange-wallets/set-up"
                       ]
                     },
                     {
@@ -279,10 +284,10 @@
                       "pages": [
                         "en/portal/exchange-wallets/manage",
                         "en/portal/exchange-wallets/roles-and-policies",
-                        "en/portal/exchange-wallets/transfers",
-                        "en/portal/exchange-wallets/troubleshoot"
+                        "en/portal/exchange-wallets/transfers"
                       ]
-                    }
+                    },
+                    "en/portal/exchange-wallets/troubleshoot"
                   ]
                 }
               ]

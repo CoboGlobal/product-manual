@@ -1,31 +1,35 @@
 ---
-title: "Generate your Bybit API keys"
-sidebarTitle: "Bybit - API Keys"
+title: "Generate an API key on Bybit"
+sidebarTitle: "Bybit"
 ---
 
-Generate the **API Key** and **API Secret** for your Bybit account by following these steps:
+When you link a Bybit account to your Exchange Wallet, you will need to provide an API key and an API secret. Besides, you also need to include Cobo in the IP whitelist and assign specific permissions to the key.
 
-1) Log in to your Bybit account.
-2) Navigate to **My Profile** > **Account & Security** > **API Management**.
-3) Select **Create New Key**.
-4) Select **System-generated API Keys**.
+This article explains how to generate an API key on Bybit, including adding Cobo to the IP whitelist and setting permissions.
 
-<img src="/en/images/exchange-wallet/bybit1.png" className="screenshot_modal"/>
+<Note>The content is subject to changes on Bybit. For more details, refer to <a href="https://www.bybit.com/en/help-center/article/How-to-create-your-API-key">How to Create Your API Key</a>.</Note>
 
-5) Select **API Transaction**.
-6) Fill in the name for the API key = **Cobo**.
-7) Select the following **2 API Key Permissions**:
-    - Read-Write
-    - Only IPs with permissions granted are allowed to access the OpenAPI
-8) Fill in Cobo’s IP address under API Key Permissions = **18.177.176.209**.
-9) Tick the following **4 options under "Read-Write"**:
-    - Account Transfer
-    - Subaccount Transfer
-    - Withdrawal
-    - Exchange History
+1. Log in to your Bybit account.
+2. Navigate to **My Profile** > **Account & Security** > **API Management**.
+3. Select **Create New Key**.
+4. On the **Select Your API Key Type** dialog, select **System-generated API Keys** to open a **Create New Key** page.
 
-<img src="/en/images/exchange-wallet/bybit2.png" className="screenshot_modal"/>
+    <img src="/en/images/exchange-wallet/bybit1.png" className="screenshot_modal" alt="The Select Your API Key Type dialog" />
 
-10) Click **Submit**.
+5. On the **Create New Key** page, fill in all required fields as follows:
 
-You have now generated the **API Key** and **API Secret** and can now return to Cobo Portal interface to complete the set-up. For more information, please refer to this [guide](https://www.bybit.com/en/help-center/article/How-to-create-your-API-key).
+    - In the **API Key Usage** section, select **API Transaction**.
+    - Enter a name for the API key.
+    - In the **API Key Permissions** section, select the options **Read-Write** and **Only IPs with permissions granted are allowed to access the OpenAPI**, and enter Cobo's IP address `18.177.176.209` in the underlying field.
+
+6. In the **Asset** section, select the following options under **Read-Write**:
+    - **Account Transfer**
+    - **Subaccount Transfer**
+    - **Withdrawal**
+    - **Exchange History**
+
+    <img src="/en/images/exchange-wallet/bybit2.png" className="screenshot_modal" alt="the four options under Read-Write" />
+
+10. Click **Submit** to generate the API key.
+
+You have now generated an API Key. You can go to Cobo Portal to link your Bybit account with the API key and API secret. For how to link your account, see [Set up Exchange Wallets](set-up). 

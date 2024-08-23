@@ -1,20 +1,26 @@
 ---
-title: "Generate your Deribit API keys"
-sidebarTitle: "Deribit - API Keys"
+title: "Generate an API key on Deribit"
+sidebarTitle: "Deribit"
 ---
 
-Generate the **Client ID** and **Client Secret** for your Deribit account by following these steps:
+When you link a Deribit account to your Exchange Wallet, you will need to provide a client ID and a client secret of an API key. Besides, you also need to include Cobo in the IP whitelist and assign specific permissions to the key.
 
-1) Log in to your Deribit account.
-2) Navigate to **My Account > API**.
-3) Select **+ ADD NEW KEY**.
+This article explains how to generate an API key on Deribit, including adding Cobo to the IP whitelist and setting permissions.
 
-<img src="/en/images/exchange-wallet/deribit.png" className="screenshot_full_screen"/>
+<Note>The content is subject to changes on Deribit.</Note>
 
-4) Select Account = **read**.
-5) Select Wallet = **read_write**.
-6) Fill in Cobo’s IP address under IP whitelist = **18.177.176.209**.
-7) Click **Create a new API key**.
-8) After the API key is created, click **Load Keys**.
+1. Log in to your Deribit account.
+2. Navigate to **My Account** > **API**.
+3. Select **+ ADD NEW KEY** to open a **Create a new API key** dialog.
 
-You have now generated the **Client ID** and **Client Secret** and can now return to Cobo Portal interface to complete the set-up.
+    <img src="/en/images/exchange-wallet/deribit.png" className="screenshot_full_screen" alt="The Add new key button" />
+
+4. On the dialog, finish the API key settings as follows:
+
+    - In the **Account** field, select **read**.
+    - In the **Wallet** field, select **read_write**.
+    - In the **IP Whitelist** field, enter Cobo's IP address `18.177.176.209`.
+5. Click **Create a new API key**.
+8. After the API key is created, click **Load Keys** to display the API key information.
+
+You have now generated and set up an API Key. You can go to Cobo Portal to link your Deribit account with the client ID and client secret. For how to link your account, see [Set up Exchange Wallets](set-up). 

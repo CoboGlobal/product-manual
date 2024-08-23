@@ -1,27 +1,30 @@
 ---
-title: "Generate your Gate API keys"
-sidebarTitle: "Gate - API Keys"
+title: "Generate an API key on Gate.io"
+sidebarTitle: "Gate.io"
 ---
 
-Generate the **API Key** and **API Secret Key** for your Gate account by following these steps:
+When you link a Gate.io account to your Exchange Wallet, you will need to provide an API key and a secret key. Besides, you also need to include Cobo in the IP whitelist and assign specific permissions to the key.
 
-1) Log in to your Gate account.
-2) Navigate to **My Profile** > **API Management**.
-3) Select **Create API Key**.
-4) Fill in API Key Remark = **Cobo**.
-5) Fill in Cobo’s IP address under IP Permissions = **18.177.176.209**.
-6) Select **Bind IP**.
-7) Select **API v4 Key**.
-8) Select **Trading Account**.
-9) Toggle on the following **5 Permissions**:
-    - Spot Trade: Read-Only
-    - Wallet: Read And Write
-    - Withdraw: Read And Write
-    - Subaccount: Read-Only
-    - Account: Read-Only
+This article explains how to generate an API key on Gate.io, including adding Cobo to the IP whitelist and setting permissions.
 
-<img src="/en/images/exchange-wallet/gate.png" className="screenshot_modal"/>
+<Note>The content is subject to changes on Gate.io. For more details, refer to <a href="https://www.gate.io/help/guide/faq/17521/how-to-utilize-api">How to Utilize API</a>.</Note>
 
-10) Click **Confirm**.
+1. Log in to your Gate.io account.
+2. Navigate to **My Profile** > **API Management**.
+3. Select **Create API Key** to open a **Create API Key** page.
+4. On the **Create API Key** page, enter a remark in the **API Key Remark** filed.
+5. In the **IP Permissions** section, select **Bind IP** and enter Cobo's IP address `18.177.176.209` in the textfield.
+6. In the **API Key Type** section, select **API v4 Key**.
+7. In the **Account Type** section, select **Trading Account**.
+8. In the **Permissions* section, enable the following options:
+    - **Spot Trade**: **Read Only**
+    - **Wallet**: **Read And Write**
+    - **Withdraw**: **Read And Write**
+    - **Subaccount**: **Read Only**
+    - **Account**: **Read Only**
 
-You have now generated the **API Key** and **API Secret Key** and can now return to Cobo Portal interface to complete the set-up. For more information, please refer to this [guide](https://www.gate.io/help/guide/faq/17521/how-to-utilize-api).
+    <img src="/en/images/exchange-wallet/gate.png" className="screenshot_modal" alt="The permissions options" />
+
+9. Click **Confirm** to generate the API key.
+
+You have now generated and set up an API Key. You can go to Cobo Portal to link your Gate.io account with the API key and API secret key. For how to link your account, see [Set up Exchange Wallets](set-up). 
