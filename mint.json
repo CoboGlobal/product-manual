@@ -279,15 +279,10 @@
                         "en/portal/exchange-wallets/set-up"
                       ]
                     },
-                    {
-                      "group": "Manage Exchange Wallets",
-                      "pages": [
-                        "en/portal/exchange-wallets/manage",
-                        "en/portal/exchange-wallets/roles-and-policies",
-                        "en/portal/exchange-wallets/transfers"
-                      ]
-                    },
-                    "en/portal/exchange-wallets/troubleshoot"
+                    "en/portal/exchange-wallets/manage",
+                    "en/portal/exchange-wallets/transfers",
+                    "en/portal/exchange-wallets/troubleshoot",
+                    "en/portal/exchange-wallets/roles-and-policies"
                   ]
                 }
               ]

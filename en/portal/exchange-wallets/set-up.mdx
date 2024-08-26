@@ -3,19 +3,34 @@ title: "Link your exchange account"
 sidebarTitle: "Link your exchange account"
 ---
 
-<Note>Prerequisite: Set up your account and complete other required steps following the [Quick start guide](/en/portal/quick-start-guide).</Note>
+This article describes how to set up your Exchange Wallets on Cobo Portal by linking your exchange accounts.
 
-Set up your Exchange Wallets on Cobo Portal by linking your exchange accounts using these simple steps:
+## Prerequisites
 
+- Set up your Cobo Account as described in [Quick start guide](/en/portal/quick-start-guide).
+- Generate and set up the API key on the exchange that you use as described in the following guides:
+    - [Binance](generate-binance-api-key.mdx)
+    - [Bitget](generate-bitget-api-key.mdx)
+    - [Bybit](generate-bybit-api-key.mdx)
+    - [Deribit](generate-deribit-api-key.mdx)
+    - [Gate.io](generate-gate-api-key.mdx)
+    - [OKX](generate-okx-api-key.mdx)
+
+## Steps
 1. Log in to Cobo Portal.
-2. Click <img src="/en/images/exchange-wallet/1.png" className="icon"></img> and then select **Exchange Wallets**.
-3. Click **+ Exchange Account**, or alternatively, click **Link Account** under the specific exchange.
-4. On the exchange’s platform, whitelist Cobo IP (**18.177.176.209**) in your API key settings and generate an API key and API secret. Refer to the next pages for detailed instructions for the respective exchanges.
-5. Fill in the required information (name, API key, secret, and passphrase) and click **Next**.
+2. Click the wallet icon <img src="/en/images/exchange-wallet/1.png" className="icon"></img> and then select **Exchange Wallets**.
+3. Click the **+ Exchange Account** button.
+4. On the **Select Exchange** dialog, select the exchange that you use and click **Continue**.
+5. The required information vary by exchange. In most cases you need to select the account type and provide a wallet name, an API key,and an API secret.
+    <Info>When linking a Main Account, you can link its Sub Accounts at the same time.</Info>
+    <Note>When linking a Sub Account, you need to link its Main Account first, and select the Main Account as the **Associated Main Account**.</Note>
+    <img src="/en/images/exchange-wallet/link-dialog.png" className="screenshot_modal" alt="The dialog of linking exchange account" />
+6. Click **Link** to complete the setup. 
 
-<img src="/en/images/exchange-wallet/image 3.png" className="screenshot_modal"/>
+Once your exchange account is linked, it will display in your Exchange Wallets dashboard.
 
-6. (Optional) Select the exchange sub accounts you wish to link, if applicable.
-7. Click **Link** to complete the setup. Once successful, you will see the linked exchange accounts in your Exchange Wallets dashboard.
+<img src="/en/images/exchange-wallet/linked-accounts.png" className="screenshot_full_screen" alt="The Exchange Wallets dashboard"/>
 
-<img src="/en/images/exchange-wallet/exchange new 2.png" className="screenshot_full_screen"/>
+## Next-steps
+
+When you set up your Exchange Wallets on Cobo Portal, you can perform actions on the linked exchange accounts, or transfer assets from or to your Exchange Wallets. For more details, see [Manage Exchange Wallets](manage) and [Transfers](transfers).
