@@ -17,19 +17,19 @@ Babylon 提供两种赎回方法：
 
 1.点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
 
-2.找到要赎回的协议，在同一行中点击**操作**下的**查看**按钮 。
+2.找到 Babylon，在同一行中点击**操作**下的**查看**按钮 。
 
 3.找到要赎回的质押仓位，在同一行中点击**赎回**。只有状态为**可赎回**（Withdrawable）的质押仓位，才会出现**赎回**（Withdraw）按钮。
 
-4.查看弹出窗口中的信息。选择接收赎回的钱包。对于**交易费用**（Transaction Cost），从**慢速**（Slow）、**标准**（Standard）和**快速**（Fast）中选择一种，作为**网络费用**。您也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>自定义费用。 
+4.查看弹出窗口中的信息。选择接收赎回的钱包。对于**网络费用**（Network Fee），从**慢速**（Slow）、**标准**（Standard）和**快速**（Fast）中选择一种。您也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>自定义费用。 
 
 5.点击**提交**。您需要有足够的余额支付网络费用才能提交交易。
 
 6.在**赎回请求已提交**（Withdrawal Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
 
-7.在质押详情页面，将为该笔赎回创建新的记录。
+7.在质押详情页面会有以下更新：
 
-    - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**赎回中**。
+    - 在**质押仓位**（Staking Positions）下，该仓位的**仓位状态**（Position Status）变为**赎回中**。
         - 如果赎回成功，**仓位状态**（Position Status）将变为**已平仓**（Closed）。资产将转回您的钱包。
         - 如果赎回失败，**仓位状态**（Position Status）将变回**可赎回**（Withdrawable），**操作**下将出现**赎回**（Withdraw）按钮。
     - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。交易转入链上后，状态将变为**成功**（Success）。
