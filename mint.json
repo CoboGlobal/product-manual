@@ -1251,8 +1251,8 @@
     "linkedin": "https://www.linkedin.com/company/cobo-global/"
   },
   "feedback": {
-    "suggestEdit": true,
-    "raiseIssue": true,
-    "thumbsRating": true
+    "suggestEdit": false,
+    "raiseIssue": false,
+    "thumbsRating": false
   }
 }
