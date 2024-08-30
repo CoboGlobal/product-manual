@@ -25,12 +25,16 @@
   ],
   "topbarLinks": [
     {
-      "name": "Go to Developer Hub",
+      "name": "Submit Feedback",
+      "url": "https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI"
+    },
+    {
+      "name": "Developer Hub",
       "url": "https://www.cobo.com/developers/v2/guides/overview/introduction"
     }
   ],
   "topbarCtaButton": {
-    "name": "Log In to Cobo Portal",
+    "name": "Cobo Portal",
     "url": "https://portal.cobo.com/login"
   },
   "primaryTab": {
@@ -1247,8 +1251,8 @@
     "linkedin": "https://www.linkedin.com/company/cobo-global/"
   },
   "feedback": {
-    "suggestEdit": true,
-    "raiseIssue": true,
-    "thumbsRating": true
+    "suggestEdit": false,
+    "raiseIssue": false,
+    "thumbsRating": false
   }
 }
