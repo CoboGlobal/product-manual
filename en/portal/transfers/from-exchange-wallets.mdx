@@ -1,45 +1,41 @@
 ---
-title: "Transfer from Exchange Wallets"
-sidebarTitle: "Transfer from Exchange Wallets"
+title: "Withdraw from Exchange Wallets"
+sidebarTitle: "Withdraw from Exchange Wallets"
 ---
 
-This article describes how to transfer assets from an Exchange Wallet, including transfer ins and outs (transfers within an Exchange Wallet) and withdrawals (transfers to another Cobo wallet or an external address).
+This article explains how to withdraw assets from an Exchange Wallet. In this context, a withdrawal refers to transferring assets from an Exchange Wallet to another wallet created on the Cobo Portal or an external address. 
+
+Only Exchange Wallets (Main Account) with a trading account type of Spot or Fund support withdrawals. To withdraw assets from an Exchange Wallet (Sub Account), you must first transfer the assets from the Sub Account to the associated Main Account, and then withdraw from the Main Account. To learn more about transfers between the Sub Accounts and associated Main Accounts and transfers between trading accounts, see [Transfer Within Exchange Wallet (Main Account)]().
 
 For the list of exchanges supported by Cobo Portal, refer to [Supported exchanges](/en/portal/exchange-wallets/supported-exchanges).
 
 ## Prerequisites
 
 - You have successfully linked an exchange account to your Exchange Wallet.
-- It is highly recommended that you set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer) for your Exchange Wallet. 
+- It is highly recommended that you set up an [off-chain transaction policy](/en/portal/risk-controls/tx-policies-overview) for your Exchange Wallet.
 - Your Exchange Wallet has sufficient balance.
 
 ## Steps
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click the transfer icon <img src="/en/images/transfers/transfer-button.svg" className="icon" alt="the transfer icon"></img> in the main menu to display the **Transfer** dialog.
-    <Info>You can also initiate a transfer by clicking the withdraw icon <img src="/en/images/exchange-wallet/11.png" className="icon" alt="the withdraw icon"></img> or transfer out icon <img src="/en/images/exchange-wallet/13.png" className="icon" alt="the transfer out icon"></img> on the Exchange Wallet details page. In this case, the <b>From</b> section and <b>Token</b> field will be accordingly prefilled.</Info>
+2. Click the wallet icon <img src="/en/images/exchange-wallet/1.png" className="icon" alt="The wallet icon" /> and then select **Exchange Wallets**.
+3. Click the Exchange Wallet (Main Account) that you want to withdraw from.
+4. On the wallet details page, find the Spot or Fund trading account for your desired asset type, and click the withdraw icon <img src="/en/images/exchange-wallet/11.png" className="icon" alt="the withdraw icon"></img> in the **Actions** column.
 
-3. In the dialog, select the asset type from the **Token** dropdown list. 
-<Note>The available assets for selection depend on the <a href="/en/portal/bills-and-payments/introduction">pricing plan</a> that your <a href="/en/portal/organization/introduction">organization</a> purchases. To enable a new asset, click <b>Not Enabled</b> and follow the instructions.</Note>
-4. In the **From** section, select the Exchange Wallet from which you want to transfer assets.
-5. In the **To** section, specify the address to which you want to transfer assets in either of the following ways: 
-    - If it's a Cobo wallet, click **My Wallets** and select from the dropdown list. 
-    - If it's saved in your Address Book, click **Address Book** and select from the dropdown list.
-    - Or click **Other Addresses** and manually enter the address in the text field.
+    <Note>You can also initiate a withdrawal by clicking the transfer icon <img src="/en/images/transfers/transfer-button.svg" className="icon" alt="the transfer icon" /> in the main menu to display the **Transfer** dialog.</Note>
 
-    The account that your Exchange Wallet links to impacts the types of destinations to which you can transfer assets.
+5. In the **From** section, select the Exchange Wallet from which you want to transfer assets.
 
-    In most cases, you can transfer from an Exchange Wallet (Main Account) to all kinds of destinations, including its Sub Accounts, other exchange accounts on the same or another exchange, another Cobo wallet, or an external address. For transfers to another Cobo wallet or an external address, the trading account type of the Main Account must be **Spot**. 
+    <Note>If the Exchange Wallet you want is not selectable, it means the currently selected asset type is not supported. Please try selecting a different asset type.</Note>
 
-    You can only transfer assets from an Exchange Wallet (Sub Account) to its Main Account or other trading accounts within the same Exchange Wallet.
+6. In the **To** section, specify the address to which you want to transfer assets in either of the following ways:
+   - If it's a Cobo wallet, click **My Wallets** and select from the dropdown list.
+   - If it's saved in your Address Book, click **Address Book** and select from the dropdown list.
+   - Or click **Other Addresses** and manually enter the address in the text field.
+7. Enter the transfer amount.
+8. Review the transaction cost.
+9. (Optional) Add a category or description to your transaction. For more details, refer to [Add category and description](/en/portal/transfers/add-category).
+10. Click **Submit**.
+11. Approve the request on your Cobo Guard.
 
-    <Note>The specific behaviors are subject to the exchange's rules. If you can select the wallet on the UI, then you are able to transfer assets to that wallet.</Note>
-
-6. Enter the transfer amount.
-7. Review the transaction cost.
-    <Note>For transfers between Main Accounts and Sub Accounts on the same exchange, no fees will be charged. Otherwise, a fixed fee that cannot be modified by users applies. The fee is charged in the same token type as the asset.</Note>
-8. (Optional) Add a category or description to your transaction. For more details, refer to [Add category and description](/en/portal/transfers/add-category).
-9. Click **Submit**.
-10. Approve the request on your Cobo Guard. 
-
-<Info>If the destination address is neither an address in your Address Book nor any of your Cobo wallets, you will be prompted to add the address to your Address Book.</Info>
+If the destination address is neither an address in your Address Book nor any of your Cobo wallets, you will be prompted to add the address to your Address Book.

@@ -1,29 +1,25 @@
 ---
-title: "Transfer to Exchange Wallets"
-sidebarTitle: "Transfer to Exchange Wallets"
+title: "Deposit into an Exchange Wallet"
+sidebarTitle: "Deposit into Exchange Wallet"
 ---
 
-This article describes how to transfer assets to your Exchange Wallets.
+This article explains how to deposit assets into an Exchange Wallet. In this context, a withdrawal refers to transferring assets from another wallet created on the Cobo Portal or an external address to an Exchange Wallet. 
 
-<Note>Before making transfers using your Exchange Wallets, ensure that transaction policies have been set up in your organization. To learn more about transaction policies, see <a href="/en/portal/risk-controls/tx-policies-overview">Introduction to transaction policies</a>.</Note>
+Only Exchange Wallets (Main Account) with a trading account type of Spot or Fund support deposits. To deposit assets into an Exchange Wallet (Sub Account), you must first deposit the assets to its associated Main Account, and then transfer the assets from the Main Account to the Sub Account. To learn more about transfers between the Sub Accounts and associated Main Accounts and transfers between trading accounts, see [Transfer Within Exchange Wallet (Main Account)]().
 
-## Transfer within an Exchange Wallet
+For the list of exchanges supported by Cobo Portal, refer to [Supported exchanges](/en/portal/exchange-wallets/supported-exchanges).
 
-Transfers within an Exchange Wallet refer to the following cases:
-- From the Main Account to its Sub Accounts
-- From a Sub Account to its associated Main Account
-- From a Sub Account to another Sub Account of its associated Main Account
+## Prerequisites
 
-For these cases, refer to [Transfer from Exchange Wallets](/en/portal/transfers/from-exchange-wallets) for instructions.
+1. You have successfully linked an exchange account to your Exchange Wallet.
+2. It is highly recommended that you set up an [off-chain transaction policy](/en/portal/risk-controls/tx-policies-overview) for your Exchange Wallet.
 
-## Deposit into an Exchange Wallet
-Deposits into an Exchange Wallet refers to assets transferred from another Cobo wallet or an external address. You can only deposit into an Exchange Wallet (Main Account). If you want to add balance to an Exchange Wallet (Sub Account), you must first deposit into its associated Main Account, and then transfer the assets from the Main Account to the Sub Account. 
+## Steps
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon" alt="the wallets icon" /> > **Exchange Wallets**.
-3. Navigate to and click the Exchange Wallet (Main) that you want to deposit into. 
-4. Click the Deposit icon <img src="/en/images/exchange-wallet/10.png" className="icon" alt="the wallets icon"/> or the View Deposit Addresses icon <img src="/en/images/exchange-wallet/icon_deposit_address.svg" className="icon" alt="the view deposit address icon"/> to display the deposit address.
-5. Copy the deposit address. 
+2. Click the wallet icon <img src="/en/images/exchange-wallet/1.png" className="icon" alt="The wallet icon" /> and then select **Exchange Wallets**.
+3. Navigate to and click the Exchange Wallet (Main) that you want to deposit into.
+4. On the wallet details page, find the Spot or Fund trading account for your desired asset type, and the **Deposit** icon <img src="/en/images/exchange-wallet/10.png" className="icon" alt="the wallets icon"/> or the **View Deposit Addresses** icon <img src="/en/images/exchange-wallet/icon_deposit_address.svg" className="icon" alt="the view deposit address icon" /> in the **Actions** column to display the deposit address.
+5. Copy the deposit address.
 6. Proceed to your external wallet to initiate the transfer to the deposit address that you have copied.
-
-    <Info>If you deposit into your Exchange Wallets from another Cobo wallet created on Cobo Portal, refer to <a href="/en/portal/exchange-wallets/transfers">Transfer</a> for instructions on different wallet types.</Info>
+   <Info>If you deposit into your Exchange Wallets from another wallet created on Cobo Portal, refer to [Transfer](/en/portal/transfers/introduction) for instructions on different wallet types.</Info>
