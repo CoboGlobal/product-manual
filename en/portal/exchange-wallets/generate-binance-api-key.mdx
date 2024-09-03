@@ -1,27 +1,28 @@
 ---
-title: "Generate your Binance API keys"
-sidebarTitle: "Binance - API Keys"
+title: "Generate an API key on Binance"
+sidebarTitle: "Binance"
 ---
 
-Generate the **API Key** and **API Secret Key** for your Binance account by following these steps:
+When you link a Binance account to your Exchange Wallet, you will need to provide an API key and a secret key. Besides, you also need to include Cobo in the IP whitelist and assign specific permissions to the key.
 
-1) Log in to your Binance account.
-2) Navigate to **Account** > **API management**.
-3) Click **Create API**.
-4) Select **System generated**, and click **Next**.
+This article explains how to generate an API key on Binance, including adding Cobo to the IP whitelist and setting permissions.
 
-<img src="/en/images/exchange-wallet/binance2.png" className="screenshot_modal"/>
+<Note>The content is subject to changes on Binance. For more details, refer to <a href="https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072">How to Create API Keys on Binance</a>.</Note>
 
-5) Tick the following **4 API restrictions**:
-    - Enable Reading
-    - Enable Internal Transfer
-    - Permit Universal Transfer
-    - Enable Withdrawal
-6) Select **Restrict access to trusted IPs only**.
-7) Fill in Cobo’s IP address under the trusted IPs = **18.177.176.209**.
+1. Log in to your Binance account.
+2. Navigate to **Account** > **API management**.
+3. Click **Create API**.
+4. On the **Choose API key type** dialog, select **System generated**, and click **Next** to generate an API key.
+    <img src="/en/images/exchange-wallet/binance2.png" className="screenshot_modal" alt="The Choose API Key Type dialog" />
+5. When the key is successfully generated, you will see an API key and a secret key.
+    <Note>Carefully store the secret key, as it is displayed in plain text only once.</Note>
+6. In the **API restrictions** section, select the following options:
+    - **Enable Reading**
+    - **Enable Withdrawals**
+    - **Enable Internal Transfer**
+    - **Permits Universal Transfer**
+7. Under the **IP access restrictions** section, select **Restrict access to trusted IPs only**, and enter Cobo's IP address `18.177.176.209`.
+    <img src="/en/images/exchange-wallet/binance.png" className="screenshot_full_screen" alt="The Restrict access to trusted IPs only option" />
+8. Click **Save** to submit the settings.
 
-<img src="/en/images/exchange-wallet/binance.png" className="screenshot_full_screen"/>
-
-8) Click **Save**.
-
-You have now generated the **API Key** and **API Secret Key** and can now return to Cobo Portal interface to complete the set-up. For more information, please refer to this [guide](https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072).
+You have now generated and set up an API Key. You can go to Cobo Portal to link your Binance account with the API key and secret key. To learn how to link your account, see [Set up Exchange Wallets](set-up). 

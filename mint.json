@@ -135,7 +135,6 @@
                       "group": "Manage Custodial Wallets",
                       "pages": [
                         "en/portal/custodial-wallets/manage",
-                        "en/portal/custodial-wallets/roles-and-policies",
                         "en/portal/custodial-wallets/transfers",
                         {
                           "group": "Troubleshoot",
@@ -199,7 +198,6 @@
                                 "en/portal/mpc-wallets/ocw/recover-root-key"
                               ]
                             },
-                            "en/portal/mpc-wallets/ocw/roles-and-policies",
                             "en/portal/mpc-wallets/ocw/transfers"
                           ]
                         }
@@ -243,13 +241,6 @@
                             "en/portal/smart-contract-wallets/deposit-assets",
                             "en/portal/smart-contract-wallets/withdraw-assets"
                           ]
-                        },
-                        {
-                          "group": "Security settings",
-                          "pages": [
-                            "en/portal/smart-contract-wallets/off-chain-policies",
-                            "en/portal/smart-contract-wallets/roles-and-policies"
-                          ]
                         }
                       ]
                     }
@@ -269,24 +260,25 @@
                     {
                       "group": "Set up Exchange Wallets",
                       "pages": [
-                        "en/portal/exchange-wallets/set-up",
-                        "en/portal/exchange-wallets/generate-binance-api-key",
-                        "en/portal/exchange-wallets/generate-okx-api-key",
-                        "en/portal/exchange-wallets/generate-deribit-api-key",
-                        "en/portal/exchange-wallets/generate-bybit-api-key",
-                        "en/portal/exchange-wallets/generate-gate-api-key",
-                        "en/portal/exchange-wallets/generate-bitget-api-key"
+                        {
+                          "group": "Generate an API key",
+                          "pages": [
+                            "en/portal/exchange-wallets/generate-binance-api-key",
+                            "en/portal/exchange-wallets/generate-bitget-api-key",
+                            "en/portal/exchange-wallets/generate-bybit-api-key",
+                            "en/portal/exchange-wallets/generate-deribit-api-key",
+                            "en/portal/exchange-wallets/generate-gate-api-key",
+                            "en/portal/exchange-wallets/generate-okx-api-key"
+                          ]
+                        },
+                        "en/portal/exchange-wallets/set-up"
                       ]
                     },
-                    {
-                      "group": "Manage Exchange Wallets",
-                      "pages": [
-                        "en/portal/exchange-wallets/manage",
-                        "en/portal/exchange-wallets/roles-and-policies",
-                        "en/portal/exchange-wallets/transfers",
-                        "en/portal/exchange-wallets/troubleshoot"
-                      ]
-                    }
+                    "en/portal/exchange-wallets/manage",
+                    "en/portal/transfers/from-exchange-wallets",
+                    "en/portal/exchange-wallets/transfers",
+                    "en/portal/exchange-wallets/within-wallet",
+                    "en/portal/exchange-wallets/troubleshoot"
                   ]
                 }
               ]
@@ -704,7 +696,6 @@
                       "group": "管理全托管钱包",
                       "pages": [
                         "cn/portal/custodial-wallets/manage",
-                        "cn/portal/custodial-wallets/roles-and-policies",
                         "cn/portal/custodial-wallets/transfers",
                         {
                           "group": "问题排查",
@@ -768,7 +759,6 @@
                                 "cn/portal/mpc-wallets/ocw/recover-root-key"
                               ]
                             },
-                            "cn/portal/mpc-wallets/ocw/roles-and-policies",
                             "cn/portal/mpc-wallets/ocw/transfers"
                           ]
                         }
@@ -812,13 +802,6 @@
                             "cn/portal/smart-contract-wallets/deposit-assets",
                             "cn/portal/smart-contract-wallets/withdraw-assets"
                           ]
-                        },
-                        {
-                          "group": "安全设置",
-                          "pages": [
-                            "cn/portal/smart-contract-wallets/off-chain-policies",
-                            "cn/portal/smart-contract-wallets/roles-and-policies"
-                          ]
                         }
                       ]
                     }
@@ -851,7 +834,6 @@
                       "group": "管理交易所钱包",
                       "pages": [
                         "cn/portal/exchange-wallets/manage",
-                        "cn/portal/exchange-wallets/roles-and-policies",
                         "cn/portal/exchange-wallets/transfers",
                         "cn/portal/exchange-wallets/troubleshoot"
                       ]
