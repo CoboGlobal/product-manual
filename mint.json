@@ -265,6 +265,7 @@
                           "pages": [
                             "en/portal/exchange-wallets/generate-binance-api-key",
                             "en/portal/exchange-wallets/generate-bitget-api-key",
+                            "en/portal/exchange-wallets/generate-bitmart-api-key",
                             "en/portal/exchange-wallets/generate-bybit-api-key",
                             "en/portal/exchange-wallets/generate-deribit-api-key",
                             "en/portal/exchange-wallets/generate-gate-api-key",
