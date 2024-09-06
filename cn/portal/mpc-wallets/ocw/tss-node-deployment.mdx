@@ -5,12 +5,12 @@ sidebarTitle: "TSS Node 部署"
 
 ## TSS Node 软件包 
 
-根据部署方法，TSS Node 软件包有两个版本：
+TSS Node 软件包有两个版本，分别适用于不同的部署环境：
 
-- SGX 安全增强版：适用于 SGX 服务器，软件包名为 cobo-tss-node-linux-sgx-\<VERSION\>.tgz。
-- 通用版本：专为通用服务器或 Apple MacBook 设计，软件包名为 cobo-tss-node-generic-\<VERSION\>.tgz。
+- **SGX 安全增强版**：专为配备 SGX 功能的服务器设计。此版本 TSS Node 软件包可在[这里](https://cobo-tss-node.s3.amazonaws.com/linux-sgx/latest/cobo-tss-node-linux-sgx.tgz)下载。
+- **通用版本**：兼容所有服务器，包括云服务商的服务器、用户自建的服务器、现成服务器以及 Apple MacBooks。虽然此版本也可以在支持 SGX 的服务器上运行，但 SGX 相关功能将不会启用。此版本 TSS Node 软件包可在[这里](https://cobo-tss-node.s3.amazonaws.com/generic/latest/cobo-tss-node-generic.tgz)下载。
 
-要获取适合您的部署方法的 TSS Node 软件包，请联系 Cobo 客服，联系方式：[help@cobo.com]。下面的示例使用了适用于通用服务器的 TSS Node 软件包。
+接下来的示例将使用通用版本的 TSS Node 软件包。
 
 ```
 cobo-tss-node-generic-<VERSION>.tgz (TSS Node 软件包)
@@ -73,7 +73,7 @@ cobo-tss-node-generic
 
 ### **TSS Node 命令行**
 
-所有三种运行环境（即 SGX 服务器、通用服务器和 Apple MacBook）的 TSS Node 命令行是一致的。但命令行的执行可能略有不同。对于 SGX 服务器和通用服务器，部署和运行 TSS Node 需要 sudo 访问权限。换言之，要确保插入 sudo 命令。
+所有运行环境的 TSS Node 命令行是一致的。但命令行的执行可能略有不同。对于 SGX 服务器和现成服务器，部署和运行 TSS Node 需要 sudo 访问权限。换言之，要确保插入 sudo 命令。
 
 ```
 sudo ./tss-node.sh status
@@ -85,7 +85,7 @@ sudo ./tss-node.sh status
 ./tss-node.sh status
 ```
 
-除非另有明确说明，否则本用户指南中的所有后续命令都将以通用服务器为例。
+除非另有明确说明，否则本用户指南中的所有后续命令都将以现成服务器为例。
 
 ### **TSS Node 容器镜像**
 

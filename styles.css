@@ -123,3 +123,33 @@ table tr td:first-child {
 
   text-align: center;
 }*/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table th, table td {
+  width: auto;
+  min-width: 230px; /*Ajustable, avoid columns to be too narrow */
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+/* Style the header */
+table th {
+  height: 37px;
+  background-color: #1F32D6; /* Cobo Blue */ 
+  color: white !important;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Add left padding to the first column */
+table th:first-child, table td:first-child {
+  padding-left: 8px;
+}
