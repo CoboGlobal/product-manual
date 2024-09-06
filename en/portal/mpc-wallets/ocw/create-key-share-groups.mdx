@@ -35,15 +35,19 @@ After you've chosen a co-signer type and set up the prerequisites, follow the in
 <img src="/en/images/mpc-wallet/create-main-key-group.png" className="screenshot_full_screen"/>
 4. On the **Create Main Group** dialog, navigate to the **Key Share Holder 2** section, and then complete the following configurations: <a id="on-the-create-main-group-dialog"></a>
     - To use **Mobile Co-Signer**, select a **Holder** (the **TSS Node ID** will be filled in automatically), then click **Confirm**.
+
     - To use **API Co-Signer**, enter a **Holder** name, fill in the **TSS Node ID** generated using the TSS Node software package, then click **Confirm**. See [TSS Node Technical Setup](/en/portal/mpc-wallets/ocw/network-environments) for further instructions.
-5. The status will show “Pending Key Share Holder Confirmation”. Inform the relevant key share holder to confirm on their end. See [Generate and back up your key shares](/en/guard/generate-and-back-up-key-shares) for instructions on how key share holders can complete this confirmation process.
+
+5. Inform the relevant key share holder to confirm on their end.
     - **Notes:**
-        - If using mobile co-signer, the key share holder will receive a message on Cobo Guard and they will have 24 hours to complete the confirmation process.
+        - If using mobile co-signer, a **Confirmation** page appears reminding the selected key share holder to to confirm in their Cobo Guard. On the selected key share holder's Cobo Guard app, tap the **Security Verification** message to open the **Security Verification** page. Review the information, then click **Yes, it is me**. A **Become Key Holder** message will be sent to the key share holder's Cobo Guard, click it to open the **Become Key Holder** page, review the information, then click **Approve**.
         - If using API co-signer, ensure to bring the TSS Node online within 24 hours. The confirmation process is completed as soon as the TSS Node goes online.
 
 6. Once the key share holder has confirmed on their end, the key generation process will begin.
+<Info>You might need to refresh the page to see the result.</Info>
 
-7. Once the key generation process is complete, the **Status** will show as **Active**. **Note:** a default wallet will be automatically created for this vault upon successful key generation.
+7. Once the key generation process is complete, the **Status** will show as **Active**.
+ <Info>A default wallet will be automatically created for this vault upon successful key generation.</Info>
 <img src="/en/images/mpc-wallet/main-group-active.png" className="screenshot_modal"/>
 
 ## Signing Group
