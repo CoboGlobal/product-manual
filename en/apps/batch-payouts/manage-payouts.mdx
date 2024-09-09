@@ -23,12 +23,12 @@ This article describes how to manage batch payouts in the Batch Payouts app.
     - <img src="/en/images/portal-apps/batch-payouts/icon_resend.png" className="icon" alt="the Resend icon" /> (Resend): Resend a failed batch payout.
       Resending a transaction initiates a new attempt to process the transaction that failed previously.
 
-    | Action     | Applicable Transaction Status                      | Applicable Wallets Types                 |
+    | Action     | Applicable Transaction Status                      | Note                 |
     | ---------- | -------------------------------------------------- | ---------------------------------------- |
-    | Cancel     | Pending Screening<br />Pending Approval<br />Pending Signature | All wallet types except Exchange Wallets |
-    | Drop       | Broadcasting                                       | MPC Wallets<br />Custodial Wallets (Web3)      |
-    | Speed up   | Broadcasting                                       | MPC Wallets<br />Custodial Wallets (Web3)     |
-    | Resend     | Failed                                             | All wallet types except Exchange Wallets |
+    | Cancel     | Submitted<br />Pending Screening<br />Pending Approval<br />Pending Signature | This action only applies to transactions from MPC Wallets. |
+    | Drop       | Broadcasting                                       | This action only applies to transactions from MPC Wallets. It does not apply to transactions on the following chains: VET, TRON, TVET, SOL, and TON.      |
+    | Speed up   | Broadcasting                                       | This action only applies to transactions from MPC Wallets. It does not apply to transactions on the following chains: VET, TRON, TVET, SOL, and TON.     |
+    | Resend     | Failed                                             | This action only applies to transactions from MPC Wallets in the SOL token. |
 
 	<Note>To perform the required actions on a batch payout, all the transactions in the batch need to be the applicable transaction status. Otherwise, the action will fail.</Note>
 
