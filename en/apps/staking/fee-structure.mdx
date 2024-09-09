@@ -1,0 +1,22 @@
+---
+title: "Fee structure"
+sidebarTitle: "Fee structure"
+---
+The following documentation explains the commission fees applied to staking rewards.
+
+## BTC Staking
+
+For BTC staking with [Babylon](https://babylonlabs.io/), when Cobo acts as the Finality Provider, the commission fee is 5% of the staking rewards.
+
+## ETH Staking
+
+For ETH staking on the [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/), [Figment](https://figment.io/) is the first supported Ethereum Node Provider, with plans to add support for other Node Providers in the future. Fees may vary depending on the Node Provider. 
+
+With Figment as the Node Provider, the fee structure is as follows, beginning with a breakdown of the rewards.
+
+ETH staking rewards are divided into two parts: Consensus Layer Rewards and Execution Layer Rewards.
+
+- **Consensus Layer Rewards:** Approximately 67% of the total rewards. These rewards are generated from block production and are directly distributed to your Withdrawal Address.
+- **Execution Layer Rewards:** Approximately 33% of the total rewards. This includes rewards such as MEV (Maximal Extractable Value), tips, and transaction fees. The distribution of these rewards varies depending on the Node Provider. For Figment, the Execution Layer rewards are automatically distributed by Figment's On-chain Billing Smart Contract.
+
+Only the Execution Layer Rewards are relevant for fee calculations. You will receive 70% of the Execution Layer Rewards to your Fee Recipient Address, while Figment will deduct a 30% commission fee (approximately 10% of the total rewards).

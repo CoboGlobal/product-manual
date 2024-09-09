@@ -568,6 +568,7 @@
                     "en/apps/staking/unstake",
                     "en/apps/staking/withdraw",
                     "en/apps/staking/view",
+                    "en/apps/staking/fee-structure",
                     "en/apps/staking/supported"
                   ]
                 }

@@ -2,39 +2,81 @@
 title: "View staking positions and activity"
 sidebarTitle: "View staking positions and activity"
 ---
-<Info> Currently, the Staking App is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
-
-Follow these steps to view staking positions and activity for BTC staking.
+<Info>Currently, the Staking app supports staking BTC ([Babylon](https://babylonlabs.io/)) and ETH ([Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/)) within [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault).</Info>
 
 <Note>Prerequisite: All user roles can view staking positions and activity. To stake, unstake, or withdraw assets, you need to have the [Staker](/en/portal/organization/roles-and-permissions) role.</Note>
 
-1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
-2. Click **View** under **Actions** in the row of the protocol of which you want to view the details.
-3. On the staking details page, you can see an overview of the protocol, followed by the **Staking Positions** and **Activity** sections.
-    <img src="/en/images/portal-apps/staking/BTC/staking_details.png" className="screenshot_full_screen" alt="Staking details page"/>
+Select the **BTC** or **ETH** tab to view specific instructions for each.
 
-## Staking positions
+<Tabs>
+  <Tab title="BTC">
+    1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+    2. Click **View** under **Actions** in the row for Babylon.
+    3. On the staking details page, you can see an overview of the staked amount and rewards, followed by the **Staking Positions** and **Activity** sections.
+        <img src="/en/images/portal-apps/staking/BTC/staking_details.png" className="screenshot_full_screen" alt="Staking details page"/>
 
-In the **Staking Positions** section, you can view details of your staking positions in rows, including staked amount, maturity date, withdrawable amount, and position status.
+    ## Staking positions
 
-<img src="/en/images/portal-apps/staking/BTC/staking_positions.png" className="screenshot_full_screen" alt="Staking positions section"/>
+    In the **Staking Positions** section, you can view details of your staking positions in rows, including staked amount, maturity date, withdrawable amount, and position status.
 
-**Position Status** depends on the result of your staking operations. For detailed explanations, see the documentation for [stake](/en/apps/staking/stake), [unstake](/en/apps/staking/unstake), and [withdraw](/en/apps/staking/withdraw).
+    <img src="/en/images/portal-apps/staking/BTC/staking_positions.png" className="screenshot_full_screen" alt="Staking positions section"/>
 
-You can click the row of a staking position to view more details, including **Position ID** and **Activity Timeline**. In the **Activity Timeline** section, click the blue hyperlinked text (for example, **BTC Confirmation**) to view the detailed status of the step.
+    **Position Status** depends on the result of your staking operations. For detailed explanations, see the documentation for [Stake](/en/apps/staking/stake), [Unstake](/en/apps/staking/unstake), and [Withdraw](/en/apps/staking/withdraw).
 
-<img src="/en/images/portal-apps/staking/BTC/staking_position.png" className="screenshot_full_screen" alt="Staking position details"/>
+    You can click the row of a staking position to view more details, including **Position ID** and **Activity Timeline**. In the **Activity Timeline** section, click the blue hyperlinked text (for example, **BTC Confirmation**) to view the detailed status of the step.
 
-## Activity
+    <img src="/en/images/portal-apps/staking/BTC/staking_position.png" className="screenshot_full_screen" alt="Staking position details"/>
 
-In the **Activity** section, you can view the history of your staking operations and their status.
+    ## Activity
 
-<img src="/en/images/portal-apps/staking/BTC/activity.png" className="screenshot_full_screen" alt="Activity section"/>
+    In the **Activity** section, you can view the history of your staking operations and their status.
 
-**Activity Status** depends on the result of your staking operations. For BTC staking with Babylon, the **Activity Status** stays as **Processing** before the transaction is confirmed by Babylon. If the transaction is rejected by risk control policies or signers, the status will be **Failed**. If it passes, depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.
+    <img src="/en/images/portal-apps/staking/BTC/activity.png" className="screenshot_full_screen" alt="Activity section"/>
 
-<Info>Withdrawal does not require confirmation from Babylon; the status will be **Success** when it goes on-chain.</Info>
+    **Activity Status** depends on the result of your staking operations. For BTC staking with Babylon, the **Activity Status** stays as **Processing** before the transaction is confirmed by Babylon. If the transaction is rejected by risk control policies or signers, the status will be **Failed**. If it passes, depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.
 
-You can click the row of an activity to view more details, including **Position ID** and **Timeline**. In the **Timeline** section, click the blue hyperlinked text (for example, **BTC Confirmation**) to view the detailed status of the step.
+    <Info>Withdrawal does not require confirmation from Babylon; the status will be **Success** when it goes on-chain.</Info>
 
-<img src="/en/images/portal-apps/staking/BTC/activity_status.png" className="screenshot_full_screen" alt="Activity status"/>
+    You can click the row of an activity to view more details, including **Position ID** and **Timeline**. In the **Timeline** section, click the blue hyperlinked text (for example, **BTC Confirmation**) to view the detailed status of the step.
+
+    <img src="/en/images/portal-apps/staking/BTC/activity_status.png" className="screenshot_full_screen" alt="Activity status"/>
+  </Tab>
+  <Tab title="ETH">
+    1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+    2. Click **View** under **Actions** in the row for Beacon Chain.
+    3. On the staking details page, you can see an overview of the staked amount and rewards, followed by the **Staking Positions** and **Activity** sections.
+        <img src="/en/images/portal-apps/staking/ETH/staking_details.png" className="screenshot_full_screen" alt="Staking details page"/>
+
+    ## Staking positions
+
+    In the **Staking Positions** section, you can view details of your staking positions in rows, including staked amount, rewards, and status. 
+
+    <img src="/en/images/portal-apps/staking/ETH/staking_positions.png" className="screenshot_full_screen" alt="Staking positions section"/>
+
+    - **Staked Amount** only reflects ETH in the **Active** status.
+    - Click **Expand** to view detailed status of ETH under the position. **Status** depends on the result of your staking operations. For detailed explanations, see the documentation for [Stake](/en/apps/staking/stake) and [Unstake](/en/apps/staking/unstake) (go to the **ETH** tab first).
+    - Click **Check** in the row of ETH to view the corresponding validators and their status.
+    - Click **View** in the row of a staking position to view more details, including **Position ID**, **Validator Public Key**, and **Activity Timeline**. 
+
+        <img src="/en/images/portal-apps/staking/ETH/staking_position.png" className="screenshot_full_screen" alt="Staking position details"/>
+
+        - In the **Activity Timeline** section, click the blue hyperlinked text (for example, Deposit ETH) to view the detailed status of the step.
+        
+        - In the **Staking Information** section, you can click the number in the **Validator Public Key** field to view the full list of validators for the staking position.
+
+        <img src="/en/images/portal-apps/staking/ETH/validator_list.png" className="screenshot_full_screen" alt="Validator list"/>
+
+    ## Activity
+
+    In the **Activity** section, you can view the history of your staking operations and their status.
+
+    <img src="/en/images/portal-apps/staking/ETH/activity.png" className="screenshot_full_screen" alt="Activity section"/>
+
+    **Status** depends on the result of your staking operations. For detailed explanations, see the documentation for [Stake](/en/apps/staking/stake) and [Unstake](/en/apps/staking/unstake) (go to the **ETH** tab first).
+
+    You can click the row of an activity to view more details, including **Position ID**, **Validator Public Key**, and **Timeline**. In the **Timeline** section, click the blue hyperlinked text (for example, **Deposit ETH**) to view the detailed status of the step.
+
+    <img src="/en/images/portal-apps/staking/ETH/activity.png" className="screenshot_full_screen" alt="Activity status"/>
+
+  </Tab>
+</Tabs>
