@@ -574,6 +574,19 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Batch Payouts",
+          "pages": [
+            "en/apps/batch-payouts/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/batch-payouts/make-payout",
+                "en/apps/batch-payouts/manage-payouts"
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
