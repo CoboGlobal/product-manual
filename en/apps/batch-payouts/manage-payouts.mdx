@@ -1,0 +1,32 @@
+---
+title: "Manage batch payouts"
+sidebarTitle: "Manage batch payouts"
+---
+
+This article describes how to manage batch payouts in the Batch Payouts app.
+
+## Prerequisites
+
+- You have [made a batch payout](make-payout).
+- You have been assigned the [Admin](/en/portal/organization/roles-and-permissions) role or a customized role with equivalent permissions.
+
+## Steps
+1. Click the Apps icon <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon" /> on Cobo Portal, find Batch Payouts, and then click **Open** to open the app.
+2. On the overview page, you can find all the batch payouts listed. You can view the total payout amount, total number of transactions, and total number of used receiving addresses.
+    <img src="/en/images/portal-apps/batch-payouts/payouts.png" className="screenshot_full_screen" alt="Screenshot of the payouts overview page" />
+3. Click the corresponding icons in the **Actions** column to perform the actions as follows:
+    - <img src="/en/images/portal-apps/batch-payouts/icon_cancel.png" className="icon" alt="the Cancel icon" /> (Cancel): Cancel a batch payout.
+      <Note><ul><li>This action only applies to transactions from MPC Wallets.</li><li>All the transactions in the batch must be in either of these status: Submitted, Pending Screening, Pending Approval, or Pending Signature. Otherwise, the action will fail.</li></ul></Note>
+    - <img src="/en/images/portal-apps/batch-payouts/icon_drop.png" className="icon" alt="the Drop icon" /> (Drop): Drop a batch payout.
+      Dropping a transaction will trigger a Replace-By-Fee (RBF) transaction which is a new version of the original transaction. It has a higher transaction fee to incentivize miners to prioritize its confirmation over the original one. 
+      <Note><ul><li>This action only applies to transactions from MPC Wallets. It does not apply to transactions on the following chains: VET, TRON, TVET, SOL, and TON.</li><li>All the transactions in the batch must be in the Broadcasting status. Otherwise, the action will fail.</li></ul></Note>
+    - <img src="/en/images/portal-apps/batch-payouts/icon_speed_up.png" className="icon" alt="the Speed Up icon" /> (Speed up): Accelerate a batch payout.
+      Speeding up a transaction will trigger a Replace-By-Fee (RBF) transaction which is a new version of the original transaction. It shares the same inputs but has a higher transaction fee to incentivize miners to prioritize its confirmation over the previous one. 
+      <Note><ul><li>This action only applies to transactions from MPC Wallets. It does not apply to transactions on the following chains: VET, TRON, TVET, SOL, and TON.</li><li>All the transactions in the batch must be in the Broadcasting status. Otherwise, the action will fail.</li></ul></Note>
+    - <img src="/en/images/portal-apps/batch-payouts/icon_resend.png" className="icon" alt="the Resend icon" /> (Resend): Resend a failed batch payout.
+      Resending a transaction initiates a new attempt to process the transaction that failed previously.
+      <Note><ul><li>This action only applies to transactions from MPC Wallets in the SOL token.</li><li>All the transactions in the batch must be in the Failed status. Otherwise, the action will fail.</li></ul></Note> 
+
+4. You can also click the **View Details** icon <img src="/en/images/common/icon_view.svg" className="icon" alt="the view icon" /> beside a batch payout to view details of individual transactions in the batch and perform the above-mentioned actions on specific transactions.
+    <img src="/en/images/portal-apps/batch-payouts/transactions.png" className="screenshot_full_screen" alt="Screenshot of the payout details page" />
+
