@@ -2,31 +2,60 @@
 title: "Unstake"
 sidebarTitle: "Unstake"
 ---
-<Info>Currently, the Staking App is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
+<Info>Currently, the Staking app supports staking BTC ([Babylon](https://babylonlabs.io/)) and ETH ([Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/)) within [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault).</Info>
 
-Babylon offers two methods to withdraw assets:
+Select the **BTC** or **ETH** tab to view specific instructions for each.
 
-- Early unstaking: You need to unstake (officially referred to as **unbond** by Babylon) first and then withdraw.
-- Natural expiration: You can directly withdraw your assets without the need to unstake first.
+<Tabs>
+  <Tab title="BTC">
+   Babylon offers two methods to withdraw assets:
 
-Follow these steps to unstake assets before expiraion.
+   - Early unstaking: You need to unstake (officially referred to as **unbond** by Babylon) first and then withdraw.
+   - Natural expiration: You can directly withdraw your assets without the need to unstake first.
 
-<Note>Prerequisite 1: You have [staked](/en/apps/staking/stake) BTC in an MPC Wallet in an Organization-Controlled Vault. The wallet has not been moved out of [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
+   Follow these steps to unstake assets before expiraion.
 
-<Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to unstake assets.</Note>
+   <Note>Prerequisite 1: You have [staked](/en/apps/staking/stake) BTC in an MPC Wallet in an Organization-Controlled Vault. The wallet has not been moved out of [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
 
-1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
-2. Click **View** under **Actions** in the row for Babylon.
-3. On the staking details page, click **Unstake** under **Actions** in the row of the staking position that you want to unstake. 
+   <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to unstake assets.</Note>
 
-   - The **Unstake** button appears only in the rows of the staking positions with the status **Active** or **Limit exceeded**.
-   - For Babylon, you can only unstake the whole amount; partial unstaking is not allowed.
+   1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+   2. Click **View** under **Actions** in the row for Babylon.
+   3. On the staking details page, click **Unstake** under **Actions** in the row of the staking position that you want to unstake. 
 
-4. Review the information in the pop-up window and click **Submit**. Note that the Babylon protocol does not support customizing your fee rate for unstaking. You need to have sufficient balance for the network fee to submit the transaction.
-5. In the **Unstaking Request Submitted** window, click **Staking Activity** to go to the staking details page.
-6. On the staking details page, you can find the following updates.
+      - The **Unstake** button appears only in the rows of the staking positions with the status **Active** or **Limit exceeded**.
+      - For Babylon, you can only unstake the whole amount; partial unstaking is not allowed.
 
-   - Under **Staking Positions**, the **Position Status** is updated to **Unstaking in Progress**.
-      - If the unstaking succeeds, the **Position Status** will become **Withdrawable**, and a **Withdraw** button will appear under **Actions**.
-      - If the unstaking fails, the **Position Status** will change back to **Active**, and the **Unstake** button will appear under **Actions**.
-   - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the unstaking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. Depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.
+   4. Review the information in the pop-up window and click **Submit**. Note that the Babylon protocol does not support customizing your fee rate for unstaking. You need to have sufficient balance for the network fee to submit the transaction.
+   5. In the **Unstaking Request Submitted** window, click **Staking Activity** to go to the staking details page.
+   6. On the staking details page, you can find the following updates.
+
+      - Under **Staking Positions**, the **Position Status** is updated to **Unstaking in Progress**.
+         - If the unstaking succeeds, the **Position Status** will become **Withdrawable**, and a **Withdraw** button will appear under **Actions**.
+         - If the unstaking fails, the **Position Status** will change back to **Active**, and the **Unstake** button will appear under **Actions**.
+      - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the unstaking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. Depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.
+  </Tab>
+  <Tab title="ETH" href="#eth">
+     <Note>Prerequisite 1: You have [staked](/en/apps/staking/stake) ETH in an MPC Wallet in an Organization-Controlled Vault. The wallet has not been moved out of [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
+     
+     <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to unstake assets.</Note>
+
+      1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+      2. Click **View** under **Actions** in the row for Beacon Chain.
+      3. On the staking details page, click **Unstake** under **Actions** in the row of ETH that you want to unstake. The **Unstake** button appears only in the rows with the **Active** status. (Alternatively, you can click **Check** to open the **Validator Public Key List** and select validators to unstake first.)
+      4. Enter the number of validators to unstake. By default, the validators with the lowest APY will be selected. You can also click **Select Validators** to select specific validators, which are listed in ascending order based on APY. Click **Submit**.
+
+         <Info>Unstaking does not require going on-chain and incurs no network fees.</Info>
+
+      5. In the **Unstaking Request Submitted** window, click **Staking Activity** to go to the staking details page.
+      6. On the staking details page, you can find the following updates.
+
+         - Under **Staking Positions**, the **Status** of the ETH is updated to **Unstaking in Progress**. You can click **Check** to view the list of validators being unstaked.
+            - If the unstaking succeeds, the row for the unstaked **ETH** will not be shown. The validator status will be **Closed**.
+            - If the unstaking fails, the **Status** will change back to **Active**, and the **Unstake** button will appear under **Actions**.
+
+         - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. The final status will be **Success** or **Failed**.
+
+      7. When the unstaking succeeds, the assets will be transferred to your Withdrawal Address.
+  </Tab>
+</Tabs>

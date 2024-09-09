@@ -2,42 +2,95 @@
 title: "Stake"
 sidebarTitle: "Stake"
 ---
-<Info>Currently, the Staking App is available for [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault) and supports staking BTC with the [Babylon protocol](https://babylonlabs.io/).</Info>
+<Info>Currently, the Staking app supports staking BTC ([Babylon](https://babylonlabs.io/)) and ETH ([Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/)) within [MPC Wallets](/en/portal/mpc-wallets/introduction) in [Organization-Controlled Vaults](/en/portal/mpc-wallets/ocw/create-mpc-vault).</Info>
 
-Follow these steps to stake assets.
+Select the **BTC** or **ETH** tab to view specific instructions for each.
 
-<Note>Prerequisite 1: You have created an MPC Wallet in an Organization-Controlled Vault and deposited BTC. You have added the wallet in [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
+<Tabs>
+  <Tab title="BTC">
+    <Note>Prerequisite 1: You have created an MPC Wallet in an Organization-Controlled Vault and deposited BTC. You have added the wallet in [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
 
-<Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to stake assets.</Note>
+    <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to stake assets.</Note>
 
-1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
-2. Click **Stake** under **Actions** in the row for Babylon.
-3. In the pop-up window, fill in the following information.
+    1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+    2. Click **Stake** under **Actions** in the row for Babylon.
+    3. In the pop-up window, fill in the following information.
 
-    - **PoS Chain:** Select a Proof of Stake (PoS) chain.
-    - **Finality Provider:** You can either select a finality provider from the drop-down list or customize your finality provider by clicking **Customize** and entering the public key.
-    - **Staking Wallet:** Select an address from the drop-down list. The addresses are listed in descending order based on the amount available to stake.
-    - **Amount:** Enter the amount that you want to stake. You cannot enter the amount until the remaining staking cap for Babylon is retrieved. If the remaining staking cap is 0, staking is not allowed. Ensure that the amount you enter is within Babylon's allowed range and does not exceed the remaining staking cap or the amount available to stake. You can click **Max** to automatically enter the maximum allowed amount, which is the smallest value among the remaining staking cap, the maximum one-time staking amount allowed by Babylon, and the amount available to stake.
-    - **Staking Period:** Enter the number of days you want to stake for.
-    - **Network Fee:** Select from **Slow**, **Standard**, and **Fast**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. The network fee is deducted from your balance in addition to the specified amount to stake.
+        - **PoS Chain**: Select a Proof of Stake (PoS) chain.
+        - **Finality Provider**: You can either select a finality provider from the drop-down list or customize your finality provider by clicking **Customize** and entering the public key.
+        - **Staking Wallet**: Select an address from the drop-down list. The addresses are listed in descending order based on the amount available to stake.
+        - **Amount**: Enter the amount that you want to stake. You cannot enter the amount until the remaining staking cap for Babylon is retrieved. If the remaining staking cap is 0, staking is not allowed. Ensure that the amount you enter is within Babylon's allowed range and does not exceed the remaining staking cap or the amount available to stake. You can click **Max** to automatically enter the maximum allowed amount, which is the smallest value among the remaining staking cap, the maximum one-time staking amount allowed by Babylon, and the amount available to stake.
+        - **Staking Period**: Enter the number of days you want to stake for.
+        - **Network Fee**: Select from **Slow**, **Standard**, and **Fast**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. The network fee is deducted from your balance in addition to the specified amount to stake.
 
-4. When you complete the form, click **Preview**. The following items will be checked and hints will appear under any fields with errors.
+    4. When you complete the form, click **Preview**. The following items will be checked and hints will appear under any fields with errors.
 
-    - **Finality Provider:** Whether the public key is valid if you have chosen to customize the finality provider.
-    - **Amount:** Whether the amount is within Babylon's allowed range and does not exceed the amount available to stake.
-    - **Staking Period:** Whether the number of days is within Babylon's allowed duration.
-    - **Network Fee:** Whether your balance is sufficient to cover the network fee.
+        - **Finality Provider**: Whether the public key is valid if you have chosen to customize the finality provider.
+        - **Amount**: Whether the amount is within Babylon's allowed range and does not exceed the amount available to stake.
+        - **Staking Period**: Whether the number of days is within Babylon's allowed duration.
+        - **Network Fee**: Whether your balance is sufficient to cover the network fee.
 
-5. Modify your input according to the hints, then click **Preview** again. 
-6. If all checks pass, you will see a preview of all the information, including **Staking Waiting time**. Review the information and click **Submit**. Another check will be performed to see if the staking amount exceeds Babylon's remaining staking cap. If it does, you can go back and edit the amount. Otherwise, you can successfully submit the request.
-7. In the **Staking Request Submitted** window, click **Staking Activity** to go to the staking details page.
-8. On the staking details page, new records are created for the staking transaction.
+    5. Modify your input according to the hints, then click **Preview** again. 
+    6. If all checks pass, you will see a preview of all the information, including **Staking Waiting time**. Review the information and click **Submit**. Another check will be performed to see if the staking amount exceeds Babylon's remaining staking cap. If it does, you can go back and edit the amount. Otherwise, you can successfully submit the request.
+    7. In the **Staking Request Submitted** window, click **Staking Activity** to go to the staking details page.
+    8. On the staking details page, new records are created for the staking transaction.
 
-    - Under **Staking Positions**, a record is created, and its **Position Status** is **Staking in Progress**. The final **Position Status** varies depending on the staking result, as the following table shows.
-        
-        <img src="/en/images/portal-apps/staking/BTC/staking_position_status.svg" className="diagram" alt="Staking result and status"/>
+        - Under **Staking Positions**, a record is created, and its **Position Status** is **Staking in Progress**. The final **Position Status** varies depending on the staking result, as the following table shows.
+            
+            | **Staking Result**                               | **Position Status**       |
+            | ------------------------------------------------ | ------------------------- |
+            | Succeeds                                         | Active                    |
+            | Rejected by the risk control policies or signers | The row will not be shown |
+            | Exceeds the staking cap of Babylon               | Limit Exceeded            |
+            | Rejected by Babylon                              | Invalid                   |
 
-        - If you get the **Limit exceeded** status, you can unstake and withdraw the assets.
-        - If you get the **Invalid** status, it means that Babylon has upgraded its staking protocol but Cobo hasn't updated accordingly, and therefore, Babylon could not confirm the transaction. Please contact Cobo's customer support at [help@cobo.com](mailto:help@cobo.com) to recover your assets.
+            - If you get the **Limit exceeded** status, you can unstake and withdraw the assets.
+            - If you get the **Invalid** status, it means that Babylon has upgraded its staking protocol but Cobo hasn't updated accordingly, and therefore, Babylon could not confirm the transaction. Please contact Cobo's customer support at [help@cobo.com](mailto:help@cobo.com) to recover your assets.
 
-    - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the staking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. Depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.
+        - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. If the staking request is rejected by risk control policies or signers, the status will be **Failed**; otherwise, it stays as **Processing**. Depending on whether Babylon confirms the transaction, the final status will be **Success** or **Failed**.
+  </Tab>
+  <Tab title="ETH">
+    <Note>Prerequisite 1: You have created an MPC Wallet in an Organization-Controlled Vault and deposited ETH. You have added the wallet in [**Wallet Scopes**](/en/portal/portal-apps/app-settings) accessible by Staking.</Note>
+
+    <Note>Prerequisite 2: You need to have the [Staker](/en/portal/organization/roles-and-permissions) role to stake assets.</Note>
+
+    1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Staking**, then click **Open** to open Staking.
+    2. Click **Stake** under **Actions** in the row for Beacon Chain.
+    3. In the pop-up window, fill in the following information.
+
+        - **Ethereum Node Provider:** Select a provider from the drop-down list.
+        - **Staking Wallet**: Select an address from the drop-down list. The addresses are listed in descending order based on the amount available to stake. 
+        - **Amount**: Enter the amount that you want to stake by the number of validators. Each validator requires 32 ETH. Enter a positive integer and ensure that the amount does not exceed the amount available to stake or the limit of the Ethereum Node Provider. Click **Max** to fill in the maximum available amount.
+        - **Network Fee**: Select from **Slow**, **Standard**, and **Fast**. You can also customize your fee rate by clicking <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>. The network fee is deducted from your balance in addition to the specified amount to stake.
+
+    4. When you complete the form, click **Preview**. The following items will be checked and hints will appear under any fields with errors.
+
+        - **Amount**: Whether the amount is allowed.
+        - **Network fee**: Whether your balance is sufficient to cover the network fee.
+
+    5. Modify your input according to the hints, then click **Preview** again. 
+    6. If all checks pass, you will see a preview of all the information, including validator public keys (each validator you create is assigned a public key) and the estimated time for ETH deposit and validator activation. Review the information and click **Submit**.
+    7. In the **Staking Request Submitted** window, click **Staking Activity** to go to the staking details page.
+    4. On the staking details page, new records are created for the staking transaction.
+
+        - Under **Staking Positions**, a record is created, and its **Status** is **Staking in Progress**. The final **Status** depends on the staking result, as the following table shows.
+
+            | **Staking Result**                               | **Status**                |
+            | ------------------------------------------------ | ------------------------- |
+            | Succeeds                                         | Active                    |
+            | Rejected by the risk control policies or signers | The row will not be shown |
+            | Fails to go on-chain due to insufficient gas     | The row will not be shown |
+            | Fails to activate validators                     | The row will not be shown |
+
+            To view the list of validators, click **Check** in the row of the ETH being staked. Alternatively, click **View** in the row of the staking position, find **Validator Public Key**, and click the number (if there are multiple validators) to view the list of validators. 
+
+        - Under **Activity**, a record is created, and its **Activity Status** is **Processing**. The final **Activity Status** depends on the staking result, as the following table shows.
+
+            | **Staking Result**                               | **Activity Status** |
+            | ------------------------------------------------ | ------------------- |
+            | Succeeds                                         | Success             |
+            | Rejected by the risk control policies or signers | Failed              |
+            | Fails to go on-chain due to insufficient gas     | Failed              |
+            | Fails to activate validators                     | Failed              |
+  </Tab>
+</Tabs>
