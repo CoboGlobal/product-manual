@@ -577,38 +577,6 @@
           ]
         },
         {
-          "group": "Batch Payouts",
-          "pages": [
-            "en/apps/batch-payouts/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/batch-payouts/make-payout",
-                "en/apps/batch-payouts/manage-payouts"
-              ]
-            }
-          ]
-        },
-                {
-          "group": "Reports",
-          "pages": [
-            "en/apps/reports/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/reports/set-up",
-                {
-                  "group": "Manage Reports",
-                  "pages": [
-                    "en/apps/reports/manage",
-                    "en/apps/reports/generate"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {   
           "group": "Invoicing",
           "pages": [
             "en/apps/invoicing/introduction",
@@ -637,6 +605,38 @@
                     },
                     "en/apps/invoicing/clients",
                     "en/apps/invoicing/payment"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Batch Payouts",
+          "pages": [
+            "en/apps/batch-payouts/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/batch-payouts/make-payout",
+                "en/apps/batch-payouts/manage-payouts"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Reports",
+          "pages": [
+            "en/apps/reports/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/reports/set-up",
+                {
+                  "group": "Manage Reports",
+                  "pages": [
+                    "en/apps/reports/manage",
+                    "en/apps/reports/generate"
                   ]
                 }
               ]
@@ -1202,7 +1202,7 @@
             }
           ]
         },
-                        {
+        {
           "group": "Reports",
           "pages": [
             "cn/apps/reports/introduction",
