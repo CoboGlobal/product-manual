@@ -607,6 +607,41 @@
               ]
             }
           ]
+        },
+        {   
+          "group": "Invoicing",
+          "pages": [
+            "en/apps/invoicing/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/invoicing/set-up",
+                {
+                  "group": "Manage Invoicing",
+                  "pages": [
+                    "en/apps/invoicing/dashboard",
+                    {
+                      "group": "Invoices",
+                      "pages": [
+                        "en/apps/invoicing/invoices/create",
+                        "en/apps/invoicing/invoices/view",
+                        "en/apps/invoicing/invoices/manage"
+                      ]
+                    },
+                    {
+                      "group": "Settlements",
+                      "pages": [
+                        "en/apps/invoicing/settlements/request",
+                        "en/apps/invoicing/settlements/view"
+                      ]
+                    },
+                    "en/apps/invoicing/clients",
+                    "en/apps/invoicing/payment"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
