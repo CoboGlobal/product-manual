@@ -568,6 +568,7 @@
                     "en/apps/staking/unstake",
                     "en/apps/staking/withdraw",
                     "en/apps/staking/view",
+                    "en/apps/staking/fee-structure",
                     "en/apps/staking/supported"
                   ]
                 }
@@ -584,6 +585,25 @@
               "pages": [
                 "en/apps/batch-payouts/make-payout",
                 "en/apps/batch-payouts/manage-payouts"
+              ]
+            }
+          ]
+        },
+                {
+          "group": "Reports",
+          "pages": [
+            "en/apps/reports/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/reports/set-up",
+                {
+                  "group": "Manage Reports",
+                  "pages": [
+                    "en/apps/reports/manage",
+                    "en/apps/reports/generate"
+                  ]
+                }
               ]
             }
           ]

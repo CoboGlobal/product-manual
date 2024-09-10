@@ -7,7 +7,7 @@ sidebarTitle: "Quick start guide"
 
 This quick start guide walks you through the entire journey, from being a visitor at Cobo to becoming a free trial user and eventually a paid customer.
 
- <Note>If a Cobo sales representative has sent you an email invitation, you can skip the first section in **General setups** (i.e. **Start free trial, create a Cobo Account, and create an organization**). <br /> <br /> Simply follow the instructions in the email to complete your account creation and join the organization set up by the sales team, then continue from the **Set up Cobo Guard** section in **General setups**.</Note>
+ <Note>If a Cobo sales representative has sent you an email invitation, you can skip the first section in **General setups** (i.e. **Start free trial, create a Cobo Account, and create an organization**). <br /> <br /> Simply follow the instructions in the email to complete your account creation and join the organization set up by the sales team, then continue from the **Set up Cobo Guard** section in **General setups**. Please note that your [14-day free trial](/en/portal/bills-and-payments/introduction#pricing-plans) will automatically begin once you've completed the email instructions.</Note>
 
 {/*  <iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 
@@ -15,21 +15,22 @@ This quick start guide walks you through the entire journey, from being a visito
 <Steps>
   <Step icon="1" title="Start free trial, create a Cobo Account, and create an organization">
     <Note>If a Cobo sales representative has sent you an email invitation, you can skip this section. Simply follow the instructions in the email to complete your account creation and join the organization set up by the sales team.</Note>
+    <Note>Please note that as soon as you complete this section, your [14-day free trial](/en/portal/bills-and-payments/introduction#pricing-plans) will automatically begin.</Note>
     1. Go to [cobo.com](https://www.cobo.com/), then click **Start trial**.
     2. Enter your **Email**, **Name**, and **Company Name**, then click **Sign up**.
     3. On the **Sign Up** page, confirm your **Email**, then click **Continue**.
     4. On the **Password** page, enter your **Password** and **Confirm Password**, then click **Continue**.
     5. On the **Email Verification** page, enter the verification code sent to your email address, then click **Continue**.
     6. On the **Google Authenticator** page, follow the on screen instructions to download and install Google Authenticator, scan the QR code with Google Authenticator, and enter the Google Authenticator code, then click **Submit**.
-    7. On the **Almost There!** page, enter an organization name, an **Promo Code (Optional)**, then click **Get Started**.
-    <Note>Depending on the version you are using, the **Promo Code (Optional)** section may instead show **Treasury Management** and **Wallet-as-a-Service** options. In this case, it is recommended to select **Treasury Management** by default. If you are a developer planning to use Cobo's [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) for wallet creation and transactions, you can also select **Wallet-as-a-Service**.</Note>
-    8. On the **Congratulations!** Page, review the information and check the check boxes, then click **Confirm**.
-    <Note>Depending on the version you are using, you might not see this page.</Note>
+    {/* 7. On the **Almost There!** page, enter an organization name, an **Promo Code (Optional)**, then click **Get Started**.*/}
+    7. On the **Almost There!** page, enter an organization name, check the checkboxes for **Treasury Management** and **Wallet-as-a-Service** where applicable, then click **Get Started**.
+    <Note>It is recommended to select **Treasury Management** by default. If you are a developer planning to use Cobo's [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) for wallet creation and transactions, you can also select **Wallet-as-a-Service**.</Note>
+    8. On the **Congratulations!** Page, review the information and check the checkboxes, then click **Confirm**.
     {/* 9.  *(Coming soon)* This video shows step 1 to 8 in action: <iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
   </Step>
   <Step title="Set up Cobo Guard">
-    1. On the [**Welcome to Cobo Portal**](https://portal.cobo.com/guide) page, click **Go** next to **Set Up Cobo Guard** to open the **Log In** page of Cobo Accounts.
-    <Note>Depending on the version you are using, you may not see the **Set Up Cobo Guard** option. In this case, you can click **Cobo Guard** under **Discover More** instead.</Note>
+    {/* 1. On the [**Welcome to Cobo Portal**](https://portal.cobo.com/guide) page, click **Go** next to **Set Up Cobo Guard** to open the **Log In** page of Cobo Accounts. */}
+    1. On the [**Welcome to Cobo Portal**](https://portal.cobo.com/guide) page, click **Cobo Guard** under **Discover More** to open the **Log In** page of [Cobo Accounts](/en/accounts/introduction).
     2. Enter your **Email** and **Password**, then click **Log In**.
     3. Follow the on-screen instructions and download [Cobo Guard](https://manuals.cobo.com/en/guard/introduction), then click **Continue**.
     4. On the **Set Up Cobo Guard** page, tap <img src="/en/images/cobo-guard/common/icon_scan.svg" className="icon"></img> on your Cobo Guard app, then scan the QR code with your Cobo Guard.
@@ -45,6 +46,7 @@ This quick start guide walks you through the entire journey, from being a visito
   <Tab title="For treasury management users">
     ### Setups for treasury management users
     <Note>This section is for treasury management users who will primarily work on the Cobo Portal to create wallets and make transactions. If you are a developer interested in creating wallets and making transactions using Cobo's [Wallet-as-a-Service (WaaS) 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction), it is recommended that you still go through this section before proceeding to the **For developers using the WaaS API** section.</Note>
+    <Info>Cobo Portal provides four types of wallets: [Custodial Wallets](/en/portal/custodial-wallets/introduction), [MPC Wallets](/en/portal/mpc-wallets/introduction), [Smart Contract Wallets](/en/portal/smart-contract-wallets/introduction), and [Exchange Wallets](/en/portal/exchange-wallets/introduction). In this section, you'll learn how to create an [MPC Wallet (Organization-Controlled Wallet)](/en/portal/mpc-wallets/ocw/introduction). If you prefer to create a different type of wallet, refer to the **Create other types of wallets and make transactions** section under **Setups for treasury management users** for detailed instructions.</Info>
   <Steps>
       <Step title="Create an MPC Wallet (Organization-Controlled Wallet)">
         <Info>Creating an MPC Wallet consists of 3 essential steps: Creating a vault, a Main Group, and a wallet.</Info>
@@ -55,9 +57,9 @@ This quick start guide walks you through the entire journey, from being a visito
         <Info>After completing step 3, a default wallet would have been automatically created.</Info>
         {/* 5. *(Coming soon)* This video shows step 1 to 4 in action: <iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
       </Step>
-      <Step title="Making transactions">
+      <Step title="Make transactions">
         1. Now that your MPC Wallet is ready, you can start making transactions. To make a deposit, see [Deposit from external wallets](https://manuals.cobo.com/en/portal/mpc-wallets/ocw/transfers).
-        <Info>There's no need to set up transaction policies as instructed in the [Deposit from external wallets](https://manuals.cobo.com/en/portal/mpc-wallets/ocw/transfers) at this stage when you are just trying out the feature. When you are ready to scale, ensure to set up appropriate transaction policies.</Info>
+        <Info>There's no need to set up transaction policies as instructed in [Deposit from external wallets](https://manuals.cobo.com/en/portal/mpc-wallets/ocw/transfers) at this stage when you are just trying out the feature. When you are ready to scale, ensure to set up appropriate transaction policies.</Info>
         2. To make a withdrawal, see [Transfer from MPC Wallets (Organization-Controlled Wallets)](https://manuals.cobo.com/en/portal/transfers/from-mpc-wallets).
         {/* 3. *(Coming soon)* This video shows step 1 to 2 in action: <iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
       </Step>
@@ -69,8 +71,8 @@ This quick start guide walks you through the entire journey, from being a visito
         | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
         | **Create**      | [Link to documentation](https://manuals.cobo.com/en/portal/custodial-wallets/set-up) | [Link to documentation](https://manuals.cobo.com/en/portal/mpc-wallets/ocw/set-up) | [Link to documentation](https://manuals.cobo.com/en/portal/smart-contract-wallets/create) | [Link to documentation](https://manuals.cobo.com/en/portal/exchange-wallets/generate-binance-api-key) |
         | **Deposit**     | [Link to documentation](https://manuals.cobo.com/en/portal/custodial-wallets/transfers) | [Link to documentation](https://manuals.cobo.com/en/portal/mpc-wallets/ocw/transfers#deposit-from-external-wallets) | [Link to documentation](https://manuals.cobo.com/en/portal/smart-contract-wallets/deposit-assets) | [Link to documentation](https://manuals.cobo.com/en/portal/exchange-wallets/transfers) |
-        | **Withdrawal**  | [Link to documentation](https://manuals.cobo.com/en/portal/transfers/from-custodial-wallets) | [Link to documentation](https://manuals.cobo.com/en/portal/transfers/from-mpc-wallets) | [Link to documentation](https://manuals.cobo.com/en/portal/smart-contract-wallets/withdraw-assets) | [Link to documentation](https://manuals.cobo.com/en/portal/exchange-wallets/within-wallet) |
-        | **Note**        | Custodial Wallets aren't available in the free trial. See [Pricing plans](https://manuals.cobo.com/en/portal/bills-and-payments/introduction#pricing-plans). |                                                              |                                                              |                                                              |
+        | **Withdraw**  | [Link to documentation](https://manuals.cobo.com/en/portal/transfers/from-custodial-wallets) | [Link to documentation](https://manuals.cobo.com/en/portal/transfers/from-mpc-wallets) | [Link to documentation](https://manuals.cobo.com/en/portal/smart-contract-wallets/withdraw-assets) | [Link to documentation](https://manuals.cobo.com/en/portal/exchange-wallets/within-wallet) |
+        | **Note**        | Custodial Wallets aren't available in the free trial. See [Pricing plans](https://manuals.cobo.com/en/portal/bills-and-payments/introduction#pricing-plans). |                                                              |     Smart Contract Wallets aren't available in the free trial. See [Pricing plans](https://manuals.cobo.com/en/portal/bills-and-payments/introduction#pricing-plans).                                                         |                                                              |
       </Step>
   </Steps>
   </Tab>
@@ -97,7 +99,7 @@ This quick start guide walks you through the entire journey, from being a visito
           | **Wallet Type**   | **Custodial Wallets** | **MPC Wallets (Organization-Controlled Wallets)** | **Smart Contract Wallets** | **Exchange Wallets** |
           | ----------------- | ------------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
           | **Documentation** | [Link to documentation](https://www.cobo.com/developers/v2/guides/custodial-wallets/get-started-asset-wallets) | Link to documentation *(Coming soon)*                        | Link to documentation *(Coming soon)*                        | Link to documentation *(Coming soon)*                        |
-          | **Note**          | Custodial Wallets aren't available in the free trial. See [Pricing plans](https://manuals.cobo.com/en/portal/bills-and-payments/introduction#pricing-plans). |                                                              |                                                              |                                                              |
+          | **Note**          | Custodial Wallets aren't available in the free trial. See [Pricing plans](https://manuals.cobo.com/en/portal/bills-and-payments/introduction#pricing-plans). |                                                              |         Smart Contract Wallets aren't available in the free trial. See [Pricing plans](https://manuals.cobo.com/en/portal/bills-and-payments/introduction#pricing-plans).                                                     |                                                              |
       </Step>
     </Steps>
   </Tab>
