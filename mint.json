@@ -588,6 +588,25 @@
               ]
             }
           ]
+        },
+                {
+          "group": "Reports",
+          "pages": [
+            "en/apps/reports/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/reports/set-up",
+                {
+                  "group": "Manage Reports",
+                  "pages": [
+                    "en/apps/reports/manage",
+                    "en/apps/reports/generate"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
