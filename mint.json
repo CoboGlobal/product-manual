@@ -1166,6 +1166,25 @@
               ]
             }
           ]
+        },
+                        {
+          "group": "Reports",
+          "pages": [
+            "cn/apps/reports/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/reports/set-up",
+                {
+                  "group": "管理 Reports",
+                  "pages": [
+                    "cn/apps/reports/manage",
+                    "cn/apps/reports/generate"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "简体中文"
