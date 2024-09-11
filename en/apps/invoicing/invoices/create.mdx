@@ -1,0 +1,38 @@
+---
+title: "Create an invoice"
+sidebarTitle: "Create an invoice"
+---
+1. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> on [Cobo Portal](https://portal.cobo.com/login), find **Invoicing**, then click **Open** to open Invoicing.
+2. On the **Invoices** page, click **Create Invoice**. 
+3. Fill in the following information.
+
+    <img src="/en/images/portal-apps/invoicing/create_invoice.png" className="screenshot_full_screen" alt="Create Invoice page"/>
+    
+    General information:
+    - **Payment Due**: The invoice's due date.
+    - **Issued On**: The date the invoice is issued.
+    - **Client**: Select a client from the list, which only shows clients in the **Active** status. You can also add a new client manually. Click **Add CC Recipients** to add email addresses for those who should receive a copy of the invoice.
+    - **Expected Payment Tokens**: Select one or multiple payment tokens. If you select multiple tokens, the payer can choose any one of them to complete the payment.
+    - **Memo (Optional)**: Enter a memo of up to 500 characters.
+    - **Category (Optional)**: Enter a category of up to 100 characters.
+    - **Recurring Invoice (Optional)**: Toggle the option on if you want the invoice to repeat. You can select the frequency and choose how you want the repetition to end.
+
+    Item information:
+    - **Item**: Name or description of the item, with a character limit of 3-100 characters. To add more items, click **Add an Item**.
+    - **Quantity**: Enter a positive integer.
+    - **Unit Price**: Enter a price with no more than 8 decimal places.
+    - **Discount (Optional)**: Enter a discount as a percentage.
+    - **Tax (Optional)**: Enter a tax rate as a percentage greater than 0. 
+    - **Overall Discount**: Additional discount applied to all items on top of individual item discounts. 
+
+    The amounts are calculated automatically:
+
+    - **Amount**: Amount = (Unit price * Quantity * (1 - discount) * (1 - overall discount)) * (1 + tax).
+    - **Amount without Tax**: The total amount before tax is applied.
+    - **Total Tax Amount**: The total tax amount, calculated by applying the tax rate to the discounted price of each item.
+    - **Due**: The total amount due with tax, displayed with up to 6 decimal places.
+
+4. Either click **Save Draft** to save the current invoice as a draft, or click **Create & Send** to send the invoice. If the system detects that the client's status is **Frozen**, a prompt will indicate that the invoice cannot be sent.
+5. After you click **Create & Send**, it usually takes about 10 seconds for the payment link to be generated; then the invoice status will change from **Sending** to **Pending**. An email notification is sent to the client. For more information about the process from your client's perspective, see [Invoice payment](/en/apps/invoicing/payment).
+
+    <Note>If the status remains **Sending** for 24 hours, please contact the Cobo invoice support team at [invoiceservice@cobo.com](mailto:invoiceservice@cobo.com).</Note>

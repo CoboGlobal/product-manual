@@ -577,6 +577,41 @@
           ]
         },
         {
+          "group": "Invoicing",
+          "pages": [
+            "en/apps/invoicing/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/invoicing/set-up",
+                {
+                  "group": "Manage Invoicing",
+                  "pages": [
+                    "en/apps/invoicing/dashboard",
+                    {
+                      "group": "Invoices",
+                      "pages": [
+                        "en/apps/invoicing/invoices/create",
+                        "en/apps/invoicing/invoices/view",
+                        "en/apps/invoicing/invoices/manage"
+                      ]
+                    },
+                    {
+                      "group": "Settlements",
+                      "pages": [
+                        "en/apps/invoicing/settlements/request",
+                        "en/apps/invoicing/settlements/view"
+                      ]
+                    },
+                    "en/apps/invoicing/clients",
+                    "en/apps/invoicing/payment"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "group": "Batch Payouts",
           "pages": [
             "en/apps/batch-payouts/introduction",
@@ -589,7 +624,7 @@
             }
           ]
         },
-                {
+        {
           "group": "Reports",
           "pages": [
             "en/apps/reports/introduction",
@@ -1164,6 +1199,25 @@
                     "cn/apps/staking/withdraw",
                     "cn/apps/staking/view",
                     "cn/apps/staking/supported"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Reports",
+          "pages": [
+            "cn/apps/reports/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/reports/set-up",
+                {
+                  "group": "管理 Reports",
+                  "pages": [
+                    "cn/apps/reports/manage",
+                    "cn/apps/reports/generate"
                   ]
                 }
               ]
