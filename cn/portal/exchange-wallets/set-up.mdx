@@ -1,21 +1,37 @@
 ---
-title: "设置交易所钱包"
-sidebarTitle: "介绍"
+title: "关联交易所账户"
+sidebarTitle: "关联交易所账户"
 ---
 
-<Note>前提条件：请根据[快速入门](/cn/portal/quick-start-guide)设置您的账户并完成其他所需步骤。</Note>
+本文介绍如何通过关联交易所账户在 Cobo Portal 上设置交易所钱包。
 
-通过以下简单步连接您的交易所账户，在 Cobo Portal 上设置您的交易所钱包：
+## 前提条件
 
-1) 登录 Cobo Portal。
-2) 点击 <img src="/cn/images/exchange-wallet/ew3.svg" className="icon"></img>，然后选择**交易所钱包**。
-3) 点击 **+ 交易所账户**，或者点击特定交易所下的**连接账户**。
-4) 前往交易所平台，在 API Key 设置中将 Cobo IP (**18.177.176.209**) 列入白名单，并生成 API Key 和 API Secret。有关各个交易所的详细说明，请参阅后续页面。
-5) 填写必填信息（名称、API Key、API Secret 和口令），然后点击**下一步**。
+- 按照[快速入门]中的说明设置 Cobo 账户(/cn/portal/quick-start-guide)。
+- 按照以下指南在您使用的交易所上生成和设置 API key：
+    - [Binance](/cn/portal/exchange-wallets/generate-binance-api-key)
+    - [Bitget](/cn/portal/exchange-wallets/generate-bitget-api-key)
+    - [Bybit](/cn/portal/exchange-wallets/generate-bybit-api-key)
+    - [Deribit](/cn/portal/exchange-wallets/generate-deribit-api-key)
+    - [Gate.io](/cn/portal/exchange-wallets/generate-gate-api-key)
+    - [OKX](/cn/portal/exchange-wallets/generate-okx-api-key)
+- 您已被分配[操作员](/cn/portal/organization/roles-and-permissions)角色或具有等同权限的自定义角色。
 
-<img src="/cn/images/exchange-wallet/ew4.png" className="screenshot_modal"/>
+## 步骤
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击钱包图标 <img src="/en/images/exchange-wallet/1.png" className="icon" alt="The wallet icon" /> 然后选择**交易所钱包**。
+3. 点击 **+ 交易所账户**按钮。
+4. 在**选择交易所**对话框上，选择您使用的交易所并点击**继续**。
+5. 所需信息因交易所而异。在大多数情况下，您需要选择账户类型并提供钱包名称、API key 和 API secret。
+    <Info>关联主账户时，可以同时关联其子账户。</Info>
+    <Note>关联子账户时，需要先关联主账户，并将该主账户选定为**已关联的主账户**。</Note>
+    <img src="/en/images/exchange-wallet/link-dialog.png" className="screenshot_modal" alt="The dialog of linking exchange account" />
+6. 点击**关联**完成设置。 
 
-6) （可选）如果适用，请选择要需要连接的交易所子账户。
-7) 点击**连接**完成设置。设置成功后，您将在交易所钱包的详情页面看到已经连接的交易所账户。
+在完成交易所账户关联后，您的交易所账户将显示在交易所钱包概览页中。
 
-<img src="/cn/images/exchange-wallet/ew5.png" className="screenshot_full_screen"/>
+<img src="/en/images/exchange-wallet/linked-accounts.png" className="screenshot_full_screen" alt="The Exchange Wallets dashboard"/>
+
+## 后续步骤
+
+在 Cobo Portal 上设置完成交易所钱包后，可以在交易所钱包上执行操作，或将资产从交易所钱包转出或转入交易所钱包。有关更多详细信息，请参见[向交易所钱包充币](/cn/portal/exchange-wallets/transfers)、[从交易所钱包提币](/en/portal/transfers/from-exchange-wallets)和[在交易所钱包内转账](/cn/portal/exchange-wallets/within-wallet)。

@@ -1,27 +1,25 @@
 ---
-title: "转账（充币与提币）"
-sidebarTitle: "转账（充币与提币）"
+title: "充币到交易所钱包"
+sidebarTitle: "充币到交易所钱包"
 ---
 
-## 通过外部钱包进行充币
+本文介绍如何将资产存入交易所钱包。在本文中，充币是指将资产从在 Cobo Portal 或外部创建的其他钱包转至交易所钱包。 
+
+仅交易账户类型为现货或基金的交易所钱包（主账户）支持充币。要将资产存入交易所钱包（子账户），必须先将资产存入已关联的主账户，然后从主账户转至子账户。如欲进一步了解子账户与相关主账户之间的转账以及交易账户之间的转账，请参阅[在交易所钱包内转账](/cn/portal/exchange-wallets/within-wallet)。
+
+有关 Cobo Portal 支持的交易所列表，请参见[支持的交易所](/cn/portal/exchange-wallets/supported-exchanges)。
+
+## 前提条件
+
+1. 您已成功将交易所账户关联至交易所钱包。
+2. 强烈建议您(/cn/portal/risk-controls/tx-policies-overview)为交易所钱包设置[链下交易风控]。
+
+## 步骤
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-2. 点击 <img src="/cn/images/exchange-wallet/ew3.svg" className="icon"></img> > **交易所钱包**。
-3. 导航至您要向其充币的交易所账户，并点击进入。
-
-<img src="/cn/images/exchange-wallet/transfer1.png" className="screenshot_full_screen"></img>
-
-4. 找到您想要存入已选交易所账户的代币类型，然后点击**查看收币地址**的图标。
-
-<img src="/cn/images/exchange-wallet/transfer 2.png" className="screenshot_full_screen"></img>
-
-5. 复制收币地址。请确保收币地址和所在链准确无误，以免发生任何转账错误。
-6. 前往您的外部钱包平台，向要接收充币的上述收币地址发起转账。
-
-## 通过 Cobo Portal 上创建的其他钱包进行充币
-
-要了解如何从在 Cobo Portal 上创建的其他钱包向您的交易所钱包充币，请参见[转账](/cn/portal/transfers/introduction)。
-
-## 从交易所钱包提币
-
-要了解如何从交易所钱包进行转账，请参见[从交易所钱包转账](/cn/portal/transfers/from-exchange-wallets)。
+2. 点击钱包图标 <img src="/en/images/exchange-wallet/1.png" className="icon" alt="The wallet icon" /> 然后选择**交易所钱包**。
+3. 导航至您想要充币的交易所钱包（主账户）并点击。
+4. 在钱包详情页面，找到所需资产类型的现货或基金交易账户，并在**操作**栏中找到**充币**图标 <img src="/en/images/exchange-wallet/10.png" className="icon" alt="the wallets icon"/> 或**查看收币地址**图标 <img src="/en/images/exchange-wallet/icon_deposit_address.svg" className="icon" alt="the view deposit address icon" />，以显示收币地址。
+5. 复制收币地址。
+6. 转至您的外部钱包，向您已复制的收币地址发起转账。
+   <Info>要将资产从在 Cobo Portal 上创建的其他钱包存入交易所钱包，请参阅[转账]，(/en/portal/transfers/introduction)了解有关不同钱包类型的说明。</Info>

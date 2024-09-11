@@ -855,23 +855,26 @@
                     {
                       "group": "设置交易所钱包",
                       "pages": [
-                        "cn/portal/exchange-wallets/set-up",
-                        "cn/portal/exchange-wallets/generate-binance-api-key",
-                        "cn/portal/exchange-wallets/generate-okx-api-key",
-                        "cn/portal/exchange-wallets/generate-deribit-api-key",
-                        "cn/portal/exchange-wallets/generate-bybit-api-key",
-                        "cn/portal/exchange-wallets/generate-gate-api-key",
-                        "cn/portal/exchange-wallets/generate-bitget-api-key"
+                        {
+                          "group": "生成 API key",
+                          "pages": [
+                            "cn/portal/exchange-wallets/generate-binance-api-key",
+                            "cn/portal/exchange-wallets/generate-bitget-api-key",
+                            "cn/portal/exchange-wallets/generate-bitmart-api-key",
+                            "cn/portal/exchange-wallets/generate-bybit-api-key",
+                            "cn/portal/exchange-wallets/generate-deribit-api-key",
+                            "cn/portal/exchange-wallets/generate-gate-api-key",
+                            "cn/portal/exchange-wallets/generate-okx-api-key"
+                          ]
+                        },
+                        "cn/portal/exchange-wallets/set-up"
                       ]
                     },
-                    {
-                      "group": "管理交易所钱包",
-                      "pages": [
-                        "cn/portal/exchange-wallets/manage",
-                        "cn/portal/exchange-wallets/transfers",
-                        "cn/portal/exchange-wallets/troubleshoot"
-                      ]
-                    }
+                      "cn/portal/exchange-wallets/manage",
+                      "cn/portal/transfers/from-exchange-wallets",
+                      "cn/portal/exchange-wallets/transfers",
+                      "cn/portal/exchange-wallets/within-wallet",
+                      "cn/portal/exchange-wallets/troubleshoot"
                   ]
                 }
               ]

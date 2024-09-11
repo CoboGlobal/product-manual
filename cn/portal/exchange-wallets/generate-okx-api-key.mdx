@@ -1,23 +1,28 @@
 ---
 title: "生成 OKX API key”"
-sidebarTitle: "OKX - API Keys"
+sidebarTitle: "OKX"
 ---
 
-按以下步骤为您的 OKX 账户生成 **API Key** 和 **API Secret**：
+当您将 OKX 账户关联到交易所钱包时，需要提供 API key、API secret 和口令。此外，还需要将 Cobo 加入 IP 白名单，并为 key 分配特定权限。
+
+本文介绍如何在 OKX 上生成 API key，包括将 Cobo 加入 IP 白名单和设置权限。
+
+<Note>内容如有变更，以 OKX 网站为准。有关更多详细信息，请参阅<a href="https://www.okx.com/docs-v5/zh/#overview-v5-api-key-creation">创建我的 API key</a>。</Note>
 
 1. 登录到您的 OKX 账户。
 2. 导航至**交易所** > **我的账户** > **API**。
-3. 选择 **++ 创建 API Key**。
-4. 填写 API 名称 = **Cobo**。
-5. 填写口令 = **输入您所选的安全口令**。
-6. 在绑定 IP 地址下填写 Cobo 的 IP 地址 = **18.177.176.209**。
-7. 选择 **API 交易**。
-8. 勾选以下 **3 项权限**：
-    - 读取
-    - 提现
-    - 交易
-<img src="/cn/images/exchange-wallet/okx.jpg" className="screenshot_modal"/>
+3. 点击 **+ 创建 API key**以打开**创建 V5 API key** 页面。
+    <img src="/en/images/exchange-wallet/okx.png" className="screenshot_modal" alt="The Create V5 API key page" />
+4. 在**目的**部分，选择 **API 交易**。
+4. 在文本框中输入 **API 名称**。
+5. 在文本框中输入口令。
+6. 在 **IP 地址允许列表**字段中，输入 Cobo 的 IP 地址 `18.177.176.209`。
+7. 选择以下**权限**：
+    - **读取**
+    - **提币**
+    - **交易**
 
-9) 点击**确认**。
+8. 点击**确认**生成 API key。
 
-您已成功生成 **API Key** 和 **API Secret**，现在可以返回到 Cobo Portal 界面来完成后续设置。
+API key 现已生成，且设置已完成。您可以前往 Cobo Portal，使用 API key、API secret 和口令关联您的 OKX 账户。如欲了解如何关联账户，请参见[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。 
+

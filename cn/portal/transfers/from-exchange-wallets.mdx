@@ -1,46 +1,41 @@
 ---
-title: "从交易所钱包转账"
-sidebarTitle: "从交易所钱包转账"
+title: "从交易所钱包提币"
+sidebarTitle: "从交易所钱包提币"
 ---
 
-<Note>前提条件：从交易所钱包转账之前，请确保您已设置[链下交易风控规则](/cn/portal/risk-controls/off-chain-tx-set-transfer)（推荐）并已向交易所钱包[充币](/cn/portal/exchange-wallets/transfers)。</Note>
+本文描述了如何从交易所钱包中提币。在此背景下，提币指的是将资产从交易所钱包转移到另一个在 Cobo Portal 或外部创建的钱包地址。
 
-要从交易所钱包转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
+只有交易所钱包（主账户）中交易账户类型为现货或基金的账户支持提币。要从交易所钱包（子账户）提币，您必须首先将资产从子账户转移到关联的主账户，然后再从主账户进行提币。要了解有关子账户与关联主账户之间的转账以及交易账户之间的转账，请参阅[在交易所钱包内部转账](/cn/portal/exchange-wallets/within-wallet)。
 
-<img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
- 
+有关 Cobo Portal 支持的交易所列表，请参阅[支持的交易所](/cn/portal/exchange-wallets/supported-exchanges)。
 
-然后填写所需的信息，具体如下：
+## 前提条件
 
-1. 选择转账的代币类型。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请点击**未开通**.
-2. 在“出金地址”选项的下拉菜单中选择**交易所钱包**下的某一交易所。
-3. 要找到您的交易所钱包，请从下拉菜单中选择，也可以直接搜索钱包名称。结果中将列出所有通过 Cobo Portal 和 WaaS 2.0 API 链接的交易所账户。
-   - 主账户：只能在主账户中进行所有充币和提币操作。
-   - 子账户：要向子账户中存入资金，请先向主账户中转入资金，然后再向子账户中转入资金。要从子账户中提取资金，请先向主账户中转入资金，然后再向目标地址中转入资金。
-   - 交易账户类型：不同的交易所提供不同的交易账户类型。只能通过相应的主账户从这些交易账户转出/转入资金。
-   - 注意（依据交易所的转账说明）：
-        - 交易所不允许子账户之间进行转账。
-        - 主账户之间的转账可能会产生链上费用，具体由交易所决定并由其收取。
-        - 从子账户转账到主账户被视为“内部转账”，交易所不对此收取费用。
-        - 只能从主账户（而非子账户）向外部钱包地址转账。
-        - 只能从下列账户类型向外部钱包地址转账：
+- 您已成功将交易所账户关联到您的交易所钱包。
+- 强烈建议您为您的交易所钱包设置[链下交易风控规则](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
+- 您的交易所钱包有足够的余额。
 
-            | 交易所 | 账户类型    |
-            | -------- | --------------- |
-            | 币安  | 现货账户    |
-            | OKX      | 资金账户 |
-            | Deribit  | 不适用            |
-            | Bybit    | 资金账户    |
-            | Gate.io  | 现货账户    |
-            | Bitget | 现货账户    |
+## 步骤
 
-4. 从地址簿或 Cobo Portal 上的钱包中选择接收地址，也可以手动输入外部地址。注意，所选交易所可能要求先将接收地址添加到白名单。
-5. 输入转账金额。
-6. 查看交易费用。
-    - 在同一交易所进行主账户与子账户之间的转账，不会产生任何费用。
-    - 在同一交易所进行主账户与子账户之外的其他账户之间的转账，会收取固定费用，用户无法修改。费用代币与提币代币类型一致。
-7. （可选）为交易添加交易分类或描述。详情请参见[添加分类和描述](/cn/portal/transfers/add-category)。
-8. 点击**提交**。
-9. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击钱包图标 <img src="/en/images/exchange-wallet/1.png" className="icon" alt="The wallet icon" /> 然后选择**交易所钱包**。
+3. 点击您想要提取资产的交易所钱包（主账户）。
+4. 在钱包详情页面，找到所需资产类型的现货或基金交易账户，并在**操作**栏中找到**提币**图标 <img src="/en/images/exchange-wallet/11.png" className="icon" alt="the withdraw icon" />。
+    <Note>您也可以通过点击主菜单中的转账图标 <img src="/en/images/transfers/transfer-button.svg" className="icon" alt="the transfer icon" /> 来启动提取操作，以显示**转账**对话框。</Note>
 
-注意：有关 Cobo Portal 支持的交易所列表，请参见[支持的交易所](/cn/portal/exchange-wallets/supported-exchanges)。
+5. 在**出金地址**中选择您想要提币的交易所钱包。
+    <Note>如果您想要的交易所钱包不可选，则意味着当前选择的资产类型不受支持。请尝试选择其他资产类型。</Note>
+
+6. 在接收地址，选择任意方式指定要接收资产的地址：
+    - 如果是 Cobo 钱包，点击**我的钱包**并从下拉列表中选择。
+    - 如果在您的地址簿中保存了该地址，点击**地址簿**并从下拉列表中选择。
+    - 或点击**自定义地址**，并在文本框中手动输入地址。
+7. 输入转账金额。
+8. 查看交易费用。
+9. （可选）为您的交易添加分类或描述。有关详细信息，请参阅[添加分类和描述](/cn/portal/transfers/add-category)。
+
+9. 点击**提交**。
+
+10. 在您的 Cobo Guard 上批准请求。
+
+如果接收地址既不在您的地址簿中，也不是您的任何 Cobo 钱包地址，系统将提示您将该地址添加到您的地址簿中。
