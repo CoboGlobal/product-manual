@@ -1,28 +1,35 @@
 ---
-title: "生成 Bybit API keys"
-sidebarTitle: "Bybit - API Keys"
+title: "生成 Bybit API key"
+sidebarTitle: "Bybit"
 ---
 
-按以下步骤为您的 Bybit 账户生成 **API Key** 和 **API Secret**：
+当您将Bybit 账户关联到交易所钱包时，需要提供 API key 和 API secret。此外，还需要将 Cobo 加入 IP 白名单，并为 API key 分配特定权限。
+
+本文介绍如何在 Bybit 上生成 API key，包括将 Cobo 加入 IP 白名单和设置权限。
+
+<Note>内容如有变更，以 Bybit 网站为准。有关更多详细信息，请参阅<a href="https://www.bybit.com/zh-MY/help-center/article/How-to-create-your-API-key">如何创建 API 密钥</a>。</Note>
 
 1. 登录到您的 Bybit 账户。
-2. 导航至**我的资料** > **账户和安全** > **API**。
+2. 导航至**我的资料** > **账户和安全** > **API 管理**。
 3. 选择**新建密钥**。
-4. 选择**系统生成的 API 密钥**。
+4. 在**选择 API key 类型**对话框中，选择**系统生成的 API 密钥** 以打开**创建新密钥** 页面。
 
-<img src="/cn/images/exchange-wallet/bybit.png" className="screenshot_modal"/>
+    <img src="/en/images/exchange-wallet/bybit1.png" className="screenshot_modal" alt="The Select Your API Key Type dialog" />
 
-5. 选择 **API 交易**。
-6. 填写 API Key 的名称 = **Cobo**。
-7. 选择以下 **2 项 API Key 权限**：
-    - 读写
-    - 仅允许已授权 IP 访问 OpenAPI
-8. 在 API Key 权限下填写 Cobo 的 IP 地址 = **18.177.176.209**。
-9. 勾选**读写**下的 4 个选项：
-    - 账户转账
-    - 子账户转账
-    - 提币
-    - 交易所历史记录
-10. 点击**提交**。
+5. 在**创建新密钥** 页面中，填写以下所有必填项：
 
-您已成功生成 **API Key** 和 **API Secret**，现在可以返回到 Cobo Portal 界面来完成后续设置。有关更多信息，请参阅该[指南](https://www.bybit.com/en/help-center/article/How-to-create-your-API-key)。
+    - 在**API 密钥用途**部分，选择 **API 交易**。
+    - 输入 API key 的名称。
+    - 在 **API key 权限**部分，选择**读写**和**仅获得权限的 IP 方可访问 OpenAPI**，然后在下方文本框中输入 Cobo 的 IP 地址 `18.177.176.209`。
+
+6. 在**资产**部分，在**读写**下选择以下选项：
+    - **账户转账**
+    - **子账户转账**
+    - **提币**
+    - **交易所历史记录**
+
+    <img src="/en/images/exchange-wallet/bybit2.png" className="screenshot_modal" alt="the four options under Read-Write" />
+
+7. 点击**提交**生成 API key。
+
+API key 现已生成。您可以前往 Cobo Portal，使用 API key 和 API secret 关联您的 Bybit 账户。如欲了解如何关联账户，请参见[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。 
