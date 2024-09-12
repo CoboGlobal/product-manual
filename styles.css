@@ -140,6 +140,10 @@ table th, table td {
   word-wrap: break-word;
 }
 
+.six-columns th, .six-columns td {
+  min-width: 100px; /* for six-column tables */
+}
+
 /* Style the header */
 table th {
   height: 37px;
