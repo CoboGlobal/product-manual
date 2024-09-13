@@ -8,43 +8,43 @@ sidebarTitle: "TSS Node 部署"
 TSS Node 软件包有两个版本，分别适用于不同的部署环境：
 
 - **SGX 安全增强版**：专为配备 SGX 功能的服务器设计。此版本 TSS Node 软件包可在[这里](https://cobo-tss-node.s3.amazonaws.com/linux-sgx/latest/cobo-tss-node-linux-sgx.tgz)下载。
-- **通用版本**：兼容所有服务器，包括云服务商的服务器、用户自建的服务器、现成服务器以及 Apple MacBooks。虽然此版本也可以在支持 SGX 的服务器上运行，但 SGX 相关功能将不会启用。此版本 TSS Node 软件包可在[这里](https://cobo-tss-node.s3.amazonaws.com/generic/latest/cobo-tss-node-generic.tgz)下载。
+- **通用版本**：兼容所有服务器，包括云服务商的服务器、用户自建的服务器、通用服务器以及 Apple MacBooks。虽然此版本也可以在支持 SGX 的服务器上运行，但 SGX 相关功能将不会启用。此版本 TSS Node 软件包可在[这里](https://cobo-tss-node.s3.amazonaws.com/generic/latest/cobo-tss-node-generic.tgz)下载。
 
 接下来的示例将使用通用版本的 TSS Node 软件包。
 
 ```
-cobo-tss-node-generic-<VERSION>.tgz (TSS Node 软件包)
+cobo-tss-node-generic.tgz (TSS Node 软件包)
 
-packagecobo-tss-node-generic-<VERSION>.tgz.sha256 (哈希文件）
+cobo-tss-node-generic.tgz.sha256 (哈希文件）
 ```
 
 要验证 TSS Node 软件包的有效性，请检查 SHA256（256 位）校验和。
 
 ```
-sha256sum cobo-tss-node-generic-<VERSION>.tgz
+sha256sum cobo-tss-node-generic.tgz
 ```
 <Note>如果使用的是 Apple MacBook，请执行以下命令来检查 SHA256（256 位）校验和。</Note>
 
 ```
-shasum -a 256 cobo-tss-node-generic-<VERSION>.tgz
+shasum -a 256 cobo-tss-node-generic.tgz
 ```
 
 SHA256（256 位）校验和必须与相应文件的哈希值相匹配。 
 
 ```
-$ cat cobo-tss-node-generic-<VERSION>.tgz.sha256
+$ cat cobo-tss-node-generic.tgz.sha256
 
-7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic-<VERSION>.tgz
+7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic.tgz
 
-$ sha256sum cobo-tss-node-generic-<VERSION>.tgz
+$ sha256sum cobo-tss-node-generic.tgz
 
-7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic-<VERSION>.tgz
+7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic.tgz
 ```
 
 验证后，请执行以下命令，解压缩 TSS Node 软件包。
 
 ```
-tar -xzf cobo-tss-node-generic-<VERSION>.tgz
+tar -xzf cobo-tss-node-generic.tgz
 ```
 
 解压缩 TSS Node 软件包后，将显示以下目录。
@@ -73,7 +73,7 @@ cobo-tss-node-generic
 
 ### **TSS Node 命令行**
 
-所有运行环境的 TSS Node 命令行是一致的。但命令行的执行可能略有不同。对于 SGX 服务器和现成服务器，部署和运行 TSS Node 需要 sudo 访问权限。换言之，要确保插入 sudo 命令。
+所有运行环境的 TSS Node 命令行是一致的。但命令行的执行可能略有不同。对于 SGX 服务器和通用服务器，部署和运行 TSS Node 需要 sudo 访问权限。换言之，要确保插入 sudo 命令。
 
 ```
 sudo ./tss-node.sh status
@@ -85,7 +85,7 @@ sudo ./tss-node.sh status
 ./tss-node.sh status
 ```
 
-除非另有明确说明，否则本用户指南中的所有后续命令都将以现成服务器为例。
+除非另有明确说明，否则本用户指南中的所有后续命令都将以通用服务器为例。
 
 ### **TSS Node 容器镜像**
 
