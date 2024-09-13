@@ -9,43 +9,43 @@ The TSS Node package comes in two versions tailored to different deployment envi
 
 - **SGX security enhanced version**: Designed for servers equipped with SGX capabilities. This TSS Node package can be downloaded [here](https://cobo-tss-node.s3.amazonaws.com/linux-sgx/latest/cobo-tss-node-linux-sgx.tgz).
 
-- **General version**: Compatible with all servers, including those from cloud providers, custom-built servers, off-the-shelf servers, and Apple MacBooks. While this version can also run on SGX-ready servers, SGX-specific features will not be enabled. This TSS Node package can be downloaded [here](https://cobo-tss-node.s3.amazonaws.com/generic/latest/cobo-tss-node-generic.tgz).
+- **General version**: Compatible with all servers, including those from cloud providers, custom-built servers, general servers, and Apple MacBooks. While this version can also run on SGX-ready servers, SGX-specific features will not be enabled. This TSS Node package can be downloaded [here](https://cobo-tss-node.s3.amazonaws.com/generic/latest/cobo-tss-node-generic.tgz).
 
 The subsequent example employs the general version of the TSS Node package.
 
 ```
-cobo-tss-node-generic-<VERSION>.tgz (TSS Node file)
+cobo-tss-node-generic.tgz (TSS Node file)
 
-packagecobo-tss-node-generic-<VERSION>.tgz.sha256 (hash file）
+packagecobo-tss-node-generic.tgz.sha256 (hash file）
 ```
 
 To verify the validity of the TSS Node package, please check the SHA256 (256-bit) checksums.
 
 ```
-sha256sum cobo-tss-node-generic-<VERSION>.tgz
+sha256sum cobo-tss-node-generic.tgz
 ```
 <Note>If you are using an Apple MacBook, please execute the following command to check the SHA256 (256-bit) checksums.</Note>
 
 ```
-shasum -a 256 cobo-tss-node-generic-<VERSION>.tgz
+shasum -a 256 cobo-tss-node-generic.tgz
 ```
 
 The SHA256 (256-bit) checksums must match the corresponding file hash value. 
 
 ```
-$ cat cobo-tss-node-generic-<VERSION>.tgz.sha256
+$ cat cobo-tss-node-generic.tgz.sha256
 
-7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic-<VERSION>.tgz
+7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic.tgz
 
-$ sha256sum cobo-tss-node-generic-<VERSION>.tgz
+$ sha256sum cobo-tss-node-generic.tgz
 
-7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic-<VERSION>.tgz
+7e2ba53dfc79458ab30b8e8ce8278e2fd93932e10bb6af725b0beb055965d1f2 cobo-tss-node-generic.tgz
 ```
 
 After verification, please execute the following command to unzip the TSS Node package.
 
 ```
-tar -xzf cobo-tss-node-generic-<VERSION>.tgz
+tar -xzf cobo-tss-node-generic.tgz
 ```
 
 Upon extracting the TSS Node package, the following directory will be shown.
@@ -86,7 +86,7 @@ For the Apple MacBook, no sudo access is required.
 ./tss-node.sh status
 ```
 
-Unless explicitly stated otherwise, all subsequent commands in this user guide will use the off-the-shelf server as an example.
+Unless explicitly stated otherwise, all subsequent commands in this user guide will use the general server as an example.
 
 ### **TSS Node container images**
 
