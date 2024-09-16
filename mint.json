@@ -1211,6 +1211,19 @@
           ]
         },
         {
+          "group": "Batch Payouts",
+          "pages": [
+            "cn/apps/batch-payouts/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/batch-payouts/make-payout",
+                "cn/apps/batch-payouts/manage-payouts"
+                ]
+            }
+          ]
+        },
+        {
           "group": "Reports",
           "pages": [
             "cn/apps/reports/introduction",

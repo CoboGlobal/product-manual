@@ -1,0 +1,32 @@
+---
+title: "发起批量转账"
+sidebarTitle: "发起批量转账"
+---
+
+本文介绍如何在 Batch Payouts 中发起批量转账。
+
+## 前提条件
+
+- 您已按照[浏览和安装应用](/cn/portal/portal-apps/browse-and-install) 中的说明安装 Batch Payouts。
+- 您已被分配[管理员](/cn/portal/organization/roles-and-permissions)角色或具有等同权限的自定义角色。
+
+## 步骤
+
+1. 点击 Cobo Portal 上的 Apps 图标 <img src="/en/images/common/icon_apps.svg" className="icon" alt="Apps 图标" />，找到 Batch Payouts，点击**打开**。
+2. 在 Batch Payouts 中，点击**发起批量转账**（Make a Payout）。
+3. 在**发起批量转账**（Make a Payout）页面上，在**代币**（Token）字段中填入付款使用的代币类型。
+    <img src="/en/images/portal-apps/batch-payouts/make_payout.png" className="screenshot_full_screen" alt="付款页面截图" />
+4. 在**付款钱包**（From）下拉框中，选择要进行付款的钱包类型和具体钱包。
+    <Note>目前交易所钱包不可用于批量转账。</Note>
+5. 在**付款详情**（Payout Details）下，指定每个收款人的详细信息，具体如下：
+    - **收款地址**(Receiving Address)：可以手动输入地址，也可以从地址簿或上传的 CSV 文件中批量导入地址。
+    - **金额**(Amount)：转账金额。
+    - **备注**(Note)：关于转账的更多详情。
+    - **邮件地址**（Email）：交易完成后，将向该邮件地址发送通知邮件。
+6. 在**交易费用**（Transaction Cost）下，选择交易费用等级，或点击设置图标 <img src="/en/images/common/icon_advanced.svg" className="icon" alt="设置图标" />自定义交易费用。
+7. 验证交易费用并点击**提交**（Submit）。
+8. 在 Cobo Guard 中批准此次付款。
+
+## 后续步骤
+
+完成批量转账后，可以查看状态并管理批量交易或其中单笔交易。详情请参阅[管理批量转账](/cn/apps/batch-payouts/manage-payouts)。
