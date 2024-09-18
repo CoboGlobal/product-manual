@@ -1203,7 +1203,43 @@
                     "cn/apps/staking/unstake",
                     "cn/apps/staking/withdraw",
                     "cn/apps/staking/view",
+                    "cn/apps/staking/fee-structure",
                     "cn/apps/staking/supported"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Invoicing",
+          "pages": [
+            "cn/apps/invoicing/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/invoicing/set-up",
+                {
+                  "group": "管理 Invoicing",
+                  "pages": [
+                    "cn/apps/invoicing/dashboard",
+                    {
+                      "group": "发票",
+                      "pages": [
+                        "cn/apps/invoicing/invoices/create",
+                        "cn/apps/invoicing/invoices/view",
+                        "cn/apps/invoicing/invoices/manage"
+                      ]
+                    },
+                    {
+                      "group": "结算",
+                      "pages": [
+                        "cn/apps/invoicing/settlements/request",
+                        "cn/apps/invoicing/settlements/view"
+                      ]
+                    },
+                    "cn/apps/invoicing/clients",
+                    "cn/apps/invoicing/payment"
                   ]
                 }
               ]

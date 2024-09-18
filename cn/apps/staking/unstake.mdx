@@ -2,35 +2,64 @@
 title: "解除质押"
 sidebarTitle: "解除质押"
 ---
-<Info>目前，Staking App 支持使用[机构Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)进行 [Babylon 协议](https://babylonlabs.io/)下的 BTC 质押。</Info>
+<Info>目前，Staking App 支持使用[机构 Vault](/en/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/en/portal/mpc-wallets/introduction)进行 BTC 质押（[Babylon](https://babylonlabs.io/)）和 ETH 质押（[Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/)）。</Info>
 
-Babylon 提供两种赎回方法：
+选择 **BTC** 或 **ETH** 选项卡以查看每种质押的具体说明。
 
-- 提前解除质押：您需要先解除质押（Babylon 官方称为**Unbond**），然后再进行赎回。
-- 自然到期：您可以直接赎回，无需先解除质押。
+<Tabs>
+  <Tab title="BTC">
+   Babylon 提供两种赎回方法：
 
-请按照以下步骤在到期前解除资产质押。
+   - 提前解除质押：您需要先解除质押（Babylon 官方称为**Unbond**），然后再进行赎回。
+   - 自然到期：您可以直接赎回，无需先解除质押。
 
-<Note>前提条件 1：您在机构 Vault 中的 MPC 钱包中拥有[质押的](/cn/apps/staking/stake) BTC。该钱包没有被移出 Staking 可访问的[**钱包范围**](/cn/portal/portal-apps/app-settings)。</Note>
+   请按照以下步骤在到期前解除资产质押。
 
-<Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能解除资产质押。</Note>
+   <Note>前提条件 1：您在机构 Vault 中的 MPC 钱包中拥有[质押的](/cn/apps/staking/stake) BTC。该钱包没有被移出 Staking 可访问的[**钱包范围**](/cn/portal/portal-apps/app-settings)。</Note>
 
-1.点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+   <Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能解除资产质押。</Note>
 
-2.找到 Babylon，在同一行中点击**操作**下的**查看**按钮。
+   1. 点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
 
-3.在质押详情页面，找到要解除质押的质押仓位，在同一行中点击**操作**下的**解除质押**（Unstake）按钮。 
+   2. 找到 Babylon，在同一行中点击**操作**下的**查看**按钮。
 
-   - 只有状态为**已启动**（Active）或**超出限额**（Limit Exceeded）的质押仓位，才会出现**解除质押**（Unstake）按钮。
-   - 在 Babylon 协议下，您只能对每笔进行完整的解除质押，不允许部分解除质押。
+   3. 在质押详情页面，找到要解除质押的质押仓位，在同一行中点击**操作**下的**解除质押**（Unstake）按钮。 
 
-4.查看弹出窗口中的信息，然后点击**提交**。请注意，Babylon 协议不支持自定义解押费率。另外，您需要有足够的余额支付网络费用才能提交交易。
+      - 只有状态为**已启动**（Active）或**超出限额**（Limit Exceeded）的质押仓位，才会出现**解除质押**（Unstake）按钮。
+      - 在 Babylon 协议下，您只能对每笔进行完整的解除质押，不允许部分解除质押。
 
-5.在**解除质押请求已提交**（Unstaking Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
+   4. 查看弹出窗口中的信息，然后点击**提交**。请注意，Babylon 协议不支持自定义解押费率。另外，您需要有足够的余额支付网络费用才能提交交易。
 
-6.在质押详情页面会有以下更新：
+   5. 在**解除质押请求已提交**（Unstaking Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
 
-   - 在**质押仓位**（Staking Positions）下，该仓位的**仓位状态**（Position Status）变为**解除质押中**（Unstaking in Progress）。
-      - 如果解除质押成功，**仓位状态**（Position Status）将变为**可赎回**（Withdrawable），并且在**操作**下会出现**赎回**（Withdraw）按钮。
-      - 如果解除质押失败，**仓位状态**（Position Status）将变回**已启动**（Active），**操作**下会出现**解除质押**（Unstake）按钮。
-   - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了解除质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。
+   6. 在质押详情页面会有以下更新：
+
+      - 在**质押仓位**（Staking Positions）下，该仓位的**仓位状态**（Position Status）变为**解除质押中**（Unstaking in Progress）。
+         - 如果解除质押成功，**仓位状态**（Position Status）将变为**可赎回**（Withdrawable），并且在**操作**下会出现**赎回**（Withdraw）按钮。
+         - 如果解除质押失败，**仓位状态**（Position Status）将变回**已启动**（Active），**操作**下会出现**解除质押**（Unstake）按钮。
+      - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了解除质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。
+  </Tab>
+  <Tab title="ETH">
+     <Note>前提条件 1：您在机构 Vault 中的 MPC 钱包中拥有[质押的](/en/apps/staking/stake) ETH。该钱包未被移出可通过 Staking 访问的[**钱包范围**](/en/portal/portal-apps/app-settings)。</Note>
+     
+     <Note>前提条件 2：您需要具备[质押员](/en/portal/organization/roles-and-permissions)角色才能解除资产质押。</Note>
+
+      1. 点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+      2. 找到 Beacon Chain，在同一行中点击**操作**下的**查看** (View) 按钮。
+      3. 在质押详情页面，找到要解除质押的 ETH，在同一行中点击**操作**下的**解除质押** (Unstake) 按钮。**解除质押** (Unstake) 仅会出现在处于**已启动** (Active) 状态的行中（您也可以用另一种方式：点击**查看** (Check) 以打开**验证者公钥列表** (Validator Public Key List)，并选择要先解除质押的验证者）。
+      4. 输入要解除质押的验证者数量。默认选择拥有最低年利率 (APY) 的验证者。您也可以点击**选择验证者** (Select Validators) 以选择特定验证者，这些验证者基于年利率按升序排列。选好后点击**提交** (Submit)。
+
+         <Info>解除质押不用转入链上，也不会产生网络费用。</Info>
+
+      5. 在**解除质押请求已提交** (Unstaking Request Submitted) 窗口中，点击**质押活动** (Staking Activity)，转到质押详情页面。
+      6. 在质押详情页面会有以下更新。
+
+         - 在**质押仓位** (Staking Positions) 下，ETH 的**状态** (Status) 更新为**解除质押中** (Unstaking in Progress)。您可以点击**查看** (Check) 按钮，查看正在解除质押的验证者列表。
+            - 如果成功解除质押，将不显示已解除质押 **ETH** 所在行。验证者状态变为**已关闭** (Closed)。
+            - 如果解除质押失败，**状态** (Status) 将变回**已启动** (Active)，**操作**下会出现**解除质押** (Unstake) 按钮。
+
+         - 在**活动** (Activity) 下，会创建一条记录，其**活动状态** (Activity Status) 为**处理中** (Processing)。最终状态将显示为**成功** (Success) 或**失败** (Failed)。
+
+      7. 成功解除质押后，资产将转至您的提币地址。
+  </Tab>
+</Tabs>
