@@ -2,47 +2,95 @@
 title: "质押"
 sidebarTitle: "质押"
 ---
-<Info>目前，Staking App 支持使用[机构Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)进行 [Babylon 协议](https://babylonlabs.io/)下的 BTC 质押。</Info>
+<Info>目前，Staking App 支持使用[机构 Vault](/en/portal/mpc-wallets/ocw/create-mpc-vault) 中的 [MPC 钱包](/en/portal/mpc-wallets/introduction)进行 BTC 质押（[Babylon](https://babylonlabs.io/)）和 ETH 质押（[Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/)）。</Info>
 
-请按照以下步骤进行资产质押。
+选择 **BTC** 或 **ETH** 选项卡以查看每种质押的具体说明。
 
-<Note>前提条件 1：您已在机构 Vault 中创建了一个 MPC 钱包，并充入了 BTC。你已将该钱包加入 Staking 可访问的[**钱包范围**](/cn/portal/portal-apps/app-settings)。</Note>
+<Tabs>
+  <Tab title="BTC">
+    <Note>前提条件 1：您已在机构 Vault 中创建了一个 MPC 钱包，并充入了 BTC。你已将该钱包加入 Staking 可访问的[**钱包范围**](/cn/portal/portal-apps/app-settings)。</Note>
 
-<Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能进行资产质押。</Note>
+    <Note>前提条件 2：您需要具备[质押员](/cn/portal/organization/roles-and-permissions)角色才能进行资产质押。</Note>
 
-1.点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+    1. 点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
 
-2.找到 Babylon，在同一行中点击**操作**下的**质押**（Stake）按钮。
+    2. 找到 Babylon，在同一行中点击**操作**下的**质押**（Stake）按钮。
 
-3.在弹出的窗口中填写以下信息。
+    3. 在弹出的窗口中填写以下信息。
 
-    - **PoS 链**（Pos Chain）：选择一个权益证明 (PoS) 链。
-    - **最终确认提供者**（Finality Provider）：您可以从下拉列表中选择一个 Finality Provider，也可以点击**自定义**（Customize）并输入公钥，设置自定义的 Finality Provider。
-    - **质押钱包**（Staking Wallet）：从下拉列表中选择一个地址。地址根据可质押金额从高到低排列。
-    - **金额**（Amount）：输入您要质押的金额。在获取 Babylon 剩余质押限额（Remaining Staking Cap）前，**金额**不可输入。如果剩余质押限额为0，质押不可进行。请确保您输入的金额在 Babylon 允许范围内，且不超过剩余质押限额或您的可质押金额。您可以点击 **Max** 以自动输入允许的最大值（即剩余质押限额、Babylon 单次最大可质押金额、您的可质押金额三者中的最小值）。
-    - **质押期限**（Staking Period）：输入您希望质押的天数。
-    - **网络费用**（Network Fee）：在**慢速**（Slow）、**标准**（Standard）和**快速**（Fast）中选择一种。您也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>自定义费用。网络费用将额外扣除，不从指定的质押金额扣除。
+        - **PoS 链**（Pos Chain）：选择一个权益证明 (PoS) 链。
+        - **最终确认提供者**（Finality Provider）：您可以从下拉列表中选择一个 Finality Provider，也可以点击**自定义**（Customize）并输入公钥，设置自定义的 Finality Provider。
+        - **质押钱包**（Staking Wallet）：从下拉列表中选择一个地址。地址根据可质押金额从高到低排列。
+        - **金额**（Amount）：输入您要质押的金额。在获取 Babylon 剩余质押限额（Remaining Staking Cap）前，**金额**不可输入。如果剩余质押限额为0，质押不可进行。请确保您输入的金额在 Babylon 允许范围内，且不超过剩余质押限额或您的可质押金额。您可以点击 **Max** 以自动输入允许的最大值（即剩余质押限额、Babylon 单次最大可质押金额、您的可质押金额三者中的最小值）。
+        - **质押期限**（Staking Period）：输入您希望质押的天数。
+        - **网络费用**（Network Fee）：在**慢速**（Slow）、**标准**（Standard）和**快速**（Fast）中选择一种。您也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/>自定义费用。网络费用将额外扣除，不从指定的质押金额扣除。
 
-4.表格填写完成后，点击**预览**。系统将检查以下项目，如果有错误，将显示提示。
+    4. 表格填写完成后，点击**预览**。系统将检查以下项目，如果有错误，将显示提示。
 
-    - **最终确认提供者**（Finality Provider）：如果您选择自定义 Finality Provider，将检查公钥是否有效。
-    - **金额**（Amount）：检查金额是否在 Babylon 允许的范围内，且不超过可质押金额。
-    - **质押期限**（Staking Period）：检查天数是否在 Babylon 允许的期限内。
-    - **网络费用**（Network Fee）：检查您的余额是否足以支付网络费用。
+        - **最终确认提供者**（Finality Provider）：如果您选择自定义 Finality Provider，将检查公钥是否有效。
+        - **金额**（Amount）：检查金额是否在 Babylon 允许的范围内，且不超过可质押金额。
+        - **质押期限**（Staking Period）：检查天数是否在 Babylon 允许的期限内。
+        - **网络费用**（Network Fee）：检查您的余额是否足以支付网络费用。
 
-5.根据提示修改输入内容，然后再次点击**预览**。 
+    5. 根据提示修改输入内容，然后再次点击**预览**。 
 
-6.如果所有检查都通过，将显示所有信息的预览，包括**质押等待时间**（Staking Waiting time）。查看信息并点击**提交**。此时，会再次检查输入的金额是否超过了实时的剩余质押限额。如果超过，您可以返回重新编辑金额；如果没有超过，质押请求可以提交。
+    6. 如果所有检查都通过，将显示所有信息的预览，包括**质押等待时间**（Staking Waiting time）。查看信息并点击**提交**。此时，会再次检查输入的金额是否超过了实时的剩余质押限额。如果超过，您可以返回重新编辑金额；如果没有超过，质押请求可以提交。
 
-7.在**质押请求已提交**（Staking Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
+    7. 在**质押请求已提交**（Staking Request Submitted）窗口中，点击**质押活动**（Staking Activity），转到质押详情页面。
 
-8.在质押详情页面，将为该笔质押交易创建新的记录。
+    8. 在质押详情页面，将为该笔质押交易创建新的记录。
 
-    - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**质押中**（Staking in Progress）。最终的**仓位状态**（Position Status）会根据质押结果而定，如下表所示。
-        
-        <img src="/cn/images/portal-apps/staking/BTC/staking_position_status.svg" className="diagram" alt="Staking result and status"/>
+        - 在**质押仓位**（Staking Positions）下，会创建一条记录，其**仓位状态**（Position Status）为**质押中**（Staking in Progress）。最终的**仓位状态**（Position Status）会根据质押结果而定，如下表所示。
+            
+            <img src="/cn/images/portal-apps/staking/BTC/staking_position_status.svg" className="diagram" alt="Staking result and status"/>
 
-        - 如果状态为**超出限额**（Limit Exceeded），则可以解除质押并进行赎回。
-        - 如果状态为**无效**（Invalid），则表示 Babylon 质押协议已升级，但 Cobo 没有进行相应更新，因此 Babylon 无法确认交易。请通过 [help@cobo.com](mailto:help@cobo.com) 联系我们的客服团队以取回您的资产。
+            - 如果状态为**超出限额**（Limit Exceeded），则可以解除质押并进行赎回。
+            - 如果状态为**无效**（Invalid），则表示 Babylon 质押协议已升级，但 Cobo 没有进行相应更新，因此 Babylon 无法确认交易。请通过 [help@cobo.com](mailto:help@cobo.com) 联系我们的客服团队以取回您的资产。
 
-    - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。
+        - 在**活动**（Activity）下，会创建一条记录，其**活动状态**（Activity Status）为**处理中**（Processing）。如果风险控制政策或签名人拒绝了质押请求，状态将显示为**失败**（Failed）；否则，状态保持为**处理中**（Processing）。根据 Babylon 是否确认交易，最终状态将显示为**成功**（Success）或**失败**（Failed）。
+  </Tab>
+  <Tab title="ETH">
+    <Note>前提条件 1：您已在机构 Vault 中创建了一个 MPC 钱包，并充入了 ETH。你已将该钱包加入 Staking 可访问的[**钱包范围**](/en/portal/portal-apps/app-settings)。</Note>
+
+    <Note>前提条件 2：您需要具备[质押员](/en/portal/organization/roles-and-permissions)角色才能进行资产质押。</Note>
+
+    1. 点击 [Cobo Portal](https://portal.cobo.com/login) 上的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/>，找到 **Staking**，然后点击**打开**，打开 Staking。
+    2. 找到 Beacon Chain，在同一行中点击**操作**下的**质押** (Stake) 按钮。
+    3. 在弹出的窗口中填写以下信息。
+
+        - **以太网节点提供商** (Ethereum Node Provider)：从下拉列表中选择提供商。
+        - **质押钱包** (Staking Wallet)：从下拉列表中选择一个地址。地址根据可质押金额从高到低排列。 
+        - **金额** (Amount)：按照验证者的数量输入您要质押的金额。每个验证者需要 32 个 ETH。输入一个正整数，并确保该金额不超过可质押金额或以太网节点提供商的限额。点击**Max**以输入允许的最大值。
+        - **网络费用** (Network Fee)：在**慢速** (Slow)、**标准** (Standard) 和**快速** (Fast) 中选择一种。也可以点击 <img src="/en/images/portal-apps/staking/setting.svg" className="icon" alt="The customize fee icon"/> 自定义费用。网络费用将额外扣除，不从指定的质押金额扣除。
+
+    4. 表格填写完成后，点击**预览** (Preview)。系统将检查以下项目，如果有错误，将显示提示。
+
+        - **金额** (Amount)：检查金额是否在允许范围内。
+        - **网络费用** (Network fee)：检查您的余额是否足以支付网络费用。
+
+    5. 根据提示修改输入内容，然后再次点击**预览** (Preview)。 
+    6. 如果所有检查都通过，将显示所有信息的预览，包括验证者公钥（您创建的每个验证者会被分配一个公钥）以及 ETH 充币和验证者激活的预计时间。查看信息无误后，点击**提交** (Submit)。
+    7. 在**质押请求已提交** (Staking Request Submitted)窗口中，点击**质押活动** (Staking Activity)，转到质押详情页面。
+    8.在质押详情页面，将为该笔质押交易创建新的记录。
+
+        - 在**质押仓位** (Staking Positions) 下，会创建一条记录，其**状态** (Status) 为**质押中** (Staking in Progress)。最终的**状态** (Status) 会根据质押结果而定，如下表所示。
+
+            | **质押结果**                               | **状态**                |
+            | ------------------------------------------------ | ------------------------- |
+            | 成功                                         | 已启动 (Active)                    |
+            | 被风险控制政策或签名人拒绝 | 该行不显示 |
+            | 由于 gas 代币不足，未能转入链上     | 该行不显示 |
+            | 未能激活验证者                     | 该行不显示 |
+
+            要查看验证者列表，请点击质押中 ETH 所在行中的**查看** (Check)。或者，点击质押仓位行中的**查看** (View)，找到**验证者公钥** (Validator Public Key)，点击数字（如果有多个验证者）查看验证者列表。 
+
+        - 在**活动** (Activity) 下，会创建一条记录，其**活动状态** (Activity Status) 为**处理中** (Processing)。最终的**活动状态** (Activity Status) 会根据质押结果而定，如下表所示。
+
+            | **质押结果**                               | **活动状态** |
+            | ------------------------------------------------ | ------------------- |
+            | 成功                                         | 成功             |
+            | 被风险控制政策或签名人拒绝 | 失败              |
+            | 由于 gas 代币不足，未能转入链上     | 失败              |
+            | 未能激活验证者                     | 失败              |
+  </Tab>
+</Tabs>
