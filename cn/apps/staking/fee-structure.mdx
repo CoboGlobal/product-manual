@@ -1,0 +1,23 @@
+﻿---
+title: "佣金说明"
+sidebarTitle: "佣金说明"
+---
+
+以下文档对质押佣金进行说明，佣金从质押奖励中扣除。
+
+## BTC 质押
+
+对于 [Babylon](https://babylonlabs.io/) 协议下的 BTC 质押，当 Cobo 作为最终确认提供者 (Finality Provider) 时，佣金为质押奖励的 5%。
+
+## ETH 质押
+
+对于 [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/) 上的 ETH 质押，[Figment](https://figment.io/) 是目前首个支持的以太坊节点提供商 (Ethereum Node Provider)，未来计划增加对其他节点提供商的支持，费用可能因节点提供商而异。 
+
+Figment 作为节点提供商时，费用结构如下所示，首先解释 ETH 奖励构成。
+
+ETH 质押奖励分为两部分：共识层奖励和执行层奖励。
+
+- **共识层奖励** (Consensus Layer Rewards)：约为总奖励的 67%。这些奖励来自区块，直接分配到您的赎回地址。
+- **执行层奖励** (Execution Layer Rewards)：约为总奖励的 33%。包括 MEV（最大可提取价值）、小费和交易手续费。这些奖励的分配因节点提供商而异。对于 Figment 而言，执行层奖励由 Figment 的链上计费智能合约自动分配。
+
+只有执行层奖励与佣金相关。您将获得 70% 的执行层奖励，剩下 30% 由 Figment 扣除作为佣金（约占总奖励的 10%）。
