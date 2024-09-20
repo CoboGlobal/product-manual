@@ -1,20 +1,51 @@
 ---
-title: "创建私钥分片组"
-sidebarTitle: "创建私钥分片组"
+title: "创建持有者组"
+sidebarTitle: "创建持有者组"
 ---
 
-创建 Vault 后，需要创建私钥分片组。私钥分片组分为 3 种：主控组、签名组和恢复组。
+创建 Vault 后，需要创建持有者组。持有者组分为 3 种：主控组、签名组和恢复组。
 
-<Info>横向滚动以查看完整表格。</Info>
-|                        | 主控组 | 签名组 | 恢复组 |
-|------------------------|------------|-------------|-------------|
-| 主要用途       | <ol><li>创建签名组和恢复组</li><li>在没有创建签名组的情况下签署交易</li></ol> | 签署交易 | <ol><li>在主控组和备份副本丢失或被盗的情况下创建新的主控组</li><li>恢复整个私钥</li></ol>
-| 是否必要    | 必要 | 可选 | 可选
-| 每个 Vault 最多可创建个数 | 1 个 | 1 个或更多 | 1 个（建议）或更多
+<table class="six-columns">
+  <tr>
+    <th></th>
+    <th>主控组</th>
+    <th>签名组</th>
+    <th>恢复组</th>
+  </tr>
+  <tr>
+    <td>主要用途</td>
+    <td>
+      <ol>
+        <li>创建签名组和恢复组</li>
+        <li>在没有创建签名组的情况下签署交易</li>
+      </ol>
+    </td>
+    <td>签署交易</td>
+    <td>
+      <ol>
+        <li>在主控组和备份副本丢失或被盗的情况下创建新的主控组</li>
+        <li>恢复整个私钥</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td>是否必要</td>
+    <td>必要</td>
+    <td>可选</td>
+    <td>可选</td>
+  </tr>
+  <tr>
+    <td>每个 Vault 最多可创建个数</td>
+    <td>1 个</td>
+    <td>1 个或更多</td>
+    <td>1 个（建议）或更多</td>
+  </tr>
+</table>
+
 
 
 ## 主控组
-在创建 MPC 钱包之前，必须先创建主控组。成功创建主控组之后，便可以开始使用 MPC 钱包。为了最大程度确保资产的安全性，最好尽快创建签名组和恢复组，并备份所有私钥分片组。可以创建多个签名组来满足业务需求，但建议只创建一个恢复组。（后续我们的开发者中心将提供私钥分片组的最佳安全实践）。
+在创建 MPC 钱包之前，必须先创建主控组。成功创建主控组之后，便可以开始使用 MPC 钱包。为了最大程度确保资产的安全性，最好尽快创建签名组和恢复组，并备份所有持有者组。可以创建多个签名组来满足业务需求，但建议只创建一个恢复组。（后续我们的开发者中心将提供持有者组的最佳安全实践）。
 
 <a id="create-main-group"></a>
 ### 创建主控组
@@ -22,11 +53,36 @@ sidebarTitle: "创建私钥分片组"
 
 
 <a id="signer-type"></a>
-<Info>横向滚动以查看完整表格。</Info>
-|        签名人类型 | 移动端签名人 | API 签名人 |
-|------------------------|------------|-------------|
-| 主要用途       | 移动端签名人是一名团队成员，负责安全签署通过 Cobo Portal 发起的交易。其 TSS Node ID 由 Cobo Guard App 生成，并将自动填入。| API 签名人是一个服务器节点，用于自动签署通过 API 发起的交易。其 TSS Node ID 通过 Cobo 提供的 TSS 节点软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。|
-| 前提步骤 | 您选择的私钥分片持有方需要完成以下操作：<ol><li>[下载 Cobo Guard](/cn/guard/download)。</li><li>[将 Cobo Guard 设置为 Cobo Accounts 多重身份验证 (MFA) 方法之一](/cn/accounts/set-up-mfa#set-up-cobo-guard)。</li><li>被[添加为您的团队成员](/cn/portal/organization/manage-members)。</li></ol>| 您选择的私钥分片持有方需要向您提供他们生成的 TSS Node ID。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。|
+<table class="six-columns">
+  <tr>
+    <th>签名人类型</th>
+    <th>移动端签名人</th>
+    <th>API 签名人</th>
+  </tr>
+  <tr>
+    <td>主要用途</td>
+    <td>
+      移动端签名人是一名团队成员，负责通过 [Cobo Guard](/cn/guard/introduction) 安全签署交易。其 TSS Node ID 由 Cobo Guard 生成，并将自动填入。
+    </td>
+    <td>
+      API 签名人是一个服务器节点，用于自动签署通过 [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) 发起的交易。其 TSS Node ID 通过 Cobo 提供的 TSS 节点软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见 <a href="/cn/portal/mpc-wallets/ocw/network-environments">TSS 节点技术设置</a>。
+    </td>
+  </tr>
+  <tr>
+    <td>前提步骤</td>
+    <td>
+      您选择的私钥分片持有者需要完成以下操作：
+      <ol>
+        <li><a href="/cn/guard/download">下载 Cobo Guard</a>。</li>
+        <li><a href="/cn/accounts/set-up-mfa#set-up-cobo-guard">将 Cobo Guard 设置为 Cobo Accounts 多重身份验证 (MFA) 方法之一</a>。</li>
+        <li>被<a href="/cn/portal/organization/manage-members">添加为您的团队成员</a>。</li>
+      </ol>
+    </td>
+    <td>
+      您选择的私钥分片持有者需要向您提供他们生成的 TSS Node ID。有关进一步说明，请参见 <a href="/cn/portal/mpc-wallets/ocw/network-environments">TSS 节点技术设置</a>。
+    </td>
+  </tr>
+</table>
 
 选择完签名人类型并完成前提步骤后，请按照以下说明创建主控组。
 <Note>注意：只有拥有[操作员](/cn/portal/organization/roles-and-permissions)角色的用户能够创建主控组。</Note>
@@ -36,15 +92,15 @@ sidebarTitle: "创建私钥分片组"
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
 3. 选择 Vault，然后点击 Vault 名称下的**生成主控组私钥分片**。
 <img src="/cn/images/mpc-wallet/create-main-key-group.png" className="screenshot_full_screen"/>
-4. 在**生成主控组私钥分片**对话框中，前往**私钥分片持有方 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
+4. 在**生成主控组私钥分片**对话框中，前往**私钥分片持有者 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。有关进一步说明，请参见 [TSS 节点技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。
-5. 请通知相关的私钥分片持有方进行确认。
+5. 请通知相关的私钥分片持有者进行确认。
     - **注意：**
-        - 如果使用移动端签名人，Cobo Portal 上会出现一个**确认**页面。请提醒选定的私钥分片持有方在其 Cobo Guard 中确认。在选定的私钥分片持有方的 Cobo Guard 应用中，点击 **Security Verification** (安全验证) 消息以打开 **Security Verification** (安全验证)页面。审核信息后，点击 **Yes, it is me** (是的，这是我)。一个 **Become Key Holder** (成为私钥分片持有方)的消息接着很快将发送到私钥分片持有方的 Cobo Guard，点击该消息以打开 **Become Key Holder** (成为私钥分片持有方)页面，审核信息后，点击**批准**。选定的私钥分片持有方现在应该在他们的 Cobo Guard 上点击**生成私钥分片**横幅，进入**我的账户**页面，然后在**私钥分片**下点击**等待私钥分片生成**以进入**私钥分片**页面。在**私钥分片**页面上，点击**开始**进入**生成私钥分片**页面。私钥分片生成过程将开始。当 Cobo Guard 上显示**私钥分片已生成**消息时，点击**确定**。
+        - 如果使用移动端签名人，Cobo Portal 上会出现一个**确认**页面。请提醒选定的私钥分片持有者在其 Cobo Guard 中确认。在选定的私钥分片持有者的 Cobo Guard 应用中，点击 **Security Verification** (安全验证) 消息以打开 **Security Verification** (安全验证)页面。审核信息后，点击 **Yes, it is me** (是的，这是我)。一个 **Become Key Holder** (成为私钥分片持有者)的消息接着很快将发送到私钥分片持有者的 Cobo Guard，点击该消息以打开 **Become Key Holder** (成为私钥分片持有者)页面，审核信息后，点击**批准**。选定的私钥分片持有者现在应该在他们的 Cobo Guard 上点击**生成私钥分片**横幅，进入**我的账户**页面，然后在**私钥分片**下点击**等待私钥分片生成**以进入**私钥分片**页面。在**私钥分片**页面上，点击**开始**进入**生成私钥分片**页面。私钥分片生成过程将开始。当 Cobo Guard 上显示**私钥分片已生成**消息时，点击**确定**。
         - 如果使用 API 签名人，请确保在 24 小时内让 TSS 节点上线。TSS 节点上线后，确认流程即告完成。
 
-6. 私钥分片生成过程于第 5 步完成后，**私钥分片组状态**将显示为**活跃**。
+6. 私钥分片生成过程于第 5 步完成后，**持有者组状态**将显示为**活跃**。
 <Info>您可能需要刷新 Cobo Portal 页面以查看最新结果。</Info>
 <Info>注意：私钥成功生成后，将自动为该 Vault 创建一个默认钱包。</Info>
 <img src="/cn/images/mpc-wallet/main-group-active.png" className="screenshot_full_screen"/>
@@ -96,7 +152,7 @@ sidebarTitle: "创建私钥分片组"
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
 3. 选择 Vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
 4. 在**私钥分片管理**页面，点击**签名组**，然后选择要删除的签名组。
-5. 点击**删除私钥分片组**。
+5. 点击**删除持有者组**。
 <img src="/cn/images/mpc-wallet/delete-sign-group.png" className="screenshot_modal"/>
 
 6. 点击**确认**删除指定的签名组。
@@ -104,7 +160,7 @@ sidebarTitle: "创建私钥分片组"
 7. 指定的签名组现已删除。
 
 ## 恢复组
-恢复组有两个主要用途：如果主控组和备份副本丢失或损坏，恢复组可用于恢复整个私钥并创建新的主控组。要了解有关备份和恢复的更多信息，请参阅[备份私钥分片组](/cn/portal/mpc-wallets/ocw/back-up-key-share-groups)和[恢复私钥分片](/cn/portal/mpc-wallets/ocw/restore-from-backup)。
+恢复组有两个主要用途：如果主控组和备份副本丢失或损坏，恢复组可用于恢复整个私钥并创建新的主控组。要了解有关备份和恢复的更多信息，请参阅[备份持有者组](/cn/portal/mpc-wallets/ocw/back-up-key-share-groups)和[恢复私钥分片](/cn/portal/mpc-wallets/ocw/restore-from-backup)。
 
 与创建主控组和签名组类似，在创建恢复组时，也可以选择移动端签名人或 API 签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
 
@@ -124,19 +180,19 @@ sidebarTitle: "创建私钥分片组"
 <img src="/cn/images/mpc-wallet/recoverymode.png" className="screenshot_modal"/>
 5. 如果选择有 Cobo 参与，请按照以下说明完成创建：
 - 选择**自恢复**或**第三方恢复**。自恢复需要由 Cobo 和您的团队所持有的私钥分片，而第三方恢复需要由 Cobo、您的团队和您信任的第三方所持有的私钥分片。
-- 选择您的私钥分片持有方。
+- 选择您的私钥分片持有者。
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
 <img src="/cn/images/mpc-wallet/recoverytype.png" className="screenshot_modal"/>
 6. 如果选择无 Cobo 参与，请按照以下说明完成创建：
 - 选择**自恢复**或**第三方恢复**。自恢复需要您的团队所持有的私钥分片，而第三方恢复需要由您的团队和您信任的第三方所持有的私钥分片。
-- 选择您的私钥分片持有方。
+- 选择您的私钥分片持有者。
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
     - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS 节点软件包生成的 **TSS Node ID**，然后点击**确认**。
 <img src="/cn/images/mpc-wallet/recoverytype1.png" className="screenshot_modal"/>
 7. 点击**确认**。
-8. 状态将显示为“等待私钥分片持有方确认”。通知所有私钥分片持有方进行确认。有关私钥分片持有方如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
-9. 所有私钥分片持有方在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
+8. 状态将显示为“等待私钥分片持有者确认”。通知所有私钥分片持有者进行确认。有关私钥分片持有者如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
+9. 所有私钥分片持有者在其 Cobo Guard App 上进行确认后，等待私钥生成过程完成，然后将创建恢复组。
 
 ### 删除恢复组
 要删除恢复组，请按照以下说明操作。
@@ -145,7 +201,7 @@ sidebarTitle: "创建私钥分片组"
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
 3. 选择 Vault，然后点击右上角的 <img src="/cn/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img>。
 4. 在**私钥分片管理**页面，点击**恢复组**，然后选择要删除的恢复组。
-5. 点击**删除私钥分片组**。
+5. 点击**删除持有者组**。
 <img src="/cn/images/mpc-wallet/delete-recovery-group.png" className="screenshot_modal"/>
 6. 点击**确认**删除指定的恢复组。
 7. 指定的恢复组现已删除。
