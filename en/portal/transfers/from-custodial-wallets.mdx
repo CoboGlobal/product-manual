@@ -10,7 +10,7 @@ sidebarTitle: "Transfer from Custodial Wallets (Asset Wallets)"
 
 ## Steps
 
-1. Log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/en/images/transfers/transfer-button.svg" className="icon"></img> in the main menu.
+1. Log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/en/images/transfers/transfer-button.svg" className="icon" alt="The transfer button" /> in the main menu.
     <img src="/en/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
 
 2. Then, select the token type for the transfer. Selection is limited to tokens included in your organization's subscription package. To enable a new token type (fees apply), see step 1 to 6 on [Deposit from external wallets](/en/portal/mpc-wallets/ocw/transfers#deposit-from-external-wallets).
@@ -22,7 +22,7 @@ sidebarTitle: "Transfer from Custodial Wallets (Asset Wallets)"
     - **My Wallet**: Select a wallet type and then click on the specific wallet you would like to transfer to.
     - **Other Addresses**: Manually enter an external address as the destination address under "To". If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
     <br />
-    If this transfer can be executed as a [Cobo Loop](/en/portal/custodial-wallets/cobo-loop) transfer, a related information bar will appear on the UI as the following screenshot shows. You can toggle the option to enforce the transaction as a Cobo Loop transfer.
+    If this transfer can be executed as a [Cobo Loop](/en/portal/custodial-wallets/cobo-loop) transfer, a related information bar will appear on the UI as the following screenshot shows. You can toggle the button to enforce the transaction as a Cobo Loop transfer, or otherwise.
     <img src="/en/images/transfers/loop_info_bar.png" className="screenshot_full_screen" alt="Screenshot of the information bar" />
     <Info>If you are using the WaaS 2.0 API, you can use the [Check Cobo Loop transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) operation to determine if a transaction can be executed as a Cobo Loop transfer. Or directly call the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) operation to enforce a transaction as a Cobo Loop transfer.</Info>
 5. Enter the transfer amount.
@@ -33,7 +33,7 @@ sidebarTitle: "Transfer from Custodial Wallets (Asset Wallets)"
 
 ## Next-Steps
 
-After making a transfer from your Custodial Wallets, you can view its transaction status in **Transaction History**. A flash icon indicates it was executed as a Cobo Loop transfer as the following screenshot shows.
+After making a transfer from your Custodial Wallets, you can view its transaction status in **Transaction History**. The flash icon <img src="/en/images/custodial-wallet/icon_loop.png" className="icon" alt="The flash icon" /> indicates it was executed as a Cobo Loop transfer as the following screenshot shows.
 <img src="/en/images/transfers/loop_history.png" className="screenshot_full_screen" alt="Screenshot of the information bar" />
 
 If you are using the WaaS 2.0 API, you can call the [Get transaction information](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) or [List all transactions operations](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) and check the `is_loop` property in the response. 
