@@ -3,6 +3,8 @@ title: "Transfer from Custodial Wallets (Asset Wallets)"
 sidebarTitle: "Transfer from Custodial Wallets (Asset Wallets)"
 ---
 
+import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
+
 ## Prerequisite
 
 - It's recommended that you set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer).
@@ -27,7 +29,7 @@ sidebarTitle: "Transfer from Custodial Wallets (Asset Wallets)"
     <Info>If you are using the WaaS 2.0 API, you can use the [Check Cobo Loop transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) operation to determine if a transaction can be executed as a Cobo Loop transfer. Or directly call the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) operation to enforce a transaction as a Cobo Loop transfer.</Info>
 5. Enter the transfer amount.
 6. Review the transaction cost. Transaction cost includes network fees. You are unable to modify or customize this fee. The associated fees will be deducted from the selected  "From" address, and it may differ from the token intended for the transfer.
-7. (Optional) Add a category or description to your transaction. For details, see [Add category and description](/en/portal/transfers/add-category).
+7. <MySnippet />
 8. Click **Submit**.
 9. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
 

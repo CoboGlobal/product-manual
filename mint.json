@@ -302,8 +302,7 @@
                 "en/portal/transfers/from-custodial-wallets",
                 "en/portal/transfers/from-mpc-wallets",
                 "en/portal/transfers/from-smart-contract-wallets",
-                "en/portal/transfers/from-exchange-wallets",
-                "en/portal/transfers/add-category"
+                "en/portal/transfers/from-exchange-wallets"
               ]
             }
           ]
@@ -933,8 +932,7 @@
                 "cn/portal/transfers/from-custodial-wallets",
                 "cn/portal/transfers/from-mpc-wallets",
                 "cn/portal/transfers/from-smart-contract-wallets",
-                "cn/portal/transfers/from-exchange-wallets",
-                "cn/portal/transfers/add-category"
+                "cn/portal/transfers/from-exchange-wallets"
               ]
             }
           ]
