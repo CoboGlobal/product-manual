@@ -197,7 +197,7 @@
                             "en/portal/mpc-wallets/ocw/manage-wallets",
                             "en/portal/mpc-wallets/ocw/manage-key-share-groups",
                             {
-                              "group": "Recover key share groups",
+                              "group": "Recover holder groups",
                               "pages": [
                                 "en/portal/mpc-wallets/ocw/restore-from-backup",
                                 "en/portal/mpc-wallets/ocw/recover-from-active-keys",
@@ -827,7 +827,7 @@
                             "cn/portal/mpc-wallets/ocw/manage-wallets",
                             "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
                             {
-                              "group": "恢复私钥分片组",
+                              "group": "恢复持有者组",
                               "pages": [
                                 "cn/portal/mpc-wallets/ocw/restore-from-backup",
                                 "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
