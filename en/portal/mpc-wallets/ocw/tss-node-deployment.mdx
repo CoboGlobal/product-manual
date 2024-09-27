@@ -257,7 +257,9 @@ INFO[2023-01-13T05:15:09Z] WebSocket connecting to wss://ws.tss.dev.cobo.com/ws
 INFO[2023-01-13T05:15:10Z] Start to register service
 ```
 
-If the TSS Node has not been configured on **Cobo Portal** > **MPC Wallet**, the registration status will be returned as **failed**. You can proceed with the subsequent steps first. Upon successful configuration of the TSS Node on Cobo Portal, the registration status will be updated to the following:
+If you have not created a holder group with this TSS Node, the registration status will be returned as **failed**. You can proceed with creating a holder group through [Cobo Portal](/en/portal/mpc-wallets/ocw/create-key-share-groups#create-a-main-group). Only users with vault admin rights are authorized to create a holder group.
+
+Upon successful creation of the holder group, the registration status will be updated to the following:
 
 ```
 INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
@@ -265,18 +267,9 @@ INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
 
 You can press Ctrl+C to exit, and the TSS Node will continue to run in the background. For more information on checking the running status of the TSS Node, please refer to [Appendix](/en/portal/mpc-wallets/ocw/appendix).
 
-```
-sudo ./tss-node.sh init
-```
+## MPC root extended public keys
 
-## TSS Node on Cobo Portal & MPC Root Extended Public Key 
-
-<Note>Only the client with vault admin rights is authorized to add the TSS Node ID to Cobo Portal.</Note>
-
-For detailed instructions on how to add a TSS Node ID to Cobo Portal, refer to [Create a Main Group](/en/portal/mpc-wallets/ocw/create-key-share-groups#create-a-main-group).
-
-Ensure that the root extended public key displayed on Cobo Portal matches the one shown in the TSS Node log. This key can be used to generate all wallet addresses under this MPC Organization-Controlled Wallet using BIP 32.
- 
+Ensure that the root extended public key displayed on Cobo Portal matches the one shown in the TSS Node log. This key can be used to generate all wallet addresses under this MPC Organization-Controlled Wallet using BIP-32.
 
 ### **Private key share management** 
 
