@@ -255,8 +255,9 @@ INFO[2023-01-13T05:15:09Z] WebSocket connecting to wss://ws.tss.dev.cobo.com/ws
 
 INFO[2023-01-13T05:15:10Z] Start to register service
 ```
+如果您尚未使用该 TSS Node 创建持有者组，注册状态将显示为**失败**。您可以通过 [Cobo Portal](/cn/portal/mpc-wallets/ocw/create-key-share-groups) 创建持有者组，只有拥有 Vault 管理员权限的用户才有权创建持有者组。
 
-如果未在 **Cobo Portal** > **MPC 钱包**中配置 TSS Node，注册状态将返回**失败**。您可以先进行后续步骤。在 Cobo Portal 上成功配置 TSS Node 后，注册状态将更新为以下内容：
+成功创建持有者组以后，注册状态将更新为以下内容：
 
 ```
 INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
@@ -264,17 +265,10 @@ INFO[2023-01-13T05:17:09Z] TSS Node registration accepted
 
 可以按 Ctrl+C 退出，TSS Node 将继续在后台运行。有关检查 TSS Node 运行状态的详细信息，请参阅[附录](/cn/portal/mpc-wallets/ocw/appendix)。
 
-```
-sudo ./tss-node.sh init
-```
 
-## Cobo Portal 上的 TSS Node 和 MPC 根扩展公钥 
+## MPC 根扩展公钥
 
-<Note>仅拥有 Vault 管理权限的用户有权限将 TSS Node ID 添加到 Cobo Portal。</Note>
-
-请参看[创建主控组](/cn/portal/mpc-wallets/ocw/create-key-share-groups#create-main-group)了解将 TSS Node ID 添加到 Cobo Portal 的具体步骤。
-
-确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。你可以使用 BIP 32 基于此公钥生成该 MPC 机构钱包下的所有钱包地址。
+确保 Cobo Portal 上显示的根扩展公钥与 TSS Node 日志中显示的根扩展公钥相符。你可以使用 BIP-32 基于此公钥生成该 MPC 机构钱包下的所有钱包地址。
 
 ### **私钥分片管理** 
 

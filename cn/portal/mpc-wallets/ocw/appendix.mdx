@@ -3,7 +3,7 @@ title: "附录"
 sidebarTitle: "附录"
 ---
 
-## TSS 节点配置方法
+## TSS Node 配置方法
 
 目前，cobo-tss-node 提供两种配置方法： 
 
@@ -49,7 +49,7 @@ env: production # development; production
 #callback:
 ```
 
-注意，TSS 节点的配置不是强制性的。下面列出的所有项目均为可选项。
+注意，TSS Node 的配置不是强制性的。下面列出的所有项目均为可选项。
 
 | **配置项**             | **命令行**     | **描述**                                              |
 | ---------------------------------- | -------------------- | ------------------------------------------------------------ |
@@ -69,15 +69,15 @@ env: production # development; production
 | log/file/maxsize                   | log-file-maxsize     | 日志文件的最大大小。                                |
 | log/file/max_backups               | log-file-max-backups | 每个日志文件的备份数。                         |
 
-## TSS 节点命令行 
+## TSS Node 命令行
 
-- *Init：初始化 TSS 节点。*
+- *Init：初始化 TSS Node。*
 
 ```
 sudo ./tss-node.sh init
 ```
 
-您可以初始化 TSS 节点并创建数据库文件。如果数据库文件已经存在，则执行将失败。有关更多信息，请参阅 [TSS 节点初始化](/cn/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-initialization)。
+您可以初始化 TSS Node 并创建数据库文件。如果数据库文件已经存在，则执行将失败。有关更多信息，请参阅 [TSS Node 初始化](/cn/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-initialization)。
 
 - *Info：查看信息。*
 
@@ -85,7 +85,7 @@ sudo ./tss-node.sh init
 sudo ./tss-node.sh info
 ```
 
-您可以查看与 TSS 节点相关的信息，包括 TSS Node ID 和 Callback 服务器的 RSA 公钥。 
+您可以查看与 TSS Node 相关的信息，包括 TSS Node ID 和 Callback 服务器的 RSA 公钥。
 
 输出示例如下。 
 
@@ -132,19 +132,19 @@ sudo ./tss-node.sh info group [group_id]
 | Type                     | 1                                       | 类型，1 表示 ECDSA，2 表示 EdDSA。                 |
 | Curve                    | secp256k1                               | 支持的签名算法。                  |
 | Threshold                | 2                                       | 每笔交易签名所需的最小私钥分片数量。|
-| Local Node ID            | coboA1B2C3D4                            | 本地存储的 TSS 节点的节点 ID。                      |
-| Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | 其他方管理的 TSS 节点的节点 ID。          |
-| Participants：            | 3                                       | 私钥分片、节点 ID 和私钥分片 ID 的总数。|
+| Local Node ID            | coboA1B2C3D4                            | 本地存储的 TSS Node ID。                      |
+| Other Node IDs           | [coboA1B2C3D4, coboA2B3C4D5]            | 其他方管理的 TSS Node ID。          |
+| Participants：            | 3                                       | 私钥分片、Node ID 和私钥分片 ID 的总数。|
 
-- *Start：启动 TSS 节点* 
+- *Start：启动 TSS Node*
 
 ```
 sudo ./tss-node.sh start
 ```
 
-cobo-tss-node 将开始运行。有关更多信息，请参阅 [TSS 节点启动](/cn/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-startup)。
+cobo-tss-node 将开始运行。有关更多信息，请参阅 [TSS Node 启动](/cn/portal/mpc-wallets/ocw/tss-node-deployment#tss-node-startup)。
 
-- *Version：查询 TSS 节点版本*
+- *Version：查询 TSS Node 版本*
 
 ```
 sudo ./tss-node.sh version
@@ -188,7 +188,7 @@ INFO[2022-12-14T09:01:07Z] Failed to register service: invalid TSS Node, please 
 - 检查 SGX 驱动程序的状态（适用于支持 SGX 的版本）。 
 - 确认已构建的容器镜像是否存在。 
 - 检查容器是否有任何错误。 
-- 监控当前运行的 TSS 节点容器并显示最新的五个日志。
+- 监控当前运行的 TSS Node 容器并显示最新的五个日志。
 
 - *Log：查看容器日志*
 
@@ -196,17 +196,17 @@ INFO[2022-12-14T09:01:07Z] Failed to register service: invalid TSS Node, please 
 sudo ./tss-node.sh log
 ```
 
-- *Stop：停止 TSS 节点*
+- *Stop：停止 TSS Node*
 
 ```
 sudo ./tss-node.sh stop
 ```
 
-## TSS 节点风险控制
+## TSS Node 风险控制
 
-TSS 节点完备的风险控制机制，可在发起 Callback 之前评估私钥生成（KeyGen）、私钥签名（KeySign）或私钥恢复（KeyReshare）请求。系统对这些请求应用预定义的风险控制规则，只批准符合指定规则的请求。不符合标准的请求将被拒绝。 
+TSS Node 完备的风险控制机制，可在发起 Callback 之前评估私钥生成（KeyGen）、私钥签名（KeySign）或私钥恢复（KeyReshare）请求。系统对这些请求应用预定义的风险控制规则，只批准符合指定规则的请求。不符合标准的请求将被拒绝。
 
-您可以根据您的业务要求，定制 TSS 节点风险控制规则的配置，使二者保持最佳的一致性。为此，可通过 configs/cobo-tss-node-config.yaml 文件进行定制配置。要定义特定的配置参数，请导航至 embedded_risk_control_rules，并参考以下示例：
+您可以根据您的业务要求，定制 TSS Node 风险控制规则的配置，使二者保持最佳的一致性。为此，可通过 configs/cobo-tss-node-config.yaml 文件进行定制配置。要定义特定的配置参数，请导航至 embedded_risk_control_rules，并参考以下示例：
 
 ```
 embedded_risk_control_rules:
