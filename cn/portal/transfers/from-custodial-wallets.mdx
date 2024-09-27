@@ -12,21 +12,21 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
 
 ## 步骤
 
-1. 登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击主菜单中的转账图标 <img src="/cn/images/transfers/transfer-button.svg" className="icon" alt="转账图标" />。
 
-    <img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
+    <img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal" alt="转账图标位置截图" />
 2. 选择转账的代币类型。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请参阅[从外部钱包充币](https://manuals.cobo.com/cn/portal/mpc-wallets/ocw/transfers#)中的步骤 1 到 6。
 3. 在**出金地址**选项的下拉菜单中选择**全托管钱包** -> **资产钱包**。
     要找到您的钱包，请从下拉菜单中选择，也可以直接搜索钱包名称。结果中将列出通过 Cobo Portal 和 WaaS 2.0 API 创建的全托管钱包（资产钱包）。
 4. 从地址簿或 Cobo 钱包中选择接收地址，也可以手动输入外部地址。
-    <img src="/cn/images/transfers/to-address.png" className="screenshot_modal"/>
+    <img src="/cn/images/transfers/to-address.png" className="screenshot_modal" alt="接收地址截图" />
         - **地址簿**：仅列出与所选代币的区块链网络相关联的地址。
         - **我的钱包**：选择钱包类别，然后点击您希望转入的钱包。
         - **自定义地址**：手动输入外部地址，作为转入的目标地址。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
     
     如果该转账可以作为 [Cobo Loop](/cn/portal/custodial-wallets/cobo-loop) 转账执行，UI 上会出现相关信息栏，如以下截图所示。您可以通过开关按钮，强制将该交易作为 Cobo Loop 转账执行，或者强制作为非 Cobo Loop 转账执行。
         
-        <img src="/en/images/transfers/loop_info_bar.png" className="screenshot_full_screen" alt="信息栏屏幕截图" />
+        <img src="/cn/images/transfers/loop_info_bar.png" className="screenshot_full_screen" alt="Cobo Loop 信息栏截图" />
 
     <Info>如果您使用 WaaS 2.0 API，可以使用 [Check Cobo Loop Transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) 操作来确定交易是否可以作为 Cobo Loop 转账执行。或者直接调用 [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) 操作，强制将交易作为 Cobo Loop 转账执行。</Info>
 5. 输入转账金额。
@@ -37,8 +37,8 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
 
 ## 后续步骤
 
-从全托管钱包进行转账后，您可以在**交易历史记录**中查看其交易状态。闪电图标 <img src="/en/images/custodial-wallet/icon_loop.png" className="icon" alt="闪电图标" /> 表示该交易是作为 Cobo Loop 转账执行的，如以下屏幕截图所示。
-<img src="/en/images/transfers/loop_history.png" className="screenshot_full_screen" alt="信息栏的屏幕截图" />
+从全托管钱包进行转账后，您可以在**交易记录**中查看其交易状态。闪电图标 <img src="/en/images/custodial-wallet/icon_loop.png" className="icon" alt="闪电图标" /> 表示该交易是作为 Cobo Loop 转账执行的，如以下截图所示。
+<img src="/cn/images/transfers/loop_history.png" className="screenshot_full_screen" alt="交易记录截图" />
 
 如果您使用 WaaS 2.0 API，可以调用 [Get transaction information](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) 或 [List all transactions operations](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) 并检查响应中的`is_loop`属性。
-此外，您还可以使用 [Cobo Loop Explorer](https://loop.top/) 通过 Transaction ID 来追踪 Cobo Loop 转账的状态。
+此外，您还可以使用 [Cobo Loop Explorer](https://loop.top/) 通过 Loop ID（即该交易的交易哈希）来追踪 Cobo Loop 转账的状态。
