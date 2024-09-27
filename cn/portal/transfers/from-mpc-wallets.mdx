@@ -3,6 +3,8 @@ title: "从 MPC 钱包（机构钱包）转账"
 sidebarTitle: "从 MPC 钱包（机构钱包）转账"
 ---
 
+import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
+
 <Note>前提条件：从 MPC 钱包（机构钱包）转账之前，请确保您已设置[链下交易风控规则](/cn/portal/risk-controls/off-chain-tx-set-transfer)（推荐）并已向 MPC 钱包（机构钱包）[充币](/cn/portal/mpc-wallets/ocw/transfers)。</Note>
 
 要从 MPC 钱包（机构钱包）转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
@@ -56,6 +58,6 @@ sidebarTitle: "从 MPC 钱包（机构钱包）转账"
             | 参数 | 定义                                                                                                                               |
             | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
             | 费率  | 费率的计算方式是您的交易在区块链上消耗的每单位数据对应多少 satoshis（缩写为 sats/vByte）。|
-8. （可选）为交易添加交易分类或描述。详情请参阅[添加分类和描述](/cn/portal/transfers/add-category)。
+8. <MySnippet />
 9. 点击**提交**。
 10. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
