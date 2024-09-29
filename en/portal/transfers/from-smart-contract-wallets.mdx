@@ -3,6 +3,8 @@ title: "Transfer from Smart Contract Wallets (Safe{Wallet})"
 sidebarTitle: "Transfer from Smart Contract Wallets (Safe{Wallet})"
 ---
 
+import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
+
 <Note>Prerequisite: Before making a transfer from Smart Contract Wallets (Safe&#123;Wallet&#125;), please make sure that you have [created](/en/portal/smart-contract-wallets/create) a Safe&#123;Wallet&#125; in Cobo Portal or [imported](/en/portal/smart-contract-wallets/import) Safe&#123;Wallet&#125; instances from Cobo Argus, set up an on-chain transfer policy (required), set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer) (recommended), and successfully [deposited](/en/portal/smart-contract-wallets/deposit-assets) funds into the Smart Contract Wallets (Safe&#123;Wallet&#125;).</Note>
 
 
@@ -27,7 +29,7 @@ Then, fill in the required information as follows:
     - The fee will be covered by the Delegate.
     - The estimated fee is calculated by multiplying the max fee by the gas limit: (max fee * gas limit). See [provided table under EIP 1559](/en/portal/transfers/from-mpc-wallets#eip1559) for definition of the parameters.
     - If the Delegate lacks sufficient gas tokens, click **Top up to Delegate** to deposit the required gas tokens.
-10. (Optional) Add category or description to your transaction. For details, see [Add category and description](/en/portal/transfers/add-category).
+10. <MySnippet />
 11. Click **Submit**.
 12. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
 

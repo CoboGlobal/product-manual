@@ -303,8 +303,7 @@
                 "en/portal/transfers/from-custodial-wallets",
                 "en/portal/transfers/from-mpc-wallets",
                 "en/portal/transfers/from-smart-contract-wallets",
-                "en/portal/transfers/from-exchange-wallets",
-                "en/portal/transfers/add-category"
+                "en/portal/transfers/from-exchange-wallets"
               ]
             }
           ]
@@ -764,6 +763,7 @@
               "pages": [
                 "cn/portal/custodial-wallets/introduction",
                 "cn/portal/custodial-wallets/key-features",
+                "cn/portal/custodial-wallets/cobo-loop",
                 {
                   "group": "使用说明",
                   "pages": [
@@ -933,8 +933,7 @@
                 "cn/portal/transfers/from-custodial-wallets",
                 "cn/portal/transfers/from-mpc-wallets",
                 "cn/portal/transfers/from-smart-contract-wallets",
-                "cn/portal/transfers/from-exchange-wallets",
-                "cn/portal/transfers/add-category"
+                "cn/portal/transfers/from-exchange-wallets"
               ]
             }
           ]
