@@ -168,6 +168,7 @@
                       "group": "Organization-Controlled Wallets",
                       "pages": [
                         "en/portal/mpc-wallets/ocw/introduction",
+                        "en/portal/mpc-wallets/ocw/object-model",
 
                                                 {
   "group": "Set up Organization-Controlled Wallets",
@@ -811,6 +812,8 @@
                       "group": "机构钱包",
                       "pages": [
                         "cn/portal/mpc-wallets/ocw/introduction",
+                        "cn/portal/mpc-wallets/ocw/object-model",
+
                                                 {
   "group": "创建机构钱包",
   "pages": [
