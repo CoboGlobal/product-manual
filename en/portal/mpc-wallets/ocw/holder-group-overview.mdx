@@ -1,0 +1,47 @@
+---
+title: "Overview"
+sidebarTitle: "Overview"
+---
+
+## What are holder groups?
+
+With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key shares is referred to as a holder group.
+
+There are three types of holder groups: Main Group, Signing Group, and Recovery Group. The Main Group is the first set of key shares you create before using MPC Wallets. It will be used to create both Signing Groups and Recovery Groups.
+<table class="six-columns">
+  <tr>
+    <th></th>
+    <th>Main Group</th>
+    <th>Signing Group</th>
+    <th>Recovery Group</th>
+  </tr>
+  <tr>
+    <td>Primary Purposes</td>
+    <td>
+      <ol>
+        <li>Sign transactions (if you have not created Signing Groups)</li>
+        <li>Create Signing Groups and Recovery Groups</li>
+      </ol>
+    </td>
+    <td>Sign transactions</td>
+    <td>
+      <ol>
+        <li>Create a new Main Group (if your Main Group and the backup copy are lost or compromised)</li>
+        <li>Recover the whole private key</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td>Required / Optional</td>
+    <td>Required</td>
+    <td>Optional</td>
+    <td>Optional</td>
+  </tr>
+  <tr>
+    <td>Max Quantity per Vault</td>
+    <td>1</td>
+    <td>1 or more</td>
+    <td>1 (recommended) or more</td>
+  </tr>
+</table>
+
