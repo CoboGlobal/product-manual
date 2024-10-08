@@ -901,6 +901,7 @@
                           "group": "生成 API key",
                           "pages": [
                             "cn/portal/exchange-wallets/generate-binance-api-key",
+                            "cn/portal/exchange-wallets/generate-bitfinex-api-key",
                             "cn/portal/exchange-wallets/generate-bitget-api-key",
                             "cn/portal/exchange-wallets/generate-bitmart-api-key",
                             "cn/portal/exchange-wallets/generate-bybit-api-key",

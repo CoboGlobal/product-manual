@@ -1,0 +1,30 @@
+---
+title: "生成 Bitfinex API key"
+sidebarTitle: "Bitfinex"
+---
+
+当您将 Bitfinex 账户关联到交易所钱包时，需要提供 API key 和 API key secret。此外，还需要将 Cobo 加入 IP 白名单，并为 API key 分配特定权限。
+
+本文介绍如何生成 Bitfinex 的 API key，包括将 Cobo 加入 IP 白名单和设置权限。
+
+<Note>内容如有变更，以 Bitfinex 网站为准。详情请参阅<a href="https://support.bitfinex.com/hc/zh-cn/articles/115003363429-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%A7%BB%E9%99%A4Bitfinex-API%E5%AF%86%E9%92%A5">如何建立和移除 Bitfinex API 密钥</a>。</Note>
+
+1. 登录您的 Bitfinex 账户，进入 [API 密钥页面](https://setting.bitfinex.com/api).
+2. 点击**创建新密钥**.
+3. 在**创建新密钥**页面, 打开**账号信息**下的**获取账号手续费资讯**权限以及**钱包**和**提款**下的所有权限。
+
+    <img src="/en/images/exchange-wallet/bitfinex_permissions.png" className="screenshot_full_screen" alt="钱包和提款权限设置" />
+
+4. 在 **IP 位址访问限制**下, 关闭**允许任意 IP 访问**, 并输入 Cobo 的 IP 地址 `18.177.234.7` 以及 `18.180.16.190`。
+
+    <img src="/en/images/exchange-wallet/bitfinex_ip.png" className="screenshot_full_screen" alt="IP 位址访问限制设置" />
+
+5. 为你的 API 密钥命名。
+6. 点击**产生 API 密钥**.
+    <Note>鉴于安全考量，您必须输入 2FA 码或插入 U2F 装置来确认您的操作。</Note>
+
+确认成功后，该页面将会显示 API key 和 API key secret 的文本以及 QR 码。API key 信息仅显示一次，请妥善保管。
+
+API key 现已生成，且设置已完成。您可以前往 Cobo Portal，使用 API key 和 API key secret 关联您的 Bitfinex 账户。如欲了解如何关联账户，请参见[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。 
+
+
