@@ -168,16 +168,29 @@
                       "group": "Organization-Controlled Wallets",
                       "pages": [
                         "en/portal/mpc-wallets/ocw/introduction",
-                        {
-                          "group": "Set up Organization-Controlled Wallets",
-                          "pages": [
-                            "en/portal/mpc-wallets/ocw/set-up",
-                            "en/portal/mpc-wallets/ocw/create-mpc-vault",
-                            "en/portal/mpc-wallets/ocw/create-key-share-groups",
-                            "en/portal/mpc-wallets/ocw/back-up-key-share-groups",
-                            "en/portal/mpc-wallets/ocw/create-mpc-wallet"
-                          ]
-                        },
+                        "en/portal/mpc-wallets/ocw/object-model",
+
+                                                {
+  "group": "Set up Organization-Controlled Wallets",
+  "pages": [
+    "en/portal/mpc-wallets/ocw/set-up",
+    "en/portal/mpc-wallets/ocw/create-mpc-vault",
+    {
+      "group": "Create holder groups",
+      "pages": [
+        "en/portal/mpc-wallets/ocw/holder-group-overview",
+        "en/portal/mpc-wallets/ocw/holder-group-main-group",
+        "en/portal/mpc-wallets/ocw/holder-group-signing-group",
+        "en/portal/mpc-wallets/ocw/holder-group-recovery-group"
+      ]
+    },
+    "en/portal/mpc-wallets/ocw/back-up-key-share-groups",
+    "en/portal/mpc-wallets/ocw/create-mpc-wallet"
+
+  ]
+},
+
+
                         {
                           "group": "(For API co-signer) Technical setup",
                           "pages": [
@@ -247,7 +260,8 @@
                             "en/portal/smart-contract-wallets/deposit-assets",
                             "en/portal/smart-contract-wallets/withdraw-assets"
                           ]
-                        }
+                        },
+                                                "en/portal/smart-contract-wallets/dapp-interaction"
                       ]
                     }
                   ]
@@ -799,16 +813,27 @@
                       "group": "机构钱包",
                       "pages": [
                         "cn/portal/mpc-wallets/ocw/introduction",
-                        {
-                          "group": "创建机构钱包",
-                          "pages": [
-                            "cn/portal/mpc-wallets/ocw/set-up",
-                            "cn/portal/mpc-wallets/ocw/create-mpc-vault",
-                            "cn/portal/mpc-wallets/ocw/create-key-share-groups",
-                            "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
-                            "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
-                          ]
-                        },
+                        "cn/portal/mpc-wallets/ocw/object-model",
+
+                                                {
+  "group": "创建机构钱包",
+  "pages": [
+    "cn/portal/mpc-wallets/ocw/set-up",
+    "cn/portal/mpc-wallets/ocw/create-mpc-vault",
+    {
+      "group": "创建持有者组",
+      "pages": [
+        "cn/portal/mpc-wallets/ocw/holder-group-overview",
+        "cn/portal/mpc-wallets/ocw/holder-group-main-group",
+        "cn/portal/mpc-wallets/ocw/holder-group-signing-group",
+        "cn/portal/mpc-wallets/ocw/holder-group-recovery-group"
+      ]
+    },
+    "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
+    "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
+
+  ]
+},
                         {
                           "group": "(API 签名人) 配置说明",
                           "pages": [
@@ -878,7 +903,9 @@
                             "cn/portal/smart-contract-wallets/deposit-assets",
                             "cn/portal/smart-contract-wallets/withdraw-assets"
                           ]
-                        }
+                        },
+                                                                        "cn/portal/smart-contract-wallets/dapp-interaction"
+
                       ]
                     }
                   ]
