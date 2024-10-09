@@ -1,0 +1,29 @@
+---
+title: "Generate an API key on Bitfinex"
+sidebarTitle: "Bitfinex"
+
+---
+
+When you link a Bitfinex account to your Exchange Wallet, you will need to provide an API key and an API key secret. Besides, you also need to include Cobo in the IP whitelist and assign specific permissions to the key.
+
+This article explains how to generate an API key on Bitfinex, including adding Cobo to the IP whitelist and setting permissions.
+
+<Note>The content is subject to changes on Bitfinex. For more details, refer to <a href="https://support.bitfinex.com/hc/en-us/articles/115003363429-How-to-create-and-revoke-a-Bitfinex-API-Key">How to create and revoke a Bitfinex API Key</a>.</Note>
+
+1. Go to the [API Key page](https://setting.bitfinex.com/api) on Bitfinex.
+2. Click the **Create New Key** tab.
+3. On the **Create New Key** page, switch on the **Get account fee information** option under **Account Info** and all the options under **Wallets** and **Withdrawals**.
+
+    <img src="/en/images/exchange-wallet/bitfinex_permissions.png" className="screenshot_full_screen" alt="The Wallets and Withdrawals options" />
+
+4. Under **IP Access Restrictions**, switch off the **Allow access from any IP** option, and enter Cobo's IP address `18.177.234.7` and `18.180.16.190`.
+
+    <img src="/en/images/exchange-wallet/bitfinex_ip.png" className="screenshot_full_screen" alt="The IP Access Restrictions options" />
+
+5. Enter a label for the API key.
+6. Click **Generate API key**.
+    <Note>For security reasons, you will need to confirm the API key creation via your 2FA code.</Note>
+
+With successful confirmation, your API Key and API Key Secret will be displayed in text and as a QR code. Carefully store the API key information, as it will be displayed only once.
+
+You have now generated and set up an API Key. You can go to Cobo Portal to link your Bitfinex account with the API key and API secret key. To learn how to link your account, see [Set up Exchange Wallets](/en/portal/exchange-wallets/set-up). 

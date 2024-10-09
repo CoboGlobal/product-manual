@@ -3,28 +3,29 @@ title: "生成 Binance API key"
 sidebarTitle: "Binance"
 ---
 
-当您将 Binance 账户关联到交易所钱包时，需要提供 API key 和 API secret key。此外，还需要将 Cobo 加入 IP 白名单，并为 API key 分配特定权限。
+当您将 Binance 账户关联到交易所钱包时，需要提供 API key 和 secret key。此外，还需要将 Cobo 加入 IP 白名单，并为 API key 分配特定权限。
 
 本文介绍如何生成 Binance 的 API key，包括将 Cobo 加入 IP 白名单和设置权限。
 
-<Note>内容如有变更，以 Binance 网站为准。详情请参阅<a href="https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072">如何在币安创建 API 密钥</a>。</Note>
+<Note>内容如有变更，以 Binance 网站为准。详情请参阅<a href="https://www.binance.com/zh/support/faq/how-to-create-api-keys-on-binance-360002502072">如何在币安创建 API 密钥</a>。</Note>
 
 1. 登录到您的 Binance 账户。
 2. 前往**账户** > **API 管理**。
 3. 点击**创建 API**。
 4. 在**选择 API key 类型**对话框中，选择**系统生成的**，然后点击**下一步**生成 API key。
-    <img src="/en/images/exchange-wallet/binance2.png" className="screenshot_modal" alt="The Choose API Key Type dialog" />
-5. 成功生成 API key 后，您将看到一个 API key 和一个 API Secret Key。
-    <Note>请小心保存密匙，因为它仅以纯文本形式显示一次。</Note>
-6. 在**API 限制**部分，选择以下选项：
-    - **启用读取**
-    - **启用提币**
-    - **启用内部转账**
-    - **允许通用转账**
-7. 在 **IP 访问限制**部分，选择**仅限受信任 IP 访问**，然后输入 Cobo 的 IP 地址 `18.177.234.7` 及 `18.180.16.190`。
-    <img src="/en/images/exchange-wallet/binance.png" className="screenshot_full_screen" alt="The Restrict access to trusted IPs only option" />
+    <img src="/cn/images/exchange-wallet/binance1.png" className="screenshot_modal" alt="选择 API key 类型对话框" />
+5. 成功生成 API key 后，您将看到一个 API key 和一个 secret key。
+    <Note>secret key 仅会以明文显示一次，请妥善保管。</Note>
+6. 在**API 权限**部分，选择以下选项：
+    - **允许读取**
+    - **允许提现**
+    - **允许子母账户划转**
+    - **允许万向转账**
+    <img src="/cn/images/exchange-wallet/binance_ip.png" className="screenshot_full_screen" alt="API 权限设置" />
+7. 在 **IP 地址权限**部分，选择**限制只对受信任 IP 的访问**，然后输入 Cobo 的 IP 地址 `18.177.234.7` 及 `18.180.16.190`。
+    <img src="/cn/images/exchange-wallet/binance4.png" className="screenshot_full_screen" alt="IP 地址权限设置" />
 8. 点击**保存**提交设置。
 
-API key 现已生成，且设置已完成。您可以前往 Cobo Portal，使用 API key 和 API secret key 关联您的 Binance 账户。如欲了解如何关联账户，请参见[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。 
+API key 现已生成，且设置已完成。您可以前往 Cobo Portal，使用 API key 和 secret key 关联您的 Binance 账户。如欲了解如何关联账户，请参见[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。 
 
 
