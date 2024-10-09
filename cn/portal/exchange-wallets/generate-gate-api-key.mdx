@@ -3,16 +3,16 @@ title: "生成 Gate.io API key"
 sidebarTitle: "Gate.io"
 ---
 
-当您将 Gate.io 账户关联到交易所钱包时，需要提供 API key 和 API secret key。此外，还需要将 Cobo 加入 IP 白名单，并为 API key 分配特定权限。
+当您将 Gate.io 账户关联到交易所钱包时，需要提供 API key 和 secret key。此外，还需要将 Cobo 加入 IP 白名单，并为 API key 分配特定权限。
 
 本文介绍如何在 Gate.io 上生成 API key，包括将Cobo 加入 IP 白名单和设置权限。
 
 <Note>内容如有变更，以 Gate.io 网站为准。详情请参阅<a href="https://www.gate.io/zh/help/guide/faq/17521/how-to-utilize-api">如何使用 API</a>。</Note>
 
 1. 登录到您的 Gate.io 账户。
-2. 导航至**我的资料** > **API 管理**。
+2. 前往**我的资料** > **API 管理**。
 3. 选择**创建 API key** 以打开**创建 API key** 页面。
-    <img src="/cn/images/exchange-wallet/gate_page_cn.png" className="screenshot_full_screen" alt="The Create API Key page" />
+    <img src="/cn/images/exchange-wallet/gate_1.png" className="screenshot_modal" alt="创建 API key 页面" />
 4. 在**创建 API key** 页面上，在 **API key 备注**字段中输入备注。
 5. 在 **IP 地址权限**部分，选择**绑定 IP** 并在文本框中输入 Cobo 的 IP 地址 `18.177.234.7` 及 `18.180.16.190`。
 6. 在 **API key 类型**部分，选择**API v4 Key**。
@@ -21,10 +21,9 @@ sidebarTitle: "Gate.io"
     - **现货**：**只读**
     - **钱包**：**读写**
     - **提现**：**读写**
-    - **子账户**：**只读**
+    - **子账号**：**只读**
     - **Account**：**只读**
-
-    <img src="/cn/images/exchange-wallet/gate_perm_cn.png" className="screenshot_modal" alt="权限设置" />
+    <img src="/cn/images/exchange-wallet/gate_2.png" className="screenshot_modal" alt="权限设置" />
 
 9. 点击**确认**生成 API key。
 

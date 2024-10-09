@@ -10,17 +10,16 @@ sidebarTitle: "Deribit"
 <Note>内容如有变更，以 Deribit 网站为准。</Note>
 
 1. 登录到您的 Deribit 账户。
-2. 导航至**我的账户** > **API**。
-3. 选择 **+ 添加新密钥**，打开**新建 API key** 对话框。
-
-    <img src="/en/images/exchange-wallet/deribit.png" className="screenshot_full_screen" alt="添加新密钥按钮" />
-
-4. 在对话框中，按照如下步骤完成 API key 设置：
-
-    - 在**账户**字段，选择**读取**。
-    - 在**钱包**字段，选择**读写**。
-    - 在 **IP 白名单**字段中，输入 Cobo 的 IP 地址 `18.177.234.7` 及 `18.180.16.190`。
-5. 点击**新建 API Key**。
-8. API key 创建完成后，点击**加载密钥** 以显示 API key 信息，包含 client ID 和 client secret。
+2. 前往**我的账户** > **API**。
+3. 选择 **+ 添加新密钥**。
+4. 在**新建 API 密钥类型**对话框中，选择 **Deribit 生成的密钥**，并点击**下一个**。
+    <img src="/cn/images/exchange-wallet/deribit_1.png" className="screenshot_modal" alt="新建 API 密钥类型对话框" />
+5. 在 **Create a new API key** 对话框中，完成以下 API key 设置：
+    - 在**账户**字段，选择 **read**。
+    - 在**钱包**字段，选择 **read_write**。
+    - 在 **IP Whitelist**字段中，输入 Cobo 的 IP 地址 `18.177.234.7` 及 `18.180.16.190`。
+    <img src="/cn/images/exchange-wallet/deribit_2.png" className="screenshot_modal" alt="新建 API 密钥对话框" />
+6. 点击**新建 API Key**。
+7. API key 创建完成后，点击**加载密钥** 以显示 API key 信息，包含 client ID 和 client secret。
 
 API key 现已生成，且设置已完成。您可以前往 Cobo Portal，使用 client ID 和 client secret 关联您的 Deribit 账户。如欲了解如何关联账户，请参见[设置交易所钱包](/cn/portal/exchange-wallets/set-up)。 
