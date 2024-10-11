@@ -284,6 +284,7 @@
                           "group": "Generate an API key",
                           "pages": [
                             "en/portal/exchange-wallets/generate-binance-api-key",
+                            "en/portal/exchange-wallets/generate-bitfinex-api-key",
                             "en/portal/exchange-wallets/generate-bitget-api-key",
                             "en/portal/exchange-wallets/generate-bitmart-api-key",
                             "en/portal/exchange-wallets/generate-bybit-api-key",
@@ -927,6 +928,7 @@
                           "group": "生成 API key",
                           "pages": [
                             "cn/portal/exchange-wallets/generate-binance-api-key",
+                            "cn/portal/exchange-wallets/generate-bitfinex-api-key",
                             "cn/portal/exchange-wallets/generate-bitget-api-key",
                             "cn/portal/exchange-wallets/generate-bitmart-api-key",
                             "cn/portal/exchange-wallets/generate-bybit-api-key",
@@ -1405,8 +1407,8 @@
     "linkedin": "https://www.linkedin.com/company/cobo-global/"
   },
   "feedback": {
-    "suggestEdit": true,
-    "raiseIssue": true,
-    "thumbsRating": true
+    "suggestEdit": false,
+    "raiseIssue": false,
+    "thumbsRating": false
   }
 }
