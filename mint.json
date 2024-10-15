@@ -632,7 +632,7 @@
           ]
         },
         {
-          "group": "Batch Payouts",
+          "group": "Batch Payouts (Coming soon)",
           "pages": [
             "en/apps/batch-payouts/introduction",
             {
@@ -1276,7 +1276,7 @@
           ]
         },
         {
-          "group": "Batch Payouts",
+          "group": "Batch Payouts（即将推出）",
           "pages": [
             "cn/apps/batch-payouts/introduction",
             {
