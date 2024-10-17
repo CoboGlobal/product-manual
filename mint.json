@@ -217,7 +217,8 @@
                                 "en/portal/mpc-wallets/ocw/recover-root-key"
                               ]
                             },
-                            "en/portal/mpc-wallets/ocw/transfers"
+                            "en/portal/mpc-wallets/ocw/transfers",
+                            "en/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
                         }
                       ]
@@ -860,7 +861,8 @@
                                 "cn/portal/mpc-wallets/ocw/recover-root-key"
                               ]
                             },
-                            "cn/portal/mpc-wallets/ocw/transfers"
+                            "cn/portal/mpc-wallets/ocw/transfers",
+                            "cn/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
                         }
                       ]
