@@ -1,32 +1,61 @@
 ---
-title: Restore your key shares from iCloud
+title: Reset Cobo Guard for device change or reinstallation
+sidebarTitle: Reset Cobo Guard for device change or reinstallation
 ---
-To demonstrate how Cobo Guard functions as a key share manager, this section guides you through the key share restoration process from the perspective of a key share holder operating on a Cobo Guard app.
 
-When you open the Cobo Guard app for the first time, you will be prompted to choose between **Restore Key Shares** or **No Need to Restore Key Shares**.
+If you want to use Cobo Guard on a new iOS device, or you uninstall and reinstall Cobo Guard on the same device, you need to follow these steps to reset Cobo Guard to ensure its normal functionality.
+<Note>For the case of uninstalling and reinstalling Cobo Guard, both "old device and "new device" in the following text refers to the same device.</Note>
+
+## 1. Download Cobo Guard
+
+Download Cobo Guard and set up a PIN code on your new device. For detailed instructions, refer to [Download the Cobo Guard app](/en/guard/download).
+
+## 2. Restore key shares or create new ones
+
+Open Cobo Guard on your new device. You will be prompted to choose between **Restore Key Shares** or **No Need to Restore Key Shares**.
 
 <img src="/en/images/cobo-guard/common/restore1.png" className="screenshot_nav_bar"></img>
 
-• Choose **Restore Key Shares** if you have key shares in your old Cobo Guard and need to restore them to your current app.
+### Restore key shares
 
-• Choose **No Need to Restore Key Shares** if you are a new user of Cobo Guard and do not have key shares for restoration, or if you do not require them. You may skip this section if you intend to choose this option.
+<Note>If you haven't backed up your key shares with iCloud on your old device, please follow the instructions in [Back up your key shares](/en/guard/generate-and-back-up-key-shares#back-up-your-key-shares).</Note>
+    1. Choose **Restore Key Shares**. Cobo Guard will begin to check your key share files.
+    2. Select the TSS Node IDs associated with the key shares you want to restore, then tap **Restore**.
 
-**Note**: If you have key shares to restore, please make sure to choose **Restore Key Shares** on this page. Skipping this step will lead to an unsuccessful restoration of your private key shares.
+        <img src="/en/images/cobo-guard/common/restore2.png" className="screenshot_nav_bar"></img>
 
-After you choose **Restore MPC Key Shares**, Cobo Guard will begin to check your key share files.
+    3. Enter the recovery passphrase you set earlier when creating these backups for your key shares, then tap **Confirm**.
+        <Warning>If you lose your passphrase, you won't be able to restore your key shares from iCloud.</Warning>
 
-Select the TSS Node IDs associated with the key shares you want to restore, then tap **Restore**.
+        <img src="/en/images/cobo-guard/common/restore3.png" className="screenshot_nav_bar"></img>
 
-<img src="/en/images/cobo-guard/common/restore2.png" className="screenshot_nav_bar"></img>
+    4. Cobo Guard will verify and restore your key shares. With the key shares successfully stored, a dialog showing "Key shares successfully stored" is displayed. Tap **OK**.
+    you can tap <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> and then **My Public Key** to view the restored key shares. On the home screen, you can view the **Link Cobo Guard to your account** message.
 
-Enter the recovery passphrase you set earlier when creating these backups for your key shares, then tap **Confirm**.
+### Create new key shares
 
-<img src="/en/images/cobo-guard/common/restore3.png" className="screenshot_nav_bar"></img>
+If you don't need to restore key shares, choose **No Need to Restore Key Shares**.
+    <Warning>If you choose **No Need to Restore Key Shares**, you will not be able to restore to your private key shares afterwards.</Warning>
+    On the home screen, you can view the **Link Cobo Guard to your account** message.
 
-Cobo Guard will now verify and restore your key shares.
+## 3. Link to Cobo accounts
 
-The restoration process is successful when you see the **Key shares successfully restored** dialog.
+1. Log in to [Cobo Accounts](https://accounts.cobo.com/) using an alternative multi-factor authentication (MFA) method, such as Google Authenticator.
+    <Note>If you have not set up any other MFA methods and cannot log in to your Cobo Account, please contact our [support team](mailto:help@cobo.com).</Note>
+2. On the **Login Methods** tab or the **MFA Management** tab, click **Reset** next to **Cobo Guard**.
 
-Your restored key shares can now be viewed on the Cobo Guard home screen. Tap <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> and then <img src="/en/images/cobo-guard/common/icon_account.svg" className="icon"></img> **My Accounts** to view the restored key shares.
+    <img src="/en/images/cobo-guard/reset.png" className="screenshot_full_screen" alt="The Reset button" />
+
+3. Review the important information regarding the reset, then click **Confirm** to display a QR code.
+4. Open Cobo Guard on your new device and scan the QR code.
+5. On Cobo Guard, choose **Link**.
+    With your account successfully linked, the [Cobo Accounts](https://accounts.cobo.com/) page will display a message "Please open Cobo Guard on your old mobile device for authentication".
+
+    - If you can access your old device, open Cobo Guard and choose **Approve**.
+    - Otherwise, click **Cobo Guard not available?** on the page, and enter the verification code on Google Authenticator.
+
+You will be redirected to the **MFA Management** tab. On Cobo Guard, tap <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> and then **My Accounts**, you will see the email of your Cobo Account. That means your Cobo Guard has been successfully reset.
+
+After the reset, your Cobo Account will be temporarily frozen. An Admin from your organization will need to unfreeze it. If you are the only member of your organization, the whole organization will be frozen for 24 hours. You can log in to the Cobo Portal after this period.
 
 <Tip>Did you find this document helpful? Please [submit feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to share your thoughts with us.</Tip>
