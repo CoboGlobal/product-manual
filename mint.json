@@ -720,7 +720,8 @@
             "en/guard/download",
             "en/guard/manage",
             "en/guard/generate-and-back-up-key-shares",
-            "en/guard/restore-key-shares-from-icloud"
+            "en/guard/reset"
+
           ]
         }
       ],
@@ -1354,7 +1355,7 @@
           "pages": [
             "cn/guard/download",
             "cn/guard/generate-and-back-up-key-shares",
-            "cn/guard/restore-key-shares-from-icloud"
+            "cn/guard/reset"
           ]
         }
       ],
@@ -1391,5 +1392,15 @@
     "suggestEdit": false,
     "raiseIssue": false,
     "thumbsRating": false
-  }
+  },
+  "redirects": [
+    {
+      "source": "/cn/guard/restore-key-shares-from-icloud",
+      "destination": "/cn/guard/reset"
+    },
+    {
+      "source": "/en/guard/restore-key-shares-from-icloud",
+      "destination": "/en/guard/reset"
+    }
+  ]
 }
