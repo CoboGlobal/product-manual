@@ -718,14 +718,9 @@
           "group": "How to use",
           "pages": [
             "en/guard/download",
-            {
-              "group": "Manage the Cobo Guard app",
-              "pages": [
-                "en/guard/manage",
-                "en/guard/generate-and-back-up-key-shares",
-                "en/guard/restore-key-shares-from-icloud"
-              ]
-            }
+            "en/guard/manage",
+            "en/guard/generate-and-back-up-key-shares",
+            "en/guard/restore-key-shares-from-icloud"
           ]
         }
       ],
