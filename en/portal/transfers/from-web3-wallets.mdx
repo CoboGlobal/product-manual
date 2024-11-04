@@ -1,0 +1,53 @@
+---
+title: "Transfer from Custodial Wallets (Web3 Wallets)"
+sidebarTitle: "Transfer from Custodial Wallets (Web3 Wallets)"
+---
+
+import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
+
+## Prerequisite
+
+- It’s recommended that you set up a [token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer).
+- You have [deposited](/en/portal/custodial-wallets/transfers) funds into the Web3 Wallets.
+
+## Steps
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+
+2. To open the **Transfer** dialog, click <img src="/en/images/transfers/transfer-button.svg" className="icon" alt="The transfer button" /> in the main menu of Cobo Portal. Alternatively, click <img src="/en/images/custodial-wallet/withdraw-icon.png" className="icon"/> on your Web3 Wallet page, the corresponding token or address will be preselected for you.
+
+    <img src="/en/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
+
+3. Select a token type for the transfer. To enable a new token type, navigate to your Web3 Wallet page, select the **Tokens** tab, and click **Add Tokens**.
+
+4. In the drop-down menu under **From**, for **Wallet Type**, select **Web3 Wallets**. For the wallet address, select from the drop-down menu or search by wallet name, address, or label. Asset Wallets created via both Cobo Portal and WaaS 2.0 API will be listed.
+
+5. Select a **To** address from your Address Book or your wallets on Cobo Portal, or manually enter an address.
+    
+    - **Address Book**<img src="/en/images/common/icon_address_book.svg" className="icon" alt="Address Book icon" />: Only addresses associated with the blockchain network of the selected token will be listed.
+    - **My Wallets**: Select a wallet type and then click on the specific wallet you would like to transfer to.
+
+    If this transfer can be executed as a [Cobo Loop](/en/portal/custodial-wallets/cobo-loop) transfer, a related information bar will appear on the UI as the following screenshot shows.
+    
+    <img src="/en/images/custodial-wallet/web3/web3-wallet-cobo-loop.png" className="screenshot_full_screen"/>
+
+    <Info>If you are using the WaaS 2.0 API, you can use the [Check Cobo Loop transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) operation to determine if a transaction can be executed as a Cobo Loop transfer. Or directly call the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) operation to enforce a transaction as a Cobo Loop transfer.</Info>
+
+6. Enter the transfer amount.
+
+7. Review the transaction cost. Transaction cost includes network fees. You are unable to modify or customize this fee. The associated fees will be deducted from the selected **From** address, and it may differ from the token intended for the transfer.
+
+8. <MySnippet />
+
+9. Click **Submit**.
+
+10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
+
+## Next-Steps
+
+After making a transfer from your Asset Wallets, you can view its transaction status in **Transaction History**. The flash icon <img src="/en/images/custodial-wallet/icon_loop.png" className="icon" alt="The flash icon" /> indicates it was executed as a Cobo Loop transfer as the following screenshot shows.
+<img src="/en/images/transfers/loop_history.png" className="screenshot_full_screen" alt="Screenshot of the transaction history" />
+
+If you are using the WaaS 2.0 API, you can call the [Get transaction information](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) or [List all transactions operations](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) and check the `is_loop` property in the response. 
+Additionally, you can use the [Cobo Loop Explorer](https://loop.top/) along with the Loop ID (the transaction hash of the transfer) to track the status of Cobo Loop transfers.
+<Tip>Did you find this document helpful? Please [submit feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to share your thoughts with us.</Tip>
