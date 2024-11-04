@@ -136,26 +136,45 @@
                 {
                   "group": "How to use",
                   "pages": [
-                    "en/portal/custodial-wallets/set-up",
                     {
-                      "group": "Manage Custodial Wallets",
+                      "group": "Asset Wallets",
                       "pages": [
-                        "en/portal/custodial-wallets/manage",
-                        "en/portal/custodial-wallets/transfers",
+                        "en/portal/custodial-wallets/asset-wallets/set-up",
                         {
-                          "group": "Troubleshoot",
+                          "group": "Manage Asset Wallets",
                           "pages": [
-                            "en/portal/custodial-wallets/unable-to-create-wallet",
-                            "en/portal/custodial-wallets/unsupported-tokens-and-chains",
-                            "en/portal/custodial-wallets/transaction-not-processed-successfully"
+                            "en/portal/custodial-wallets/asset-wallets/manage",
+                            "en/portal/custodial-wallets/asset-wallets/transfers"
                           ]
                         }
+                      ]
+                    },
+                    {
+                      "group": "Web3 Wallets (coming soon)",
+                      "pages": [
+                        "en/portal/custodial-wallets/web3-wallets/set-up",
+                        {
+                          "group": "Manage Web3 Wallets",
+                          "pages": [
+                            "en/portal/custodial-wallets/web3-wallets/manage",
+                            "en/portal/custodial-wallets/web3-wallets/transfers",
+                            "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "group": "Troubleshoot",
+                      "pages": [
+                        "en/portal/custodial-wallets/unable-to-create-wallet",
+                        "en/portal/custodial-wallets/unsupported-tokens-and-chains",
+                        "en/portal/custodial-wallets/transaction-not-processed-successfully"
                       ]
                     }
                   ]
                 }
               ]
-            },
+            },            
             {
               "group": "MPC Wallets",
               "pages": [
@@ -315,7 +334,8 @@
             {
               "group": "How to use",
               "pages": [
-                "en/portal/transfers/from-custodial-wallets",
+                "en/portal/transfers/from-asset-wallets",
+                "en/portal/transfers/from-web3-wallets",
                 "en/portal/transfers/from-mpc-wallets",
                 "en/portal/transfers/from-smart-contract-wallets",
                 "en/portal/transfers/from-exchange-wallets"
@@ -965,7 +985,7 @@
             {
               "group": "使用说明",
               "pages": [
-                "cn/portal/transfers/from-custodial-wallets",
+                "cn/portal/transfers/from-asset-wallets",
                 "cn/portal/transfers/from-mpc-wallets",
                 "cn/portal/transfers/from-smart-contract-wallets",
                 "cn/portal/transfers/from-exchange-wallets"
