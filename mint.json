@@ -264,9 +264,8 @@
                       "group": "Set up Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
-                        "en/portal/smart-contract-wallets/import",
-                        "en/portal/smart-contract-wallets/set-up-delegate-keys",
-                        "en/portal/smart-contract-wallets/set-up-delegates"
+                        "en/portal/smart-contract-wallets/set-up",
+                        "en/portal/smart-contract-wallets/import"
                       ]
                     },
                     {
