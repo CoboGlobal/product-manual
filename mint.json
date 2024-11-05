@@ -807,26 +807,45 @@
                 {
                   "group": "使用说明",
                   "pages": [
-                    "cn/portal/custodial-wallets/set-up",
                     {
-                      "group": "管理全托管钱包",
+                      "group": "资产钱包",
                       "pages": [
-                        "cn/portal/custodial-wallets/manage",
-                        "cn/portal/custodial-wallets/transfers",
+                        "cn/portal/custodial-wallets/asset-wallets/set-up",
                         {
-                          "group": "问题排查",
+                          "group": "管理资产钱包",
                           "pages": [
-                            "cn/portal/custodial-wallets/unable-to-create-wallet",
-                            "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-                            "cn/portal/custodial-wallets/transaction-not-processed-successfully"
+                            "cn/portal/custodial-wallets/asset-wallets/manage",
+                            "cn/portal/custodial-wallets/asset-wallets/transfers"
                           ]
                         }
+                      ]
+                    },
+                    {
+                      "group": "Web3 钱包（即将推出）",
+                      "pages": [
+                        "cn/portal/custodial-wallets/web3-wallets/set-up",
+                        {
+                          "group": "管理 Web3 钱包",
+                          "pages": [
+                            "cn/portal/custodial-wallets/web3-wallets/manage",
+                            "cn/portal/custodial-wallets/web3-wallets/transfers",
+                            "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "group": "问题排查",
+                      "pages": [
+                        "cn/portal/custodial-wallets/unable-to-create-wallet",
+                        "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
+                        "cn/portal/custodial-wallets/transaction-not-processed-successfully"
                       ]
                     }
                   ]
                 }
               ]
-            },
+            },            
             {
               "group": "MPC 钱包",
               "pages": [
@@ -986,6 +1005,7 @@
               "group": "使用说明",
               "pages": [
                 "cn/portal/transfers/from-asset-wallets",
+                "cn/portal/transfers/from-web3-wallets",
                 "cn/portal/transfers/from-mpc-wallets",
                 "cn/portal/transfers/from-smart-contract-wallets",
                 "cn/portal/transfers/from-exchange-wallets"
