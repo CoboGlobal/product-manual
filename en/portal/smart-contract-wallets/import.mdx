@@ -1,18 +1,72 @@
 ---
-title: "Import a Smart Contract Wallet"
-sidebarTitle: "Import a Smart Contract Wallet"
+title: "Import and set up a Smart Contract Wallet"
+sidebarTitle: "Import and set up a Smart Contract Wallet"
 ---
 
-Note: Cobo Portal currently does not support deleting Safe&#123;Wallet&#125; once it has been imported.
+<Note>Only the Operator and Spender have permission to import a Safe&#123;Wallet&#125;. Cobo Portal currently does not support deleting Safe&#123;Wallet&#125; once it has been imported.</Note>
+
+## Step 1: Import a Safe&#123;Wallet&#125;
+
+#### If your current email address _is_ associated with a Safe&#123;Wallet&#125; in Cobo Argus
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **Smart Contract Wallets** > <img src="/en/images/smart-contract-wallet/button_import.svg" className="icon"></img>.
-3. In the pop-up window, select Safe&#123;Wallet&#125; and click Next.
-<img src="/en/images/smart-contract-wallet/2.png" className="screenshot_modal"></img>
-4. We will load all Safe&#123;Wallet&#125; instances with Cobo Safe enabled in Argus that are connected to your current email address.
-- If you do not have any Safe&#123;Wallet&#125; in Argus with Cobo Safe enabled, please follow the on-screen instructions to complete the setup on Argus.
-- Alternatively, you can close the current window and click <img src="/en/images/smart-contract-wallet/button_create.svg" className="icon"></img> in the upper-right corner to create a Safe&#123;Wallet&#125; directly on Cobo Portal.
-5. Select the Safe&#123;Wallet&#125; instances you want to import and click **Import**.
-<img src="/en/images/smart-contract-wallet/3.png" className="screenshot_modal"></img>
-6. Your Safe&#123;Wallet&#125; instances are now successfully imported from Argus into Cobo Portal.
+3. In the pop-up window, select Safe&#123;Wallet&#125;.
+<img src="/en/images/smart-contract-wallet/safe wallet.png" className="screenshot_modal"></img>
+4. Click **Import** to load all Safe&#123;Wallet&#125; instances with Cobo Safe enabled in Cobo Argus that are associated with your current email address.
+<img src="/en/images/smart-contract-wallet/import from argus.png" className="screenshot_modal"></img>
+5. Select the Safe&#123;Wallet&#125; instance you want to import into Cobo Portal. Then, click **Import**.
+<img src="/en/images/smart-contract-wallet/select argus.png" className="screenshot_modal"></img>
+6. You have successfully imported a Safe&#123;Wallet&#125;. You may now proceed to Step 2.
+
+#### If your current email address _is not_ associated with any Safe&#123;Wallet&#125; in Cobo Argus
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **Smart Contract Wallets** > <img src="/en/images/smart-contract-wallet/button_import.svg" className="icon"></img>.
+3. In the pop-up window, select Safe&#123;Wallet&#125;.
+<img src="/en/images/smart-contract-wallet/safe wallet.png" className="screenshot_modal"></img>
+4. Enter the address of the Safe&#123;Wallet&#125; you want to import into Cobo Portal. Your Safe&#123;Wallet&#125; instances will load automatically.
+<img src="/en/images/smart-contract-wallet/load.png" className="screenshot_modal"></img>
+5. Select the Safe&#123;Wallet&#125; instance you want to import. Then, click **Import**.
+6. You have successfully imported a Safe&#123;Wallet&#125;. You may now proceed to Step 2.
+
+## Step 2: Set up a Delegate Key
+
+The Delegate Key is used to initiate, but not sign, multi-sig transactions on behalf of Safe&#123;Wallet&#125; signers. It is a dedicated address created and assigned by Cobo.
+
+1. In the pop-up window, click **Set Up**.
+<img src="/en/images/smart-contract-wallet/import success.png" className="screenshot_modal"></img>
+2. Click **Set Up Delegate Key**.
+<img src="/en/images/smart-contract-wallet/set up delegate key.png" className="screenshot_modal"></img>
+3. If you are not the Safe&#123;Wallet&#125; signer:
+- Click <img src="/en/images/smart-contract-wallet/button_copy.svg" className="icon"></img> to copy the link shown in the pop-up window. Then, send it to any of your Safe&#123;Wallet&#125; signers to sign.
+- Alternatively, click **Copy All and Close** to copy all information, including the Safe&#123;Wallet&#125; address, Delegate Key, and URL.
+<img src="/en/images/smart-contract-wallet/4.png" className="screenshot_modal"></img>
+4. If you are the Safe&#123;Wallet&#125; signer:
+- Navigate to the link provided and connect to your wallet associated with this Safe&#123;Wallet&#125;.
+- In the pop-up window, review the auto-filled fields and enter a label for this Delegate Key. Then, click **Sign Message**.
+- Sign a message in your connected wallet.
+<img src="/en/images/smart-contract-wallet/set up your delegate key.png" className="screenshot_modal"></img>
+5. The new Delegate Key will be displayed on the homepage. You may now proceed to Step 3.
+
+## Step 3: Create an on-chain transaction policy
+1. On the Smart Contract Wallets homepage, navigate to Status and click **Setup Required** > **Create** next to your Safe&#123;Wallet&#125;.
+<img src="/en/images/smart-contract-wallet/create policy.png" className="screenshot_modal"></img>
+2. Select the type of on-chain transaction policy you want to create. Note that creating an on-chain transaction policy requires you to select Delegates. Upon successful creation of this on-chain transaction policy, you authorize these Delegates to perform certain tasks (e.g., token transfers, token approvals, contract calls) using a single-signature.
+<img src="/en/images/smart-contract-wallet/on-chain tx types.png" className="screenshot_modal"></img>
+3. Click **Next**.
+4. Set up an on-chain transaction policy. For step-to-step guides, refer to [Create contract call policy](/en/portal/risk-controls/create-on-chain-policy).
+5. (If applicable) If you imported an instance directly from Safe&#123;Wallet&#125; instead of Cobo Argus, you will be prompted to manually enable Cobo Safe, a smart contract framework that offers delegation and parameter-level access controls. Click **Confirm** to enable Cobo Safe and submit your policy in a single transaction.
+<img src="/en/images/smart-contract-wallet/enable cobo safe.png" className="screenshot_modal"></img>
+6. Complete the MFA verification.
+7. A multi-sig confirmation from Safe&#123;Wallet&#125; signers is required. Please notify the signers to complete the transaction on Safe&#123;Wallet&#125;.
+8. Once the multi-sig confirmation is complete, return to the Smart Contract Wallets homepage. The status of your Safe&#123;Wallet&#125; will now be automatically updated to **Ready for use**.
+
+#### What is a Delegate?
+
+Delegate can either be an address from your MPC Wallets (Organization-Controlled), Custodial Wallets (Web3 Wallets), or an EOA address. It is pre-authorized by Safe&#123;Wallet&#125; signers to perform single-signature operations, such as transferring funds or interacting with dApps. Importantly, the Delegate is responsible for handling gas fees during the execution of single-signature transactions.
+
+<img src="/en/images/smart-contract-wallet/8.png" className="screenshot"></img>
+
+On Cobo Portal, you can set up Delegates by creating on-chain transaction policies for Smart Contract Wallets. The addresses entered during setup will automatically be designated as Delegates for performing single-signature operations.
 <Tip>Did you find this document helpful? Please [submit feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to share your thoughts with us.</Tip>
