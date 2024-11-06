@@ -264,7 +264,6 @@
                       "group": "Set up Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
-                        "en/portal/smart-contract-wallets/set-up",
                         "en/portal/smart-contract-wallets/import"
                       ]
                     },
