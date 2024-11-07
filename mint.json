@@ -931,9 +931,7 @@
                       "group": "设置智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
-                        "cn/portal/smart-contract-wallets/import",
-                        "cn/portal/smart-contract-wallets/set-up-delegate-keys",
-                        "cn/portal/smart-contract-wallets/set-up-delegates"
+                        "cn/portal/smart-contract-wallets/import"
                       ]
                     },
                     {
