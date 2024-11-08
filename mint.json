@@ -915,7 +915,17 @@
                     {
                       "group": "终端用户钱包",
                       "pages": [
-                        "cn/portal/mpc-wallets/ucw/introduction"
+                        "cn/portal/mpc-wallets/ucw/introduction",
+                        "cn/portal/mpc-wallets/ucw/object-model",
+                        "cn/portal/mpc-wallets/ucw/set-up",
+                        {
+                          "group": "管理终端用户钱包",
+                          "pages": [
+                            "cn/portal/mpc-wallets/ucw/project-management",
+                            "cn/portal/mpc-wallets/ucw/vault-management",
+                            "cn/portal/mpc-wallets/ucw/wallet-management"
+                          ]
+                        }
                       ]
                     }
                   ]
