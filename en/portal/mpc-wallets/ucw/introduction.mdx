@@ -3,9 +3,25 @@ title: "Introduction to User-Controlled Wallets"
 sidebarTitle: "Introduction"
 ---
 
-## What are User-Controlled Wallets?
+## What are User-Controlled Wallets
 
-User-Controlled Wallets are a subtype of [MPC Wallets](/en/portal/mpc-wallets/introduction). User-Controlled Wallets will be released soon.
+User-Controlled Wallets are a subtype of [MPC Wallets](/en/portal/mpc-wallets/introduction). In a User-Controlled Wallet, end users of your [organization](/en/portal/organization/introduction) are given full control of their digital assets. In this setup, each end user of your organization holds their own unique private key share to their MPC Wallets.
 
-<img src="/en/images/mpc-wallet/UCW.svg"/>
+With a flexible [Threshold Signature Scheme (TSS)](/en/portal/mpc-wallets/introduction#threshold-signature-scheme-tss) (”m out of n” key shares), User-Controlled Wallets allow your organization to customize how transactions are signed. For example, under a 3-3 signature scheme, your organization, your end user, and Cobo each hold a key share, and all three key shares must collectively sign transactions. Alternatively, a 2-3 signature scheme can be implemented, where your organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
+
+To integrate non-custodial MPC Wallets into your applications, a 2-2 signature can be implemented, where your end user and Cobo each hold a key share, while your organization holds none.
+
+### 3-3 signature scheme
+
+<img src="/en/images/mpc-wallet/3-3 signature scheme.svg" className="diagram" alt="Image showing the 3-3 signature scheme" />
+
+### 2-3 signature scheme
+
+<img src="/en/images/mpc-wallet/2-3 signature scheme.svg" className="diagram" alt="Image showing the 2-3 signature scheme"/>
+
+### 2-2 signature scheme
+
+<img src="/en/images/mpc-wallet/2-2 signature scheme.svg" className="diagram" alt="Image showing the 2-2 signature scheme"/>
+
+
 <Tip>Did you find this document helpful? Please [submit feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to share your thoughts with us.</Tip>
