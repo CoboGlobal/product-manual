@@ -7,7 +7,7 @@
   },
   "analytics": {
     "ga4": {
-      "measurementId": "G-L7HJ1E4SJW"
+      "measurementId": "G-W10EF7K0H5"
     }
   },
   "logo": {
@@ -174,7 +174,7 @@
                   ]
                 }
               ]
-            },            
+            },
             {
               "group": "MPC Wallets",
               "pages": [
@@ -188,28 +188,24 @@
                       "pages": [
                         "en/portal/mpc-wallets/ocw/introduction",
                         "en/portal/mpc-wallets/ocw/object-model",
-
-                                                {
-  "group": "Set up Organization-Controlled Wallets",
-  "pages": [
-    "en/portal/mpc-wallets/ocw/set-up",
-    "en/portal/mpc-wallets/ocw/create-mpc-vault",
-    {
-      "group": "Create holder groups",
-      "pages": [
-        "en/portal/mpc-wallets/ocw/holder-group-overview",
-        "en/portal/mpc-wallets/ocw/holder-group-main-group",
-        "en/portal/mpc-wallets/ocw/holder-group-signing-group",
-        "en/portal/mpc-wallets/ocw/holder-group-recovery-group"
-      ]
-    },
-    "en/portal/mpc-wallets/ocw/back-up-key-share-groups",
-    "en/portal/mpc-wallets/ocw/create-mpc-wallet"
-
-  ]
-},
-
-
+                        {
+                          "group": "Set up Organization-Controlled Wallets",
+                          "pages": [
+                            "en/portal/mpc-wallets/ocw/set-up",
+                            "en/portal/mpc-wallets/ocw/create-mpc-vault",
+                            {
+                              "group": "Create holder groups",
+                              "pages": [
+                                "en/portal/mpc-wallets/ocw/holder-group-overview",
+                                "en/portal/mpc-wallets/ocw/holder-group-main-group",
+                                "en/portal/mpc-wallets/ocw/holder-group-signing-group",
+                                "en/portal/mpc-wallets/ocw/holder-group-recovery-group"
+                              ]
+                            },
+                            "en/portal/mpc-wallets/ocw/back-up-key-share-groups",
+                            "en/portal/mpc-wallets/ocw/create-mpc-wallet"
+                          ]
+                        },
                         {
                           "group": "(For API co-signer) Technical setup",
                           "pages": [
@@ -245,7 +241,17 @@
                     {
                       "group": "User-Controlled Wallets",
                       "pages": [
-                        "en/portal/mpc-wallets/ucw/introduction"
+                        "en/portal/mpc-wallets/ucw/introduction",
+                        "en/portal/mpc-wallets/ucw/object-model",
+                        "en/portal/mpc-wallets/ucw/set-up",
+                        {
+                          "group": "Manage User-Controlled Wallets",
+                          "pages": [
+                            "en/portal/mpc-wallets/ucw/project-management",
+                            "en/portal/mpc-wallets/ucw/vault-management",
+                            "en/portal/mpc-wallets/ucw/wallet-management"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -264,9 +270,7 @@
                       "group": "Set up Smart Contract Wallets",
                       "pages": [
                         "en/portal/smart-contract-wallets/create",
-                        "en/portal/smart-contract-wallets/import",
-                        "en/portal/smart-contract-wallets/set-up-delegate-keys",
-                        "en/portal/smart-contract-wallets/set-up-delegates"
+                        "en/portal/smart-contract-wallets/import"
                       ]
                     },
                     {
@@ -281,7 +285,7 @@
                             "en/portal/smart-contract-wallets/withdraw-assets"
                           ]
                         },
-                                                "en/portal/smart-contract-wallets/dapp-interaction"
+                        "en/portal/smart-contract-wallets/dapp-interaction"
                       ]
                     }
                   ]
@@ -563,10 +567,10 @@
                 {
                   "group": "Cobo Portal Apps",
                   "pages": [
-                  "en/portal/developer-console/api-dashboard",
-                  "en/portal/developer-console/app-usage",
-                  "en/portal/developer-console/app-api-logs",
-                  "en/portal/developer-console/app-webhooks"
+                    "en/portal/developer-console/api-dashboard",
+                    "en/portal/developer-console/app-usage",
+                    "en/portal/developer-console/app-api-logs",
+                    "en/portal/developer-console/app-webhooks"
                   ]
                 }
               ]
@@ -576,7 +580,7 @@
         "en/portal/portal-apps/build"
       ],
       "version": "English"
-    },    
+    },
     {
       "group": "BUILT BY COBO",
       "pages": [
@@ -755,7 +759,6 @@
             "en/guard/manage",
             "en/guard/generate-and-back-up-key-shares",
             "en/guard/reset"
-
           ]
         }
       ],
@@ -807,20 +810,39 @@
                 {
                   "group": "使用说明",
                   "pages": [
-                    "cn/portal/custodial-wallets/set-up",
                     {
-                      "group": "管理全托管钱包",
+                      "group": "资产钱包",
                       "pages": [
-                        "cn/portal/custodial-wallets/manage",
-                        "cn/portal/custodial-wallets/transfers",
+                        "cn/portal/custodial-wallets/asset-wallets/set-up",
                         {
-                          "group": "问题排查",
+                          "group": "管理资产钱包",
                           "pages": [
-                            "cn/portal/custodial-wallets/unable-to-create-wallet",
-                            "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-                            "cn/portal/custodial-wallets/transaction-not-processed-successfully"
+                            "cn/portal/custodial-wallets/asset-wallets/manage",
+                            "cn/portal/custodial-wallets/asset-wallets/transfers"
                           ]
                         }
+                      ]
+                    },
+                    {
+                      "group": "Web3 钱包（即将推出）",
+                      "pages": [
+                        "cn/portal/custodial-wallets/web3-wallets/set-up",
+                        {
+                          "group": "管理 Web3 钱包",
+                          "pages": [
+                            "cn/portal/custodial-wallets/web3-wallets/manage",
+                            "cn/portal/custodial-wallets/web3-wallets/transfers",
+                            "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "group": "问题排查",
+                      "pages": [
+                        "cn/portal/custodial-wallets/unable-to-create-wallet",
+                        "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
+                        "cn/portal/custodial-wallets/transaction-not-processed-successfully"
                       ]
                     }
                   ]
@@ -840,26 +862,24 @@
                       "pages": [
                         "cn/portal/mpc-wallets/ocw/introduction",
                         "cn/portal/mpc-wallets/ocw/object-model",
-
-                                                {
-  "group": "创建机构钱包",
-  "pages": [
-    "cn/portal/mpc-wallets/ocw/set-up",
-    "cn/portal/mpc-wallets/ocw/create-mpc-vault",
-    {
-      "group": "创建持有者组",
-      "pages": [
-        "cn/portal/mpc-wallets/ocw/holder-group-overview",
-        "cn/portal/mpc-wallets/ocw/holder-group-main-group",
-        "cn/portal/mpc-wallets/ocw/holder-group-signing-group",
-        "cn/portal/mpc-wallets/ocw/holder-group-recovery-group"
-      ]
-    },
-    "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
-    "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
-
-  ]
-},
+                        {
+                          "group": "创建机构钱包",
+                          "pages": [
+                            "cn/portal/mpc-wallets/ocw/set-up",
+                            "cn/portal/mpc-wallets/ocw/create-mpc-vault",
+                            {
+                              "group": "创建持有者组",
+                              "pages": [
+                                "cn/portal/mpc-wallets/ocw/holder-group-overview",
+                                "cn/portal/mpc-wallets/ocw/holder-group-main-group",
+                                "cn/portal/mpc-wallets/ocw/holder-group-signing-group",
+                                "cn/portal/mpc-wallets/ocw/holder-group-recovery-group"
+                              ]
+                            },
+                            "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
+                            "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
+                          ]
+                        },
                         {
                           "group": "(API 签名人) 配置说明",
                           "pages": [
@@ -895,7 +915,17 @@
                     {
                       "group": "终端用户钱包",
                       "pages": [
-                        "cn/portal/mpc-wallets/ucw/introduction"
+                        "cn/portal/mpc-wallets/ucw/introduction",
+                        "cn/portal/mpc-wallets/ucw/object-model",
+                        "cn/portal/mpc-wallets/ucw/set-up",
+                        {
+                          "group": "管理终端用户钱包",
+                          "pages": [
+                            "cn/portal/mpc-wallets/ucw/project-management",
+                            "cn/portal/mpc-wallets/ucw/vault-management",
+                            "cn/portal/mpc-wallets/ucw/wallet-management"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -914,9 +944,7 @@
                       "group": "设置智能合约钱包",
                       "pages": [
                         "cn/portal/smart-contract-wallets/create",
-                        "cn/portal/smart-contract-wallets/import",
-                        "cn/portal/smart-contract-wallets/set-up-delegate-keys",
-                        "cn/portal/smart-contract-wallets/set-up-delegates"
+                        "cn/portal/smart-contract-wallets/import"
                       ]
                     },
                     {
@@ -931,8 +959,7 @@
                             "cn/portal/smart-contract-wallets/withdraw-assets"
                           ]
                         },
-                                                                        "cn/portal/smart-contract-wallets/dapp-interaction"
-
+                        "cn/portal/smart-contract-wallets/dapp-interaction"
                       ]
                     }
                   ]
@@ -986,6 +1013,7 @@
               "group": "使用说明",
               "pages": [
                 "cn/portal/transfers/from-asset-wallets",
+                "cn/portal/transfers/from-web3-wallets",
                 "cn/portal/transfers/from-mpc-wallets",
                 "cn/portal/transfers/from-smart-contract-wallets",
                 "cn/portal/transfers/from-exchange-wallets"
@@ -1175,54 +1203,54 @@
             {
               "group": "使用说明",
               "pages": [
-                  {
-                    "group": "WaaS 2.0",
-                    "pages": [
-                      "cn/portal/developer-console/overview",
-                      {
-                        "group": "API keys",
-                        "pages": [
-                          "cn/portal/developer-console/why-create-api-keys",
-                          "cn/portal/developer-console/create-api-key",
-                          "cn/portal/developer-console/manage-api-key"
-                        ]
-                      },
-                      {
-                        "group": "Webhooks",
-                        "pages": [
-                          "cn/portal/developer-console/webhooks-intro",
-                          "cn/portal/developer-console/webhooks-notif-subs",
-                          "cn/portal/developer-console/webhooks-create",
-                          "cn/portal/developer-console/webhooks-manage"
-                        ]
-                      },
-                      {
-                        "group": "Callbacks",
-                        "pages": [
-                          "cn/portal/developer-console/callbacks-intro",
-                          "cn/portal/developer-console/callbacks-notif-subs",
-                          "cn/portal/developer-console/callbacks-register",
-                          "cn/portal/developer-console/callbacks-manage"
-                        ]
-                      },
-                      "cn/portal/developer-console/api-logs",
-                      "cn/portal/developer-console/webhook-events",
-                      "cn/portal/developer-console/callback-messages"
-                    ]
-                  },
-                  {
-                    "group": "Cobo Portal Apps",
-                    "pages": [
+                {
+                  "group": "WaaS 2.0",
+                  "pages": [
+                    "cn/portal/developer-console/overview",
+                    {
+                      "group": "API keys",
+                      "pages": [
+                        "cn/portal/developer-console/why-create-api-keys",
+                        "cn/portal/developer-console/create-api-key",
+                        "cn/portal/developer-console/manage-api-key"
+                      ]
+                    },
+                    {
+                      "group": "Webhooks",
+                      "pages": [
+                        "cn/portal/developer-console/webhooks-intro",
+                        "cn/portal/developer-console/webhooks-notif-subs",
+                        "cn/portal/developer-console/webhooks-create",
+                        "cn/portal/developer-console/webhooks-manage"
+                      ]
+                    },
+                    {
+                      "group": "Callbacks",
+                      "pages": [
+                        "cn/portal/developer-console/callbacks-intro",
+                        "cn/portal/developer-console/callbacks-notif-subs",
+                        "cn/portal/developer-console/callbacks-register",
+                        "cn/portal/developer-console/callbacks-manage"
+                      ]
+                    },
+                    "cn/portal/developer-console/api-logs",
+                    "cn/portal/developer-console/webhook-events",
+                    "cn/portal/developer-console/callback-messages"
+                  ]
+                },
+                {
+                  "group": "Cobo Portal Apps",
+                  "pages": [
                     "cn/portal/developer-console/api-dashboard",
                     "cn/portal/developer-console/app-usage",
                     "cn/portal/developer-console/app-api-logs",
                     "cn/portal/developer-console/app-webhooks"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         "cn/portal/portal-apps/build"
       ],
       "version": "简体中文"
@@ -1325,7 +1353,7 @@
               "pages": [
                 "cn/apps/batch-payouts/make-payout",
                 "cn/apps/batch-payouts/manage-payouts"
-                ]
+              ]
             }
           ]
         },
