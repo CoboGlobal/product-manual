@@ -144,6 +144,10 @@ table th, table td {
   min-width: 100px; /* for six-column tables */
 }
 
+.four-columns th, .four-columns td {
+  min-width: 150px; /* for four-column tables */
+}
+
 /* Style the header */
 table th {
   height: 37px;
