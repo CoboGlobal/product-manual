@@ -1,0 +1,47 @@
+---
+title: "术语表"
+sidebarTitle: "术语表"
+---
+
+<Note>本术语表将定期更新，添加新的产品术语和定义。</Note>
+
+## C
+#### Cobo Safe
+Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-account-modules) 构建的智能合约。Safe Module 扩展了 Safe&#123;Wallet&#125; 的功能，同时将模块逻辑与 Safe&#123;Wallet&#125; 的核心合约分离。作为插件集成在 Safe&#123;Wallet&#125; 中后，Cobo Safe 实现了基于用户角色的精细化链上访问控制。您可以授权外部拥有账户（EOA）通过单签执行由多个 Safe&#123;Wallet&#125; 签名人预授权的操作。
+
+## D
+#### Delegate Key
+Delegate Key 用于代表 Safe&#123;Wallet&#125; 签名人发起（只发起不执行）多签交易。它是由 Cobo 创建的地址，在 Delegate Key 设置过程中自动分配给您。
+
+#### Delegate
+Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的操作。此授权是您在 Cobo Portal 上为智能合约钱包（Safe&#123;Wallet&#125;）设置链上交易规则时授予的。Delegate 可以是来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）的地址。
+
+## I
+#### Initiator address（发起钱包地址）
+发起钱包地址用于支付在 Cobo Portal 上创建智能合约钱包（Safe&#123;Wallet&#125;）的费用。发起钱包地址必须来自 MPC 钱包（机构钱包）。
+
+## M
+#### Multi-sig transaction（多签交易）
+多签交易需要多个私钥持有人在交易执行前共同授权，而不是仅依赖于单个私钥的签名。
+
+## O
+#### On-chain transaction policy（链上交易风控规则）
+链上交易风控规则由区块链网络上的智能合约管理。通过这些规则，您可以定义交易的处理流程和自动审批方式。请注意，您必须先设置链上交易规则，才能使用智能合约钱包（Safe&#123;Wallet&#125;）进行提现或与 dApp 交互。
+
+## S
+#### Safe&#123;Wallet&#125;
+Safe&#123;Wallet&#125; 是一款多签钱包和平台，用于在以太坊和流行的 EVM 链上为您存储数字资产。
+
+#### Signer address（签名人地址）
+在智能合约钱包（Safe&#123;Wallet&#125;）内，签名人地址用于发起、签署和执行交易。在 Cobo Portal 上，签名人地址可以来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）。
+
+#### Single-sig transaction（单签交易）
+单签交易只需要一个私钥持有人的签名即可授权交易。
+
+#### Smart contract wallet（智能合约钱包）
+智能合约钱包是一种基于区块链技术构建的去中心化应用（dApp），允许用户通过可编程的智能合约管理数字资产。
+
+## T
+#### Threshold（阈值）
+智能合约钱包（Safe&#123;Wallet&#125;）的阈值定义了在执行交易之前，必须有多少个签名人地址批准该交易。
+<Tip>这篇文档对您有帮助吗？欢迎[提交反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，让我们知道您的想法。</Tip>
