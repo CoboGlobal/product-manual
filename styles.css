@@ -156,5 +156,4 @@ table th {
 /* Add left padding to the first column */
 table th:first-child, table td:first-child {
   padding-left: 8px;
-  padding-top: 28px;
 }
