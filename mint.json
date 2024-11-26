@@ -1469,7 +1469,7 @@
   "feedback": {
     "suggestEdit": false,
     "raiseIssue": false,
-    "thumbsRating": false
+    "thumbsRating": true
   },
   "redirects": [
     {
