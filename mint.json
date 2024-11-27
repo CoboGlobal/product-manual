@@ -664,6 +664,7 @@
                       ]
                     },
                     "en/apps/invoicing/clients",
+                    "en/apps/invoicing/titles",
                     "en/apps/invoicing/payment"
                   ]
                 }

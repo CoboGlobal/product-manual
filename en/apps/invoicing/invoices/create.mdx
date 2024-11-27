@@ -9,32 +9,47 @@ sidebarTitle: "Create an invoice"
     <img src="/en/images/portal-apps/invoicing/create_invoice.png" className="screenshot_full_screen" alt="Create Invoice page"/>
     
     General information:
+    - **From**: Select a title from the dropdown menu.
     - **Payment Due**: The invoice's due date.
     - **Issued On**: The date the invoice is issued.
     - **Client**: Select a client from the list, which only shows clients in the **Active** status. You can also add a new client manually. Click **Add CC Recipients** to add email addresses for those who should receive a copy of the invoice.
     - **Expected Payment Tokens**: Select one or multiple payment tokens. If you select multiple tokens, the payer can choose any one of them to complete the payment.
+    - **Package (Optional)**: Enter the name or description of the service package arranged with the client, up to 50 characters.
+    - **Billing Cycle (Optional)**: Enter the billing cycle (for example, monthly, quarterly, or annual), up to 50 characters.
+    - **Client Account (Optional)**: Enter the client's payment account, up to 50 characters.
     - **Memo (Optional)**: Enter a memo of up to 500 characters.
     - **Category (Optional)**: Enter a category of up to 100 characters.
     - **Recurring Invoice (Optional)**: Toggle the option on if you want the invoice to repeat. You can select the frequency and choose how you want the repetition to end.
 
-    Item information:
+    Item lines:
+    - **Line Type**: For item information, select **Item** as **Line Type**.
     - **Item**: Name or description of the item, with a character limit of 3-100 characters. To add more items, click **Add an Item**.
+    - **Description (Optional)**: Additional description for the item, up to 200 characters.
+    - **Note (Optional)**: Additional notes for the item, up to 200 characters.
     - **Quantity**: Enter a positive integer.
     - **Unit Price**: Enter a price with no more than 8 decimal places.
     - **Discount (Optional)**: Enter a discount as a percentage.
     - **Tax (Optional)**: Enter a tax rate as a percentage greater than 0. 
-    - **Overall Discount**: Additional discount applied to all items on top of individual item discounts. 
+
+    Discount lines:
+    - **Line Type**: For discount information, select **Discount** as **Line Type**.
+    - **Description (Optional)**: Description for the discount, up to 200 characters.
+    - **Quantity**: Defaults to 1.
+    - **Unit Price**: Enter a positive number as the amount to be deducted.
+    - **Note (Optional)**: Additional notes for the discount, up to 200 characters.
+
+    **Overall Discount**: Additional discount applied to all items on top of individual item discounts. 
 
     The amounts are calculated automatically:
 
-    - **Amount**: Amount = (Unit price * Quantity * (1 - discount) * (1 - overall discount)) * (1 + tax).
+    - **Amount** for each item: Amount = (Unit price * Quantity * (1 - discount percentage) * (1 - overall discount percentage)) * (1 + tax).
     - **Amount without Tax**: The total amount before tax is applied.
     - **Total Tax Amount**: The total tax amount, calculated by applying the tax rate to the discounted price of each item.
-    - **Due**: The total amount due with tax, displayed with up to 6 decimal places.
+    - **Due**: The total amount due with tax minus any discount lines, displayed with up to 6 decimal places.
 
-4. Either click **Save Draft** to save the current invoice as a draft, or click **Create & Send** to send the invoice. If the system detects that the client's status is **Frozen**, a prompt will indicate that the invoice cannot be sent.
-5. After you click **Create & Send**, it usually takes about 10 seconds for the payment link to be generated; then the invoice status will change from **Sending** to **Pending**. An email notification is sent to the client. For more information about the process from your client's perspective, see [Invoice payment](/en/apps/invoicing/payment).
+4. Either click **Save Draft** to save the current invoice as a draft, or click **Submit** to proceed with the invoice. If the system detects that the client's status is **Frozen**, a prompt will indicate that the invoice cannot be sent.
+5. After you click **Submit**, the invoice status will change to **Submitted** and a payment link will be generated. The invoice will be pending review. Once the invoice is approved, click **Send** to send the invoice to the client. If rejected, the invoice status will return to **Draft**.
 
-    <Note>If the status remains **Sending** for 24 hours, please contact the Cobo invoice support team at [invoiceservice@cobo.com](mailto:invoiceservice@cobo.com).</Note>
+    <Note>If the status remains **Sending** for an extended period, please contact the Cobo invoice support team at [invoiceservice@cobo.com](mailto:invoiceservice@cobo.com).</Note>
 
 <Tip>Did you find this document helpful? Please [submit feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to share your thoughts with us.</Tip>
