@@ -1,0 +1,407 @@
+# Review Rules
+When the command contains "rococo":
+1. Check for any grammar issues, spelling mistakes, typos, and punctuation usage problems in the document or all documents in the specified folder.
+2. Review the document for any violations of the rules contained in the `style` section below, but only apply style corrections if the relevant terminology or phrasing is present in the document.
+3. If any issues are found, categorize them by severity and type:
+  - First, return errors (e.g., grammar, spelling) along with the line number where each issue occurs, display the original text, and provide corrected versions in code blocks so that they can be applied directly.
+  - Then, return suggestions for improvements (e.g., style, clarity) with line numbers, display the original text, and provide corrected versions in code blocks so that they can be applied directly.
+  - If the review involves multiple files, list errors or improvements by file.
+4. If there are no issues, simply respond with "Check completed".
+
+## Style
+
+## Terminology Guide
+
+### User Roles and Permissions
+- Use 'Roles and permissions' if space is a limitation
+
+### Wallet Types
+- Custodial Wallets (Asset Wallets)
+- Custodial Wallets (Web3 Wallets)
+- MPC Wallets (Organization-Controlled Wallets)
+- MPC Wallets (User-Controlled Wallets)
+- Smart Contract Wallets (Safe{Wallet})
+- Exchange Wallets (Main Account)
+- Exchange Wallets (Sub Account)
+- When referring to a subtype, explain the relation first and then use the subtype name directly. E.g., Asset Wallets are a subtype of Custodial Wallets. Asset Wallets ...
+
+### Holder Groups / Key Share Holder Groups
+- Main Group
+- Signing Group
+- Recovery Group
+For Product Manuals, use Holder Groups
+For Developer Hub & WaaS, use Key Share Holder Groups
+- Key share holder 1
+- Key share holder 2
+
+- Approval Quorum
+- Threshold
+- Threshold signature scheme (TSS)
+- Use RESTful for 2.0 API, not REST API.
+- Do not use Contract, as Service Agreement is more preferred by SaaS companies.
+- Use dApp; DApp is used only when it is the first word of a sentence.
+- Cobo Portal Apps
+
+### User Roles
+- Viewer
+- Spender
+- Approver
+- Operator
+- Admin
+
+### Risk Controls
+- Transaction Policies
+ - On-Chain Transaction Policies (applicable to SCW only)
+ - Off-Chain Transaction Policies (applicable to all wallet types)
+- Governance Policies
+- User Roles and Permissions
+
+### A Wallet Created on Cobo Portal
+Avoid using Cobo wallet / Cobo wallets
+
+### Wallet-as-a-Service
+S is caps, not Wallet-as-a-service
+
+### Outgoing Transfer Volume
+For bills and payments, use outgoing transfer volume. Do not use outgoing transaction volume.
+
+## Choice of Words
+
+### "Choose" vs. "Select"
+
+- Use **choose**, not **select**, for menu items. In general, the user selects something (such as a file or disk icon, an email message, or a section of text) and then chooses a command to act on the selection.
+ - Choose View > Sort By > Date.
+ - Select the text to copy, and then choose Edit > Copy.
+ - Click the pop-up menu, and then choose High Priority.
+ - Control-click the TextEdit icon, and then choose Make Alias.
+
+- Use **select**, not **choose**, to refer to the action users perform when they select among multiple objects—such as icons, graphic images, radio buttons, or checkboxes—or when they highlight text for editing.
+ - Select a name in the list.
+ - To select several files at once, Command-click them.
+ - Select the text you want to make bold.
+ - Select the Shadow checkbox.
+
+- **Selecting objects**: Although users generally click to select objects (they can also use the keyboard), you need to use the complete phrase click to select only if you think there’s potential for confusion. Both of the following examples are acceptable.
+ - Click (or tap) to select a name in the list.
+ - Select a name in the list.
+
+- **Interface items**: Although it’s usually clearest to include an item’s name (if it has one) and type of item (such as a checkbox), you can also refer to an item as an option or use only the item’s name.
+ - Select the option “Object causes wrap.”
+ - To position the Dock on your screen, select Left, Bottom, or Right.
+
+- Use **choose** for menu items, including those in pop-up and shortcut menus.
+
+### Centralized
+
+- Don’t use "centralized" to describe ourselves.
+
+### Click
+
+- Use to describe the act of selecting something or initiating an action by positioning the pointer over an onscreen element and briefly pressing and releasing the mouse or trackpad.
+ - To open Mail, click the Mail icon in the Dock.
+ - Click a disk icon to select it, and then choose File > Make Alias.
+
+- Don’t use click on. Don’t say click the mouse or click the trackpad; instead, use press and release.
+ - Press the mouse, drag to enclose the area you want to select, and then release.
+
+### Desired
+
+- Try to avoid.
+ - Correct: make your changes, select the folder.
+ - Incorrect: make the desired changes, select the desired folder.
+
+### Expiration Date
+
+- Don’t use Expiry Date.
+
+### Key share/key shares
+
+- Say “Key share”, not “Key-share”.
+ - Don’t say “MPC key share”. Can say private key shares or public key shares depending on the context.
+
+### Developer environment
+
+- Please select the development environment if you intend to freely test Cobo Portal and try unreleased features without impacting operations in the production environment. Conversely, please select the production environment if you want to interact with the latest version of the Cobo Portal platform deployed in a live setting.
+
+### Recommend
+
+- When describing something users are encouraged to do, don’t use we recommend or Cobo recommends; use recommended.
+ - Correct: It is recommended that you import video using the same camera you used to record it.
+ - Incorrect: We recommend that you import video using the same camera you used to record it.
+
+- You can also use less formal phrases like it is a good idea to.
+ - E.g., It is a good idea to create a password hint.
+
+### Wish
+
+- Don’t use; use want.
+
+### Code
+
+- In the context of programming, code is used as a mass noun, rather than a countable noun. You cannot write “many codes”; instead, you write “a lot of code”.
+ - However, “status code” is countable. So you can say “HTTP response status codes”.
+
+### Product name
+
+- Use full names for all product names except for individual apps within Cobo Portal Apps.
+ - Cobo product names:
+   - Cobo Portal
+   - Cobo Safe
+   - Cobo Guard
+   - Cobo Accounts
+   - Cobo Portal Apps
+ - Individual apps within Cobo Portal Apps:
+   - SuperLoop
+   - Staking
+   - Invoicing
+   - Reports
+   - Batch Payouts
+
+### Balance vs. Value
+
+- Use "value" when referring to fiat amount.
+- Use "balance" when referring to crypto asset amount.
+
+### Web3
+
+- Use Web3, not Web 3.0.
+
+### Delegate
+
+- Capitalize and write "Delegate" since it is our product name.
+
+### Address Book
+
+- Capitalize and write "Address Book" since it is our product name.
+
+### Main menu
+
+- To standardize this term across board. Main menu refers to the icons in the white column on the left hand side + the menu in the grey area.
+
+## General Guidelines
+
+### Spelling
+
+- Use American spelling.
+
+### Grammar
+
+- **Second Person**: Use 2nd person perspective. Replace "my" with "you". For example: "View my balance" should become "View your balance".
+
+### Plurals
+
+- Use plural when possible. Use singular when the chapter is about creating a single wallet. For example:
+ - Introduction to Custodial Wallets
+ - What are Custodial Wallets
+ - Key features
+ - Set up Custodial Wallets
+ - Create an Asset Wallet
+ - Create a Web3 Wallet
+ - Manage Custodial Wallets
+ - **Exception**: For Safe{Wallet}, keep it singular. Use phrases like "Safe{Wallet} accounts" for plural context.
+ - Avoid using (s) to indicate optional plurality. E.g., use "Signing Groups" instead of "Signing Group(s)".
+
+### Contractions
+
+- Avoid contractions like "It's"; use "It is" instead.
+
+### Capitalization
+
+- Use sentence case for topic titles, except for module names. For example:
+ - What is an Exchange Wallet?
+ - Deposit and transfer funds into Safe{Wallet}
+ - **Modules Include**:
+   - All wallet types: Custodial Wallets, MPC, SCW, Exchange Wallets
+   - Transfer
+   - Risk Controls
+   - Organization (Use "Organization" for the module; "organization" for customer’s organization)
+   - Dashboard
+   - Address Book
+   - Developer Console
+   - Fee Station
+   - Bills & Payments
+   - Cobo Accounts
+   - Cobo Guard
+   - Cobo Portal Apps
+ - Use title case for table header rows.
+ - Do not use lowercase "w" for wallet names (e.g., "Custodial Wallet", not "Custodial wallet").
+ - For titles and headers, use the root form of verbs (e.g., "Create an MPC Wallet" instead of "Creating an MPC Wallet").
+
+### Punctuation
+
+- **Quotation Marks**: Use double straight quotes (" ").
+- **Slash**: If all terms are single words, do not use spaces (e.g., Bybit/Binance/OKX). Add spaces if one term is compound (e.g., Cobo Portal / Cobo Accounts / Cobo Guard).
+- **Period**: Use a full-stop at the end of each step. For example:
+ 1. Log into Cobo Portal.
+ 2. Click Exchange Wallet.
+
+### Formatting
+
+- **Multiplication Sign**: Replace "x" with "*".
+- **Notes and Warnings**: Use bold for emphasis. For example:
+ - **Note**: A default wallet will be automatically created for this vault upon successful key generation.
+ - **Warning**: This operation is irreversible.
+- **Optional Steps**: Use "(Optional)" to denote optional steps. For example:
+ - (Optional) Enable the access log by clicking the button.
+- Use code font for user input and code-related items. In Mintlify, use backticks (`) for code font. For example:
+ - Enter `John Smith` in the field.
+ - The `wallet_type` parameter is required.
+- **Headings**: Start from the 2nd level. Correct:
+ - Incorrect: ### should be changed to ###
+- **Date & Time**: Use the format YYYY-MM-DD and 24-hour clock. Examples:
+ - 2024-04-25
+ - 2024-04-25 at 18:25:30
+ - Apr 25
+ - Apr 25, 2024
+ - April 25, 2024
+
+### Linking
+
+- **Redirecting**: Use "To learn how to xxx, see [Redirect link]."
+- **Cross-reference**: Say "xxx user manual" for whole manuals. Bold "xxx". E.g., the Cobo Guard user manual.
+- Use module names or section titles for specific references, e.g., "Key features" and "Developer Console".
+- **URL**: Use relative URLs if possible. For Dev Hub, include segments after https://www.cobo.com/developers.
+- **Check Broken Links**: Use mintlify broken-links to check links when submitting new content.
+- After changing a topic’s URL or title, do a global search for links to update accordingly.
+- **API Reference**: The Summary decides the URL. Update links if the Summary changes.
+
+### Computer Interface
+
+- Use bold for UI element names. E.g., **Click Next**, not **Click "Next"**.
+- Reduce redundant words. E.g., **Click Next**, not **click on the Next button**.
+- Say "Click xxx", not "Click on xxx".
+- **Multi-level Menu**: Bold items and use > to connect them. E.g., **Click FileMaker Pro > Settings**.
+
+### Accessibility
+
+- **Alt Text**: Always add alt text for images.
+- **Sensory Descriptions**: Be cautious with words indicating colors, shapes, or locations. Provide additional descriptions for clarity.
+ - Incorrect: The tables are displayed in the lower-right corner of the window.
+ - Correct: The tables are displayed in the Table List section.
+
+### Dummy Data
+
+- Use standardized dummy data:
+ - Vault name: Vault 1, Vault 2, …
+ - Wallet name: Wallet 1, Wallet 2, …
+ - Address label: Trading, Treasury, Payroll, Investment
+ - Wallet address: 0xAbCdE123456789aBcDeF123456789aBcDeF12345
+ - API key: AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
+ - TSS Node ID: coboAbCdEfGhIjKlMnOpQrStUvWxYz1234567890abcdefghi
+ - IP address: 192.0.2.0, 198.51.100.0, 203.0.113.0
+ - Token types: Use mainstream tokens like BTC/ETH/USDT/USDC.
+ - Domain name: .example (e.g., johnsmith@example.com, www.example.com)
+ - Account name: My Org
+ - Wallet balances: Examples given for various scenarios.
+- **Fictional User Names and Email Addresses**:
+ - John Smith - johnsmith@example.com
+ - Emily Johnson - emilyjohnson@example.com
+ - David Brown - davidbrown@example.com
+ - Sarah Davis - sarahdavis@example.com
+ - Michael Wilson - michaelwilson@example.com
+ - Wei Liang - weiliang@example.com
+ - Chen Wei - chenwei@example.com
+ - Hiroshi Tanaka - hiroshitanaka@example.com
+ - Ji-hye Kim - jihyekim@example.com
+ - Akira Yamamoto - akirayamamoto@example.com
+
+
+## Mintlify Code
+
+### General Guidelines
+
+- Common rules can be found on Mintlify's official documentation (e.g., how to insert images, links).
+
+### Safe{Wallet}
+
+- Use “Safe&#123;Wallet&#125;” or “Safe\{Wallet\}” to represent Safe{Wallet}. The backslash is an escape character that tells Mintlify to interpret `{` and `}` as part of the string.
+
+### Internal Linking
+
+- Create a customized destination using:
+ ```html
+ <a id="on-the-create-main-group-dialog"></a>
+ ```
+- Link to the destination with:
+ ```markdown
+ [Create Main Group](/cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group#on-the-create-main-group-dialog)#
+ ```
+
+### Reusable Snippets
+
+- Create a file `xxx.mdx` in the snippets folder and add the reusable content.
+- In the destination file:
+ - Add `import MySnippet from '/snippets/xxx-cn.mdx';` after the titles.
+ - Place `<MySnippet />` where the content should appear.
+- Use variables in snippets, e.g., `I like {word}`; then use `<MySnippet word="bananas" />` to render "I like bananas."
+
+### Tables
+
+- Tables without a class use general settings from `style.css`. To adjust column width:
+ 1. Add a new class to `style.css` to customize min-width.
+ 2. Convert the table from Markdown to HTML and apply the new class.
+- Reference PR: [#211](https://github.com/CoboGlobal/product-manual/pull/211/files).
+
+### Screenshots
+
+- Follow the Images section instructions for capturing screenshots.
+- Add screenshots using:
+ 1. **Full Screen**: `<img src="/images/small.png" className="screenshot_full_screen" alt="text"/>`
+ 2. **Navigation Bar**: `<img src="/images/small.png" className="screenshot_nav_bar" alt="text"/>`
+ 3. **Modal**: `<img src="/images/small.png" className="screenshot_modal" alt="text"/>`
+- Avoid borders that Mintlify automatically adds.
+
+### Icons
+
+- After downloading icons, add them using:
+ ```html
+ <img src="/images/folder_name/icon_name.svg" className="icon" alt="text"/>
+ ```
+
+### Diagrams
+
+- Add diagrams using:
+ ```html
+ <img src="/images/folder_name/diagram_name.svg" className="diagram" alt="text"/>
+ ```
+
+### Commenting Out
+
+- Comment out code by enclosing it with `{/*` and `*/}` to prevent execution without deletion.
+
+## URL Guidelines
+
+### SEO Considerations
+
+- Keep URLs under 75 characters (ideally 60).
+
+### Formatting
+
+- Use lowercase letters and hyphens to connect words.
+
+### URL Patterns
+
+### Cobo Portal Manual
+
+- Format: `https://manuals.cobo.com/portal/{module-name}/{(optional)sub-module-name}/{topic-title}`
+- Examples:
+ - `https://manuals.cobo.com/portal/transfers/introduction`
+ - `https://manuals.cobo.com/portal/mpc-wallets/ocw/introduction` (to distinguish between scw)
+
+### Other Manuals
+
+- Format: `https://manuals.cobo.com/{manual-name}/{topic-title}`
+- Example: `https://manuals.cobo.com/accounts/sign-up-cobo-accounts`
+
+### Length Minimization
+
+The topic-title segment doesn’t need to match the topic title exactly.
+
+## Mintlify Components - Callout Boxes
+
+- **<Info></Info>**: Provides useful but non-critical information.
+ - In gdoc: "Info:"
+- **<Note></Note>**: Advises careful proceeding.
+ - In gdoc: "Note:"
+- **<Warning></Warning>**: Strong warning against actions that may lead to irreversible consequences, such as data loss.
+ - In gdoc: "Warning:"
