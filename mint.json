@@ -1,10 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Product Manuals",
-  "metadata": {
-    "og:title": "Cobo Product Manuals",
-    "og:description": "Cobo Product Manuals"
-  },
   "analytics": {
     "ga4": {
       "measurementId": "G-W10EF7K0H5"
