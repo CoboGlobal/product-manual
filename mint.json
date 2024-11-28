@@ -21,8 +21,14 @@
     "isHidden": true
   },
   "versions": [
-    "English",
-    "简体中文"
+    {
+      "name": "English",
+      "locale": "en"
+    },
+    {
+      "name": "简体中文",
+      "locale": "cn"
+    }
   ],
   "topbarLinks": [
     {
