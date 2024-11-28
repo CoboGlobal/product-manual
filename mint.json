@@ -1434,6 +1434,7 @@
           "pages": [
             "cn/guard/download",
             "cn/guard/generate-and-back-up-key-shares",
+            "cn/guard/manage",
             "cn/guard/reset"
           ]
         }
