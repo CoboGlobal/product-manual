@@ -1433,8 +1433,8 @@
           "group": "使用说明",
           "pages": [
             "cn/guard/download",
-            "cn/guard/generate-and-back-up-key-shares",
             "cn/guard/manage",
+            "cn/guard/generate-and-back-up-key-shares",
             "cn/guard/reset"
           ]
         }
