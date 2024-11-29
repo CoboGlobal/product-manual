@@ -8,32 +8,323 @@ User roles consist of predefined sets of rules that enable you to assign specifi
 
 <table class="six-columns">
   <tr>
-    <th>Preset User Roles</th>
-    <th>Permission Scope</th>
+    <th>Permissions</th>
+    <th></th>
+    <th></th>
+    <th>Viewer</th>
+    <th>Spender</th>
+    <th>Approver</th>
+    <th>Staker</th>
+    <th>Operator</th>
+    <th>Admin Assistant</th>
+    <th>Admin</th>
   </tr>
   <tr>
-    <td>Viewer</td>
-    <td>• Default user role after account activation.<br/>• Read-only access to asset allocation and transaction history within the organization.<br/>• Not allowed to initiate any operations.</td>
+    <td>Primary Function</td>
+    <td>Secondary Function</td>
+    <td>Tertiary Function</td>
+    <td>View Only</td>
+    <td>Initiate Withdrawal</td>
+    <td>Approve Transactions</td>
+    <td>Manage Staking</td>
+    <td>Configure Wallets</td>
+    <td>Assist Organization Management</td>
+    <td>Highest Permission</td>
   </tr>
   <tr>
-    <td>Spender</td>
-    <td>• Initiate withdrawal transactions.<br/>• Interact with dApps using MPC Wallets and Smart Contract Wallets.<br/>• Same as Viewer otherwise.</td>
+    <td rowspan="15">Organization Management</td>
+    <td rowspan="4">Member Management</td>
+    <td>View Members</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>
   <tr>
-    <td>Staker</td>
-    <td>• Stake, unstake, and withdraw assets.<br/>• Same as Viewer otherwise.</td>
+    <td>Add Members</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>
   <tr>
-    <td>Approver</td>
-    <td>• Approve withdrawal transactions.<br/>• Same as Viewer otherwise.</td>
+    <td>Remove Members</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>
   <tr>
-    <td>Operator</td>
-    <td>• Manage wallet settings such as creating and deleting wallets as well as changing transaction policies associated with the wallet.<br/>• Same as Viewer otherwise.</td>
+    <td>Edit Members (Status / User Role)</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>
   <tr>
-    <td>Admin</td>
-    <td>• Manage organization settings such as freezing and unfreezing the organization, adding and removing members, creating and changing user roles, as well as changing governance policies.<br/>• Same as Viewer otherwise.</td>
+    <td rowspan="3">Organization Management</td>
+    <td>Edit Organization Information</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Freeze Organization</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Unfreeze Organization</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Fee Station</td>
+    <td>View</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Operation Logs & Governance Policies</td>
+    <td>View</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Transaction Categorization</td>
+    <td>View</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Pricing Plan Usage and Billing Management</td>
+    <td>View</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="11">Transaction Management</td>
+    <td rowspan="2">Wallet Management</td>
+    <td>View Wallet Info</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit Wallet Configuration</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Transaction Management</td>
+    <td>View Transaction Records</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Initiate Withdrawal</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Stake / Unstake</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">MPC Wallets Private Key Shares Management</td>
+    <td>View</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Address Book</td>
+    <td>View</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Transaction Policies</td>
+    <td>View</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Developer Console</td>
+    <td rowspan="2">All Modules</td>
+    <td>View</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>
 </table>
 
