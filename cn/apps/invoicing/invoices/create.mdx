@@ -1,4 +1,4 @@
-﻿---
+---
 title: "创建发票"
 sidebarTitle: "创建发票"
 ---
@@ -9,32 +9,47 @@ sidebarTitle: "创建发票"
     <img src="/en/images/portal-apps/invoicing/create_invoice.png" className="screenshot_full_screen" alt="Create Invoice page"/>
     
     基本信息：
+    - **开票人**（From）：从下拉菜单中选择一个抬头。
     - **到期日期**（Payment Due）：发票的到期日。
     - **开具日期**（Issued On）：开具发票的日期。
     - **客户**（Client）：从列表中选择一位客户，列表仅显示处于**活跃**（Active）状态的客户。您也可以手动添加新客户。点击**添加 CC 收件人**（Add CC Recipients），添加发票副本接收者的电子邮件地址。
     - **期望付款代币**（Expected Payment Tokens）：选择一种或多种付款代币。如果选择多种代币，付款方可以从中选择一种来完成付款。
+    - **服务包（可选）**（Package）：输入与客户约定的服务包名称或描述，最长 50 个字符。
+    - **计费周期（可选）**（Billing Cycle）：输入计费周期（例如，月度、季度或年度），最长 50 个字符。
+    - **客户账号（可选）**（Client Account）：输入客户的付款账号，最长 50 个字符。
     - **备注（可选）**（Memo）：输入备注，最长 500 个字符。
     - **分类（可选）**（Category）：输入分类，最长 100 个字符。
     - **重复发票（可选）**（Recurring Invoice）：如果想要发票定期重复，则打开此选项。可以选择重复频率和结束重复的方式。
 
-    项目信息：
+    项目行：
+    - **行类型**（Line Type）：对于项目信息，选择**项目**（Item）作为**行类型**。
     - **项目**（Item）：项目名称或描述，字符限制为 3-100 个字符。若要添加更多项目，请点击**添加项目**（Add an Item）。
+    - **描述（可选）**（Description）：项目的额外描述，最长 200 个字符。
+    - **备注（可选）**（Note）：项目的额外备注，最长 200 个字符。
     - **数量**（Quantity）：输入一个正整数。
     - **单价**（Unit Price）：输入一个价格，小数点后不超过 8 位。
-    - **折扣（可选）**（Discount）：输入折扣。
-    - **税费（可选）**（Tax）：输入大于 0 的税率。 
-    - **整体折扣**（Overall Discount）：在单个项目折扣之外，所有项目的额外折扣。 
+    - **折扣（可选）**（Discount）：输入折扣百分比。
+    - **税费（可选）**（Tax）：输入大于 0 的税率百分比。
+
+    折扣行：
+    - **行类型**（Line Type）：对于折扣信息，选择**折扣**（Discount）作为**行类型**。
+    - **描述（可选）**（Description）：折扣的描述，最长 200 个字符。
+    - **数量**（Quantity）：默认为 1。
+    - **单价**（Unit Price）：输入一个正数作为要扣除的金额。
+    - **备注（可选）**（Note）：折扣的额外备注，最长 200 个字符。
+
+    **整体折扣**（Overall Discount）：在单个项目折扣之外，所有项目的额外折扣。 
 
     以下金额将自动计算：
 
-    - **金额**（Amount）：金额 =（单价 * 数量 *（1 - 折扣） * （1 - 整体折扣）） *（1 + 税费）。
+    - **每个项目的金额**（Amount）：金额 =（单价 * 数量 *（1 - 折扣百分比） * （1 - 整体折扣百分比）） *（1 + 税费）。
     - **不含税金额**（Amount without Tax）：税前总价。
     - **总税额**（Total Tax Amount）：将税率应用于每个项目的折扣价，计算出的总税额。
-    - **应付**（Due）：应付的包含税费的总金额，最多显示 6 位小数。
+    - **应付**（Due）：应付的包含税费的总金额减去折扣行金额，最多显示 6 位小数。
 
-4. 点击**保存草稿**（Save Draft）以保存当前发票为草稿，或点击**创建并发送**（Create & Send）以发送发票。如果系统检测到客户的状态是**冻结**（Frozen），将提示无法发送发票。
-5. 点击**创建并发送**（Create & Send）后，通常需要 10 秒左右生成付款链接；随后发票状态将从**发送中**（Sending）变为**待付款**（Pending）。发送后将向客户发送电子邮件通知。如果想要了解您的客户角度的流程，请参见[发票付款](/cn/apps/invoicing/payment)。
+4. 点击**保存草稿**（Save Draft）以保存当前发票为草稿，或点击**提交**（Submit）继续处理发票。如果系统检测到客户状态为**已冻结**（Frozen），将提示无法发送发票。
+5. 点击**提交**（Submit）后，发票状态将变为**已提交**（Submitted），并生成付款链接。发票将等待审核。发票获得批准后，点击**发送**（Send）将发票发送给客户。如果被拒绝，发票状态将返回**草稿**（Draft）。
 
-    <Note>如果**发送中**（Sending）状态持续超过 24 个小时，请联系 Cobo 发票支持团队，电子邮件地址：[invoiceservice@cobo.com](mailto:invoiceservice@cobo.com)。</Note>
+    <Note>如果**发送中**（Sending）状态持续时间过长，请联系 Cobo 发票支持团队，电子邮件地址：[invoiceservice@cobo.com](mailto:invoiceservice@cobo.com)。</Note>
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
