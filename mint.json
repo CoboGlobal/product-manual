@@ -1342,6 +1342,7 @@
                       ]
                     },
                     "cn/apps/invoicing/clients",
+                    "cn/apps/invoicing/titles",
                     "cn/apps/invoicing/payment"
                   ]
                 }
