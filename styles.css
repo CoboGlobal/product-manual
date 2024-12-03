@@ -144,6 +144,29 @@ table th, table td {
   min-width: 100px; /* for six-column tables */
 }
 
+.six-columns-fixed-first-row {
+  display: block;
+  max-height: 500px; /* Adjust this value based on your needs */
+  overflow-y: auto;
+  position: relative;
+}
+
+.six-columns-fixed-first-row thead,
+.six-columns-fixed-first-row tr:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.six-columns-fixed-first-row th, .six-columns-fixed-first-row td {
+  min-width: 100px; /* for six-column tables */
+  background-color: inherit; /* This ensures the background color is applied properly */
+}
+
+.six-columns-fixed-first-row tr:first-child th {
+  background-color: #1F32D6; /* Cobo Blue */
+}
+
 .four-columns th, .four-columns td {
   min-width: 150px; /* for four-column tables */
 }
