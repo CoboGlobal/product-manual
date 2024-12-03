@@ -148,7 +148,7 @@ table th, table td {
   display: block;
   max-height: 500px; /* Adjust this value based on your needs */
   width: 100%;
-  font-size: 13px;  /* Further reduced font size */
+  font-size: 12px;  /* Reduced font size from 13px to 11px */
 }
 
 .six-columns-fixed-first-row-cn table {
@@ -170,6 +170,7 @@ table th, table td {
   word-wrap: break-word;
   background-color: inherit;
   font-size: inherit;
+  text-align: center;
 }
 
 .six-columns-fixed-first-row-cn td:first-child,
