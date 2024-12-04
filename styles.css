@@ -180,7 +180,7 @@ table th, table td {
 .six-columns-fixed-first-row-cn td:nth-child(3),
 .six-columns-fixed-first-row-cn th:nth-child(3) {
   min-width: 70px;  /* Make first three columns narrower */
-  max-width: 85px;
+  max-width: 89px;
 }
 
 .six-columns-fixed-first-row-cn td:nth-child(n+4),
