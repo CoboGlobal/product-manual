@@ -170,7 +170,7 @@ table th, table td {
   word-wrap: break-word;
   background-color: inherit;
   font-size: inherit;
-  text-align: center;
+  text-align: left;
 }
 
 .six-columns-fixed-first-row-cn td:first-child,
@@ -246,7 +246,7 @@ table:not(.six-columns-fixed-first-row-cn):not(.six-columns-fixed-first-row) td:
   word-wrap: break-word;
   background-color: inherit;
   font-size: inherit;
-  text-align: center;
+  text-align: left;
 }
 
 .six-columns-fixed-first-row td:first-child,
