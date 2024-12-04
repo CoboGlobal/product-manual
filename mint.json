@@ -760,6 +760,7 @@
           "group": "How to use",
           "pages": [
             "en/guard/download",
+            "en/guard/set-up",
             "en/guard/manage",
             "en/guard/generate-and-back-up-key-shares",
             "en/guard/reset"
@@ -1436,6 +1437,7 @@
           "group": "使用说明",
           "pages": [
             "cn/guard/download",
+            "cn/guard/set-up",
             "cn/guard/manage",
             "cn/guard/generate-and-back-up-key-shares",
             "cn/guard/reset"
