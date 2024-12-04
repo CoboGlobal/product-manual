@@ -213,7 +213,8 @@ table th {
 }
 
 /* Add left padding to the first column */
-table th:first-child, table td:first-child {
+table:not(.six-columns-fixed-first-row-cn):not(.six-columns-fixed-first-row) th:first-child, 
+table:not(.six-columns-fixed-first-row-cn):not(.six-columns-fixed-first-row) td:first-child {
   padding-left: 8px;
 }
 
