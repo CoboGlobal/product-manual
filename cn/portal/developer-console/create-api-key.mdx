@@ -14,9 +14,12 @@ lang: "zh-hans"
 6. 从下拉列表中选择用户角色。
 <Info>API Key 将获得您所选用户角色下列出的权限。</Info>
 7. 选择该 API Key 可控制的钱包。
-8. 勾选两种 Key 类型中的一种。
-9. 输入要列入白名单的 IP 地址（如果要列入白名单的 IP 地址不止一个，则每个 IP 地址之间用逗号隔开）。
-10. 点击**注册**。
+8. 选择此 API Key 使用的 Callback Endpoint，或注册一个新的 Callback Endpoint。所选的 Callback Endpoint 将接收由该 API Key 触发的消息。有关更多信息，请参阅[注册 Callback Endpoint](/cn/portal/developer-console/callbacks-register)。
+9. 选择 Key 类型。
+    - **永久**：要使用此 Key 类型，您需要指定一个静态 IP 地址作为发送 API 请求的地址。
+    - **临时**：临时 Key 在 30 天后过期。如果您还没有准备好静态 IP 地址，可以选择此选项。
+10. 输入要列入白名单的 IP 地址（如果要列入白名单的 IP 地址不止一个，则每个 IP 地址之间用逗号隔开）。
+11. 点击**注册**。
 
 <Note>根据您所在组织设置的业务风控规则，新注册的 API Key 可能需要获得组织管理员的审批后才能生效。</Note>
 

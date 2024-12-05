@@ -6,7 +6,7 @@ lang: "en"
 
 Note: Please make sure that your Fee Station has a sufficient balance of fee tokens to cover the MPC transaction fees. When you create transactions from MPC Wallets, you will be able to view your Fee Station balance and whether a top-up is necessary.
 
-You can manually set up Fee Station to automatically pay for transaction fees. This currently applies only to EVM and TRON transactions initiated from MPC Wallets (Organization-Controlled) on the Cobo Portal web console. Once Fee Station is set up for MPC Wallets, the payment methods will vary depending on the blockchain:
+You can manually set up Fee Station to automatically pay for transaction fees. **This currently applies only to EVM and TRON transactions initiated from MPC Wallets (Organization-Controlled) on the Cobo Portal web console.** Once Fee Station is set up for MPC Wallets, the payment methods will vary depending on the blockchain:
 
 - EVM chains: Fee Station automatically manages transaction fees by preloading the required amount into your MPC Wallet. For example, if you initiate a transaction of 1,000 ETH from your MPC Wallet and the fee is 0.05 ETH, but your wallet does not have enough funds to cover the fee, Fee Station will automatically transfer 0.05 ETH to your wallet. This ensures that your MPC transaction proceeds without interruption.
 - TRON chain: The transaction fee is directly deducted from Fee Station. This fee is a fixed amount of 15 TRON, regardless of the transaction size.
