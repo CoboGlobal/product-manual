@@ -558,8 +558,7 @@
                       "pages": [
                         "en/portal/developer-console/callbacks-intro",
                         "en/portal/developer-console/callbacks-notif-subs",
-                        "en/portal/developer-console/callbacks-register",
-                        "en/portal/developer-console/callbacks-manage"
+                        "en/portal/developer-console/callbacks-register"
                       ]
                     },
                     "en/portal/developer-console/api-logs",
@@ -1235,8 +1234,7 @@
                       "pages": [
                         "cn/portal/developer-console/callbacks-intro",
                         "cn/portal/developer-console/callbacks-notif-subs",
-                        "cn/portal/developer-console/callbacks-register",
-                        "cn/portal/developer-console/callbacks-manage"
+                        "cn/portal/developer-console/callbacks-register"
                       ]
                     },
                     "cn/portal/developer-console/api-logs",
@@ -1486,6 +1484,14 @@
     {
       "source": "/en/guard/restore-key-shares-from-icloud",
       "destination": "/en/guard/reset"
+    },
+    {
+      "source": "/cn/portal/developer-console/callbacks-manage",
+      "destination": "/cn/portal/developer-console/callbacks-register"
+    },
+    {
+      "source": "/en/portal/developer-console/callbacks-manage",
+      "destination": "/en/portal/developer-console/callbacks-register"
     }
   ]
 }

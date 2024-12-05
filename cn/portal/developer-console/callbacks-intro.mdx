@@ -4,5 +4,10 @@ sidebarTitle: "什么是 Callback？"
 lang: "zh-hans"
 ---
 
-管理员和操作员可以注册一个 Callback Endpoint，用于接收 Callback 消息。根据不同的使用场景，可注册多个 Callback Endpoint。
+Webhooks 和 Callbacks 是 WaaS 服务与您的应用程序通信的重要机制。当您设置并注册 Callback Endpoint 和 Webhook Endpoint后，WaaS 服务会在事件发生时向指定的 URL 发送推送消息。它们让您的应用程序接收实时更新或通知，并相应地响应事件。
+
+Callback 类似于双因素身份验证 (Two Factor Authentication, 2FA) 方式。WaaS 2.0 服务使用 Callback 来验证您的身份。要使用 WaaS 2.0 API 进行提币或合约调用，您必须注册一个 Callback Endpoint 并处理 Callback 消息以批准提款或合约调用。
+
+有关 Webhooks 和 Callbacks 机制以及如何处理它们的详细信息，请参阅 [Webhooks and callbacks](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction)。
+
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
