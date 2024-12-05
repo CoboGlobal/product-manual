@@ -22,12 +22,30 @@ Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的�
 发起钱包地址用于支付在 Cobo Portal 上创建智能合约钱包（Safe&#123;Wallet&#125;）的费用。发起钱包地址必须来自 MPC 钱包（机构钱包）。
 
 ## M
+#### Main Account（主账户）
+主账户是交易所钱包中的核心账户，全面掌控其关联子账户内的所有资产和操作。
+
+#### MPC Wallets（MPC 钱包）
+一种利用多方计算（MPC）技术保护数字资产安全的钱包类型。Cobo 提供两种 MPC 钱包：机构钱包和终端用户钱包。
+
+#### Multi-Party Computation（MPC）
+一种区块链密钥管理的密码学技术。通过 MPC，私钥分片在独立的安全环境中生成、加密，并分布在多方之间。这些参与方在不暴露各自私钥分片或生成完整私钥的情况下，协同完成交易签名。
+
 #### Multi-sig transaction（多签交易）
 多签交易需要多个私钥持有人在交易执行前共同授权，而不是仅依赖于单个私钥的签名。
 
 ## O
+#### Off-chain transaction policy（链下交易风控规则）
+Cobo Portal 的链下交易风控由后台管理，支持您灵活设置交易处理和审批规则。这些规则可以覆盖交易限额、频率、白名单等多个方面。
+
 #### On-chain transaction policy（链上交易风控规则）
 链上交易风控规则由区块链网络上的智能合约管理。通过这些规则，您可以定义交易的处理流程和自动审批方式。请注意，您必须先设置链上交易规则，才能使用智能合约钱包（Safe&#123;Wallet&#125;）进行提现或与 dApp 交互。
+
+#### Organization（团队）
+Cobo Portal 中的最高级实体。每个团队在 Cobo Portal 生态系统中独立管理其钱包、风控策略和运营等。
+
+#### Organization-Controlled Wallets（机构钱包）
+Cobo Portal 上的一种 MPC 钱包类型，其数字资产的所有权和管理权由团队自行掌控。
 
 ## S
 #### Safe&#123;Wallet&#125;
