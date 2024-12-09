@@ -120,7 +120,7 @@
         "en/portal/glossary",
         "en/portal/quick-start-guide",
         "en/portal/supported-tokens",
-        "en/portal/release-notes"
+        "en/portal/changelog"
       ],
       "version": "English"
     },
@@ -796,7 +796,7 @@
         "cn/portal/glossary",
         "cn/portal/quick-start-guide",
         "cn/portal/supported-tokens",
-        "cn/portal/release-notes"
+        "cn/portal/changelog"
       ],
       "version": "简体中文"
     },
