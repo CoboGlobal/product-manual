@@ -913,6 +913,7 @@
                               ]
                             },
                             "cn/portal/mpc-wallets/ocw/transfers",
+                             "cn/portal/mpc-wallets/ocw/key-share-verification",
                             "cn/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
                         }
