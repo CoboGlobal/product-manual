@@ -6,9 +6,16 @@ lang: "zh-hans"
 
 <Note>本术语表将定期更新，添加新的产品术语和定义。</Note>
 
+## A
+#### API co-signers（API 签名人）
+API 签名人是一个服务器节点，它使用 TSS Node 软件包来自动签署交易。
+
 ## C
 #### Cobo Safe
 Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-account-modules) 构建的智能合约。Safe Module 扩展了 Safe&#123;Wallet&#125; 的功能，同时将模块逻辑与 Safe&#123;Wallet&#125; 的核心合约分离。作为插件集成在 Safe&#123;Wallet&#125; 中后，Cobo Safe 实现了基于用户角色的精细化链上访问控制。您可以授权外部拥有账户（EOA）通过单签执行由多个 Safe&#123;Wallet&#125; 签名人预授权的操作。
+
+#### Custodial Wallets（托管钱包）
+托管钱包是一种由 Cobo 负责保管私钥的钱包类型，为用户提供机构级别的安全性和便捷的资产管理服务。Cobo 提供资产钱包和 Web3 钱包两种托管钱包。
 
 ## D
 #### Delegate Key
@@ -16,6 +23,23 @@ Delegate Key 用于代表 Safe&#123;Wallet&#125; 签名人发起（只发起不�
 
 #### Delegate
 Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的操作。此授权是您在 Cobo Portal 上为智能合约钱包（Safe&#123;Wallet&#125;）设置链上交易规则时授予的。Delegate 可以是来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）的地址。
+
+## E
+#### Exchange Wallets（交易所钱包）
+该钱包类型将您的多个交易所账户整合到一个统一界面中，让您能够便捷地查看和管理各交易所资产，并支持在交易所账户与 Cobo Portal 其他钱包之间进行无缝资金划转。
+
+#### Externally Owned Accounts, EOA（外部账户）
+由私钥控制的标准以太坊账户，可以发起交易。与智能合约钱包不同，外部账户不能执行自定义逻辑或实现高级安全功能。
+
+## G
+#### Gas fees（Gas 费）
+在区块链网络上执行交易或合约所需的成本。
+
+#### Gas limits（Gas 限制）
+您愿意为在以太坊虚拟机（EVM）链上执行交易支付的最大 Gas Unit 数量。
+
+#### Governance policies（业务风控）
+业务风控确定了批准或拒绝某项操作所依据的审批规则。审批规则包括自动拒绝、自动通过、审批门槛和定制工作流。
 
 ## I
 #### Initiator address（发起钱包地址）
@@ -27,6 +51,9 @@ Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的�
 
 #### Main Group（主控组）
 Multi-Party Computation（MPC）系统里的一种持有者组类型，负责签署交易以及创建和管理其他持有者组，以维护系统的管理和操作完整性。
+
+#### Mobile co-signers（移动端签名人）
+移动端签名人是您组织中的一个成员，该成员使用 [Cobo Guard](/cn/guard/introduction) 来签署交易。
 
 #### MPC Wallets（MPC 钱包）
 一种利用多方计算（MPC）技术保护数字资产安全的钱包类型。Cobo 提供两种 MPC 钱包：机构钱包和终端用户钱包。
