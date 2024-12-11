@@ -1,0 +1,40 @@
+---
+title: "查看和更新工作流"
+sidebarTitle: "查看和更新工作流"
+lang: "cn"
+---
+
+本文描述如何查看和更新 Cobo Portal Apps 的工作流。
+
+## 背景
+在 Cobo Portal Apps 的语境中，工作流是指应用内的某些特定操作会触发某些审批策略。例如，如果您在 [Batch Payouts](/cn/apps/batch-payouts/introduction) 应用中进行批量转账，可能会触发一个工作流，该工作流要求管理员对批量转账请求进行审批，在审批之前该请求将处于待审批状态。
+
+当您安装应用时，该应用将自动配置默认工作流，这些默认工作流由应用开发者在 [应用的 Manifest 文件](https://www.cobo.com/developers/v2/apps/build-app#configure-the-manifest-file) 中定义。
+
+## 步骤
+
+1.登录 [Cobo Portal](https://portal.cobo.com/login)。
+
+2.点击主菜单中的 <img src="/en/images/common/icon_apps.svg" className="icon" alt="Apps 图标" /> 图标打开应用中心。
+
+3.在**全部应用程序**或**已安装的应用程序**，点击应用上的 <img src="/en/images/common/icon_advanced.svg" className="icon" alt="设置图标" /> 打开**应用管理**页面。
+
+    <img src="/cn/images/portal-app-overview-installed.png" className="screenshot_full_screen" alt="应用中心页面" />
+
+4. 在**应用管理**页面，切换到**工作流**标签页。
+
+    <img src="/cn/images/portal-apps/app-settings.png" className="screenshot_full_screen" alt="应用设置页面" />
+
+    现在您可以查看适用于该应用的默认工作流。
+
+    <Note>如果该应用没有任何默认工作流，则此标签页将不可见。</Note>
+
+5. 要查看工作流的实例（触发工作流的操作），点击该工作流上的 <img src="/cn/images/common/icon_view.svg" className="icon" alt="查看图标"></img> 图标以显示**审批历史**对话框。
+6. 要更新工作流，点击 <img src="/cn/images/common/icon_edit.svg" className="icon" alt="编辑图标"></img> 图标以打开**工作流设置**对话框。
+7. 在**工作流设置**对话框中，您可以更新工作流触发条件和工作流触发的动作，然后点击**确认**继续。
+8. 输入来自 Cobo Guard 或其他 MFA 方法的验证码，批准工作流的更新。
+
+## 后续步骤
+现在工作流的状态变为**待审批**。这是因为更新工作流与 Cobo Portal 中的其他操作一样，将受到[业务风控](/cn/portal/risk-controls/governance-policies)的限制，这意味着更改可能需要您组织管理员的批准。获得批准后，工作流的状态将变为**生效**，并将适用于所有触发该工作流的操作。
+
+<Note>您可以在**团队** > **业务风控** > **团队** > **更改应用权限和设置**中编辑相关业务风控。</Note>
