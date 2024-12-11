@@ -7,10 +7,15 @@ lang: "en"
 <Note>This glossary will be updated regularly with new terms and definitions.</Note>
 
 ## A
+### API co-signers
+An API co-signer is a server node that utilizes the TSS Node package to automatically sign transactions.
 
 ## C
 ### Cobo Safe
 Cobo Safe is a smart contract built on the [Safe Module](https://docs.safe.global/advanced/smart-account-modules), which extends the functionality of Safe&#123;Wallet&#125; while keeping module logic separate from Safe&#123;Wallet&#125;'s core contracts. When integrated with Safe&#123;Wallet&#125;, Cobo Safe enables role-based access controls, allowing tasks to be delegated to externally owned accounts (EOAs). These accounts can perform actions that have been pre-authorized by Safe&#123;Wallet&#125; signers using a single signature.
+
+### Custodial Wallets
+A wallet type where Cobo maintains custody of the private keys, offering institutional-grade security and simplified asset management. Cobo offers two types of Custodial Wallets: Asset Wallets and Web3 Wallets.
 
 ## D
 ### Delegate Key
@@ -18,6 +23,25 @@ The Delegate Key is used to initiate, but not sign, multi-sig transactions on be
 
 ### Delegate
 Delegates can perform actions authorized by Safe&#123;Wallet&#125; signers using a single signature. This authorization is granted when you create on-chain transaction policies for your Smart Contract Wallets (Safe&#123;Wallet&#125;) on Cobo Portal. Delegates can be addresses from either MPC Wallets (Organization-Controlled) or externally owned accounts (EOAs) outside of Cobo Portal.
+
+## E
+### Exchange Wallets
+A wallet type that consolidates multiple exchange accounts into a single interface, allowing you to view and manage assets across different exchanges and transfer funds seamlessly between exchange accounts and other wallets on Cobo Portal.
+
+### Externally Owned Accounts (EOAs)
+A standard Ethereum account controlled by a private key that can initiate transactions. Unlike smart contract wallets, EOAs cannot execute custom logic or implement advanced security features.
+
+## G
+
+### Gas fees
+The cost required to perform a transaction or execute a contract on the blockchain network.
+
+### Gas limits
+The maximum number of gas units you are willing to pay for the execution of a transaction on Ethereum Virtual Machine (EVM) chains.
+
+### Governance policies
+Governance policies determine the approval rules under which an operation will be approved or rejected. Approval rules include auto rejection, auto approval, approval quorum, and customized workflow.
+
 
 ## I
 ### Initiator address
@@ -29,6 +53,9 @@ The primary account in an Exchange Wallet that holds full control over all asset
 
 ### Main Group
 A type of holder group within a Multi-Party Computation (MPC) system who are responsible for signing transactions, as well as creating and managing other key share holder groups to maintain the system's governance and operational integrity.
+
+### Mobile co-signers
+A mobile co-signer is an organization member who uses [Cobo Guard](/en/guard/introduction) to securely sign transactions. 
 
 ### MPC Wallets
 A wallet type that uses Multi-Party Computation (MPC) technology to secure digital assets. Cobo offers two types of MPC Wallets: Organization-Controlled Wallets and User-Controlled Wallets.
