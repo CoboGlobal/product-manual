@@ -6,81 +6,108 @@ lang: "zh-hans"
 
 <Note>本术语表将定期更新，添加新的产品术语和定义。</Note>
 
+## A
+### API co-signers（API 签名人）
+API 签名人是一个服务器节点，它使用 TSS Node 软件包来自动签署交易。
+
 ## C
-#### Cobo Safe
+### Cobo Safe
 Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-account-modules) 构建的智能合约。Safe Module 扩展了 Safe&#123;Wallet&#125; 的功能，同时将模块逻辑与 Safe&#123;Wallet&#125; 的核心合约分离。作为插件集成在 Safe&#123;Wallet&#125; 中后，Cobo Safe 实现了基于用户角色的精细化链上访问控制。您可以授权外部拥有账户（EOA）通过单签执行由多个 Safe&#123;Wallet&#125; 签名人预授权的操作。
 
+### Custodial Wallets（托管钱包）
+托管钱包是一种由 Cobo 负责保管私钥的钱包类型，为用户提供机构级别的安全性和便捷的资产管理服务。Cobo 提供资产钱包和 Web3 钱包两种托管钱包。
+
 ## D
-#### Delegate Key
+### Delegate Key
 Delegate Key 用于代表 Safe&#123;Wallet&#125; 签名人发起（只发起不执行）多签交易。它是由 Cobo 创建的地址，在 Delegate Key 设置过程中自动分配给您。
 
-#### Delegate
+### Delegate
 Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的操作。此授权是您在 Cobo Portal 上为智能合约钱包（Safe&#123;Wallet&#125;）设置链上交易规则时授予的。Delegate 可以是来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）的地址。
 
+## E
+### Exchange Wallets（交易所钱包）
+该钱包类型将您的多个交易所账户整合到一个统一界面中，让您能够便捷地查看和管理各交易所资产，并支持在交易所账户与 Cobo Portal 其他钱包之间进行无缝资金划转。
+
+### Externally Owned Accounts, EOA（外部账户）
+由私钥控制的标准以太坊账户，可以发起交易。与智能合约钱包不同，外部账户不能执行自定义逻辑或实现高级安全功能。
+
+## G
+### Gas fees（Gas 费）
+在区块链网络上执行交易或合约所需的成本。
+
+### Gas limits（Gas 限制）
+您愿意为在以太坊虚拟机（EVM）链上执行交易支付的最大 Gas Unit 数量。
+
+### Governance policies（业务风控）
+业务风控确定了批准或拒绝某项操作所依据的审批规则。审批规则包括自动拒绝、自动通过、审批门槛和定制工作流。
+
 ## I
-#### Initiator address（发起钱包地址）
+### Initiator address（发起钱包地址）
 发起钱包地址用于支付在 Cobo Portal 上创建智能合约钱包（Safe&#123;Wallet&#125;）的费用。发起钱包地址必须来自 MPC 钱包（机构钱包）。
 
 ## M
-#### Main Account（主账户）
+### Main Account（主账户）
 主账户是交易所钱包中的核心账户，全面掌控其关联子账户内的所有资产和操作。
 
-#### Main Group（主控组）
+### Main Group（主控组）
 Multi-Party Computation（MPC）系统里的一种持有者组类型，负责签署交易以及创建和管理其他持有者组，以维护系统的管理和操作完整性。
 
-#### MPC Wallets（MPC 钱包）
+### Mobile co-signers（移动端签名人）
+移动端签名人是您组织中的一个成员，该成员使用 [Cobo Guard](/cn/guard/introduction) 来签署交易。
+
+### MPC Wallets（MPC 钱包）
 一种利用多方计算（MPC）技术保护数字资产安全的钱包类型。Cobo 提供两种 MPC 钱包：机构钱包和终端用户钱包。
 
-#### Multi-Party Computation（MPC）
+### Multi-Party Computation（MPC）
 一种区块链密钥管理的密码学技术。通过 MPC，私钥分片在独立的安全环境中生成、加密，并分布在多方之间。这些参与方在不暴露各自私钥分片或生成完整私钥的情况下，协同完成交易签名。
 
-#### Multi-sig transaction（多签交易）
+### Multi-sig transaction（多签交易）
 多签交易需要多个私钥持有人在交易执行前共同授权，而不是仅依赖于单个私钥的签名。
 
 ## O
-#### Off-chain transaction policy（链下交易风控规则）
+### Off-chain transaction policy（链下交易风控规则）
 Cobo Portal 的链下交易风控由后台管理，支持您灵活设置交易处理和审批规则。这些规则可以覆盖交易限额、频率、白名单等多个方面。
 
-#### On-chain transaction policy（链上交易风控规则）
+### On-chain transaction policy（链上交易风控规则）
 链上交易风控规则由区块链网络上的智能合约管理。通过这些规则，您可以定义交易的处理流程和自动审批方式。请注意，您必须先设置链上交易规则，才能使用智能合约钱包（Safe&#123;Wallet&#125;）进行提现或与 dApp 交互。
 
-#### Organization（团队）
+### Organization（团队）
 Cobo Portal 中的最高级实体。每个团队在 Cobo Portal 生态系统中独立管理其钱包、风控策略和运营等。
 
-#### Organization-Controlled Wallets（机构钱包）
+### Organization-Controlled Wallets（机构钱包）
 Cobo Portal 上的一种 MPC 钱包类型，其数字资产的所有权和管理权由团队自行掌控。
 
 ## R
-#### Recovery Group（恢复组）
+### Recovery Group（恢复组）
 Multi-Party Computation（MPC）系统里的一种持有者组类型，负责在私钥分片丢失或被破坏的情况下恢复对钱包或系统的访问。
 
-#### Risk Control（风险控制）
+### Risk Control（风险控制）
 一套全面的机制，旨在解决数字资产存储、管理和转移中的挑战，包括链上和链下交易风控规则、业务风控规则以及用户角色与权限。
 
 ## S
-#### Safe&#123;Wallet&#125;
+### Safe&#123;Wallet&#125;
 Safe&#123;Wallet&#125; 是一款多签钱包和平台，用于在以太坊和流行的 EVM 链上为您存储数字资产。
 
-#### Signer address（签名人地址）
+### Signer address（签名人地址）
 在智能合约钱包（Safe&#123;Wallet&#125;）内，签名人地址用于发起、签署和执行交易。在 Cobo Portal 上，签名人地址可以来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）。
 
-#### Signing Group（签名组）
+### Signing Group（签名组）
 Multi-Party Computation（MPC）系统里的一种持有者组类型，负责协作签署交易。
 
-#### Single-sig transaction（单签交易）
+### Single-sig transaction（单签交易）
 单签交易只需要一个私钥持有人的签名即可授权交易。
 
-#### Smart Contract Wallet（智能合约钱包）
+### Smart Contract Wallet（智能合约钱包）
 智能合约钱包是一种基于区块链技术构建的去中心化应用（dApp），允许用户通过可编程的智能合约管理数字资产。
 
-#### Sub Account（子账户）
+### Sub Account（子账户）
 子账户是交易所钱包中的从属账户，由其主账户创建和管理。
 
 ## T
-#### Threshold（阈值）
+### Threshold（阈值）
 智能合约钱包（Safe&#123;Wallet&#125;）的阈值定义了在执行交易之前，必须有多少个签名人地址批准该交易。
 
-#### Transaction Category（交易分类）
+### Transaction Category（交易分类）
 在 Cobo Portal 中用于分类和组织团队内转账的用户定义标签，便于更轻松地识别和管理交易。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
