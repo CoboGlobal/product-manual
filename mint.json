@@ -705,6 +705,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Token Bridge",
+          "pages": [
+            "en/apps/bridge/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/bridge/how-to-use/setup",
+                {
+                  "group": "Manage Token Bridge",
+                  "pages": [
+                    "en/apps/bridge/how-to-use/manage/dashboard",
+                    "en/apps/bridge/how-to-use/manage/bridge-form",
+                    "en/apps/bridge/how-to-use/manage/confirmation",
+                    "en/apps/bridge/how-to-use/manage/supported-assets"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
@@ -913,7 +934,7 @@
                               ]
                             },
                             "cn/portal/mpc-wallets/ocw/transfers",
-                             "cn/portal/mpc-wallets/ocw/key-share-verification",
+                            "cn/portal/mpc-wallets/ocw/key-share-verification",
                             "cn/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
                         }
@@ -1187,6 +1208,16 @@
     {
       "group": "COBO PORTAL APPS",
       "pages": [
+        {
+          "group": "Bridge",
+          "pages": [
+            "cn/apps/bridge/introduction",
+            "cn/apps/bridge/supported-assets",
+            "cn/apps/bridge/set-up",
+            "cn/apps/bridge/transactions",
+            "cn/apps/bridge/dashboard"
+          ]
+        },
         "cn/portal/portal-apps/introduction",
         "cn/portal/portal-apps/browse-and-install",
         {
@@ -1381,6 +1412,16 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "group": "Bridge",
+          "pages": [
+            "cn/apps/bridge/introduction",
+            "cn/apps/bridge/supported-assets",
+            "cn/apps/bridge/set-up",
+            "cn/apps/bridge/transactions",
+            "cn/apps/bridge/dashboard"
           ]
         }
       ],
