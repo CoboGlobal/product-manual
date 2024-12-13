@@ -1,0 +1,40 @@
+---
+title: "项目管理"
+sidebarTitle: "项目管理"
+lang: "zh-hans"
+---
+
+## 概览
+您可以创建不同的项目以满足您的业务需求。例如，您可以设置使用 3-3 [门限签名机制 (TSS)](/cn/portal/mpc-wallets/introduction#tss) 的项目 A，其中团队、终端用户和 Cobo 各持有一个私钥分片。同时，项目 B 可以采用 2-2 签名方案，终端用户和 Cobo 各持有一个私钥分片。
+
+<Info>项目是由多个 Vault 组成的集合，而 Vault 是由多个钱包组成的集合。请参阅[对象模型](/cn/portal/mpc-wallets/ucw/object-model)。</Info>
+
+<Info>仅团队[管理员](/cn/portal/organization/roles-and-permissions)可以创建项目。</Info>
+
+## 创建项目
+您可以使用 [Cobo Portal](https://portal.cobo.com/login) 或 [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) 来创建项目。本节介绍如何使用 Cobo Portal 创建项目。如果您想使用 WaaS 2.0 API 创建项目，请参阅 [Get started with MPC Wallets (User-Controlled Wallets)](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ucw#1-complete-the-initial-setup) 中的 **Complete the initial setup** > **Create projects with the Client Backend or Cobo Portal**。
+
+1. 登录到 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"></img> > **MPC 钱包** > **终端用户钱包** > **创建项目**。
+3. 输入**项目名称**并选择一个**签名组阈值**（即门限签名机制），然后点击**创建**。
+4. 输入您的 6 位 Google 身份验证器代码。
+5. 项目现已创建成功。
+
+<img src="/cn/images/mpc-wallet/ucw/create-project-ucw.png" className="screenshot_full_screen" alt="展示新创建项目的图像" />
+
+## 管理项目
+
+按照以下说明管理特定项目。
+
+1. 登录到 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"></img> > **MPC 钱包** > **终端用户钱包**，然后点击一个项目以打开其管理页面。
+
+在项目的管理页面中，您可以同时管理该项目和其中的 Vault。
+
+您可以点击**查看交易历史** <img src="/en/images/common/icon_view transactions.svg" className="icon"></img> 和**编辑项目名称** <img src="/en/images/common/icon_edit.svg" className="icon"></img> 来相应地管理项目。
+
+要管理项目中的 Vault，找到您想要管理的 Vault，然后点击**查看交易历史** <img src="/en/images/common/icon_view transactions.svg" className="icon"></img>、**持有者组管理** <img src="/en/images/common/icon_key_share_management.svg" className="icon"></img>、**编辑 Vault 名称** <img src="/cn/images/common/icon_edit.svg" className="icon"></img>、**导出地址与余额** <img src="/en/images/common/icon_export_balances_and_addresses.svg" className="icon"></img>，或**查看详情** <img src="/en/images/common/icon_view.svg" className="icon"></img>。
+
+<img src="/cn/images/mpc-wallet/ucw/project-management-ucw.png" className="screenshot_full_screen" alt="展示项目管理页面的图像" />
+
+<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

@@ -1,0 +1,54 @@
+---
+title: "Verify key shares"
+sidebarTitle: "Verify key shares"
+lang: "en"
+---
+
+Currently, key share verification is only supported for Organization-Controlled Wallets. Regular verification of key shares in MPC Wallets is crucial to maintaining their integrity and security. This process helps detect issues like corruption, unauthorized modifications, or loss of key shares.
+
+## Prerequisite
+Cobo Portal supports both automated and manual key share verification. To use this feature, make sure that your TSS Node is updated to version 0.1.0 or later, or your Cobo Guard is updated to version 2.0.3 or later.
+
+## Set up recurring key share verification
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login) and click **MPC Wallets** in the main menu on the left-hand side.
+2. Switch to **Organization-Controlled Wallets** and select the vault containing the key shares you want to verify.
+3. Click <img src="/en/images/mpc-wallet/manage share.svg" className="icon" alt="Manage key shares" /> on the right-hand side.
+4. Click **Key Share Verification** on the right-hand side.
+5. Click <img src="/en/images/mpc-wallet/filter.svg" className="icon" alt="Filter" /> to locate the key shares you want to verify. You can filter by status, device types, and group types:
+- Status: Options include All, Never Verified, Effective, Pending, and Verification Failed. For detailed definitions of each status, refer to the **Understand Key Share Verification Status** section below.
+- Device Types: Options are Cobo Guard (your TSS Node is stored in Cobo Guard) and API (your TSS Node is deployed on a server).
+- Group Types: Options include Main Group, Signing Group, and Recovery Group.
+6. Click <img src="/en/images/mpc-wallet/recurring.svg" className="icon" alt="Set up recurring key share verification" />next to the key share you want to verify.
+7. In the pop-up window, fill in the following details:
+- Key Share Holder: Select the key share holder for whom you want to set up recurring verification.
+- Verification Time: Select the start time for the recurring key share verification.
+- Frequency: Select how often the recurring key share verification will occur. Options include Daily, Weekly, and Monthly.
+- Apply to All Key Shares: If selected, your configuration will apply to all key shares associated with your selected MPC Wallet.
+<img src="/en/images/mpc-wallet/1.png" className="screenshot_modal" alt="Set up recurring key share verification" />
+8. Complete a 2FA verification. Once done, your recurring key share verification will be successfully set up.
+
+## Manage key share verification
+<Note>Important Note: Only Admin and Operator roles can manually verify a key share, cancel a failed verification, or resend a verification message.</Note>
+
+1. To view verification details, click <img src="/en/images/mpc-wallet/view details.svg" className="icon" alt="View key share verification details" /> next to the key share you want to check.
+<img src="/en/images/mpc-wallet/2.png" className="screenshot" alt="View key share verification details" />
+- Message Details: Displays the message sent to the key share holder's Cobo Guard for signing or the server where the TSS Node is deployed.
+- Signature Data: Shows your signature details, which can also be verified using a third-party tool.
+<img src="/en/images/mpc-wallet/3.png" className="screenshot_modal" alt="View key share verification details" />
+2. To manually verify a key share, click <img src="/en/images/mpc-wallet/manual verify.svg" className="icon" alt="Manually verify key share" /> and complete the 2FA verification process. Once done, the manual verification will start automatically.
+3. To cancel a failed key share verification, click <img src="/en/images/mpc-wallet/revoke.svg" className="icon" alt="Cancel key share verification" /> and complete the 2FA verification process. Once done, the key share status will revert to the most recent state before the failed verification. Note that only failed verifications can be canceled.
+4. To resend a verification message to the key share holder's Cobo Guard or the server where your TSS Node is deployed, click <img src="/en/images/mpc-wallet/retry.svg" className="icon" alt="Resend verification details" /> and complete the 2FA verification process. Once done, a verification message will be sent to the selected destination.
+
+## Understand key share verification status
+
+The table below explains the possible key share verification statuses, their definitions, and the actions you can take for each status.
+
+| Status               | Definition                                                               | Available Actions                                     |
+|----------------------|-------------------------------------------------------------------------|------------------------------------------------------|
+| Never Verified       | The key share has not been verified since its creation.  | - Verify key share manually.                    |
+| Effective            | The key share has been successfully verified.   | - View verification details and results. <br></br> <br></br> - Verify key share manually. |
+| Pending            | A verification process has been initiated but is not yet completed. <br></br> <br></br> - **Pending Signature**: <br></br> <br></br> If the TSS Node is stored on Cobo Guard, this status indicates that the system is waiting for the key share holder to sign the verification message on their Cobo Guard device. <br></br> <br></br> If the TSS Node is deployed on a server, this status indicates that the system is waiting for the key share holder to start their TSS Node, which will automatically sign the verification message. <br></br> <br></br> - **Pending Verification**: <br></br> <br></br> The message signing is complete and is awaiting final verification by Cobo. | - View verification details and results. |
+| Verification Failed            | - **Failed to Send Verification Message**: <br></br> <br></br> The system could not send the key share verification message to the TSS Node due to an error. <br></br> <br></br> - **Blocked by Policy**: <br></br> <br></br> Applies only if your TSS Node is deployed on a server. This status means the message sent to the TSS Node did not meet the callback risk control policies. <br></br> <br></br> - **Rejected By Key Share Holder**: <br></br> <br></br> Applies only if your TSS Node is stored on Cobo Guard. This status indicates that the message sent to the key share holder was rejected. <br></br> <br></br> - **Verification Message Expired**: <br></br> <br></br> This status appears when the message sent to the server or Cobo Guard is not signed within 48 hours. <br></br> <br></br> - **Signing Failed**：<br></br> <br></br> The message signing process failed either on the server or on Cobo Guard. <br></br> <br></br> - **Signature Verification Failed**: <br></br> <br></br> The signature was received, but Cobo could not verify its validity. | - Cancel failed verification. <br></br> <br></br> - View verification details and results. <br></br> <br></br> - Resend verification message.  |
+
+

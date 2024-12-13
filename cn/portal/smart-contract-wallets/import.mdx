@@ -1,17 +1,76 @@
 ---
-title: "导入并设置智能合约钱包"
-sidebarTitle: "导入并设置智能合约钱包"
+title: "导入并设置智能合约钱包 (Safe{Wallet})"
+sidebarTitle: "导入并设置智能合约钱包 (Safe{Wallet})"
+lang: "zh-hans"
 ---
 
-注意：Cobo Portal 目前不支持删除已导入的 Safe&#123;Wallet&#125;。
+<Note>注意：仅操作员和提币员具有导入 Safe&#123;Wallet&#125; 的权限。Cobo Portal 目前不支持删除已导入的 Safe&#123;Wallet&#125;。</Note>
+
+## 第一步：导入 Safe&#123;Wallet&#125;
+
+#### 如果您的当前电子邮件地址以与 Cobo Argus 中的 Safe&#123;Wallet&#125; 已关联：
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 2. 点击 <img src="/cn/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **智能合约钱包** > <img src="/cn/images/smart-contract-wallet/button_import.svg" className="icon"></img>。
-3. 在弹出窗口中，选择 Safe&#123;Wallet&#125; 并点击**下一步**。
-<img src="/cn/images/smart-contract-wallet/2.png" className="screenshot_modal"></img>
-4. 系统将加载您在 Argus 中启用了 Cobo Safe，且与您当前电子邮件地址关联的 Safe&#123;Wallet&#125;。
-- 如果您在 Argus 中没有已经启用 Cobo Safe 的 Safe&#123;Wallet&#125;，请按照屏幕上的指示完成设置。
-- 您也可以关闭当前窗口，点击右上角的 <img src="/cn/images/smart-contract-wallet/button_create.svg" className="icon"></img>，直接在 Cobo Portal 上创建 Safe&#123;Wallet&#125;。
-5. 选择您要导入的 Safe&#123;Wallet&#125;，然后点击**导入**。
-6. 您的 Safe&#123;Wallet&#125; 已经成功从 Argus 导入 Cobo Portal。
-<Tip>这篇文档对您有帮助吗？欢迎[提交反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，让我们知道您的想法。</Tip>
+3. 在弹出窗口中，选择 Safe&#123;Wallet&#125;。
+<img src="/cn/images/smart-contract-wallet/import.png" className="screenshot_modal"></img>
+4. 点击**导入**以加载所有在 Cobo Argus 中启用 Cobo Safe 且与您的当前电子邮件地址关联的 Safe&#123;Wallet&#125; 实例。
+<img src="/cn/images/smart-contract-wallet/import from argus.png" className="screenshot_modal"></img>
+5. 选择您想要导入到 Cobo Portal 的 Safe&#123;Wallet&#125; 实例，然后点击**导入**。
+<img src="/cn/images/smart-contract-wallet/select instance.png" className="screenshot_modal"></img>
+6. 您已成功导入 Safe&#123;Wallet&#125;。现在可以继续进行第二步。
+
+#### 如果您的当前电子邮件地址没有与 Cobo Argus 中的 Safe&#123;Wallet&#125; 所关联：
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/smart-contract-wallet/button_wallet.svg" className="icon"></img> > **智能合约钱包** > <img src="/cn/images/smart-contract-wallet/button_import.svg" className="icon"></img>。
+3. 在弹出窗口中，选择 Safe&#123;Wallet&#125;。
+<img src="/cn/images/smart-contract-wallet/import.png" className="screenshot_modal"></img>
+4. 输入您想要导入到 Cobo Portal 的 Safe&#123;Wallet&#125; 地址。您的 Safe&#123;Wallet&#125; 实例将被自动加载。
+<img src="/cn/images/smart-contract-wallet/enter safe name.png" className="screenshot_modal"></img>
+5. 选择您想要导入到 Cobo Portal 的 Safe&#123;Wallet&#125; 实例，然后点击**导入**。
+6. 您已成功导入 Safe&#123;Wallet&#125;。现在可以继续进行第二步。
+
+## 第二步：设置 Delegate Key
+
+Delegate Key 用于发起（但不签署）代表 Safe&#123;Wallet&#125; 签名人的多签交易。Delegate Key 是一个由 Cobo 分配并在 Cobo Portal 上创建的专用地址，它是设置链上交易风控规则的必要条件。
+
+1. 点击弹窗中的**设置**。
+<img src="/cn/images/smart-contract-wallet/set up key.png" className="screenshot_modal"></img>
+2. 点击**设置 Delegate Key**。
+<img src="/cn/images/smart-contract-wallet/set up my key.png" className="screenshot_modal"></img>
+3. 如果您不是 Safe&#123;Wallet&#125; 签名人：
+- 点击弹出窗口中显示的链接进行复制，然后将链接发送给您的 Safe&#123;Wallet&#125; 签名人进行签名。
+- 或者，点击**复制全部并关闭**以复制所有信息，包括 Safe&#123;Wallet&#125; 地址、Delegate Key 和 URL。
+<img src="/cn/images/smart-contract-wallet/set up not from argus.png" className="screenshot_modal"></img>
+4. 如果您是 Safe&#123;Wallet&#125; 签名人：
+- 访问提供的链接，并连接与 Safe&#123;Wallet&#125; 关联的钱包。
+- 在弹出窗口中，检查自动填写的字段，并为 Delegate Key 输入一个标签。然后，点击**签署**。
+- 在钱包内完成签名。
+<img src="/cn/images/smart-contract-wallet/add key not from argus.png" className="screenshot_modal"></img>
+5. 新的 Delegate Key 将显示在主页上。您现在可以继续进行第三步。
+
+## 第三步：创建链上交易风控规则
+
+1. 在智能合约钱包首页，点击您 Safe&#123;Wallet&#125; 旁边的**需要设置** > **创建**。
+<img src="/cn/images/smart-contract-wallet/create policy.png" className="screenshot_modal"></img>
+2. 选择您要创建的链上交易风控类型。请注意，创建链上交易风控时需要选择 Delegate。成功创建该链上交易风控规则后，则意味着您将授权这些 Delegate 使用单签名执行特定操作（例如，代币转账、代币授权、合约交互）。
+<img src="/cn/images/smart-contract-wallet/on-chain policy.png" className="screenshot_modal"></img>
+3. 点击**下一页**。
+4. 设置链上交易风控规则。有关逐步指南，请参考[创建链上合约交互风控规则](/cn/portal/risk-controls/create-on-chain-policy)。
+5. （如适用）如果您是直接从 Safe&#123;Wallet&#125; 导入实例，而非通过 Cobo Argus，系统将提示您手动启用 Cobo Safe。Cobo Safe 是基于用户角色的链上访问控制框架，作为插件集成在 Safe&#123;Wallet&#125; 上，显著增强了 Safe&#123;Wallet&#125; 的访问控制能力，能够实现基于用户角色的精细化链上访问控制。点击**确认**以启用 Cobo Safe，并在同一个交易中提交您已经设置的链上交易风控规则。
+<img src="/cn/images/smart-contract-wallet/set up safe.png" className="screenshot_modal"></img>
+6. 完成 MFA 验证。
+7. 此时需要来自 Safe&#123;Wallet&#125; 签名人的多签确认。请通知签名人前往 Safe&#123;Wallet&#125; 上完成多签。
+8. 一旦多签确认完成，请返回智能合约钱包首页。您的 Safe&#123;Wallet&#125; 状态将自动更新为**正常**。
+<img src="/cn/images/smart-contract-wallet/ready not from argus.png" className="screenshot_full_screen"></img>
+
+#### 什么是 Delegate？
+
+Delegate 可以是您的 MPC 钱包（机构钱包）的地址，全托管钱包（Web3 钱包）地址，也可以是 EOA 地址。Delegate 由 Safe&#123;Wallet&#125; 签名人预先授权，用于执行单签操作，例如代币转账或与 dApp 交互。请注意，Delegate 在执行单签交易时将负责处理与支付 Gas 费。
+
+在 Cobo Portal 上，您可以通过为智能合约钱包创建链上交易风控规则来设置 Delegate。在设置过程中输入的地址将自动被指定为执行单签操作的 Delegate。
+
+<img src="/cn/images/smart-contract-wallet/5.png" className="screenshot"></img>
+
+
+<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

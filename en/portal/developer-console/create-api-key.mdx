@@ -1,6 +1,7 @@
 ---
 title: "Register an API key"
 sidebarTitle: "Register an API key"
+lang: "en"
 ---
 
 Register an API key following these simple steps:
@@ -14,11 +15,15 @@ Register an API key following these simple steps:
 7. Select user roles from the drop-down list.
 <Info>The API key will obtain the permissions listed under the user roles you select.</Info>
 8. Select the wallets this API key has control over.
-9. Select the key type. 
+9. Select the callback endpoints this API key uses, or register a new one. The selected callback endpoint will receive messages triggered by the API key. For more information, see [Register a callback endpoint](/en/portal/developer-console/callbacks-register).
+10. Select the key type. 
     - **Permanent**: To use this key type, you need to specify a static IP address as the address from which you send the API request. 
     - **Temporary**: A temporary key expires in 30 days. This option is suitable if you do not have a static IP address ready yet.
-10. Enter the IP address to whitelist (separate between each IP address with a comma, if you have more than one IP address to whitelist).
-11. Click **Register**.
+11. Enter the IP address to whitelist (separate between each IP address with a comma, if you have more than one IP address to whitelist).
+12. Click **Register**.
+
+
+<Note>Depending on your organization's governance policies, you may need to obtain approval from your organization admin before the API key becomes active.</Note>
 
 <img src="/en/images/developer-console/create_api_key.png" className="screenshot_modal"/>
-<Tip>Did you find this document helpful? Please [submit feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to share your thoughts with us.</Tip>
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
