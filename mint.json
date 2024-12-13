@@ -731,6 +731,32 @@
       "version": "English"
     },
     {
+      "group": "BUILT BY DEVELOPERS",
+      "pages": [
+        {
+          "group": "Screening",
+          "pages": [
+            "en/apps/screening/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/screening/set-up",
+                {
+                  "group": "Manage Screening",
+                  "pages": [
+                    "en/apps/screening/screening",
+                    "en/apps/screening/viewscreening",
+                    "en/apps/screening/recipients"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "English"
+    },
+    {
       "group": "",
       "pages": [
         "en/accounts/introduction",
