@@ -705,6 +705,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Token Bridge",
+          "pages": [
+            "en/apps/bridge/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/bridge/how-to-use/setup",
+                {
+                  "group": "Manage Token Bridge",
+                  "pages": [
+                    "en/apps/bridge/how-to-use/manage/dashboard",
+                    "en/apps/bridge/how-to-use/manage/bridge-form",
+                    "en/apps/bridge/how-to-use/manage/confirmation",
+                    "en/apps/bridge/how-to-use/manage/supported-assets"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
@@ -913,7 +934,7 @@
                               ]
                             },
                             "cn/portal/mpc-wallets/ocw/transfers",
-                             "cn/portal/mpc-wallets/ocw/key-share-verification",
+                            "cn/portal/mpc-wallets/ocw/key-share-verification",
                             "cn/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
                         }
@@ -1377,6 +1398,27 @@
                   "pages": [
                     "cn/apps/reports/manage",
                     "cn/apps/reports/generate"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Token Bridge",
+          "pages": [
+            "cn/apps/bridge/introduction",
+            {
+              "group": "使用說明",
+              "pages": [
+                "cn/apps/bridge/how-to-use/setup",
+                {
+                  "group": "管理 Token Bridge",
+                  "pages": [
+                    "cn/apps/bridge/how-to-use/manage/dashboard",
+                    "cn/apps/bridge/how-to-use/manage/bridge-form",
+                    "cn/apps/bridge/how-to-use/manage/confirmation",
+                    "cn/apps/bridge/how-to-use/manage/supported-assets"
                   ]
                 }
               ]
