@@ -516,7 +516,8 @@
           "group": "Manage your apps",
           "pages": [
             "en/portal/portal-apps/transaction-policies",
-            "en/portal/portal-apps/app-settings"
+            "en/portal/portal-apps/app-settings",
+            "en/portal/portal-apps/workflow"
           ]
         }
       ],
@@ -1193,7 +1194,8 @@
           "group": "管理应用",
           "pages": [
             "cn/portal/portal-apps/transaction-policies",
-            "cn/portal/portal-apps/app-settings"
+            "cn/portal/portal-apps/app-settings",
+            "cn/portal/portal-apps/workflow"
           ]
         }
       ],
