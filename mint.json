@@ -6,6 +6,9 @@
       "measurementId": "G-W10EF7K0H5"
     }
   },
+  "integrations": {
+    "intercom": "n51r1fwb"
+  },
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.svg"
