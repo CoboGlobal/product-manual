@@ -1,0 +1,107 @@
+---
+title: "Bridge token"
+sidebarTitle: "Bridge token"
+lang: "en"
+---
+
+<Note>This content has been generated with the assistance of AI and is currently undergoing review by the Cobo team. We appreciate your patience as we ensure the accuracy and quality of the information provided.</Note>
+
+This guide explains how to use the Token Bridge dialog to initiate cross-chain transfers.
+
+## Access Requirements
+
+- **View access**: All users can view the form.
+- **Transaction access**: Only users with the Spender user role can initiate transactions.
+
+## Form Components
+
+### Source Asset ("From")
+
+1. Token selection
+   - Select from available tokens in your custodial wallet.
+   - Tokens are sorted by:
+     - Balance (high to low).
+     - Token name alphabetically.
+     - Chain name alphabetically.
+   - Current wallet balance is displayed in the top right.
+
+2. Amount input
+   - Enter the amount to bridge.
+   - Click "MAX" to use maximum available amount.
+   - Amount must be within limits:
+     - Minimum: Varies by token (see limits below).
+     - Maximum: Lesser of available balance or maximum bridge amount.
+   - Error messages:
+     - "The minimum {token} bridge amount is {amount}".
+     - "The maximum {token} bridge amount is {amount}".
+
+### Destination asset ("To")
+
+1. **Token selection**
+   - Available tokens depend on source selection.
+   - Sorted by:
+     - Balance (high to low).
+     - Token name alphabetically.
+     - Chain name alphabetically.
+
+2. **Estimated receipt**
+   - Shows estimated amount to receive.
+   - Updates automatically when source amount changes.
+   - Refreshes every minute with latest rates.
+   - Includes all applicable fees.
+
+## Transaction details
+
+### Estimated Time
+- Shows expected completion time for the bridge transaction.
+
+### Transaction Fees
+Displays total fees including:
+- Source chain gas fees.
+- Destination chain gas fees (if applicable).
+- Cobo processing fees.
+
+### Amount to Receive
+Two possible fee structures:
+1. **Prepay**: Fees deducted from bridged amount.
+   - Shown in estimated receipt amount.
+2. **Postpay**: Fees charged in current billing period.
+   - Full amount shown in estimated receipt.
+   - UI indicates fees will be charged separately.
+
+### Receive Amount
+- Displays final amount after all fees (if Prepay).
+- Shows full amount before fees (if Postpay).
+
+## Actions
+
+- **Preview**: Proceed to [Token Bridge Preview](/en/apps/bridge/how-to-use/manage/confirmation.mdx) page.
+- **Cancel**: Close the form.
+- **X (Close)**: Close the form.
+
+## Token limits
+
+### USDT
+- Networks: TRX, BNB, ETH
+- Daily Limits per Organization: 10,000 - 5,000,000 USDT
+- Platform Daily Limit: 50,000,000 USDT
+- Fee: 0.1% (Postpay)
+
+### BTC
+- Networks: BTC mainnet, ETH
+- Minimum: 10 BTC per transaction
+- Fees (Prepay):
+  - Mint (BTC->WBTC):
+    - 0-100: 0.35%
+    - 100-300: 0.30%
+    - 300-500: 0.26%
+    - 500-1500: 0.23%
+    - 1500+: 0.20%
+  - Burn (WBTC->BTC):
+    - 0-100: 0.50%
+    - 100-300: 0.30%
+    - 300-500: 0.23%
+    - 500-1500: 0.19%
+    - 1500+: 0.15%
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

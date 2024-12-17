@@ -1,0 +1,93 @@
+# **Cobo Portal Apps - Product Manuals guidelines and templates**
+
+After developing [Cobo Portal Apps](https://manuals.cobo.com/en/portal/portal-apps/introduction) using the [Introduction to Cobo Portal App development](https://www.cobo.com/developers/v2/apps/introduction) guide, it's beneficial to create product manuals. These manuals, like the [Invoicing manual](https://manuals.cobo.com/en/apps/invoicing/introduction), enable users to understand your app's functionality, key features, and how to use it.
+
+Cobo can host your product manuals on our [Product Manuals site](https://manuals.cobo.com/en/apps/superloop/introduction) to enhance your app's visibility. Before publication, a Cobo review is required. Please adhere to the following guidelines:
+
+1. Write your product manuals in both American English and Simplified Chinese, and submit them as two separate files.
+2. Deliver your manuals in markdown format, adhering to Cobo's template style. To download the template:
+   1. Visit [Cobo's Product Manuals GitHub page](https://github.com/CoboGlobal/product-manual), click the green **< > Code** button, and select **Download ZIP**.
+   2. Extract the "product-manual-master" folder from the downloaded ZIP.
+   3. Navigate to product-manual-master/en/apps/invoicing to access the template files. The corresponding rendered page is available on [Cobo's product manuals page for Invoicing](https://manuals.cobo.com/en/apps/invoicing/introduction).
+3. Structure your manual following Cobo's format for other Cobo Portal Apps:
+
+1. [Your app's name]
+   - Introduction
+   - How to use
+     - Set up [Your app's name]
+       1. …
+       2. …
+     - Manage [Your app's name]
+       1. …
+       2. …
+
+[For example](https://manuals.cobo.com/en/apps/invoicing/introduction):
+
+![img](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcLPkawfreMnR-oe-vKVSiyhme6gT23_9x6BjTtwcGxFCu5xnbjs1tojWARO7PU8eQ-3d3kesMruANwlk82E2VHnFNE4zU3KfchHDr2MZevm_ppDeZN7RiwyE6WpRFTr6EKIckY?key=0zNQ5DaNxkQcdf34_fKMpATg)
+
+1. Include a Table of Contents in a markdown document named "TOC.mdx" that outlines your manual's structure (similar to 3-a above).
+2. Provide your contact information so readers can reach you with questions or suggestions:
+   1. Provider (e.g. Company name or main contact person's full name)
+   2. Email address
+   3. Any other contact details
+3. Ensure your manual content adheres to the [Product Manuals content guidelines](https://docs.google.com/document/d/11SMXHFx6e-j0TaLcm6b75idemmj5Fa9p26y58Mb6YxE/edit?tab=t.0#bookmark=id.pdfisrk405pt) for consistency and quality.
+4. Ensure you follow the [Markdown special requirements](https://docs.google.com/document/d/11SMXHFx6e-j0TaLcm6b75idemmj5Fa9p26y58Mb6YxE/edit?tab=t.0#bookmark=id.vf2qujcgvbio) to meet formatting standards.
+5. Use the [Cobo Portal EN <-> CN glossary](https://docs.google.com/document/d/11SMXHFx6e-j0TaLcm6b75idemmj5Fa9p26y58Mb6YxE/edit?tab=t.0#bookmark=id.riboun3abyvx) for accurate bilingual terminology when referencing Cobo-specific terms.
+
+
+
+## **Product Manuals content guideline**
+
+- **Voice & tone**
+  - Maintain a professional yet approachable tone
+  - Prefer active voice
+- **Content Don'ts**
+  - Avoid illegal, inappropriate, or misleading information
+  - Do not mention competitors
+  - Exclude pricing details (as they may vary by market)
+  - Avoid time-sensitive content
+  - Refrain from excessive punctuation (!!!, ???)
+- **Writing style**
+
+- Employ clear and straightforward language
+  - Write concise and simple sentences
+  - Avoid technical jargon unless necessary
+  - Use abbreviations sparingly
+- Focus on the user’s perspective ("you")
+- Ensure consistent terminology across screens
+- Use title case or sentence case consistently
+- Write inclusively
+
+- **Accessibility**
+  - Provide text alternatives for non-text content
+  - Consider the experience of screen reader users
+
+
+
+## **Markdown special requirements**
+
+- **Images**
+  - Use the following markdown format for images:
+
+ 
+
+<img src="/images/folder_name/image_name.png" className="screenshot_full_screen" alt="text describing the image for users using the screen reader for accessibility"/>
+
+- Ensure the className="screenshot_full_screen" is used exactly as written.
+- Include descriptive alt text for accessibility.
+- Save image files in a folder named "images" and include this folder when submitting your markdown files.
+- If possible, save images in .svg format for the best quality.
+
+- **Icons**
+  - Use the following markdown format for inline icons:
+
+![img](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdaM2FNiDYK97qIs2WTGjBxi0YQZ8Smy0d2F0OqPXzdO07znr6fFeO_Z8XcY25P2SsIDjPXmee2acL2pEKap4c24k9yBo7Pc35ijusIDC96M59-DoUWO5M3rXP75Gi0OIOGHR5nzw?key=0zNQ5DaNxkQcdf34_fKMpATg)
+
+<img src="/images/folder_name/icon_name.svg" className="icon" alt="text describing the icon for users using the screen reader for accessibility"></img>.
+
+- Example usage:
+  - To make a transfer, click <img src="/images/transfers/transfer-button.svg" className="icon" alt="text describing the image for users using the screen reader for accessibility"></img> in the main menu on the left-hand side.
+- Ensure the className="icon" is used exactly as written.
+- Include descriptive alt text for accessibility.
+- Save icon files in a folder named "images" and include this folder when submitting your markdown files.
+- If possible, save icons in .svg format for the best quality.
