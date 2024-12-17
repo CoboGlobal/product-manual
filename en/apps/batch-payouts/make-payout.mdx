@@ -16,18 +16,23 @@ This article describes how to make a batch payout in the Batch Payouts app.
 
 1. Click the Apps icon <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon" /> on Cobo Portal, find Batch Payouts, and then click **Open** to open the app.
 2. In the app, click **Make a Payout**.
-3. On the **Make a Payout** page, select the token type that you want to transfer in the **Token** section.
+
     <img src="/en/images/portal-apps/batch-payouts/make_payout.png" className="screenshot_full_screen" alt="Screenshot of the Make a Payout page" />
+
+3. On the **Make a Payout** page, select the token type that you want to transfer in the **Token** section.
 4. In the **From** section, select the wallet from which the transfer will be made.
     <Note>Currently Exchange Wallets are not supported for a batch payout.</Note>
-5. In the **Payout Details** section, specify the details for each recipient as follows:
-    - **Receiving address**: You can enter addresses manually, or import them from your Address Book or an uploaded CSV file.
-    - **Amount**: The transfer amount.
-    - **Note**: Additional information about the transfer.
-    - **Email**: A notification email will be sent to this email address when this transaction is completed.
-6. In the **Transaction Cost** section, select a transaction fee level, or customize the transaction fee by clicking the settings icon <img src="/en/images/common/icon_advanced.svg" className="icon" alt="the settings icon" />.
-7. Verify the transaction cost and click **Submit**.
-8. Approve the payout on Cobo Guard.
+5. In the **Add the Payouts** section, the **Recipient Confirmation on Cobo Guard** option is enabled by default. This requires recipients to confirm the transaction on Cobo Guard before the payout is processed. For recipients without Cobo Accounts or Cobo Guard setup, you can use the **Send Notifications To These Emails** button to send them an instructional email.
+6. Specify the details for each recipient as follows:
+    - **Receiving address**: Enter the recipient's address manually, or import it from your Address Book or a CSV file.
+    - **Amount to Receive**: Specify the transfer amount.
+    - **Note**: Include any additional information about the transfer.
+    - **Cobo Account** (or **Email** if **Recipient Confirmation on Cobo Guard** is disabled):
+      - If **Recipient Confirmation on Cobo Guard** is enabled, enter the recipient's Cobo Account. Once the payout is initiated, the associated Cobo Guard will receive a message that requires the recipient to approve or reject the transaction.
+      - If **Recipient Confirmation on Cobo Guard** is disabled, enter the recipient's email address, which will receive a notification upon payout receipt.
+7. In the **Transaction Cost** section, select a transaction fee level, or customize the transaction fee by clicking the settings icon <img src="/en/images/common/icon_advanced.svg" className="icon" alt="the settings icon" />.
+8. Verify the transaction cost and click **Submit**.
+9. Approve the payout on Cobo Guard.
 
 ## Next-Steps
 
