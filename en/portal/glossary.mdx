@@ -6,82 +6,132 @@ lang: "en"
 
 <Note>This glossary will be updated regularly with new terms and definitions.</Note>
 
+## A
+### API co-signers
+An API co-signer is a server node that utilizes the TSS Node package to automatically sign transactions.
+
 ## C
-#### Cobo Safe
+### Cobo Safe
 Cobo Safe is a smart contract built on the [Safe Module](https://docs.safe.global/advanced/smart-account-modules), which extends the functionality of Safe&#123;Wallet&#125; while keeping module logic separate from Safe&#123;Wallet&#125;'s core contracts. When integrated with Safe&#123;Wallet&#125;, Cobo Safe enables role-based access controls, allowing tasks to be delegated to externally owned accounts (EOAs). These accounts can perform actions that have been pre-authorized by Safe&#123;Wallet&#125; signers using a single signature.
 
+### Custodial Wallets
+A wallet type where Cobo maintains custody of the private keys, offering institutional-grade security and simplified asset management. Cobo offers two types of Custodial Wallets: Asset Wallets and Web3 Wallets.
+
 ## D
-#### Delegate Key
+### Delegate Key
 The Delegate Key is used to initiate, but not sign, multi-sig transactions on behalf of Safe&#123;Wallet&#125; signers. It is a unique address created by Cobo and automatically assigned to you during the Delegate Key setup.
 
-#### Delegate
+### Delegate
 Delegates can perform actions authorized by Safe&#123;Wallet&#125; signers using a single signature. This authorization is granted when you create on-chain transaction policies for your Smart Contract Wallets (Safe&#123;Wallet&#125;) on Cobo Portal. Delegates can be addresses from either MPC Wallets (Organization-Controlled) or externally owned accounts (EOAs) outside of Cobo Portal.
 
+## E
+### Exchange Wallets
+A wallet type that consolidates multiple exchange accounts into a single interface, allowing you to view and manage assets across different exchanges and transfer funds seamlessly between exchange accounts and other wallets on Cobo Portal.
+
+### Externally Owned Accounts (EOAs)
+A standard Ethereum account controlled by a private key that can initiate transactions. Unlike smart contract wallets, EOAs cannot execute custom logic or implement advanced security features.
+
+## G
+
+### Gas fees
+The cost required to perform a transaction or execute a contract on the blockchain network.
+
+### Gas limits
+The maximum number of gas units you are willing to pay for the execution of a transaction on Ethereum Virtual Machine (EVM) chains.
+
+### Governance policies
+Governance policies determine the approval rules under which an operation will be approved or rejected. Approval rules include auto rejection, auto approval, approval quorum, and customized workflow.
+
+
 ## I
-#### Initiator address
+### Initiator address
 The initiator address is used to cover the fees for creating a Smart Contract Wallet (Safe&#123;Wallet&#125;) on Cobo Portal. The initiator address must be from an MPC Wallet (Organization-Controlled).
 
 ## M
-#### Main Account
+### Main Account
 The primary account in an Exchange Wallet that holds full control over all assets and operations within its associated Sub Accounts.
 
-#### Main Group
+### Main Group
 A type of holder group within a Multi-Party Computation (MPC) system who are responsible for signing transactions, as well as creating and managing other key share holder groups to maintain the system's governance and operational integrity.
 
-#### MPC Wallets
+### Mobile co-signers
+A mobile co-signer is an organization member who uses [Cobo Guard](/en/guard/introduction) to securely sign transactions. 
+
+### MPC Wallets
 A wallet type that uses Multi-Party Computation (MPC) technology to secure digital assets. Cobo offers two types of MPC Wallets: Organization-Controlled Wallets and User-Controlled Wallets.
 
-#### Multi-Party Computation (MPC)
+### Multi-Party Computation (MPC)
 A cryptographic technology used for key management on the blockchain. With MPC, key shares are created separately in secure environments, encrypted, and shared among multiple parties. These parties will jointly sign transactions without ever revealing their key shares or materializing a full private key at any time.
 
-#### Multi-sig transaction
+### Multi-sig transaction
 A multi-signature (multi-sig) transaction requires multiple key share holders to sign the transaction before it can be executed, rather than relying on a single signature from one key.
 
 ## O
 
-#### Off-chain transaction policy
+### Off-chain transaction policy
 Off-chain transaction policies in Cobo Portal are managed on the backend, allowing you to define rules that govern the handling and approval of transactions. These policies can control transaction limits, frequency, whitelists, and more.
 
-#### On-chain transaction policy
+### On-chain transaction policy
 On-chain transaction policies are managed by smart contracts on blockchain networks. These policies let you define rules that control how transactions are handled and approved. Please note that on-chain transaction policies must be configured before you can make withdrawals or interact with dApps using your Smart Contract Wallets (Safe&#123;Wallet&#125;).
 
-#### Organization
+### Organization
 A top-level entity in Cobo Portal. Each organization independently manages its wallets, policies, and operations within the Cobo Portal ecosystem.
 
-#### Organization-Controlled Wallets
+### Organization-Controlled Wallets
 A type of MPC Wallets where the ownership and management of digital assets lie with the organization.
 
 ## R
-#### Recovery Group
+### Recovery Group
 A type of holder group within a Multi-Party Computation (MPC) system who are responsible for restoring access to the wallet or system in the event of lost or compromised key shares.
 
-#### Risk Control
+### Risk Control
 A comprehensive set of mechanisms designed to address the challenges in storing, managing, and transferring digital assets, including both on-chain and off-chain transaction policies, governance policies, as well as user roles and permissions.
 
 ## S
-#### Safe&#123;Wallet&#125;
+### Safe&#123;Wallet&#125;
 Safe&#123;Wallet&#125; is a leading multi-signature wallet and platform for securely storing digital assets on Ethereum and other popular EVM chains.
 
-#### Signer address
+### Signer address
 The addresses of participants who are authorized to initiate, sign, and execute transactions within a Smart Contract Wallet (Safe&#123;Wallet&#125;). On Cobo Portal, the signer addresses can be from either MPC Wallets (Organization-Controlled) or external owned accounts (EOAs) outside of Cobo Portal.
 
-#### Signing Group
+### Signing Group
 A type of holder group within a Multi-Party Computation (MPC) system who are responsible for collaboratively signing transactions. 
 
-#### Single-sig transaction
+### Single-sig transaction
 A single-signature (single-sig) transaction requires just one key share holder to sign a transaction before it can be executed.
 
-#### Smart Contract Wallet
+### Smart Contract Wallet
 Smart Contract Wallets are a type of decentralized application (dApp) built on blockchain technology, allowing users to manage digital assets through programmable smart contracts.
 
-#### Sub Account
+### Sub Account
 A Sub Account is a subordinate account within an Exchange Wallet, created and managed under the authority and control of its Main Account.
 
 ## T
-#### Threshold
+### Threshold
 The threshold of a Smart Contract Wallet (Safe&#123;Wallet&#125;) defines the number of signer addresses that must approve a transaction before it can be executed.
 
-#### Transaction category
+### Transaction category
 A user-defined label used in Cobo Portal to classify and organize transfers within an organization, enabling easier identification and management of transactions.
+
+### Threshold Signature Scheme (TSS)
+A type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible threshold signature scheme ("m out of n" key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
+
+### TSS Node
+A program provided by Cobo Portal that enables you to manage and use your key shares for MPC Wallets. It has two main functions: generating and managing private key shares and completing transaction signing.
+
+## U
+### User-Controlled Wallets (UCW)
+An MPC wallet type where end users maintain direct control over their digital assets by holding their own private key share.
+
+## V
+### Vaults
+A vault contains a collection of MPC Wallets sharing the same root extended private key.
+
+## W
+### Web3 Wallets
+Web3 Wallets are a type of Custodial Wallets that allow token transfers, contract calls, and message signing. 
+
+### Webhooks
+In Cobo Portal, webhooks provide real-time notifications for events such as transaction status updates.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
