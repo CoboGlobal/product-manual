@@ -5,7 +5,7 @@ lang: "en"
 description: "Learn how to manage your batch payouts in Cobo, including tracking transactions and accessing detailed payout information for better oversight."
 ---
 
-This article describes how to manage batch payouts in the Batch Payouts app.
+This article describes how to manage batch payouts in the Batch Payouts app, including tracking payout status, revoking payouts, and other actions.
 
 ## Prerequisites
 
@@ -14,9 +14,14 @@ This article describes how to manage batch payouts in the Batch Payouts app.
 
 ## Steps
 1. Click the Apps icon <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon" /> on Cobo Portal, find Batch Payouts, and then click **Open** to open the app.
-2. On the overview page, you can find all the batch payouts listed. You can view the total payout amount, total number of transactions, and total number of used receiving addresses.
+2. On the overview page, you can find all the batch payouts in your organization. You can also view the total payout amount, total number of transactions, and total number of used receiving addresses.
     <img src="/en/images/portal-apps/batch-payouts/payouts.png" className="screenshot_full_screen" alt="Screenshot of the payouts overview page" />
-3. Click the corresponding icons in the **Actions** column to perform the actions as follows:
+3. To perform actions on a batch payout, click the corresponding icons in the **Actions** column to perform the actions as follows:
+
+    - <img src="/en/images/portal-apps/batch-payouts/icon_revoke.svg" className="icon" alt="the Revoke icon" /> (Revoke): Revoke a batch payout request if you do not need it anymore.
+
+      <Note><ul><li>This action does not require any MFA approval and cannot be undone.</li><li>The batch payout must be in the Pending Approval status. Otherwise, the action will fail. You will need to cancel or drop the batch payout.</li></ul></Note> 
+
     - <img src="/en/images/portal-apps/batch-payouts/icon_cancel.png" className="icon" alt="the Cancel icon" /> (Cancel): Cancel a batch payout.
 
       <Note><ul><li>This action only applies to transactions from MPC Wallets.</li><li>All the transactions in the batch must be in either of these status: Submitted, Pending Screening, Pending Approval, or Pending Signature. Otherwise, the action will fail.</li></ul></Note>
@@ -36,13 +41,8 @@ This article describes how to manage batch payouts in the Batch Payouts app.
 
       <Note><ul><li>This action only applies to transactions from MPC Wallets in the SOL token.</li><li>All the transactions in the batch must be in the Failed status. Otherwise, the action will fail.</li></ul></Note>
 
-    - Revoke: Revoke a batch payout request if you do not need it anymore.
-
-      <Note><ul><li>This action does not require any MFA approval and cannot be undone.</li><li>The batch payout must be in the Pending Approval status. Otherwise, the action will fail.</li></ul></Note> 
-
-4. You can also click the **View Details** icon <img src="/en/images/common/icon_view.svg" className="icon" alt="the view icon" /> beside a batch payout to view details of individual transactions in the batch, and cancel, drop, speed up, or resend specific transactions that meet the above requirements.
+5. To perform actions on individual transactions in a batch payout, click the **View Details** icon <img src="/en/images/common/icon_view.svg" className="icon" alt="the view icon" /> beside a batch payout to view details of individual transactions in the batch, and cancel, drop, speed up, or resend specific transactions that meet the above requirements.
 
     <img src="/en/images/portal-apps/batch-payouts/transactions.png" className="screenshot_full_screen" alt="Screenshot of the payout details page" />
-
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

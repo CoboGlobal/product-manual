@@ -25,6 +25,9 @@ description: "本文介绍如何在 Batch Payouts 中发起批量转账，确保
 6. 指定每个收款人的详细信息，具体如下：
    - **收款地址**（Receiving Address）：您可以手动输入地址，或从地址簿或上传的 CSV 文件中批量导入地址。
    - **金额**（Amount）：输入转账金额。
+
+    <Note>如果批量转账总金额超过 100 美元，则将触发一个审批流程：批量转账状态将变为**待审批**，并需要一位团队管理员批准该批量转账请求，否则批量转账中的交易将无法进行。如果在提交后 7 天（168 小时）内未进行批准或拒绝，请求状态将自动变为**失败**。有关更多审批流程的详细信息，请参阅[查看和更新审批流程](/cn/portal/portal-apps/workflow)。</Note>
+
    - **备注**（Note）：填写关于转账的更多详情。
    - **Cobo Account**（如果**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard）被禁用则显示为**邮件地址**（Email））：
      - 如果您启用了**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard），请输入收款人的 Cobo Account。一旦付款发起，该账户关联的 Cobo Guard 将收到一条交易确认消息，需要收款人批准或拒绝交易。
@@ -37,10 +40,6 @@ description: "本文介绍如何在 Batch Payouts 中发起批量转账，确保
 
 ## 后续步骤
 
-提交批量转账请求后，您可以查看批量转账状态并管理批量或单个交易。
-
-如果批量转账总金额超过 100 美元，则将触发一个审批流：批量转账状态将变为**待审批**，并需要一位团队管理员批准该批量转账请求，否则批量转账中的交易将无法进行。如果在提交后 7 天（168 小时）内未进行批准或拒绝，请求状态将自动变为**失败**。有关更多审批流的详细信息，请参阅[查看和更新审批流](/cn/portal/portal-apps/workflow)。
-
-如果您不再需要该批量转账，可以在请求被批准之前撤销请求。有关更多管理批量转账的详细信息，请参阅[管理批量转账](/cn/apps/batch-payouts/manage-payouts)。
+提交批量转账请求后，您可以查看批量转账状态并管理批量或单个交易。如果您不再需要该批量转账，可以在请求被批准之前撤销请求。有关更多管理批量转账的详细信息，请参阅[管理批量转账](/cn/apps/batch-payouts/manage-payouts)。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

@@ -1,15 +1,15 @@
 ---
-title: "View and update workflows"
-sidebarTitle: "View and update workflows"
+title: "View and update approval workflows"
+sidebarTitle: "View and update approval workflows"
 lang: "en"
 ---
 
-This article describes how to view and update workflows of Cobo Portal Apps.
+This article describes how to view and update approval workflows of Cobo Portal Apps.
 
 ## Context
-In the context of Cobo Portal Apps, a workflow consists of specific operations on the app that will trigger certain approval rules. For example, if you make a batch payout in the [Batch Payout](/en/apps/batch-payouts/introduction) app, you might trigger a workflow in which the batch payout requires approval from organization admin, the payout request will be in the Pending Approval status until the admin approves or rejects. 
+In the context of Cobo Portal Apps, an approval workflow consists of specific operations on the app that will trigger certain approval rules. For example, if you make a batch payout in the [Batch Payout](/en/apps/batch-payouts/introduction) app, you might trigger an approval workflow in which the batch payout requires approval from organization admin, the payout request will be in the Pending Approval status until the admin approves or rejects. 
 
-When you install an app, the app will be automatically configured with default workflows, which is defined in the [app manifest file](https://www.cobo.com/developers/v2/apps/build-app#configure-the-manifest-file) by app developers.
+When you install an app, the app will be automatically configured with default approval workflows, which is defined in the [app manifest file](https://www.cobo.com/developers/v2/apps/build-app#configure-the-manifest-file) by app developers.
 
 ## Steps
 
@@ -25,15 +25,15 @@ When you install an app, the app will be automatically configured with default w
 
     <img src="/en/images/portal-apps/batch-payouts/workflow_tab.png" className="screenshot_full_screen" alt="The Workflow tab" />
 
-    Now you can view the default workflows that apply to this app.
+    Now you can view the default approval workflows that apply to this app.
 
-    <Note>The tab will be invisible if the app does not have any default workflow.</Note>
+    <Note>The tab will be invisible if the app does not have any default approval workflow.</Note>
 
-5. To view the instances of a workflow (the operations that triggers the workflow), click the history icon <img src="/en/images/portal-apps/batch-payouts/icon_history.svg" className="icon" alt="the history icon" /> to display the **Approval History** dialog.
+5. To view the instances of an approval workflow (the operations that triggers the approval workflow), click the history icon <img src="/en/images/portal-apps/batch-payouts/icon_history.svg" className="icon" alt="the history icon" /> to display the **Approval History** dialog.
 
     <img src="/en/images/portal-apps/batch-payouts/history.png" className="screenshot_full_screen" alt="The Approval History dialog" />
 
-6. To update a workflow, click the <img src="/en/images/common/icon_edit.svg" className="icon" alt="the edit icon"></img> icon on the **Workflows** tab to open the **Edit Approval Workflow** dialog.
+6. To update an approval workflow, click the <img src="/en/images/common/icon_edit.svg" className="icon" alt="the edit icon"></img> icon on the **Workflows** tab to open the **Edit Approval Workflow** dialog.
 
     <img src="/en/images/portal-apps/workflow_settings.png" className="screenshot_full_screen" alt="The Edit Approval Workflow dialog" />
 
@@ -41,7 +41,7 @@ When you install an app, the app will be automatically configured with default w
 8. Enter the verification code from your Cobo Guard or other MFA methods to approve the workflow changes.
 
 ## Next-Steps
-Now the workflow's status becomes **Pending Approval**. This is because change workflows, similar to other operations in Cobo Portal, will be subject to [Governance policies](/en/portal/risk-controls/governance-policies), which means the changes might require approval from your organization admin. After the approval, the workflow's status will change to **Active**, and will apply to all the operations that trigger the workflow.
+Now the approval workflow's status becomes **Pending Approval**. This is because change approval workflows, similar to other operations in Cobo Portal, will be subject to [Governance policies](/en/portal/risk-controls/governance-policies), which means the changes might require approval from your organization admin. After the approval, the approval workflow's status will change to **Active**, and will apply to all the operations that trigger the approval workflow.
 
 <Note>You can edit the related governance policies in the **Organization** > **Governance Policies** > **Organization** > **Change App Permissions and Settings**.</Note>
 
