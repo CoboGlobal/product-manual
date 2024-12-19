@@ -26,6 +26,9 @@ This article describes how to make a batch payout in the Batch Payouts app.
 6. Specify the details for each recipient as follows:
     - **Receiving address**: Enter the recipient's address manually, or import it from your Address Book or a CSV file.
     - **Amount to Receive**: Specify the transfer amount.
+
+        <Note>If the total payout amount is more than 100 USD, the payout will trigger an approval workflow and its status will be **Pending Approval**. It will require one organization admin to approve, otherwise the transactions in the payout will not be proceeded. If no approval or rejection is made within 7 days (168 hours) after the payout is made, its status will automatically become **Failed**. For more details about approval workflows, refer to [View and update approval workflows](/en/portal/portal-apps/workflow).</Note>
+
     - **Note**: Include any additional information about the transfer.
     - **Cobo Account** (or **Email** if **Recipient Confirmation on Cobo Guard** is disabled):
       - If **Recipient Confirmation on Cobo Guard** is enabled, enter the recipient's Cobo Account. Once the payout is initiated, the associated Cobo Guard will receive a message that requires the recipient to approve or reject the transaction.
@@ -38,10 +41,6 @@ Now you have submitted a batch payout request.
 
 ## Next-Steps
 
-After submitting the batch payout request, you can view the status and manage the batch or individual transaction. 
-
-If the total payout amount is more than 100 USD, the payout triggers a workflow: its status will be **Pending Approval**. It requires one organization admin to approve, otherwise the transactions in the payout will not be proceeded. If no approval or rejection is made within 7 days (168 hours) after the payout is made, its status will automatically become **Failed**. For more details about the workflow, refer to [View and update workflows](/en/portal/portal-apps/workflow).
-
-You can revoke the batch payout request before it is approved if you do not need it anymore. For more details about managing batch payouts, refer to [Manage batch payouts](/en/apps/batch-payouts/manage-payouts).
+After submitting the batch payout request, you can view the status and manage the batch or individual transaction, such as canceling, dropping, speeding up, or resending transactions. You can revoke the batch payout request before it is approved if you do not need it anymore. For more details about managing batch payouts, refer to [Manage batch payouts](/en/apps/batch-payouts/manage-payouts).
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
