@@ -1095,7 +1095,7 @@
                       "pages": [
                         "cn/portal/risk-controls/on-chain-tx-type",
                         "cn/portal/risk-controls/create-on-chain-policy",
-                        "cn/portal/risk-controls/manage-on-chain-tx-policy"
+                        "cn/portal/risk-controls/manage-on-chain-policy"
                       ]
                     },
                     {
@@ -1203,7 +1203,7 @@
                   "group": "设置 Fee Station",
                   "pages": [
                     "cn/portal/fee-station/overview",
-                    "cn/portal/fee-station/set-up-mpc"
+                    "cn/portal/fee-station/set-up-for-mpc"
                   ]
                 },
                 {
@@ -1567,6 +1567,14 @@
     {
       "source": "/en/portal/developer-console/callbacks-manage",
       "destination": "/en/portal/developer-console/callbacks-register"
+    },
+    {
+      "source": "/cn/portal/fee-station/set-up-mpc",
+      "destination": "/cn/portal/fee-station/set-up-for-mpc"
+    },
+    {
+      "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
+      "destination": "/cn/portal/risk-controls/manage-on-chain-policy"
     }
   ]
 }
