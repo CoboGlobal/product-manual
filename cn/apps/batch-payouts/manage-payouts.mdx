@@ -18,17 +18,29 @@ description: "学习如何在 Batch Payouts 中管理批量转账，查看交易
     <img src="/en/images/portal-apps/batch-payouts/payouts.png" className="screenshot_full_screen" alt="概览页面截图" />
 3. 在**操作**（Actions）栏中点击相应的图标，执行以下操作：
     - <img src="/en/images/portal-apps/batch-payouts/icon_cancel.png" className="icon" alt="取消图标" />（取消）：取消批量转账。
+
       <Note><ul><li>此操作仅适用于从 MPC 钱包发起的交易。</li><li>该批量转账中的所有交易必须均处于以下任一状态：已提交（Submitted）、待筛查（Pending Screening）、待审核（Pending Approval）或待签名（Pending Signature）。否则，此操作将失败。</li></ul></Note>
+
     - <img src="/en/images/portal-apps/batch-payouts/icon_drop.png" className="icon" alt="放弃图标" />（放弃）：放弃批量转账。
       放弃交易将触发一笔 Replace-by-fee (RBF) 交易，即原始交易的新版本。该 RBF 交易手续费较原始交易更高，旨在激励矿工优先确认这笔交易。 
+
       <Note><ul><li>此操作仅适用于从 MPC 钱包发起的交易，不适用于下列链上的交易：VET、TRON、TVET、SOL 和 TON。</li><li>该批量转账中的所有交易必须均处于广播中（Broadcasting）状态。否则，此操作将失败。</li></ul></Note>
+
     - <img src="/en/images/portal-apps/batch-payouts/icon_speed_up.png" className="icon" alt="加速图标" />（加速）：加速批量转账。
       加速交易将触发一笔 Replace-by-fee (RBF) 交易，即原始交易的新版本。该 RBF 交易和原始交易具有相同输入信息，但交易手续费较原始交易更高，旨在激励矿工优先确认这笔交易。 
+
       <Note><ul><li>此操作仅适用于从 MPC 钱包发起的交易，不适用于下列链上的交易：VET、TRON、TVET、SOL 和 TON。</li><li>该批量转账中的所有交易必须均处于广播中（Broadcasting）状态。否则，此操作将失败。</li></ul></Note>
+
     - <img src="/en/images/portal-apps/batch-payouts/icon_resend.png" className="icon" alt="重新发送图标" />（重新发送）：重新发送之前失败的批量转账。
+
       <Note><ul><li>此操作仅适用于从 MPC 钱包发起、以 SOL 代币进行的交易。</li><li>该批量转账中的所有交易必须均处于失败（Failed）状态。否则，此操作将失败。</li></ul></Note> 
 
+    - （撤销）：如果您不再需要某笔批量支付，可以撤销该批量支付请求。
+
+      <Note><ul><li>此操作不需要任何 MFA 批准，并且撤销批量支付后无法撤回。</li><li>批量支付必须处于待审批状态。否则，操作将失败。</li></ul></Note>
+
 4. 您也可以点击批量转账旁边的**查看详情**图标<img src="/en/images/common/icon_view.svg" className="icon" alt="查看详情图标" />，查看该批量转账中单笔交易的详情，也可取消、放弃、加速或重新发送满足上述操作前提的单笔交易。
+
     <img src="/en/images/portal-apps/batch-payouts/transactions.png" className="screenshot_full_screen" alt="Screenshot of the payout details page" />
 
 
