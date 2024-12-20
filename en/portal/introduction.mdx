@@ -35,7 +35,74 @@ Cobo Portal combines all four wallet technologies in one platform with state-of-
 
 The following table lists the main characteristics of each wallet type:
 
-<img src="/en/images/transfers/key features.svg" className="diagram"/>
+<table class="six-columns">
+  <tr>
+    <th></th>
+    <th>Custodial Wallets</th>
+    <th>MPC Wallets</th>
+    <th>Smart Contract Wallets</th>
+    <th>Exchange Wallets</th>
+  </tr>
+  <tr>
+    <td><strong>Main benefits</strong></td>
+    <td>
+      <ul>
+        <li>Institutional-grade wallet security combined with a three-tier hot-warm-cold infrastructure</li><br/>
+        <li>Customizable access controls and risk policies</li><br/>
+        <li>Automated token sweep from all your end users</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>No single point of failure</li><br/>
+        <li>Key shares can be flexibly distributed amongst multiple parties according to your requirements</li><br/>
+        <li>Robust asset recovery capabilities</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Efficient single-signature fund transfers</li><br/>
+        <li>Enable role-based access controls</li><br/>
+        <li>Off-chain and on-chain transaction policies</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Easily move assets in and out of multiple exchanges from a single dashboard</li><br/>
+        <li>Customize security settings across multiple exchange accounts from a single interface</li><br/>
+        <li>Enhanced portfolio oversight</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Typical customers</strong></td>
+    <td>Users seeking ease of use and convenience, and those who prefer having a trusted specialist handle the security of their wallet.</td>
+    <td>Users who want more control over their private keys and assets and privacy, and those who prefer a more decentralized approach to custody.</td>
+    <td>Users who prefer non-custodial wallets powered by smart contracts, and those who seek transparency, automation, programmability, and on-chain role-based access controls.</td>
+    <td>Users who trade on centralized exchanges but aim to manage exchange counterparty exposure and minimize the risk of leaving assets on exchanges.</td>
+  </tr>
+  <tr>
+    <td><strong>Key storage and signature</strong></td>
+    <td>Private keys are managed solely by Cobo. Transactions are approved by you and then signed by Cobo.</td>
+    <td>Private keys are co-managed with Cobo, with flexible threshold signature schemes of "m out of n" key shares for signing any transactions or messages.</td>
+    <td>Private keys are safely stored in smart contracts and multiple signatures are required to sign transactions or messages. For higher efficiency, single-signature operations can be performed by pre-authorized delegates.</td>
+    <td>Cobo retains your API keys, allowing for the operation of your exchange accounts through Cobo Portal.</td>
+  </tr>
+  <tr>
+    <td><strong>Chain support</strong></td>
+    <td>70+ chains, 2,000+ tokens</td>
+    <td>30+ chains, 2,000+ tokens</td>
+    <td>9 chains</td>
+    <td>Dependent on the corresponding exchanges</td>
+  </tr>
+  <tr>
+    <td><strong>KYC</strong></td>
+    <td>Required</td>
+    <td>Not required for Starter and Standard plans</td>
+    <td>Not required</td>
+    <td>Not required</td>
+  </tr>
+</table>
 
 ### Comprehensive risk controls
 Cobo Portal offers a variety of risk control mechanisms designed to address the challenges in storing, managing and transferring digital assets, including [transaction policies](/en/portal/risk-controls/tx-policies-overview), [governance policies](/en/portal/risk-controls/governance-policies), and [user roles and permissions](/en/portal/risk-controls/roles-and-permissions).
