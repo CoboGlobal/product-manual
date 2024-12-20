@@ -613,7 +613,8 @@
               "group": "Supported exchanges",
               "pages": [
                 "en/apps/superloop/supported-exchanges-overview",
-                "en/apps/superloop/supported-exchanges-bitget"
+                "en/apps/superloop/supported-exchanges-bitget",
+                "en/apps/superloop/supported-exchanges-bitmart"
               ]
             }
           ]
@@ -1338,7 +1339,8 @@
               "group": "支持的交易所",
               "pages": [
                 "cn/apps/superloop/supported-exchanges-overview",
-                "cn/apps/superloop/supported-exchanges-bitget"
+                "cn/apps/superloop/supported-exchanges-bitget",
+                "cn/apps/superloop/supported-exchanges-bitmart"
               ]
             }
           ]
