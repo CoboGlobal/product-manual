@@ -36,8 +36,67 @@ Cobo Portal 将四种钱包技术整合到单一平台上，提供最先进的�
 
 下表列出了每种钱包类型的主要特征：
 
-<img src="/cn/images/common/key-features.svg" className="screenshot_full_screen"></img>
 
+<table class="six-columns">
+  <tr>
+    <th></th>
+    <th>全托管钱包</th>
+    <th>MPC 钱包</th>
+    <th>智能合约钱包</th>
+    <th>交易所钱包</th>
+  </tr>
+  <tr>
+    <td><strong>主要优势</strong></td>
+    <td>
+      - 机构级钱包安全性与三层热–温–冷存储架构相结合<br/>
+      - 定制化的访问控制和风险策略<br/>
+      - 自动归集您所有终端用户的代币
+    </td>
+    <td>
+      - 消除了单点故障<br/>
+      - 可根据需要在多方之间灵活分配私钥分片<br/>
+      - 强大的资产恢复功能
+    </td>
+    <td>
+      - 高效的单一签名资金转账<br/>
+      - 启用基于角色的访问控制<br/>
+      - 链下和链上交易风险控制
+    </td>
+    <td>
+      - 通过单一业务数据概览轻松地将资产移入和移出多个交易所<br/>
+      - 通过单一界面在多个交易所账户之间自定义安全设置<br/>
+      - 加强对投资组合的管理
+    </td>
+  </tr>
+  <tr>
+    <td><strong>典型客户</strong></td>
+    <td>寻求易用性和便捷性的用户，以及那些更愿意让值得信赖的专家来处理钱包安全问题的用户</td>
+    <td>希望更好地掌控其私钥、资产和隐私的用户，以及那些更愿意采用去中心化托管方式的用户</td>
+    <td>更愿意使用由智能合约支持的非托管钱包的用户，以及希望提高透明度、自动化程度、可编程性和基于角色的链上访问控制的用户</td>
+    <td>在中心化交易所进行交易，且试图最大限度减少对交易所风险并可能降低托管资产在交易所所致风险的用户</td>
+  </tr>
+  <tr>
+    <td><strong>私钥存储和签名</strong></td>
+    <td>私钥由 Cobo 进行管理。交易由您审批，然后由 Cobo 签名</td>
+    <td>您与 Cobo 共同管理私钥，采用灵活的门限签名机制，即需要"n 中的 m 个"私钥分片来签署交易和消息</td>
+    <td>私钥安全地存储在智能合约中，且需要多签名才能批准交易或消息。为提高效率，可通过预授权的 Delegate 来执行单签操作</td>
+    <td>Cobo 会保留您的 API Key，以允许通过 Cobo Portal 操作您的交易所账户</td>
+  </tr>
+  <tr>
+    <td><strong>链支持</strong></td>
+    <td>70 多条链，2,000 多种代币</td>
+    <td>30 多条链，2,000 多种代币</td>
+    <td>9 条链</td>
+    <td>取决于相应的交易所</td>
+  </tr>
+  <tr>
+    <td><strong>KYC</strong></td>
+    <td>需要</td>
+    <td>入门版和标准版不需要</td>
+    <td>不需要</td>
+    <td>不需要</td>
+  </tr>
+</table>
 
 ### 全方位风险控制
 Cobo Portal 提供了各种风险控制机制，旨在解决数字资产存储、管理和转移过程中遇到的挑战，包括[交易风控](/cn/portal/risk-controls/tx-policies-overview)、[业务风控](/cn/portal/risk-controls/governance-policies)以及[用户角色和权限](/cn/portal/risk-controls/roles-and-permissions)。
