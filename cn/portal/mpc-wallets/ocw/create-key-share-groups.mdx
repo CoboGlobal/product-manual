@@ -53,7 +53,7 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
 
 <a id="create-main-group"></a>
 ### 创建主控组
-为 MPC Vault 创建主控组时，可以选择移动端签名人或 API 签名人。在继续操作之前，请先了解下表中每种签名人的主要用途和使用前提。
+为 MPC Vault 创建主控组时，可以选择移动端签名人或服务端签名人。在继续操作之前，请先了解下表中每种签名人的主要用途和使用前提。
 
 
 <a id="signer-type"></a>
@@ -61,7 +61,7 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
   <tr>
     <th>签名人类型</th>
     <th>移动端签名人</th>
-    <th>API 签名人</th>
+    <th>服务端签名人</th>
   </tr>
   <tr>
     <td>主要用途</td>
@@ -69,7 +69,7 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
       移动端签名人是一名团队成员，负责通过 [Cobo Guard](/cn/guard/introduction) 安全签署交易。其 TSS Node ID 由 Cobo Guard 生成，并将自动填入。<Note>如果您是从我们的 [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) 文章被重定向到这里，您可以在 Cobo Guard 中复制 TSS Node ID，步骤如下：点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> > <img src="/en/images/cobo-guard/common/icon_key.svg" className="icon"></img> **我的公钥** > **TSS Node ID** > **复制 TSS Node ID**。</Note>
     </td>
     <td>
-      API 签名人是一个服务器节点，用于自动通过 [TSS Node 软件包](/cn/portal/mpc-wallets/ocw/network-environments)签署交易。其 TSS Node ID 通过 Cobo 提供的 TSS 软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见 <a href="/cn/portal/mpc-wallets/ocw/network-environments">TSS Node 技术设置</a>。
+      服务端签名人是一个服务器节点，用于自动通过 [TSS Node 软件包](/cn/portal/mpc-wallets/ocw/network-environments)签署交易。其 TSS Node ID 通过 Cobo 提供的 TSS 软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见 <a href="/cn/portal/mpc-wallets/ocw/network-environments">TSS Node 技术设置</a>。
     </td>
   </tr>
   <tr>
@@ -98,11 +98,11 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
 <img src="/cn/images/mpc-wallet/create-main-key-group.png" className="screenshot_full_screen"/>
 4. 在**生成主控组私钥分片**对话框中，前往**私钥分片持有者 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
-    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS Node 软件包生成的 **TSS Node ID**，然后点击**确认**。有关进一步说明，请参见 [TSS Node 技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。
+    - 要使用 **服务端签名人**，输入**持有方**姓名，填写使用 TSS Node 软件包生成的 **TSS Node ID**，然后点击**确认**。有关进一步说明，请参见 [TSS Node 技术设置](/cn/portal/mpc-wallets/ocw/network-environments)。
 5. 请通知相关的私钥分片持有者进行确认。
     - **注意：**
         - 如果使用移动端签名人，Cobo Portal 上会出现一个**确认**页面。请提醒选定的私钥分片持有者在其 Cobo Guard 中确认。在选定的私钥分片持有者的 Cobo Guard 应用中，点击 **Security Verification** (安全验证) 消息以打开 **Security Verification** (安全验证)页面。审核信息后，点击 **Yes, it is me** (是的，这是我)。一个 **Become Key Holder** (成为私钥分片持有者)的消息接着很快将发送到私钥分片持有者的 Cobo Guard，点击该消息以打开 **Become Key Holder** (成为私钥分片持有者)页面，审核信息后，点击**批准**。选定的私钥分片持有者现在应该在他们的 Cobo Guard 上点击**生成私钥分片**横幅，进入**我的账户**页面，然后在**私钥分片**下点击**等待私钥分片生成**以进入**私钥分片**页面。在**私钥分片**页面上，点击**开始**进入**生成私钥分片**页面。私钥分片生成过程将开始。当 Cobo Guard 上显示**私钥分片已生成**消息时，点击**确定**。
-        - 如果使用 API 签名人，请确保在 24 小时内让 TSS Node 上线。TSS Node 上线后，确认流程完成。
+        - 如果使用服务端签名人，请确保在 24 小时内让 TSS Node 上线。TSS Node 上线后，确认流程完成。
 
 6. 私钥分片生成过程于第 5 步完成后，**持有者组状态**将显示为**活跃**。
 <Info>您可能需要刷新 Cobo Portal 页面以查看最新结果。</Info>
@@ -113,7 +113,7 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
 签名组是使用主控组创建的。可根据业务需要为不同成员创建多个签名组。
 
 ### 创建签名组
-与创建主控组类似，在创建签名组时，可以选择使用移动端签名人或 API 签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
+与创建主控组类似，在创建签名组时，可以选择使用移动端签名人或服务端签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
 
 
 选择完签名人类型并完成前提步骤后，按照以下说明创建签名组。
@@ -166,7 +166,7 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
 ## 恢复组
 恢复组有两个主要用途：如果主控组和备份副本丢失或损坏，恢复组可用于恢复整个私钥并创建新的主控组。要了解有关备份和恢复的更多信息，请参阅[备份持有者组](/cn/portal/mpc-wallets/ocw/back-up-key-share-groups)和[恢复私钥分片](/cn/portal/mpc-wallets/ocw/restore-from-backup)。
 
-与创建主控组和签名组类似，在创建恢复组时，也可以选择移动端签名人或 API 签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
+与创建主控组和签名组类似，在创建恢复组时，也可以选择移动端签名人或服务端签名人。在继续操作之前，请先了解[每种签名人的主要用途和使用前提](#signer-type)。
 
 
 选择完签名人类型并完成前提步骤后，按照以下说明创建恢复组。
@@ -186,13 +186,13 @@ description: "掌握如何创建持有者组，确保安全的资产管理和操
 - 选择**自恢复**或**第三方恢复**。自恢复需要由 Cobo 和您的团队所持有的私钥分片，而第三方恢复需要由 Cobo、您的团队和您信任的第三方所持有的私钥分片。
 - 选择您的私钥分片持有者。
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
-    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS Node 软件包生成的 **TSS Node ID**，然后点击**确认**。
+    - 要使用 **服务端签名人**，输入**持有方**姓名，填写使用 TSS Node 软件包生成的 **TSS Node ID**，然后点击**确认**。
 <img src="/cn/images/mpc-wallet/recoverytype.png" className="screenshot_modal"/>
 6. 如果选择无 Cobo 参与，请按照以下说明完成创建：
 - 选择**自恢复**或**第三方恢复**。自恢复需要您的团队所持有的私钥分片，而第三方恢复需要由您的团队和您信任的第三方所持有的私钥分片。
 - 选择您的私钥分片持有者。
     - 要使用**移动端签名人**，选择一个**持有方**（**TSS Node ID** 将自动填入），然后点击**确认**。
-    - 要使用 **API 签名人**，输入**持有方**姓名，填写使用 TSS Node 软件包生成的 **TSS Node ID**，然后点击**确认**。
+    - 要使用 **服务端签名人**，输入**持有方**姓名，填写使用 TSS Node 软件包生成的 **TSS Node ID**，然后点击**确认**。
 <img src="/cn/images/mpc-wallet/recoverytype1.png" className="screenshot_modal"/>
 7. 点击**确认**。
 8. 状态将显示为“等待私钥分片持有者确认”。通知所有私钥分片持有者进行确认。有关私钥分片持有者如何完成此确认过程的说明，请参见[生成和备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。

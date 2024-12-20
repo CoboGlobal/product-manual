@@ -213,7 +213,7 @@
                           ]
                         },
                         {
-                          "group": "(For API co-signer) Technical setup",
+                          "group": "(For Server co-signer) Technical setup",
                           "pages": [
                             "en/portal/mpc-wallets/ocw/network-environments",
                             "en/portal/mpc-wallets/ocw/server-environments",
@@ -938,7 +938,7 @@
                           ]
                         },
                         {
-                          "group": "(API 签名人) 配置说明",
+                          "group": "(服务端签名人) 配置说明",
                           "pages": [
                             "cn/portal/mpc-wallets/ocw/network-environments",
                             "cn/portal/mpc-wallets/ocw/server-environments",
