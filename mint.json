@@ -1462,6 +1462,32 @@
       "version": "简体中文"
     },
     {
+      "group": "开发者出品",
+      "pages": [
+        {
+          "group": "Screening",
+          "pages": [
+            "cn/apps/screening/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/screening/set-up",
+                {
+                  "group": "管理扫描",
+                  "pages": [
+                    "cn/apps/screening/screening",
+                    "cn/apps/screening/viewscreening",
+                    "cn/apps/screening/recipients"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "简体中文"
+    },
+    {
       "group": "",
       "pages": [
         "cn/accounts/introduction",
