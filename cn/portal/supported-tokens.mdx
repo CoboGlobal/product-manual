@@ -2,15 +2,114 @@
 title: "支持的代币与链"
 sidebarTitle: "支持的代币与链"
 lang: "zh-hans"
-description: "了解 Cobo Portal 支持的区块链和代币，确保您在交易和管理资产时的顺利体验。"
+description: "了解 Cobo Portal 在 80 多条区块链上支持的代币和链。包括全托管和 MPC 钱包的自助上币申请功能。"
 ---
+
+## 查看 Cobo Portal 支持的代币与链
 
 <Note>重要提示：如果您正在使用 Wallet-as-a-Service (WaaS) 2.0 API，请参阅此[指南](https://www.cobo.com/developers/v2/api-references/wallets/list-supported-chains)，了解如何查询特定链 ID 以及其他链详细信息，例如所需的区块确认数。关于具体代币的信息，请[点击这里](https://www.cobo.com/developers/v2/api-references/wallets/list-supported-tokens)。</Note>
 
-Cobo Portal 目前支持超过 80 种区块链和 3,000 多种代币。
+Cobo Portal 目前支持超过 80 条区块链和 3,000 多种代币。
 
 - 要查看 Cobo Portal 支持的代币的完整列表，请[点击这里](https://www.cobo.com/zh/tokens)。
 - 要查看 Cobo Portal 支持的链的完整列表，请[点击这里](https://www.cobo.com/zh/chains)。
 
-我们会定期更新这些列表以添加新内容。如果您希望请求对特定链或代币的支持，请[联系我们](https://www.cobo.com/zh/contact)。
-<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
+<Info>我们会定期更新这些列表。如果您想请求支持特定的链或代币，请[联系我们](https://www.cobo.com/contact)。您也可以按照下一节的说明申请自助上币。</Info>
+
+## 申请未支持代币的自助上币
+
+### 为什么要申请代币自助上币？
+
+加密生态系统发展迅速，新代币不断涌现。我们的代币自助上币功能使您能够快速添加 Cobo Portal 尚未支持的代币。这项功能特别适合：
+
+- **交易所和交易团队**
+  - 快速上线新兴代币或热门资产（如迷因币），把握时效性交易机会
+  - 通过快速上币能力保持竞争优势
+  - 高效管理自定义代币组合
+
+### 如何申请代币自助上币
+
+对于 Cobo Portal 目前不支持的代币，我们现在提供自助上币申请功能，让您可以申请添加新代币。
+
+以下是流程概览：
+
+```mermaid
+flowchart LR
+    A[访问 Cobo Portal] --> B[添加代币]
+    B --> C[发起申请]
+    C --> D[填写表单]
+    D --> E[创建工单]
+    E --> F[追踪状态]
+    F --> G[代币添加]
+    style A fill:#f5f5f5,stroke:#333
+    style G fill:#e6f3e6,stroke:#333
+```
+
+<Info>
+代币自助上币目前支持以下钱包类型：
+- [全托管钱包（资产钱包）](/cn/portal/custodial-wallets/asset-wallets/set-up)
+- [MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)
+</Info>
+
+观看我们的分步指南：
+
+<iframe
+  width="700"
+  height="400"
+  src="https://embed.app.guidde.com/playbooks/xvvaKi45LZMjptbbkEXvpm"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+让我们详细了解每个步骤：
+
+#### 步骤 1：访问代币自助上币申请表单
+
+<Info>我们将以全托管钱包（资产钱包）为例。</Info>
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **全托管钱包** > **资产钱包**。
+3. 点击您想要添加代币的钱包。
+4. 点击**添加代币**。
+5. 找到"如果您找不到某个代币，请提交申请进行自助上币。"并点击**提交申请**。
+6. 您将被重定向到与 **Cobo Global** 的聊天窗口。点击**创建工单**打开**申请自助上币**表单。
+
+#### 步骤 2：完成申请自助上币表单
+
+填写表单时需要提供以下信息：
+
+1. 输入您的电子邮箱：
+   - 目前，您的电子邮箱将被自动填充。它将用于发送申请状态的通知
+
+2. 选择钱包类型：
+   - [全托管钱包（资产钱包）](/cn/portal/custodial-wallets/asset-wallets/set-up)
+   - [MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)
+
+3. 选择区块链网络（如果您要找的网络未列出，请[联系](https://www.cobo.com/contact) Cobo 客服）：
+   - Ethereum
+   - Solana
+   - Base
+   - Optimism
+   - Arbitrum
+   - BNB Smart Chain
+   - 其他链（按字母顺序列出）
+
+4. 输入代币合约地址
+   - 系统将验证该地址
+   <Note>
+   在以下情况下申请将被拒绝：
+   - 该代币合约已存在于钱包中
+   - 代币合约地址无效
+   </Note>
+
+5. 点击**创建工单**
+   - 点击**创建工单**后，您将被重定向到确认窗口，显示**工单已创建**以及相关详情，如工单编号、选择的钱包类型、公链和代币合约地址。
+
+6. 点击 **&lt;** 返回聊天框查看申请状态。
+
+#### 步骤 3：追踪申请状态
+
+- 您将通过聊天框和电子邮件收到自动回复，通知您申请结果。一旦获得批准，您将能够在钱包中看到新添加的代币。
+
+<Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们改进文档！</Tip>
