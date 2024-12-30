@@ -1579,6 +1579,9 @@
     "raiseIssue": false,
     "thumbsRating": true
   },
+  "search": {
+    "prompt": "Do not use this search bar. Use our AI Agent search instead via blue button at bottom right of your screen for best results."
+  },
   "redirects": [
     {
       "source": "/cn/guard/restore-key-shares-from-icloud",
