@@ -130,7 +130,7 @@ When the command contains "rococo-translate":
 | Sweep-To Destination                               | 归集目标地                                                   |
 | Deposit Address                                    | 收币地址                                                     |
 | Organization-Controlled VaultUser-Controlled Vault | 机构 Vault终端用户 Vault                                     |
-| API Co-Signer                                      | API 签名人                                      |
+| Server Co-Signer                                      | 服务端签名人                                      |
 | Mobile Co-Signer                                   | 移动端签名人                                       |
 | priority fee                                       | 不译                                                       |
 | base fee                                           | 不翻译                                                       |

@@ -8,15 +8,33 @@ description: "查阅 Cobo Portal 的术语表，了解常用术语和定义，�
 <Note>本术语表将定期更新，添加新的产品术语和定义。</Note>
 
 ## A
-### API co-signers（API 签名人）
-API 签名人是一个服务器节点，它使用 TSS Node 软件包来自动签署交易。
+### Address Book（地址簿）
+地址簿是一个简单易用的提现地址管理器，类似于手机上的联系人列表。它作为一个综合性目录，用于存储、组织和访问您已知的提现地址。地址簿简化了处理冗长字母数字地址的复杂过程，使交易更加高效和安全。
+
+### API Key
+API Key 是密钥对中的公钥，用于识别发起 API 请求的客户端。API Key 与权限和钱包范围相关联，这些权限和范围定义了客户端可以执行的操作以及可以访问的钱包。不同的 API Key 可以分配不同的权限和钱包范围，从而实现对客户端功能的精细化控制。
+
+### Approval Quorum（审批门槛）
+审批门槛是指在 Cobo Portal 中授权交易或风控规则变更所需的最少审批人数。这有助于通过确保关键操作需要多方授权来维护安全性。
+
+### Asset Wallets（资产钱包）
+资产钱包是全托管钱包的一种子类型，允许您转移代币（发起充值或提现）。您可以根据业务需求创建多个钱包。
 
 ## C
+### Cobo Connect
+Cobo Connect 是一个 Chrome 扩展程序，使您能够将 Cobo Portal 钱包与 dApp 连接。建立连接后，Cobo Connect 将识别来自 dApp 的每个交易和消息，并根据您在 Cobo Portal 中预先配置的风控规则处理它们。
+
+### Cobo Guard
+Cobo Guard 是一款多功能安全 iOS 应用程序，提升您在移动端的数字资产安全性和保护。它作为 MPC 密钥分片管理器和多因素认证（MFA）方式，用于审批登录和交易等操作。
+
+### Cobo Portal
+Cobo Portal 是一个一站式平台，为您提供安全高效的数字资产管理方式。凭借其经过实战检验的安全架构和对代币及链的广泛支持，Cobo Portal 提供多种加密钱包以满足您的特定需求。此外，它还提供了广泛的功能，包括全面的风控措施、无缝访问 Web3/DeFi 网络、直观的数据概览，以及丰富的 Cobo 和第三方应用程序选择。
+
 ### Cobo Safe
 Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-account-modules) 构建的智能合约。Safe Module 扩展了 Safe&#123;Wallet&#125; 的功能，同时将模块逻辑与 Safe&#123;Wallet&#125; 的核心合约分离。作为插件集成在 Safe&#123;Wallet&#125; 中后，Cobo Safe 实现了基于用户角色的精细化链上访问控制。您可以授权外部拥有账户（EOA）通过单签执行由多个 Safe&#123;Wallet&#125; 签名人预授权的操作。
 
-### Custodial Wallets（托管钱包）
-托管钱包是一种由 Cobo 负责保管私钥的钱包类型，为用户提供机构级别的安全性和便捷的资产管理服务。Cobo 提供资产钱包和 Web3 钱包两种托管钱包。
+### Custodial Wallets（全托管钱包）
+全托管钱包是一种由 Cobo 负责保管私钥的钱包类型，为用户提供机构级别的安全性和便捷的资产管理服务。Cobo 提供资产钱包和 Web3 钱包两种全托管钱包。
 
 ## D
 ### Delegate Key
@@ -34,7 +52,7 @@ Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的�
 
 ## G
 ### Gas fees（Gas 费）
-在区块链网络上执行交易或合约所需的成本。
+在区块链网络上执行交易所需的成本。
 
 ### Gas limits（Gas 限制）
 您愿意为在以太坊虚拟机（EVM）链上执行交易支付的最大 Gas Unit 数量。
@@ -89,6 +107,9 @@ Multi-Party Computation（MPC）系统里的一种持有者组类型，负责在
 ### Safe&#123;Wallet&#125;
 Safe&#123;Wallet&#125; 是一款多签钱包和平台，用于在以太坊和流行的 EVM 链上为您存储数字资产。
 
+### Server co-signers（服务端签名人）
+服务端签名人是一个服务器节点，储存了您的 MPC 钱包的私钥分片。服务器签名人使用 TSS Node 软件包来自动签署 MPC 钱包所发起的交易。
+
 ### Signer address（签名人地址）
 在智能合约钱包（Safe&#123;Wallet&#125;）内，签名人地址用于发起、签署和执行交易。在 Cobo Portal 上，签名人地址可以来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）。
 
@@ -114,8 +135,8 @@ Multi-Party Computation（MPC）系统里的一种持有者组类型，负责协
 ### Threshold Signature Scheme, TSS（门限签名机制）
 MPC 钱包使用的一种数字签名协议，使分布的参与方能够共同签署交易。在 MPC-TSS 设置中，可以实现灵活的门限签名机制（n 个私钥分片中的 m 个）。例如，在 2-2 签名方案中，将独立生成两个私钥分片，每笔交易都需要这两个私钥分片共同签名。
 
-### TSS Node（TSS 节点）
-Cobo Portal 提供的一个程序，使您能够管理和使用 MPC 钱包的私钥分片。它具有两个主要功能：生成和管理私钥分片，以及完成交易签名。
+### TSS Node
+一个安装了 TSS Node 软件包的服务器节点。它作为服务端签名人存储您的 MPC 钱包的私钥分片，自动签署您的 MPC 钱包发起的交易。
 
 ### User-Controlled Wallets, UCW（终端用户钱包）
 Cobo Portal 上的一种 MPC 钱包类型，其数字资产的所有权和管理权由终端用户通过持有自己的私钥分片来直接控制。
@@ -124,7 +145,7 @@ Cobo Portal 上的一种 MPC 钱包类型，其数字资产的所有权和管理
 一个 Vault 中包含共享相同根扩展私钥的 MPC 钱包。
 
 ### Web3 Wallets（Web3 钱包）
-Web3 钱包是一种托管钱包，支持代币转账、合约调用和消息签名。
+Web3 钱包是一种全托管钱包，支持代币转账、合约调用和消息签名。
 
 ### Webhooks
 在 Cobo Portal 中，Webhooks 提供实时通知，例如交易状态更新等事件。

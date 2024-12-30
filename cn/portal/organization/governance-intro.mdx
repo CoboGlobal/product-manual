@@ -9,7 +9,93 @@ description: "获取业务风控的介绍，了解如何为团队制定审批规
 
 下表列出了每个类别中所有可用的业务风控：
 
-<img src="/cn/images/organization/gov-policies.svg" className="screenshot_full_screen"/>
+<table class="six-columns">
+  <thead>
+    <tr>
+      <th><strong>类别</strong></th>
+      <th><strong>操作</strong></th>
+      <th><strong>描述</strong></th>
+      <th><strong>默认审批门槛</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5"><strong>成员</strong></td>
+      <td>邀请成员</td>
+      <td>邀请新成员加入团队</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>删除成员</td>
+      <td>从团队中移除成员</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>冻结成员</td>
+      <td>冻结成员的账户，不允许他们登录团队账户</td>
+      <td>任意 1 位管理员</td>
+    </tr>
+    <tr>
+      <td>解冻成员</td>
+      <td>解冻成员的账户，允许他们登录团队账户</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>更改成员的用户角色</td>
+      <td>添加或移除成员的用户角色</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><strong>团队</strong></td>
+      <td>编辑业务风控</td>
+      <td>编辑团队的业务风控</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>冻结团队账号</td>
+      <td>冻结团队账户，不允许创建钱包、发起提取、设置风控和管理成员等关键操作</td>
+      <td>任意 1 位管理员</td>
+    </tr>
+    <tr>
+      <td>解冻团队账号</td>
+      <td>解冻团队账户，允许创建钱包、发起提取、设置风控和管理成员等关键操作</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>钱包</strong></td>
+      <td>管理交易风控</td>
+      <td>创建、删除或修改交易风控，以保护关键交易</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>管理地址列表中的地址</td>
+      <td>在地址列表中添加或删除地址；地址列表示例包括定制列表，如"白名单"，您可以在创建交易风控时进行选择</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><strong>开发者</strong></td>
+      <td>管理 API Key</td>
+      <td>添加或删除 API Key，或修改 API Key 的 IP 白名单</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>管理 API Callback</td>
+      <td>添加或删除 API Callback</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td>管理 Webhook</td>
+      <td>添加或删除 Webhook</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+    <tr>
+      <td><strong>用户角色</strong></td>
+      <td>编辑自定义用户角色</td>
+      <td>修改自定义用户角色的名称、描述和权限</td>
+      <td>至少 50% 的管理员</td>
+    </tr>
+  </tbody>
+</table>
 
 您可以点击**团队** > **业务风控**来获得业务风控的清晰概览。然后，切换到“成员”、“用户角色”、“团队”、“钱包”或“开发者”标签页，查看关联的业务风控及其状态。
 
