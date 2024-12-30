@@ -1580,7 +1580,7 @@
     "thumbsRating": true
   },
   "search": {
-    "prompt": "Do not use this search bar. Use our AI Agent search instead via blue button at bottom right of your screen for best results."
+    "prompt": "Don't use this search bar. Use AI Agent via blue button at bottom right."
   },
   "redirects": [
     {
