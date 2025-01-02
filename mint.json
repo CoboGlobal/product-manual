@@ -1181,7 +1181,7 @@
                 {
                   "group": "设置 Fee Station",
                   "pages": [
-                    "cn/portal/fee-station/set-up",
+                    "cn/portal/fee-station/overview",
                     "cn/portal/fee-station/set-up-for-mpc"
                   ]
                 },
