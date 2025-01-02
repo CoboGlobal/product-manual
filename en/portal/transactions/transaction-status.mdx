@@ -1,0 +1,52 @@
+---
+title: "Understanding Transaction Statuses"
+sidebarTitle: "Transaction Statuses"
+lang: "en"
+description: "Learn about the different transaction statuses and what they mean in Cobo Portal"
+---
+
+# Transaction Statuses
+
+When viewing transactions in Cobo Portal, you'll encounter various statuses that indicate the current state of your transaction. Here's a comprehensive guide to understanding these statuses.
+
+## Main Transaction Statuses
+
+- **Submitted**: The transaction has been initially submitted to the system
+- **Pending Check**: The transaction is undergoing various compliance and security checks
+- **Pending Authorization**: The transaction is waiting for approval from authorized users
+- **Pending Signature**: The transaction is waiting for required signatures
+- **Broadcasting**: The transaction is being broadcast to the blockchain network
+- **Confirming**: The transaction has been broadcast and is waiting for blockchain confirmations
+- **Completed**: The transaction has been successfully completed
+- **Failed**: The transaction has failed
+- **Rejected**: The transaction was rejected during the approval process
+
+## Transaction Sub-Statuses
+
+### Compliance Related
+- **Pending Cobo KYT Screening**: Transaction is being screened by Cobo's Know Your Transaction system
+- **Pending Cobo Travel Rule Screening**: Transaction is being checked for Travel Rule compliance
+- **Pending App Check**: Transaction is being verified by the application system
+- **Questionable Transactions By Cobo KYT**: Transaction has been flagged for review by KYT system
+- **Amount Locked By Cobo KYT**: Transaction amount has been temporarily locked due to KYT guidelines
+
+### Rejection Reasons
+- **Rejected by App**: The application system has rejected the transaction
+- **Rejected as per KYT Guidelines**: Transaction was rejected based on KYT compliance rules
+- **Rejected as per Travel Rule Guidelines**: Transaction was rejected due to Travel Rule compliance issues
+
+### Signer Related
+- **Transaction Build**: Transaction is being constructed
+- **Pending Signer Start Node**: Waiting for the signer node to initiate
+- **Pending Signer Approval**: Waiting for approval from the signer
+- **Signer Signing**: Transaction is in the process of being signed
+- **Rejected By Signer**: The signer has rejected the transaction
+- **Signer Timeout**: The signing process has timed out
+- **Signature Failed**: The signature process has failed
+
+### Travel Rule Related
+- **Pending Travel Rule Info**: Waiting for Travel Rule information to be provided
+- **Pending Travel Rule Check**: Transaction is being checked for Travel Rule compliance
+
+### Other Statuses
+- **Replaced By New Transaction**: This transaction has been replaced by a new one
