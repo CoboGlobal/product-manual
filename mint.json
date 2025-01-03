@@ -466,7 +466,7 @@
                 {
                   "group": "Set up Fee Station",
                   "pages": [
-                    "en/portal/fee-station/set-up",
+                    "en/portal/fee-station/overview",
                     "en/portal/fee-station/set-up-for-mpc"
                   ]
                 },
