@@ -212,18 +212,7 @@
                             "en/portal/mpc-wallets/ocw/create-mpc-wallet"
                           ]
                         },
-                        {
-                          "group": "(For server co-signer) Technical setup",
-                          "pages": [
-                            "en/portal/mpc-wallets/ocw/network-environments",
-                            "en/portal/mpc-wallets/ocw/server-environments",
-                            "en/portal/mpc-wallets/ocw/tss-node-deployment",
-                            "en/portal/mpc-wallets/ocw/tss-node-callback",
-                            "en/portal/mpc-wallets/ocw/tss-node-update",
-                            "en/portal/mpc-wallets/ocw/appendix",
-                            "en/portal/mpc-wallets/ocw/tss-node-release-notes"
-                          ]
-                        },
+                        "en/portal/mpc-wallets/ocw/server-co-signer",
                         {
                           "group": "Manage Organization-Controlled Wallets",
                           "pages": [
@@ -477,7 +466,7 @@
                 {
                   "group": "Set up Fee Station",
                   "pages": [
-                    "en/portal/fee-station/set-up",
+                    "en/portal/fee-station/overview",
                     "en/portal/fee-station/set-up-for-mpc"
                   ]
                 },
@@ -938,18 +927,7 @@
                             "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
                           ]
                         },
-                        {
-                          "group": "(服务端签名人) 配置说明",
-                          "pages": [
-                            "cn/portal/mpc-wallets/ocw/network-environments",
-                            "cn/portal/mpc-wallets/ocw/server-environments",
-                            "cn/portal/mpc-wallets/ocw/tss-node-deployment",
-                            "cn/portal/mpc-wallets/ocw/tss-node-callback",
-                            "cn/portal/mpc-wallets/ocw/tss-node-update",
-                            "cn/portal/mpc-wallets/ocw/appendix",
-                            "cn/portal/mpc-wallets/ocw/tss-node-release-notes"
-                          ]
-                        },
+                        "cn/portal/mpc-wallets/ocw/server-co-signer",
                         {
                           "group": "管理机构钱包",
                           "pages": [
@@ -1606,6 +1584,62 @@
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
       "destination": "/cn/portal/risk-controls/manage-on-chain-policy"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/network-environments",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/server-environments",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/tss-node-deployment",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/tss-node-callback",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/tss-node-update",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/appendix",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/tss-node-release-notes",
+      "destination": "/en/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/network-environments",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/server-environments",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/tss-node-deployment",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/tss-node-callback",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/tss-node-update",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/appendix",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/tss-node-release-notes",
+      "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
     }
   ]
 }
