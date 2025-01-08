@@ -122,7 +122,13 @@
         "en/portal/introduction",
         "en/portal/glossary",
         "en/portal/quick-start-guide",
-        "en/portal/supported-tokens",
+        {
+          "group": "Token & chain support",
+          "pages": [
+            "en/portal/supported-tokens-and-chains",
+            "en/portal/self-service-token-listing"
+          ]
+        },
         "en/portal/changelog"
       ],
       "version": "English"
@@ -837,7 +843,13 @@
         "cn/portal/introduction",
         "cn/portal/glossary",
         "cn/portal/quick-start-guide",
-        "cn/portal/supported-tokens",
+        {
+          "group": "代币与链支持",
+          "pages": [
+            "cn/portal/supported-tokens-and-chains",
+            "cn/portal/self-service-token-listing"
+          ]
+        },
         "cn/portal/changelog"
       ],
       "version": "简体中文"
