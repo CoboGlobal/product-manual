@@ -726,6 +726,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Earn (coming soon)",
+          "pages": [
+            "en/apps/earn/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/earn/set-up",
+                {
+                  "group": "Manage Earn",
+                  "pages": [
+                    "en/apps/earn/overview",
+                    "en/apps/earn/subscribe",
+                    "en/apps/earn/redeem",
+                    "en/apps/earn/view"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
@@ -1442,6 +1463,27 @@
                     "cn/apps/bridge/how-to-use/manage/bridge-form",
                     "cn/apps/bridge/how-to-use/manage/confirmation",
                     "cn/apps/bridge/how-to-use/manage/supported-assets"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Earn (coming soon)",
+          "pages": [
+            "en/apps/earn/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "en/apps/earn/set-up",
+                {
+                  "group": "管理 Earn",
+                  "pages": [
+                    "en/apps/earn/overview",
+                    "en/apps/earn/subscribe",
+                    "en/apps/earn/redeem",
+                    "en/apps/earn/view"
                   ]
                 }
               ]
