@@ -1486,14 +1486,14 @@
             {
               "group": "使用说明",
               "pages": [
-                "en/apps/earn/set-up",
+                "cn/apps/earn/set-up",
                 {
                   "group": "管理 Earn",
                   "pages": [
-                    "en/apps/earn/overview",
-                    "en/apps/earn/subscribe",
-                    "en/apps/earn/redeem",
-                    "en/apps/earn/view"
+                    "cn/apps/earn/overview",
+                    "cn/apps/earn/subscribe",
+                    "cn/apps/earn/redeem",
+                    "cn/apps/earn/view"
                   ]
                 }
               ]
