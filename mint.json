@@ -1620,6 +1620,14 @@
       "destination": "/cn/guard/reset"
     },
     {
+      "source": "/en/portal/custodial-wallets/set-up",
+      "destination": "/en/portal/custodial-wallets/asset-wallets/set-up"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/set-up",
+      "destination": "/cn/portal/custodial-wallets/asset-wallets/set-up"
+    },
+    {
       "source": "/en/guard/restore-key-shares-from-icloud",
       "destination": "/en/guard/reset"
     },
