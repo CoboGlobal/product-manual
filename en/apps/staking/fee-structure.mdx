@@ -12,15 +12,15 @@ For BTC staking with [Babylon](https://babylonlabs.io/), when Cobo acts as the F
 
 ## ETH Staking
 
-For ETH staking on the [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/), [Figment](https://figment.io/) is the first supported Ethereum Node Provider, with plans to add support for other Node Providers in the future. Fees may vary depending on the Node Provider. 
+For ETH staking on the [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/), [Stakefish](https://stake.fish/products/classic-staking) is the first supported Ethereum Node Provider, with plans to add support for other Node Providers in the future. Fees may vary depending on the Node Provider.
 
-With Figment as the Node Provider, the fee structure is as follows, beginning with a breakdown of the rewards.
+With Stakefish as the Node Provider, the fee structure is as follows, beginning with a breakdown of the rewards.
 
 ETH staking rewards are divided into two parts: Consensus Layer Rewards and Execution Layer Rewards.
 
-- **Consensus Layer Rewards:** Approximately 67% of the total rewards. These rewards are generated from block production and are directly distributed to your Withdrawal Address.
-- **Execution Layer Rewards:** Approximately 33% of the total rewards. This includes rewards such as MEV (Maximal Extractable Value), tips, and transaction fees. The distribution of these rewards varies depending on the Node Provider. For Figment, the Execution Layer rewards are automatically distributed by Figment's On-chain Billing Smart Contract.
+- **Consensus Layer Rewards**: Approximately 80% of the total rewards (may vary over time). These rewards are generated from block production and are directly distributed to your Withdrawal Address and no rewards are shared with Cobo and Stakefish.
+- **Execution Layer Rewards**: Approximately 20% of the total rewards (may vary over time). This includes rewards such as MEV (Maximal Extractable Value), tips, and transaction fees. The distribution of these rewards varies depending on the Node Provider. For Stakefish, the Execution Layer rewards must be claimed by staking addresses.
 
-Only the Execution Layer Rewards are relevant for fee calculations. You will receive 70% of the Execution Layer Rewards to your Fee Recipient Address, while Figment will deduct a 30% commission fee (approximately 10% of the total rewards).
+Only the Execution Layer Rewards are relevant for fee calculations. You will receive 50% of the Execution Layer Rewards once claimed, while Stakefish and Cobo will deduct another 50% as commission fee (approximately 10% of the total rewards). For example, if your staking generates a 2.8% reward rate from Consensus Layer and a 1.0% reward rate from Execution Layer, your final reward rate will be 3.3% (2.8% from Consensus Layer plus 0.5% from Execution Layer).
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
