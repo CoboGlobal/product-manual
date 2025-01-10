@@ -13,18 +13,15 @@ description: "了解 Staking 应用中的佣金结构，包括 BTC 和 ETH 质�
 
 ## ETH 质押
 
-对于 [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/) 上的 ETH 质押，[Stakefish](https://stake.fish/products/classic-staking) 是目前支持的以太坊节点提供商，未来计划增加对其他节点提供商的支持。费用可能因节点提供商而异。
+对于 [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/) 上的 ETH 质押，[Stakefish](https://stake.fish/products/classic-staking) 是目前支持的以太坊节点提供商，未来计划增加对其他节点提供商的支持，费用可能因节点提供商而异。
 
-Stakefish 作为节点提供商时，费用结构如下所示，首先说明奖励的构成。
+Stakefish 作为节点提供商时，费用结构如下所示，首先解释 ETH 质押奖励的构成。
 
 ETH 质押奖励分为两部分：共识层奖励和执行层奖励。
 
 - **共识层奖励** (Consensus Layer Rewards)：约占总奖励的 80%（比例可能变化）。这些奖励来自区块生产，直接分配到您的赎回地址，不与 Cobo 和 Stakefish 分享。
-
 - **执行层奖励** (Execution Layer Rewards): 约占总奖励的 20%（比例可能变化）。包括 MEV（最大可提取价值）、小费和交易手续费。这些奖励的分配因节点提供商而异。对于 Stakefish，执行层奖励需由质押地址认领。
 
-只有执行层奖励与佣金相关，认领后您将获得 50% 的执行层奖励，另外 50% 由 Stakefish 和 Cobo 扣除作为佣金（约占总奖励的 10%）。
-
-例如，如果您的质押在共识层产生 2.8% 的收益率，在执行层产生 1.0% 的收益率，您的最终收益率将为 3.3%（共识层 2.8% 加上执行层 0.5%）。
+只有执行层奖励与佣金相关，认领后您将获得 50% 的执行层奖励，另外 50% 由 Stakefish 和 Cobo 扣除作为佣金（约占总奖励的 10%）。例如，如果您的质押在共识层产生 2.8% 的收益率，在执行层产生 1.0% 的收益率，您的最终收益率将为 3.3%（共识层 2.8% 加上执行层 0.5%）。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
