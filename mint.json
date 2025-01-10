@@ -122,7 +122,13 @@
         "en/portal/introduction",
         "en/portal/glossary",
         "en/portal/quick-start-guide",
-        "en/portal/supported-tokens",
+        {
+          "group": "Token & chain support",
+          "pages": [
+            "en/portal/supported-tokens-and-chains",
+            "en/portal/self-service-token-listing"
+          ]
+        },
         "en/portal/changelog"
       ],
       "version": "English"
@@ -720,6 +726,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Earn (coming soon)",
+          "pages": [
+            "en/apps/earn/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/earn/set-up",
+                {
+                  "group": "Manage Earn",
+                  "pages": [
+                    "en/apps/earn/overview",
+                    "en/apps/earn/subscribe",
+                    "en/apps/earn/redeem",
+                    "en/apps/earn/view"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
@@ -837,7 +864,13 @@
         "cn/portal/introduction",
         "cn/portal/glossary",
         "cn/portal/quick-start-guide",
-        "cn/portal/supported-tokens",
+        {
+          "group": "代币与链支持",
+          "pages": [
+            "cn/portal/supported-tokens-and-chains",
+            "cn/portal/self-service-token-listing"
+          ]
+        },
         "cn/portal/changelog"
       ],
       "version": "简体中文"
@@ -1435,6 +1468,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Earn (coming soon)",
+          "pages": [
+            "cn/apps/earn/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/earn/set-up",
+                {
+                  "group": "管理 Earn",
+                  "pages": [
+                    "cn/apps/earn/overview",
+                    "cn/apps/earn/subscribe",
+                    "cn/apps/earn/redeem",
+                    "cn/apps/earn/view"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "简体中文"
@@ -1564,6 +1618,14 @@
     {
       "source": "/cn/guard/restore-key-shares-from-icloud",
       "destination": "/cn/guard/reset"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/set-up",
+      "destination": "/en/portal/custodial-wallets/asset-wallets/set-up"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/set-up",
+      "destination": "/cn/portal/custodial-wallets/asset-wallets/set-up"
     },
     {
       "source": "/en/guard/restore-key-shares-from-icloud",
