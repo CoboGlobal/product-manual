@@ -1,0 +1,29 @@
+---
+title: "Introduction to auto sweep"
+sidebarTitle: "Introduction to auto sweep"
+lang: "en"
+description: "Discover how auto sweep in MPC Wallets (Organization-Controlled Wallets) consolidates funds, enhances efficiency, and simplifies operations for organizations managing multiple blockchain addresses."
+---
+
+## What is auto sweep?
+
+Auto sweep is a feature designed to automatically consolidate funds from multiple addresses into a single designated address (known as the sweep address). This functionality simplifies asset management, enhances operational efficiency, and ensures centralized control of funds.
+
+## When is auto sweep needed?
+
+Auto sweep is particularly useful for organizations managing numerous blockchain addresses, such as exchanges, payment service providers, and enterprises with high transaction volumes. By automating fund consolidation, auto sweep enhances efficiency, simplifies liquidity management, and reduces administrative overhead.
+
+## How auto sweep works
+
+To use auto sweep, you need to manually enable the feature at the wallet level for your MPC Wallets (Organization-Controlled Wallets). For detailed instructions, refer to [Enable auto sweep](/en/portal/mpc-wallets/ocw/enable-auto-sweep).
+
+Once enabled, Cobo creates a dedicated sweep address for each blockchain in use. For UTXO-based blockchains, the sweep address is of Taproot type and also serves as the change address for sweep transactions.
+
+During auto sweep, two corresponding transactions occur:
+- Withdrawal transaction: Initiated from the receiving address, requiring signatures from both Cobo and you through Cobo Guard or a server co-signer.
+- Deposit transaction: Funds are deposited into the sweep address.
+
+Once auto sweep is enabled, the following changes apply to the original receiving addresses:
+- Permitted actions: Receiving addresses can only receive funds and initiate sweep transactions to the designated sweep address.
+- Transaction limitations: Receiving addresses are not enabled for withdrawals, contract calls, staking, OTC transactions, or financial product transactions, nor can they act as delegate addresses for Smart Contract Wallets.
+- Sweep address capabilities: Sweep addresses remain fully functional and can perform all transaction types.
