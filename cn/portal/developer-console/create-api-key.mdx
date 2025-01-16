@@ -5,24 +5,38 @@ lang: "zh-hans"
 description: "学习如何注册 API Key，确保安全访问您的应用程序接口。"
 ---
 
-按照以下简单几步即可注册 API Key：
+## 步骤
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-2. 在左侧导航菜单中，点击**开发者** > **API Keys**。
-3. 点击**注册 API Key**。
-4. 输入 API Key 的名称（最多 30 个字符）。
-5. 输入 API Key（64 个字符，只能包含数字 0 至 9 和字母 A 至 F）。
-6. 从下拉列表中选择用户角色。
-<Info>API Key 将获得您所选用户角色下列出的权限。</Info>
-7. 选择该 API Key 可控制的钱包。
-8. 选择此 API Key 使用的 Callback Endpoint，或注册一个新的 Callback Endpoint。所选的 Callback Endpoint 将接收由该 API Key 触发的消息。有关更多信息，请参阅[注册 Callback Endpoint](/cn/portal/developer-console/callbacks-register)。
-9. 选择 Key 类型。
-    - **永久**：要使用此 Key 类型，您需要指定一个静态 IP 地址作为发送 API 请求的地址。
+2. 在主菜单中点击**开发者**图标。
+3. 点击 **WaaS 2.0** 标签，然后切换到 **API Keys** 标签页。
+4. 点击**注册 API Key** 打开**注册 API Key** 对话框。
+
+    <img src="/cn/images/developer-console/create_api_key.png" className="screenshot_modal" alt="The Register API key dialog" />
+
+5. 输入 API Key 的名称（最多 30 个字符）。
+6. 输入 API Key 和选择加密算法。API Key 是密钥对中的公钥，长度必须为 64 个字符，只能包含数字 0 至 9 和字母 A 至 F。如想了解如何使用 Ed25519 算法生成 API Key，请参阅 [Generate an API key and an API secret](https://www.cobo.com/developers/v2/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret)。
+7. 在**用户角色 & 钱包范围**板块，点击**为用户角色设置钱包范围**来设置该 API key 的用户角色以及可访问的钱包范围。
+8. 从对应的下拉列表中选择该 API Key 的用户角色以及可访问的钱包范围。
+
+    <img src="/cn/images/developer-console/user_role_1.png" className="screenshot_modal" alt="The Set Wallet Scope for User Role dialog" />
+
+    您可以点击**每个角色**来为每个用户角色选择不同的钱包范围。
+
+    <img src="/cn/images/developer-console/user_role_2.png" className="screenshot_modal" alt="The Set Wallet Scope for User Role dialog" />
+
+    <Info>该 API Key 将获得您所勾选的用户角色下的权限并有访问选定钱包的权限。</Info>
+
+    点击**确认**来完成配置。
+
+9. 选择此 API Key 使用的 Callback Endpoint，或注册一个新的 Callback Endpoint。所选的 Callback Endpoint 将接收由该 API Key 触发的消息。有关更多信息，请参阅[注册 Callback Endpoint](/cn/portal/developer-console/callbacks-register)。
+10. 选择 Key 类型。
+    - **长期**：要使用此 Key 类型，您需要指定一个静态 IP 地址作为发送 API 请求的地址。
     - **临时**：临时 Key 在 30 天后过期。如果您还没有准备好静态 IP 地址，可以选择此选项。
-10. 输入要列入白名单的 IP 地址（如果要列入白名单的 IP 地址不止一个，则每个 IP 地址之间用逗号隔开）。
-11. 点击**注册**。
+11. 对于**长期**的 API Key，输入要列入白名单的 IP 地址（如果要列入白名单的 IP 地址不止一个，则每个 IP 地址之间用逗号隔开）。
+    <Note>临时 API Key 无法设置 IP 白名单。</Note>
+12. 点击**注册**完成注册流程。
 
-<Note>根据您所在组织设置的业务风控规则，新注册的 API Key 可能需要获得组织管理员的审批后才能生效。</Note>
+根据您所在组织设置的业务风控规则，新注册的 API Key 可能需要获得组织管理员的审批后才能生效。
 
-<img src="/cn/images/developer-console/create_api_key.png" className="screenshot_modal"/>
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
