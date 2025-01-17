@@ -23,8 +23,7 @@ description: "本文介绍如何在 Batch Payouts 中发起批量转账，确保
     <img src="/en/images/portal-apps/batch-payouts/make_payout.png" className="screenshot_full_screen" alt="付款页面截图" />
 4. 在**付款钱包**（From）下拉框中，选择要进行付款的钱包类型和具体钱包。
     <Note>目前交易所钱包不可用于批量转账。</Note>
-5. 在**新增转账**（Add the Payouts）下，默认启用**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard）选项。这将要求收款人在 Cobo Guard 上确认交易后，该付款才能进行。对于没有 Cobo Account 或未设置 Cobo Guard 的收款人，您可以使用**发送通知**（Send Notifications To These Emails）按钮发送引导邮件。
-
+5. 在**新增转账**（Add the Payouts）下，您可以启用**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard）选项。该选项确保转账必须在收款人通过 Cobo Guard 确认交易后才能完成。因此，所有收款人的电子邮件必须是 Cobo Accounts 并绑定了 Cobo Guard。如果任一收款人的电子邮件不满足这些要求，您将无法提交该批量转账请求，您可以使用**发送设置指南**（Send Setup Guide To These Emails）按钮发送引导邮件以帮助他们完成 Cobo Accounts 注册和关联 Cobo Guard。
 6. 指定每个收款人的详细信息，具体如下：
    - **收款地址**（Receiving Address）：您可以手动输入地址，或从地址簿或上传的 CSV 文件中批量导入地址。
    - **金额**（Amount）：输入转账金额。
