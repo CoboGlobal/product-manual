@@ -1,16 +1,16 @@
 ---
-title: "Enable auto sweep"
-sidebarTitle: "Enable auto sweep"
+title: "Enable Auto-Sweep"
+sidebarTitle: "Enable Auto-Sweep"
 lang: "en"
-description: "Learn how to enable auto sweep for MPC Wallets (Organization-Controlled Wallets) and explore the resulting updates to wallet features and transaction management."
+description: "Learn how to enable Auto-Sweep for MPC Wallets (Organization-Controlled Wallets) and explore the resulting updates to wallet features and transaction management."
 ---
 
-This guide explains how to enable the auto sweep feature for an Organization-Controlled Wallet on Cobo Portal. For more details about auto sweep, refer to [Introduction to auto sweep](/en/portal/mpc-wallets/ocw/auto-sweep-overview).
+This guide explains how to enable the Auto-Sweep feature for an Organization-Controlled Wallet on Cobo Portal. For more details about Auto-Sweep, refer to [Introduction to Auto-Sweep](/en/portal/mpc-wallets/ocw/auto-sweep-overview).
 
 ## Prerequisites
 - You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
-- You have set up a server co-signer for auto sweep transactions as described in [Introduction to server co-signers](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview). Otherwise, you will need to sign auto sweep transactions manually on Cobo Guard.
-- You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto Sweep".
+- You have set up a server co-signer for Auto-Sweep transactions as described in [Introduction to server co-signers](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview). Otherwise, you will need to sign Auto-Sweep transactions manually on Cobo Guard.
+- You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
 - Transaction fees apply to the withdrawal part of the sweep transaction. It is recommended to enable Fee Station for transaction fee payments as described in [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc). Otherwise, you will need to ensure sufficient main chain coin balance at the receiving address.
 
 ## Steps
@@ -20,14 +20,14 @@ This guide explains how to enable the auto sweep feature for an Organization-Con
 3. Select your vault.
 4. Click **Create Wallet**.
 5. Name your wallet, then enable the **Auto-Sweep** switch. 
-    <Warning>Currently, once enabled, the auto sweep feature cannot be disabled.</Warning>
+    <Warning>Currently, once enabled, the Auto-Sweep feature cannot be disabled.</Warning>
 6. Click **Create**.
 
-Now you have successfully created a new Organization-Controlled Wallet with auto sweep enabled. The wallet has a icon indicating that auto sweep is enabled.
+Now you have successfully created a new Organization-Controlled Wallet with Auto-Sweep enabled. The wallet has a icon indicating that Auto-Sweep is enabled.
 
-<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="The wallet with auto sweep icon" />
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="The wallet with Auto-Sweep icon" />
 
-## Changes after enabling auto sweep
+## Changes after enabling Auto-Sweep
 
 - Wallet list filtering: You can filter wallets by their **Auto-Sweep Enabled** status to easily identify which wallets have the feature turned on or off.
 
@@ -45,6 +45,6 @@ Now you have successfully created a new Organization-Controlled Wallet with auto
 
     <img src="/en/images/mpc-wallet/ocw/address-list.png" className="full_screen" alt="Address list" />
 
-- Transaction history changes: When an auto sweep occurs, you will see two transaction records. For receiving addresses, it's recorded as a **withdrawal**. For sweep addresses, it's recorded as a **deposit**.
+- Transaction history changes: When an Auto-Sweep occurs, you will see two transaction records. For receiving addresses, it's recorded as a **withdrawal**. For sweep addresses, it's recorded as a **deposit**.
 
     <img src="/en/images/mpc-wallet/ocw/transaction-history.png" className="full_screen" alt="Transaction history" />
