@@ -15,8 +15,6 @@ This guide explains how to enable the auto sweep feature for an Organization-Con
 
 ## Steps
 
-### Enable auto sweep for a new wallet
-
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
 3. Select your vault.
@@ -26,21 +24,6 @@ This guide explains how to enable the auto sweep feature for an Organization-Con
 6. Click **Create**.
 
 Now you have successfully created a new Organization-Controlled Wallet with auto sweep enabled. The wallet has a icon indicating that auto sweep is enabled.
-
-<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="The wallet with auto sweep icon" />
-
-### Enable auto sweep for an existing wallet
-
-Alternatively, you can enable auto sweep for an existing Organization-Controlled Wallet by following these steps:
-
-1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
-3. Select your vault.
-4. Select your wallet and click the *Turn On Auto-Sweep* icon.
-5. On the **Turn On Auto-Sweep** dialog, click **Confirm**.
-    <Warning>Currently, once enabled, the auto sweep feature cannot be disabled.</Warning>
-
-The auto sweep feature is now enabled for the wallet. The wallet has a icon indicating that auto sweep is enabled.
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="The wallet with auto sweep icon" />
 
@@ -54,10 +37,14 @@ The auto sweep feature is now enabled for the wallet. The wallet has a icon indi
 
     <img src="/en/images/mpc-wallet/ocw/token-list.png" className="full_screen" alt="Token list" />
 
+    - Total balance: This represents the sum of your withdrawable balance and unswept balance in your wallet.
+    - Withdrawable balance: This is the part of your total balance located in the sweep address that is readily available for withdrawal, contract calls, and other transaction operations.
+    - Unswept balance: This refers to the part of your total balance that has not yet been moved to the sweep address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
+
 - Address list organization: You can find addresses organized into two tabs: **Deposit** and **Sweep-to**. The **Deposit** tab displays previously created receiving addresses, while the **Sweep-to** tab lists addresses created by Cobo for sweep transactions.
 
     <img src="/en/images/mpc-wallet/ocw/address-list.png" className="full_screen" alt="Address list" />
 
-- Transaction history changes: When an auto sweep occurs, you will see two transaction records. For receiving addresses, it's recorded as a **withdraw**. For sweep addresses, it's recorded as a **deposit**.
+- Transaction history changes: When an auto sweep occurs, you will see two transaction records. For receiving addresses, it's recorded as a **withdrawal**. For sweep addresses, it's recorded as a **deposit**.
 
     <img src="/en/images/mpc-wallet/ocw/transaction-history.png" className="full_screen" alt="Transaction history" />

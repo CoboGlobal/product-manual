@@ -20,7 +20,7 @@ To use auto sweep, you need to manually enable the feature at the wallet level f
 Once enabled, Cobo creates a dedicated sweep address for each blockchain in use. For UTXO-based blockchains, the sweep address is of Taproot type and also serves as the change address for sweep transactions.
 
 During auto sweep, two corresponding transactions occur:
-- Withdrawal transaction: Initiated from the receiving address, requiring signatures from both Cobo and you through Cobo Guard or a server co-signer.
+- Withdrawal transaction: Initiated from the receiving address, requiring signatures from both Cobo and you through a mobile co-signer (Cobo Guard) or a server co-signer (TSS Node).
 - Deposit transaction: Funds are deposited into the sweep address.
 
 Once auto sweep is enabled, the following changes apply to the original receiving addresses:
