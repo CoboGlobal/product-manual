@@ -532,7 +532,6 @@
                       "group": "Webhooks",
                       "pages": [
                         "en/portal/developer-console/webhooks-intro",
-                        "en/portal/developer-console/webhooks-notif-subs",
                         "en/portal/developer-console/webhooks-create",
                         "en/portal/developer-console/webhooks-manage"
                       ]
@@ -1274,7 +1273,6 @@
                       "group": "Webhooks",
                       "pages": [
                         "cn/portal/developer-console/webhooks-intro",
-                        "cn/portal/developer-console/webhooks-notif-subs",
                         "cn/portal/developer-console/webhooks-create",
                         "cn/portal/developer-console/webhooks-manage"
                       ]
