@@ -31,7 +31,7 @@ Cobo Guard 是一款多功能安全 iOS 应用程序，提升您在移动端的�
 Cobo Portal 是一个一站式平台，为您提供安全高效的数字资产管理方式。凭借其经过实战检验的安全架构和对代币及链的广泛支持，Cobo Portal 提供多种加密钱包以满足您的特定需求。此外，它还提供了广泛的功能，包括全面的风控措施、无缝访问 Web3/DeFi 网络、直观的数据概览，以及丰富的 Cobo 和第三方应用程序选择。
 
 ### Cobo Safe
-Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-account-modules) 构建的智能合约。Safe Module 扩展了 Safe&#123;Wallet&#125; 的功能，同时将模块逻辑与 Safe&#123;Wallet&#125; 的核心合约分离。作为插件集成在 Safe&#123;Wallet&#125; 中后，Cobo Safe 实现了基于用户角色的精细化链上访问控制。您可以授权外部拥有账户（EOA）通过单签执行由多个 Safe&#123;Wallet&#125; 签名人预授权的操作。
+Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-account-modules) 构建的智能合约。Safe Module 扩展了 Safe&#123;Wallet&#125; 的功能，同时将模块逻辑与 Safe&#123;Wallet&#125; 的核心合约分离。作为插件集成在 Safe&#123;Wallet&#125; 中后，Cobo Safe 实现了基于用户角色的精细化链上访问控制。您可以授权外部账户（EOA）通过单签执行由多个 Safe&#123;Wallet&#125; 签名人预授权的操作。
 
 ### Custodial Wallets（全托管钱包）
 全托管钱包是一种由 Cobo 负责保管私钥的钱包类型，为用户提供机构级别的安全性和便捷的资产管理服务。Cobo 提供资产钱包和 Web3 钱包两种全托管钱包。
@@ -41,7 +41,7 @@ Cobo Safe 是基于 [Safe Module](https://docs.safe.global/advanced/smart-accoun
 Delegate Key 用于代表 Safe&#123;Wallet&#125; 签名人发起（只发起不执行）多签交易。它是由 Cobo 创建的地址，在 Delegate Key 设置过程中自动分配给您。
 
 ### Delegate
-Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的操作。此授权是您在 Cobo Portal 上为智能合约钱包（Safe&#123;Wallet&#125;）设置链上交易规则时授予的。Delegate 可以是来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）的地址。
+Delegate 可以使用单签执行由 Safe&#123;Wallet&#125; 签名人授权的操作。此授权是您在 Cobo Portal 上为智能合约钱包（Safe&#123;Wallet&#125;）设置链上交易规则时授予的。Delegate 可以是来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部账户（EOA）的地址。
 
 ## E
 ### Exchange Wallets（交易所钱包）
@@ -111,7 +111,7 @@ Safe&#123;Wallet&#125; 是一款多签钱包和平台，用于在以太坊和流
 服务端签名人是一个服务器节点，储存了您的 MPC 钱包的私钥分片。服务器签名人使用 TSS Node 软件包来自动签署 MPC 钱包所发起的交易。
 
 ### Signer address（签名人地址）
-在智能合约钱包（Safe&#123;Wallet&#125;）内，签名人地址用于发起、签署和执行交易。在 Cobo Portal 上，签名人地址可以来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部拥有账户（EOA）。
+在智能合约钱包（Safe&#123;Wallet&#125;）内，签名人地址用于发起、签署和执行交易。在 Cobo Portal 上，签名人地址可以来自 MPC 钱包（机构钱包）或 Cobo Portal 外部的外部账户（EOA）。
 
 ### Signing Group（签名组）
 Multi-Party Computation（MPC）系统里的一种持有者组类型，负责协作签署交易。

@@ -9,7 +9,10 @@ This article describes how to make a batch payout in the Batch Payouts app.
 
 ## Prerequisites
 
-- You have installed Batch Payouts as described in [Browse and install apps](/en/portal/portal-apps/browse-and-install).
+- You have installed Batch Payouts as described in [Browse and install apps](/en/apps/browse-and-install).
+
+    <img src="/en/images/portal-apps/batch-payouts/set-up.png" className="screenshot_full_screen" alt="Image showing Batch Payouts as a Cobo Portal App."/>
+
 - You have been assigned the [Admin](/en/portal/organization/roles-and-permissions) role, the [Spender](/en/portal/organization/roles-and-permissions) role, or a customized role with equivalent permissions.
 
 ## Steps
@@ -22,12 +25,12 @@ This article describes how to make a batch payout in the Batch Payouts app.
 3. On the **Make a Payout** page, select the token type that you want to transfer in the **Token** section.
 4. In the **From** section, select the wallet from which the transfer will be made.
     <Note>Currently Exchange Wallets are not supported for a batch payout.</Note>
-5. In the **Add the Payouts** section, the **Recipient Confirmation on Cobo Guard** option is enabled by default. This requires recipients to confirm the transaction on Cobo Guard before the payout is processed. For recipients without Cobo Accounts or Cobo Guard setup, you can use the **Send Notifications To These Emails** button to send them an instructional email.
+5. In the **Add the Payouts** section, you can enable the **Recipient Confirmation on Cobo Guard** option. This option ensures transfer will only complete after recipients confirm on Cobo Guard. Therefore, all recipients' emails must be a Cobo Account and linked to Cobo Guard. If any recipient's email does not meet these requirements, you will not be able to submit the payout. You can use the **Send Setup Guide To These Emails** button to send instructional emails to help them complete Cobo Accounts registration and link Cobo Guard.
 6. Specify the details for each recipient as follows:
     - **Receiving address**: Enter the recipient's address manually, or import it from your Address Book or a CSV file.
     - **Amount to Receive**: Specify the transfer amount.
 
-        <Note>If the total payout amount is more than 100 USD, the payout will trigger an approval workflow and its status will be **Pending Approval**. It will require one organization admin to approve, otherwise the transactions in the payout will not be proceeded. If no approval or rejection is made within 7 days (168 hours) after the payout is made, its status will automatically become **Failed**. For more details about approval workflows, refer to [View and update approval workflows](/en/portal/portal-apps/workflow).</Note>
+        <Note>If the total payout amount is more than 100 USD, the payout will trigger an approval workflow and its status will be **Pending Approval**. It will require one organization admin to approve, otherwise the transactions in the payout will not be proceeded. If no approval or rejection is made within 7 days (168 hours) after the payout is made, its status will automatically become **Failed**. For more details about approval workflows, refer to [View and update approval workflows](/en/apps/workflow).</Note>
 
     - **Note**: Include any additional information about the transfer.
     - **Cobo Account** (or **Email** if **Recipient Confirmation on Cobo Guard** is disabled):

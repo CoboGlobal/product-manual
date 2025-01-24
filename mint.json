@@ -122,7 +122,13 @@
         "en/portal/introduction",
         "en/portal/glossary",
         "en/portal/quick-start-guide",
-        "en/portal/supported-tokens",
+        {
+          "group": "Token & chain support",
+          "pages": [
+            "en/portal/supported-tokens-and-chains",
+            "en/portal/self-service-token-listing"
+          ]
+        },
         "en/portal/changelog"
       ],
       "version": "English"
@@ -466,7 +472,7 @@
                 {
                   "group": "Set up Fee Station",
                   "pages": [
-                    "en/portal/fee-station/set-up",
+                    "en/portal/fee-station/overview",
                     "en/portal/fee-station/set-up-for-mpc"
                   ]
                 },
@@ -500,22 +506,6 @@
       "version": "English"
     },
     {
-      "group": "COBO PORTAL APPS",
-      "pages": [
-        "en/portal/portal-apps/introduction",
-        "en/portal/portal-apps/browse-and-install",
-        {
-          "group": "Manage your apps",
-          "pages": [
-            "en/portal/portal-apps/transaction-policies",
-            "en/portal/portal-apps/app-settings",
-            "en/portal/portal-apps/workflow"
-          ]
-        }
-      ],
-      "version": "English"
-    },
-    {
       "group": "DEVELOP WITH COBO",
       "pages": [
         {
@@ -542,7 +532,6 @@
                       "group": "Webhooks",
                       "pages": [
                         "en/portal/developer-console/webhooks-intro",
-                        "en/portal/developer-console/webhooks-notif-subs",
                         "en/portal/developer-console/webhooks-create",
                         "en/portal/developer-console/webhooks-manage"
                       ]
@@ -574,6 +563,22 @@
           ]
         },
         "en/portal/portal-apps/build"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "ABOUT COBO PORTAL APPS",
+      "pages": [
+        "en/apps/introduction",
+        "en/apps/browse-and-install",
+        {
+          "group": "Manage your apps",
+          "pages": [
+            "en/apps/transaction-policies",
+            "en/apps/app-settings",
+            "en/apps/workflow"
+          ]
+        }
       ],
       "version": "English"
     },
@@ -720,6 +725,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Earn",
+          "pages": [
+            "en/apps/earn/introduction",
+            {
+              "group": "How to use",
+              "pages": [
+                "en/apps/earn/set-up",
+                {
+                  "group": "Manage Earn",
+                  "pages": [
+                    "en/apps/earn/overview",
+                    "en/apps/earn/subscribe",
+                    "en/apps/earn/redeem",
+                    "en/apps/earn/view"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "English"
@@ -837,7 +863,13 @@
         "cn/portal/introduction",
         "cn/portal/glossary",
         "cn/portal/quick-start-guide",
-        "cn/portal/supported-tokens",
+        {
+          "group": "代币与链支持",
+          "pages": [
+            "cn/portal/supported-tokens-and-chains",
+            "cn/portal/self-service-token-listing"
+          ]
+        },
         "cn/portal/changelog"
       ],
       "version": "简体中文"
@@ -1215,22 +1247,6 @@
       "version": "简体中文"
     },
     {
-      "group": "COBO PORTAL APPS",
-      "pages": [
-        "cn/portal/portal-apps/introduction",
-        "cn/portal/portal-apps/browse-and-install",
-        {
-          "group": "管理应用",
-          "pages": [
-            "cn/portal/portal-apps/transaction-policies",
-            "cn/portal/portal-apps/app-settings",
-            "cn/portal/portal-apps/workflow"
-          ]
-        }
-      ],
-      "version": "简体中文"
-    },
-    {
       "group": "开发者专区",
       "pages": [
         {
@@ -1257,7 +1273,6 @@
                       "group": "Webhooks",
                       "pages": [
                         "cn/portal/developer-console/webhooks-intro",
-                        "cn/portal/developer-console/webhooks-notif-subs",
                         "cn/portal/developer-console/webhooks-create",
                         "cn/portal/developer-console/webhooks-manage"
                       ]
@@ -1289,6 +1304,22 @@
           ]
         },
         "cn/portal/portal-apps/build"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "了解 COBO PORTAL APPS",
+      "pages": [
+        "cn/apps/introduction",
+        "cn/apps/browse-and-install",
+        {
+          "group": "管理应用",
+          "pages": [
+            "cn/apps/transaction-policies",
+            "cn/apps/app-settings",
+            "cn/apps/workflow"
+          ]
+        }
       ],
       "version": "简体中文"
     },
@@ -1435,6 +1466,27 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Earn",
+          "pages": [
+            "cn/apps/earn/introduction",
+            {
+              "group": "使用说明",
+              "pages": [
+                "cn/apps/earn/set-up",
+                {
+                  "group": "管理 Earn",
+                  "pages": [
+                    "cn/apps/earn/overview",
+                    "cn/apps/earn/subscribe",
+                    "cn/apps/earn/redeem",
+                    "cn/apps/earn/view"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "version": "简体中文"
@@ -1558,12 +1610,20 @@
     "thumbsRating": true
   },
   "search": {
-    "prompt": "Do not use this search bar. Use our AI Agent search instead via blue button at bottom right of your screen for best results."
+    "prompt": "Don't use this search bar. Use AI Agent via blue button at bottom right."
   },
   "redirects": [
     {
       "source": "/cn/guard/restore-key-shares-from-icloud",
       "destination": "/cn/guard/reset"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/set-up",
+      "destination": "/en/portal/custodial-wallets/asset-wallets/set-up"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/set-up",
+      "destination": "/cn/portal/custodial-wallets/asset-wallets/set-up"
     },
     {
       "source": "/en/guard/restore-key-shares-from-icloud",
@@ -1640,6 +1700,46 @@
     {
       "source": "/cn/portal/mpc-wallets/ocw/tss-node-release-notes",
       "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/portal-apps/introduction",
+      "destination": "/en/apps/introduction"
+    },
+    {
+      "source": "/cn/portal/portal-apps/introduction",
+      "destination": "/cn/apps/introduction"
+    },
+    {
+      "source": "/en/portal/portal-apps/browse-and-install",
+      "destination": "/en/apps/browse-and-install"
+    },
+    {
+      "source": "/cn/portal/portal-apps/browse-and-install",
+      "destination": "/cn/apps/browse-and-install"
+    },
+    {
+      "source": "/en/portal/portal-apps/transaction-policies",
+      "destination": "/en/apps/transaction-policies"
+    },
+    {
+      "source": "/cn/portal/portal-apps/transaction-policies",
+      "destination": "/cn/apps/transaction-policies"
+    },
+    {
+      "source": "/en/portal/portal-apps/app-settings",
+      "destination": "/en/apps/app-settings"
+    },
+    {
+      "source": "/cn/portal/portal-apps/app-settings",
+      "destination": "/cn/apps/app-settings"
+    },
+    {
+      "source": "/en/portal/portal-apps/workflow",
+      "destination": "/en/apps/workflow"
+    },
+    {
+      "source": "/cn/portal/portal-apps/workflow",
+      "destination": "/cn/apps/workflow"
     }
   ]
 }

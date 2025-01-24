@@ -2,7 +2,7 @@
 title: "Assign user roles to members"
 sidebarTitle: "Assign user roles to members"
 lang: "en"
-Description: "Learn how to assign user roles to new and existing members in Cobo Portal, streamlining permissions and enhancing team management."
+description: "Learn how to assign user roles to new and existing members in Cobo Portal, streamlining permissions and enhancing team management."
 ---
 
 You can assign user roles to either new or existing members.
@@ -15,6 +15,19 @@ To assign user roles while inviting new members:
 2. Navigate to **Organization** > **Members**.
 3. Click **Invite Members**.
 4. In the **Invite Members** dialog, select the appropriate **User Roles** for the new member.
+
+    <img src="/en/images/organization/invite-members.png" className="screenshot_modal" alt="The Invite Members dialog" />
+
+    - To view details about each user role, hover over the more icon <img src="/en/images/common/icon_more.svg" className="icon" alt="the more icon" /> and click **View User Role Details** to display the **User Role Details** dialog.
+
+        <img src="/en/images/organization/role-details.png" className="screenshot_modal" alt="The User Role Details dialog" />
+
+    - To set a wallet scope to each user role, hover over the **Applicable to specific wallets** label and click **Edit Wallet Scope** to display the **Set Wallet Scope** dialog. Select the wallet types to which the role applies and click **Confirm**. 
+
+        <img src="/en/images/organization/set-scope.png" className="screenshot_modal" alt="The Set Wallet Scope dialog" />
+    
+        For example, if you select **Viewer** and set the wallet scope to **Smart Contract Wallets**, the member will have the viewer permissions to Smart Contract Wallets only.
+
 5. Complete the invitation process by providing the rest of the required information and clicking **Submit**.
 
 This method allows you to set permissions for new members before they join your organization.
@@ -27,6 +40,21 @@ To assign user roles to existing members:
 2. Navigate to **Organization** > **Members**.
 3. Locate the member you want to modify and click the **Modify User Role** <img src="/en/images/common/icon_edit.svg" className="icon" alt="Icon showing the Modify User Role button"/> icon next to their name.
 4. In the **Modify User Role** dialog, select the appropriate **User Roles** from the menu.
+
+    <img src="/en/images/organization/modify-user-role.png" className="screenshot_modal" alt="The Modify User Role dialog" />
+
+    - To view details about each user role, hover over the more icon <img src="/en/images/common/icon_more.svg" className="icon" alt="the more icon" /> and click **View User Role Details** to display the **User Role Details** dialog.
+
+        <img src="/en/images/organization/role-details.png" className="screenshot_modal" alt="The User Role Details dialog" />
+
+    - To set a wallet scope to each user role, hover over the **Applicable to all wallets** or **Applicable to selected wallets** label and click **Edit Wallet Scope** to display the **Set Wallet Scope** dialog. Select the wallet types to which the role applies and click **Confirm**. 
+
+        <img src="/en/images/organization/set-scope.png" className="screenshot_modal" alt="The Set Wallet Scope dialog" />
+    
+        For example, if you select **Viewer** and set the wallet scope to **Smart Contract Wallets**, the member will have the viewer permissions to Smart Contract Wallets only.
+
+        <Info>The wallet scope of Admin, Manager, and Approver cannot be modified.</Info>
+
 5. Click **Submit** to apply the changes.
 
 This process allows you to update permissions for existing members as your organization's needs evolve.

@@ -5,26 +5,38 @@ lang: "en"
 description: "Follow the steps to register an API key in Cobo Portal, including configuration of user roles and callback endpoints."
 ---
 
-Register an API key following these simple steps:
+## Steps
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click the Developer icon <img src="/en/images/common/icon_developer.svg" className="icon" alt="the Developer icon" /> in the main menu.
 3. Click the **WaaS 2.0** tab and then switch to the **API Keys** tab.
-4. Click **Register API Key**.
+4. Click **Register API Key** to display the **Register API key** dialog.
+
+    <img src="/en/images/developer-console/create_api_key.png" className="screenshot_modal" alt="The Register API key dialog" />
+
 5. Enter the API key name (maximum 30 characters).
-6. Enter the API key and select its cryptographic algorithm. The API key is the public key in the cryptographic key pair, and must be 64 characters long, containing only numbers 0 to 9 and alphabets A to F. To learn how to generate an API key, see [Generate an API key and an API secret](https://www.cobo.com/developers/v2/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret).
-7. Select user roles from the drop-down list.
-<Info>The API key will obtain the permissions listed under the user roles you select.</Info>
-8. Select the wallets this API key has control over.
+6. Enter the API key and select its cryptographic algorithm. The API key is the public key in the cryptographic key pair, and must be 64 characters long, containing only numbers 0 to 9 and alphabets A to F. To learn how to generate an API key using the Ed25519 algorithm, see [Generate an API key and an API secret](https://www.cobo.com/developers/v2/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret).
+7. In the **Role & Wallet Scope** section, click **Set Wallet Scope for User Role** to set user roles for this API key and the wallet scope that the API key can access.
+8. Select user roles and wallet scope from the corresponding dropdown lists.
+
+    <img src="/en/images/developer-console/user_role_1.png" className="screenshot_modal" alt="The Set Wallet Scope for User Role dialog" />
+
+    You can click **For Each Role** to select different wallet scope for each user role.
+
+    <img src="/en/images/developer-console/user_role_2.png" className="screenshot_modal" alt="The Set Wallet Scope for User Role dialog" />
+
+    <Info>The API key will obtain the permissions listed under the user roles you select and have access to the selected wallets.</Info>
+
+    Click **Confirm** to complete the configuration.
+
 9. Select the callback endpoints this API key uses, or register a new one. The selected callback endpoint will receive messages triggered by the API key. For more information, see [Register a callback endpoint](/en/portal/developer-console/callbacks-register).
 10. Select the key type. 
     - **Permanent**: To use this key type, you need to specify a static IP address as the address from which you send the API request. 
     - **Temporary**: A temporary key expires in 30 days. This option is suitable if you do not have a static IP address ready yet.
-11. Enter the IP address to whitelist (separate between each IP address with a comma, if you have more than one IP address to whitelist).
-12. Click **Register**.
+11. For **Permanent** API keys, enter the IP address to whitelist (separate between each IP address with a comma, if you have more than one IP address to whitelist). 
+    <Note>Temporary API keys cannot set up IP whitelisting.</Note>
+12. Click **Register** to finish the API key registration.
 
+Depending on your organization's governance policies, you may need to obtain approval from your organization admin before the API key becomes active.
 
-<Note>Depending on your organization's governance policies, you may need to obtain approval from your organization admin before the API key becomes active.</Note>
-
-<img src="/en/images/developer-console/create_api_key.png" className="screenshot_modal"/>
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
