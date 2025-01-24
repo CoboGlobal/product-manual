@@ -7,9 +7,35 @@ description: "Discover how to transfer assets from MPC Wallets (Organization-Con
 
 import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 
-<Note>Prerequisite: Before making a transfer from MPC Wallets (Organization-Controlled Wallets), please make sure that you have set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer) (recommended) and [deposited](/en/portal/mpc-wallets/ocw/transfers) funds into the MPC Wallets (Organization-Controlled Wallets).</Note>
+This article explains the withdrawal process for MPC Wallets (Organization-Controlled Wallets) and guides you through initiating withdrawals in Cobo Portal.
 
-To make a transfer from MPC Wallets (Organization-Controlled Wallets), log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/en/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
+## Prerequisites
+
+- It's recommended that you set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer) to ensure transaction security.
+- You have [deposited funds](/en/portal/mpc-wallets/ocw/transfers) into the Organization-Controlled Wallet.
+
+## Withdrawal process
+
+The diagram below outlines the withdrawal flow from an Organization-Controlled Wallet via both Cobo Portal and the WaaS API.
+
+<img src="/en/images/transfers/mpc-withdrawal-process.svg" className="diagram" alt="The steps involved in a withdrawal from an Organization-Controlled Wallet"/>
+
+1. **Initiate a withdrawal request**: A spender initiates a withdrawal request via Cobo Portal or the WaaS API.
+2. **Double confirmation**:
+   - For Cobo Portal initiated withdrawals: Confirm the withdrawal on [Cobo Guard](/en/guard/introduction).
+   - For WaaS API initiated withdrawals: Your [callback endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) needs to respond with "ok" to confirm.
+3. **Risk control**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Cobo Guard.
+4. **Sign the transaction**: Cobo selects an available [co-signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) to sign the transaction based on their online status and other criteria.
+   - Mobile co-signer: Signs via Cobo Guard.
+   - [Server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview): A TSS Node server signs the transaction with the TSS Node callback server's approval.
+5. **Broadcast the transaction**: Cobo creates the transaction and broadcasts it to the network.
+
+Below are steps to initiate a withdrawal in Cobo Portal. For API integration, see [Get started with MPC Wallets (Organization-Controlled Wallets)](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw).
+
+
+## Initiate a withdrawal
+
+To make a transfer from an Organization-Controlled Wallets, log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/en/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
 
 <img src="/en/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
  
@@ -59,6 +85,5 @@ Then, fill in the required information as follows:
             | Fee Rate  | The fee rate is calculated in satoshis per unit of data that your transaction will consume on the blockchain, abbreviated as sats/vByte. |
 8. <MySnippet />
 9. Click **Submit**.
-10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

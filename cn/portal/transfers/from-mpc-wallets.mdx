@@ -2,14 +2,40 @@
 title: "从 MPC 钱包（机构钱包）转账"
 sidebarTitle: "从 MPC 钱包（机构钱包）转账"
 lang: "zh-hans"
-description: "学习如何从 MPC 钱包（机构钱包）进行转账，确保合规和安全性。"
+description: "了解如何从 MPC 钱包（机构钱包）转账，提升机构资产管理能力。"
 ---
 
 import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
 
-<Note>前提条件：从 MPC 钱包（机构钱包）转账之前，请确保您已设置[链下交易风控规则](/cn/portal/risk-controls/off-chain-tx-set-transfer)（推荐）并已向 MPC 钱包（机构钱包）[充币](/cn/portal/mpc-wallets/ocw/transfers)。</Note>
+本文介绍 MPC 钱包（机构钱包）的提币流程，并指导您如何在 Cobo Portal 中发起提币。
 
-要从 MPC 钱包（机构钱包）转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
+## 前提条件
+
+- 建议您设置[链下交易风控规则](/cn/portal/risk-controls/off-chain-tx-set-transfer)以确保交易安全。
+- 您已向 MPC 钱包（机构钱包）[充币](/cn/portal/mpc-wallets/ocw/transfers)。
+
+## 提币流程
+
+下图展示了通过 Cobo Portal 和 WaaS API 从机构钱包提币的流程。
+
+<img src="/cn/images/transfers/mpc-withdrawal-process.svg" className="diagram" alt="从机构钱包提币的流程"/>
+
+1. **发起提币请求**：用户通过 Cobo Portal 或 WaaS API 发起提币请求。
+2. **二次确认**：
+   - 通过 Cobo Portal 发起的提币：需要在 [Cobo Guard](/cn/guard/introduction) 上确认提币请求。
+   - 通过 WaaS API 发起的提币：您的 [Callback Endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) 需要返回 "ok" 以确认提币请求。
+3. **风控**：如果已配置，Cobo Portal 中的交易风控将评估提币请求。当需要人工审核时，审批员需要在 Cobo Guard 上审批该交易。
+4. **签名**：Cobo 根据在线状态等条件选择一个可用的[签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group)来签署交易。
+   - 移动端签名人：通过 Cobo Guard 签名。
+   - [服务端签名人](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)：TSS Node Server 在获得 TSS Node Callback Sever 同意后签署交易。
+5. **广播**：Cobo 创建交易并将其广播到网络。
+
+以下是在 Cobo Portal 中发起提币的步骤。如需了解 API 集成，请参阅 [MPC 钱包（机构钱包）入门指南](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw)。
+
+
+## 发起提币
+
+要从机构钱包转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
 
 <img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
 
