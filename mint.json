@@ -506,22 +506,6 @@
       "version": "English"
     },
     {
-      "group": "COBO PORTAL APPS",
-      "pages": [
-        "en/portal/portal-apps/introduction",
-        "en/portal/portal-apps/browse-and-install",
-        {
-          "group": "Manage your apps",
-          "pages": [
-            "en/portal/portal-apps/transaction-policies",
-            "en/portal/portal-apps/app-settings",
-            "en/portal/portal-apps/workflow"
-          ]
-        }
-      ],
-      "version": "English"
-    },
-    {
       "group": "DEVELOP WITH COBO",
       "pages": [
         {
@@ -548,7 +532,6 @@
                       "group": "Webhooks",
                       "pages": [
                         "en/portal/developer-console/webhooks-intro",
-                        "en/portal/developer-console/webhooks-notif-subs",
                         "en/portal/developer-console/webhooks-create",
                         "en/portal/developer-console/webhooks-manage"
                       ]
@@ -580,6 +563,22 @@
           ]
         },
         "en/portal/portal-apps/build"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "ABOUT COBO PORTAL APPS",
+      "pages": [
+        "en/apps/introduction",
+        "en/apps/browse-and-install",
+        {
+          "group": "Manage your apps",
+          "pages": [
+            "en/apps/transaction-policies",
+            "en/apps/app-settings",
+            "en/apps/workflow"
+          ]
+        }
       ],
       "version": "English"
     },
@@ -1248,22 +1247,6 @@
       "version": "简体中文"
     },
     {
-      "group": "COBO PORTAL APPS",
-      "pages": [
-        "cn/portal/portal-apps/introduction",
-        "cn/portal/portal-apps/browse-and-install",
-        {
-          "group": "管理应用",
-          "pages": [
-            "cn/portal/portal-apps/transaction-policies",
-            "cn/portal/portal-apps/app-settings",
-            "cn/portal/portal-apps/workflow"
-          ]
-        }
-      ],
-      "version": "简体中文"
-    },
-    {
       "group": "开发者专区",
       "pages": [
         {
@@ -1290,7 +1273,6 @@
                       "group": "Webhooks",
                       "pages": [
                         "cn/portal/developer-console/webhooks-intro",
-                        "cn/portal/developer-console/webhooks-notif-subs",
                         "cn/portal/developer-console/webhooks-create",
                         "cn/portal/developer-console/webhooks-manage"
                       ]
@@ -1322,6 +1304,22 @@
           ]
         },
         "cn/portal/portal-apps/build"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "了解 COBO PORTAL APPS",
+      "pages": [
+        "cn/apps/introduction",
+        "cn/apps/browse-and-install",
+        {
+          "group": "管理应用",
+          "pages": [
+            "cn/apps/transaction-policies",
+            "cn/apps/app-settings",
+            "cn/apps/workflow"
+          ]
+        }
       ],
       "version": "简体中文"
     },
@@ -1702,6 +1700,46 @@
     {
       "source": "/cn/portal/mpc-wallets/ocw/tss-node-release-notes",
       "destination": "/cn/portal/mpc-wallets/ocw/server-co-signer"
+    },
+    {
+      "source": "/en/portal/portal-apps/introduction",
+      "destination": "/en/apps/introduction"
+    },
+    {
+      "source": "/cn/portal/portal-apps/introduction",
+      "destination": "/cn/apps/introduction"
+    },
+    {
+      "source": "/en/portal/portal-apps/browse-and-install",
+      "destination": "/en/apps/browse-and-install"
+    },
+    {
+      "source": "/cn/portal/portal-apps/browse-and-install",
+      "destination": "/cn/apps/browse-and-install"
+    },
+    {
+      "source": "/en/portal/portal-apps/transaction-policies",
+      "destination": "/en/apps/transaction-policies"
+    },
+    {
+      "source": "/cn/portal/portal-apps/transaction-policies",
+      "destination": "/cn/apps/transaction-policies"
+    },
+    {
+      "source": "/en/portal/portal-apps/app-settings",
+      "destination": "/en/apps/app-settings"
+    },
+    {
+      "source": "/cn/portal/portal-apps/app-settings",
+      "destination": "/cn/apps/app-settings"
+    },
+    {
+      "source": "/en/portal/portal-apps/workflow",
+      "destination": "/en/apps/workflow"
+    },
+    {
+      "source": "/cn/portal/portal-apps/workflow",
+      "destination": "/cn/apps/workflow"
     }
   ]
 }
