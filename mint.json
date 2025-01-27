@@ -218,7 +218,6 @@
                             "en/portal/mpc-wallets/ocw/create-mpc-wallet"
                           ]
                         },
-                        "en/portal/mpc-wallets/ocw/server-co-signer",
                         {
                           "group": "Manage Organization-Controlled Wallets",
                           "pages": [
@@ -959,7 +958,6 @@
                             "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
                           ]
                         },
-                        "cn/portal/mpc-wallets/ocw/server-co-signer",
                         {
                           "group": "管理机构钱包",
                           "pages": [
