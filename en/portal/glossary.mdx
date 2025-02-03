@@ -139,7 +139,8 @@ A user-defined label used in Cobo Portal to classify and organize transfers with
 A type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible threshold signature scheme ("m out of n" key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
 
 ### TSS Node
-A server node with the TSS Node package installed. It functions as a server co-signer that stores the key shares of your MPC Wallets and automatically sign transactions initiated by your MPC Wallets.
+A TSS Node is a component of MPC Wallets that generates and manages private key shares. It connects with Cobo Portal to perform cryptographic operations such as key generation, transaction signing, and key resharing. A TSS Node can be implemented as either a mobile application (Cobo Guard) or a server node with the TSS Node package installed.
+
 
 ## U
 ### User-Controlled Wallets (UCW)
