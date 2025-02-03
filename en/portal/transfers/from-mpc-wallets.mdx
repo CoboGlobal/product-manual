@@ -20,17 +20,13 @@ The diagram below outlines the withdrawal flow from an Organization-Controlled W
 
 <img src="/en/images/transfers/mpc-withdrawal-process.svg" className="diagram" alt="The steps involved in a withdrawal from an Organization-Controlled Wallet"/>
 
-1. **Initiate a withdrawal request**: A spender initiates a withdrawal request via Cobo Portal or the WaaS API.
+1. **Initiate a withdrawal request**: A spender initiates a withdrawal request via Cobo Portal or [the WaaS API](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw#withdraw-tokens).
 2. **Double confirmation**:
    - For Cobo Portal initiated withdrawals: Confirm the withdrawal on [Cobo Guard](/en/guard/introduction).
    - For WaaS API initiated withdrawals: Your [callback endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) needs to respond with "ok" to confirm.
-3. **Risk control**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Cobo Guard.
-4. **Sign the transaction**: Cobo selects an available [co-signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) to sign the transaction based on their online status and other criteria.
-   - Mobile co-signer: Signs via Cobo Guard.
-   - [Server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview): A TSS Node server signs the transaction with the TSS Node callback server's approval.
+3. **[Risk control](/en/portal/risk-controls/tx-policies-overview)**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Cobo Guard.
+4. **Sign the transaction**: A [co-signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) will be selected to sign the transaction based on their online status and other criteria. Ensure that at least one of your co-signers is online. You can check if a co-signer is online through Cobo Portal. For details, see [Check co-signer status](#check-co-signer-status).
 5. **Broadcast the transaction**: Cobo creates the transaction and broadcasts it to the network.
-
-Below are steps to initiate a withdrawal in Cobo Portal. For API integration, see [Get started with MPC Wallets (Organization-Controlled Wallets)](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw).
 
 
 ## Initiate a withdrawal
@@ -86,4 +82,19 @@ Then, fill in the required information as follows:
 8. <MySnippet />
 9. Click **Submit**.
 
+## Check co-signer status
+
+To successfully sign a transaction, you need to ensure that at least one of your co-signers is online. The transaction will remain pending until it receives the necessary signature. 
+
+You can check if a co-signer is online through Cobo Portal:
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+3. Select your vault and then click the **Manage Share Management** icon <img src="/en/images/transfers/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
+4. In the **Key Group Management** page, locate your key share holder group, and check the status indicator next to each key share holder:
+   - 🟢 Green dot: The co-signer is online and ready to sign transactions
+   - No dot: The co-signer is offline and cannot sign transactions.
+
+<img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing co-signer status"/>
+
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
+
