@@ -20,30 +20,33 @@ This guide explains how to enable the Auto-Sweep feature for an Organization-Con
 3. Select your vault.
 4. Click **Create Wallet**.
 5. Name your wallet, then enable the **Auto-Sweep** switch. 
+
+    <img src="/en/images/mpc-wallet/ocw/enable-auto-sweep.png" className="screenshot_modal" alt="The wallet with Auto-Sweep icon" />
+
     <Warning>Currently, once enabled, the Auto-Sweep feature cannot be disabled.</Warning>
 6. Click **Create**.
 
-Now you have successfully created a new Organization-Controlled Wallet with Auto-Sweep enabled. The wallet has a icon indicating that Auto-Sweep is enabled.
+Now you have successfully created a new Organization-Controlled Wallet with Auto-Sweep enabled. The wallet has a icon indicating that Auto-Sweep is enabled as the following screenshot shows.
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="The wallet with Auto-Sweep icon" />
 
 ## Changes after enabling Auto-Sweep
 
-- Wallet list filtering: You can filter wallets by their **Auto-Sweep Enabled** status to easily identify which wallets have the feature turned on or off.
+- Token list balance display: In a wallet with Auto-Sweep enabled, you can view your token balances in two columns: balance and withdrawable balance (in the sweep address). Hover over the balance to see both the swept and unswept balances, and hover over the withdrawable balance to view the sweep address.
 
-    <img src="/en/images/mpc-wallet/ocw/wallet-filter.png" className="full_screen" alt="Wallet filter" />
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="full_screen" alt="Token list" />
 
-- Token list balance display: You can view your token balances in two columns: total balance and withdrawable balance (in the sweep address). Hover over the total balance to see both the withdrawable and unswept balances, and hover over the withdrawable balance to view the sweep address.
-
-    <img src="/en/images/mpc-wallet/ocw/token-list.png" className="full_screen" alt="Token list" />
-
-    - Total balance: This represents the sum of your withdrawable balance and unswept balance in your wallet.
-    - Withdrawable balance: This is the part of your total balance located in the sweep address that is readily available for withdrawal, contract calls, and other transaction operations.
+    - Balance: This represents the sum of your withdrawable balance and unswept balance in your wallet.
+    - Withdrawable balance/Swept balance: This is the part of your total balance located in the sweep address that is readily available for withdrawal, contract calls, and other transaction operations.
     - Unswept balance: This refers to the part of your total balance that has not yet been moved to the sweep address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
 
 - Address list organization: You can find addresses organized into two tabs: **Deposit** and **Sweep-to**. The **Deposit** tab displays previously created receiving addresses, while the **Sweep-to** tab lists addresses created by Cobo for sweep transactions.
 
-    <img src="/en/images/mpc-wallet/ocw/address-list.png" className="full_screen" alt="Address list" />
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="full_screen" alt="Address list" />
+
+- Wallet list filtering: You can filter wallets by their **Auto-Sweep Enabled** status to easily identify which wallets have the feature turned on or off.
+
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="full_screen" alt="Wallet filter" />
 
 - Transaction history changes: When an Auto-Sweep occurs, you will see two transaction records. For receiving addresses, it's recorded as a **withdrawal**. For sweep addresses, it's recorded as a **deposit**.
 

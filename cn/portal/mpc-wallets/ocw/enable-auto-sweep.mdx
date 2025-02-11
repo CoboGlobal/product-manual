@@ -20,7 +20,10 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 3. 选择您的 Vault。
 4. 点击**创建钱包**。
 5. 为您的钱包命名，然后启用**自动归集**开关。
-    <Warning>目前自动归集功能启用后将无法禁用。</Warning>
+
+  <img src="/cn/images/mpc-wallet/ocw/enable-auto-sweep.png" className="screenshot_modal" alt="The wallet with Auto-Sweep icon" />
+
+  <Warning>目前自动归集功能启用后将无法禁用。</Warning>
 6. 点击**创建**。
 
 现在，您已成功创建启用了自动归集功能的机构钱包。钱包上有一个图标，表示已启用自动归集。
@@ -29,21 +32,21 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 
 ## 启用自动归集后的更改
 
-- 钱包列表筛选：您可以通过**自动归集启用**状态来筛选钱包，以便轻松识别哪些钱包已启用或禁用此功能。
+- 代币列表余额显示：在开启自动归集的钱包详情页面，您可以通过余额和可提币余额（在归集地址中）这两列数据查看您的代币余额。将鼠标悬停在余额上可以查看已归集和未归集余额，将鼠标悬停在可提币余额上可以查看归集地址。
 
-  <img src="/cn/images/mpc-wallet/ocw/wallet-filter.png" className="full_screen" alt="钱包筛选" />
+  <img src="/cn/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="full_screen" alt="代币列表" />
 
-- 代币列表余额显示：您可以通过总余额和可提币余额（在归集地址中）这两列数据查看您的代币余额。将鼠标悬停在总余额上可以查看可提币和未归集余额，将鼠标悬停在可提币余额上可以查看归集地址。
-
-  <img src="/cn/images/mpc-wallet/ocw/token-list.png" className="full_screen" alt="代币列表" />
-
-  - 总余额：代表您钱包中可提币余额和未归集余额的总和。
-  - 可提币余额：这是位于归集地址中的总余额，可随时用于提币、合约调用和其他交易操作。
+  - 余额：代表您钱包中可提币余额和未归集余额的总和。
+  - 可提币余额/已归集余额：这是位于归集地址中的总余额，可随时用于提币、合约调用和其他交易操作。
   - 未归集余额：尚未转移到归集地址的总余额，包括正在归集中的代币和尚未启动归集的代币，意味着当前不可用于提币和其他交易操作。
 
-- 地址列表组织：您可以找到分为两个标签页的地址：**存款**和**归集**。**存款**标签页显示先前创建的接收地址，而**归集**标签页列出由 Cobo 为归集交易创建的地址。
+- 地址列表：您可以找到分为两个标签页的地址：**充币**和**归集**。**充币**标签页显示先前创建的接收地址，而**归集**标签页列出由 Cobo 为归集交易创建的地址。
 
-  <img src="/cn/images/mpc-wallet/ocw/address-list.png" className="full_screen" alt="地址列表" />
+  <img src="/cn/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="full_screen" alt="地址列表" />
+
+- 钱包列表筛选：您可以通过自动归集启用状态来筛选钱包，以便轻松识别哪些钱包已启用或禁用此功能。
+
+  <img src="/cn/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="full_screen" alt="钱包筛选" />
 
 - 交易历史更改：当发生自动归集时，您将看到两条交易记录。对于接收地址，记录为**提币**。对于归集地址，记录为**存款**。
 
