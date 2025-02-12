@@ -4,13 +4,29 @@ lang: "zh-hans"
 description: "了解如何重置 Cobo Accounts 的 Google Authenticator，包括必要时的手动验证步骤。"
 ---
 
-<Note>如果无法访问旧 Google Authenticator，请发送电子邮件至 [help@cobo.com](mailto:help@cobo.com) 进行手动验证和重置。否则，请按照以下步骤重置您的 Google Authenticator。</Note>
+如果您因为设备丢失或更换想重置用于 Cobo Accounts 的 Google Authenticator，请按照以下步骤进行重置。
 
-1. 登录 [Cobo Accounts](https://accounts.cobo.com/)，然后点击左侧主菜单中的 **MFA Management**。
-2. 点击 **Google Authenticator** 旁的 **Modify**。
-3. 按照提示设置您的新 Google Authenticator。
+1. 登录 [Cobo Accounts](https://accounts.cobo.com/)，然后点击 **MFA Management**（MFA 管理）标签页。
+2. 点击 **Google Authenticator** 旁的 **Modify**（修改），出现下图所示对话框。
 
-<img src="/cn/images/cobo-accounts/_xhiQMOa7LNMh0f9QR3LCIVTSncU4VZIUcCZj5aCUP7mxmw2RaMN9mmwDwdp8mTyzWH063WyZPEcGKJEX_1sAUxBz6aMm5CVGUigupUkl3QYa0ci30dQ_C3RGL0KdVFpg7cobueWhNoxsdGdC-s23Mw.png" className="screenshot_full_screen"/>
+    <img src="/en/images/cobo-accounts/_xhiQMOa7LNMh0f9QR3LCIVTSncU4VZIUcCZj5aCUP7mxmw2RaMN9mmwDwdp8mTyzWH063WyZPEcGKJEX_1sAUxBz6aMm5CVGUigupUkl3QYa0ci30dQ_C3RGL0KdVFpg7cobueWhNoxsdGdC-s23Mw.png" className="screenshot_full_screen" alt="重置 Google Authenticator 的屏幕说明" />
 
+3. 在新设备上打开 Google Authenticator 并扫描二维码，在对话框中输入 Google Authenticator 提供的六位数代码，然后点击 **Submit**（提交）。
+
+4. 在 **Choose MFA method**（选择 MFA 方法）对话框中，如果旧的 Google Authenticator 设备仍然可用，请点击 **Google Authenticator**，否则点击 **Cobo Guard**。
+
+    <img src="/en/images/cobo-accounts/choose-mfa.png" className="screenshot_full_screen" alt="选择 MFA 方法对话框" />
+
+    - 如果选择 **Google Authenticator**，请输入旧设备上 Google Authenticator 的六位数代码。
+
+    <img src="/en/images/cobo-accounts/reset-with-ga.png" className="screenshot_full_screen" alt="使用旧 Google Authenticator 设备重置的屏幕截图" />
+
+    - 如果选择 **Cobo Guard**，请打开 Cobo Guard 并批准修改 MFA 请求。然后点击 **Authentication completed**（验证完成）。
+
+    <img src="/en/images/cobo-accounts/reset-with-guard.png" className="screenshot_full_screen" alt="使用 Cobo Guard 重置的屏幕截图" />
+
+    <img src="/cn/images/cobo-accounts/guard-request.png" className="screenshot_modal" alt="Cobo Guard 请求的屏幕截图" />
+
+现在，您的 Google Authenticator 已重置。您可以使用新设备上的 Google Authenticator 登录 Cobo Accounts。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
