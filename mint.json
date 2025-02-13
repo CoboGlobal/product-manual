@@ -239,7 +239,7 @@
                           ]
                         },
                         {
-                          "group": "Auto sweep transactions",
+                          "group": "Auto-Sweep (Coming soon)",
                           "pages": [
                             "en/portal/mpc-wallets/ocw/auto-sweep-overview",
                             "en/portal/mpc-wallets/ocw/enable-auto-sweep"
@@ -988,7 +988,7 @@
                           ]
                         },
                         {
-                          "group": "自动归集交易",
+                          "group": "自动归集（即将推出）",
                           "pages": [
                             "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
                             "cn/portal/mpc-wallets/ocw/enable-auto-sweep"

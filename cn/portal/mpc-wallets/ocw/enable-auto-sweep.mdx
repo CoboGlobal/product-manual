@@ -9,8 +9,8 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 
 ## 前提条件
 - 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
-- 您已按照 [TSS Node Overview](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)中的说明为自动归集交易设置了服务端签名人。否则，您需要在 Cobo Guard 上手动签名自动归集交易。
-- 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的等效[角色](/cn/portal/organization/roles-and-permissions)。
+- 您已按照 [TSS Node Overview](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) 中的说明为自动归集交易设置了服务端签名人。否则，您需要在 Cobo Guard 上手动签名自动归集交易。
+- 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的同等[角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生交易费用。建议参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc) 中的指引启用 Fee Station 以支付交易费用。否则，您需要确保接收地址有足够的主链币余额支付交易费用。
 
 ## 步骤
@@ -30,17 +30,17 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 
 <img src="/cn/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="启用了自动归集图标的钱包" />
 
-## 启用自动归集后的更改
+## 启用自动归集后的变化
 
-- 代币列表余额显示：在开启自动归集的钱包详情页面，您可以通过余额和可提币余额（在归集地址中）这两列数据查看您的代币余额。将鼠标悬停在余额上可以查看已归集和未归集余额，将鼠标悬停在可提币余额上可以查看归集地址。
+- 代币列表余额显示：在开启自动归集的钱包详情页面，您可以通过余额和（归集地址中的）可提取余额这两列数据查看您的代币余额。将鼠标悬停在余额上可以查看已归集和未归集余额，将鼠标悬停在可提币余额上可以查看归集地址。
 
   <img src="/cn/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="full_screen" alt="代币列表" />
 
   - 余额：代表您钱包中可提币余额和未归集余额的总和。
-  - 可提币余额/已归集余额：这是位于归集地址中的总余额，可随时用于提币、合约调用和其他交易操作。
+  - 可提取余额/已归集余额：这是位于归集地址中的总余额，可随时用于提币、合约调用和其他交易操作。
   - 未归集余额：尚未转移到归集地址的总余额，包括正在归集中的代币和尚未启动归集的代币，意味着当前不可用于提币和其他交易操作。
 
-- 地址列表：您可以找到分为两个标签页的地址：**充币**和**归集**。**充币**标签页显示先前创建的接收地址，而**归集**标签页列出由 Cobo 为归集交易创建的地址。
+- 地址列表：您可以找到分为两个标签页的地址：**充币**和**归集至**。**充币**标签页显示先前创建的接收地址，而**归集至**标签页列出由 Cobo 为归集交易创建的地址。
 
   <img src="/cn/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="full_screen" alt="地址列表" />
 
@@ -48,6 +48,6 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 
   <img src="/cn/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="full_screen" alt="钱包筛选" />
 
-- 交易历史更改：当发生自动归集时，您将看到两条交易记录。对于接收地址，记录为**提币**。对于归集地址，记录为**存款**。
+- 交易历史更改：当发生自动归集时，您将看到两条交易记录。对于接收地址，记录为**提币**。对于归集地址，记录为**充币**。
 
-  <img src="/cn/images/mpc-wallet/ocw/transaction-history.png" className="full_screen" alt="交易历史" />
+<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
