@@ -11,21 +11,35 @@ description: "了解如何重置 Cobo Accounts 的 Google Authenticator，确保
 
     <img src="/en/images/cobo-accounts/_xhiQMOa7LNMh0f9QR3LCIVTSncU4VZIUcCZj5aCUP7mxmw2RaMN9mmwDwdp8mTyzWH063WyZPEcGKJEX_1sAUxBz6aMm5CVGUigupUkl3QYa0ci30dQ_C3RGL0KdVFpg7cobueWhNoxsdGdC-s23Mw.png" className="screenshot_full_screen" alt="重置 Google Authenticator 的屏幕说明" />
 
-3. 在新设备上打开 Google Authenticator 并扫描二维码，在对话框中输入 Google Authenticator 提供的六位数代码，然后点击 **Submit**（提交）。
-
-4. 在 **Choose MFA method**（选择 MFA 方法）对话框中，如果旧的 Google Authenticator 设备仍然可用，请点击 **Google Authenticator**，否则点击 **Cobo Guard**。
+3. 在新设备上打开 Google Authenticator 并扫描二维码，在对话框中输入 Google Authenticator 提供的六位数代码，然后点击 **Submit**（提交），出现 **Choose MFA method**（选择 MFA 方法）对话框。
 
     <img src="/en/images/cobo-accounts/choose-mfa-method.png" className="screenshot_full_screen" alt="选择 MFA 方法对话框" />
 
-    - 如果选择 **Google Authenticator**，请输入旧设备上 Google Authenticator 的六位数代码。
+4. 在 **Choose MFA method**（选择 MFA 方法）对话框中，您可以选择以下方式其一：
+
+    **方法一：通过旧设备的 Google Authenticator 重置**
+    
+    点击 **Google Authenticator**，出现以下提示。
 
     <img src="/en/images/cobo-accounts/reset-with-old-ga.png" className="screenshot_full_screen" alt="使用旧 Google Authenticator 设备重置的屏幕截图" />
 
-    - 如果选择 **Cobo Guard**，请打开 Cobo Guard 并批准修改 MFA 请求。然后点击 **Authentication completed**（验证完成）。
+    输入您旧设备上 Google Authenticator 的六位数代码即可。
 
+    <Note>如果旧设备已不可用，请选择方法二进行重置。</Note>
+
+    **方法二：通过 Cobo Guard 重置**
+
+    点击 **Cobo Guard**，出现以下提示。
+    
     <img src="/en/images/cobo-accounts/reset-with-cobo-guard.png" className="screenshot_full_screen" alt="使用 Cobo Guard 重置的屏幕截图" />
+    
+    打开 Cobo Guard 应用，批准修改 MFA 请求。
 
     <img src="/cn/images/cobo-accounts/cobo-guard-request.png" className="screenshot_modal" alt="Cobo Guard 请求的屏幕截图" />
+
+    然后回到 Cobo Accounts 网页，点击 **Authentication completed**（验证完成）即可。
+
+    <Note>如果 Cobo Guard 不可用，请参照[因更换设备或重装应用重置 Cobo Guard](cn/guard/reset) 进行重置。</Note>
 
 现在，您的 Google Authenticator 已重置。您可以使用新设备上的 Google Authenticator 登录 Cobo Accounts。
 
