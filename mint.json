@@ -1114,7 +1114,8 @@
                         "cn/portal/risk-controls/off-chain-tx-set-transfer",
                         "cn/portal/risk-controls/off-chain-tx-manage-transfer",
                         "cn/portal/risk-controls/off-chain-tx-set-contract-call",
-                        "cn/portal/risk-controls/off-chain-tx-manage-contract-call"
+                        "cn/portal/risk-controls/off-chain-tx-manage-contract-call",
+                        "cn/portal/risk-controls/manage-emergency-policy"
                       ]
                     }
                   ]
