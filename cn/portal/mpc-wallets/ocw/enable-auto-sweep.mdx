@@ -9,11 +9,13 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 
 ## 前提条件
 - 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
-- 您已按照 [TSS Node Overview](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) 中的说明为自动归集交易设置了服务端签名人。否则，您需要在 Cobo Guard 上手动签名自动归集交易。
+- 您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
 - 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的同等[角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生交易费用。建议参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc) 中的指引启用 Fee Station 以支付交易费用。否则，您需要确保接收地址有足够的主链币余额支付交易费用。
 
 ## 步骤
+
+### 创建新钱包时启用自动归集
 
 1. 登录[Cobo Portal](https://portal.cobo.com/login)。
 2. 点击<img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
@@ -24,15 +26,40 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
   <img src="/cn/images/mpc-wallet/ocw/enable-auto-sweep.png" className="screenshot_modal" alt="The wallet with Auto-Sweep icon" />
 
   <Warning>目前自动归集功能启用后将无法禁用。</Warning>
+
 6. 点击**创建**。
 
 现在，您已成功创建启用了自动归集功能的机构钱包。钱包上有一个图标，表示已启用自动归集。
 
 <img src="/cn/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="启用了自动归集图标的钱包" />
 
+### 为现有钱包启用自动归集
+
+1. 登录[Cobo Portal](https://portal.cobo.com/login)。
+2. 点击<img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+3. 选择您的 Vault。
+4. 选择要启用自动归集的钱包。
+5. 点击**操作**栏中的**开启自动归集**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep.png" className="icon" alt="The Turn On Auto-Sweep icon" />。
+6. 在**开启自动归集**对话框中，点击**确认**。
+
+  <img src="/cn/images/mpc-wallet/ocw/turn-on-auto-sweep.png" className="screenshot_modal" alt="The Turn On Auto-Sweep dialog" />
+
+  <Warning>目前自动归集功能启用后将无法禁用。</Warning>
+
+7. 选择一个多重身份验证（MFA）方式进行身份验证。
+
+现在，您已成功为该钱包启用自动归集功能。钱包上有一个图标，表示已启用自动归集。
+
+<img src="/cn/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="启用了自动归集图标的钱包" />
+
 ## 启用自动归集后的变化
 
-- 代币列表余额显示：在开启自动归集的钱包详情页面，您可以通过余额和（归集地址中的）可提取余额这两列数据查看您的代币余额。将鼠标悬停在余额上可以查看已归集和未归集余额，将鼠标悬停在可提币余额上可以查看归集地址。
+### 原先的接收地址与归集地址的功能
+- 原先的接收地址：接收地址只能接收资产并发起到指定归集地址的归集交易。接收地址不支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。
+- 归集地址：归集地址具有地址所有功能，可以执行所有类型的交易。
+
+### 代币列表
+启用自动归集后，您可以在钱包中查看您的代币余额，分为两列：余额和可提余额（在归集地址中）。将鼠标悬停在余额上可以查看已归集和未归集的余额，将鼠标悬停在可提余额上可以查看归集地址。
 
   <img src="/cn/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="full_screen" alt="代币列表" />
 
@@ -40,14 +67,19 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
   - 可提取余额/已归集余额：这是位于归集地址中的总余额，可随时用于提币、合约调用和其他交易操作。
   - 未归集余额：尚未转移到归集地址的总余额，包括正在归集中的代币和尚未启动归集的代币，意味着当前不可用于提币和其他交易操作。
 
-- 地址列表：您可以找到分为两个标签页的地址：**充币**和**归集至**。**充币**标签页显示先前创建的接收地址，而**归集至**标签页列出由 Cobo 为归集交易创建的地址。
+### 地址列表
+您可以找到分为两个标签页的地址：**充币**和**归集至**。**充币**标签页显示先前创建的接收地址，而**归集至**标签页列出由 Cobo 为归集交易创建的地址。
 
   <img src="/cn/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="full_screen" alt="地址列表" />
 
-- 钱包列表筛选：您可以通过自动归集启用状态来筛选钱包，以便轻松识别哪些钱包已启用或禁用此功能。
+### 钱包列表
+您可以通过自动归集启用状态来筛选钱包，以便轻松识别哪些钱包已启用或禁用此功能。
 
   <img src="/cn/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="full_screen" alt="钱包筛选" />
 
-- 交易历史更改：当发生自动归集时，您将看到两条交易记录。对于接收地址，记录为**提币**。对于归集地址，记录为**充币**。
+### 交易记录
+当发生自动归集时，您可以看到两条交易记录。对于接收地址，记录为**提币-归集**。对于归集地址，记录为**充币-归集**。
+如下图所示，您可以在交易记录页面查看或筛选归集交易：
+<img src="/cn/images/mpc-wallet/ocw/tx-history.png" className="screenshot_full_screen" alt="The sweep transactions" />
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
