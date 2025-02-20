@@ -11,7 +11,8 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 - 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
 - 您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
 - 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的同等[角色](/cn/portal/organization/roles-and-permissions)。
-- 归集交易的提币部分会产生交易费用。建议参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc) 中的指引启用 Fee Station 以支付交易费用。否则，您需要确保接收地址有足够的主链币余额支付交易费用。
+- 归集交易的提币部分会产生链上手续费（Gas Fee）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在交易地址余额不足时自动补充手续费差额。否则，您需要确保交易地址有足够的主链币余额支付链上手续费。
+<Info>更多详情请参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc)。</Info>
 
 ## 步骤
 

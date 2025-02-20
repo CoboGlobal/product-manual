@@ -11,7 +11,8 @@ This guide explains how to enable the Auto-Sweep feature for an Organization-Con
 - You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
 - You have set up at least one [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as your [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
 - You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
-- Transaction fees apply to the withdrawal part of the sweep transaction. It is recommended to enable Fee Station for transaction fee payments as described in [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc). Otherwise, you will need to ensure sufficient main chain coin balance at the receiving address.
+- Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the transaction address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the transaction address.
+<Info>For more details, refer to [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc).</Info>
 
 ## Steps
 
