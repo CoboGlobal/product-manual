@@ -7,6 +7,8 @@ description: "Follow the steps to register an API key in Cobo Portal, including 
 
 ## Steps
 
+### Register an API key on Cobo Portal
+
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click the Developer icon <img src="/en/images/common/icon_developer.svg" className="icon" alt="the Developer icon" /> in the main menu.
 3. Click the **WaaS 2.0** tab and then switch to the **API Keys** tab.
@@ -29,14 +31,37 @@ description: "Follow the steps to register an API key in Cobo Portal, including 
 
     Click **Confirm** to complete the configuration.
 
-9. Select the callback endpoints this API key uses, or register a new one. The selected callback endpoint will receive messages triggered by the API key. For more information, see [Register a callback endpoint](/en/portal/developer-console/callbacks-register).
-10. Select the key type. 
-    - **Permanent**: To use this key type, you need to specify a static IP address as the address from which you send the API request. 
-    - **Temporary**: A temporary key expires in 30 days. This option is suitable if you do not have a static IP address ready yet.
-11. For **Permanent** API keys, enter the IP address to whitelist (separate between each IP address with a comma, if you have more than one IP address to whitelist). 
-    <Note>Temporary API keys cannot set up IP whitelisting.</Note>
-12. Click **Register** to finish the API key registration.
+9. Select the callback endpoint this API key uses, or register a new one. The selected callback endpoint will receive messages triggered by the API key. For more information, see [Register a callback endpoint](/en/portal/developer-console/callbacks-register).
+10. Select the key type.
+    - **Permanent**: To use this key type, you need to specify a static IP address as the address from which you send the API request.
+    - **Temporary**: A temporary key expires in 30 days. This option is suitable if you do not have a static IP address ready.
+11. If you register a permanent API key, enter the whitelisted IP addresses (if there are multiple, separate them with commas).
 
-Depending on your organization's governance policies, you may need to obtain approval from your organization admin before the API key becomes active.
+    <Note>Temporary key cannot set up the IP whitelist.</Note>
 
-<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
+12. Click **Register**.
+13. If you register a temporary API key, click **Create** in the dialog.
+
+    <img src="/en/images/developer-console/temporary.png" className="screenshot_modal" alt="Temporary API Key dialog" />
+
+14. In the **Security Verification** dialog, verify your identity using multi-factor authentication (MFA).
+
+    <img src="/en/images/developer-console/verify.png" className="screenshot_modal" alt="Security Verification dialog" />
+
+Once identity verification is successful, your API key registration request is submitted.
+
+### Approve the request on Cobo Guard
+
+According to your organization's [governance policies](/en/portal/organization/governance-intro) settings, this request may require approval from a specific number of organization admins in Cobo Guard. You can view the approval rules for registering an API key by clicking the profile icon at the bottom left > **Organization** > **Governance Policies** > **Developers**.
+
+<img src="/en/images/developer-console/manage-api.png" className="screenshot_full_screen" alt="Manage API Key Approval Rules" />
+
+Admins need to open Cobo Guard, find the notification corresponding to the request, and tap **Approve**.
+
+<img src="/en/images/developer-console/approve.png" className="screenshot_modal" alt="Approve API Key Request" />
+
+Once approved, the API key registration is successful, and you will see the API key status change to **Active**.
+
+<img src="/en/images/developer-console/active.png" className="screenshot_full_screen" alt="API Key Active Status" />
+
+<Tip>We welcome you to [submit your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to help us continuously improve the quality of our documentation!</Tip>
