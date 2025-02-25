@@ -1451,7 +1451,7 @@
           "pages": [
             "cn/apps/bridge/introduction",
             {
-              "group": "使用說明",
+              "group": "使用说明",
               "pages": [
                 "cn/apps/bridge/how-to-use/setup",
                 {
