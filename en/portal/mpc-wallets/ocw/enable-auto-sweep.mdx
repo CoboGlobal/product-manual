@@ -10,6 +10,7 @@ This guide explains how to enable the Auto-Sweep feature for an Organization-Con
 ## Prerequisites
 - You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
 - You have set up at least one [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as your [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
+- You can add the sweep address to the whitelist of the TSS Node Callback server to automatically approve sweep transactions. For more details, refer to [Auto-sweeping implementation](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation).
 - You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
 - Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the transaction address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the transaction address.
 <Info>For more details, refer to [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc).</Info>
@@ -62,13 +63,13 @@ Once Auto-Sweep is enabled, the following changes apply:
 - Sweep addresses: Sweep addresses remain fully functional and can perform all transaction types.
 
 ### Token list
-In a wallet with Auto-Sweep enabled, you can view your token balances in two columns: balance and withdrawable balance (in the sweep address). Hover over a token's balance to see both the swept and unswept balances, and hover over a token's withdrawable balance to view the sweep address.
+In a wallet with Auto-Sweep enabled, you can view your token balances in two columns: total balance and withdrawable balance. Hover over a token's total balance to see the swept balance and the balances with sweeping in progress, and hover over a token's withdrawable balance to view the sweep address.
 
     <img src="/en/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="screenshot_full_screen" alt="Token list" />
 
-    - Balance: This represents the sum of your withdrawable balance and unswept balance in your wallet.
-    - Withdrawable balance/Swept balance: This is the part of your total balance located in the sweep address that is readily available for withdrawal, contract calls, and other transaction operations.
-    - Unswept balance: This refers to the part of your total balance that has not yet been moved to the sweep address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
+    - Total balance: This represents the sum of your withdrawable balance and balance with sweeping in progress in your wallet.
+    - Withdrawable balance/Swept balance: This is the part of your balance located in the sweep address that is readily available for withdrawal, contract calls, and other transaction operations.
+    - Sweeping in progress: This refers to the part of your balance that has not yet been moved to the sweep address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
 
 ### Address list
 You can find addresses organized into two tabs: **Deposit** and **Sweep-to**. The **Deposit** tab displays previously created receiving addresses, while the **Sweep-to** tab lists addresses created by Cobo for sweep transactions.

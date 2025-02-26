@@ -10,6 +10,7 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 ## 前提条件
 - 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
 - 您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
+- 您可以将归集地址写入 TSS Node Callback 服务器的白名单中，以自动批准归集交易。详情请参阅 [Auto-sweeping implementation](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation)。
 - 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的同等[角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生链上手续费（Gas Fee）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在交易地址余额不足时自动补充手续费差额。否则，您需要确保交易地址有足够的主链币余额支付链上手续费。
 <Info>更多详情请参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc)。</Info>
@@ -60,13 +61,13 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 - 归集地址：归集地址具有地址所有功能，可以执行所有类型的交易。
 
 ### 代币列表
-启用自动归集后，您可以在钱包中查看您的代币余额，分为两列：余额和可提余额（在归集地址中）。将鼠标悬停在某一代币的余额上可以查看已归集和未归集的余额，将鼠标悬停在某一代币的可提余额上可以查看归集地址。
+启用自动归集后，您可以在钱包中看到您的代币余额分为两列：总余额和可提取余额。将鼠标悬停在某一代币的总余额上可以查看已归集余额和归集中与待归集的余额，将鼠标悬停在某一代币的可提取余额上可以查看归集地址。
 
-  <img src="/cn/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="full_screen" alt="代币列表" />
+  <img src="/cn/images/mpc-wallet/ocw/token-list.png" className="full_screen" alt="代币列表" />
 
-  - 余额：代表您钱包中可提币余额和未归集余额的总和。
-  - 可提取余额/已归集余额：这是位于归集地址中的总余额，可随时用于提币、合约调用和其他交易操作。
-  - 未归集余额：尚未转移到归集地址的总余额，包括正在归集中的代币和尚未启动归集的代币，意味着当前不可用于提币和其他交易操作。
+  - 总余额：代表您钱包中可提取余额和归集中与待归集余额的总和。
+  - 可提取余额/已归集余额：这是位于归集地址中的余额，可随时用于提币、合约调用和其他交易操作。
+  - 归集中 & 待归集余额：尚未转移到归集地址的余额，包括正在归集中的代币和尚未启动归集的代币，当前不可用于提币和其他交易操作。
 
 ### 地址列表
 您可以看到地址分为两个标签页展示：**充币**和**归集至**。**充币**标签页显示先前创建的接收地址，而**归集至**标签页列出由 Cobo 为归集交易创建的地址。
