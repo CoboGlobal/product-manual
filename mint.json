@@ -1313,7 +1313,7 @@
         "cn/apps/introduction",
         "cn/apps/browse-and-install",
         {
-          "group": "管理应用",
+          "group": "管理 Apps",
           "pages": [
             "cn/apps/transaction-policies",
             "cn/apps/app-settings",

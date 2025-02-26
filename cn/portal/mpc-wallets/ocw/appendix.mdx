@@ -206,7 +206,7 @@ sudo ./tss-node.sh stop
 
 ## TSS Node 风险控制
 
-TSS Node 完备的风险控制机制，可在发起 Callback 之前评估私钥生成（KeyGen）、私钥签名（KeySign）或私钥恢复（KeyReshare）请求。系统对这些请求应用预定义的风险控制规则，只批准符合指定规则的请求。不符合标准的请求将被拒绝。
+TSS Node 完备的风险控制机制，可在发起 Callback 之前评估私钥生成（KeyGen）、私钥签名（KeySign）或私钥恢复（KeyReshare）请求。系统对这些请求 App 预定义的风险控制规则，只批准符合指定规则的请求。不符合标准的请求将被拒绝。
 
 您可以根据您的业务要求，定制 TSS Node 风险控制规则的配置，使二者保持最佳的一致性。为此，可通过 configs/cobo-tss-node-config.yaml 文件进行定制配置。要定义特定的配置参数，请导航至 embedded_risk_control_rules，并参考以下示例：
 
