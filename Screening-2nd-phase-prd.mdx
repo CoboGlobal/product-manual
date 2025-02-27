@@ -1,0 +1,444 @@
+# Screening App \- 第二期 PRD
+
+| 版本 | 更新时间 | 修改人 | 内容 |
+| :---- | :---- | :---- | :---- |
+| v1.0 | 2025/01/08 | [Lucas Chang](mailto:lucas.chang@cobo.com) | 创建 PRD (风险扫描、风险处置策略、风险处置动作与状态) |
+| v1.1 | 2025/01/17 | [Lucas Chang](mailto:lucas.chang@cobo.com) | 更新 [3.3. 风险处置策略](#3.3.-风险处置策略) 的策略逻辑，移除优先级设计，简化为不可建立重复条件 |
+| v1.2 | 2025/01/23 | [Lucas Chang](mailto:lucas.chang@cobo.com) | 配合文案 Review 同步调整 PRD 描述，不影响相关逻辑 |
+
+# 1\. 需求背景
+
+根据前台收集的客户反馈，除了合规风险的扫描能力，客户也希望 Screening App 提供对应的资金处置能力。在入帐的场景下，如果交易扫描命中高风险，客户可以选择拒绝交易，并且在当下冻结这笔交易资金，直到客户完成调查后，再决定这笔资金是要持续冻结、原路退回或是解除冻结，避免高风险资金在调查期间被任意地转移。对于提币场景，交易在实际上链前就会被拒绝，因此不需要特殊的操作处理
+
+背景文档参考：
+
+* [Screening App \- 第一期 PRD](https://docs.google.com/document/d/1dGbWLxYvUwYcAYCUPmkCtVt-oU74marIhYRWCpMVHG8/edit?tab=t.0)  
+* [Screening App \- 第一期 Figma](https://www.figma.com/design/qkKhIfMl8ezMAQyYb3pDhv/Cobo-Screening-App---Prototype?node-id=0-1&p=f&t=77gzWzCKpNVgpi46-0)  
+* [57 交接文档](https://drive.google.com/drive/folders/1tDl39MGKRpOU_ESt3TXGRSiuN5v-9ymt)  
+* [交易检查接入交易状态\_PRD](https://docs.google.com/document/d/19qTMRLiDaSs96awn4zH5DRJ-8h75iF7No7M0u__EKa8/edit?tab=t.0#heading=h.vh0fpuf4ei4l)
+
+二期文档参考：
+
+* [Screening App \- 第二期 Figma (原型图)](https://www.figma.com/design/qkKhIfMl8ezMAQyYb3pDhv/Cobo-Screening-App---Prototype?node-id=29-5373&p=f&t=lPa71V2uTBJNWdC0-0)  
+* [Screening App \- 第二期 Figma (设计稿)](https://www.figma.com/design/LU6bqb4j9eL7lFvBGcXWXD/Cobo-Portal---%E5%BA%94%E7%94%A8%E4%B8%AD%E5%BF%83?node-id=17340-3998&p=f&t=VA7qCY4T9vwbwqAa-0)
+
+## 1.1. 用户画像分析
+
+|  | 用户画像 | 痛点 | 需求 | 优先级 |
+| :---- | :---- | :---- | :---- | :---- |
+| 1 | 支付商缺乏合规检查能力 | 收到风险资金导致营业损失 | 希望钱包托管方案能内建合规风险检查功能，主动识别和拦截可疑交易 | 高 |
+| 2 | 支付商合作伙伴要求提供合规能力证明 | 缺乏标准化的合规流程和系统，无法提供有力的合规证明 | 希望能够根据不同合作伙伴的要求，快速建立和调整合规规则配置 | 高 |
+| 3 | 支付商需要标准化的合规风险规则 | 客户入金通过内部合规扫描，但发给 OTC出金时却被认定为有风险 | 希望合规方案支持更全面的风险检查能力，能覆盖到风险变化和不同供应商的选择 | 中 |
+| 4 | 支付商有对接好的合规供应商 | 在出金流程，可以先进行合规扫描再发起交易，但在入金流程无法做到合规集成 | 希望钱包托管方案能提供模组化的解决方案，并且让客户参与交易决策，由客户给出的扫描结果，来判定交易是否通过 | 中 |
+| 5 | 支付商缺乏 Travel Rule 能力 | 交易可能因此被对手方拒绝，失去市场的竞争力 | 希望钱包托管能支援自动传递旅行规则讯息，符合 FATF 的合规要求 | 低 |
+
+## 1.2. 功能模块分析
+
+![][image1]
+
+## 1.3. 处置需求分析
+
+### 1.3.1. 冻结交易资金
+
+B2B 在收到高风险资金后，可能基于风险、合规或保护 B2B2C 客户等原因，需要对资金来源的合理性与合规性进行调查，具体行为可能包含以下：
+
+1. 通报监管单位或警局  
+2. 和客户要求提供资金来源证明  
+3. 使用调查平台进行链上追踪  
+4. 长期冻结资金避免二次流动
+
+调查期间资金被转走可能导致 B2B 产生非法行为或损失，因此需要冻结功能来锁定风险交易资金。对于非法资金的传递意图，可以简单区分为两类
+
+1. 有犯罪意图 (冻结整个帐户)  
+2. 无辜、不知情、疏忽的接收者 (冻结高风险交易的资金)
+
+Screening App 的用户属于后者，其中多是支付商或交易所，这些 B2B 也可能会使用一个地址作为收款地址，提供给多个 B2B2C。因此，在冻结功能的设计上，需要只针对交易金额进行冻结，避免冻结整个帐户导致 B2B 业务受阻
+
+### 1.3.2. 解除冻结 & 退回
+
+解除冻结的操作，代表客户已经完成相关风险调查，决定要处理这笔风险资金，可能的场景包含以下：
+
+1. 确认风险可接受，解除冻结允许资金调用  
+2. 退回到原地址  
+3. 转移到隔离钱包 (与退回相比较少见)
+
+### 1.3.3. 人工审核 & 告警
+
+AML 扫描出的风险信息，并非全部都具有非常明确的风险定义，例如某些 AML 供应商可能会提供一个分数范围，当交易的扫描分数落在中间值，B2B 可能会要求 B2B2C 提供更多的审核资料，才能做进一步的风险评估，因此需要有人工审核的介入场景，经过人工判定后再决定是否放行交易。针对中风险放行的交易，客户也可以透过告警的方式，在放行该笔交易的同时收到风险提醒，帮助客户监测和动态调整他们的风险策略
+
+# 2\. 需求目标
+
+根据需求背景分析，本次的需求目标分为三部分
+
+1. 提供客户更详细的风险数据与直觉的风险分级  
+2. 让客户可以在 Screening App 追踪管理风险交易，提供明确的审核与资金处置状态，让客户可以快速的查看审核决策与后续处理结果  
+3. 让客户可以在 Screening App 对风险交易进行处置，并且可以提前配置风险策略，由 Screening App 根据策略条件自动执行，提升交易效率，减少客户的审核与操作时间
+
+# 3\. 产品文档
+
+## 3.1. 功能清单
+
+| 优先级 | 功能模块 | 功能/页面/API | PM | RD | QA |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| P0 | 风险扫描 | 扫描触发机制 (风险扫描与制裁扫描) | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+| P0 | 风险扫描 | 扫描结果 \- 主页面 扫描结果 \- 风险详情 | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com)[Zhengbo Liu](mailto:zliu@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+| P0 | 风险处置策略 | 策略面板 建立策略 编辑策略 删除策略 策略操作纪录 | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com)[Zhengbo Liu](mailto:zliu@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+| P0 | 风险处置动作 | 批准 批准并告警 拒绝 解除冻结 | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com)[Zhengbo Liu](mailto:zliu@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+| P0 | 审核状态流程 | 待扫描已扫描已批准 已批准 (资金解冻)已拒绝 (资金冻结) 未支持 | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com)[Zhengbo Liu](mailto:zliu@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+| P1 | 风险处置动作 | 人工审核 人工审核 \- 审核通过 人工审核 \- 审核拒绝 退回 | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com)[Zhengbo Liu](mailto:zliu@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+| P1 | 审核状态流程 | 待审核 已拒绝 (资金退回) | [Lucas Chang](mailto:lucas.chang@cobo.com) | [Zhaoyu Yang](mailto:zhaoyu.yang@cobo.com)[Zhengbo Liu](mailto:zliu@cobo.com) | [Yixue Chang](mailto:ychang@cobo.com) |
+
+## 3.2. 风险扫描与结果
+
+功能延伸自第一期，本章节主要描述新增与调整功能
+
+### 3.2.1. 风险扫描
+
+* 触发扫描  
+  * 对于安装 Screening App 的用户，根据 App 指定的 MPC 钱包范围，对每一笔交易进行扫描  
+  * CipherOwl 的风险扫描与制裁扫描有不同的链限制，根据交易的链会产生以下四种场景  
+    * 链支持风险扫描，使用风险扫描  
+    * 链支持风险扫描，且风险扫描结果包含制裁信息，使用风险扫描 \+ 制裁扫描  
+    * 链不支持风险扫描，使用制裁扫描  
+    * 链不支持风险扫描和制裁扫描，审核状态流转到 Not Supported，交易状态往下流转  
+  * Screening App 需要维护链和扫描 API 的对应关系  
+* 风险扫描  
+  * Screening App 调用 CipherOwl 的风险扫描 API 对交易进行扫描   
+  * Screening App 根据 API 返回的结果和用户配置的风险处置策略，进行风险处置  
+  * Screening App 需保存扫描结果  
+* 制裁扫描  
+  * 制裁扫描的结果需对应到扫险扫描的呈现方式，命中制裁名单即为高风险  
+* 相关文档  
+  * [CipherOwl API](https://cipherowl.readme.io/reference/getaddressriskscore)
+
+### 3.2.2. 扫描结果 \- 主页面
+
+#### 扫描结果 \- 主页面说明
+
+![][image2]
+
+主页面变更项目：
+
+1. Summary 调整为低、中、高风险的数量  
+2. 所有交易都要显示扫描结果，原先仅显示命中制裁的交易  
+3. 移除右上角 Screening Time 搜寻  
+4. 主列表快速搜寻新增 from 和 to 地址搜寻  
+5. 需支持点击主列表展示详情面板，原先只能点击详情 icon 才展示  
+6. Filter 新增栏位  
+   * Risk level  
+   * Review Status  
+   * Fund Status  
+   * Created Time (原字段命名为 Transfer Time)  
+   * Updated Time
+
+#### 扫描结果 \- 主列表说明
+
+![][image3]
+
+主列表变更项目：
+
+1. 调整栏位排序  
+2. 新增 Risk Level 栏位  
+3. 新增 Review Status 栏位  
+4. 新增 Fund Status 栏位  
+5. 新增 Updated Time 栏位  
+6. 移除显示 Case ID、Transfer Time 与 Screening Time 栏位 (资料仍需纪录)  
+7. 主列表排序依照 Created Time (原 Transfer Time) 倒序
+
+主列表新增栏位定义：
+
+| 栏位 | 类型 | 唯一性 | 说明 |
+| :---- | :---- | :---- | :---- |
+| Risk Level | Text | 否 | 由 CipherOwl 扫描回传，分为三种风险，分数对应关系由 CipherOwl 提供低风险：0 \- 29 中风险：30 \- 99 高风险：100 |
+| Review Status | Text | 否 | 参考 [3.5.3. AML 审核状态说明](#3.5.3.-aml-审核状态说明) |
+| Fund Status | Text | 否 | 参考 [3.5.4. 资金处理状态说明](#3.5.4.-资金处理状态说明) |
+| Updated Time | Datetime | 否 | Review Status 和 Fund Status 更新时纪录状态的更新时间，主列表仅显示最后更新时间 |
+
+### 3.2.3. 扫描结果 \- 风险详情
+
+#### 风险详情 \- 详情面板说明
+
+![][image4]
+
+风险详情变更项目：
+
+1. Information 呈现栏位调整，参考原型图  
+2. Transfer Time 更名为 Created Time，代表的是 Cobo 交易建立时间  
+3. 统一制裁扫描与风险扫描的风险信息列表  
+4. 新增 Timeline 展示状态异动、操作帐号与更新时间  
+5. 根据审核状态和资金处理状态显示对应的操作项
+
+#### 风险详情 \- 风险信息列表说明
+
+![][image5] 
+
+风险信息列表栏位定义：
+
+| 栏位 | 类型 | 唯一性 | 说明 |
+| :---- | :---- | :---- | :---- |
+| Screening Address | Text | 否 | 显示发送风险扫描的地址，以及所属的钱包。入币检查 from 地址，提币检查 to 地址。 UTXO 的交易可能存在多个 from 或 to 地址 |
+| Amount | Text | 否 | Screening Address 的交易金额 |
+| Sanctioned | Text | 否 | 显示 Screening Address 是否命中制裁扫描，若交易使用风险扫描，制裁信息需要从 Reason Catories 字段判断 |
+| Risk Exposure | Text | 否 | 由 CipherOwl 扫描回传，地址的风险类型，可能同时存在两种类型 Direct：Screening Address 本身的风险标签 Indirect：Screening Address 参与到的间接交易风险，代表交易链路中含有风险地址。 CipherOwl 支持检查最多 8 层路径的接收和发送交易 |
+| Risk Categories | Text | 否 | 由 CipherOwl 扫描回传，风险原因标签 |
+| Exposure Address | Text | 否 | 由 CipherOwl 扫描回传，间接互动过的风险地址 |
+
+#### 风险详情 \- Exposure Path 说明
+
+![][image6]  
+Exposure Path 定义：
+
+1. Exposure Path 由 CipherOwl 扫描回传  
+2. 鼠标悬浮风险信息列表的 Exposure Address 时显示  
+3. 显示和 Exposure Address 交互路径上，经过哪些地址  
+4. 分为接收和发送两种路径
+
+#### 风险详情 \- 制裁详情列表说明
+
+![][image7]
+
+制裁详情列表栏位定义：
+
+| 栏位 | 类型 | 唯一性 | 说明 |
+| :---- | :---- | :---- | :---- |
+| Sanctions Porgram | Text | 否 | 由 CipherOwl 扫描回传，制裁机构 |
+| Jurisdiction | Text | 否 | 由 CipherOwl 扫描回传，制裁机构管辖区 |
+| Sanctioned Entity | Text | 否 | 由 CipherOwl 扫描回传，被制裁的实体 |
+| Reference URL | URL | 否 | 由 CipherOwl 扫描回传，制裁机构的制裁信息参考连结 |
+
+#### 风险详情 \- Timeline 说明
+
+![][image8]
+
+Timeline 栏位定义：
+
+1. 审核状态与资金状态合并显示，参考原型图展示  
+2. 操作人分为用户和风险处置策略  
+3. 每次异动需纪录和显示状态更新时间  
+4. 更多范例请参考 [Screening App \- 第二期 Figma (原型图)](https://www.figma.com/design/qkKhIfMl8ezMAQyYb3pDhv/Cobo-Screening-App---Prototype?node-id=3001-1474&p=f&t=VrSDracE659M9dIb-0)
+
+#### 风险详情 \- 操作项说明 {#风险详情---操作项说明}
+
+请留意以下原型图仅作操作项展示，和 Timeline 状态没有对应，操作项定义请参考 [3.4. 风险处置动作](#3.4.-风险处置动作)  
+![][image9]
+
+![][image10]
+
+![][image11]
+
+## 3.3. 风险处置策略 {#3.3.-风险处置策略}
+
+待細化項目：操作用戶權限 (誰可以管理策略？異動需要 MFA？)  
+透过风险处置策略，用户可以提前配置风险交易的处置动作。当 AML 供应商返回扫描结果时，Screening App 将寻找符合的风险处置策略，一但找到符合筛选规则的策略，App 将停止往下寻找，并立即执行策略指定的处置动作，若未筛选到符合的策略，系统将自动批准交易
+
+### 3.3.1. 策略面板
+
+用户可以在策略面板管理风险处置策略，包含建立、编辑和删除。系统若未筛选到符合的策略，将自动批准交易  
+![][image12]
+
+策略面板主列表栏位定义：
+
+| 栏位 | 类型 | 唯一性 | 说明 |
+| :---- | :---- | :---- | :---- |
+| ID | Text | 是 | 策略建立的流水号 |
+| Direction | Text | 否 | 交易方向 |
+| Risk Level | URL | 否 | 风险等级 |
+| Min USD | Text | 否 | 交易大于等于的金额，单位为美元 |
+| Max USD | Text | 否 | 分为两种1\. 交易小于的金额，单位为美元2\. 不指定金额显示 "-"，代表无限大 |
+| Decision | Text | 否 | 交易处置动作 |
+| Updated Time | Datetime | 否 | 策略的最后更新时间 |
+
+策略面板 Filter 支持栏位：
+
+* Direction  
+* Risk Level  
+* Min USD  
+* Mas USD  
+* Decision  
+* Updated Time
+
+### 3.3.2. 建立策略 {#3.3.2.-建立策略}
+
+用户可以在策略面板建立单笔策略，建立策略需要检查关键条件是否重复，若重复则不能建立
+
+* 检查规则：比對所有 Active 的策略條件，若同时符合以下条件，则无法建立  
+  * Direction 相同  
+  * Risk Level 相同  
+  * Min 到 Max 的金额区间重叠  
+* 案例示意 (顺序从上到下)  
+  * Policy 1 建立成功：Inbound \+ Medium \+ ≥ 500 \+ \< 1000  
+  * Policy 2 建立失败：Inbound \+ Medium \+ ≥ 400 \+ \< 7000 (金额区间和 Policy 1 重叠)  
+  * Policy 2 建立失败：Inbound \+ Medium \+ ≥ 600 \+ \< 700 (金额区间和 Policy 1 重叠)  
+  * Policy 2 建立成功：Inbound \+ Medium \+ ≥ 1000 \+ \< 7000  
+  * Policy 3 建立成功：Outbound \+ Medium \+ ≥ 1000 \+ \< 7000
+
+![][image13]
+
+建立策略栏位定义：
+
+| 栏位 | 组件类型 | 唯一性 | 必填 | 条件规范 | 说明 |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| Direction | 单选 | 否 | 是 |  | 交易的方向，可以指定入币或是提币 |
+| Risk Level | 单选 | 否 | 是 |  | AML 供应商返回的交易风险等级，可以指定低、中或高风险 |
+| Min Amount | Text | 否 | 是 | 不可大于等于 Max Amount | 交易大于等于的金额，单位为美元 |
+| Max Amount 类型 | 下拉选单 | 否 | 是 |  | 选择是否设定 Max 金额，不设定代表无限大 |
+| Max Amount | Text | 否 | 是 | 不可小于等于 Min Amount | 根据 Max Amount类型分为两种1\. 交易小于的金额，单位为美元2\. 不设定金额显示 "-"，代表无限大 |
+| Decision | 单选 | 否 | 是 |  | 当筛选条件符合上述条件时，对交易执行的处置动作，参考 [3.4. 风险处置动作](#3.4.-风险处置动作) |
+
+### 3.3.3. 编辑策略
+
+用户可以在策略面板编辑指定策略，需自动带入当前规则设置，其他规则与建立相同  
+![][image14]
+
+### 3.3.4. 删除策略
+
+用户删除策略后，策略将失效并且从主面板消失，删除规则说明
+
+* 删除策略用状态 Deleted 标记实现，不实际删除策略资料
+
+![][image15]
+
+### 3.3.5. 策略操作纪录
+
+风险处置策略对交易 AML 风险有直接的影响，在合规与风控场景下，需要记录所有策略的异动信息。现阶段尚未明确用户查看日志的使用场景，因此先在后端纪录异动信息，若客户有需要查看，Screening App 需要能人工导出完整异动信息
+
+日志记录规则：
+
+* 需纪录策略变更新息，包含建立、编辑和删除  
+* 信息变更纪录包含策略 ID、配置条件、状态、操作帐户与更新时间
+
+日志范例：
+
+| 示意说明 | Policy | Deriction | Risk Level | Min USD | Max USD | Decision | Status | Operator | Updated Time |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| 删除策略 1 | 1 | Inbound | High | 100 | \- | Reject | Deleted | bob@gmail.com | 2023/01/20 11:25:00 |
+| 编辑策略 2 | 2 | Inbound | Medium | 500 | 2000 | Reject | Active | am@gmail.com | 2023/01/20 11:30:00 |
+| 建立策略 2 | 2 | Inbound | Medium | 500 | 1000 | Reject | Active | am@gmail.com | 2023/01/20 11:22:00 |
+| 建立策略 1 | 1 | Inbound | High | 100 | \- | Reject | Active | bob@gmail.com | 2023/01/20 11:20:00 |
+
+## 3.4. 风险处置动作 {#3.4.-风险处置动作}
+
+待細化項目：
+
+1. 操作用戶權限 (誰可以管理策略？異動需要 MFA？)  
+2. 退回交易機制、失敗機制、如何關聯退回交易、退回避免觸發掃描被二次攔截  
+3. 人工審核和 Portal 的通信機制
+
+待確認項目
+
+1. Screening App 返回值
+
+### 3.4.1. 处置动作说明
+
+| 处置动作 | 动作说明 | 执行方式 | 可执行状态 | 执行后状态 |
+| :---- | :---- | :---- | :---- | :---- |
+| 批准 (Approve) | 入币：交易通过 AML 审核，用户可动用交易资金 提币：交易通过 AML 审核，交易状态往下流转 | 策略自动执行 | 审核状态：已扫描 | 审核状态：已批准 |
+|  |  | 人工操作 | 审核状态：待审核 |  |
+| 批准并告警 (Approve with Alert) | 入币：交易通过 AML 审核，用户可动用交易资金，额外发送风险交易通知 提币：交易通过 AML 审核，交易状态往下流转，额外发送风险交易通知 | 策略自动执行 | 审核状态：已扫描 | 审核状态：已批准 |
+|  拒绝 (Reject) | 入币：交易不通过 AML 审核，交易资金被冻结 UTXO 模型：冻结指定交易内的所有 UTXO 帐户模型：冻结指定交易的币种数量 提币：交易不通过 AML 审核，提币交易被拒绝 | 策略自动执行 | 审核状态：已扫描 | 审核状态：已拒绝 资金处理状态：资金冻结 |
+|  |  | 人工操作 | 审核状态：待审核 |  |
+| 人工审核 (Manual Review) | 入币：等待人工审核 提币：等待人工审核 | 策略自动执行 | 审核状态：已扫描 | 审核状态：待审核 |
+| 退回(Return) | 入币：交易资金从受益地址退回发起地址，注意此时会产生一笔新的交易 提币：无此操作 | 人工操作 | 审核状态：已拒绝 资金处理状态：资金冻结 | 审核状态：已拒绝 资金处理状态：资金退回 |
+| 解除冻结 (Unfreeze) | 入币：解除冻结的资金，用户可动用交易资金 提币：无此操作 | 人工操作 | 审核状态：已拒绝 资金处理状态：资金冻结 | 审核状态：已批准 资金处理状态：资金解冻 |
+
+### 3.4.2. 策略自动执行动作
+
+策略自动执行包含哪些动作请参考 [3.3.2. 建立策略](#3.3.2.-建立策略)，Portal 支持 Screening App 返回 \[result \+ operation\] 的PRD 文档参考 [交易检查接入交易状态\_PRD](https://docs.google.com/document/d/19qTMRLiDaSs96awn4zH5DRJ-8h75iF7No7M0u__EKa8/edit?tab=t.0#heading=h.vh0fpuf4ei4l)
+
+Screening App 返回值定义：
+
+* 批准 (Approve)：\[pass\]  
+* 批准并告警 (Approve with Alert)：\[pass \+ tag\]  
+* 拒绝 (Reject)：\[reject \+ freeze\]  
+* 人工审核 (Manual Review)：\[pending\]
+
+流程图以拒绝 \+ 冻结作为示意  
+![][image16]
+
+### 3.4.3. 人工操作动作
+
+人工操作动作请参考 [风险详情 \- 操作项说明](#风险详情---操作项说明)
+
+## 3.5. AML 审核与资金状态
+
+待確認項目：
+
+1. 凍結交易狀態對應關係  
+2. 入幣掃描檢查過程中，資金有被提走的風險
+
+### 3.5.1. 入币状态流程
+
+蓝色：AML 审核状态  
+紫色：资金处理状态  
+虚线：人工操作动作  
+![][image17]
+
+### 3.5.2. 提币状态流程
+
+蓝色：AML 审核状态  
+虚线：人工操作动作  
+![][image18]
+
+### 3.5.3. AML 审核状态说明 {#3.5.3.-aml-审核状态说明}
+
+AML 审核状态显示该笔交易的风险审查进度，帮助用户识别需要关注的风险交易
+
+| 审核状态 | 状态说明 |
+| :---- | :---- |
+| 待扫描 (Pending Screening) | 收到交易信息，等待发送 AML 扫描 |
+| 已扫描 (Screened) | 收到 AML 扫描结果 |
+| 待审核(Pending Review) | 扫描结果等待人工审核 |
+| 已批准 (Approved) | 交易通过 AML 审核 |
+| 已拒绝 (Rejected) | 交易被 AML 审核拒绝 |
+| 未支持 (Not Supported) | AML 供应商尚未支持交易所使用的链，交易跳过 AML 审核往下流转 |
+
+### 3.5.4. 资金处理状态说明 {#3.5.4.-资金处理状态说明}
+
+资金处理状态显示该笔交易的资金处理结果，帮助用户追踪资金的处理状况
+
+| 资金处理状态 | 状态说明 |
+| :---- | :---- |
+| 解除冻结 (Unfrozen) | 交易资金被解除冻结，用户可以动用该笔交易资金 |
+| 资金冻结(Frozen) | 用户不可动用该笔交易资金 |
+| 资金退回(Returned) | 交易资金已被退回发起地址 |
+
+### 3.5.5. 状态关系对应表
+
+| 审核状态 | 资金处理状态 | 说明 |
+| :---- | :---- | :---- |
+| 待扫描(Pending Screening) | \- | 入币：收到交易信息，等待发送 AML 扫描，资金处理中 提币：收到交易信息，等待发送 AML 扫描，资金处于交易中金额 |
+| 已扫描(Screened) | \- | 入币：收到 AML 扫描结果，资金处理中 提币：收到 AML 扫描结果，资金处于交易中金额 |
+| 待审核(Pending Review) | \- | 入币：扫描结果等待人工审核，资金处理中 提币：扫描结果等待人工审核，资金处于交易中金额 |
+| 已批准(Approved) | \- | 入币：交易通过 AML 审核，资金到账，用户可动用交易资金 提币：交易通过 AML 审核，交易状态往下流转，资金处于交易中金额 |
+| 已批准(Approved) | 解除冻结 (Unfrozen) | 入币：已拒绝且资金冻结的交易，经调查后人工解除冻结，用户可动用该笔交易资金提币：无此场景 |
+| 已拒绝(Rejected) | \- | 入币：无此场景提币：交易被 AML 审核拒绝，资金变回可用金额 |
+| 已拒绝(Rejected) | 资金冻结 (Frozen) | 入币：交易被 AML 审核拒绝，资金到账，用户不可动用该笔交易资金提币：无此场景 |
+| 已拒绝(Rejected) | 资金退回 (Returned) | 入币：交易被 AML 审核拒绝，交易资金已被退回发起地址提币：无此场景 |
+| 未支持 (Not Supported) | \- | 入币：交易跳过 AML 审核，资金到账，用户可动用交易资金 提币：交易跳过 AML 审核，交易状态往下流转，资金处于交易中金额 |
+
+用户关注查询场景：
+
+* 查询冻结的交易：筛选资金处理状态 Frozen  
+* 查询解除冻结的交易：筛选资金处理状态 Unfrozen  
+* 查询退回的交易：筛选资金处理状态 Returned  
+* 查询 AML 拒绝交易：筛选审核状态 Rejected  
+* 查询待人工审核交易：筛选审核状态 Manual Review  
+* 查询未支持扫描的交易：筛选审核状态 Not Supported
+
+用户可用余额场景示例 (交易状态待冻结规划方案后确认)：
+
+* 用户 A 地址 ETH 链上余额与可用余额 100 ETH  
+* 用戶 B 轉入 50 ETH 到用戶 A 地址  
+* 期间用户 A 地址没有其他提币和入币交易，未产生 pending balance 因此不计算
+
+| 审核状态 | 资金处理状态 | 交易状态 | 链上状态 | 用户 A 地址链上余额 | 预期用户 A 地址可用余额 |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| 待扫描(Pending Screening) | \- | Pending Check | Pending/Success | 100ETH/150 ETH | 100 ETH |
+| 已扫描(Screened) | \- | Pending Check | Pending/Success | 100ETH/150 ETH | 100 ETH |
+| 待审核(Pending Review) | \- | Pending Check | Pending/Success | 100ETH/150 ETH | 100 ETH |
+| 已批准(Approved) | \- | Completed | Success | 150 ETH | 150 ETH |
+| 已批准(Approved) | 解除冻结 (Unfrozen) | Completed | Success | 150 ETH | 150 ETH |
+| 已拒绝(Rejected) | \- | Rejected | Success | 入币无此状态 | 入币无此状态 |
+| 已拒绝(Rejected) | 资金冻结 (Frozen) | Rejected | Success | 150 ETH | 100 ETH |
+| 已拒绝(Rejected) | 资金退回 (Returned) | Completed | Success | 100 ETH | 100 ETH |
+| 未支持 (Not Supported) | \- | Completed | Success | 150 ETH | 150 ETH |

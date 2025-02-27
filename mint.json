@@ -746,13 +746,7 @@
               ]
             }
           ]
-        }
-      ],
-      "version": "English"
-    },
-    {
-      "group": "BUILT BY DEVELOPERS",
-      "pages": [
+        },
         {
           "group": "Screening",
           "pages": [
@@ -764,7 +758,8 @@
                 {
                   "group": "Manage Screening",
                   "pages": [
-                    "en/apps/screening/screening",
+                    "en/apps/screening/settings",
+                    "en/apps/screening/risk-policies",
                     "en/apps/screening/viewscreening",
                     "en/apps/screening/recipients"
                   ]
@@ -1487,13 +1482,7 @@
               ]
             }
           ]
-        }
-      ],
-      "version": "简体中文"
-    },
-    {
-      "group": "开发者出品",
-      "pages": [
+        },
         {
           "group": "Screening",
           "pages": [
