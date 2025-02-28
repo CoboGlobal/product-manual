@@ -162,7 +162,7 @@
                       ]
                     },
                     {
-                      "group": "Web3 Wallets (coming soon)",
+                      "group": "Web3 Wallets",
                       "pages": [
                         "en/portal/custodial-wallets/web3-wallets/set-up",
                         {
@@ -374,6 +374,9 @@
                         "en/portal/risk-controls/off-chain-tx-manage-transfer",
                         "en/portal/risk-controls/off-chain-tx-set-contract-call",
                         "en/portal/risk-controls/off-chain-tx-manage-contract-call",
+                        "en/portal/risk-controls/off-chain-tx-set-message-signing",
+                        "en/portal/risk-controls/off-chain-tx-manage-message-signing",
+                        "en/portal/risk-controls/safe-risk-controls",
                         "en/portal/risk-controls/manage-emergency-policy"
                       ]
                     }
@@ -903,7 +906,7 @@
                       ]
                     },
                     {
-                      "group": "Web3 钱包（即将推出）",
+                      "group": "Web3 钱包",
                       "pages": [
                         "cn/portal/custodial-wallets/web3-wallets/set-up",
                         {
@@ -1115,6 +1118,9 @@
                         "cn/portal/risk-controls/off-chain-tx-manage-transfer",
                         "cn/portal/risk-controls/off-chain-tx-set-contract-call",
                         "cn/portal/risk-controls/off-chain-tx-manage-contract-call",
+                        "cn/portal/risk-controls/off-chain-tx-set-message-signing",
+                        "cn/portal/risk-controls/off-chain-tx-manage-message-signing",
+                        "cn/portal/risk-controls/safe-risk-controls",
                         "cn/portal/risk-controls/manage-emergency-policy"
                       ]
                     }

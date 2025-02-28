@@ -1,0 +1,82 @@
+---
+title: "Risk controls for Safe{Wallet} message signing"
+sidebarTitle: "Risk controls for Safe{Wallet} message signing"
+lang: "en"
+description: "Learn the steps to mitigate risks for Safe{Wallet} message signing."
+---
+
+## Introduction
+
+Safe{Wallet} requires robust security measures to protect its multi-signature operations. Common challenges include centralized signing environments, limited transaction visibility on the transactions being signed, and insufficient risk control capabilities.
+
+With Cobo Portal, you can create Web3 Wallet addresses as signers of your Safe{Wallet}, utilizing a separate and secure signing interface to reduce the risk of single-point failures. For the signers, you can configure message signing policies to set approval quorum so that a certain number of approvers are required to approve a message. Cobo automatically decodes Safe messages and marks high-risk factors, providing approvers with complete visibility into what they're approving.
+
+## Steps
+
+Follow the steps to set up risk controls for your Safe{Wallet} message signing.
+
+### Step 1: Create a Web3 Wallet on Cobo Portal
+
+1. Follow steps in [Set up Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up) to create a Web3 Wallet.
+2. Click into your Web3 Wallet. Click **Create Address** to create a new address to be used as a Signer of your Safe{Wallet}.
+
+### Step 2: Create a Safe{Wallet} message signing policy on Cobo Portal
+
+In this step, you will map Signers (Cobo Portal addresses you created in Step 1) to your Safe{Wallet} addresses and set approval quorum to require a certain number of approvers to sign a message for a Signer.
+
+<Info>You don't need to add Cobo Portal addresses as Signers in Safe{Wallet} at this point. You will do this in Step 4 after completing the policy setup.</Info>
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
+3. Click **Create Policy** > **Sign Message**.
+<img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+4. Enter a policy name (maximum 30 characters).
+5. Select applicable networks.
+6. Under **Applicable Wallets**, select the Web3 Wallets and addresses you created in Step 1. 
+   <Info>These addresses will become Signers of your Safe{Wallet} so you must select specific addresses instead of **Any Address**.</Info>
+7. Under **If**, click **+ Add Condition** and select **Safe{Wallet} Message Signing**. Map your Cobo Portal addresses (selected in **Applicable Wallets**) to the Safe{Wallet} addresses that they will sign for. The policy will be triggered when these Safe{Wallet} addresses request signatures.
+   <Info>For security reasons, the condition **Safe{Wallet} Message Signing** cannot be combined with other conditions in a policy. This ensures that your Safe{Wallet} message signing is protected by a dedicated policy.</Info>
+   <img src="/en/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
+8. Under **Then**, configure the **Approval Quorum** requirements by selecting approvers (by **User Roles** or **Users**) and setting the required number of approvals. Click **Next**.
+9. Review the policy you just configured, then click **Next**.
+10. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
+   - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
+   - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
+11. Click **Submit** and complete the 2FA verification.
+
+### Step 3: Create a fallback policy
+
+For additional security, create a fallback policy that automatically rejects all message signing requests for the Signer addresses. This policy should be placed immediately below the Safe{Wallet} message signing policy you created in Step 2. This ensures that any message signing requests not covered by your Safe{Wallet} policy will be rejected by default.
+
+### Step 4: Add Cobo Portal addresses as Signers on your Safe{Wallet}
+
+Go to your Safe{Wallet} and add corresponding Cobo Portal addresses as Signers.
+
+### Step 5: Approvers review transactions on Cobo Guard
+
+When a message signing request is initiated from a Safe{Wallet} address that matches your policy configuration, approvers will receive a notification in their [Cobo Guard app](/en/guard/introduction) to review and approve the request. The Signer address will only sign the message after the required number of approvers (set in the approval quorum) have approved it. If any approver rejects the request, the message will not be signed.
+
+The Cobo Guard interface provides comprehensive information and alerts:
+
+- Provides detailed transaction information with decoded parameters
+- Includes raw data that can be copied for verification
+- Providers alerts for high-risk factors
+   - For the **To** field: 
+      - Displays a "Never Traded Before" risk alert label for first-time interactions with target contracts or receiving addresses
+      - Displays a "New Contract" risk alert label for contracts deployed less than 30 days (720 hours) ago
+   - For the **Operation** field:
+      - Highlights **High Risk** operations such as Delegate Calls.
+
+   <img src="/en/images/risk-controls/safe-signer-cobo-guard.png" className="screenshot_full_screen"/>
+
+### Step 6: Complete the Safe{Wallet} multi-signature process
+
+Other Safe Signers complete their signatures through their respective interfaces. Once the required signature threshold is met, the transaction can be executed.
+
+### Step 7: View Safe{Wallet} transaction history on Cobo Portal
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction History** in the main menu on the left-hand side.
+3. Click **Filter** and select **Safe{Wallet} Transactions** to view your Safe{Wallet} transaction history.
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
