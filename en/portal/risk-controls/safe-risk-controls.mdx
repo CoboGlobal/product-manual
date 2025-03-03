@@ -9,16 +9,21 @@ description: "Learn the steps to mitigate risks for Safe{Wallet} message signing
 
 Safe{Wallet} requires robust security measures to protect its multi-signature operations. Common challenges include centralized signing environments, limited transaction visibility on the transactions being signed, and insufficient risk control capabilities.
 
-With Cobo Portal, you can create Web3 Wallet addresses as signers of your Safe{Wallet}, utilizing a separate and secure signing interface to reduce the risk of single-point failures. For the signers, you can configure message signing policies to set approval quorum so that a certain number of approvers are required to approve a message. Cobo automatically decodes Safe messages and marks high-risk factors, providing approvers with complete visibility into what they're approving.
+With Cobo Portal, you can create MPC or Web3 Wallet addresses as signers of your Safe{Wallet}, utilizing a separate and secure signing interface to reduce the risk of single-point failures. For the signers, you can configure message signing policies to set approval quorum so that a certain number of approvers are required to approve a message. Cobo automatically decodes Safe messages and marks high-risk factors, providing approvers with complete visibility into what they're approving.
 
 ## Steps
 
 Follow the steps to set up risk controls for your Safe{Wallet} message signing.
 
-### Step 1: Create a Web3 Wallet on Cobo Portal
+### Step 1: Create MPC or Web3 Wallet addresses on Cobo Portal
 
-1. Follow steps in [Set up Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up) to create a Web3 Wallet.
-2. Click into your Web3 Wallet. Click **Create Address** to create a new address to be used as a Signer of your Safe{Wallet}.
+To create an MPC Wallet:
+1. [Create an MPC Wallet](/en/portal/mpc-wallets/ocw/create-mpc-wallet).
+2. Click into your wallet. Select the **Addresses** tab. Click **Add Address** to create a new address to be used as a Signer of your Safe{Wallet}.
+
+To create a Web3 Wallet:
+1. [Create a Web3 Wallet](/en/portal/custodial-wallets/web3-wallets/set-up).
+2. Click into your wallet. Click **Create Address** to create a new address to be used as a Signer of your Safe{Wallet}.
 
 ### Step 2: Create a Safe{Wallet} message signing policy on Cobo Portal
 
@@ -79,9 +84,9 @@ See [Manage message signing policies](/en/portal/risk-controls/off-chain-tx-mana
 - Edit a message signing policy
 - Delete a message signing policy
 - View revision history
-- View transaction history related to a policy
+- View message signing history related to a policy
 - View policy details
 
-To view all Safe{Wallet} transaction history instead of that related to one policy, click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction History** in the main menu on the left-hand side, then click **Filter** and select **Safe{Wallet} Transactions**.
+To view all Safe{Wallet} messaging signing history instead of that related to one policy, click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction History** in the main menu on the left-hand side, then click **Filter** and check **View Safe{Wallet} Tx messages**.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
