@@ -236,6 +236,13 @@
                             "en/portal/mpc-wallets/ocw/key-share-verification",
                             "en/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
+                        },
+                        {
+                          "group": "Auto-Sweep",
+                          "pages": [
+                            "en/portal/mpc-wallets/ocw/auto-sweep-overview",
+                            "en/portal/mpc-wallets/ocw/enable-auto-sweep"
+                          ]
                         }
                       ]
                     },
@@ -971,6 +978,13 @@
                             "cn/portal/mpc-wallets/ocw/transfers",
                             "cn/portal/mpc-wallets/ocw/key-share-verification",
                             "cn/portal/mpc-wallets/ocw/dapp-interaction"
+                          ]
+                        },
+                        {
+                          "group": "自动归集",
+                          "pages": [
+                            "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
+                            "cn/portal/mpc-wallets/ocw/enable-auto-sweep"
                           ]
                         }
                       ]

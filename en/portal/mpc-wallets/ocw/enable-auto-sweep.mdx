@@ -1,0 +1,90 @@
+---
+title: "Enable Auto-Sweep"
+sidebarTitle: "Enable Auto-Sweep"
+lang: "en"
+description: "Learn how to enable Auto-Sweep for MPC Wallets (Organization-Controlled Wallets) and explore the resulting updates to wallet features and transaction management."
+---
+
+This guide explains how to enable the Auto-Sweep feature for an Organization-Controlled Wallet on Cobo Portal. For more details about Auto-Sweep, refer to [Introduction to Auto-Sweep](/en/portal/mpc-wallets/ocw/auto-sweep-overview).
+
+## Prerequisites
+- You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
+- Due to the high volume of consolidation transactions and their concentrated execution time, please ensure you have set up at least one [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as your [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
+- If you use a TSS Node Callback server for risk control review, you can add the sweep address to the server's whitelist to automatically approve sweep transactions. For more details, refer to the sample project in [Auto-sweeping implementation](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation).
+- You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
+- Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the transaction address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the transaction address.
+<Info>For more details, refer to [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc).</Info>
+
+## Steps
+
+### Enable Auto-Sweep when creating a new wallet
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+3. Select your vault.
+4. Click **Create Wallet**.
+5. Name your wallet, then enable the **Auto-Sweep** switch. 
+
+    <img src="/en/images/mpc-wallet/ocw/enable-auto-sweep.png" className="screenshot_modal" alt="The wallet with Auto-Sweep icon" />
+
+    <Warning>Currently, once enabled, the Auto-Sweep feature cannot be disabled.</Warning>
+
+6. Click **Create**.
+
+Now you have successfully created a new Organization-Controlled Wallet with Auto-Sweep enabled. The wallet has a icon indicating that Auto-Sweep is enabled as the following screenshot shows.
+
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
+
+### Enable Auto-Sweep for an existing wallet
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+3. Select your vault.
+4. Choose the wallet that you want to enable Auto-Sweep for.
+5. Click the **Turn On Auto-Sweep** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep.png" className="icon" alt="The Turn On Auto-Sweep icon" /> in the **Action** column.
+6. In the **Turn On Auto-Sweep** dialog, click **Confirm**.
+
+    <img src="/en/images/mpc-wallet/ocw/turn-on-auto-sweep.png" className="screenshot_modal" alt="The Turn On Auto-Sweep dialog" />
+
+    <Warning>Currently, once enabled, the Auto-Sweep feature cannot be disabled.</Warning>
+
+6. Verify your identify using an MFA method.
+
+Now you have successfully enabled Auto-Sweep for the wallet. The wallet has a icon indicating that Auto-Sweep is enabled as the following screenshot shows.
+
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
+
+## Changes after enabling Auto-Sweep
+
+Once Auto-Sweep is enabled, the following changes apply:
+
+### Capabilities of original receiving addresses and sweep addresses
+- Receiving addresses: Now receiving addresses can only receive funds and initiate sweep transactions to the designated sweep address. They are not enabled for withdrawals, contract calls, staking, OTC transactions, or financial product transactions, nor can they act as delegate addresses for Smart Contract Wallets.
+- Sweep addresses: Sweep addresses remain fully functional and can perform all transaction types.
+
+### Token list
+In a wallet with Auto-Sweep enabled, you can view your token balances in two columns: total balance and withdrawable balance. Hover over a token's total balance to see the swept balance and the balances with sweeping in progress, and hover over a token's withdrawable balance to view the sweep address.
+
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="screenshot_full_screen" alt="Token list" />
+
+    - Total balance: This represents the sum of your withdrawable balance and balance with sweeping in progress in your wallet.
+    - Withdrawable balance/Swept balance: This is the part of your balance located in the sweep address that is readily available for withdrawal, contract calls, and other transaction operations.
+    - Sweeping in progress: This refers to the part of your balance that has not yet been moved to the sweep address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
+
+### Address list
+You can find addresses organized into two tabs: **Deposit** and **Sweep-to**. The **Deposit** tab displays previously created receiving addresses, while the **Sweep-to** tab lists addresses created by Cobo for sweep transactions.
+
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="screenshot_full_screen" alt="Address list" />
+
+### Wallet list
+You can filter wallets by their **Auto-Sweep Enabled** status to easily identify which wallets have the feature turned on or off.
+
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="screenshot_full_screen" alt="Wallet filter" />
+
+### Transaction history
+When an Auto-Sweep occurs, you will see two transaction records. For receiving addresses, it's recorded as a **Withdrawal-Sweep** transaction. For sweep addresses, it's recorded as a **Deposit-Sweep** transaction.
+You can view and filter sweep transactions in transaction history page as the following screenshot shows:
+
+<img src="/en/images/mpc-wallet/ocw/tx-history.png" className="screenshot_full_screen" alt="The sweep transactions" />
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
