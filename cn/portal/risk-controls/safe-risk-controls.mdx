@@ -32,21 +32,32 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 <Info>在这一步，您还不需要在 Safe{Wallet} 将 Cobo Portal 地址添加为签名人，请在完成规则设置后添加（步骤4）。</Info>
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+
 2. 在左侧主菜单中点击 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+
 3. 点击**创建交易风控规则** > **消息签名**。
    <img src="/cn/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+
 4. 输入规则名称（最多30个字符）。
+
 5. 选择适用的网络。请选择您的 Safe{Wallet} 部署所在的 EVM 链，不能选择**任何**或非 EVM 链。
+
 6. 在**适用钱包**下，选择您在步骤1中创建的 MPC 或 Web3 钱包和地址。
    <Info>这些地址将成为您的 Safe{Wallet} 的签名人，因此您必须选择指定地址而不是**任意地址**）。</Info>
+
 7. 在**条件**下，点击**+ 添加条件**并选择 **Safe{Wallet} 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe{Wallet} 地址。当这些 Safe{Wallet} 地址请求签名时，规则将被触发。
    <Info>出于安全考虑，条件 **Safe{Wallet} 消息签名**不能与规则中的其他条件组合使用，这确保您的 Safe{Wallet} 消息签名受专用规则保护。</Info>
-   <img src="/en/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
+
+   <img src="/cn/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
+
 8. 在**则**下，配置**审批门槛**要求，按**用户角色**或**用户**选择审批员，并设置所需的审批数量。点击**下一页**。
+
 9. 检查您刚刚配置的规则，然后点击**下一页**。
+
 10. 检查您的规则顺序。交易将根据优先级顺序与列表中的规则匹配。
     - 一旦触发了优先级较高的规则，后续规则将不再触发。
     - 默认情况下，新创建的规则将被放置在规则列表顶部并高亮显示。您可以通过拖放来更改顺序。
+
 11. 点击**提交**，并完成二次验证。
 
 ### 步骤 3：创建兜底规则
@@ -80,7 +91,7 @@ Cobo Guard 界面提供全面的信息和警报：
    - 对于 **Operation** 字段：
       - 标记**High Risk**操作，如Delegate Calls
 
-   <img src="/cn/images/risk-controls/safe-signer-cobo-guard.png" className="screenshot_full_screen"/>
+   <img src="/en/images/risk-controls/safe-signer-cobo-guard.png" className="screenshot_full_screen"/>
 
 ### 步骤 6：完成 Safe{Wallet} 多重签名流程
 
