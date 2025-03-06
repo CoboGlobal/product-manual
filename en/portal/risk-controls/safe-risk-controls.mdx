@@ -74,14 +74,17 @@ The Cobo Guard interface provides comprehensive information and alerts:
 
 - Provides detailed transaction information with decoded parameters
 - Includes raw data that can be copied for verification
-- Providers alerts for high-risk factors
+- Marks high-risk factors with red exclamation marks that reveal risk details when clicked, for example:
    - For the **To** field: 
-      - Displays a "Never Traded Before" risk alert label for first-time interactions with target contracts or receiving addresses
-      - Displays a "New Contract" risk alert label for contracts deployed less than 30 days (720 hours) ago
+      - Shows **Never Traded Before** when the Safe{Wallet} interacts with a target contract or receiving address for the first time
+      - Shows **New Contract** for contracts deployed less than 30 days (720 hours) ago
    - For the **Operation** field:
-      - Highlights **High Risk** operations such as Delegate Calls.
+      - Shows **High-Risk Operation** for operations such as Delegate Calls
 
    <img src="/en/images/risk-controls/safe-signer-cobo-guard.png" className="screenshot_full_screen"/>
+
+   For high-risk factors, you need to review the details and confirm you understand the risk before you approve the message.
+   <img src="/en/images/risk-controls/safe-signer-cobo-guard-view-risk-details.png" className="screenshot_full_screen"/>
 
 ### Step 6: Complete the Safe{Wallet} multi-signature process
 
