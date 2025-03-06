@@ -9,7 +9,7 @@ description: "了解如何为 Safe{Wallet} 消息签名设置风控措施。"
 
 Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见的安全风险包括集中式签名环境、对待签名交易缺乏可见性，以及风控能力不足。
 
-通过 Cobo Portal，您可以创建 MPC 或 Web3 钱包地址作为 Safe{Wallet} 的签名人，使用独立且安全的签名界面来降低单点故障的风险。对于签名人，您可以配置消息签名规则来设置审批人数，要求特定数量的审批员批准消息。Cobo 会自动解码 Safe 消息并标记高风险因素，让每位审批员都能完全了解他们正在批准的内容。
+通过 Cobo Portal，您可以创建 MPC 或 Web3 钱包地址作为 Safe{Wallet} 的签名人地址，使用独立且安全的签名界面来降低单点故障的风险。对于签名人地址，您可以配置消息签名规则，来设置审批人数，要求批准消息的审批员达到一定数量才能进行签名。Cobo 会自动解码 Safe 消息并标记高风险因素，让每位审批员都能完全了解他们正在批准的内容。
 
 ## 步骤
 
@@ -27,7 +27,7 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 
 ### 步骤 2：在 Cobo Portal 上创建 Safe{Wallet} 消息签名规则
 
-在此步骤中，您将提供您的 Safe{Wallet} 地址及其对应的签名人地址（您在步骤1中创建的 Cobo Portal 地址），并设置审批人数，要求特定数量的审批员签署消息后，签名人地址才对消息进行签名。
+在此步骤中，您将提供您的 Safe{Wallet} 地址及其对应的签名人地址（您在步骤1中创建的 Cobo Portal 地址），并设置审批人数，要求特定数量的审批员批准消息后，签名人地址才对消息进行签名。
 
 <Info>在这一步，您还不需要在 Safe{Wallet} 将 Cobo Portal 地址添加为签名人，请在完成规则设置后添加（步骤4）。</Info>
 
@@ -106,6 +106,6 @@ Cobo Guard 界面提供全面的信息和警报：
 - 查看某条规则相关的交易记录
 - 查看规则详情
 
-如果您想要查看所有 Safe{Wallet} 交易而不是某条规则相关的交易记录，在 Cobo Portal 左侧主菜单中点击 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易历史**，然后点击**过滤**并勾选 **Safe{Wallet} 交易消息**。
+如果您想要查看所有 Safe{Wallet} 消息签名记录而不是某条规则相关的记录，在 Cobo Portal 左侧主菜单中点击 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易历史**，然后点击**过滤**并勾选 **Safe{Wallet} 交易消息**。
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>
