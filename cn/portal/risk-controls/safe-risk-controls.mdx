@@ -29,7 +29,7 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 
 在此步骤中，您将提供您的 Safe{Wallet} 地址及其对应的签名人地址（您在步骤1中创建的 Cobo Portal 地址），并设置审批人数，要求特定数量的审批员批准消息后，签名人地址才对消息进行签名。
 
-<Info>在这一步，您还不需要在 Safe{Wallet} 将 Cobo Portal 地址添加为签名人，请在完成规则设置后添加（步骤4）。</Info>
+<Info>在这一步，您还不需要在 Safe{Wallet} 将 Cobo Portal 钱包地址添加为签名人，请在完成规则设置后添加（步骤4）。</Info>
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 
@@ -43,7 +43,7 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 5. 选择适用的网络。请选择您的 Safe{Wallet} 部署所在的 EVM 链，不能选择**任何**或非 EVM 链。
 
 6. 在**适用钱包**下，选择您在步骤1中创建的 MPC 或 Web3 钱包和地址。
-   <Info>这些地址将成为您的 Safe{Wallet} 的签名人，因此您必须选择指定地址而不是**任意地址**）。</Info>
+   <Info>这些地址将成为您的 Safe{Wallet} 的签名人，因此您必须选择指定地址而不是**任意地址**。</Info>
 
 7. 在**条件**下，点击**+ 添加条件**并选择 **Safe{Wallet} 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe{Wallet} 地址。当这些 Safe{Wallet} 地址请求签名时，规则将被触发。
    <Info>出于安全考虑，条件 **Safe{Wallet} 消息签名**不能与规则中的其他条件组合使用，这确保您的 Safe{Wallet} 消息签名受专用规则保护。</Info>
