@@ -5,7 +5,7 @@ lang: "en"
 description: "Discover how Auto-Sweep in MPC Wallets (Organization-Controlled Wallets) consolidates funds, enhances efficiency, and simplifies operations for organizations managing multiple blockchain addresses."
 ---
 
-Auto-Sweep is a feature designed to automatically consolidate funds from multiple addresses into a single designated address (known as the sweep address). This functionality simplifies asset management, enhances operational efficiency, and ensures centralized control of funds.
+Auto-Sweep is a feature designed to automatically consolidate funds from multiple addresses into a single designated address (known as the sweep-to address). This functionality simplifies asset management, enhances operational efficiency, and ensures centralized control of funds.
 
 ## Benefits of Auto-Sweep
 
@@ -39,10 +39,10 @@ With just a single switch, you can quickly activate the Auto-Sweep feature. The 
 
 To use Auto-Sweep, you need to manually enable the feature at the wallet level for your MPC Wallets (Organization-Controlled Wallets). For detailed instructions, refer to [Enable Auto-Sweep](/en/portal/mpc-wallets/ocw/enable-auto-sweep).
 
-Once enabled, Cobo creates a dedicated sweep address for each blockchain in use. For UTXO-based blockchains, the sweep address is of Taproot type and also serves as the change address for sweep transactions.
+Once enabled, Cobo creates a dedicated sweep-to address for each blockchain in use. For UTXO-based blockchains, the sweep-to address is of Taproot type and also serves as the change address for sweep transactions.
 
 During Auto-Sweep, two corresponding transactions occur:
-- Withdrawal transaction: Initiated from the receiving address, requiring signatures from both Cobo and you through a mobile co-signer (Cobo Guard) or a server co-signer (TSS Node).
-- Deposit transaction: Funds are deposited into the sweep address.
+- Withdrawal transaction: Initiated from the deposit address, requiring signatures from both Cobo and you through a mobile co-signer (Cobo Guard) or a server co-signer (TSS Node).
+- Deposit transaction: Funds are deposited into the sweep-to address.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
