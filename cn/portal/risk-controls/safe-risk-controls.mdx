@@ -17,6 +17,8 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 
 ### 步骤 1：在 Cobo Portal 上创建 MPC 或 Web3 钱包地址
 
+<Info>建议专门为 Safe{Wallet} 消息签名创建一个独立的钱包，与其他业务用途的钱包分开。这种分离可以使风控规则管理更加明确，提高安全性。</Info>
+
 创建 MPC 钱包：
 1. [创建 MPC 钱包](/cn/portal/mpc-wallets/ocw/create-mpc-wallet)。
 2. 点击进入您的钱包。选择**地址**标签页。点击**添加地址**来创建新地址，用作 Safe{Wallet} 的签名人。
@@ -65,7 +67,7 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 为了额外的安全保障，建议您按以下配置创建一个兜底规则，自动拒绝签名人地址的所有消息签名请求：
 
 - **适用网络**：选择**任何**
-- **适用钱包**：选择与步骤2中相同的签名人地址
+- **适用钱包**：选择与步骤2中相同的钱包，并选择**任意地址**。或者，如果您其他业务不用消息签名，您可以选择**任何类型钱包**作为**适用钱包**。
 - **条件**：有两种设置可选：
   - 选项1：选择**消息类型**并勾选**结构化消息类型**，覆盖所有类型化消息（包括 EIP-712）
   - 选项2：不设置任何条件，覆盖所有消息签名请求
@@ -77,14 +79,21 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 
 进入您的 Safe{Wallet}，添加相应的 Cobo Portal 地址作为签名人。
 
-### 步骤 5：审批员在 Cobo Guard 上审核交易
+### 步骤 5：发起 Safe{Wallet} 交易
+
+Safe{Wallet} 交易可以通过以下两种方式发起：
+
+- 通过 [Cobo Connect](/cn/cobo-connect/introduction) 连接 Safe{Wallet} dApp 发起交易
+- 其他签名人发起交易
+
+### 步骤 6：审批员在 Cobo Guard 上审核交易
 
 当来自匹配您规则配置的 Safe{Wallet} 地址的消息签名请求发起时，审批员将在其 [Cobo Guard 应用](/cn/guard/introduction) 中收到通知以审核和批准请求。只有批准的审批员达到所需数量后，签名人地址才会签署消息。如果任何审批员拒绝请求，消息将不会被签署。
 
 Cobo Guard 界面提供全面的信息和警报：
 - 提供带有已解码参数的详细交易信息
 - 包含可复制的原始数据
-- 使用红色感叹号标记高风险因素，点击后可查看风险详情，例如：
+- 使用红色标签标记高风险因素，显示风险详情，例如：
    - 对于 **To** 字段：
       - 对于该 Safe{Wallet}首次交互的目标合约或接收地址，显示 **Never Traded Before**
       - 对于发布不到30天（720小时）的合约，显示 **New Contract**
@@ -93,14 +102,22 @@ Cobo Guard 界面提供全面的信息和警报：
 
    <img src="/en/images/risk-controls/safe-signer-cobo-guard.png" className="screenshot_full_screen"/>
 
-   如有高风险因素，您需要查看详情并确认您了解相关风险后，才能批准消息。
+   对于高风险字段，点击以查看详情，确认您了解相关风险后，才能批准消息。
    <img src="/en/images/risk-controls/safe-signer-cobo-guard-view-risk-details.png" className="screenshot_full_screen"/>
 
-### 步骤 6：完成 Safe{Wallet} 多重签名流程
+### 步骤 7：（仅适用于 MPC 钱包）私钥分片持有者对交易签名
+
+如果您使用 MPC 钱包地址作为 Safe{Wallet} 签名人地址，MPC 钱包的私钥分片持有人需要对交易进行签名：
+- 移动端签名人在 Cobo Guard 上审核并签名
+- 服务端签名人（服务器节点使用 TSS Node 软件包）自动完成签名
+
+签名完成并验证后，Cobo Portal 将签名结果推送给 Safe transaction service。
+
+### 步骤 8：完成 Safe{Wallet} 多重签名流程
 
 其他 Safe 签名人通过各自的界面完成签名。一旦达到所需的签名阈值，交易就可以执行。
 
-### 步骤 7：管理 Safe{Wallet} 消息签名规则并查看交易历史
+### 步骤 9：管理 Safe{Wallet} 消息签名规则并查看交易历史
 
 请参阅[管理消息签名规则](/cn/portal/risk-controls/off-chain-tx-manage-message-signing)了解以下操作：
 - 编辑消息签名规则
