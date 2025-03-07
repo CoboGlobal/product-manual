@@ -1,0 +1,128 @@
+---
+title: "建立 Safe{Wallet} 消息签名风控"
+sidebarTitle: "建立 Safe{Wallet} 消息签名风控"
+lang: "cn"
+description: "了解如何为 Safe&#123;Wallet&#125; 消息签名设置风控措施。"
+---
+
+## 简介
+
+Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作，常见的安全风险包括集中式签名环境、签名的交易缺乏可见性，以及风控能力不足。
+
+通过 Cobo Portal，您可以创建 MPC 或 Web3 钱包地址作为 Safe&#123;Wallet&#125; 的签名人地址，使用独立且安全的签名界面来降低单点故障的风险。对于签名人地址，您可以配置消息签名规则，来设置审批人数，要求批准消息的审批员达到一定数量才能进行签名。配置后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，当查到相关待签名交易时，会自动解码 Safe&#123;Wallet&#125; 消息并标记高风险因素，让每位审批员都能完全了解他们正在批准的内容。
+
+## 步骤
+
+按照以下步骤设置 Safe&#123;Wallet&#125; 消息签名风控：
+
+### 步骤 1：在 Cobo Portal 上创建 MPC 或 Web3 钱包地址
+
+<Info>建议专门为 Safe&#123;Wallet&#125; 消息签名创建一个独立的钱包，与其他业务用途的钱包分开。这种分离可以使风控规则管理更加明确，提高安全性。</Info>
+
+创建 MPC 钱包：
+1. [创建 MPC 钱包](/cn/portal/mpc-wallets/ocw/create-mpc-wallet)。
+2. 点击进入您的钱包。选择**地址**标签页。点击**添加地址**来创建新地址，用作 Safe&#123;Wallet&#125; 的签名人。
+
+创建 Web3 钱包：
+1. [创建 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)。
+2. 点击进入您的钱包。点击**创建地址**来创建新地址，用作 Safe&#123;Wallet&#125; 的签名人。
+
+### 步骤 2：在 Cobo Portal 上创建 Safe&#123;Wallet&#125; 消息签名规则
+
+在此步骤中，您将提供您的 Safe&#123;Wallet&#125; 地址及其对应的签名人地址（您在步骤1中创建的 Cobo Portal 地址），并设置审批人数。只有已批准的审批员数量达到人数要求，签名人地址才能执行消息签名；如果任何审批员拒绝请求，消息签名的请求将被风控规则拦截。
+
+<Info>在这一步，您还不需要在 Safe&#123;Wallet&#125; 将 Cobo Portal 钱包地址添加为签名人，请在完成规则设置后添加（步骤4）。</Info>
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+
+2. 在左侧主菜单中点击 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+
+3. 点击**创建交易风控规则** > **消息签名**。
+   <img src="/cn/images/risk-controls/create_policy_cn.png" className="screenshot_full_screen"/>
+
+4. 输入规则名称（最多30个字符）。
+
+5. 选择适用的网络。请选择您的 Safe&#123;Wallet&#125; 部署所在的 EVM 链，不能选择**任何**或非 EVM 链。
+
+6. 在**适用钱包**下，选择您在步骤1中创建的 MPC 或 Web3 钱包和地址。
+   <Info>这些地址将成为您的 Safe&#123;Wallet&#125; 的签名人，因此您必须选择指定地址而不是**任意地址**。</Info>
+
+7. 在**如果**下，点击**+ 添加条件**并选择 **Safe&#123;Wallet&#125; 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe&#123;Wallet&#125; 地址。当这些 Safe&#123;Wallet&#125; 地址请求签名时，规则将被触发。
+   <Info>出于安全考虑，条件 **Safe&#123;Wallet&#125; 消息签名**不能与规则中的其他条件组合使用，这确保您的 Safe&#123;Wallet&#125; 消息签名受专用规则保护。</Info>
+
+   <img src="/cn/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
+
+8. 配置**审批门槛**要求，按**用户角色**或**用户**选择审批员，并设置所需的审批数量，然后点击**下一页**。
+
+9. 检查您刚刚配置的规则，然后点击**下一页**。
+
+10. 检查您的规则顺序。交易将根据优先级顺序与列表中的规则匹配。
+    - 一旦触发了优先级较高的规则，后续规则将不再触发。
+    - 默认情况下，新创建的规则将被放置在规则列表顶部并高亮显示。您可以通过拖放来更改顺序。
+
+11. 点击**提交**，并完成二次验证。
+
+<Info>规则配置完成后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，查找对应Safe&#123;Wallet&#125; 的待签名交易。</Info>
+
+### 步骤 3：创建兜底规则
+
+为了额外的安全保障，建议您按以下配置创建一个兜底规则，自动拒绝签名人地址的所有消息签名请求：
+
+- **适用网络**：选择**任何**
+- **适用钱包**：选择与步骤2中相同的钱包，并选择**任意地址**。或者，如果您其他业务不用消息签名，您可以选择**任何类型钱包**作为**适用钱包**。
+- **条件**：有两种设置可选：
+  - 选项1：选择**消息类型**并勾选**结构化消息类型**，覆盖所有类型化消息（包括 EIP-712）
+  - 选项2：不设置任何条件，覆盖所有消息签名请求
+- **操作**：选择**自动拒绝**
+
+此规则的优先级应置于您在步骤2中创建的 Safe&#123;Wallet&#125; 消息签名规则之下。这确保任何未被您的 Safe&#123;Wallet&#125; 规则覆盖的消息签名请求将被默认拒绝。
+
+### 步骤 4：在 Safe&#123;Wallet&#125; 中添加 Cobo Portal 地址作为签名人
+
+进入您的 Safe&#123;Wallet&#125;，添加相应的 Cobo Portal 地址作为签名人。
+
+### 步骤 5：发起 Safe&#123;Wallet&#125; 交易
+
+Safe&#123;Wallet&#125; 交易可以通过以下两种方式发起：
+
+- 通过 [Cobo Connect](/cn/cobo-connect/introduction) 连接 Safe&#123;Wallet&#125; dApp 发起交易
+- 其他签名人发起交易
+
+### 步骤 6：审批员在 Cobo Guard 上审核交易
+
+按前述，风控规则配置完成后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，查到对应 Safe&#123;Wallet&#125; 的待签名交易时，则发起签名请求，开始相应的风控流程。审批员将在其 [Cobo Guard App](/cn/guard/introduction) 中收到通知，审核该签名请求。只有已批准的审批员数量达到风控规则的要求，签名人地址才能执行消息签名。如果任何审批员拒绝请求，消息签名的请求将被风控规则拦截。
+
+Cobo Guard 界面提供全面的信息和警报：
+- 提供带有已解码参数的详细交易信息
+- 包含可复制的原始数据
+- 使用红色标签标记高风险因素，显示风险详情，例如：
+   - 对于 **To** 字段：
+      - 对于该 Safe&#123;Wallet&#125; 首次交互的目标合约或接收地址，显示 **Never Traded Before**
+      - 对于发布不到30天（720小时）的合约，显示 **New Contract**
+   - 对于 **Operation** 字段：
+      - 对 Delegate Calls 等操作，显示 **High Risk**
+
+   <img src="/en/images/risk-controls/safe-signer-cobo-guard-v1.png" className="screenshot_full_screen"/>
+
+### 步骤 7：（仅适用于 MPC 钱包）私钥分片持有者对交易签名
+
+如果您使用 MPC 钱包地址作为 Safe&#123;Wallet&#125; 签名人地址，MPC 钱包的私钥分片持有人需要对交易进行签名：
+- 移动端签名人在 Cobo Guard 上审核并签名
+- 服务端签名人（服务器节点使用 TSS Node 软件包）自动完成签名
+
+### 步骤 8：完成 Safe&#123;Wallet&#125; 多重签名流程
+
+其他 Safe&#123;Wallet&#125; 签名人通过各自的界面完成签名。一旦达到所需的签名阈值，交易就可以执行。
+
+### 步骤 9：管理 Safe&#123;Wallet&#125; 消息签名规则并查看交易历史
+
+请参阅[管理消息签名规则](/cn/portal/risk-controls/off-chain-tx-manage-message-signing)了解以下操作：
+- 编辑消息签名规则
+- 删除消息签名规则
+- 查看版本历史
+- 查看某条规则相关的交易记录
+- 查看规则详情
+
+如果您想要查看所有 Safe&#123;Wallet&#125; 消息签名记录而不是某条规则相关的记录，在 Cobo Portal 左侧主菜单中点击 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易历史**，然后点击**过滤**并勾选 **Safe&#123;Wallet&#125; 交易消息**。
+
+<Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>
