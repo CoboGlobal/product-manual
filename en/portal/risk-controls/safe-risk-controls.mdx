@@ -51,7 +51,7 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
    - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
 11. Click **Submit** and complete the 2FA verification.
 
-<Info>After the policy is configured, Cobo Portal automatically starts monitoring the Safe Transaction Service to check for pending transactions that require signatures.</Info>
+<Info>After the policy is configured, Cobo Portal automatically starts monitoring the Safe Transaction Service to look for pending transactions from the corresponding Safe{Wallet}.</Info>
 
 ### Step 3: Create a fallback policy
 
@@ -79,7 +79,7 @@ Safe{Wallet} transactions can be initiated in two ways:
 
 ### Step 6: Approvers review transactions on Cobo Guard
 
-When a message signing request is initiated from a Safe{Wallet} address that matches your policy configuration, approvers will receive a notification in their [Cobo Guard app](/en/guard/introduction) to review and approve the request. The Signer address will only sign the message after the required number of approvers (set in the approval quorum) have approved it. If any approver rejects the request, the message will not be signed.
+As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the Safe Transaction Service. When a pending transaction is found for the corresponding Safe{Wallet}, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Cobo Guard App](/en/guard/introduction) to review the request. The Signer address will only sign the message after the required number of approvers (set in the approval quorum) have approved it. If any approver rejects the request, the message will not be signed.
 
 The Cobo Guard interface provides comprehensive information and alerts:
 

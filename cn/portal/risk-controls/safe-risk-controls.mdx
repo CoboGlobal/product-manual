@@ -62,7 +62,7 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 
 11. 点击**提交**，并完成二次验证。
 
-<Info>规则配置完成后，Cobo Portal 会自动开始监控 Safe Transaction Service，查找是否有待签名交易。</Info>
+<Info>规则配置完成后，Cobo Portal 会自动开始监控 Safe Transaction Service，查找对应Safe{Wallet} 的待签名交易。</Info>
 
 ### 步骤 3：创建兜底规则
 
@@ -90,7 +90,7 @@ Safe{Wallet} 交易可以通过以下两种方式发起：
 
 ### 步骤 6：审批员在 Cobo Guard 上审核交易
 
-当来自匹配您规则配置的 Safe{Wallet} 地址的消息签名请求发起时，审批员将在其 [Cobo Guard 应用](/cn/guard/introduction) 中收到通知以审核和批准请求。只有批准的审批员达到所需数量后，签名人地址才会签署消息。如果任何审批员拒绝请求，消息将不会被签署。
+按前述，风控规则配置完成后，Cobo Portal 会自动开始监控 Safe Transaction Service，查到对应 Safe{Wallet} 的待签名交易时，则发起签名请求，开始相应的风控流程。审批员将在其 [Cobo Guard App](/cn/guard/introduction) 中收到通知，审核该签名请求。只有批准的审批员达到所需数量后，签名人地址才会签署消息。如果任何审批员拒绝请求，消息将不会被签署。
 
 Cobo Guard 界面提供全面的信息和警报：
 - 提供带有已解码参数的详细交易信息
