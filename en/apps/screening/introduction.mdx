@@ -17,13 +17,19 @@ Once [installed](/en/apps/screening/set-up), the app continuously monitors trans
 
 ### Intelligent risk detection
 
-Screening automatically analyzes every transaction in real-time using advanced risk assessment technology:
+Screening automatically analyzes transactions in real-time using advanced risk assessment technology through our integration with [CipherOwl](https://www.cipherowl.com/), a leading provider of cryptocurrency compliance solutions that ensures professional and reliable AML/CFT screening results.
 
-1. **Real-time scanning**: Instant analysis of all transactions for immediate threat detection
-2. **Smart risk classification**: Transactions are automatically classified into three risk levels:
-   - Low Risk: Typically lower-risk transactions
-   - Medium Risk: Transactions that may need closer review
-   - High Risk: Potentially high-risk transactions
+The screening results include:
+
+1. **Real-time scanning**: Instant analysis of transactions for immediate threat detection
+2. **Smart risk classification**: Transactions are automatically classified into three risk levels (Low, Medium, High) based on CipherOwl's risk scoring system. For detailed information about these risk levels, please refer to [CipherOwl's Address Risk Score documentation](https://cipherowl.notion.site/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea). You can then decide how to manage transactions based on their assigned risk levels.
+
+<Info>
+When a transaction in your [selected monitored wallets](/en/apps/screening/settings) is being screened, Cobo transmits the following transaction details to CipherOwl for risk assessment:
+- Asset's chain
+- From address (for deposits)
+- To address (for withdrawals)
+</Info>
 
 ### Automated defense and risk management
 
@@ -39,9 +45,13 @@ After Screening analyzes transactions, automatically handle them based on your c
   When a policy matches, automatically:
   - **Approve**: Allow transactions to proceed
   - **Approve with Alert**: Allow transactions with risk notification
-  - **Reject**: Block transactions
-
-  *Coming soon: Manual Review option*
+  - **Reject**:
+    - For inbound transactions:
+      - Currently: Transactions are flagged
+      - Coming soon: Funds will be frozen
+    - For outbound transactions: The transaction is blocked
+    - Risk notification is always sent
+  - **Manual Review**: *Coming soon*
 
 ### Unified compliance dashboard
 

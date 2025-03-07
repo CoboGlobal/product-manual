@@ -761,21 +761,11 @@
           "group": "Screening",
           "pages": [
             "en/apps/screening/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/screening/set-up",
-                {
-                  "group": "Manage Screening",
-                  "pages": [
-                    "en/apps/screening/settings",
-                    "en/apps/screening/risk-policies",
-                    "en/apps/screening/viewscreening",
-                    "en/apps/screening/recipients"
-                  ]
-                }
-              ]
-            }
+            "en/apps/screening/set-up",
+            "en/apps/screening/settings",
+            "en/apps/screening/risk-policies",
+            "en/apps/screening/viewscreening",
+            "en/apps/screening/recipients"
           ]
         }
       ],
