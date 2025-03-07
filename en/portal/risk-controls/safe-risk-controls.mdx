@@ -79,7 +79,9 @@ Safe&#123;Wallet&#125; transactions can be initiated in two ways:
 
 ### Step 6: Approvers review transactions on Cobo Guard
 
-As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Cobo Guard App](/en/guard/introduction) to review the request. The Signer address will only execute message signing after the required number of approvers (set in the approval quorum in the message signing policy) have approved it. If any approver rejects the request, the message signing request will be blocked by the policy.
+As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Cobo Guard App](/en/guard/introduction) to review the request.
+
+The Signer address will only execute message signing after the required number of approvers (set in the approval quorum in the message signing policy) have approved it. If any approver rejects the request, the message signing request will be blocked by the policy.
 
 The Cobo Guard interface provides comprehensive information and alerts:
 

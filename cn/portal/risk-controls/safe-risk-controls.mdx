@@ -47,8 +47,8 @@ Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作
 6. 在**适用钱包**下，选择您在步骤1中创建的 MPC 或 Web3 钱包和地址。
    <Info>这些地址将成为您的 Safe&#123;Wallet&#125; 的签名人，因此您必须选择指定地址而不是**任意地址**。</Info>
 
-7. 在**如果**下，点击**+ 添加条件**并选择 **Safe&#123;Wallet&#125; 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe&#123;Wallet&#125; 地址。当这些 Safe&#123;Wallet&#125; 地址请求签名时，规则将被触发。
-   <Info>出于安全考虑，条件 **Safe&#123;Wallet&#125; 消息签名**不能与规则中的其他条件组合使用，这确保您的 Safe&#123;Wallet&#125; 消息签名受专用规则保护。</Info>
+7. 在**如果**下，点击 **+ 添加条件** 并选择 **Safe&#123;Wallet&#125; 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe&#123;Wallet&#125; 地址。当这些 Safe&#123;Wallet&#125; 地址请求签名时，规则将被触发。
+   <Info>出于安全考虑，条件 **Safe&#123;Wallet&#125; 消息签名**不能与其他条件组合使用，这确保您的 Safe&#123;Wallet&#125; 消息签名受专用规则保护。</Info>
 
    <img src="/cn/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
 
@@ -90,7 +90,9 @@ Safe&#123;Wallet&#125; 交易可以通过以下两种方式发起：
 
 ### 步骤 6：审批员在 Cobo Guard 上审核交易
 
-按前述，风控规则配置完成后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，查到对应 Safe&#123;Wallet&#125; 的待签名交易时，则发起签名请求，开始相应的风控流程。审批员将在其 [Cobo Guard App](/cn/guard/introduction) 中收到通知，审核该签名请求。只有已批准的审批员数量达到风控规则的要求，签名人地址才能执行消息签名。如果任何审批员拒绝请求，消息签名的请求将被风控规则拦截。
+按前述，风控规则配置完成后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，查到对应 Safe&#123;Wallet&#125; 的待签名交易时，则发起签名请求，开始相应的风控流程。审批员将在其 [Cobo Guard App](/cn/guard/introduction) 中收到通知，审核该签名请求。
+
+只有已批准的审批员数量达到风控规则的要求，签名人地址才能执行消息签名。如果任何审批员拒绝请求，消息签名的请求将被风控规则拦截。
 
 Cobo Guard 界面提供全面的信息和警报：
 - 提供带有已解码参数的详细交易信息
