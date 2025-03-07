@@ -22,13 +22,30 @@ The **Screening Results** interface enables you to monitor and manage transactio
 
 ### Risk summary dashboard
 
-**At a glance:**
+<table class="table six-columns">
+  <thead>
+    <tr>
+      <th>Risk Level</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>High Risk</td>
+      <td>Total count of high-risk transactions</td>
+    </tr>
+    <tr>
+      <td>Medium Risk</td>
+      <td>Total count of medium-risk transactions</td>
+    </tr>
+    <tr>
+      <td>Low Risk</td>
+      <td>Total count of low-risk transactions</td>
+    </tr>
+  </tbody>
+</table>
 
-✓ High-risk transaction count
-
-✓ Medium-risk transaction count
-
-✓ Low-risk transaction count
+<Note>For detailed information about these risk levels, please refer to [CipherOwl's Address Risk Score documentation](https://cipherowl.notion.site/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea). You can then decide how to manage transactions based on their assigned risk levels.</Note>
 
 ### Transactions filters
 
@@ -52,10 +69,10 @@ The **Screening Results** interface enables you to monitor and manage transactio
     </tr>
     <tr>
       <td>Review Status</td>
-      <td>Pending Screening/Screened/Pending Review/Approved/Rejected/Not Supported</td>
+      <td>Pending Screening/Screened/Approved/Rejected/Not Supported<br/><i>Coming soon: Pending Review</i></td>
     </tr>
     <tr>
-      <td>Fund Status</td>
+      <td>Fund Status (Coming soon)</td>
       <td>Unfrozen/Frozen/Returned</td>
     </tr>
     <tr>
@@ -64,7 +81,7 @@ The **Screening Results** interface enables you to monitor and manage transactio
     </tr>
     <tr>
       <td>Updated Time</td>
-      <td>Filter by when transaction status was last changed</td>
+      <td>Filter by when Review Status or Fund Status was last changed</td>
     </tr>
   </tbody>
 </table>
@@ -98,8 +115,8 @@ The **Screening Results** interface enables you to monitor and manage transactio
       <td>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Scan results awaiting manual review (Coming soon)<br/>• **Approved**: Transaction passed AML/CFT scan<br/>• **Rejected**: Transaction rejected by AML/CFT scan<br/>• **Not Supported**: Chain not supported by Screening, transaction proceeds without AML/CFT review</td>
     </tr>
     <tr>
-      <td>Fund Status</td>
-      <td>• **Unfrozen**: Transaction funds are unfrozen, user can access the funds<br/>• **Frozen**: User cannot access the transaction funds<br/>• **Returned**: Transaction funds have been returned to the originating address</td>
+      <td>Fund Status (Coming soon)</td>
+      <td>• **Unfrozen**: Transaction funds are unfrozen, user can access the funds<br/>• **Frozen**: User cannot access the transaction funds<br/>• **Returned**: Transaction funds have been returned to the from address</td>
     </tr>
     <tr>
       <td>Amount</td>
@@ -127,15 +144,49 @@ Click <img src="/en/images/common/icon_view.svg" className="icon" alt="view icon
 <img src="/en/images/portal-apps/screening/view-screening-details.svg" className="screenshot_full_screen" alt="Detailed screening information"/>
 
 #### Information section
-Displays key transaction details:
-- Transaction ID
-- Direction (Inbound/Outbound)
-- Risk level
-- Amount
-- From address
-- To address
-- Transaction hash (for inbound transactions)
-- Created time
+
+<table class="table six-columns">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Transaction ID</td>
+      <td>Unique identifier for the transaction</td>
+    </tr>
+    <tr>
+      <td>Direction</td>
+      <td>Inbound or Outbound</td>
+    </tr>
+    <tr>
+      <td>Risk level</td>
+      <td>Low/Medium/High risk classification</td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td>Transaction amount</td>
+    </tr>
+    <tr>
+      <td>From address</td>
+      <td>Source address of the transaction</td>
+    </tr>
+    <tr>
+      <td>To address</td>
+      <td>Destination address of the transaction</td>
+    </tr>
+    <tr>
+      <td>Transaction hash</td>
+      <td>Transaction hash (displayed for inbound transactions only)</td>
+    </tr>
+    <tr>
+      <td>Created time</td>
+      <td>Time when the transaction was created</td>
+    </tr>
+  </tbody>
+</table>
 
 #### Risk details section
 
@@ -163,7 +214,7 @@ Shows detailed risk analysis for the transaction:
     </tr>
     <tr>
       <td>Risk Exposure</td>
-      <td>Types of risks identified:<br/>• **Direct**: The screened address is identified as high-risk.<br/>• **Indirect**: The screened address is clean, but there is an address in the transaction path that is identified as high-risk.<br/></td>
+      <td>Types of risks identified (as defined in [CipherOwl's Address Risk Score](https://cipherowl.notion.site/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)):<br/>• **Direct** (maps to CipherOwl's "Direct Risk"): The screened address itself has a risk label<br/>• **Indirect** (maps to CipherOwl's "Exposure Risk"): The screened address has transacted with other addresses that have risk labels<br/><i>Note: A transaction can be labeled as both Direct and Indirect</i></td>
     </tr>
     <tr>
       <td>Risk Categories</td>
@@ -171,7 +222,7 @@ Shows detailed risk analysis for the transaction:
     </tr>
     <tr>
       <td>Exposure Address</td>
-      <td>The high-risk address identified by Screening in the transaction path. <br/>Click the info icon to view the Exposure Path, which shows:<br/>• **Send** path: The sequence of addresses from your address to the exposure address (e.g., Your Address → B → C → Exposure Address)<br/>• **Receive** path: The sequence of addresses from the exposure address back to your address (e.g., Exposure Address → E → Your Address)</td>
+      <td>The risky address (as defined in [CipherOwl's Address Risk Score](https://cipherowl.notion.site/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)) identified in the transaction path.<br/>Click the info icon to view the Exposure Path, which shows:<br/>• **Send** path: The sequence of addresses from your address to the exposure address (e.g., Your Address → B → C → Exposure Address)<br/>• **Receive** path: The sequence of addresses from the exposure address back to your address (e.g., Exposure Address → E → Your Address)</td>
     </tr>
   </tbody>
 </table>
@@ -192,14 +243,10 @@ The following actions are available based on the transaction's current status:
 | :---- | :---- |
 | Approve | • For deposits: Transaction passes screening, funds become available to user<br/>• For withdrawals: Transaction passes screening, proceeds to next stage |
 | Approve with Alert | • For deposits: Transaction passes screening, funds become available to user, with additional risk transaction notification<br/>• For withdrawals: Transaction passes screening, proceeds to next stage, with additional risk transaction notification |
-| Reject | • For deposits: Transaction fails screening, funds are frozen¹ <br/>• For withdrawals: Transaction fails screening, withdrawal is rejected |
-| Manual Review | • For deposits: Awaiting manual review<br/>• For withdrawals: Awaiting manual review |
-| Return | • For deposits: Funds are returned from beneficiary address to originating address (creates a new transaction)<br/>• For withdrawals: Not applicable |
-| Unfreeze | • For deposits: Frozen funds are released, becoming available to user<br/>• For withdrawals: Not applicable |
-
-<Note>
-¹ Note about frozen funds: If you are using the token sweeping feature of [MPC Wallets](/en/portal/mpc-wallets/introduction), frozen funds will not be included in the sweep operation.
-</Note>
+| Reject | • For deposits: Transaction fails screening<br/>&nbsp;&nbsp;• Currently: Transactions are flagged<br/>&nbsp;&nbsp;• Coming soon: Funds will be frozen<br/>&nbsp;&nbsp;&nbsp;&nbsp;• *Note about frozen funds: If you are using the [Auto-Sweep feature of MPC Wallets](/en/portal/mpc-wallets/ocw/auto-sweep-overview), frozen funds will not be included in sweep operations*<br/>• For withdrawals: Transaction fails screening, withdrawal is rejected<br/>• Risk notification is always sent |
+| Manual Review<br/><i>(Coming soon)</i> | • For deposits: Will enable manual review of transactions<br/>• For withdrawals: Will enable manual review of transactions |
+| Return<br/><i>(Coming soon)</i> | • For deposits: Will enable returning funds from "to address" to "from address"<br/>• For withdrawals: Not applicable |
+| Unfreeze<br/><i>(Coming soon)</i> | • Will enable releasing frozen funds, making them available to user<br/>• For withdrawals: Not applicable |
 
 ### Send appeal
 
