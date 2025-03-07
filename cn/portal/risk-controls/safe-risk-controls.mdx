@@ -9,7 +9,7 @@ description: "了解如何为 Safe&#123;Wallet&#125; 消息签名设置风控措
 
 Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作，常见的安全风险包括集中式签名环境、签名的交易缺乏可见性，以及风控能力不足。
 
-通过 Cobo Portal，您可以创建 MPC 或 Web3 钱包地址作为 Safe&#123;Wallet&#125; 的签名人地址，使用独立且安全的签名界面来降低单点故障的风险。对于签名人地址，您可以配置消息签名规则，来设置审批人数，要求批准消息的审批员达到一定数量才能进行签名。配置后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，当查到相关待签名交易时，会自动解码 Safe&#123;Wallet&#125; 消息并标记高风险因素，让每位审批员都能完全了解他们正在批准的内容。
+通过 Cobo Portal，您可以创建 MPC 或 Web3 钱包地址作为 Safe&#123;Wallet&#125; 的签名人地址，使用独立且安全的签名界面来降低单点故障的风险。您可以配置消息签名规则，来设置审批人数，要求批准消息的审批员达到一定数量，签名人地址才能执行消息签名。配置后，Cobo Portal 会自动开始监控 [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview)，当查到相关待签名交易时，会自动解码 Safe&#123;Wallet&#125; 消息并标记高风险因素，让每位审批员都能完全了解他们正在批准的内容。
 
 ## 步骤
 
