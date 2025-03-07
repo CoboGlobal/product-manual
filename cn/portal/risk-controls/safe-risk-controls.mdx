@@ -47,12 +47,12 @@ Safe{Wallet} 需要强大的安全措施来保护其多重签名操作，常见�
 6. 在**适用钱包**下，选择您在步骤1中创建的 MPC 或 Web3 钱包和地址。
    <Info>这些地址将成为您的 Safe{Wallet} 的签名人，因此您必须选择指定地址而不是**任意地址**。</Info>
 
-7. 在**条件**下，点击**+ 添加条件**并选择 **Safe{Wallet} 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe{Wallet} 地址。当这些 Safe{Wallet} 地址请求签名时，规则将被触发。
+7. 在**如果**下，点击**+ 添加条件**并选择 **Safe{Wallet} 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe{Wallet} 地址。当这些 Safe{Wallet} 地址请求签名时，规则将被触发。
    <Info>出于安全考虑，条件 **Safe{Wallet} 消息签名**不能与规则中的其他条件组合使用，这确保您的 Safe{Wallet} 消息签名受专用规则保护。</Info>
 
    <img src="/cn/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
 
-8. 在**则**下，配置**审批门槛**要求，按**用户角色**或**用户**选择审批员，并设置所需的审批数量。点击**下一页**。
+8. 配置**审批门槛**要求，按**用户角色**或**用户**选择审批员，并设置所需的审批数量。然后点击**下一页**。
 
 9. 检查您刚刚配置的规则，然后点击**下一页**。
 
@@ -100,12 +100,9 @@ Cobo Guard 界面提供全面的信息和警报：
       - 对于该 Safe{Wallet}首次交互的目标合约或接收地址，显示 **Never Traded Before**
       - 对于发布不到30天（720小时）的合约，显示 **New Contract**
    - 对于 **Operation** 字段：
-      - 对 Delegate Calls 等操作，显示 **High-Risk Operation**
+      - 对 Delegate Calls 等操作，显示 **High Risk**
 
-   <img src="/en/images/risk-controls/safe-signer-cobo-guard.png" className="screenshot_full_screen"/>
-
-   对于高风险字段，点击以查看详情，确认您了解相关风险后，才能批准消息。
-   <img src="/en/images/risk-controls/safe-signer-cobo-guard-view-risk-details.png" className="screenshot_full_screen"/>
+   <img src="/en/images/risk-controls/safe-signer-cobo-guard-v1.png" className="screenshot_full_screen"/>
 
 ### 步骤 7：（仅适用于 MPC 钱包）私钥分片持有者对交易签名
 
