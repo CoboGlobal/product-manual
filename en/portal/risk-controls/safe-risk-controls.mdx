@@ -1,0 +1,120 @@
+---
+title: "Set up risk controls for Safe{Wallet} message signing"
+sidebarTitle: "Set up risk controls for Safe{Wallet} message signing"
+lang: "en"
+description: "Learn the steps to mitigate risks for Safe&#123;Wallet&#125; message signing."
+---
+
+## Introduction
+
+Safe&#123;Wallet&#125; requires robust security measures to protect its multi-signature operations. Common challenges include centralized signing environments, limited transaction visibility on the transactions being signed, and insufficient risk control capabilities.
+
+With Cobo Portal, you can create MPC or Web3 Wallet addresses as Signers of your Safe&#123;Wallet&#125;, utilizing a separate and secure signing interface to reduce the risk of single-point failures. Configure message signing policies to set approval quorum so that the Signer addresses will only execute message signing after the required number of approvers have approved it. After the configuration, Cobo Portal automatically starts to monitor the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview) and when detecting a pending transaction, decodes the message and marks high-risk factors, providing approvers with complete visibility into what they're approving.
+
+## Steps
+
+Follow the steps to set up risk controls for your Safe&#123;Wallet&#125; message signing.
+
+### Step 1: Create MPC or Web3 Wallet addresses on Cobo Portal
+
+<Info>We recommend creating a dedicated wallet specifically for Safe&#123;Wallet&#125; message signing, separate from wallets used for other business purposes. This separation makes policy management more straightforward and enhances security.</Info>
+
+To create an MPC Wallet:
+1. [Create an MPC Wallet](/en/portal/mpc-wallets/ocw/create-mpc-wallet).
+2. Click into your wallet. Select the **Addresses** tab. Click **Add Address** to create a new address to be used as a Signer of your Safe&#123;Wallet&#125;.
+
+To create a Web3 Wallet:
+1. [Create a Web3 Wallet](/en/portal/custodial-wallets/web3-wallets/set-up).
+2. Click into your wallet. Click **Create Address** to create a new address to be used as a Signer of your Safe&#123;Wallet&#125;.
+
+### Step 2: Create a Safe&#123;Wallet&#125; message signing policy on Cobo Portal
+
+In this step, you will map Signers (Cobo Portal addresses you created in Step 1) to your Safe&#123;Wallet&#125; addresses and set approval quorum. The Signer address will only execute message signing after the required number of approvers have approved it. If any approver rejects the request, the message signing request will be blocked by the policy.
+
+<Info>You don't need to add Cobo Portal wallet addresses as Signers in your Safe&#123;Wallet&#125; at this point. You will do this in Step 4 after completing the policy setup.</Info>
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
+3. Click **Create Policy** > **Message Signing**.
+<img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+4. Enter a policy name (maximum 30 characters).
+5. Select applicable networks. Select the EVM chain where your Safe&#123;Wallet&#125; is deployed. You cannot select **Any** or non-EVM chains.
+6. Under **Applicable Wallets**, select the MPC or Web3 Wallets and addresses you created in Step 1. 
+   <Info>These addresses will become Signers of your Safe&#123;Wallet&#125; so you must select specific addresses instead of **Any Address**.</Info>
+7. Under **If**, click **+ Add Condition** and select **Safe&#123;Wallet&#125; Message Signing**. Map your Cobo Portal addresses (selected in **Applicable Wallets**) to the Safe&#123;Wallet&#125; addresses that they will sign for. The policy will be triggered when these Safe&#123;Wallet&#125; addresses request signatures.
+   <Info>For security reasons, the condition **Safe&#123;Wallet&#125; Message Signing** cannot be combined with other conditions in a policy. This ensures that your Safe&#123;Wallet&#125; message signing is protected by a dedicated policy.</Info>
+   <img src="/en/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
+8. Under **Then**, configure the **Approval Quorum** requirements by selecting approvers (by **User Roles** or **Users**) and setting the required number of approvals. Click **Next**.
+9. Review the policy you just configured, then click **Next**.
+10. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
+   - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
+   - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
+11. Click **Submit** and complete the 2FA verification.
+
+<Info>After the policy is configured, Cobo Portal automatically starts monitoring the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview) to look for pending transactions from the corresponding Safe&#123;Wallet&#125;.</Info>
+
+### Step 3: Create a fallback policy
+
+For additional security, create a fallback policy with the following configuration to automatically reject message signing requests for the Signer addresses:
+
+- **Applicable Network**: Select **Any**
+- **Applicable Wallets**: Select the same wallets as in Step 2 and select **Any addresses**. Alternatively, if you don't use your wallets for message signing for other business purposes, you can select **All Wallets** for **Applicable Wallets**.
+- **Condition**: You have two options:
+  - Option 1: Select **Message Type** and check **Typed Message** to cover all typed messages (including EIP-712)
+  - Option 2: Skip setting any condition to cover all message signing requests
+- **Action**: Select **Auto rejection**
+
+This policy should be placed immediately below the Safe&#123;Wallet&#125; message signing policy you created in Step 2. This ensures that any message signing requests not covered by your Safe&#123;Wallet&#125; policy will be rejected by default.
+
+### Step 4: Add Cobo Portal addresses as Signers on Safe&#123;Wallet&#125;
+
+After setting up your policies, go to your Safe&#123;Wallet&#125; and add your Cobo Portal wallet addresses as Signers. 
+
+### Step 5: Initiate Safe&#123;Wallet&#125; transactions
+
+Safe&#123;Wallet&#125; transactions can be initiated in two ways:
+
+- Initiate transactions using Safe&#123;Wallet&#125; dApp connected via [Cobo Connect](/en/cobo-connect/introduction)
+- Other Signers initiate a transaction
+
+### Step 6: Approvers review transactions on Cobo Guard
+
+As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Cobo Guard App](/en/guard/introduction) to review the request.
+
+The Signer address will only execute message signing after the required number of approvers (set in the approval quorum in the message signing policy) have approved it. If any approver rejects the request, the message signing request will be blocked by the policy.
+
+The Cobo Guard interface provides comprehensive information and alerts:
+
+- Provides detailed transaction information with decoded parameters
+- Includes raw data that can be copied for verification
+- Marks high-risk factors with red labels that show risk details, for example:
+   - For the **To** field: 
+      - Shows **Never Traded Before** when the Safe&#123;Wallet&#125; interacts with a target contract or receiving address for the first time
+      - Shows **New Contract** for contracts deployed less than 30 days (720 hours) ago
+   - For the **Operation** field:
+      - Shows **High Risk** for operations such as Delegate Calls
+   
+   <img src="/en/images/risk-controls/safe-signer-cobo-guard-v1.png" className="screenshot_full_screen"/>
+
+### Step 7: (For MPC Wallets only) Key share holders sign the transaction
+
+If you use MPC Wallet addresses as Safe&#123;Wallet&#125; Signers, the key share holders of the MPC Wallet need to sign the transaction:
+- Mobile co-signers review and sign on their Cobo Guard
+- Server co-signers (server nodes that utilize the TSS Node package) automatically sign the transaction
+
+### Step 8: Complete the Safe&#123;Wallet&#125; multi-signature process
+
+Other Safe&#123;Wallet&#125; Signers complete their signatures through their respective interfaces. Once the required signature threshold is met, the transaction can be executed.
+
+### Step 9: Manage Safe&#123;Wallet&#125; message signing policies and view Safe&#123;Wallet&#125; transaction history
+
+See [Manage message signing policies](/en/portal/risk-controls/off-chain-tx-manage-message-signing) for the following operations:
+- Edit a message signing policy
+- Delete a message signing policy
+- View revision history
+- View message signing history related to a policy
+- View policy details
+
+To view all Safe&#123;Wallet&#125; messaging signing history instead of that related to one policy, click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction History** in the main menu on the left-hand side, then click **Filter** and check **View Safe&#123;Wallet&#125; Tx messages**.
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
