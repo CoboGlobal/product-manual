@@ -118,12 +118,12 @@ Cobo Guard 界面提供全面的信息和警报：
    <img src="/en/images/risk-controls/safe-signer-cobo-guard-v1.png" className="screenshot_full_screen"/>
 
    - 对于 **To** 字段：
-      | 字段 | To 地址 | 交易类型 | 风险标签 | 说明 |
-      |------|---------|----------|-----------|------|
-      | To | Safe&#123;Wallet&#125; 自身 | 合约交互 | **Wallet Config Change** | 钱包配置变更 |
-      | To | 非 Safe&#123;Wallet&#125; 自身 | 转账 | **Never Transacted Before** | 首次交互的接收地址 |
-      | To | 非 Safe&#123;Wallet&#125; 自身 | 合约交互 | **Never Interacted Before** | 首次交互的合约地址 |
-      | To | 非 Safe&#123;Wallet&#125; 自身 | 合约交互 | **New Contract** | 合约部署时间不足30天（720小时） |
+      | To 地址 | 交易类型 | 风险标签 | 说明 |
+      |---------|----------|-----------|------|
+      | Safe&#123;Wallet&#125; 自身 | 合约交互 | **Wallet Config Change** | 钱包配置变更 |
+      | 非 Safe&#123;Wallet&#125; 自身 | 转账 | **Never Transacted Before** | 首次交互的接收地址 |
+      | 非 Safe&#123;Wallet&#125; 自身 | 合约交互 | **Never Interacted Before** | 首次交互的合约地址 |
+      | 非 Safe&#123;Wallet&#125; 自身 | 合约交互 | **New Contract** | 合约部署时间不足30天（720小时） |
    - 对于 **Operation** 字段：
       - 对 Delegate Calls 等操作，显示 **High Risk**
 
