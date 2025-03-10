@@ -2,7 +2,7 @@
 title: "设置交易签名风控"
 sidebarTitle: "设置交易签名风控"
 lang: "zh-hans"
-description: "了解如何设置链下交易的交易签名。"
+description: "了解如何设置链下交易的交易签名，确保交易的顺利进行。"
 ---
 
 <Note>要设置 Safe{Wallet} 的消息签名规则，请参阅 [Safe{Wallet} 消息签名风控](/cn/portal/risk-controls/safe-risk-controls)。本指南介绍如何设置以**发起者**或**消息类型**为条件的交易签名规则。</Note>
@@ -22,7 +22,7 @@ description: "了解如何设置链下交易的交易签名。"
 
 6. 在**适用钱包**下选择此规则要应用的钱包。选择地址。
 
-7. 在**如果**下，点击 **+ 添加条件** 选择条件模板。您可以为每个规则添加一个或多个条件。如果应用了多个条件，则只有当交易满足所有条件时，才会触发该规则。要了解更多关于条件的信息，请参阅[选择条件模板](/cn/portal/risk-controls/off-chain-tx-set-message-signing#select-condition-template)。
+7. 在**如果**下，点击**+ 添加条件**选择条件模板。您可以为每个规则添加一个或多个条件。如果应用了多个条件，则只有当交易满足所有条件时，才会触发该规则。要了解更多关于条件的信息，请参阅[选择条件模板](/cn/portal/risk-controls/off-chain-tx-set-message-signing#select-condition-template)。
    - 您可以选择跳过设置任何条件，直接进入下一页。这意味着与适用钱包相关的任何交易签名请求都将触发此规则。
 
 8. 在**则**下，选择规则触发时要采取的操作（即**自动通过**、**自动拒绝**和**审批人数**），然后点击**下一页**。要了解更多关于审批操作的信息，请参阅[设置审批操作](/cn/portal/risk-controls/off-chain-tx-set-message-signing#set-approval-action)。
@@ -53,7 +53,7 @@ description: "了解如何设置链下交易的交易签名。"
 目前，Cobo Portal 支持三种审批操作：
 - **自动通过**：满足上述条件的交易将自动通过。
 - **自动拒绝**：满足上述条件的交易将自动拒绝。
-- **审批人数**：满足上述条件的交易需要指定数量的审批才能继续。请点击 **+ 选择审批人** 添加一个或多个团队成员作为审批人。您可以按**用户角色**或**用户**进行选择。然后，设置所需的审批人数。
+- **审批人数**：满足上述条件的交易需要指定数量的审批才能继续。请点击**+ 选择审批人**添加一个或多个团队成员作为审批人。您可以按**用户角色**或**用户**进行选择。然后，设置所需的审批人数。
 
 <img src="/cn/images/risk-controls/approval-action.png" className="screenshot_full_screen"/>
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们改进文档！</Tip>
