@@ -236,6 +236,13 @@
                             "en/portal/mpc-wallets/ocw/key-share-verification",
                             "en/portal/mpc-wallets/ocw/dapp-interaction"
                           ]
+                        },
+                        {
+                          "group": "Auto-Sweep",
+                          "pages": [
+                            "en/portal/mpc-wallets/ocw/auto-sweep-overview",
+                            "en/portal/mpc-wallets/ocw/enable-auto-sweep"
+                          ]
                         }
                       ]
                     },
@@ -749,31 +756,16 @@
               ]
             }
           ]
-        }
-      ],
-      "version": "English"
-    },
-    {
-      "group": "BUILT BY DEVELOPERS",
-      "pages": [
+        },
         {
           "group": "Screening",
           "pages": [
             "en/apps/screening/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/screening/set-up",
-                {
-                  "group": "Manage Screening",
-                  "pages": [
-                    "en/apps/screening/screening",
-                    "en/apps/screening/viewscreening",
-                    "en/apps/screening/recipients"
-                  ]
-                }
-              ]
-            }
+            "en/apps/screening/set-up",
+            "en/apps/screening/settings",
+            "en/apps/screening/risk-policies",
+            "en/apps/screening/viewscreening",
+            "en/apps/screening/recipients"
           ]
         }
       ],
@@ -979,6 +971,13 @@
                             "cn/portal/mpc-wallets/ocw/transfers",
                             "cn/portal/mpc-wallets/ocw/key-share-verification",
                             "cn/portal/mpc-wallets/ocw/dapp-interaction"
+                          ]
+                        },
+                        {
+                          "group": "自动归集",
+                          "pages": [
+                            "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
+                            "cn/portal/mpc-wallets/ocw/enable-auto-sweep"
                           ]
                         }
                       ]
@@ -1493,13 +1492,7 @@
               ]
             }
           ]
-        }
-      ],
-      "version": "简体中文"
-    },
-    {
-      "group": "开发者出品",
-      "pages": [
+        },
         {
           "group": "Screening",
           "pages": [
@@ -1614,9 +1607,6 @@
     "suggestEdit": false,
     "raiseIssue": false,
     "thumbsRating": true
-  },
-  "search": {
-    "prompt": "Don't use this search bar. Use AI Agent via blue button at bottom right."
   },
   "redirects": [
     {

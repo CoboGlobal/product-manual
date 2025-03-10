@@ -1,0 +1,48 @@
+---
+title: "Introduction to Auto-Sweep"
+sidebarTitle: "Introduction to Auto-Sweep"
+lang: "en"
+description: "Discover how Auto-Sweep in MPC Wallets (Organization-Controlled Wallets) consolidates funds, enhances efficiency, and simplifies operations for organizations managing multiple blockchain addresses."
+---
+
+Auto-Sweep is a feature designed to automatically consolidate funds from multiple addresses into a single designated address (known as the sweep-to address). This functionality simplifies asset management, enhances operational efficiency, and ensures centralized control of funds.
+
+## Benefits of Auto-Sweep
+
+The Auto-Sweep feature streamlines asset management for centralized platform customers, such as exchanges, payment service providers, and other high-volume enterprises, by automating fund consolidation. It not only improves efficiency in fund management but also reduces the complexity of liquidity management and operational costs. Below are the key benefits of Auto-Sweep:
+
+### No additional fees
+
+The Auto-Sweep service is currently completely free, and sweep transactions are charged only for gas fees, so you don’t need to pay any additional costs.
+
+### Support for Fee Station
+
+When the balance of the transaction address is insufficient to cover gas fees, [Fee Station](/en/portal/fee-station/overview) will automatically top it up, preventing transaction failures due to insufficient gas fees. This fully automated design eliminates the need for manual intervention, ensuring a smooth and efficient sweep process.
+
+### Multiple server co-signer configuration
+
+By configuring multiple [server co-signers (TSS Nodes)](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview), the system distributes signing tasks more effectively, reducing the risk of single points of failure. This multi-node architecture enhances both system security and service reliability.
+
+### Intelligent sweep strategies
+
+With years of experience in sweep strategies, Cobo provides tailored, efficient solutions for clients. These intelligent strategies dynamically adjust based on on-chain conditions, minimizing operational costs and optimizing resource utilization.
+
+### Comprehensive blockchain support
+
+The Auto-Sweep feature is available for all chains and tokens supported by Cobo, ensuring full compatibility. For more details, refer to [Supported tokens and chains](/en/portal/supported-tokens-and-chains).
+
+### One-click activation
+
+With just a single switch, you can quickly activate the Auto-Sweep feature. The process is intuitive and straightforward, requiring no complex technical configurations.
+
+## Auto-Sweep workflow
+
+To use Auto-Sweep, you need to manually enable the feature at the wallet level for your MPC Wallets (Organization-Controlled Wallets). For detailed instructions, refer to [Enable Auto-Sweep](/en/portal/mpc-wallets/ocw/enable-auto-sweep).
+
+Once enabled, Cobo creates a dedicated sweep-to address for each blockchain in use. For UTXO-based blockchains, the sweep-to address is of Taproot type and also serves as the change address for sweep transactions.
+
+During Auto-Sweep, two corresponding transactions occur:
+- Withdrawal transaction: Initiated from the deposit address, requiring signatures from both Cobo and you through a mobile co-signer (Cobo Guard) or a server co-signer (TSS Node).
+- Deposit transaction: Funds are deposited into the sweep-to address.
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

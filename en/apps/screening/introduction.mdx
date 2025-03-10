@@ -2,27 +2,65 @@
 title: "Introduction to Screening"
 sidebarTitle: "Introduction"
 lang: "en"
-description: "Learn about Screening, a compliance tool for automated transaction monitoring. Features include sanction scanning, flagging suspicious addresses, and real-time alerts for regulatory compliance."
+description: "Discover Screening's real-time crypto transaction monitoring with KYA/KYT capabilities. Automate AML/CFT compliance with risk detection and smart policy enforcement."
 ---
-<Tip>This Screening manual is written by its app developer (CipherOwl). If you have any questions regarding the documentation or the product, please contact CipherOwl directly.</Tip>
 
-Screening is a [Cobo Portal App](/en/apps/introduction) maintained by CipherOwl. After [installing the app](/en/apps/screening/set-up), you can use it to scan all incoming and outgoing transactions for your [MPC Wallets](/en/portal/mpc-wallets/introduction). The app provides notifications and scan result viewing, showing whether any transaction addresses have been sanctioned.
+## What is Screening?
 
-Sanction scanning rules automatically scan transactions to identify and flag associations with sanctioned entities, enhancing compliance with regulatory requirements. The system helps detect and prevent financial activities with prohibited individuals, organizations, or countries, thereby reducing the risk of legal and financial penalties.
+Screening is a [Cobo Portal App](/en/apps/introduction) that streamlines Anti-Money Laundering (AML) and Countering the Financing of Terrorism (CFT) compliance through automated transaction monitoring. Using advanced Know Your Address (KYA) and Know Your Transaction (KYT) capabilities, it provides comprehensive protection for your selected [MPC Wallets](/en/portal/mpc-wallets/introduction) while your team focuses on business growth.
+
+Once [installed](/en/apps/screening/set-up), the app continuously monitors transactions in real-time, providing intelligent risk detection and automated compliance controls.
 
 <img src="/en/images/portal-apps/screening/screening-in-app-store.png" className="screenshot_modal" alt="Image showing Screening Appears as a Cobo Portal App."/>
+
 ## Key features
 
-### Transaction scanning
+### Intelligent risk detection
 
-Scan all incoming and outgoing transactions. For incoming transactions, if the transaction address is sanctioned, the transaction will be flagged. For outgoing transactions, if the transaction address is sanctioned, the transaction will be flagged and terminated.
+Screening automatically analyzes transactions in real-time using advanced risk assessment technology through our integration with [CipherOwl](https://www.cipherowl.com/), a leading provider of cryptocurrency compliance solutions that ensures professional and reliable AML/CFT screening results.
 
-### View scanning results
+The screening results include:
 
-View scanning results, including the number of flagged transactions, risk-free transactions, and the flagging rate. You can also view the list of flagged transactions and sanction details.
+1. **Real-time scanning**: Instant analysis of transactions for immediate threat detection
+2. **Smart risk classification**: Transactions are automatically classified into three risk levels (Low, Medium, High) based on CipherOwl's risk scoring system. For detailed information about these risk levels, please refer to [CipherOwl's Address Risk Score documentation](https://cipherowl.notion.site/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea). You can then decide how to manage transactions based on their assigned risk levels.
 
-### Manage notification recipients
+<Info>
+When a transaction in your [selected monitored wallets](/en/apps/screening/settings) is being screened, Cobo transmits the following transaction details to CipherOwl for risk assessment:
+- Asset's chain
+- From address (for deposits)
+- To address (for withdrawals)
+</Info>
 
-Easily manage notification recipients to receive email notifications about flagged transactions.
+### Automated defense and risk management
+
+After Screening analyzes transactions, automatically handle them based on your configured post-screening policies:
+
+- [**Post-screening policies**](/en/apps/screening/risk-policies#post-screening-policies):
+  Define policies using these criteria:
+  - Transaction direction (Inbound/Outbound)
+  - Risk level (Low/Medium/High)
+  - Amount range (Min-Max in USD)
+
+- **Automated responses**:
+  When a policy matches, automatically:
+  - **Approve**: Allow transactions to proceed
+  - **Approve with Alert**: Allow transactions with risk notification
+  - **Reject**:
+    - For inbound transactions:
+      - Currently: Transactions are flagged
+      - Coming soon: Funds will be frozen
+    - For outbound transactions: The transaction is blocked
+    - Risk notification is always sent
+  - **Manual Review**: *Coming soon*
+
+### Unified compliance dashboard
+
+Manage all compliance activities efficiently through an intuitive timeline view that provides:
+
+- Real-time risk assessment tracking and review status
+- Transaction fund status monitoring
+- Complete audit trails and action histories
+
+This centralized timeline interface ensures all compliance activities and their histories are easily accessible in one place.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
