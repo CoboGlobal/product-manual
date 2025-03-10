@@ -36,7 +36,7 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
 3. Click **Create Policy** > **Message Signing**.
-<img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+   <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a policy name (maximum 30 characters).
 5. Select applicable networks. Select the EVM chain where your Safe&#123;Wallet&#125; is deployed. You cannot select **Any** or non-EVM chains.
 6. Under **Applicable Wallets**, select the MPC or Web3 Wallets and addresses you created in Step 1. 
@@ -47,8 +47,8 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
 8. Under **Then**, configure the **Approval Quorum** requirements by selecting approvers (by **User Roles** or **Users**) and setting the required number of approvals. Click **Next**.
 9. Review the policy you just configured, then click **Next**.
 10. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
-   - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
-   - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
+      - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
+      - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
 11. Click **Submit** and complete the 2FA verification.
 
 <Info>After the policy is configured, Cobo Portal automatically starts monitoring the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview) to look for pending transactions from the corresponding Safe&#123;Wallet&#125;.</Info>
