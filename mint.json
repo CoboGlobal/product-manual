@@ -1492,6 +1492,17 @@
               ]
             }
           ]
+        },
+        {
+          "group": "Screening",
+          "pages": [
+            "cn/apps/screening/introduction",
+            "cn/apps/screening/set-up",
+            "cn/apps/screening/settings",
+            "cn/apps/screening/risk-policies",
+            "cn/apps/screening/viewscreening",
+            "cn/apps/screening/recipients"
+          ]
         }
       ],
       "version": "简体中文"
