@@ -36,7 +36,7 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
 3. Click **Create Policy** > **Message Signing**.
-<img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+   <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a policy name (maximum 30 characters).
 5. Select applicable networks. Select the EVM chain where your Safe&#123;Wallet&#125; is deployed. You cannot select **Any** or non-EVM chains.
 6. Under **Applicable Wallets**, select the MPC or Web3 Wallets and addresses you created in Step 1. 
@@ -47,24 +47,38 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
 8. Under **Then**, configure the **Approval Quorum** requirements by selecting approvers (by **User Roles** or **Users**) and setting the required number of approvals. Click **Next**.
 9. Review the policy you just configured, then click **Next**.
 10. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
-   - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
-   - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
+      - Once a higher-priority policy is triggered, subsequent policies will no longer be triggered.
+      - By default, the newly created policy will be placed at the top of the policy list and highlighted. You can change the order by dragging and dropping.
 11. Click **Submit** and complete the 2FA verification.
 
 <Info>After the policy is configured, Cobo Portal automatically starts monitoring the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview) to look for pending transactions from the corresponding Safe&#123;Wallet&#125;.</Info>
 
-### Step 3: Create a fallback policy
+### Step 3: Create fallback policies
 
-For additional security, create a fallback policy with the following configuration to automatically reject message signing requests for the Signer addresses:
+For comprehensive protection, create three fallback policies and place them below your Safe&#123;Wallet&#125; message signing policy from Step 2. These policies act as a safety net by automatically rejecting any requests not covered by that message signing policy.
 
-- **Applicable Network**: Select **Any**
-- **Applicable Wallets**: Select the same wallets as in Step 2 and select **Any addresses**. Alternatively, if you don't use your wallets for message signing for other business purposes, you can select **All Wallets** for **Applicable Wallets**.
-- **Condition**: You have two options:
-  - Option 1: Select **Message Type** and check **Typed Message** to cover all typed messages (including EIP-712)
-  - Option 2: Skip setting any condition to cover all message signing requests
-- **Action**: Select **Auto rejection**
+1. **Message signing fallback policy**:
 
-This policy should be placed immediately below the Safe&#123;Wallet&#125; message signing policy you created in Step 2. This ensures that any message signing requests not covered by your Safe&#123;Wallet&#125; policy will be rejected by default.
+On the **Transaction Policies** page, click **Create Policy** > **Message Signing**. Configure the policy as follows:
+   - **Applicable Network**: Select **Any**
+   - **Applicable Wallets**: Select the wallets containing your Signer addresses and select **Any addresses**. Alternatively, if you don't use your wallets for message signing for other business purposes, you can select **All Wallets** for **Applicable Wallets**.
+   - **Condition**: Skip adding any conditions to cover all message signing requests
+   - **Action**: Select **Auto rejection**
+
+2. **Contract call fallback policy**:
+
+On the **Transaction Policies** page, click **Create Policy** > **Contract Call**. Configure the policy as follows:
+   - Under **Applicable Wallets**, select the wallets containing your Signer addresses
+   - Under **Applicable Network**, select **Any**
+   - Skip adding any conditions to cover all contract calls
+   - **Action**: Select **Auto rejection**
+
+3. **Token transfer fallback policy**:
+
+On the **Transaction Policies** page, click **Create Policy** > **Token Transfer**. Configure the policy as follows:
+   - Under **Applicable Wallets**, select the wallets containing your Signer addresses
+   - Skip adding any conditions to cover all token transfers
+   - **Action**: Select **Auto Rejection**
 
 ### Step 4: Add Cobo Portal addresses as Signers on Safe&#123;Wallet&#125;
 
@@ -88,13 +102,18 @@ The Cobo Guard interface provides comprehensive information and alerts:
 - Provides detailed transaction information with decoded parameters
 - Includes raw data that can be copied for verification
 - Marks high-risk factors with red labels that show risk details, for example:
-   - For the **To** field: 
-      - Shows **Never Traded Before** when the Safe&#123;Wallet&#125; interacts with a target contract or receiving address for the first time
-      - Shows **New Contract** for contracts deployed less than 30 days (720 hours) ago
-   - For the **Operation** field:
-      - Shows **High Risk** for operations such as Delegate Calls
    
    <img src="/en/images/risk-controls/safe-signer-cobo-guard-v1.png" className="screenshot_full_screen"/>
+
+   - For the **To** field:
+      | To Address | Transaction Type | Risk Label | Description |
+      |------------|------------------|------------|-------------|
+      | Safe{Wallet} itself | Contract interaction | **Wallet Config Change** | Wallet configuration change |
+      | Non-Safe{Wallet} | Transfer | **Never Transacted Before** | First interaction with receiving address |
+      | Non-Safe{Wallet} | Contract interaction | **Never Interacted Before** | First interaction with contract address |
+      | Non-Safe{Wallet} | Contract interaction | **New Contract** | Contract deployed less than 30 days (720 hours) ago |
+   - For the **Operation** field:
+      - Shows **High Risk** for operations such as Delegate Calls
 
 ### Step 7: (For MPC Wallets only) Key share holders sign the transaction
 
