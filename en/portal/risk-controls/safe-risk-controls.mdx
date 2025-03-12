@@ -108,10 +108,10 @@ The Cobo Guard interface provides comprehensive information and alerts:
    - For the **To** field:
       | To Address | Transaction Type | Risk Label | Description |
       |------------|------------------|------------|-------------|
-      | Safe&#123;Wallet&#125; itself | Contract interaction | **Wallet Config Change** | Wallet configuration change |
+      | Safe&#123;Wallet&#125; itself | Contract call | **Wallet Config Change** | Wallet configuration change |
       | Non-Safe&#123;Wallet&#125; | Transfer | **Never Transacted Before** | First interaction with receiving address |
-      | Non-Safe&#123;Wallet&#125; | Contract interaction | **Never Interacted Before** | First interaction with contract address |
-      | Non-Safe&#123;Wallet&#125; | Contract interaction | **New Contract** | Contract deployed less than 30 days (720 hours) ago |
+      | Non-Safe&#123;Wallet&#125; | Contract call | **Never Interacted Before** | First interaction with contract address |
+      | Non-Safe&#123;Wallet&#125; | Contract call | **New Contract** | Contract deployed less than 30 days (720 hours) ago |
    - For the **Operation** field:
       - Shows **High Risk** for operations such as Delegate Calls
 
