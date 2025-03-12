@@ -70,14 +70,14 @@ On the **Transaction Policies** page, click **Create Policy** > **Message Signin
 On the **Transaction Policies** page, click **Create Policy** > **Contract Call**. Configure the policy as follows:
    - Under **Applicable Wallets**, select the wallets containing your Signer addresses
    - Under **Applicable Network**, select **Any**
-   - Skip adding any conditions to cover all contract calls
+   - **Condition**: Skip adding any conditions to cover all contract calls
    - **Action**: Select **Auto rejection**
 
 3. **Token transfer fallback policy**:
 
 On the **Transaction Policies** page, click **Create Policy** > **Token Transfer**. Configure the policy as follows:
    - Under **Applicable Wallets**, select the wallets containing your Signer addresses
-   - Skip adding any conditions to cover all token transfers
+   - **Condition**: Skip adding any conditions to cover all token transfers
    - **Action**: Select **Auto Rejection**
 
 ### Step 4: Add Cobo Portal addresses as Signers on Safe&#123;Wallet&#125;
@@ -108,10 +108,10 @@ The Cobo Guard interface provides comprehensive information and alerts:
    - For the **To** field:
       | To Address | Transaction Type | Risk Label | Description |
       |------------|------------------|------------|-------------|
-      | Safe{Wallet} itself | Contract interaction | **Wallet Config Change** | Wallet configuration change |
-      | Non-Safe{Wallet} | Transfer | **Never Transacted Before** | First interaction with receiving address |
-      | Non-Safe{Wallet} | Contract interaction | **Never Interacted Before** | First interaction with contract address |
-      | Non-Safe{Wallet} | Contract interaction | **New Contract** | Contract deployed less than 30 days (720 hours) ago |
+      | Safe&#123;Wallet&#125; itself | Contract call | **Wallet Config Change** | Wallet configuration change |
+      | Non-Safe&#123;Wallet&#125; | Transfer | **Never Transacted Before** | First interaction with receiving address |
+      | Non-Safe&#123;Wallet&#125; | Contract call | **Never Interacted Before** | First interaction with contract address |
+      | Non-Safe&#123;Wallet&#125; | Contract call | **New Contract** | Contract deployed less than 30 days (720 hours) ago |
    - For the **Operation** field:
       - Shows **High Risk** for operations such as Delegate Calls
 
