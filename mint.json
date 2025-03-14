@@ -1497,20 +1497,11 @@
           "group": "Screening",
           "pages": [
             "cn/apps/screening/introduction",
-            {
-              "group": "使用说明",
-              "pages": [
-                "cn/apps/screening/set-up",
-                {
-                  "group": "管理扫描",
-                  "pages": [
-                    "cn/apps/screening/screening",
-                    "cn/apps/screening/viewscreening",
-                    "cn/apps/screening/recipients"
-                  ]
-                }
-              ]
-            }
+            "cn/apps/screening/set-up",
+            "cn/apps/screening/settings",
+            "cn/apps/screening/risk-policies",
+            "cn/apps/screening/viewscreening",
+            "cn/apps/screening/recipients"
           ]
         }
       ],
