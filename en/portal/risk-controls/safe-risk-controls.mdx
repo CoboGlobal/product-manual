@@ -13,19 +13,21 @@ With Cobo Portal, you can create MPC or Web3 Wallet addresses as Signers of your
 
 ## Steps
 
+<Note>Prerequisite: Ensure that you have created your multisig wallet on the [Safe&#123;Wallet&#125; official website](https://app.safe.global) before proceeding with the following steps.</Note>
+
 Follow the steps to set up risk controls for your Safe&#123;Wallet&#125; message signing.
 
 ### Step 1: Create MPC or Web3 Wallet addresses on Cobo Portal
 
 <Info>We recommend creating a dedicated wallet specifically for Safe&#123;Wallet&#125; message signing, separate from wallets used for other business purposes. This separation makes policy management more straightforward and enhances security.</Info>
 
-To create an MPC Wallet:
+To create an MPC Wallet address to be used as a Signer of your Safe&#123;Wallet&#125;:
 1. [Create an MPC Wallet](/en/portal/mpc-wallets/ocw/create-mpc-wallet).
-2. Click into your wallet. Select the **Addresses** tab. Click **Add Address** to create a new address to be used as a Signer of your Safe&#123;Wallet&#125;.
+2. Click into your wallet. Select the **Addresses** tab. Click **Add Address**, and for **Network**, select **All EVM Networks**.
 
-To create a Web3 Wallet:
+To create a Web3 Wallet address to be used as a Signer of your Safe&#123;Wallet&#125;:
 1. [Create a Web3 Wallet](/en/portal/custodial-wallets/web3-wallets/set-up).
-2. Click into your wallet. Click **Create Address** to create a new address to be used as a Signer of your Safe&#123;Wallet&#125;.
+2. Click into your wallet. Click **Create Address**, and for **Network**, select **All EVM Networks**.
 
 ### Step 2: Create a Safe&#123;Wallet&#125; message signing policy on Cobo Portal
 
@@ -82,7 +84,17 @@ On the **Transaction Policies** page, click **Create Policy** > **Token Transfer
 
 ### Step 4: Add Cobo Portal addresses as Signers on Safe&#123;Wallet&#125;
 
-After setting up your policies, go to your Safe&#123;Wallet&#125; and add your Cobo Portal wallet addresses as Signers. 
+After setting up your policies, go to your Safe&#123;Wallet&#125; and add your Cobo Portal wallet addresses as Signers:
+
+1. In your Safe&#123;Wallet&#125;, navigate to **Settings** and locate the **Members** section. Click **+ Add signer**.
+
+   <img src="/en/images/risk-controls/safe1.png" className="screenshot_full_screen"/>
+
+2. Enter the Cobo Portal wallet address that you want to add as a signer, change the threshold if needed, and click **Next**.
+
+   <img src="/en/images/risk-controls/safe2.png" className="screenshot_full_screen"/>
+
+3. Sign and execute the transaction to implement your changes.
 
 ### Step 5: Initiate Safe&#123;Wallet&#125; transactions
 
