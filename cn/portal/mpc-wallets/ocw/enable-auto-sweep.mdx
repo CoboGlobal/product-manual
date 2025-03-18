@@ -92,6 +92,6 @@ description: "了解如何为 MPC 钱包（机构钱包）启用自动归集，�
 在某些区块链网络上，进行归集操作后，充币地址上仍然可能剩下一小部分资金。主要原因如下：
 - 部分币种需要保留最低余额：某些区块链（如 XRP）要求地址必须保留一定的最低余额。例如，XRP 地址至少需要保留 1 XRP，所以即使归集后，充币地址上也会剩下 1 XRP，无法转走。
 - L2 自动归集中的 L1 费用估算误差：在 L2 网络（如 Base）上交易时，自动归集交易需要支付 L1 费用，但实际消耗的费用可能低于预估值。自动归集完成后，充币地址可能会剩余 `区块链预估的 L1 费用 - 实际支付的 L1 费用`的金额，这部分无法完全归集。
-- EVM 交易的 Gas 估算误差：在 EVM 兼容链（如 Ethereum、BSC）上，自动归集交易需要支付 Gas 费用，Gas 费用是基于预估的最大消耗量（Gas Limit）计算的。但实际执行交易时，消耗的 Gas 可能低于预估值，导致 `Gas Price * 未消耗的 Gas` 的金额仍留在充币地址上。
+- EVM 交易的 Gas 估算误差：在 EVM 兼容链（如 Ethereum、BSC）上，自动归集交易需要支付 Gas Fee，Gas Fee 是基于预估的最大消耗量（Gas Limit）计算的。但实际执行交易时，消耗的 Gas 可能低于预估值，导致 `Gas Price * 未消耗的 Gas` 的金额仍留在充币地址上。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
