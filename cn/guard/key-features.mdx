@@ -5,22 +5,38 @@ lang: "zh-hans"
 description: "了解 Cobo Guard 的主要特点，包括 MPC 私钥分片管理和多因素认证 (MFA)和操作审批。"
 ---
 
-## MPC 私钥分片管理器
-安全生成、备份和管理 MPC 私钥分片，有效提升资产保护，降低单点故障风险。Cobo Guard 通过将密钥分片分散至多个参与方或设备，确保任何单一实体都无法完全控制私钥，从而大幅提升安全性。
-
 ## 多因素认证 (MFA) 方式
 
 多因素认证 (MFA) 是 Cobo Portal 中的一项重要安全措施。在登录时，除密码外，您还需通过 MFA 进行额外身份验证，为账户增加一层保护，防止密码泄露后的未经授权访问。
 
-Cobo Guard 作为一种 MFA 方式，可用于快速验证登录或关键操作（如邀请新用户、修改风险控制）。只需在 Cobo Guard 上点击确认，即可授权操作，确保账户安全无虞。
+Cobo Guard 作为一种 MFA 方式，可用于快速验证登录或关键操作（如邀请新用户、修改风险控制）。只需在 Cobo Guard 上点击确认，即可验证用户身份，确保账户安全无虞。
+
+以下截图展示了如何使用 Cobo Guard 验证是你本人发起的操作：
+
+<img src="/cn/images/cobo-guard/mfa.png" className="screenshot_modal" alt="Multi-factor authentication (MFA)" />
+
+## MPC 私钥分片管理器
+安全生成、备份和管理 MPC 私钥分片，有效提升资产保护，降低单点故障风险。Cobo Guard 通过将密钥分片分散至多个参与方或设备，确保任何单一实体都无法完全控制私钥，从而大幅提升安全性。
+
+如需了解如何使用 Cobo Guard 生成和备份私钥分片，请参阅[生成并备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
+
+如需了解如何使用 Cobo Guard 对交易进行签名，请参阅[移动端签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#signer-type)。
+
+以下截图展示了如何使用 Cobo Guard 对交易进行签名：
+
+<img src="/cn/images/cobo-guard/sign-tx.jpg" className="screenshot_modal" alt="Key share manager" />
 
 ## 操作审批方式
 
-Cobo Guard 支持对组织内其他用户发起的操作进行审批，包括交易、组织管理和风险控制调整，确保敏感操作受到严格验证后执行。
+Cobo Guard 支持对团队内其他用户发起的操作进行审批，包括交易、团队管理和风险控制调整，确保敏感操作受到严格验证后执行。
 
 根据风险控制策略，某些操作需经指定成员批准。Cobo Guard 将及时通知审批人，审批人可直接在 App 中查看和授权请求，保障操作安全可靠。
 
-以下表格列出了需要通过 Cobo Guard 审批的操作：
+以下截图展示了如何使用 Cobo Guard 审批其他成员发起的操作：
+
+<img src="/cn/images/cobo-guard/approve.png" className="screenshot_modal" alt="Operation approval" />
+
+以下表格列出了需要通过团队内其他成员通过 Cobo Guard 审批的操作：
 
 <table>
   <thead>
