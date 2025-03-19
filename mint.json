@@ -767,6 +767,12 @@
             "en/apps/screening/viewscreening",
             "en/apps/screening/recipients"
           ]
+        },
+        {
+          "group": "OTC",
+          "pages": [
+            "en/apps/otc/introduction"
+          ]
         }
       ],
       "version": "English"
@@ -1502,6 +1508,12 @@
             "cn/apps/screening/risk-policies",
             "cn/apps/screening/viewscreening",
             "cn/apps/screening/recipients"
+          ]
+        },
+        {
+          "group": "OTC",
+          "pages": [
+            "cn/apps/otc/introduction"
           ]
         }
       ],
