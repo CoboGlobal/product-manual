@@ -13,19 +13,21 @@ Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作
 
 ## 步骤
 
+<Note>前提条件：请确保您在进行以下步骤前，已经在 [Safe&#123;Wallet&#125; 官网](https://app.safe.global) 创建了您的多签钱包。</Note>
+
 按照以下步骤设置 Safe&#123;Wallet&#125; 消息签名风控：
 
 ### 步骤 1：在 Cobo Portal 上创建 MPC 或 Web3 钱包地址
 
 <Info>建议专门为 Safe&#123;Wallet&#125; 消息签名创建一个独立的钱包，与其他业务用途的钱包分开。这种分离可以使风控规则管理更加明确，提高安全性。</Info>
 
-创建 MPC 钱包：
+创建 MPC 钱包地址用作 Safe&#123;Wallet&#125; 的签名人：
 1. [创建 MPC 钱包](/cn/portal/mpc-wallets/ocw/create-mpc-wallet)。
-2. 点击进入您的钱包。选择**地址**标签页。点击**添加地址**来创建新地址，用作 Safe&#123;Wallet&#125; 的签名人。
+2. 点击进入您的钱包。选择**地址**标签页。点击**添加地址**来创建新地址，**网络**选择**所有 EVM 链**。
 
-创建 Web3 钱包：
+创建 Web3 钱包地址用作 Safe&#123;Wallet&#125; 的签名人：
 1. [创建 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)。
-2. 点击进入您的钱包。点击**创建地址**来创建新地址，用作 Safe&#123;Wallet&#125; 的签名人。
+2. 点击进入您的钱包。点击**创建地址**来创建新地址，**网络**选择**所有 EVM 链**。
 
 ### 步骤 2：在 Cobo Portal 上创建 Safe&#123;Wallet&#125; 消息签名规则
 
@@ -93,7 +95,17 @@ Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作
 
 ### 步骤 4：在 Safe&#123;Wallet&#125; 中添加 Cobo Portal 地址作为签名人
 
-进入您的 Safe&#123;Wallet&#125;，添加相应的 Cobo Portal 地址作为签名人。
+进入您的 Safe&#123;Wallet&#125;，添加相应的 Cobo Portal 地址作为签名人：
+
+1. 在您的 Safe&#123;Wallet&#125; 中，进入 **Settings**，找到 **Members** 部分。点击 **+ Add signer**。
+
+   <img src="/en/images/risk-controls/safe1.png" className="screenshot_full_screen"/>
+
+2. 输入要作为签名人的 Cobo Portal 钱包地址，调整签名门槛（可选），然后点击 **Next**。
+
+   <img src="/en/images/risk-controls/safe2.png" className="screenshot_full_screen"/>
+
+3. 签名并执行交易，使这些变更生效。
 
 ### 步骤 5：发起 Safe&#123;Wallet&#125; 交易
 
