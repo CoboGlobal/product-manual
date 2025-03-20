@@ -10,6 +10,9 @@ description: "Get an overview of holder groups in MPC Wallets, including Main, S
 With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key shares is referred to as a holder group.
 
 There are three types of holder groups: Main Group, Signing Group, and Recovery Group. The Main Group is the first set of key shares you create before using MPC Wallets. It will be used to create both Signing Groups and Recovery Groups.
+
+<Note>To ensure the safety and recoverability of your assets, it is recommended to create at least one Signing Group and one Recovery Group in addition to the Main Group. It is strongly recommended that the same private key share holder (the same [TSS Node ID](/en/portal/glossary#tss-node)) should not belong to different types of key share holder groups simultaneously, such as both the Main Group and the Signing Group. If this situation occurs, please ensure that there is more than one signing group.</Note>
+
 <table class="six-columns">
   <tr>
     <th></th>
@@ -52,7 +55,5 @@ There are three types of holder groups: Main Group, Signing Group, and Recovery 
     <td>1 (recommended) or more</td>
   </tr>
 </table>
-
-<Note>To ensure the safety and recoverability of your assets, it is recommended to create at least one Signing Group and one Recovery Group in addition to the Main Group. Besides, different types of holder groups should not have the same TSS Node.</Note>
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
