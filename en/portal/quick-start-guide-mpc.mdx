@@ -1,0 +1,125 @@
+---
+title: "Get started with MPC Wallets (Organization-Controlled Wallets)"
+sidebarTitle: "MPC Wallets (Organization-Controlled Wallets)"
+lang: "en"
+og:description: "Learn how to set up and use MPC Wallets (Organization-Controlled Wallets) on Cobo Portal."
+---
+import Snippet from '/snippets/account-setup-en.mdx';
+
+This guide provides a step-by-step walkthrough for setting up and using MPC Wallets (Organization-Controlled Wallets) on Cobo Portal. You'll learn how to:
+
+1. Set up your account and organization
+2. Create vaults and wallets
+3. Make deposits and withdrawals
+
+<img src="/en/images/get-started/MPC-onboarding.png" className="diagram" alt="MPC onboarding"/>
+
+
+<Snippet />
+
+
+## Set up an MPC vault
+
+After setting up your account and organization, the next step is to configure an MPC vault. A vault is a collection of wallets sharing the same root extended private key. 
+
+A default vault is automatically created for you. You need to complete the setup by creating a Main Group and generating key shares.
+
+### Create a Main Group
+
+A set of key share holders is referred to as a [holder group](/en/portal/mpc-wallets/ocw/holder-group-overview). The Main Group is the first holder group you create before using MPC Wallets.
+
+The diagram below illustrates a Main Group with two key share holders. Cobo holds one key share, while your organization holds the other.
+<img src="/en/images/get-started/key-shares.svg" className="diagram" alt="Key Shares"/>
+
+Follow the instructions below to create a Main Group in Cobo Portal:
+1. Log in to Cobo Portal.
+      * For testing purposes, use the [development environment](https://portal.dev.cobo.com/login).
+      * For production, use the [production environment](https://portal.cobo.com/login).
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+3. Click **Create Main Group**.
+4. In the **Create Main Group** dialog box, navigate to the **Key Share Holder 2** section, and configure the holder:
+
+    - To use a mobile co-signer, select a holder from the pull-down list. The **TSS Node ID** field will be filled in automatically. Click **Confirm**.
+
+    - To use a server co-signer, enter a holder name, fill in the TSS Node ID, and then click **Confirm**.
+
+    For high-frequency transactions, we recommend using a server co-signer for automated signing. To learn more about mobile co-signers and server co-signers, see [Co-Signer Type](/en/portal/mpc-wallets/ocw/holder-group-main-group#signer-type).
+
+5. Confirm in your Cobo Guard app that you initiated this request.
+
+### Generate key shares
+
+To finalize the vault setup, the next crucial step is generating key shares on your co-signer. This process varies depending on your co-signer type:
+
+* For mobile co-signers, tap the pop-up banner on Cobo Guard and follow the instructions on the screen to generate key shares.
+
+* For server co-signers:
+  * Ensure the TSS Node server is brought online within 24 hours. The key share generation process initiates automatically when the server comes online.
+  * If a [TSS Node callback server](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/callback-server-overview) is configured, the generation process will only start after approval from the callback server.
+
+Once the key generation process is completed, the holder group status will become **Active** on Cobo Portal. You might need to refresh the Cobo Portal page to see the updated result.
+
+
+## Integrate using the WaaS API
+
+Once you've set up the vault, you can start creating wallets and transfer tokens. This can be done directly through Cobo Portal's user interface or programmatically using the WaaS API.
+
+This guide introduces wallet creation and token transfer through Cobo Portal. For programmatic access via the WaaS API, refer to our [Developer Hub](https://www.cobo.com/developers/v2/) and follow these steps:
+
+1. Start with [Sending your first request](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas). This guide covers API key registration, authentication, and SDK usage.
+2. Proceed to [Integrate MPC Wallets (Organization-Controlled)](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw) for detailed instructions on creating wallets and managing token transactions.
+
+
+## Add tokens to your wallet
+
+After successful key generation, a default wallet is automatically created for your vault. To view and add tokens to this wallet:
+
+1. Return to the main page of the vault.
+2. Select the default wallet to open its details page.
+3. Go to the **Tokens** tab to see available tokens. Click **Add Tokens** to include additional tokens as needed.
+
+<img src="/en/images/get-started/add-tokens.png" className="screenshot_full_screen" alt="Add Tokens"/>
+
+
+## Make a deposit
+
+To make a deposit, you should first generate a deposit address for your wallet:
+
+1. Navigate to the **Addresses** tab, and then click **Add Address**.
+2. Select a network, and then click **Create**.
+3. Navigate to the address you just created and click <img src="/en/images/mpc-wallet/icon_deposit.svg" className="icon"></img> to display the address.
+<img src="/en/images/get-started/deposit.png" className="screenshot_full_screen" alt="Add Tokens"/>
+4. Proceed to your preferred external wallet to initiate the transfer to the deposit address.
+
+## Make a withdrawal
+
+Follow the steps below to withdraw tokens from your wallet. To learn more about withdrawal, such as transaction fees, risk control measures, and signing procedures, see [Transfer from MPC Wallets (Organization-Controlled Wallets)](/en/portal/transfers/from-mpc-wallets).
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login) and then click <img src="/en/images/transfers/transfer-button.svg" className="icon"></img> in the main menu on the left hand side.
+<img src="/en/images/get-started/withdraw.png" className="screenshot_modal"/>
+2. In the **Transfer** dialog box, fill in the required information, and then click **Submit**.
+3. Double confirm the withdrawal on Cobo Guard.
+4. A co-signer will be selected to sign the transaction based on their online status and other criteria. Ensure at least one co-signer is online.
+
+After you sign the transaction, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
+
+## What’s next
+
+Congratulations on successfully setting up your MPC Wallet (Organization-Controlled Wallet) and completing token transfers! To enhance the security of your assets, consider taking these crucial next steps:
+
+* Configuring transaction policies, which help prevent unauthorized transactions and provide additional control. For detailed instructions, refer to [Setting up token transfer policies](/en/portal/risk-controls/off-chain-tx-set-transfer).
+
+* Back up your key shares to prevent loss or compromise. For instructions on how to back up key shares, see [Back up key shares](/en/portal/mpc-wallets/ocw/back-up-key-share-groups).
+
+* Create Signing Groups and Recovery Groups. To learn what each holder group does and how to create them, see [Holder group overview](/en/portal/mpc-wallets/ocw/holder-group-overview).
+
+
+## Related articles
+
+To explore more advanced features of MPC Wallets, check out these articles:
+
+* [Governance policies](/en/portal/organization/governance-intro): Governance policies determine the approval rules under which an operation will be approved or rejected.
+* [Enable auto-sweeping](/en/portal/mpc-wallets/ocw/auto-sweep-overview): Automatically consolidate funds from multiple addresses into a single designated address.
+* [Enable fee station](/en/portal/fee-station/introduction): Your all-in-one solution for managing bills and transaction fees.
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
