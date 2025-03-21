@@ -1,0 +1,58 @@
+---
+title: "Security checklist"
+sidebarTitle: "Security checklist"
+lang: "en"
+og:description: "Learn about security suggestions to maximize the safety and integrity of your organization's operations."
+---
+
+Please ensure the following security suggestions are followed during the configuration process to maximize the safety and integrity of your organization's operations.
+
+## User roles and permissions
+- Configure at least two [Admins](/en/portal/organization/roles-and-permissions) to ensure cross-verification and mutual backup. Other roles can be assigned appropriately based on actual needs. 
+- It is not recommended to assign multiple roles to the same member.
+
+For more details, see [User roles and permissions](/en/portal/organization/roles-and-permissions).
+
+## Risk controls
+
+### Transaction policies
+Transaction policies are an important security measure for your organization. It is recommended to strictly configure these policies, especially for large withdrawal scenarios, to avoid high-risk situations, such as:
+- having no transaction policies
+- having no rules matched
+- automatically approving all transactions
+- allowing the same role to both withdraw and approve transactions
+
+For more details, see [Introduction to transaction policies](/en/portal/risk-controls/tx-policies-overview).
+
+### Governance risk controls
+The following table lists crucial operations in Cobo Portal, and it is recommended to configure two or more [Admins](/en/portal/organization/roles-and-permissions) for their approval.
+
+- Invite Members
+- Change Members' User Roles
+- Edit Governance Policies
+- Authorize App
+- Change App Permissions
+- Change App Workflow
+- Manage Transaction Policies
+- Manage Addresses in Address List
+- Manage API Keys
+- Edit Custom User Roles
+
+For more details, see [Introduction to governance policies](/en/portal/organization/governance-intro).
+
+## MPC key share holder groups
+- To ensure the safety and recoverability of your assets, create at least one Signing Group and one Recovery Group in addition to the Main Group.
+- The same private key share holder (the same [TSS Node ID](/en/portal/glossary#tss-node)) should not belong to different types of key share holder groups simultaneously, such as both the Main Group and the Signing Group. If this situation occurs, please ensure that there is more than one Signing Group.
+
+For more details, see [Holder group overview](/en/portal/mpc-wallets/ocw/holder-group-overview).
+
+## MPC key share backup and recovery
+Securely store the recovery phrase and encrypted database password for key share backup. If lost, data cannot be recovered.
+
+For more details, see [Mobile signer backup key share instructions](/en/guard/generate-and-back-up-key-shares#backup-private-key-shares) and [Server signer backup key share instructions](https://www.cobo.com/developers/v2_en/guides/mpc-wallets/server-co-signer/key-shares-backup).
+
+## API key settings
+- Use permanent API keys, set up the IP whitelist and configure the callback endpoint.
+- Assign the wallet scope properly, and avoid selecting **any type wallet**.
+
+For more details, see [Register API Key](/en/portal/developer-console/create-api-key).
