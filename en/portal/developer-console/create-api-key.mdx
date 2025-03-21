@@ -9,6 +9,8 @@ description: "Follow the steps to register an API key in Cobo Portal, including 
 
 ### Register an API key on Cobo Portal
 
+<Note>It is recommended to use permanent API key, set up the IP whitelist and configure the callback endpoint as described in the following steps.</Note>
+
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click the Developer icon <img src="/en/images/common/icon_developer.svg" className="icon" alt="the Developer icon" /> in the main menu.
 3. Click the **WaaS 2.0** tab and then switch to the **API Keys** tab.
@@ -35,7 +37,6 @@ description: "Follow the steps to register an API key in Cobo Portal, including 
 10. Select the key type.
     - **Permanent**: To use this key type, you need to specify a static IP address as the address from which you send the API request.
     - **Temporary**: A temporary key expires in 30 days. This option is suitable if you do not have a static IP address ready.
-    <Note>It is recommended to use permanent API key, set up the IP whitelist and configure the callback endpoint as described in the following steps.</Note>
 11. If you register a permanent API key, enter the whitelisted IP addresses (if there are multiple, separate them with commas).
     <Info>Temporary key cannot set up the IP whitelist.</Info>
 12. Click **Register**.

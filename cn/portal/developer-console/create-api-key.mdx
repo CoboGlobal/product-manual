@@ -8,6 +8,9 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
 ## 步骤
 
 ### 在 Cobo Portal 中注册 API Key
+
+<Note>推荐您使用长期 API Key，并根据以下步骤设置 IP 白名单和 Callback Endpoint。</Note>
+
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 2. 在主菜单中点击**开发者**图标。
 3. 点击 **WaaS 2.0** 标签，然后切换到 **API Keys** 标签页。
@@ -34,7 +37,6 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
 10. 选择 Key 类型。
     - **长期**：要使用此 Key 类型，您需要指定一个静态 IP 地址作为发送 API 请求的地址。
     - **临时**：临时 Key 在 30 天后过期。如果您还没有准备好静态 IP 地址，可以选择此选项。
-    <Note>推荐您使用长期 API Key，并根据以下步骤设置 IP 白名单和 Callback Endpoint。</Note>
 11. 如果您注册的是长期 API Key，输入要列入白名单的 IP 地址（如果要列入白名单的 IP 地址不止一个，则每个 IP 地址之间用逗号隔开）。
     <Info>临时 API Key 无法设置 IP 白名单。</Info>
 12. 点击**注册**。
