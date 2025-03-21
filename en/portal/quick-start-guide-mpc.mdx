@@ -61,26 +61,16 @@ To finalize the vault setup, the next crucial step is generating key shares on y
 Once the key generation process is completed, the holder group status will become **Active** on Cobo Portal. You might need to refresh the Cobo Portal page to see the updated result.
 
 
-## Integrate using the WaaS API
-
-Once you've set up the vault, you can start creating wallets and transfer tokens. This can be done directly through Cobo Portal's user interface or programmatically using the WaaS API.
-
-This guide introduces wallet creation and token transfer through Cobo Portal. For programmatic access via the WaaS API, refer to our [Developer Hub](https://www.cobo.com/developers/v2/) and follow these steps:
-
-1. Start with [Sending your first request](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas). This guide covers API key registration, authentication, and SDK usage.
-2. Proceed to [Integrate MPC Wallets (Organization-Controlled)](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw) for detailed instructions on creating wallets and managing token transactions.
-
-
 ## Create a wallet
 
 After successful key generation, a default wallet is automatically created for your vault. You can create additional wallets by following the steps below:
 
-1. Navigate back to the vault's main page.
+1. Navigate back to the vault's main page by clicking the vault's name in the top breadcrumb trail.
 2. Click **Create Wallet**. In the dialog box:
    - Enter a unique name for your wallet.
    - If you need to automatically consolidate funds from multiple addresses, enable [Auto-Sweep](/en/portal/mpc-wallets/ocw/auto-sweep-overview). If you're unsure, you can leave it disabled for now and enable it later if needed.
-   <img src="/en/images/get-started/create-wallet.png" className="screenshot_full_screen" alt="Create Wallet"/>
 3. Click **Create**.
+<img src="/en/images/get-started/create-wallet.png" className="screenshot_full_screen" alt="Create Wallet"/>
 4. From the wallet list, select your newly created wallet to view its details.
 5. Explore the token and address lists. The wallet comes with some pre-added tokens. To add more, click **Add Tokens**.
 
@@ -106,6 +96,13 @@ Follow the steps below to withdraw tokens from your wallet. To learn more about 
 4. A co-signer will be selected to sign the transaction based on their online status and other criteria. Ensure at least one co-signer is online.
 
 After you sign the transaction, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
+
+## Integrate using the WaaS API
+
+To create wallets and transfer tokens programmatically, you can utilize our WaaS API. Follow these steps to integrate wallet functionality using the API:
+
+1. Start with [Sending your first request](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas). This guide covers API key registration, authentication, and SDK usage.
+2. Proceed to [Integrate MPC Wallets (Organization-Controlled)](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw) for detailed instructions on creating wallets and managing token transactions.
 
 ## What’s next
 
