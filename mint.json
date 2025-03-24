@@ -129,6 +129,7 @@
             "en/portal/self-service-token-listing"
           ]
         },
+        "en/portal/security-checklist",
         "en/portal/changelog"
       ],
       "version": "English"
@@ -871,6 +872,7 @@
             "cn/portal/self-service-token-listing"
           ]
         },
+        "cn/portal/security-checklist",
         "cn/portal/changelog"
       ],
       "version": "简体中文"
