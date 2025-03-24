@@ -129,6 +129,7 @@
             "en/portal/self-service-token-listing"
           ]
         },
+        "en/portal/security-checklist",
         "en/portal/changelog"
       ],
       "version": "English"
@@ -767,6 +768,12 @@
             "en/apps/screening/viewscreening",
             "en/apps/screening/recipients"
           ]
+        },
+        {
+          "group": "OTC",
+          "pages": [
+            "en/apps/otc/introduction"
+          ]
         }
       ],
       "version": "English"
@@ -865,6 +872,7 @@
             "cn/portal/self-service-token-listing"
           ]
         },
+        "cn/portal/security-checklist",
         "cn/portal/changelog"
       ],
       "version": "简体中文"
@@ -1502,6 +1510,12 @@
             "cn/apps/screening/risk-policies",
             "cn/apps/screening/viewscreening",
             "cn/apps/screening/recipients"
+          ]
+        },
+        {
+          "group": "OTC",
+          "pages": [
+            "cn/apps/otc/introduction"
           ]
         }
       ],

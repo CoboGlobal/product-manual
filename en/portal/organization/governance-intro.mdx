@@ -8,93 +8,61 @@ description: "Explore governance policies in Cobo Portal, defining approval rule
 
 Governance policies determine the approval rules under which an operation will be approved or rejected. Approval rules include auto rejection, auto approval, approval quorum, and customized workflow. Governance policies are categorized into five types: Members, Organizations, Wallets, Developers, and User Roles.
 
-Below is a table of all available governance policies within each category:
+You can view and modify governance policies in Cobo Portal by clicking your user profile icon > **Organization** > **Governance Policies**. You can also switch between the **Members**, **User Roles**, **Organization**, **Wallets**, or **Developers** tabs to view the associated governance policies and their status. For more details, refer to [Edit governance policies](/en/portal/organization/governance-edit).
 
+The following table lists crucial operations in Cobo Portal, and it is recommended to configure two or more [Admins](/en/portal/organization/roles-and-permissions) for their approval.
 
 <table class="six-columns">
   <tr>
     <th>Category</th>
     <th>Operation</th>
     <th>Description</th>
-    <th>Default Approval Quorum</th>
   </tr>
   <tr>
-    <td rowspan="5">Members</td>
+    <td rowspan="2">Members</td>
     <td>Invite Members</td>
     <td>Invite new members to your organization.</td>
-    <td>At least 50% of Admins</td>
-  </tr>
-  <tr>
-    <td>Delete Members</td>
-    <td>Remove members from your organization.</td>
-    <td>At least 50% of Admins</td>
-  </tr>
-  <tr>
-    <td>Freeze Members</td>
-    <td>Freeze members' accounts and reject their login attempts to the organizations.</td>
-    <td>Any 1 Admin</td>
-  </tr>
-  <tr>
-    <td>Unfreeze Members</td>
-    <td>Unfreeze members' accounts and accept their login attempts to the organizations.</td>
-    <td>At least 50% of Admins</td>
   </tr>
   <tr>
     <td>Change Members' User Roles</td>
     <td>Add or remove members' user roles.</td>
-    <td>At least 50% of Admins</td>
   </tr>
   <tr>
-    <td rowspan="3">Organization</td>
+    <td rowspan="4">Organization</td>
     <td>Edit Governance Policies</td>
     <td>Edit governance policies for organizations.</td>
-    <td>At least 50% of Admins</td>
   </tr>
   <tr>
-    <td>Freeze Organizations</td>
-    <td>Freeze organizations and reject critical operations such as creating wallets, initiating withdrawals, setting policies, and managing members.</td>
-    <td>Any 1 Admin</td>
+    <td>Authorize App</td>
+    <td>Authorize App</td>
   </tr>
   <tr>
-    <td>Unfreeze Organizations</td>
-    <td>Unfreeze organizations and allow critical operations such as creating wallets, initiating withdrawals, setting policies, and managing members.</td>
-    <td>At least 50% of Admins</td>
+    <td>Change App Permissions</td>
+    <td>Change App Permissions</td>
+  </tr>
+  <tr>
+    <td>Change App Workflow</td>
+    <td>Change App Workflow</td>
   </tr>
   <tr>
     <td rowspan="2">Wallets</td>
     <td>Manage Transaction Policies</td>
     <td>Create, delete, or modify transaction policies to safeguard critical transactions.</td>
-    <td>At least 50% of Admins</td>
   </tr>
   <tr>
     <td>Manage Addresses in Address List</td>
     <td>Add or delete addresses in Address List. Examples of Address List include customized lists such as "whitelist" that you can select from when creating transaction policies.</td>
-    <td>At least 50% of Admins</td>
   </tr>
   <tr>
-    <td rowspan="3">Developers</td>
+    <td>Developers</td>
     <td>Manage API Keys</td>
     <td>Add or delete API keys or modify the IP whitelists for the API keys.</td>
-    <td>At least 50% of Admins</td>
-  </tr>
-  <tr>
-    <td>Manage API Callback</td>
-    <td>Add or delete API callbacks.</td>
-    <td>At least 50% of Admins</td>
-  </tr>
-  <tr>
-    <td>Manage Webhooks</td>
-    <td>Add or delete webhooks.</td>
-    <td>At least 50% of Admins</td>
   </tr>
   <tr>
     <td>User Roles</td>
     <td>Edit Custom User Roles</td>
     <td>Modify custom user roles' names, descriptions, and permissions.</td>
-    <td>At least 50% of Admins</td>
   </tr>
 </table>
-
-You can get a clear overview of the governance policies by clicking **Organization** > **Policies**. Then, switch to either the Members, User Roles, Organization, Wallets, or Developers tab to view the associated governance policies and their status.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

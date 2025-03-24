@@ -5,6 +5,8 @@ lang: "zh-hans"
 description: "了解在创建链上交易风控前如何设置 Delegate Key。"
 ---
 
+<Note>交易风控是您团队的重要安全保障之一，建议您严格配置交易风控策略，重点关注大额提币场景，确保不存在没有设置风控规则、无规则命中、所有交易自动通过或同一角色既可提币又可审批等高风险情况。</Note>
+
 <Note>设置前：请先创建一个[智能合约钱包](/cn/portal/smart-contract-wallets/introduction)。注意，链上交易风控仅适用于智能合约钱包。</Note>
 
 要创建链上交易风控，必须先设置一个 Delegate Key。Delegate Key 是由 Cobo Portal 创建和分配的地址。它将用于代表 Safe&#123;Wallet&#125; 签名人发起（但不签名）多签交易。
