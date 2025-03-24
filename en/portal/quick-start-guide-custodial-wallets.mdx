@@ -1,0 +1,192 @@
+---
+title: "Get started with Custodial Wallets (Asset Wallets)"
+sidebarTitle: "Get started with Custodial Wallets (Asset Wallets)"
+lang: "en"
+og:description: "Learn how to quickly set up and manage Custodial Wallets to evaluate Cobo's solutions. Step-by-step guide for secure digital asset custody and best practices for institutional wallet solutions."
+---
+
+import MySnippet from '/snippets/account-setup-en.mdx';
+import MySnippet2 from '/snippets/transfer-category-and-description-en.mdx';
+
+This quick start guide helps you explore and evaluate Cobo's [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/introduction) solution through our web interface. In just a few simple steps, you'll be able to test our core features and assess if our enterprise-grade custody solution meets your needs. Follow along to:
+
+1. Set up your account and organization
+2. Create your first wallet
+3. Make deposits and withdrawals
+4. Set up transaction policies
+
+<img src="/en/images/quick-start-guide-custodial-wallets/workflow.png" className="screenshot_full_screen" alt="Workflow"/>
+
+<MySnippet />
+
+## Wallet setup
+
+### 1. Create your first wallet
+To set up an Asset Wallet on Cobo Portal, follow these simple steps:
+
+1. Log in to Cobo Portal.
+    - For testing, use the [development environment](https://portal.dev.cobo.com).
+    - For production, use the [production environment](https://portal.cobo.com).
+2. Click <img src="/en/images/custodial-wallet/wallet-icon.svg" className="icon"/> and select **Custodial Wallets**.
+
+<img src="/en/images/custodial-wallet/custodial-wallet-dashboard.png" className="screenshot_full_screen"/>
+3. Click **Create Wallet**.
+4. Fill in your preferred **Wallet Name**, select **Asset Wallet** as **Wallet Type**, then click **Create**.
+5. The new wallet will appear on your dashboard once created.
+
+### 2. Add tokens
+Follow the steps below to add the tokens you will be using for making deposits and withdrawals:
+
+1. Log in to Cobo Portal.
+    - For testing, use the [development environment](https://portal.dev.cobo.com).
+    - For production, use the [production environment](https://portal.cobo.com).
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets**.
+3. Click **Asset Wallets**, then click one of your created wallets to view the wallet details page.
+4. Click **Add Tokens** to open the **Add Tokens** dialog.
+
+   <img src="/en/images/quick-start-guide-custodial-wallets/Add-tokens.png" className="screenshot_modal"></img>
+
+
+5. On the **Add Tokens** dialog, click **All Chains** to select a chain, then search for your tokens by name or address. From the search results, check the checkboxes next to the tokens you want to add, then click **Confirm**.
+6. On the **Activate Chains** dialog, check the details, then click **Activate**.
+7. On the **Security Verification** dialog, enter your 6-digit Google Authenticator code.
+
+### 3. Test basic transaction operations
+
+#### Make a test deposit
+<Warning>
+Before making any deposits, verify that:
+1. The token has been successfully [added to your wallet](#2-add-tokens)
+2. You can see the token listed in your wallet's **Token** list
+</Warning>
+
+1. Log in to Cobo Portal.
+    - For testing, use the [development environment](https://portal.dev.cobo.com).
+    - For production, use the [production environment](https://portal.cobo.com).
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets** > **Asset Wallets**.
+3. Click the wallet you want to deposit into.
+4. Locate the type of tokens you want to deposit into the wallet, and then click <img src="/en/images/mpc-wallet/icon_deposit.svg" className="icon"></img>.
+
+<img src="/en/images/quick-start-guide-custodial-wallets/deposit.png" className="screenshot_modal"></img>
+
+5. Click **Copy Address** to copy the deposit address.
+6. Proceed to your preferred external wallet to initiate the transfer to the deposit address you have copied.
+
+#### Make a test withdrawal
+1. Log in to Cobo Portal.
+   - For testing, use the [development environment](https://portal.dev.cobo.com).
+   - For production, use the [production environment](https://portal.cobo.com).
+
+2. Open the **Transfer** dialog using one of these methods:
+   - **Quick access**: Click <img src="/en/images/transfers/transfer-button.svg" className="icon" alt="The transfer button" /> in the main menu of Cobo Portal
+
+    <img src="/en/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
+
+   - **From wallet**: Navigate to your wallet (<img src="/en/images/custodial-wallet/wallet-icon.svg" className="icon"/> > **Custodial Wallets** > **Asset Wallets** > _click your wallet_), then click <img src="/en/images/custodial-wallet/withdraw-icon.png" className="icon"/> next to the token you want to transfer. This automatically preselects the token and source wallet for you and you won't be able to edit them in steps 3 and 4 below.
+
+
+
+3. For **Wallet Type**, select **Asset Wallets**. For the wallet address, select from the drop-down menu or search by wallet name, address, or label.
+
+4. Select a **Token** and **Network** for the transfer. To enable a new token type, see [Add tokens](#2-add-tokens).
+
+5. Select a **Recipient Address** from your Address Book or your wallets on Cobo Portal, or manually enter an address.
+    
+    - **Address Book** <img src="/en/images/common/icon_address_book.svg" className="icon" alt="Address Book icon" />: Only addresses associated with the blockchain network of the selected token will be listed.
+    - **My Wallets**: Select a wallet type and then click on the specific wallet you would like to transfer to.
+6. Enter the transfer amount.
+    If this transfer can be executed as a [Cobo Loop](/en/portal/custodial-wallets/cobo-loop) transfer, a related information bar will appear on the UI as the following screenshot shows.
+
+    <img src="/en/images/quick-start-guide-custodial-wallets/transfer-panel.png" className="screenshot_modal" alt="Screenshot of the information bar" />
+
+7. Review the transaction cost. Transaction cost includes network fees. You are unable to modify or customize this fee. The associated fees will be deducted from the selected **Source Wallet**, and it may differ from the token intended for the transfer.
+8. <MySnippet2 />
+9. Click **Submit**.
+10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
+
+#### View transaction details and status
+After making a transfer from your Asset Wallets, you can view its transaction status in <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Transaction History**. The Loop icon indicates it was executed as a Cobo Loop transfer as the following screenshot shows.
+<img src="/en/images/quick-start-guide-custodial-wallets/transaction-history.png" className="screenshot_full_screen" alt="Screenshot of the transaction history" />
+
+<Info>To learn more about making transfers from Asset Wallets, see [Transfer from Custodial Wallets (Asset Wallets)](/en/portal/transfers/from-asset-wallets).</Info>
+
+### 4. Set up off-chain transaction policies
+Off-chain transaction policies help you automate transaction approvals and enhance security by defining specific conditions and approval requirements. These policies can include auto-approval, auto-rejection, or approval quorum requirements.
+
+In this guide, we'll create a policy that requires 2-of-3 approval for large USDT withdrawals to non-trusted addresses. For other policy setups and advanced configurations, see [Set up token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer).
+
+#### Set up a trusted receiving address list
+First, create a list of trusted addresses that are pre-approved for withdrawals:
+
+<Info>In our case, we will configure the system so that any large USDT withdrawals to addresses outside this trusted receiving address list will require multi-signature approval (2 out of 3 authorized signers).</Info>
+
+1. Log in to Cobo Portal.
+    - For testing, use the [development environment](https://portal.dev.cobo.com).
+    - For production, use the [production environment](https://portal.cobo.com).
+
+2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies**.
+3. Navigate to the **Address Lists** tab and click **Create List**.
+<img src="/en/images/risk-controls/create-an-address-list.png" className="screenshot_full_screen"/>
+4. Enter a unique name (max 30 characters) and click **Confirm**.
+5. Select your new list, click **Add Address**, and enter your trusted addresses.
+6. Click **Submit** and verify with your Google Authenticator code.
+
+For more details on managing address lists, including batch uploads, see [Address list](/en/portal/risk-controls/address-list).
+
+#### Create the transaction policy
+Now, let's set up a policy with these security rules:
+- Trigger: Withdrawals over 30,000,000 USDT to non-trusted addresses
+- Action: Require approval from 2 out of 3 designated approvers
+
+Follow these steps:
+
+1. In Cobo Portal, go to <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies**.
+2. Click **Create Policy** > **Token Transfer**.
+3. Configure the basic settings:
+   - Enter a descriptive **Policy Name**
+   - Select the **Applicable Wallets**
+4. Set up the conditions:
+   - Click **+ Add Condition**
+   - Set **Condition** to **Amounts**: **Token Type** = **Priced Currency**, **Tokens** = **USDT**, **Amount** > **30,000,000**, **Frequency** = **Per Transaction**
+   - Click **+ Add Condition** to add another **Condition** for **Receiving Addresses**: Select your trusted address under **Not in Address Lists** so any withdrawals to non-trusted addresses will trigger this policy.
+5. Configure the approval requirements:
+   - Set **Action** to **Approval Quorum**
+   - Click **+ Select Approvers**, choose **Admin**, then click **Submit**
+   - Set **Approvals from** to **2** (displays as **2/3 Approvers**)
+
+<Note>This setup assumes you have 3 Admin members (see [Invite team members](#invite-team-members)). You can alternatively select any combination of **Users** or **User Roles** totaling 3 approvers.</Note>
+
+6. Review and submit:
+   - Click **Next** to review the policy
+   - Confirm the policy order and click **Next**
+   - Click **Submit** and verify with your Google Authenticator code
+
+Your policy is now active and will require 2-of-3 approval for any USDT withdrawal over 30,000,000 to non-trusted addresses. For more policy configurations and use cases, visit [Set up token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer).
+
+<img src="/en/images/quick-start-guide-custodial-wallets/example-policy.png" className="screenshot_full_screen" alt="Policy Created"/>
+
+## What's next
+### Additional setups to experiment with
+
+#### Set up governance policies
+You can set up governance policies to define the number of team members needed to approve certain operations (e.g., delete a team member, modify member roles, freeze the organization). See [Governance policies](/en/portal/risk-controls/governance-policies).
+
+#### Create custom user roles
+In addition to the [preset user roles](/en/portal/organization/roles-and-permissions) provided by Cobo, you can also create your own customized user roles.
+See [Create customized user roles](/en/portal/organization/create-customized-roles).
+
+### Integrate with our API
+If you need programmatic access to manage your wallets, consider using Cobo's [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction). Our comprehensive [developer guide](https://www.cobo.com/developers/v2/guides/custodial-wallets/get-started-asset-wallets) will help you get started with the API integration.
+
+### Implement security best practice
+Follow our [security checklist](/en/portal/security-checklist) to ensure your organization is implementing our security best practices.
+
+### Learn more about Custodial Wallets (Asset Wallets)
+- [Watch product video](https://www.youtube.com/watch?v=D4CMsRf3WW0)
+- [Visit official website](https://www.cobo.com/products/wallet/custodial-wallet)
+- [Read product manuals](https://manuals.cobo.com/en/portal/custodial-wallets/introduction)
+
+### Upgrade to a paid plan
+Once you've evaluated our Custodial Wallets solution and are ready to upgrade, contact your Cobo sales representative to discuss your needs and get personalized assistance with selecting the right plan for your organization
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
