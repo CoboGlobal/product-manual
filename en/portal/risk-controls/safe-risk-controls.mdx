@@ -47,17 +47,6 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
    <Info>For security reasons, the condition **Safe&#123;Wallet&#125; Message Signing** cannot be combined with other conditions such as **Initiators** and **Message Type** in a policy. This ensures that your Safe&#123;Wallet&#125; message signing is protected by a dedicated policy.</Info>
    <img src="/en/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
 
-   Toggle on **Custom Conditions** for enhanced security controls.
-      - **Custom Delegate Call**: The policy will be triggered only if a delagate call meets the specified criteria. 
-      - **Custom Contract Call**: The policy will be triggered only if a contract call meets the specified criteria.
-
-   You can select multiple custom conditions (for example, both **Custom Delegate Call** and **Custom Contract Call**), and they use **OR** relationship - policy triggers if any condition is met.
-
-   For each custom condition, you can select multiple contract address selections and one of the three levels of granularity:
-      - **Contract-level**: You can specify the smart contract addresses for the call. The policy will be triggered when the **Target Contracts** of the contract call match one of the specified addresses.
-      - **Method-level**: You can specify the smart contract address and methods for the call. The policy will be triggered if both the **Target Contract** and one of the **Methods** match the specified criteria.
-      - **Parameter-level**: You can specify the **Target Contract**, **Method**, and **Parameters** for the call. The policy will be triggered only if the **Target Contract**'s smart contract address, **Method**, and **Parameters** match the specified criteria.
-
 8. Under **Then**, configure the **Approval Quorum** requirements by selecting approvers (by **User Roles** or **Users**) and setting the required number of approvals. Click **Next**.
 9. Review the policy you just configured, then click **Next**.
 10. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
