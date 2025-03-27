@@ -138,161 +138,156 @@
       "group": "WALLETS & TRANSACTIONS",
       "pages": [
         {
-          "group": "Wallets",
+          "group": "Custodial Wallets",
           "pages": [
+            "en/portal/custodial-wallets/introduction",
+            "en/portal/custodial-wallets/key-features",
+            "en/portal/custodial-wallets/cobo-loop",
             {
-              "group": "Custodial Wallets",
+              "group": "Asset Wallets",
               "pages": [
-                "en/portal/custodial-wallets/introduction",
-                "en/portal/custodial-wallets/key-features",
-                "en/portal/custodial-wallets/cobo-loop",
-                {
-                  "group": "Asset Wallets",
-                  "pages": [
-                    "en/portal/custodial-wallets/asset-wallets/set-up",
-                    "en/portal/custodial-wallets/asset-wallets/manage",
-                    "en/portal/custodial-wallets/asset-wallets/transfers"
-                  ]
-                },
-                {
-                  "group": "Web3 Wallets",
-                  "pages": [
-                    "en/portal/custodial-wallets/web3-wallets/set-up",
-                    "en/portal/custodial-wallets/web3-wallets/manage",
-                    "en/portal/custodial-wallets/web3-wallets/transfers",
-                    "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
-                  ]
-                },
-                {
-                  "group": "Troubleshoot",
-                  "pages": [
-                    "en/portal/custodial-wallets/unable-to-create-wallet",
-                    "en/portal/custodial-wallets/unsupported-tokens-and-chains",
-                    "en/portal/custodial-wallets/transaction-not-processed-successfully"
-                  ]
-                }
+                "en/portal/custodial-wallets/asset-wallets/set-up",
+                "en/portal/custodial-wallets/asset-wallets/manage",
+                "en/portal/custodial-wallets/asset-wallets/transfers"
               ]
             },
             {
-              "group": "MPC Wallets",
+              "group": "Web3 Wallets",
               "pages": [
-                "en/portal/mpc-wallets/introduction",
-                "en/portal/mpc-wallets/key-features",
-                {
-                  "group": "Organization-Controlled Wallets",
-                  "pages": [
-                    "en/portal/mpc-wallets/ocw/introduction",
-                    "en/portal/mpc-wallets/ocw/object-model",
-                    {
-                      "group": "Set up Organization-Controlled Wallets",
-                      "pages": [
-                        "en/portal/mpc-wallets/ocw/set-up",
-                        "en/portal/mpc-wallets/ocw/create-mpc-vault",
-                        {
-                          "group": "Create holder groups",
-                          "pages": [
-                            "en/portal/mpc-wallets/ocw/holder-group-overview",
-                            "en/portal/mpc-wallets/ocw/holder-group-main-group",
-                            "en/portal/mpc-wallets/ocw/holder-group-signing-group",
-                            "en/portal/mpc-wallets/ocw/holder-group-recovery-group"
-                          ]
-                        },
-                        "en/portal/mpc-wallets/ocw/back-up-key-share-groups",
-                        "en/portal/mpc-wallets/ocw/create-mpc-wallet"
-                      ]
-                    },
-                    "en/portal/mpc-wallets/ocw/manage-vaults",
-                    "en/portal/mpc-wallets/ocw/manage-wallets",
-                    "en/portal/mpc-wallets/ocw/manage-key-share-groups",
-                    {
-                      "group": "Recover holder groups",
-                      "pages": [
-                        "en/portal/mpc-wallets/ocw/restore-from-backup",
-                        "en/portal/mpc-wallets/ocw/recover-from-active-keys",
-                        "en/portal/mpc-wallets/ocw/recover-root-key"
-                      ]
-                    },
-                    "en/portal/mpc-wallets/ocw/transfers",
-                    "en/portal/mpc-wallets/ocw/key-share-verification",
-                    "en/portal/mpc-wallets/ocw/dapp-interaction",
-                    {
-                      "group": "Auto-Sweep",
-                      "pages": [
-                        "en/portal/mpc-wallets/ocw/auto-sweep-overview",
-                        "en/portal/mpc-wallets/ocw/enable-auto-sweep"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "group": "User-Controlled Wallets",
-                  "pages": [
-                    "en/portal/mpc-wallets/ucw/introduction",
-                    "en/portal/mpc-wallets/ucw/object-model",
-                    "en/portal/mpc-wallets/ucw/set-up",
-                    "en/portal/mpc-wallets/ucw/project-management",
-                    "en/portal/mpc-wallets/ucw/vault-management",
-                    "en/portal/mpc-wallets/ucw/wallet-management"
-                  ]
-                }
+                "en/portal/custodial-wallets/web3-wallets/set-up",
+                "en/portal/custodial-wallets/web3-wallets/manage",
+                "en/portal/custodial-wallets/web3-wallets/transfers",
+                "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
             },
             {
-              "group": "Smart Contract Wallets",
+              "group": "Troubleshoot",
               "pages": [
-                "en/portal/smart-contract-wallets/introduction",
-                "en/portal/smart-contract-wallets/key-features",
-                {
-                  "group": "Set up Smart Contract Wallets",
-                  "pages": [
-                    "en/portal/smart-contract-wallets/create",
-                    "en/portal/smart-contract-wallets/import"
-                  ]
-                },
-                "en/portal/smart-contract-wallets/manage",
-                "en/portal/smart-contract-wallets/manage-delegate-keys",
-                {
-                  "group": "Deposit and withdraw assets",
-                  "pages": [
-                    "en/portal/smart-contract-wallets/deposit-assets",
-                    "en/portal/smart-contract-wallets/withdraw-assets"
-                  ]
-                },
-                "en/portal/smart-contract-wallets/dapp-interaction"
-              ]
-            },
-            {
-              "group": "Exchange Wallets",
-              "pages": [
-                "en/portal/exchange-wallets/introduction",
-                "en/portal/exchange-wallets/key-features",
-                "en/portal/exchange-wallets/supported-exchanges",
-                {
-                  "group": "Set up Exchange Wallets",
-                  "pages": [
-                    {
-                      "group": "Generate an API key",
-                      "pages": [
-                        "en/portal/exchange-wallets/generate-binance-api-key",
-                        "en/portal/exchange-wallets/generate-bitfinex-api-key",
-                        "en/portal/exchange-wallets/generate-bitget-api-key",
-                        "en/portal/exchange-wallets/generate-bitmart-api-key",
-                        "en/portal/exchange-wallets/generate-bybit-api-key",
-                        "en/portal/exchange-wallets/generate-deribit-api-key",
-                        "en/portal/exchange-wallets/generate-gate-api-key",
-                        "en/portal/exchange-wallets/generate-okx-api-key"
-                      ]
-                    },
-                    "en/portal/exchange-wallets/set-up"
-                  ]
-                },
-                "en/portal/exchange-wallets/manage",
-                "en/portal/transfers/from-exchange-wallets",
-                "en/portal/exchange-wallets/transfers",
-                "en/portal/exchange-wallets/within-wallet",
-                "en/portal/exchange-wallets/troubleshoot"
+                "en/portal/custodial-wallets/unable-to-create-wallet",
+                "en/portal/custodial-wallets/unsupported-tokens-and-chains",
+                "en/portal/custodial-wallets/transaction-not-processed-successfully"
               ]
             }
+          ]
+        },
+        {
+          "group": "MPC Wallets",
+          "pages": [
+            "en/portal/mpc-wallets/introduction",
+            "en/portal/mpc-wallets/key-features",
+            {
+              "group": "Organization-Controlled Wallets",
+              "pages": [
+                "en/portal/mpc-wallets/ocw/introduction",
+                "en/portal/mpc-wallets/ocw/object-model",
+                {
+                  "group": "Set up Organization-Controlled Wallets",
+                  "pages": [
+                    "en/portal/mpc-wallets/ocw/set-up",
+                    "en/portal/mpc-wallets/ocw/create-mpc-vault",
+                    {
+                      "group": "Create holder groups",
+                      "pages": [
+                        "en/portal/mpc-wallets/ocw/holder-group-overview",
+                        "en/portal/mpc-wallets/ocw/holder-group-main-group",
+                        "en/portal/mpc-wallets/ocw/holder-group-signing-group",
+                        "en/portal/mpc-wallets/ocw/holder-group-recovery-group"
+                      ]
+                    },
+                    "en/portal/mpc-wallets/ocw/back-up-key-share-groups",
+                    "en/portal/mpc-wallets/ocw/create-mpc-wallet"
+                  ]
+                },
+                "en/portal/mpc-wallets/ocw/manage-vaults",
+                "en/portal/mpc-wallets/ocw/manage-wallets",
+                "en/portal/mpc-wallets/ocw/manage-key-share-groups",
+                {
+                  "group": "Recover holder groups",
+                  "pages": [
+                    "en/portal/mpc-wallets/ocw/restore-from-backup",
+                    "en/portal/mpc-wallets/ocw/recover-from-active-keys",
+                    "en/portal/mpc-wallets/ocw/recover-root-key"
+                  ]
+                },
+                "en/portal/mpc-wallets/ocw/transfers",
+                "en/portal/mpc-wallets/ocw/key-share-verification",
+                "en/portal/mpc-wallets/ocw/dapp-interaction",
+                {
+                  "group": "Auto-Sweep",
+                  "pages": [
+                    "en/portal/mpc-wallets/ocw/auto-sweep-overview",
+                    "en/portal/mpc-wallets/ocw/enable-auto-sweep"
+                  ]
+                }
+              ]
+            },
+            {
+              "group": "User-Controlled Wallets",
+              "pages": [
+                "en/portal/mpc-wallets/ucw/introduction",
+                "en/portal/mpc-wallets/ucw/object-model",
+                "en/portal/mpc-wallets/ucw/set-up",
+                "en/portal/mpc-wallets/ucw/project-management",
+                "en/portal/mpc-wallets/ucw/vault-management",
+                "en/portal/mpc-wallets/ucw/wallet-management"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Smart Contract Wallets",
+          "pages": [
+            "en/portal/smart-contract-wallets/introduction",
+            "en/portal/smart-contract-wallets/key-features",
+            {
+              "group": "Set up Smart Contract Wallets",
+              "pages": [
+                "en/portal/smart-contract-wallets/create",
+                "en/portal/smart-contract-wallets/import"
+              ]
+            },
+            "en/portal/smart-contract-wallets/manage",
+            "en/portal/smart-contract-wallets/manage-delegate-keys",
+            {
+              "group": "Deposit and withdraw assets",
+              "pages": [
+                "en/portal/smart-contract-wallets/deposit-assets",
+                "en/portal/smart-contract-wallets/withdraw-assets"
+              ]
+            },
+            "en/portal/smart-contract-wallets/dapp-interaction"
+          ]
+        },
+        {
+          "group": "Exchange Wallets",
+          "pages": [
+            "en/portal/exchange-wallets/introduction",
+            "en/portal/exchange-wallets/key-features",
+            "en/portal/exchange-wallets/supported-exchanges",
+            {
+              "group": "Set up Exchange Wallets",
+              "pages": [
+                {
+                  "group": "Generate an API key",
+                  "pages": [
+                    "en/portal/exchange-wallets/generate-binance-api-key",
+                    "en/portal/exchange-wallets/generate-bitfinex-api-key",
+                    "en/portal/exchange-wallets/generate-bitget-api-key",
+                    "en/portal/exchange-wallets/generate-bitmart-api-key",
+                    "en/portal/exchange-wallets/generate-bybit-api-key",
+                    "en/portal/exchange-wallets/generate-deribit-api-key",
+                    "en/portal/exchange-wallets/generate-gate-api-key",
+                    "en/portal/exchange-wallets/generate-okx-api-key"
+                  ]
+                },
+                "en/portal/exchange-wallets/set-up"
+              ]
+            },
+            "en/portal/exchange-wallets/manage",
+            "en/portal/transfers/from-exchange-wallets",
+            "en/portal/exchange-wallets/transfers",
+            "en/portal/exchange-wallets/within-wallet",
+            "en/portal/exchange-wallets/troubleshoot"
           ]
         },
         {
@@ -706,161 +701,156 @@
       "group": "钱包与交易",
       "pages": [
         {
-          "group": "钱包",
+          "group": "全托管钱包",
           "pages": [
+            "cn/portal/custodial-wallets/introduction",
+            "cn/portal/custodial-wallets/key-features",
+            "cn/portal/custodial-wallets/cobo-loop",
             {
-              "group": "全托管钱包",
+              "group": "资产钱包",
               "pages": [
-                "cn/portal/custodial-wallets/introduction",
-                "cn/portal/custodial-wallets/key-features",
-                "cn/portal/custodial-wallets/cobo-loop",
-                {
-                  "group": "资产钱包",
-                  "pages": [
-                    "cn/portal/custodial-wallets/asset-wallets/set-up",
-                    "cn/portal/custodial-wallets/asset-wallets/manage",
-                    "cn/portal/custodial-wallets/asset-wallets/transfers"
-                  ]
-                },
-                {
-                  "group": "Web3 钱包",
-                  "pages": [
-                    "cn/portal/custodial-wallets/web3-wallets/set-up",
-                    "cn/portal/custodial-wallets/web3-wallets/manage",
-                    "cn/portal/custodial-wallets/web3-wallets/transfers",
-                    "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
-                  ]
-                },
-                {
-                  "group": "问题排查",
-                  "pages": [
-                    "cn/portal/custodial-wallets/unable-to-create-wallet",
-                    "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-                    "cn/portal/custodial-wallets/transaction-not-processed-successfully"
-                  ]
-                }
+                "cn/portal/custodial-wallets/asset-wallets/set-up",
+                "cn/portal/custodial-wallets/asset-wallets/manage",
+                "cn/portal/custodial-wallets/asset-wallets/transfers"
               ]
             },
             {
-              "group": "MPC 钱包",
+              "group": "Web3 钱包",
               "pages": [
-                "cn/portal/mpc-wallets/introduction",
-                "cn/portal/mpc-wallets/key-features",
-                {
-                  "group": "机构钱包",
-                  "pages": [
-                    "cn/portal/mpc-wallets/ocw/introduction",
-                    "cn/portal/mpc-wallets/ocw/object-model",
-                    {
-                      "group": "创建机构钱包",
-                      "pages": [
-                        "cn/portal/mpc-wallets/ocw/set-up",
-                        "cn/portal/mpc-wallets/ocw/create-mpc-vault",
-                        {
-                          "group": "创建持有者组",
-                          "pages": [
-                            "cn/portal/mpc-wallets/ocw/holder-group-overview",
-                            "cn/portal/mpc-wallets/ocw/holder-group-main-group",
-                            "cn/portal/mpc-wallets/ocw/holder-group-signing-group",
-                            "cn/portal/mpc-wallets/ocw/holder-group-recovery-group"
-                          ]
-                        },
-                        "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
-                        "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
-                      ]
-                    },
-                    "cn/portal/mpc-wallets/ocw/manage-vaults",
-                    "cn/portal/mpc-wallets/ocw/manage-wallets",
-                    "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
-                    {
-                      "group": "恢复持有者组",
-                      "pages": [
-                        "cn/portal/mpc-wallets/ocw/restore-from-backup",
-                        "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
-                        "cn/portal/mpc-wallets/ocw/recover-root-key"
-                      ]
-                    },
-                    "cn/portal/mpc-wallets/ocw/transfers",
-                    "cn/portal/mpc-wallets/ocw/key-share-verification",
-                    "cn/portal/mpc-wallets/ocw/dapp-interaction",
-                    {
-                      "group": "自动归集",
-                      "pages": [
-                        "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
-                        "cn/portal/mpc-wallets/ocw/enable-auto-sweep"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "group": "终端用户钱包",
-                  "pages": [
-                    "cn/portal/mpc-wallets/ucw/introduction",
-                    "cn/portal/mpc-wallets/ucw/object-model",
-                    "cn/portal/mpc-wallets/ucw/set-up",
-                    "cn/portal/mpc-wallets/ucw/project-management",
-                    "cn/portal/mpc-wallets/ucw/vault-management",
-                    "cn/portal/mpc-wallets/ucw/wallet-management"
-                  ]
-                }
+                "cn/portal/custodial-wallets/web3-wallets/set-up",
+                "cn/portal/custodial-wallets/web3-wallets/manage",
+                "cn/portal/custodial-wallets/web3-wallets/transfers",
+                "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
             },
             {
-              "group": "智能合约钱包",
+              "group": "问题排查",
               "pages": [
-                "cn/portal/smart-contract-wallets/introduction",
-                "cn/portal/smart-contract-wallets/key-features",
-                {
-                  "group": "设置智能合约钱包",
-                  "pages": [
-                    "cn/portal/smart-contract-wallets/create",
-                    "cn/portal/smart-contract-wallets/import"
-                  ]
-                },
-                "cn/portal/smart-contract-wallets/manage",
-                "cn/portal/smart-contract-wallets/manage-delegate-keys",
-                {
-                  "group": "充币和提币",
-                  "pages": [
-                    "cn/portal/smart-contract-wallets/deposit-assets",
-                    "cn/portal/smart-contract-wallets/withdraw-assets"
-                  ]
-                },
-                "cn/portal/smart-contract-wallets/dapp-interaction"
-              ]
-            },
-            {
-              "group": "交易所钱包",
-              "pages": [
-                "cn/portal/exchange-wallets/introduction",
-                "cn/portal/exchange-wallets/key-features",
-                "cn/portal/exchange-wallets/supported-exchanges",
-                {
-                  "group": "设置交易所钱包",
-                  "pages": [
-                    {
-                      "group": "生成 API key",
-                      "pages": [
-                        "cn/portal/exchange-wallets/generate-binance-api-key",
-                        "cn/portal/exchange-wallets/generate-bitfinex-api-key",
-                        "cn/portal/exchange-wallets/generate-bitget-api-key",
-                        "cn/portal/exchange-wallets/generate-bitmart-api-key",
-                        "cn/portal/exchange-wallets/generate-bybit-api-key",
-                        "cn/portal/exchange-wallets/generate-deribit-api-key",
-                        "cn/portal/exchange-wallets/generate-gate-api-key",
-                        "cn/portal/exchange-wallets/generate-okx-api-key"
-                      ]
-                    },
-                    "cn/portal/exchange-wallets/set-up"
-                  ]
-                },
-                "cn/portal/exchange-wallets/manage",
-                "cn/portal/transfers/from-exchange-wallets",
-                "cn/portal/exchange-wallets/transfers",
-                "cn/portal/exchange-wallets/within-wallet",
-                "cn/portal/exchange-wallets/troubleshoot"
+                "cn/portal/custodial-wallets/unable-to-create-wallet",
+                "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
+                "cn/portal/custodial-wallets/transaction-not-processed-successfully"
               ]
             }
+          ]
+        },
+        {
+          "group": "MPC 钱包",
+          "pages": [
+            "cn/portal/mpc-wallets/introduction",
+            "cn/portal/mpc-wallets/key-features",
+            {
+              "group": "机构钱包",
+              "pages": [
+                "cn/portal/mpc-wallets/ocw/introduction",
+                "cn/portal/mpc-wallets/ocw/object-model",
+                {
+                  "group": "创建机构钱包",
+                  "pages": [
+                    "cn/portal/mpc-wallets/ocw/set-up",
+                    "cn/portal/mpc-wallets/ocw/create-mpc-vault",
+                    {
+                      "group": "创建持有者组",
+                      "pages": [
+                        "cn/portal/mpc-wallets/ocw/holder-group-overview",
+                        "cn/portal/mpc-wallets/ocw/holder-group-main-group",
+                        "cn/portal/mpc-wallets/ocw/holder-group-signing-group",
+                        "cn/portal/mpc-wallets/ocw/holder-group-recovery-group"
+                      ]
+                    },
+                    "cn/portal/mpc-wallets/ocw/back-up-key-share-groups",
+                    "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
+                  ]
+                },
+                "cn/portal/mpc-wallets/ocw/manage-vaults",
+                "cn/portal/mpc-wallets/ocw/manage-wallets",
+                "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
+                {
+                  "group": "恢复持有者组",
+                  "pages": [
+                    "cn/portal/mpc-wallets/ocw/restore-from-backup",
+                    "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
+                    "cn/portal/mpc-wallets/ocw/recover-root-key"
+                  ]
+                },
+                "cn/portal/mpc-wallets/ocw/transfers",
+                "cn/portal/mpc-wallets/ocw/key-share-verification",
+                "cn/portal/mpc-wallets/ocw/dapp-interaction",
+                {
+                  "group": "自动归集",
+                  "pages": [
+                    "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
+                    "cn/portal/mpc-wallets/ocw/enable-auto-sweep"
+                  ]
+                }
+              ]
+            },
+            {
+              "group": "终端用户钱包",
+              "pages": [
+                "cn/portal/mpc-wallets/ucw/introduction",
+                "cn/portal/mpc-wallets/ucw/object-model",
+                "cn/portal/mpc-wallets/ucw/set-up",
+                "cn/portal/mpc-wallets/ucw/project-management",
+                "cn/portal/mpc-wallets/ucw/vault-management",
+                "cn/portal/mpc-wallets/ucw/wallet-management"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "智能合约钱包",
+          "pages": [
+            "cn/portal/smart-contract-wallets/introduction",
+            "cn/portal/smart-contract-wallets/key-features",
+            {
+              "group": "设置智能合约钱包",
+              "pages": [
+                "cn/portal/smart-contract-wallets/create",
+                "cn/portal/smart-contract-wallets/import"
+              ]
+            },
+            "cn/portal/smart-contract-wallets/manage",
+            "cn/portal/smart-contract-wallets/manage-delegate-keys",
+            {
+              "group": "充币和提币",
+              "pages": [
+                "cn/portal/smart-contract-wallets/deposit-assets",
+                "cn/portal/smart-contract-wallets/withdraw-assets"
+              ]
+            },
+            "cn/portal/smart-contract-wallets/dapp-interaction"
+          ]
+        },
+        {
+          "group": "交易所钱包",
+          "pages": [
+            "cn/portal/exchange-wallets/introduction",
+            "cn/portal/exchange-wallets/key-features",
+            "cn/portal/exchange-wallets/supported-exchanges",
+            {
+              "group": "设置交易所钱包",
+              "pages": [
+                {
+                  "group": "生成 API key",
+                  "pages": [
+                    "cn/portal/exchange-wallets/generate-binance-api-key",
+                    "cn/portal/exchange-wallets/generate-bitfinex-api-key",
+                    "cn/portal/exchange-wallets/generate-bitget-api-key",
+                    "cn/portal/exchange-wallets/generate-bitmart-api-key",
+                    "cn/portal/exchange-wallets/generate-bybit-api-key",
+                    "cn/portal/exchange-wallets/generate-deribit-api-key",
+                    "cn/portal/exchange-wallets/generate-gate-api-key",
+                    "cn/portal/exchange-wallets/generate-okx-api-key"
+                  ]
+                },
+                "cn/portal/exchange-wallets/set-up"
+              ]
+            },
+            "cn/portal/exchange-wallets/manage",
+            "cn/portal/transfers/from-exchange-wallets",
+            "cn/portal/exchange-wallets/transfers",
+            "cn/portal/exchange-wallets/within-wallet",
+            "cn/portal/exchange-wallets/troubleshoot"
           ]
         },
         {
