@@ -150,27 +150,17 @@
                   "group": "Asset Wallets",
                   "pages": [
                     "en/portal/custodial-wallets/asset-wallets/set-up",
-                    {
-                      "group": "Manage Asset Wallets",
-                      "pages": [
-                        "en/portal/custodial-wallets/asset-wallets/manage",
-                        "en/portal/custodial-wallets/asset-wallets/transfers"
-                      ]
-                    }
+                    "en/portal/custodial-wallets/asset-wallets/manage",
+                    "en/portal/custodial-wallets/asset-wallets/transfers"
                   ]
                 },
                 {
                   "group": "Web3 Wallets",
                   "pages": [
                     "en/portal/custodial-wallets/web3-wallets/set-up",
-                    {
-                      "group": "Manage Web3 Wallets",
-                      "pages": [
-                        "en/portal/custodial-wallets/web3-wallets/manage",
-                        "en/portal/custodial-wallets/web3-wallets/transfers",
-                        "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
-                      ]
-                    }
+                    "en/portal/custodial-wallets/web3-wallets/manage",
+                    "en/portal/custodial-wallets/web3-wallets/transfers",
+                    "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
                   ]
                 },
                 {
@@ -211,25 +201,20 @@
                         "en/portal/mpc-wallets/ocw/create-mpc-wallet"
                       ]
                     },
+                    "en/portal/mpc-wallets/ocw/manage-vaults",
+                    "en/portal/mpc-wallets/ocw/manage-wallets",
+                    "en/portal/mpc-wallets/ocw/manage-key-share-groups",
                     {
-                      "group": "Manage Organization-Controlled Wallets",
+                      "group": "Recover holder groups",
                       "pages": [
-                        "en/portal/mpc-wallets/ocw/manage-vaults",
-                        "en/portal/mpc-wallets/ocw/manage-wallets",
-                        "en/portal/mpc-wallets/ocw/manage-key-share-groups",
-                        {
-                          "group": "Recover holder groups",
-                          "pages": [
-                            "en/portal/mpc-wallets/ocw/restore-from-backup",
-                            "en/portal/mpc-wallets/ocw/recover-from-active-keys",
-                            "en/portal/mpc-wallets/ocw/recover-root-key"
-                          ]
-                        },
-                        "en/portal/mpc-wallets/ocw/transfers",
-                        "en/portal/mpc-wallets/ocw/key-share-verification",
-                        "en/portal/mpc-wallets/ocw/dapp-interaction"
+                        "en/portal/mpc-wallets/ocw/restore-from-backup",
+                        "en/portal/mpc-wallets/ocw/recover-from-active-keys",
+                        "en/portal/mpc-wallets/ocw/recover-root-key"
                       ]
                     },
+                    "en/portal/mpc-wallets/ocw/transfers",
+                    "en/portal/mpc-wallets/ocw/key-share-verification",
+                    "en/portal/mpc-wallets/ocw/dapp-interaction",
                     {
                       "group": "Auto-Sweep",
                       "pages": [
@@ -245,14 +230,9 @@
                     "en/portal/mpc-wallets/ucw/introduction",
                     "en/portal/mpc-wallets/ucw/object-model",
                     "en/portal/mpc-wallets/ucw/set-up",
-                    {
-                      "group": "Manage User-Controlled Wallets",
-                      "pages": [
-                        "en/portal/mpc-wallets/ucw/project-management",
-                        "en/portal/mpc-wallets/ucw/vault-management",
-                        "en/portal/mpc-wallets/ucw/wallet-management"
-                      ]
-                    }
+                    "en/portal/mpc-wallets/ucw/project-management",
+                    "en/portal/mpc-wallets/ucw/vault-management",
+                    "en/portal/mpc-wallets/ucw/wallet-management"
                   ]
                 }
               ]
@@ -269,21 +249,16 @@
                     "en/portal/smart-contract-wallets/import"
                   ]
                 },
+                "en/portal/smart-contract-wallets/manage",
+                "en/portal/smart-contract-wallets/manage-delegate-keys",
                 {
-                  "group": "Manage Smart Contract Wallets",
+                  "group": "Deposit and withdraw assets",
                   "pages": [
-                    "en/portal/smart-contract-wallets/manage",
-                    "en/portal/smart-contract-wallets/manage-delegate-keys",
-                    {
-                      "group": "Deposit and withdraw assets",
-                      "pages": [
-                        "en/portal/smart-contract-wallets/deposit-assets",
-                        "en/portal/smart-contract-wallets/withdraw-assets"
-                      ]
-                    },
-                    "en/portal/smart-contract-wallets/dapp-interaction"
+                    "en/portal/smart-contract-wallets/deposit-assets",
+                    "en/portal/smart-contract-wallets/withdraw-assets"
                   ]
-                }
+                },
+                "en/portal/smart-contract-wallets/dapp-interaction"
               ]
             },
             {
@@ -389,37 +364,27 @@
           "group": "Organization",
           "pages": [
             "en/portal/organization/introduction",
+            "en/portal/organization/manage-general-settings",
+            "en/portal/organization/manage-members",
+            "en/portal/organization/freeze-unfreeze",
+            "en/portal/organization/manage-transaction-categories",
             {
-              "group": "Settings",
+              "group": "User roles and permissions",
               "pages": [
-                "en/portal/organization/manage-general-settings",
-                "en/portal/organization/manage-members",
-                "en/portal/organization/freeze-unfreeze",
-                "en/portal/organization/manage-transaction-categories"
+                "en/portal/organization/roles-and-permissions",
+                "en/portal/organization/assign-roles-to-members",
+                "en/portal/organization/create-customized-roles"
               ]
             },
             {
-              "group": "Security",
+              "group": "Governance policies",
               "pages": [
-                {
-                  "group": "User roles and permissions",
-                  "pages": [
-                    "en/portal/organization/roles-and-permissions",
-                    "en/portal/organization/assign-roles-to-members",
-                    "en/portal/organization/create-customized-roles"
-                  ]
-                },
-                {
-                  "group": "Governance policies",
-                  "pages": [
-                    "en/portal/organization/governance-intro",
-                    "en/portal/organization/governance-edit",
-                    "en/portal/organization/governance-notifications"
-                  ]
-                },
-                "en/portal/organization/activity-logs"
+                "en/portal/organization/governance-intro",
+                "en/portal/organization/governance-edit",
+                "en/portal/organization/governance-notifications"
               ]
-            }
+            },
+            "en/portal/organization/activity-logs"
           ]
         },
         {
@@ -527,14 +492,9 @@
       "pages": [
         "en/apps/introduction",
         "en/apps/browse-and-install",
-        {
-          "group": "Manage your apps",
-          "pages": [
-            "en/apps/transaction-policies",
-            "en/apps/app-settings",
-            "en/apps/workflow"
-          ]
-        }
+        "en/apps/transaction-policies",
+        "en/apps/app-settings",
+        "en/apps/workflow"
       ],
       "version": "English"
     },
@@ -546,14 +506,9 @@
           "pages": [
             "en/apps/superloop/introduction",
             "en/apps/superloop/set-up",
-            {
-              "group": "Manage SuperLoop",
-              "pages": [
-                "en/apps/superloop/manage-overview",
-                "en/apps/superloop/manage-fee-reserve",
-                "en/apps/superloop/manage-an-exchange-account"
-              ]
-            },
+            "en/apps/superloop/manage-overview",
+            "en/apps/superloop/manage-fee-reserve",
+            "en/apps/superloop/manage-an-exchange-account",
             {
               "group": "Supported exchanges",
               "pages": [
@@ -569,18 +524,13 @@
           "pages": [
             "en/apps/staking/introduction",
             "en/apps/staking/set-up",
-            {
-              "group": "Manage Staking",
-              "pages": [
-                "en/apps/staking/overview",
-                "en/apps/staking/stake",
-                "en/apps/staking/unstake",
-                "en/apps/staking/withdraw",
-                "en/apps/staking/view",
-                "en/apps/staking/fee-structure",
-                "en/apps/staking/supported"
-              ]
-            }
+            "en/apps/staking/overview",
+            "en/apps/staking/stake",
+            "en/apps/staking/unstake",
+            "en/apps/staking/withdraw",
+            "en/apps/staking/view",
+            "en/apps/staking/fee-structure",
+            "en/apps/staking/supported"
           ]
         },
         {
@@ -588,30 +538,25 @@
           "pages": [
             "en/apps/invoicing/introduction",
             "en/apps/invoicing/set-up",
+            "en/apps/invoicing/dashboard",
             {
-              "group": "Manage Invoicing",
+              "group": "Invoices",
               "pages": [
-                "en/apps/invoicing/dashboard",
-                {
-                  "group": "Invoices",
-                  "pages": [
-                    "en/apps/invoicing/invoices/create",
-                    "en/apps/invoicing/invoices/view",
-                    "en/apps/invoicing/invoices/manage"
-                  ]
-                },
-                {
-                  "group": "Settlements",
-                  "pages": [
-                    "en/apps/invoicing/settlements/request",
-                    "en/apps/invoicing/settlements/view"
-                  ]
-                },
-                "en/apps/invoicing/clients",
-                "en/apps/invoicing/titles",
-                "en/apps/invoicing/payment"
+                "en/apps/invoicing/invoices/create",
+                "en/apps/invoicing/invoices/view",
+                "en/apps/invoicing/invoices/manage"
               ]
-            }
+            },
+            {
+              "group": "Settlements",
+              "pages": [
+                "en/apps/invoicing/settlements/request",
+                "en/apps/invoicing/settlements/view"
+              ]
+            },
+            "en/apps/invoicing/clients",
+            "en/apps/invoicing/titles",
+            "en/apps/invoicing/payment"
           ]
         },
         {
@@ -627,13 +572,8 @@
           "pages": [
             "en/apps/reports/introduction",
             "en/apps/reports/set-up",
-            {
-              "group": "Manage Reports",
-              "pages": [
-                "en/apps/reports/manage",
-                "en/apps/reports/generate"
-              ]
-            }
+            "en/apps/reports/manage",
+            "en/apps/reports/generate"
           ]
         },
         {
@@ -641,15 +581,10 @@
           "pages": [
             "en/apps/bridge/introduction",
             "en/apps/bridge/how-to-use/setup",
-            {
-              "group": "Manage Token Bridge",
-              "pages": [
-                "en/apps/bridge/how-to-use/manage/dashboard",
-                "en/apps/bridge/how-to-use/manage/bridge-form",
-                "en/apps/bridge/how-to-use/manage/confirmation",
-                "en/apps/bridge/how-to-use/manage/supported-assets"
-              ]
-            }
+            "en/apps/bridge/how-to-use/manage/dashboard",
+            "en/apps/bridge/how-to-use/manage/bridge-form",
+            "en/apps/bridge/how-to-use/manage/confirmation",
+            "en/apps/bridge/how-to-use/manage/supported-assets"
           ]
         },
         {
@@ -657,15 +592,10 @@
           "pages": [
             "en/apps/earn/introduction",
             "en/apps/earn/set-up",
-            {
-              "group": "Manage Earn",
-              "pages": [
-                "en/apps/earn/overview",
-                "en/apps/earn/subscribe",
-                "en/apps/earn/redeem",
-                "en/apps/earn/view"
-              ]
-            }
+            "en/apps/earn/overview",
+            "en/apps/earn/subscribe",
+            "en/apps/earn/redeem",
+            "en/apps/earn/view"
           ]
         },
         {
@@ -702,32 +632,32 @@
           ]
         },
         {
-          "group": "Manage Cobo Accounts",
+          "group": "Manage login methods",
           "pages": [
-            {
-              "group": "Manage login methods",
-              "pages": [
-                "en/accounts/add-passkey-as-login-method",
-                "en/accounts/modify-existing-login-methods"
-              ]
-            },
-            {
-              "group": "Manage multi-factor authentications",
-              "pages": [
-                "en/accounts/reset-google-authenticator",
-                "en/accounts/delete-security-keys",
-                "en/accounts/reset-cobo-guard"
-              ]
-            },
-            {
-              "group": "Troubleshoot",
-              "pages": [
-                "en/accounts/forgot-password",
-                "en/accounts/passkeys-failed"
-              ]
-            }
+            "en/accounts/add-passkey-as-login-method",
+            "en/accounts/modify-existing-login-methods"
           ]
         },
+        {
+          "group": "Manage multi-factor authentications",
+          "pages": [
+            "en/accounts/reset-google-authenticator",
+            "en/accounts/delete-security-keys",
+            "en/accounts/reset-cobo-guard"
+          ]
+        },
+        {
+          "group": "Troubleshoot",
+          "pages": [
+            "en/accounts/forgot-password",
+            "en/accounts/passkeys-failed"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
         "en/guard/introduction",
         "en/guard/key-features",
         "en/guard/download",
@@ -788,27 +718,17 @@
                   "group": "资产钱包",
                   "pages": [
                     "cn/portal/custodial-wallets/asset-wallets/set-up",
-                    {
-                      "group": "管理资产钱包",
-                      "pages": [
-                        "cn/portal/custodial-wallets/asset-wallets/manage",
-                        "cn/portal/custodial-wallets/asset-wallets/transfers"
-                      ]
-                    }
+                    "cn/portal/custodial-wallets/asset-wallets/manage",
+                    "cn/portal/custodial-wallets/asset-wallets/transfers"
                   ]
                 },
                 {
                   "group": "Web3 钱包",
                   "pages": [
                     "cn/portal/custodial-wallets/web3-wallets/set-up",
-                    {
-                      "group": "管理 Web3 钱包",
-                      "pages": [
-                        "cn/portal/custodial-wallets/web3-wallets/manage",
-                        "cn/portal/custodial-wallets/web3-wallets/transfers",
-                        "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
-                      ]
-                    }
+                    "cn/portal/custodial-wallets/web3-wallets/manage",
+                    "cn/portal/custodial-wallets/web3-wallets/transfers",
+                    "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
                   ]
                 },
                 {
@@ -849,25 +769,20 @@
                         "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
                       ]
                     },
+                    "cn/portal/mpc-wallets/ocw/manage-vaults",
+                    "cn/portal/mpc-wallets/ocw/manage-wallets",
+                    "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
                     {
-                      "group": "管理机构钱包",
+                      "group": "恢复持有者组",
                       "pages": [
-                        "cn/portal/mpc-wallets/ocw/manage-vaults",
-                        "cn/portal/mpc-wallets/ocw/manage-wallets",
-                        "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
-                        {
-                          "group": "恢复持有者组",
-                          "pages": [
-                            "cn/portal/mpc-wallets/ocw/restore-from-backup",
-                            "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
-                            "cn/portal/mpc-wallets/ocw/recover-root-key"
-                          ]
-                        },
-                        "cn/portal/mpc-wallets/ocw/transfers",
-                        "cn/portal/mpc-wallets/ocw/key-share-verification",
-                        "cn/portal/mpc-wallets/ocw/dapp-interaction"
+                        "cn/portal/mpc-wallets/ocw/restore-from-backup",
+                        "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
+                        "cn/portal/mpc-wallets/ocw/recover-root-key"
                       ]
                     },
+                    "cn/portal/mpc-wallets/ocw/transfers",
+                    "cn/portal/mpc-wallets/ocw/key-share-verification",
+                    "cn/portal/mpc-wallets/ocw/dapp-interaction",
                     {
                       "group": "自动归集",
                       "pages": [
@@ -883,14 +798,9 @@
                     "cn/portal/mpc-wallets/ucw/introduction",
                     "cn/portal/mpc-wallets/ucw/object-model",
                     "cn/portal/mpc-wallets/ucw/set-up",
-                    {
-                      "group": "管理终端用户钱包",
-                      "pages": [
-                        "cn/portal/mpc-wallets/ucw/project-management",
-                        "cn/portal/mpc-wallets/ucw/vault-management",
-                        "cn/portal/mpc-wallets/ucw/wallet-management"
-                      ]
-                    }
+                    "cn/portal/mpc-wallets/ucw/project-management",
+                    "cn/portal/mpc-wallets/ucw/vault-management",
+                    "cn/portal/mpc-wallets/ucw/wallet-management"
                   ]
                 }
               ]
@@ -907,21 +817,16 @@
                     "cn/portal/smart-contract-wallets/import"
                   ]
                 },
+                "cn/portal/smart-contract-wallets/manage",
+                "cn/portal/smart-contract-wallets/manage-delegate-keys",
                 {
-                  "group": "管理智能合约钱包",
+                  "group": "充币和提币",
                   "pages": [
-                    "cn/portal/smart-contract-wallets/manage",
-                    "cn/portal/smart-contract-wallets/manage-delegate-keys",
-                    {
-                      "group": "充币和提币",
-                      "pages": [
-                        "cn/portal/smart-contract-wallets/deposit-assets",
-                        "cn/portal/smart-contract-wallets/withdraw-assets"
-                      ]
-                    },
-                    "cn/portal/smart-contract-wallets/dapp-interaction"
+                    "cn/portal/smart-contract-wallets/deposit-assets",
+                    "cn/portal/smart-contract-wallets/withdraw-assets"
                   ]
-                }
+                },
+                "cn/portal/smart-contract-wallets/dapp-interaction"
               ]
             },
             {
@@ -1027,37 +932,27 @@
           "group": "团队管理",
           "pages": [
             "cn/portal/organization/introduction",
+            "cn/portal/organization/manage-general-settings",
+            "cn/portal/organization/manage-members",
+            "cn/portal/organization/freeze-unfreeze",
+            "cn/portal/organization/manage-transaction-categories",
             {
-              "group": "设置",
+              "group": "用户角色与权限",
               "pages": [
-                "cn/portal/organization/manage-general-settings",
-                "cn/portal/organization/manage-members",
-                "cn/portal/organization/freeze-unfreeze",
-                "cn/portal/organization/manage-transaction-categories"
+                "cn/portal/organization/roles-and-permissions",
+                "cn/portal/organization/assign-roles-to-members",
+                "cn/portal/organization/create-customized-roles"
               ]
             },
             {
-              "group": "安全",
+              "group": "业务风控",
               "pages": [
-                {
-                  "group": "用户角色与权限",
-                  "pages": [
-                    "cn/portal/organization/roles-and-permissions",
-                    "cn/portal/organization/assign-roles-to-members",
-                    "cn/portal/organization/create-customized-roles"
-                  ]
-                },
-                {
-                  "group": "业务风控",
-                  "pages": [
-                    "cn/portal/organization/governance-intro",
-                    "cn/portal/organization/governance-edit",
-                    "cn/portal/organization/governance-notifications"
-                  ]
-                },
-                "cn/portal/organization/activity-logs"
+                "cn/portal/organization/governance-intro",
+                "cn/portal/organization/governance-edit",
+                "cn/portal/organization/governance-notifications"
               ]
-            }
+            },
+            "cn/portal/organization/activity-logs"
           ]
         },
         {
@@ -1165,14 +1060,9 @@
       "pages": [
         "cn/apps/introduction",
         "cn/apps/browse-and-install",
-        {
-          "group": "管理 Apps",
-          "pages": [
-            "cn/apps/transaction-policies",
-            "cn/apps/app-settings",
-            "cn/apps/workflow"
-          ]
-        }
+        "cn/apps/transaction-policies",
+        "cn/apps/app-settings",
+        "cn/apps/workflow"
       ],
       "version": "简体中文"
     },
@@ -1184,14 +1074,9 @@
           "pages": [
             "cn/apps/superloop/introduction",
             "cn/apps/superloop/set-up",
-            {
-              "group": "管理 SuperLoop",
-              "pages": [
-                "cn/apps/superloop/manage-overview",
-                "cn/apps/superloop/manage-fee-reserve",
-                "cn/apps/superloop/manage-an-exchange-account"
-              ]
-            },
+            "cn/apps/superloop/manage-overview",
+            "cn/apps/superloop/manage-fee-reserve",
+            "cn/apps/superloop/manage-an-exchange-account",
             {
               "group": "支持的交易所",
               "pages": [
@@ -1207,18 +1092,13 @@
           "pages": [
             "cn/apps/staking/introduction",
             "cn/apps/staking/set-up",
-            {
-              "group": "管理 Staking",
-              "pages": [
-                "cn/apps/staking/overview",
-                "cn/apps/staking/stake",
-                "cn/apps/staking/unstake",
-                "cn/apps/staking/withdraw",
-                "cn/apps/staking/view",
-                "cn/apps/staking/fee-structure",
-                "cn/apps/staking/supported"
-              ]
-            }
+            "cn/apps/staking/overview",
+            "cn/apps/staking/stake",
+            "cn/apps/staking/unstake",
+            "cn/apps/staking/withdraw",
+            "cn/apps/staking/view",
+            "cn/apps/staking/fee-structure",
+            "cn/apps/staking/supported"
           ]
         },
         {
@@ -1226,30 +1106,25 @@
           "pages": [
             "cn/apps/invoicing/introduction",
             "cn/apps/invoicing/set-up",
+            "cn/apps/invoicing/dashboard",
             {
-              "group": "管理 Invoicing",
+              "group": "发票",
               "pages": [
-                "cn/apps/invoicing/dashboard",
-                {
-                  "group": "发票",
-                  "pages": [
-                    "cn/apps/invoicing/invoices/create",
-                    "cn/apps/invoicing/invoices/view",
-                    "cn/apps/invoicing/invoices/manage"
-                  ]
-                },
-                {
-                  "group": "结算",
-                  "pages": [
-                    "cn/apps/invoicing/settlements/request",
-                    "cn/apps/invoicing/settlements/view"
-                  ]
-                },
-                "cn/apps/invoicing/clients",
-                "cn/apps/invoicing/titles",
-                "cn/apps/invoicing/payment"
+                "cn/apps/invoicing/invoices/create",
+                "cn/apps/invoicing/invoices/view",
+                "cn/apps/invoicing/invoices/manage"
               ]
-            }
+            },
+            {
+              "group": "结算",
+              "pages": [
+                "cn/apps/invoicing/settlements/request",
+                "cn/apps/invoicing/settlements/view"
+              ]
+            },
+            "cn/apps/invoicing/clients",
+            "cn/apps/invoicing/titles",
+            "cn/apps/invoicing/payment"
           ]
         },
         {
@@ -1265,13 +1140,8 @@
           "pages": [
             "cn/apps/reports/introduction",
             "cn/apps/reports/set-up",
-            {
-              "group": "管理 Reports",
-              "pages": [
-                "cn/apps/reports/manage",
-                "cn/apps/reports/generate"
-              ]
-            }
+            "cn/apps/reports/manage",
+            "cn/apps/reports/generate"
           ]
         },
         {
@@ -1279,15 +1149,10 @@
           "pages": [
             "cn/apps/bridge/introduction",
             "cn/apps/bridge/how-to-use/setup",
-            {
-              "group": "管理 Token Bridge",
-              "pages": [
-                "cn/apps/bridge/how-to-use/manage/dashboard",
-                "cn/apps/bridge/how-to-use/manage/bridge-form",
-                "cn/apps/bridge/how-to-use/manage/confirmation",
-                "cn/apps/bridge/how-to-use/manage/supported-assets"
-              ]
-            }
+            "cn/apps/bridge/how-to-use/manage/dashboard",
+            "cn/apps/bridge/how-to-use/manage/bridge-form",
+            "cn/apps/bridge/how-to-use/manage/confirmation",
+            "cn/apps/bridge/how-to-use/manage/supported-assets"
           ]
         },
         {
@@ -1295,15 +1160,10 @@
           "pages": [
             "cn/apps/earn/introduction",
             "cn/apps/earn/set-up",
-            {
-              "group": "管理 Earn",
-              "pages": [
-                "cn/apps/earn/overview",
-                "cn/apps/earn/subscribe",
-                "cn/apps/earn/redeem",
-                "cn/apps/earn/view"
-              ]
-            }
+            "cn/apps/earn/overview",
+            "cn/apps/earn/subscribe",
+            "cn/apps/earn/redeem",
+            "cn/apps/earn/view"
           ]
         },
         {
@@ -1340,32 +1200,32 @@
           ]
         },
         {
-          "group": "管理 Cobo Accounts",
+          "group": "管理登录方式",
           "pages": [
-            {
-              "group": "管理登录方式",
-              "pages": [
-                "cn/accounts/add-passkey-as-login-method",
-                "cn/accounts/modify-existing-login-methods"
-              ]
-            },
-            {
-              "group": "管理多重身份验证 (MFA) 方式",
-              "pages": [
-                "cn/accounts/reset-google-authenticator",
-                "cn/accounts/delete-security-keys",
-                "cn/accounts/reset-cobo-guard"
-              ]
-            },
-            {
-              "group": "问题排查",
-              "pages": [
-                "cn/accounts/forgot-password",
-                "cn/accounts/passkeys-failed"
-              ]
-            }
+            "cn/accounts/add-passkey-as-login-method",
+            "cn/accounts/modify-existing-login-methods"
           ]
         },
+        {
+          "group": "管理多重身份验证 (MFA) 方式",
+          "pages": [
+            "cn/accounts/reset-google-authenticator",
+            "cn/accounts/delete-security-keys",
+            "cn/accounts/reset-cobo-guard"
+          ]
+        },
+        {
+          "group": "问题排查",
+          "pages": [
+            "cn/accounts/forgot-password",
+            "cn/accounts/passkeys-failed"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
         "cn/guard/introduction",
         "cn/guard/key-features",
         "cn/guard/download",
