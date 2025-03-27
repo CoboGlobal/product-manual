@@ -141,7 +141,6 @@
           "group": "Custodial Wallets",
           "pages": [
             "en/portal/custodial-wallets/introduction",
-            "en/portal/custodial-wallets/key-features",
             "en/portal/custodial-wallets/cobo-loop",
             {
               "group": "Asset Wallets",
@@ -174,7 +173,6 @@
           "group": "MPC Wallets",
           "pages": [
             "en/portal/mpc-wallets/introduction",
-            "en/portal/mpc-wallets/key-features",
             {
               "group": "Organization-Controlled Wallets",
               "pages": [
@@ -238,7 +236,6 @@
           "group": "Smart Contract Wallets",
           "pages": [
             "en/portal/smart-contract-wallets/introduction",
-            "en/portal/smart-contract-wallets/key-features",
             {
               "group": "Set up Smart Contract Wallets",
               "pages": [
@@ -262,7 +259,6 @@
           "group": "Exchange Wallets",
           "pages": [
             "en/portal/exchange-wallets/introduction",
-            "en/portal/exchange-wallets/key-features",
             "en/portal/exchange-wallets/supported-exchanges",
             {
               "group": "Set up Exchange Wallets",
@@ -383,10 +379,19 @@
           ]
         },
         {
+          "group": "Bills & Payments",
+          "pages": [
+            "en/portal/bills-and-payments/introduction",
+            "en/portal/bills-and-payments/purchase-pricing-plan",
+            "en/portal/bills-and-payments/manage-pricing-plan",
+            "en/portal/bills-and-payments/manage-bills",
+            "en/portal/bills-and-payments/payment-methods"
+          ]
+        },
+        {
           "group": "Fee Station",
           "pages": [
             "en/portal/fee-station/introduction",
-            "en/portal/fee-station/key-features",
             {
               "group": "Set up Fee Station",
               "pages": [
@@ -405,20 +410,9 @@
           ]
         },
         {
-          "group": "Bills & Payments",
-          "pages": [
-            "en/portal/bills-and-payments/introduction",
-            "en/portal/bills-and-payments/purchase-pricing-plan",
-            "en/portal/bills-and-payments/manage-pricing-plan",
-            "en/portal/bills-and-payments/manage-bills",
-            "en/portal/bills-and-payments/payment-methods"
-          ]
-        },
-        {
           "group": "Address Book",
           "pages": [
             "en/portal/address-book/introduction",
-            "en/portal/address-book/key-features",
             "en/portal/address-book/set-up",
             "en/portal/address-book/manage"
           ]
@@ -433,7 +427,6 @@
           "group": "Developer Console",
           "pages": [
             "en/portal/developer-console/introduction",
-            "en/portal/developer-console/key-features",
             {
               "group": "WaaS 2.0",
               "pages": [
@@ -617,7 +610,6 @@
       "group": "",
       "pages": [
         "en/accounts/introduction",
-        "en/accounts/key-features",
         {
           "group": "Set up Cobo Accounts",
           "pages": [
@@ -654,7 +646,6 @@
       "group": "",
       "pages": [
         "en/guard/introduction",
-        "en/guard/key-features",
         "en/guard/download",
         "en/guard/set-up",
         "en/guard/manage",
@@ -704,7 +695,6 @@
           "group": "全托管钱包",
           "pages": [
             "cn/portal/custodial-wallets/introduction",
-            "cn/portal/custodial-wallets/key-features",
             "cn/portal/custodial-wallets/cobo-loop",
             {
               "group": "资产钱包",
@@ -737,7 +727,6 @@
           "group": "MPC 钱包",
           "pages": [
             "cn/portal/mpc-wallets/introduction",
-            "cn/portal/mpc-wallets/key-features",
             {
               "group": "机构钱包",
               "pages": [
@@ -801,7 +790,6 @@
           "group": "智能合约钱包",
           "pages": [
             "cn/portal/smart-contract-wallets/introduction",
-            "cn/portal/smart-contract-wallets/key-features",
             {
               "group": "设置智能合约钱包",
               "pages": [
@@ -825,7 +813,6 @@
           "group": "交易所钱包",
           "pages": [
             "cn/portal/exchange-wallets/introduction",
-            "cn/portal/exchange-wallets/key-features",
             "cn/portal/exchange-wallets/supported-exchanges",
             {
               "group": "设置交易所钱包",
@@ -946,10 +933,19 @@
           ]
         },
         {
+          "group": "账单与支付",
+          "pages": [
+            "cn/portal/bills-and-payments/introduction",
+            "cn/portal/bills-and-payments/purchase-pricing-plan",
+            "cn/portal/bills-and-payments/manage-pricing-plan",
+            "cn/portal/bills-and-payments/manage-bills",
+            "cn/portal/bills-and-payments/payment-methods"
+          ]
+        },
+        {
           "group": "Fee Station",
           "pages": [
             "cn/portal/fee-station/introduction",
-            "cn/portal/fee-station/key-features",
             {
               "group": "设置 Fee Station",
               "pages": [
@@ -968,20 +964,9 @@
           ]
         },
         {
-          "group": "账单与支付",
-          "pages": [
-            "cn/portal/bills-and-payments/introduction",
-            "cn/portal/bills-and-payments/purchase-pricing-plan",
-            "cn/portal/bills-and-payments/manage-pricing-plan",
-            "cn/portal/bills-and-payments/manage-bills",
-            "cn/portal/bills-and-payments/payment-methods"
-          ]
-        },
-        {
           "group": "地址簿",
           "pages": [
             "cn/portal/address-book/introduction",
-            "cn/portal/address-book/key-features",
             "cn/portal/address-book/set-up",
             "cn/portal/address-book/manage"
           ]
@@ -996,7 +981,6 @@
           "group": "开发者控制台",
           "pages": [
             "cn/portal/developer-console/introduction",
-            "cn/portal/developer-console/key-features",
             {
               "group": "WaaS 2.0",
               "pages": [
@@ -1180,7 +1164,6 @@
       "group": "",
       "pages": [
         "cn/accounts/introduction",
-        "cn/accounts/key-features",
         {
           "group": "设置 Cobo Accounts",
           "pages": [
@@ -1217,7 +1200,6 @@
       "group": "",
       "pages": [
         "cn/guard/introduction",
-        "cn/guard/key-features",
         "cn/guard/download",
         "cn/guard/set-up",
         "cn/guard/manage",
@@ -1381,6 +1363,78 @@
     {
       "source": "/cn/portal/portal-apps/workflow",
       "destination": "/cn/apps/workflow"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/key-features",
+      "destination": "/en/portal/custodial-wallets/introduction"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/key-features",
+      "destination": "/en/portal/mpc-wallets/introduction"
+    },
+    {
+      "source": "/en/portal/smart-contract-wallets/key-features",
+      "destination": "/en/portal/smart-contract-wallets/introduction"
+    },
+    {
+      "source": "/en/portal/exchange-wallets/key-features",
+      "destination": "/en/portal/exchange-wallets/introduction"
+    },
+    {
+      "source": "/en/portal/fee-station/key-features",
+      "destination": "/en/portal/fee-station/introduction"
+    },
+    {
+      "source": "/en/portal/address-book/key-features",
+      "destination": "/en/portal/address-book/introduction"
+    },
+    {
+      "source": "/en/portal/developer-console/key-features",
+      "destination": "/en/portal/developer-console/introduction"
+    },
+    {
+      "source": "/en/accounts/key-features",
+      "destination": "/en/accounts/introduction"
+    },
+    {
+      "source": "/en/guard/key-features",
+      "destination": "/en/guard/introduction"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/key-features",
+      "destination": "/cn/portal/custodial-wallets/introduction"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/key-features",
+      "destination": "/cn/portal/mpc-wallets/introduction"
+    },
+    {
+      "source": "/cn/portal/smart-contract-wallets/key-features",
+      "destination": "/cn/portal/smart-contract-wallets/introduction"
+    },
+    {
+      "source": "/cn/portal/exchange-wallets/key-features",
+      "destination": "/cn/portal/exchange-wallets/introduction"
+    },
+    {
+      "source": "/cn/portal/fee-station/key-features",
+      "destination": "/cn/portal/fee-station/introduction"
+    },
+    {
+      "source": "/cn/portal/address-book/key-features",
+      "destination": "/cn/portal/address-book/introduction"
+    },
+    {
+      "source": "/cn/portal/developer-console/key-features",
+      "destination": "/cn/portal/developer-console/introduction"
+    },
+    {
+      "source": "/cn/accounts/key-features",
+      "destination": "/cn/accounts/introduction"
+    },
+    {
+      "source": "/cn/guard/key-features",
+      "destination": "/cn/guard/introduction"
     }
   ]
 }
