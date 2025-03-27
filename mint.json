@@ -383,16 +383,6 @@
           ]
         },
         {
-          "group": "Bills & Payments",
-          "pages": [
-            "en/portal/bills-and-payments/introduction",
-            "en/portal/bills-and-payments/purchase-pricing-plan",
-            "en/portal/bills-and-payments/manage-pricing-plan",
-            "en/portal/bills-and-payments/manage-bills",
-            "en/portal/bills-and-payments/payment-methods"
-          ]
-        },
-        {
           "group": "Fee Station",
           "pages": [
             "en/portal/fee-station/introduction",
@@ -412,6 +402,16 @@
                 "en/portal/fee-station/transaction-records"
               ]
             }
+          ]
+        },
+        {
+          "group": "Bills & Payments",
+          "pages": [
+            "en/portal/bills-and-payments/introduction",
+            "en/portal/bills-and-payments/purchase-pricing-plan",
+            "en/portal/bills-and-payments/manage-pricing-plan",
+            "en/portal/bills-and-payments/manage-bills",
+            "en/portal/bills-and-payments/payment-methods"
           ]
         },
         {
@@ -946,16 +946,6 @@
           ]
         },
         {
-          "group": "账单与支付",
-          "pages": [
-            "cn/portal/bills-and-payments/introduction",
-            "cn/portal/bills-and-payments/purchase-pricing-plan",
-            "cn/portal/bills-and-payments/manage-pricing-plan",
-            "cn/portal/bills-and-payments/manage-bills",
-            "cn/portal/bills-and-payments/payment-methods"
-          ]
-        },
-        {
           "group": "Fee Station",
           "pages": [
             "cn/portal/fee-station/introduction",
@@ -975,6 +965,16 @@
                 "cn/portal/fee-station/view-tx-records"
               ]
             }
+          ]
+        },
+        {
+          "group": "账单与支付",
+          "pages": [
+            "cn/portal/bills-and-payments/introduction",
+            "cn/portal/bills-and-payments/purchase-pricing-plan",
+            "cn/portal/bills-and-payments/manage-pricing-plan",
+            "cn/portal/bills-and-payments/manage-bills",
+            "cn/portal/bills-and-payments/payment-methods"
           ]
         },
         {
