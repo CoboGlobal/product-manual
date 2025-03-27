@@ -398,14 +398,9 @@
                 "en/portal/fee-station/set-up-for-mpc"
               ]
             },
-            {
-              "group": "Manage Fee Station",
-              "pages": [
-                "en/portal/fee-station/manage",
-                "en/portal/fee-station/deposit",
-                "en/portal/fee-station/transaction-records"
-              ]
-            }
+            "en/portal/fee-station/manage",
+            "en/portal/fee-station/deposit",
+            "en/portal/fee-station/transaction-records"
           ]
         },
         {
@@ -954,14 +949,9 @@
                 "cn/portal/fee-station/set-up-for-mpc"
               ]
             },
-            {
-              "group": "管理 Fee Station",
-              "pages": [
-                "cn/portal/fee-station/manage",
-                "cn/portal/fee-station/deposit",
-                "cn/portal/fee-station/view-tx-records"
-              ]
-            }
+            "cn/portal/fee-station/manage",
+            "cn/portal/fee-station/deposit",
+            "cn/portal/fee-station/view-tx-records"
           ]
         },
         {
