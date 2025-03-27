@@ -129,6 +129,7 @@
             "en/portal/self-service-token-listing"
           ]
         },
+        "en/portal/security-checklist",
         "en/portal/changelog"
       ],
       "version": "English"
@@ -704,13 +705,7 @@
               "group": "How to use",
               "pages": [
                 "en/apps/reports/set-up",
-                {
-                  "group": "Manage Reports",
-                  "pages": [
-                    "en/apps/reports/manage",
-                    "en/apps/reports/generate"
-                  ]
-                }
+                "en/apps/reports/generate"
               ]
             }
           ]
@@ -871,6 +866,7 @@
             "cn/portal/self-service-token-listing"
           ]
         },
+        "cn/portal/security-checklist",
         "cn/portal/changelog"
       ],
       "version": "简体中文"
@@ -1446,13 +1442,7 @@
               "group": "使用说明",
               "pages": [
                 "cn/apps/reports/set-up",
-                {
-                  "group": "管理 Reports",
-                  "pages": [
-                    "cn/apps/reports/manage",
-                    "cn/apps/reports/generate"
-                  ]
-                }
+                "cn/apps/reports/generate"
               ]
             }
           ]

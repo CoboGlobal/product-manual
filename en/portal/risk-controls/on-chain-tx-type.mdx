@@ -5,6 +5,8 @@ lang: "en"
 description: "Understand the steps to set up a Delegate Key for on-chain transaction policies in Cobo Portal, enhancing transaction security."
 ---
 
+<Note>Transaction policies are an important security measure for your organization. It is recommended to strictly configure these policies, especially for large withdrawal scenarios, to avoid high-risk situations such as having no transaction policies, having transactions that are not covered by a transaction policy, automatically approving all transactions, or allowing the same role to both withdraw and approve transactions.</Note>
+
 <Note>Prerequisite: Please create a [Smart Contract Wallet](/en/portal/smart-contract-wallets/introduction). Note that on-chain transaction policies apply only to Smart Contract Wallets.</Note>
 
 To create an on-chain transaction policy, you must first set up a Delegate Key. The Delegate Key is an address created and assigned by Cobo Portal. It will be used to initiate, but not sign, multi-sig transactions on behalf of Safe{Wallet} signers.
