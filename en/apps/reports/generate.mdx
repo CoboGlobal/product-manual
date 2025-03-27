@@ -1,38 +1,70 @@
 ---
-title: "Generate Reports"
-sidebarTitle: "Generate Reports"
+title: "Generate and share reports"
+sidebarTitle: "Generate and share reports"
 lang: "en"
-description: "Follow the steps to generate reports in Cobo, including selecting timeframes and wallets for accurate data."
+description: "Learn how to generate reports and securely share them."
 ---
 
-<Info>Prerequisite: Ensure you have the [admin or operator](/en/portal/organization/roles-and-permissions) role.</Info>
-
-### Transaction Reports
+## Transaction Reports
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/portal-apps/reports/apps.svg" className="icon" alt="the Apps icon"/>, find Reports, then click **Open** to open Reports.
-3. Switch to the Transactions tab.
-4. Select a timezone for your report. For example, UTC+8.
-5. Select the timeframe for your report. For instance, from 1PM on 2024-09-09 to 3PM on 2024-09-10.
-6. Select one or more wallets for which you want to view transactions.
-7. Click **Generate**.
-8. You can view the status of your reports, including those that are generated, in progress, or failed.
+2. Click <img src="/en/images/portal-apps/reports/apps.svg" className="icon" alt="the Apps icon"/>, find Reports, then click **Open**.
+3. Make sure you're on the **Transactions** tab.
+    <img src="/en/images/portal-apps/reports/generate-button-tr.png" className="full_screen" alt="Generate transactions report button"/>
+4. Click **Generate** to open the report configuration window.
+    <img src="/en/images/portal-apps/reports/generate-tr.png" className="full_screen" alt="Generate transactions report window"/>
+    1. Set the **Reporting Period**:
+        - Choose a timezone (for example, UTC+8)
+        - Set the timeframe (for example, from 2024-09-09 13:00 to 2024-09-10 15:00)
+    2. Specify the **Wallet Scope**:
+        - Select all wallets for auditing purposes, or
+        - Select one or more specific wallets
+    3. Check the **Password** box if you want to enable password protection.
+    4. Click **Generate** to create the report.
+5. In the **Report Logs** section, you can:
 
-<img src="/en/images/portal-apps/reports/3.png" className="full_screen" alt="Image showing Reports as a Cobo Portal App."/>
+    <img src="/en/images/portal-apps/reports/tr-logs.png" className="full_screen" alt="Transaction report logs"/>
 
-### Asset Holdings Reports
+    - View report generation status
+    - Download reports in PDF format
+    - Share reports online:
 
-1. Log into [Cobo Portal](https://portal.cobo.com/login)。
-2. Click <img src="/en/images/portal-apps/reports/apps.svg" className="icon" alt="the Apps icon"/>, find Reports, then click **Open** to open Reports.
-3. Switch to the Asset Holdings tab.
-4. Select a timezone for your report. For example, UTC+8.
-5. Select the timestamp for your report. For example, 1PM on 2024-09-09. This means your asset balances will be captured at this specific point in time.
--  Please note that the earliest timestamp you can select is midnight on September 2, 2024.
-6. Select one or more wallets for which you want to view balances.
-7. Click **Generate**.
-8. You can view the status of your reports, including those that are generated, in progress, or failed.
+        <img src="/en/images/portal-apps/reports/share-tr.png" className="full_screen" alt="Share transaction reports"/>
 
-<img src="/en/images/portal-apps/reports/4.png" className="full_screen" alt="Image showing Reports as a Cobo Portal App."/>
+        - Generate secure links for recipients to view and download reports online
+        - Require password authentication if password protection was enabled when generating the report
+        - Control access by enabling or disabling link sharing at any time
 
+## Asset Holdings Reports
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click <img src="/en/images/portal-apps/reports/apps.svg" className="icon" alt="the Apps icon"/>, find Reports, then click **Open**.
+3. Switch to the **Asset Holdings** tab.
+    <img src="/en/images/portal-apps/reports/generate-button-ah.png" className="full_screen" alt="Generate asset holdings report button"/>
+4. Click **Generate** to open the report configuration window.
+    <img src="/en/images/portal-apps/reports/generate-ah.png" className="full_screen" alt="Generate asset holdings report window"/>
+    1. Set the **Reporting Time**:
+        - Choose a timezone (for example, UTC+8)
+        - Define the reporting time (for example, 2024-09-09 13:00)
+        <Info>The earliest timestamp you can select is midnight on September 2, 2024.</Info>
+    2. Select the report format: **By Wallets** or **By Assets**.
+    3. Specify the **Wallet Scope**:
+        - Select all wallets for auditing purposes, or
+        - Select one or more specific wallets
+    4. Check the **Password** box if you want to enable password protection.
+    5. Click **Generate** to create the report.
+5. In the **Report Logs** section, you can:
+
+    <img src="/en/images/portal-apps/reports/ah-logs.png" className="full_screen" alt="Asset holdings report logs"/>
+
+    - View report generation status
+    - Download reports in PDF format
+    - Share reports online:
+
+        <img src="/en/images/portal-apps/reports/share-ah.png" className="full_screen" alt="Share asset holdings reports"/>
+
+        - Generate secure links for recipients to view and download reports online
+        - Require password authentication if password protection was enabled when generating the report
+        - Control access by enabling or disabling link sharing at any time
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

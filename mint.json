@@ -705,13 +705,7 @@
               "group": "How to use",
               "pages": [
                 "en/apps/reports/set-up",
-                {
-                  "group": "Manage Reports",
-                  "pages": [
-                    "en/apps/reports/manage",
-                    "en/apps/reports/generate"
-                  ]
-                }
+                "en/apps/reports/generate"
               ]
             }
           ]
@@ -1448,13 +1442,7 @@
               "group": "使用说明",
               "pages": [
                 "cn/apps/reports/set-up",
-                {
-                  "group": "管理 Reports",
-                  "pages": [
-                    "cn/apps/reports/manage",
-                    "cn/apps/reports/generate"
-                  ]
-                }
+                "cn/apps/reports/generate"
               ]
             }
           ]
