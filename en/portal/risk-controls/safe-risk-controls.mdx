@@ -44,8 +44,9 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
 6. Under **Applicable Wallets**, select the MPC or Web3 Wallets and addresses you created in Step 1. 
    <Info>These addresses will become Signers of your Safe&#123;Wallet&#125; so you must select specific addresses instead of **Any Address**.</Info>
 7. Under **If**, click **+ Add Condition** and select **Safe&#123;Wallet&#125; Message Signing**. Map your Cobo Portal addresses (selected in **Applicable Wallets**) to the Safe&#123;Wallet&#125; addresses that they will sign for. The policy will be triggered when these Safe&#123;Wallet&#125; addresses request signatures.
-   <Info>For security reasons, the condition **Safe&#123;Wallet&#125; Message Signing** cannot be combined with other conditions in a policy. This ensures that your Safe&#123;Wallet&#125; message signing is protected by a dedicated policy.</Info>
+   <Info>For security reasons, the condition **Safe&#123;Wallet&#125; Message Signing** cannot be combined with other conditions such as **Initiators** and **Message Type** in a policy. This ensures that your Safe&#123;Wallet&#125; message signing is protected by a dedicated policy.</Info>
    <img src="/en/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
+
 8. Under **Then**, configure the **Approval Quorum** requirements by selecting approvers (by **User Roles** or **Users**) and setting the required number of approvals. Click **Next**.
 9. Review the policy you just configured, then click **Next**.
 10. Review the order of your policies. Transactions will be matched with policies in the list based on their priority order.
@@ -112,6 +113,14 @@ The Signer address will only execute message signing after the required number o
 The Cobo Guard interface provides comprehensive information and alerts:
 
 - Provides detailed transaction information with decoded parameters
+- For multiSend transactions, an **All Actions** section displays bundled operations, each showing as `Contract Name: Method Name` with a sequence number. 
+
+   <img src="/en/images/risk-controls/multisend.png" className="screenshot_full_screen"/>
+
+   Click to expand an operation to view details.
+
+   <img src="/en/images/risk-controls/multisend-expand.png" className="screenshot_full_screen"/>
+
 - Includes raw data that can be copied for verification
 - Marks high-risk factors with red labels that show risk details, for example:
    
