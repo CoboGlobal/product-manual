@@ -130,6 +130,14 @@
           ]
         },
         "en/portal/security-checklist",
+        {
+          "group": "Troubleshoot",
+          "pages": [
+            "en/portal/troubleshoot/custodial-wallets",
+            "en/portal/troubleshoot/mpc-wallets",
+            "en/portal/troubleshoot/exchange-wallets"
+          ]
+        },
         "en/portal/changelog"
       ],
       "version": "English"
@@ -157,14 +165,6 @@
                 "en/portal/custodial-wallets/web3-wallets/manage",
                 "en/portal/custodial-wallets/web3-wallets/transfers",
                 "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
-              ]
-            },
-            {
-              "group": "Troubleshoot",
-              "pages": [
-                "en/portal/custodial-wallets/unable-to-create-wallet",
-                "en/portal/custodial-wallets/unsupported-tokens-and-chains",
-                "en/portal/custodial-wallets/transaction-not-processed-successfully"
               ]
             }
           ]
@@ -282,8 +282,7 @@
             "en/portal/exchange-wallets/manage",
             "en/portal/transfers/from-exchange-wallets",
             "en/portal/exchange-wallets/transfers",
-            "en/portal/exchange-wallets/within-wallet",
-            "en/portal/exchange-wallets/troubleshoot"
+            "en/portal/exchange-wallets/within-wallet"
           ]
         },
         {
@@ -633,13 +632,7 @@
             "en/accounts/reset-cobo-guard"
           ]
         },
-        {
-          "group": "Troubleshoot",
-          "pages": [
-            "en/accounts/forgot-password",
-            "en/accounts/passkeys-failed"
-          ]
-        }
+        "en/accounts/troubleshoot"
       ]
     },
     {
@@ -684,6 +677,14 @@
           ]
         },
         "cn/portal/security-checklist",
+        {
+          "group": "问题排查",
+          "pages": [
+            "cn/portal/troubleshoot/custodial-wallets",
+            "cn/portal/troubleshoot/mpc-wallets",
+            "cn/portal/troubleshoot/exchange-wallets"
+          ]
+        },
         "cn/portal/changelog"
       ],
       "version": "简体中文"
@@ -1187,13 +1188,7 @@
             "cn/accounts/reset-cobo-guard"
           ]
         },
-        {
-          "group": "问题排查",
-          "pages": [
-            "cn/accounts/forgot-password",
-            "cn/accounts/passkeys-failed"
-          ]
-        }
+        "cn/accounts/troubleshoot"
       ]
     },
     {
@@ -1435,6 +1430,62 @@
     {
       "source": "/cn/guard/key-features",
       "destination": "/cn/guard/introduction"
+    },
+    {
+      "source": "/en/accounts/forgot-password",
+      "destination": "/en/accounts/troubleshoot"
+    },
+    {
+      "source": "/cn/accounts/forgot-password",
+      "destination": "/cn/accounts/troubleshoot"
+    },
+    {
+      "source": "/en/accounts/passkeys-failed",
+      "destination": "/en/accounts/troubleshoot"
+    },
+    {
+      "source": "/cn/accounts/passkeys-failed",
+      "destination": "/cn/accounts/troubleshoot"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/unable-to-create-wallet",
+      "destination": "/en/portal/troubleshoot/custodial-wallets"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/unable-to-create-wallet",
+      "destination": "/cn/portal/troubleshoot/custodial-wallets"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/unsupported-tokens-and-chains",
+      "destination": "/en/portal/troubleshoot/custodial-wallets"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/unsupported-tokens-and-chains",
+      "destination": "/cn/portal/troubleshoot/custodial-wallets"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/transaction-not-processed-successfully",
+      "destination": "/en/portal/troubleshoot/custodial-wallets"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/transaction-not-processed-successfully",
+      "destination": "/cn/portal/troubleshoot/custodial-wallets"
+    },
+    {
+      "source": "/en/portal/exchange-wallets/troubleshoot",
+      "destination": "/en/portal/troubleshoot/exchange-wallets"
+    },
+    {
+      "source": "/cn/portal/exchange-wallets/troubleshoot",
+      "destination": "/cn/portal/troubleshoot/exchange-wallets"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/enable-auto-sweep#frequently-asked-questions-faq",
+      "destination": "/en/portal/troubleshoot/mpc-wallets"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
+      "destination": "/cn/portal/troubleshoot/mpc-wallets"
     }
   ]
 }
