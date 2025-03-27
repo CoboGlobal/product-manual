@@ -708,14 +708,6 @@
                 "cn/portal/custodial-wallets/web3-wallets/transfers",
                 "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            },
-            {
-              "group": "问题排查",
-              "pages": [
-                "cn/portal/custodial-wallets/unable-to-create-wallet",
-                "cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-                "cn/portal/custodial-wallets/transaction-not-processed-successfully"
-              ]
             }
           ]
         },
@@ -832,8 +824,7 @@
             "cn/portal/exchange-wallets/manage",
             "cn/portal/transfers/from-exchange-wallets",
             "cn/portal/exchange-wallets/transfers",
-            "cn/portal/exchange-wallets/within-wallet",
-            "cn/portal/exchange-wallets/troubleshoot"
+            "cn/portal/exchange-wallets/within-wallet"
           ]
         },
         {
