@@ -149,7 +149,6 @@
           "group": "Custodial Wallets",
           "pages": [
             "en/portal/custodial-wallets/introduction",
-            "en/portal/custodial-wallets/cobo-loop",
             {
               "group": "Asset Wallets",
               "pages": [
@@ -166,7 +165,8 @@
                 "en/portal/custodial-wallets/web3-wallets/transfers",
                 "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            }
+            },
+            "en/portal/custodial-wallets/cobo-loop"
           ]
         },
         {
@@ -327,8 +327,22 @@
                 }
               ]
             },
-            "en/portal/risk-controls/governance-policies",
-            "en/portal/risk-controls/roles-and-permissions",
+            {
+              "group": "User roles and permissions",
+              "pages": [
+                "en/portal/risk-controls/roles-and-permissions",
+                "en/portal/risk-controls/assign-roles-to-members",
+                "en/portal/risk-controls/create-customized-roles"
+              ]
+            },
+            {
+              "group": "Governance policies",
+              "pages": [
+                "en/portal/risk-controls/governance-policies",
+                "en/portal/risk-controls/governance-edit",
+                "en/portal/risk-controls/governance-notifications"
+              ]
+            },
             "en/portal/risk-controls/address-list"
           ]
         }
@@ -691,7 +705,6 @@
           "group": "全托管钱包",
           "pages": [
             "cn/portal/custodial-wallets/introduction",
-            "cn/portal/custodial-wallets/cobo-loop",
             {
               "group": "资产钱包",
               "pages": [
@@ -708,7 +721,8 @@
                 "cn/portal/custodial-wallets/web3-wallets/transfers",
                 "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            }
+            },
+            "cn/portal/custodial-wallets/cobo-loop"
           ]
         },
         {
@@ -869,8 +883,22 @@
                 }
               ]
             },
-            "cn/portal/risk-controls/governance-policies",
-            "cn/portal/risk-controls/roles-and-permissions",
+            {
+              "group": "用户角色与权限",
+              "pages": [
+                "cn/portal/risk-controls/roles-and-permissions",
+                "cn/portal/risk-controls/assign-roles-to-members",
+                "cn/portal/risk-controls/create-customized-roles"
+              ]
+            },
+            {
+              "group": "业务风控",
+              "pages": [
+                "cn/portal/risk-controls/governance-policies",
+                "cn/portal/risk-controls/governance-edit",
+                "cn/portal/risk-controls/governance-notifications"
+              ]
+            },
             "cn/portal/risk-controls/address-list"
           ]
         }
