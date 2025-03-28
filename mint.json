@@ -120,7 +120,6 @@
       "group": "OVERVIEW",
       "pages": [
         "en/portal/introduction",
-        "en/portal/glossary",
         "en/portal/quick-start-guide",
         {
           "group": "Token & chain support",
@@ -138,6 +137,7 @@
             "en/portal/troubleshoot/exchange-wallets"
           ]
         },
+        "en/portal/glossary",
         "en/portal/changelog"
       ],
       "version": "English"
@@ -491,6 +491,68 @@
       "group": "BUILT BY COBO",
       "pages": [
         {
+          "group": "Earn",
+          "pages": [
+            "en/apps/earn/introduction",
+            "en/apps/earn/set-up",
+            "en/apps/earn/overview",
+            "en/apps/earn/subscribe",
+            "en/apps/earn/redeem",
+            "en/apps/earn/view"
+          ]
+        },
+        {
+          "group": "Screening",
+          "pages": [
+            "en/apps/screening/introduction",
+            "en/apps/screening/set-up",
+            "en/apps/screening/settings",
+            "en/apps/screening/risk-policies",
+            "en/apps/screening/viewscreening",
+            "en/apps/screening/recipients"
+          ]
+        },
+        {
+          "group": "OTC",
+          "pages": [
+            "en/apps/otc/introduction"
+          ]
+        },
+        {
+          "group": "Token Bridge",
+          "pages": [
+            "en/apps/bridge/introduction",
+            "en/apps/bridge/how-to-use/setup",
+            "en/apps/bridge/how-to-use/manage/dashboard",
+            "en/apps/bridge/how-to-use/manage/bridge-form",
+            "en/apps/bridge/how-to-use/manage/confirmation",
+            "en/apps/bridge/how-to-use/manage/supported-assets"
+          ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "en/apps/staking/introduction",
+            "en/apps/staking/set-up",
+            "en/apps/staking/overview",
+            "en/apps/staking/stake",
+            "en/apps/staking/unstake",
+            "en/apps/staking/withdraw",
+            "en/apps/staking/view",
+            "en/apps/staking/fee-structure",
+            "en/apps/staking/supported"
+          ]
+        },
+        {
+          "group": "Reports",
+          "pages": [
+            "en/apps/reports/introduction",
+            "en/apps/reports/set-up",
+            "en/apps/reports/manage",
+            "en/apps/reports/generate"
+          ]
+        },
+        {
           "group": "SuperLoop",
           "pages": [
             "en/apps/superloop/introduction",
@@ -506,20 +568,6 @@
                 "en/apps/superloop/supported-exchanges-bitmart"
               ]
             }
-          ]
-        },
-        {
-          "group": "Staking",
-          "pages": [
-            "en/apps/staking/introduction",
-            "en/apps/staking/set-up",
-            "en/apps/staking/overview",
-            "en/apps/staking/stake",
-            "en/apps/staking/unstake",
-            "en/apps/staking/withdraw",
-            "en/apps/staking/view",
-            "en/apps/staking/fee-structure",
-            "en/apps/staking/supported"
           ]
         },
         {
@@ -554,54 +602,6 @@
             "en/apps/batch-payouts/introduction",
             "en/apps/batch-payouts/make-payout",
             "en/apps/batch-payouts/manage-payouts"
-          ]
-        },
-        {
-          "group": "Reports",
-          "pages": [
-            "en/apps/reports/introduction",
-            "en/apps/reports/set-up",
-            "en/apps/reports/manage",
-            "en/apps/reports/generate"
-          ]
-        },
-        {
-          "group": "Token Bridge",
-          "pages": [
-            "en/apps/bridge/introduction",
-            "en/apps/bridge/how-to-use/setup",
-            "en/apps/bridge/how-to-use/manage/dashboard",
-            "en/apps/bridge/how-to-use/manage/bridge-form",
-            "en/apps/bridge/how-to-use/manage/confirmation",
-            "en/apps/bridge/how-to-use/manage/supported-assets"
-          ]
-        },
-        {
-          "group": "Earn",
-          "pages": [
-            "en/apps/earn/introduction",
-            "en/apps/earn/set-up",
-            "en/apps/earn/overview",
-            "en/apps/earn/subscribe",
-            "en/apps/earn/redeem",
-            "en/apps/earn/view"
-          ]
-        },
-        {
-          "group": "Screening",
-          "pages": [
-            "en/apps/screening/introduction",
-            "en/apps/screening/set-up",
-            "en/apps/screening/settings",
-            "en/apps/screening/risk-policies",
-            "en/apps/screening/viewscreening",
-            "en/apps/screening/recipients"
-          ]
-        },
-        {
-          "group": "OTC",
-          "pages": [
-            "en/apps/otc/introduction"
           ]
         }
       ],
@@ -670,7 +670,6 @@
       "group": "概览",
       "pages": [
         "cn/portal/introduction",
-        "cn/portal/glossary",
         "cn/portal/quick-start-guide",
         {
           "group": "代币与链支持",
@@ -688,6 +687,7 @@
             "cn/portal/troubleshoot/exchange-wallets"
           ]
         },
+        "cn/portal/glossary",
         "cn/portal/changelog"
       ],
       "version": "简体中文"
@@ -1041,6 +1041,68 @@
       "group": "COBO 出品",
       "pages": [
         {
+          "group": "Earn",
+          "pages": [
+            "cn/apps/earn/introduction",
+            "cn/apps/earn/set-up",
+            "cn/apps/earn/overview",
+            "cn/apps/earn/subscribe",
+            "cn/apps/earn/redeem",
+            "cn/apps/earn/view"
+          ]
+        },
+        {
+          "group": "Screening",
+          "pages": [
+            "cn/apps/screening/introduction",
+            "cn/apps/screening/set-up",
+            "cn/apps/screening/settings",
+            "cn/apps/screening/risk-policies",
+            "cn/apps/screening/viewscreening",
+            "cn/apps/screening/recipients"
+          ]
+        },
+        {
+          "group": "OTC",
+          "pages": [
+            "cn/apps/otc/introduction"
+          ]
+        },
+        {
+          "group": "Token Bridge",
+          "pages": [
+            "cn/apps/bridge/introduction",
+            "cn/apps/bridge/how-to-use/setup",
+            "cn/apps/bridge/how-to-use/manage/dashboard",
+            "cn/apps/bridge/how-to-use/manage/bridge-form",
+            "cn/apps/bridge/how-to-use/manage/confirmation",
+            "cn/apps/bridge/how-to-use/manage/supported-assets"
+          ]
+        },
+        {
+          "group": "Staking",
+          "pages": [
+            "cn/apps/staking/introduction",
+            "cn/apps/staking/set-up",
+            "cn/apps/staking/overview",
+            "cn/apps/staking/stake",
+            "cn/apps/staking/unstake",
+            "cn/apps/staking/withdraw",
+            "cn/apps/staking/view",
+            "cn/apps/staking/fee-structure",
+            "cn/apps/staking/supported"
+          ]
+        },
+        {
+          "group": "Reports",
+          "pages": [
+            "cn/apps/reports/introduction",
+            "cn/apps/reports/set-up",
+            "cn/apps/reports/manage",
+            "cn/apps/reports/generate"
+          ]
+        },
+        {
           "group": "SuperLoop",
           "pages": [
             "cn/apps/superloop/introduction",
@@ -1056,20 +1118,6 @@
                 "cn/apps/superloop/supported-exchanges-bitmart"
               ]
             }
-          ]
-        },
-        {
-          "group": "Staking",
-          "pages": [
-            "cn/apps/staking/introduction",
-            "cn/apps/staking/set-up",
-            "cn/apps/staking/overview",
-            "cn/apps/staking/stake",
-            "cn/apps/staking/unstake",
-            "cn/apps/staking/withdraw",
-            "cn/apps/staking/view",
-            "cn/apps/staking/fee-structure",
-            "cn/apps/staking/supported"
           ]
         },
         {
@@ -1104,54 +1152,6 @@
             "cn/apps/batch-payouts/introduction",
             "cn/apps/batch-payouts/make-payout",
             "cn/apps/batch-payouts/manage-payouts"
-          ]
-        },
-        {
-          "group": "Reports",
-          "pages": [
-            "cn/apps/reports/introduction",
-            "cn/apps/reports/set-up",
-            "cn/apps/reports/manage",
-            "cn/apps/reports/generate"
-          ]
-        },
-        {
-          "group": "Token Bridge",
-          "pages": [
-            "cn/apps/bridge/introduction",
-            "cn/apps/bridge/how-to-use/setup",
-            "cn/apps/bridge/how-to-use/manage/dashboard",
-            "cn/apps/bridge/how-to-use/manage/bridge-form",
-            "cn/apps/bridge/how-to-use/manage/confirmation",
-            "cn/apps/bridge/how-to-use/manage/supported-assets"
-          ]
-        },
-        {
-          "group": "Earn",
-          "pages": [
-            "cn/apps/earn/introduction",
-            "cn/apps/earn/set-up",
-            "cn/apps/earn/overview",
-            "cn/apps/earn/subscribe",
-            "cn/apps/earn/redeem",
-            "cn/apps/earn/view"
-          ]
-        },
-        {
-          "group": "Screening",
-          "pages": [
-            "cn/apps/screening/introduction",
-            "cn/apps/screening/set-up",
-            "cn/apps/screening/settings",
-            "cn/apps/screening/risk-policies",
-            "cn/apps/screening/viewscreening",
-            "cn/apps/screening/recipients"
-          ]
-        },
-        {
-          "group": "OTC",
-          "pages": [
-            "cn/apps/otc/introduction"
           ]
         }
       ],
@@ -1495,7 +1495,7 @@
     {
       "source": "/en/portal/mpc-wallets/ucw/object-model",
       "destination": "/en/mpc-wallets/ucw/introduction"
-    }
+    },
     {
       "source": "/cn/portal/mpc-wallets/ucw/object-model",
       "destination": "/cn/mpc-wallets/ucw/introduction"
