@@ -555,7 +555,6 @@
           "pages": [
             "en/apps/reports/introduction",
             "en/apps/reports/set-up",
-            "en/apps/reports/manage",
             "en/apps/reports/generate"
           ]
         },
@@ -614,78 +613,6 @@
                 "en/apps/batch-payouts/manage-payouts"
               ]
             }
-          ]
-        },
-        {
-          "group": "Reports",
-          "pages": [
-            "en/apps/reports/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/reports/set-up",
-                "en/apps/reports/generate"
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Token Bridge",
-          "pages": [
-            "en/apps/bridge/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/bridge/how-to-use/setup",
-                {
-                  "group": "Manage Token Bridge",
-                  "pages": [
-                    "en/apps/bridge/how-to-use/manage/dashboard",
-                    "en/apps/bridge/how-to-use/manage/bridge-form",
-                    "en/apps/bridge/how-to-use/manage/confirmation",
-                    "en/apps/bridge/how-to-use/manage/supported-assets"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Earn",
-          "pages": [
-            "en/apps/earn/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/earn/set-up",
-                {
-                  "group": "Manage Earn",
-                  "pages": [
-                    "en/apps/earn/overview",
-                    "en/apps/earn/subscribe",
-                    "en/apps/earn/redeem",
-                    "en/apps/earn/view"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Screening",
-          "pages": [
-            "en/apps/screening/introduction",
-            "en/apps/screening/set-up",
-            "en/apps/screening/settings",
-            "en/apps/screening/risk-policies",
-            "en/apps/screening/viewscreening",
-            "en/apps/screening/recipients"
-          ]
-        },
-        {
-          "group": "OTC",
-          "pages": [
-            "en/apps/otc/introduction"
           ]
         }
       ],
@@ -1182,7 +1109,6 @@
           "pages": [
             "cn/apps/reports/introduction",
             "cn/apps/reports/set-up",
-            "cn/apps/reports/manage",
             "cn/apps/reports/generate"
           ]
         },
@@ -1241,78 +1167,6 @@
                 "cn/apps/batch-payouts/manage-payouts"
               ]
             }
-          ]
-        },
-        {
-          "group": "Reports",
-          "pages": [
-            "cn/apps/reports/introduction",
-            {
-              "group": "使用说明",
-              "pages": [
-                "cn/apps/reports/set-up",
-                "cn/apps/reports/generate"
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Token Bridge",
-          "pages": [
-            "cn/apps/bridge/introduction",
-            {
-              "group": "使用说明",
-              "pages": [
-                "cn/apps/bridge/how-to-use/setup",
-                {
-                  "group": "管理 Token Bridge",
-                  "pages": [
-                    "cn/apps/bridge/how-to-use/manage/dashboard",
-                    "cn/apps/bridge/how-to-use/manage/bridge-form",
-                    "cn/apps/bridge/how-to-use/manage/confirmation",
-                    "cn/apps/bridge/how-to-use/manage/supported-assets"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Earn",
-          "pages": [
-            "cn/apps/earn/introduction",
-            {
-              "group": "使用说明",
-              "pages": [
-                "cn/apps/earn/set-up",
-                {
-                  "group": "管理 Earn",
-                  "pages": [
-                    "cn/apps/earn/overview",
-                    "cn/apps/earn/subscribe",
-                    "cn/apps/earn/redeem",
-                    "cn/apps/earn/view"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Screening",
-          "pages": [
-            "cn/apps/screening/introduction",
-            "cn/apps/screening/set-up",
-            "cn/apps/screening/settings",
-            "cn/apps/screening/risk-policies",
-            "cn/apps/screening/viewscreening",
-            "cn/apps/screening/recipients"
-          ]
-        },
-        {
-          "group": "OTC",
-          "pages": [
-            "cn/apps/otc/introduction"
           ]
         }
       ],
