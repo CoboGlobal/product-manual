@@ -14,8 +14,8 @@ description: "掌握如何设置链下交易的合约交互风控。"
 3. 点击**创建交易风控规则** > **合约交互**。
 <img src="/cn/images/risk-controls/create_policy_cn.png" className="screenshot_full_screen"/>
 4. 输入**交易风控规则名称**。名称不得超过 30 个字符。
-5. 选择您要创建的风控所适用的所有**适用钱包**。
-6. 选择您要创建的风控所适用的所有**适用链**。对于 MPC 钱包，支持的链为 **所有 EVM 链**和 **SOL**。
+5. 选择您要创建的风控所适用的所有钱包。
+6. 选择您要创建的风控所适用的所有链。对于 Web3 钱包和 MPC 钱包，支持的链为 **所有 EVM 链**和 **SOL**。
 7. 点击 **+ 添加条件**选择条件模板。您可以为每个风控添加一个或多个条件。如果应用了多个条件，只有当交易满足所有条件时，风控才会被触发。要了解关于条件的更多信息，请查看[选择条件模板](/cn/portal/risk-controls/off-chain-tx-set-contract-call#select-condition-template)。
    - 您可以选择跳过条件设置，直接进入下一步。这样与适用钱包相关的所有交易签名都将触发此风控。
 8. 选择在风控触发时采取的动作（即**自动通过**、**自动拒绝**和**审批门槛**），然后点击**下一页**。要了解关于审批动作的更多信息，请查看[设置审批动作](/cn/portal/risk-controls/off-chain-tx-set-contract-call#set-approval-action)。
