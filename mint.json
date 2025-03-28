@@ -429,57 +429,51 @@
       "version": "English"
     },
     {
-      "group": "DEVELOP WITH COBO",
+      "group": "DEVELOPER CONSOLE",
       "pages": [
+        "en/portal/developer-console/introduction",
         {
-          "group": "Developer Console",
+          "group": "WaaS 2.0",
           "pages": [
-            "en/portal/developer-console/introduction",
+            "en/portal/developer-console/overview",
             {
-              "group": "WaaS 2.0",
+              "group": "API keys",
               "pages": [
-                "en/portal/developer-console/overview",
-                {
-                  "group": "API keys",
-                  "pages": [
-                    "en/portal/developer-console/why-create-api-keys",
-                    "en/portal/developer-console/create-api-key",
-                    "en/portal/developer-console/manage-api-key"
-                  ]
-                },
-                {
-                  "group": "Webhooks",
-                  "pages": [
-                    "en/portal/developer-console/webhooks-intro",
-                    "en/portal/developer-console/webhooks-create",
-                    "en/portal/developer-console/webhooks-manage"
-                  ]
-                },
-                {
-                  "group": "Callbacks",
-                  "pages": [
-                    "en/portal/developer-console/callbacks-intro",
-                    "en/portal/developer-console/callbacks-notif-subs",
-                    "en/portal/developer-console/callbacks-register"
-                  ]
-                },
-                "en/portal/developer-console/api-logs",
-                "en/portal/developer-console/webhook-events",
-                "en/portal/developer-console/callback-messages"
+                "en/portal/developer-console/why-create-api-keys",
+                "en/portal/developer-console/create-api-key",
+                "en/portal/developer-console/manage-api-key"
               ]
             },
             {
-              "group": "Cobo Portal Apps",
+              "group": "Webhooks",
               "pages": [
-                "en/portal/developer-console/api-dashboard",
-                "en/portal/developer-console/app-usage",
-                "en/portal/developer-console/app-api-logs",
-                "en/portal/developer-console/app-webhooks"
+                "en/portal/developer-console/webhooks-intro",
+                "en/portal/developer-console/webhooks-create",
+                "en/portal/developer-console/webhooks-manage"
               ]
-            }
+            },
+            {
+              "group": "Callbacks",
+              "pages": [
+                "en/portal/developer-console/callbacks-intro",
+                "en/portal/developer-console/callbacks-notif-subs",
+                "en/portal/developer-console/callbacks-register"
+              ]
+            },
+            "en/portal/developer-console/api-logs",
+            "en/portal/developer-console/webhook-events",
+            "en/portal/developer-console/callback-messages"
           ]
         },
-        "en/portal/portal-apps/build"
+        {
+          "group": "Cobo Portal Apps",
+          "pages": [
+            "en/portal/developer-console/api-dashboard",
+            "en/portal/developer-console/app-usage",
+            "en/portal/developer-console/app-api-logs",
+            "en/portal/developer-console/app-webhooks"
+          ]
+        }
       ],
       "version": "English"
     },
@@ -490,7 +484,8 @@
         "en/apps/browse-and-install",
         "en/apps/transaction-policies",
         "en/apps/app-settings",
-        "en/apps/workflow"
+        "en/apps/workflow",
+        "en/apps/build"
       ],
       "version": "English"
     },
@@ -985,57 +980,51 @@
       "version": "简体中文"
     },
     {
-      "group": "开发者专区",
+      "group": "开发者控制台",
       "pages": [
+        "cn/portal/developer-console/introduction",
         {
-          "group": "开发者控制台",
+          "group": "WaaS 2.0",
           "pages": [
-            "cn/portal/developer-console/introduction",
+            "cn/portal/developer-console/overview",
             {
-              "group": "WaaS 2.0",
+              "group": "API keys",
               "pages": [
-                "cn/portal/developer-console/overview",
-                {
-                  "group": "API keys",
-                  "pages": [
-                    "cn/portal/developer-console/why-create-api-keys",
-                    "cn/portal/developer-console/create-api-key",
-                    "cn/portal/developer-console/manage-api-key"
-                  ]
-                },
-                {
-                  "group": "Webhooks",
-                  "pages": [
-                    "cn/portal/developer-console/webhooks-intro",
-                    "cn/portal/developer-console/webhooks-create",
-                    "cn/portal/developer-console/webhooks-manage"
-                  ]
-                },
-                {
-                  "group": "Callbacks",
-                  "pages": [
-                    "cn/portal/developer-console/callbacks-intro",
-                    "cn/portal/developer-console/callbacks-notif-subs",
-                    "cn/portal/developer-console/callbacks-register"
-                  ]
-                },
-                "cn/portal/developer-console/api-logs",
-                "cn/portal/developer-console/webhook-events",
-                "cn/portal/developer-console/callback-messages"
+                "cn/portal/developer-console/why-create-api-keys",
+                "cn/portal/developer-console/create-api-key",
+                "cn/portal/developer-console/manage-api-key"
               ]
             },
             {
-              "group": "Cobo Portal Apps",
+              "group": "Webhooks",
               "pages": [
-                "cn/portal/developer-console/api-dashboard",
-                "cn/portal/developer-console/app-usage",
-                "cn/portal/developer-console/app-api-logs",
-                "cn/portal/developer-console/app-webhooks"
+                "cn/portal/developer-console/webhooks-intro",
+                "cn/portal/developer-console/webhooks-create",
+                "cn/portal/developer-console/webhooks-manage"
               ]
-            }
+            },
+            {
+              "group": "Callbacks",
+              "pages": [
+                "cn/portal/developer-console/callbacks-intro",
+                "cn/portal/developer-console/callbacks-notif-subs",
+                "cn/portal/developer-console/callbacks-register"
+              ]
+            },
+            "cn/portal/developer-console/api-logs",
+            "cn/portal/developer-console/webhook-events",
+            "cn/portal/developer-console/callback-messages"
           ]
         },
-        "cn/portal/portal-apps/build"
+        {
+          "group": "Cobo Portal Apps",
+          "pages": [
+            "cn/portal/developer-console/api-dashboard",
+            "cn/portal/developer-console/app-usage",
+            "cn/portal/developer-console/app-api-logs",
+            "cn/portal/developer-console/app-webhooks"
+          ]
+        }
       ],
       "version": "简体中文"
     },
@@ -1046,7 +1035,8 @@
         "cn/apps/browse-and-install",
         "cn/apps/transaction-policies",
         "cn/apps/app-settings",
-        "cn/apps/workflow"
+        "cn/apps/workflow",
+        "cn/apps/build"
       ],
       "version": "简体中文"
     },
@@ -1495,6 +1485,14 @@
     {
       "source": "/cn/portal/mpc-wallets/ocw/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
       "destination": "/cn/portal/troubleshoot/mpc-wallets"
+    },
+    {
+      "source": "/en/portal/portal-apps/build",
+      "destination": "/en/apps/build"
+    },
+    {
+      "source": "/cn/portal/portal-apps/build",
+      "destination": "/cn/apps/build"
     }
   ]
 }
