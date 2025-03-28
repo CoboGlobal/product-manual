@@ -177,7 +177,6 @@
               "group": "Organization-Controlled Wallets",
               "pages": [
                 "en/portal/mpc-wallets/ocw/introduction",
-                "en/portal/mpc-wallets/ocw/object-model",
                 {
                   "group": "Set up Organization-Controlled Wallets",
                   "pages": [
@@ -223,7 +222,6 @@
               "group": "User-Controlled Wallets",
               "pages": [
                 "en/portal/mpc-wallets/ucw/introduction",
-                "en/portal/mpc-wallets/ucw/object-model",
                 "en/portal/mpc-wallets/ucw/set-up",
                 "en/portal/mpc-wallets/ucw/project-management",
                 "en/portal/mpc-wallets/ucw/vault-management",
@@ -610,7 +608,7 @@
       "version": "English"
     },
     {
-      "group": "",
+      "group": "Cobo Accounts",
       "pages": [
         "en/accounts/introduction",
         {
@@ -637,10 +635,11 @@
           ]
         },
         "en/accounts/troubleshoot"
-      ]
+      ],
+      "version": "English"
     },
     {
-      "group": "",
+      "group": "Cobo Guard",
       "pages": [
         "en/guard/introduction",
         "en/guard/download",
@@ -652,7 +651,7 @@
       "version": "English"
     },
     {
-      "group": "",
+      "group": "Cobo Connect",
       "pages": [
         "en/cobo-connect/introduction",
         "en/cobo-connect/set-up",
@@ -728,7 +727,6 @@
               "group": "机构钱包",
               "pages": [
                 "cn/portal/mpc-wallets/ocw/introduction",
-                "cn/portal/mpc-wallets/ocw/object-model",
                 {
                   "group": "创建机构钱包",
                   "pages": [
@@ -774,7 +772,6 @@
               "group": "终端用户钱包",
               "pages": [
                 "cn/portal/mpc-wallets/ucw/introduction",
-                "cn/portal/mpc-wallets/ucw/object-model",
                 "cn/portal/mpc-wallets/ucw/set-up",
                 "cn/portal/mpc-wallets/ucw/project-management",
                 "cn/portal/mpc-wallets/ucw/vault-management",
@@ -1161,7 +1158,7 @@
       "version": "简体中文"
     },
     {
-      "group": "",
+      "group": "Cobo Accounts",
       "pages": [
         "cn/accounts/introduction",
         {
@@ -1188,10 +1185,11 @@
           ]
         },
         "cn/accounts/troubleshoot"
-      ]
+      ],
+      "version": "简体中文"
     },
     {
-      "group": "",
+      "group": "Cobo Guard",
       "pages": [
         "cn/guard/introduction",
         "cn/guard/download",
@@ -1203,7 +1201,7 @@
       "version": "简体中文"
     },
     {
-      "group": "",
+      "group": "Cobo Connect",
       "pages": [
         "cn/cobo-connect/introduction",
         "cn/cobo-connect/set-up",
@@ -1493,6 +1491,22 @@
     {
       "source": "/cn/portal/portal-apps/build",
       "destination": "/cn/apps/build"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ucw/object-model",
+      "destination": "/en/mpc-wallets/ucw/introduction"
+    }
+    {
+      "source": "/cn/portal/mpc-wallets/ucw/object-model",
+      "destination": "/cn/mpc-wallets/ucw/introduction"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/object-model",
+      "destination": "/en/mpc-wallets/ucw/introduction"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/object-model",
+      "destination": "/cn/mpc-wallets/ucw/introduction"
     }
   ]
 }
