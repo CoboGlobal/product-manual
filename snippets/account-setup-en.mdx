@@ -1,17 +1,8 @@
-## Prerequisites
-
-* [Contact our sales team](https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales) to acquire your account activation link.
-
-* An iOS device to run [Cobo Guard](/en/guard/introduction), an iOS app designed by Cobo for multi-factor authentication (MFA), operation approval, transaction signing, and key share management.
-
 ## Set up accounts and organization
-
 As the first admin of your organization, complete these initial steps to configure your account and organization:
 
 ### Create an account
-
 Use the activation link from our sales team to create your Cobo Portal account.
-
 
 ### Set up Cobo Guard
    1. Log in to Cobo Portal.
@@ -21,16 +12,39 @@ Use the activation link from our sales team to create your Cobo Portal account.
       <img src="/en/images/get-started/cobo-guard.png" className="screenshot_nav_bar" alt="Set up Cobo Guard"/>
    3. Follow the instructions on the screen to install Cobo Guard on your iOS device and link your account with your Cobo Guard.
 
-   
+### Configure governance policies and user roles
+<Note>If you're in the testing phase and want to quickly verify deposits and withdrawals first, you can skip this section for now and configure them later.</Note>
 
-### Invite team members
+<Accordion title="Set up governance policies and user roles">
+Configuring governance policies and user roles is essential for managing access control and security in your organization. 
+
+- [User roles](/en/portal/organization/roles-and-permissions) enable you to assign specific permissions to designated members within your organization. When you [assign a role to a member](/en/portal/organization/assign-roles-to-members), they can only perform actions allowed by that role. For instance, a member with the Viewer role can see wallet information but cannot withdraw tokens. 
+
+  Cobo offers preset user roles. You can also [create custom roles](/en/portal/organization/create-customized-roles) tailored to your specific requirements.
+
+
+- [Governance policies](/en/portal/organization/governance-intro) define approval rules for key operations (such as member deletion, organization freezing, and API key management), using mechanisms such as auto-approval, auto-rejection, and approval quorum. You can [edit governance policies](/en/portal/organization/governance-edit) if the default ones don't align with your organizational needs. 
+
+  For example, you can configure a policy to require approvals from at least two members with either Admin or Manager role before executing a member deletion, as illustrated in the screenshot below.
+
+  <img src="/en/images/quick-start-guide-custodial-wallets/delete-members.png" className="screenshot_full_screen" alt="Delete members"/>
+
+
+
+
+
+</Accordion>
+
+### Invite members
    1. Log in to Cobo Portal.
       * For testing purposes, use the [development environment](https://portal.dev.cobo.com/login).
       * For production, use the [production environment](https://portal.cobo.com/login).
    2. Click the profile icon at the bottom left, and then click **Organization**.
    3. Click **Members**. On the **Members** page, click **Invite Members**.
-   4. Enter the team member's email address and name, and then select appropriate user roles. To learn security best practices for assigning user roles, see [Assign user roles to members](/en/portal/organization/assign-roles-to-members).
-   <Note>Confirm on Cobo Guard that this invitation was initiated by you. Also, as a default security policy, at least half of your organization admins must approve the invitation request on Cobo Guard.</Note>
+   4. Enter the member's email address and name, and then select appropriate [user roles](#set-up-governance-policies-and-user-roles).
+   <Note>Confirm on Cobo Guard that this invitation was initiated by you. Also, as a default governance policy, at least half of your organization admins must approve the invitation request on Cobo Guard.</Note>
+
+   Upon receiving the invitation, new members should create their own accounts and set up Cobo Guard as described in the previous sections.
 
 ### Add chains
 
@@ -43,3 +57,9 @@ View and manage the chains available for your organization:
    3. Navigate to **Supported Chains** and click the **Chain Management** icon.
    <img src="/en/images/get-started/add-chain.png" className="screenshot_full_screen" alt="Add Chains"/>
    4. On the **Chain Management** page, review the list of available chains. If the chains you need are not present, click **Add Chains** to include additional chains for your organization's use.
+
+   <Note>After adding a chain, all its supported tokens will be available for deposit and withdrawal in your wallets.</Note>
+
+   <Info>To view a full list of tokens and chains supported by Cobo, see [Supported tokens and chains](/en/portal/supported-tokens-and-chains).</Info>
+
+
