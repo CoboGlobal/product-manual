@@ -121,7 +121,13 @@
       "pages": [
         "en/portal/introduction",
         "en/portal/glossary",
-        "en/portal/quick-start-guide",
+        {
+          "group": "Quick start guide",
+          "pages": [
+            "/en/portal/quick-start-guide-custodial-wallets",
+            "/en/portal/quick-start-guide-mpc"
+          ]
+        },
         {
           "group": "Token & chain support",
           "pages": [
