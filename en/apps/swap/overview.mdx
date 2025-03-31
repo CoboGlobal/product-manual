@@ -1,37 +1,62 @@
+---
+title: "Overview"
+sidebarTitle: "Overview"
+lang: "en"
+description: "Learn the swap feature of the Token Swap Cobo Portal App."
+---
 
-## Overview  
-Cobo Swap is designed to provide institutional-grade token swap capabilities within a fully custodial environment, ensuring security, efficiency, and cost optimization for enterprises, exchanges, and high-frequency traders. Unlike traditional CEX-based swaps, Cobo Swap eliminates the need for off-platform transfers, reducing counterparty risk, transaction delays, and operational inefficiencies.  
+## Overview
 
-Through our on-chain liquidity aggregation and real-time pricing engine, you can swap BTC, ETH, SOL, and other major assets to stablecoins (USDT, USDC) across multiple chains, including Ethereum, Tron, BSC, Polygon, and Solana. With competitive fees and API integration capabilities, Cobo Swap is optimized for both institutional-scale high-volume trades and frequent, cost-sensitive transactions.  
+Token Swap is a Cobo Portal App developed by Cobo. It provides two core functionalities:
+
+- **Bridge**: Transfers the same token across different blockchains.
+- **Swap**: Converts one token into another, potentially across chains.
+
+This document focuses on the **Swap** functionality.
+
+Designed for custodial wallet users, Swap enables seamless token conversions—whether within the same chain or across chains—through a single action. Users only need to select the source and target tokens; the system automatically determines whether a bridge is required and handles routing, pricing, and execution behind the scenes. There is no need to sign transactions, interact with smart contracts, or manage approvals.
+
+By abstracting away the complexities of decentralized finance, Swap helps institutions securely manage and rebalance assets across chains, reduce operational steps, and maintain audit-ready transaction trails—all within a controlled environment.
 
 
-## Key Features  
+<Note>
+- Only custodial wallets are supported in the current release.  
+- Initial token support focuses on stablecoins (e.g., USDT, USDC), with more assets to be added.  
+- Users must ensure the relevant wallets and tokens are authorized before submitting a swap.  
+- Swaps are executed non-atomically; Cobo handles settlement and delivery on behalf of the user.
+</Note>
 
-### Swap Directly Within Custody, No External Transfers Needed  
-Managing assets across multiple platforms can be time-consuming and risky. Cobo Swap allows you to swap assets directly within your custodial environment, so there’s no need to transfer funds to external exchanges. This reduces security risks, minimizes operational complexity, and helps you manage your portfolio seamlessly. Institutions can instantly optimize asset allocation across multiple chains without the hassle of off-platform transactions.  
+## Key features
 
-### Transparent, Competitive Fees  
-Understanding swap fees is crucial for cost-effective trading. Cobo Swap provides full transparency on fees, with real-time rate calculations so you always know the exact cost before executing a swap. Our pricing is optimized for institutional users and is designed to be as competitive as, or even better than, leading exchanges like Binance.  
+### Seamless one-step swap
 
-### Real-Time Exchange Rates and Smart Liquidity Optimization  
-When making a swap, getting the best price at the right moment matters. Cobo Swap displays live exchange rates before execution, ensuring full visibility into the expected trade outcome. The platform dynamically sources the best rates from multiple liquidity providers, so you get the most favorable execution price available.  
+Whether exchanging tokens on the same chain or across chains, users initiate swaps through a single interface. The system handles all underlying steps—bridging, slippage control, execution, and delivery—so users can focus on the end result, not the process.
 
-### Automated Trading with API Support  
-For high-frequency and institutional traders, manual execution isn’t scalable. Cobo Swap offers full API integration, allowing you to automate swaps and execute large-scale transactions efficiently. The API also enables automated liquidity adjustments, so you can set predefined thresholds and trigger swaps based on real-time market conditions.  
+This is especially valuable in custodial environments, where users may not have access to Web3 wallets or the ability to interact with smart contracts directly.
 
-### Optimized for Both High-Frequency and Large-Scale Swaps  
-Whether you are executing small, frequent swaps or managing multi-million-dollar institutional trades, Cobo Swap is built to handle both. The platform supports a wide range of swap sizes, from as little as 10 USDT to over a million USDT in a single transaction. With millisecond-level execution speed, you can move large sums across chains without delays or slippage risks.  
+### Guaranteed settlement with fixed quote
 
-### Multi-Chain Support with Institutional-Grade Liquidity  
-Managing liquidity across multiple blockchains can be a challenge. Cobo Swap supports seamless stablecoin swaps, including ERC-20, TRC-20, BEP-20, and SPL versions of USDT and USDC. You can easily convert tokens across different chains without complex bridging, ensuring consistent liquidity across all your operational networks.  
+Each swap is presented with a guaranteed "one-price" quote. Once confirmed, the execution is handled by Cobo, and the exact quoted amount is delivered. This helps reduce risk associated with price volatility and eliminates the need for users to manage partial fills or failed transactions.
 
-## Why Choose Cobo Swap?  
-Cobo Swap is built for enterprises, trading desks, and institutional users who need efficiency, cost-effectiveness, and security in their asset conversions. Whether you’re executing frequent small swaps or managing large-scale liquidity adjustments, Cobo Swap ensures a seamless and optimized trading experience.  
+This feature is particularly useful in time-insensitive treasury workflows, such as stablecoin rebalancing or preparing assets for investment.
 
-- Secure and custodial – No need to move assets off-platform, reducing operational risks  
-- Competitive fees – Transparent pricing designed to match or outperform leading CEXs  
-- Real-time pricing – Live exchange rates with smart liquidity aggregation  
-- API-driven automation – Optimize fund allocation and automate trading strategies  
-- Multi-chain, high-volume support – Institutional-grade liquidity across Ethereum, Tron, BSC, Solana, Polygon, and more  
+### Native cross-chain support
 
-Cobo Swap makes token swapping simple, efficient, and cost-effective—so you can focus on what matters most.
+If a swap involves different chains (e.g., Ethereum → BNB Chain), the system automatically includes a bridge step as part of the swap execution—no separate bridge operation is required. This simplifies cross-chain operations that would otherwise require multiple transactions and tools.
+
+Cross-chain abstraction is helpful when acquiring gas tokens on new chains, or when repositioning assets across networks as part of treasury operations.
+
+### Integrated risk and permission control
+
+Swap respects existing organization-level security controls. All requests follow the same role-based permission system and Transfer risk control policies, including whitelist enforcement and transaction limits. This ensures consistent enforcement of internal compliance requirements.
+
+This is critical for institutions needing predictable workflows and controlled execution environments.
+
+### Transparent and traceable
+
+All swap transactions include full metadata: request details, status updates, and execution timelines. Users and administrators can review each transaction’s history and confirm the outcome.
+
+Combined with a clear fee structure—including slippage, gas costs, and platform fees—this supports auditability and internal cost attribution.
+
+<img src="/en/images/portal-apps/installing.png" className="screenshot_full_screen" alt="The app is installing" />
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
