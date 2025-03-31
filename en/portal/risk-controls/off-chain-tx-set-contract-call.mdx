@@ -5,16 +5,18 @@ lang: "en"
 description: "Discover how to set up contract call policies in Cobo Portal, enhancing security and compliance for transactions."
 ---
 
-## Create a contract-signing policy
+<Note>Transaction policies are an important security measure for your organization. It is recommended to strictly configure these policies, especially for large withdrawal scenarios, to avoid high-risk situations such as having no transaction policies, having transactions that are not covered by a transaction policy, automatically approving all transactions, or allowing the same role to both withdraw and approve transactions.</Note>
 
-1. Log into Cobo Portal.
+## Create a contract call policy
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
 3. Click **Create Policy** > **Contract Call.**
 <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**. The name should not exceed 30 characters.
-5. Select all the **Applicable Wallets** that are applicable to the policy you are about to create.
-6. Select a **Applicable Network** that is applicable to the policy you are about to create.
-7. Under **If**, click **+ Add condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-contract-call#select-condition-template)
+5. Select all the **Applicable Wallets** for the policy you are about to create.
+6. Select an **Applicable Network** for the policy you are about to create. For Web3 wallets and MPC Wallets, the supported networks are **All EVM Networks** and **SOL**.
+7. Under **If**, click **+ Add condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-contract-call#select-condition-template).
    - You have the option to skip setting any conditions and proceed directly to the next step. This means that any transaction signing associated with the applicable wallets will trigger this policy.
 8. Select the action to be taken if the policy is triggered (i.e., **Auto Approval**, **Auto Rejection**, and **Approval Quorum**), then click **Next**. To learn more about approval actions, see [Set approval action](/en/portal/risk-controls/off-chain-tx-set-contract-call#set-approval-action).
 9. Review and confirm the policy, then click **Next**.
@@ -29,24 +31,24 @@ description: "Discover how to set up contract call policies in Cobo Portal, enha
 
 - API Keys: You can specify whether any team members, or only specific members, are allowed to initiate transactions via APIs.
 - Web Users: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
+- Apps: You can specify whether any apps, or only specific apps, are allowed to initiate transactions.
 <img src="/en/images/risk-controls/initiator.png" className="screenshot_full_screen"/>
 
 
 **Token Approval**: The policy will be triggered only if a token approval is associated with specific types of tokens, spenders, and amounts.
 - **Token Types**: You can specify the types of tokens the spenders are allowed to spend.
-- **Frequency**: You can define either the maximum amount applied per transaction or within a specified time window, denominated in hours.
-- **Amounts**: You can specify the maximum amount for the spender to spend per transaction.
+- **Frequency**: Combined with **Amounts**, you can define the amount range per transaction or within a specified time window, denominated in hours.
+- **Amounts**: You can specify the amount range for the spender to spend.
 - **Approved Spenders**: You can specify the spender addresses associated with the token approval. Note that you can only select addresses already added to the address lists. To learn more about address lists, see [Create an address list](/en/portal/risk-controls/address-list).
 <img src="/en/images/risk-controls/token-approval.png" className="screenshot_full_screen"/>
 
 
 **Token Transfers**: The policy will be triggered only if a token transfer is associated with specific token types, frequency, transfer amounts, and receiving addresses.
 - **Token Types**: You can specify the types of tokens available for transactions.
-- **Frequency**: You can define either the maximum transaction amount applied per transaction or within a specified time window, denominated in hours.
-- **Transfer Amounts**: You can set the maximum transaction amount.
-- **Receiving Addresses**: You can specify the receiving addresses for the transfer. Note that you can only select addresses already added to the address lists. Refer to the [Create an address list](/en/portal/risk-controls/address-list) section for more information.
+- **Frequency**: Combined with **Transfer Amount**, you can define the amount range per transaction or within a specified time window, denominated in hours.
+- **Transfer Amount**: You can specify the amount range for the spender to spend.
+- **Receiving Address**: You can specify the receiving addresses for the transfer. Note that you can only select addresses already added to the address lists. Refer to the [Create an address list](/en/portal/risk-controls/address-list) section for more information.
 <img src="/en/images/risk-controls/token-transfers.png" className="screenshot_full_screen"/>
-
 
 
 **Custom Contract Calls:** The policy will be triggered only if a smart contract call meets the specified criteria. You can select granularity at the **Contract-level**, **Method-level**, or **Parameter-level**.
@@ -55,8 +57,8 @@ description: "Discover how to set up contract call policies in Cobo Portal, enha
 - **Method-level**: You can specify the smart contract address and methods for the call. The policy will be triggered if both the **Target Contracts** and one of the **Methods** match the specified criteria.
   - If the displayed methods are incorrect, you can obtain the Contract Application Binary Interface (ABI) from the blockchain explorer or manually enter an ABI.
 - **Parameter-level**: You can specify the **Target Contract**, **Method**, and **Parameters** for the call. The policy will be triggered only if the **Target Contract**'s smart contract address, **Method**, and **Parameters** match the specified criteria.
-  - To add one **Parameters**, click **Create**.
-  - To add multiple **Parameters**, click **+ Add parameter** in the pop-up window. If you would like to add a Boolean group, click **+ Add Group**.
+  - To add one parameter, click **Create**.
+  - To add multiple parameters, click **+ Add parameter** in the pop-up window. If you would like to add a Boolean group, click **+ Add Group**.
   - The relationship between parameters within the same group defaults to "And" and can be switched to "Or".
   - The relationship between different groups defaults to "Or" and can be switched to "And".
   - You can configure the parameters through the **Easy Mode** interface or manually enter condition expression statements by clicking **Expert Mode**.

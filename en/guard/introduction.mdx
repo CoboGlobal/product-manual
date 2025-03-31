@@ -18,4 +18,129 @@ Cobo Guard utilizes asymmetric encryption to ensure the safety of your assets. Y
 
 <Note>We take security very seriously. To maintain our rigorous security standards, Cobo Guard is currently available exclusively for iOS devices, which provide the level of security required for our institutional-grade digital asset protection.</Note>
 
+## Key features
+
+### Multi-factor authentication (MFA) method
+
+Multi-factor authentication (MFA) adds an extra layer of security to Cobo Portal by requiring a second verification step beyond your password. This helps prevent unauthorized access, even if your password is compromised.  
+
+Cobo Guard acts as an MFA option, allowing you to quickly verify logins and sensitive operations, such as inviting new users or modifying risk controls. With a simple approval in the Cobo Guard app, you can confirm actions and ensure your account remains protected.
+
+The following screenshot shows how to use Cobo Guard to verify that you initiate an operation:
+
+<img src="/en/images/cobo-guard/mfa.png" className="screenshot_modal" alt="Multi-factor authentication (MFA)" />
+
+### Key share manager
+Securely generate, back up, and manage MPC key shares to strengthen asset protection and minimize the risk of single points of failure. By distributing key shares across multiple parties or devices, Cobo Guard ensures that no single entity has full control over private keys, enhancing overall security. 
+
+For more details on using Cobo Guard to generate and back up MPC key shares, refer to [Generate and back up your key shares](/en/guard/generate-and-back-up-key-shares).
+
+For more details on using Cobo Guard to sign transactions, refer to [Mobile co-signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#signer-type).
+
+The following screenshot shows how to use Cobo Guard to sign a transaction:
+
+<img src="/en/images/cobo-guard/sign-tx.png" className="screenshot_modal" alt="Key share manager" />
+
+### Operation approval
+
+Cobo Guard allows you to approve operations initiated by other users within the organization, such as transactions, organization management, and risk control changes. This ensures that sensitive actions undergo proper oversight before being executed.  
+
+Certain operations, based on risk control settings, require approval from designated members. Cobo Guard notifies the approvers, enabling them to review and authorize these requests directly through the app.  
+
+The following screenshot shows how to use Cobo Guard to approve an operation initiated by other members:
+
+<img src="/en/images/cobo-guard/approve.png" className="screenshot_modal" alt="Operation approval" />
+
+The following table lists operations that require other members' approval through Cobo Guard:
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Operation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">[Organization](/en/portal/organization/introduction)</td>
+      <td>Freeze organizations</td>
+    </tr>
+    <tr>
+      <td>Modify organization names</td>
+    </tr>
+    <tr>
+      <td>Modify organization logos</td>
+    </tr>
+    <tr>
+      <td rowspan="5">[Members](/en/portal/organization/manage-members)</td>
+      <td>Invite members</td>
+    </tr>
+    <tr>
+      <td>Delete members</td>
+    </tr>
+    <tr>
+      <td>Freeze members</td>
+    </tr>
+    <tr>
+      <td>Unfreeze members</td>
+    </tr>
+    <tr>
+      <td>Modify members' user roles</td>
+    </tr>
+    <tr>
+      <td>[Governance Policies](/en/portal/organization/governance-intro)</td>
+      <td>Modify governance policies</td>
+    </tr>
+    <tr>
+      <td>[Transfers](/en/portal/transfers/introduction)</td>
+      <td>Make withdrawals</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Wallets</td>
+      <td>[Manage Address Book](/en/portal/address-book/manage)</td>
+    </tr>
+    <tr>
+      <td>[Manage off-chain transaction policies](/en/portal/risk-controls/off-chain-tx-set-transfer)</td>
+    </tr>
+    <tr>
+      <td>[Manage address lists](/en/portal/risk-controls/address-list)</td>
+    </tr>
+    <tr>
+      <td rowspan="2">[Developer Console](/en/portal/developer-console/introduction)</td>
+      <td>[Manage API keys](/en/portal/developer-console/manage-api-key)</td>
+    </tr>
+    <tr>
+      <td>[Manage webhook endpoints](/en/portal/developer-console/webhooks-manage)</td>
+    </tr>
+    <tr>
+      <td rowspan="3">[MPC Wallets (Organization-Controlled Wallets)](/en/portal/mpc-wallets/ocw/introduction)</td>
+      <td>Create Main Groups</td>
+    </tr>
+    <tr>
+      <td>Create Signing Groups</td>
+    </tr>
+    <tr>
+      <td>Create Recovery Groups</td>
+    </tr>
+    <tr>
+      <td>[MPC Wallets (User-Controlled Wallets)](/en/portal/mpc-wallets/ucw/introduction)</td>
+      <td>Create projects</td>
+    </tr>
+    <tr>
+      <td rowspan="3">[Smart Contract Wallets](/en/portal/smart-contract-wallets/introduction)</td>
+      <td>Modify wallet names or labels</td>
+    </tr>
+    <tr>
+      <td>Create Safe&#123;Wallet&#125;</td>
+    </tr>
+    <tr>
+      <td>Create on-chain transaction policies</td>
+    </tr>
+    <tr>
+      <td>[Exchange Wallets](/en/portal/exchange-wallets/introduction)</td>
+      <td>Transfer between Main Accounts and Sub Accounts</td>
+    </tr>
+  </tbody>
+</table>
+
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

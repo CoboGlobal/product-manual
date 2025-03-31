@@ -13,19 +13,21 @@ Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作
 
 ## 步骤
 
+<Note>前提条件：请确保您在进行以下步骤前，已经在 [Safe&#123;Wallet&#125; 官网](https://app.safe.global) 创建了您的多签钱包。</Note>
+
 按照以下步骤设置 Safe&#123;Wallet&#125; 消息签名风控：
 
 ### 步骤 1：在 Cobo Portal 上创建 MPC 或 Web3 钱包地址
 
 <Info>建议专门为 Safe&#123;Wallet&#125; 消息签名创建一个独立的钱包，与其他业务用途的钱包分开。这种分离可以使风控规则管理更加明确，提高安全性。</Info>
 
-创建 MPC 钱包：
+创建 MPC 钱包地址用作 Safe&#123;Wallet&#125; 的签名人：
 1. [创建 MPC 钱包](/cn/portal/mpc-wallets/ocw/create-mpc-wallet)。
-2. 点击进入您的钱包。选择**地址**标签页。点击**添加地址**来创建新地址，用作 Safe&#123;Wallet&#125; 的签名人。
+2. 点击进入您的钱包。选择**地址**标签页。点击**添加地址**来创建新地址，**网络**选择**所有 EVM 链**。
 
-创建 Web3 钱包：
+创建 Web3 钱包地址用作 Safe&#123;Wallet&#125; 的签名人：
 1. [创建 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)。
-2. 点击进入您的钱包。点击**创建地址**来创建新地址，用作 Safe&#123;Wallet&#125; 的签名人。
+2. 点击进入您的钱包。点击**创建地址**来创建新地址，**网络**选择**所有 EVM 链**。
 
 ### 步骤 2：在 Cobo Portal 上创建 Safe&#123;Wallet&#125; 消息签名规则
 
@@ -48,7 +50,7 @@ Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作
    <Info>这些地址将成为您的 Safe&#123;Wallet&#125; 的签名人，因此您必须选择指定地址而不是**任意地址**。</Info>
 
 7. 在**如果**下，点击 **+ 添加条件** 并选择 **Safe&#123;Wallet&#125; 消息签名**。为您的签名人地址（在**适用钱包**中选择的 Cobo Portal 地址）提供对应的 Safe&#123;Wallet&#125; 地址。当这些 Safe&#123;Wallet&#125; 地址请求签名时，规则将被触发。
-   <Info>出于安全考虑，条件 **Safe&#123;Wallet&#125; 消息签名**不能与其他条件组合使用，这确保您的 Safe&#123;Wallet&#125; 消息签名受专用规则保护。</Info>
+   <Info>出于安全考虑，条件 **Safe&#123;Wallet&#125; 消息签名**不能与其他条件（如**发起者**和**消息类型**）组合使用，这确保您的 Safe&#123;Wallet&#125; 消息签名受专用规则保护。</Info>
 
    <img src="/cn/images/risk-controls/safewalletsigning.png" className="screenshot_full_screen"/>
 
@@ -93,7 +95,17 @@ Safe&#123;Wallet&#125; 需要强大的安全措施来保护其多重签名操作
 
 ### 步骤 4：在 Safe&#123;Wallet&#125; 中添加 Cobo Portal 地址作为签名人
 
-进入您的 Safe&#123;Wallet&#125;，添加相应的 Cobo Portal 地址作为签名人。
+进入您的 Safe&#123;Wallet&#125;，添加相应的 Cobo Portal 地址作为签名人：
+
+1. 在您的 Safe&#123;Wallet&#125; 中，进入 **Settings**，找到 **Members** 部分。点击 **+ Add signer**。
+
+   <img src="/en/images/risk-controls/safe1.png" className="screenshot_full_screen"/>
+
+2. 输入要作为签名人的 Cobo Portal 钱包地址，调整签名门槛（可选），然后点击 **Next**。
+
+   <img src="/en/images/risk-controls/safe2.png" className="screenshot_full_screen"/>
+
+3. 签名并执行交易，使这些变更生效。
 
 ### 步骤 5：发起 Safe&#123;Wallet&#125; 交易
 
@@ -124,6 +136,14 @@ Cobo Guard 界面提供全面的信息和警报：
       | 非 Safe&#123;Wallet&#125; 自身 | 合约交互 | **New Contract** | 合约部署时间不足30天（720小时） |
    - 对于 **Operation** 字段：
       - 对 Delegate Calls 等操作，显示 **High Risk**
+
+- 对于 multiSend 交易，**所有操作**部分显示打包的操作，每个操作以`合约名称：方法名称`的形式显示。
+
+   <img src="/en/images/risk-controls/multisend.png" className="screenshot_full_screen"/>
+
+   点击展开操作以查看详情。
+
+   <img src="/en/images/risk-controls/multisend-expand.png" className="screenshot_full_screen"/>
 
 ### 步骤 7：（仅适用于 MPC 钱包）私钥分片持有者对交易签名
 
