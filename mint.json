@@ -525,14 +525,27 @@
           ]
         },
         {
-          "group": "Token Bridge",
+          "group": "Token Swap",
           "pages": [
-            "en/apps/bridge/introduction",
-            "en/apps/bridge/how-to-use/setup",
-            "en/apps/bridge/how-to-use/manage/dashboard",
-            "en/apps/bridge/how-to-use/manage/bridge-form",
-            "en/apps/bridge/how-to-use/manage/confirmation",
-            "en/apps/bridge/how-to-use/manage/supported-assets"
+            {
+              "group": "Bridge",
+              "pages": [
+                "en/apps/bridge/introduction",
+                "en/apps/bridge/how-to-use/setup",
+                "en/apps/bridge/how-to-use/manage/dashboard",
+                "en/apps/bridge/how-to-use/manage/bridge-form",
+                "en/apps/bridge/how-to-use/manage/confirmation",
+                "en/apps/bridge/how-to-use/manage/supported-assets"
+              ]
+            },
+            {
+              "group": "Swap",
+              "pages": [
+                "en/apps/swap/introduction",
+                "en/apps/swap/how-to",
+                "en/apps/swap/supported-assets"
+              ]
+            }
           ]
         },
         {
