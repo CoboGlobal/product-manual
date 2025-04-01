@@ -680,7 +680,12 @@
       "group": "概览",
       "pages": [
         "cn/portal/introduction",
-        "cn/portal/quick-start-guide",
+        {
+          "group": "快速入门",
+          "pages": [
+            "cn/portal/quick-start-guide-custodial-wallets"
+          ]
+        },
         {
           "group": "代币与链支持",
           "pages": [
