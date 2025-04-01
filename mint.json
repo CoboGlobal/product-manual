@@ -121,13 +121,6 @@
       "pages": [
         "en/portal/introduction",
         {
-          "group": "Quick start guide",
-          "pages": [
-            "/en/portal/quick-start-guide-custodial-wallets",
-            "/en/portal/quick-start-guide-mpc"
-          ]
-        },
-        {
           "group": "Token & chain support",
           "pages": [
             "en/portal/supported-tokens-and-chains",
@@ -142,9 +135,15 @@
             "en/portal/troubleshoot/mpc-wallets",
             "en/portal/troubleshoot/exchange-wallets"
           ]
-        },
-        "en/portal/glossary",
-        "en/portal/changelog"
+        }
+      ],
+      "version": "English"
+    },
+    {
+      "group": "GET STARTED",
+      "pages": [
+        "en/portal/quick-start-guide-custodial-wallets",
+        "en/portal/quick-start-guide-mpc"
       ],
       "version": "English"
     },
@@ -184,7 +183,7 @@
               "pages": [
                 "en/portal/mpc-wallets/ocw/introduction",
                 {
-                  "group": "Set up Organization-Controlled Wallets",
+                  "group": "Set up wallets",
                   "pages": [
                     "en/portal/mpc-wallets/ocw/set-up",
                     "en/portal/mpc-wallets/ocw/create-mpc-vault",
@@ -482,6 +481,14 @@
       "version": "English"
     },
     {
+      "group": "RESOURCES",
+      "pages": [
+        "en/portal/glossary",
+        "en/portal/changelog"
+      ],
+      "version": "English"
+    },
+    {
       "group": "ABOUT COBO PORTAL APPS",
       "pages": [
         "en/apps/introduction",
@@ -680,7 +687,6 @@
       "group": "概览",
       "pages": [
         "cn/portal/introduction",
-        "cn/portal/quick-start-guide",
         {
           "group": "代币与链支持",
           "pages": [
@@ -696,9 +702,7 @@
             "cn/portal/troubleshoot/mpc-wallets",
             "cn/portal/troubleshoot/exchange-wallets"
           ]
-        },
-        "cn/portal/glossary",
-        "cn/portal/changelog"
+        }
       ],
       "version": "简体中文"
     },
@@ -738,7 +742,7 @@
               "pages": [
                 "cn/portal/mpc-wallets/ocw/introduction",
                 {
-                  "group": "创建机构钱包",
+                  "group": "设置钱包",
                   "pages": [
                     "cn/portal/mpc-wallets/ocw/set-up",
                     "cn/portal/mpc-wallets/ocw/create-mpc-vault",
@@ -1032,6 +1036,14 @@
             "cn/portal/developer-console/app-webhooks"
           ]
         }
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "资源文档",
+      "pages": [
+        "cn/portal/glossary",
+        "cn/portal/changelog"
       ],
       "version": "简体中文"
     },
