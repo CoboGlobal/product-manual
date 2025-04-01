@@ -184,7 +184,7 @@
               "pages": [
                 "en/portal/mpc-wallets/ocw/introduction",
                 {
-                  "group": "Set up Organization-Controlled Wallets",
+                  "group": "Set up wallets",
                   "pages": [
                     "en/portal/mpc-wallets/ocw/set-up",
                     "en/portal/mpc-wallets/ocw/create-mpc-vault",
@@ -738,7 +738,7 @@
               "pages": [
                 "cn/portal/mpc-wallets/ocw/introduction",
                 {
-                  "group": "创建机构钱包",
+                  "group": "设置钱包",
                   "pages": [
                     "cn/portal/mpc-wallets/ocw/set-up",
                     "cn/portal/mpc-wallets/ocw/create-mpc-vault",
