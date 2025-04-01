@@ -688,12 +688,6 @@
       "pages": [
         "cn/portal/introduction",
         {
-          "group": "快速入门",
-          "pages": [
-            "cn/portal/quick-start-guide-custodial-wallets"
-          ]
-        },
-        {
           "group": "代币与链支持",
           "pages": [
             "cn/portal/supported-tokens-and-chains",
@@ -709,6 +703,13 @@
             "cn/portal/troubleshoot/exchange-wallets"
           ]
         }
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "GET STARTED",
+      "pages": [
+        "cn/portal/quick-start-guide-custodial-wallets"
       ],
       "version": "简体中文"
     },
