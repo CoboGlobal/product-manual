@@ -1,0 +1,130 @@
+---
+title: "全托管钱包（资产钱包）快速入门"
+sidebarTitle: "全托管钱包"
+lang: "cn"
+og:description: "了解如何快速设置和管理全托管钱包。分步指南介绍机构级数字资产安全托管和最佳实践。"
+---
+
+import MySnippet from '/snippets/account-setup-cn.mdx';
+import MySnippet2 from '/snippets/transfer-category-and-description-cn.mdx';
+
+本快速入门指南将帮助您探索和评估 Cobo 的[全托管钱包](/cn/portal/custodial-wallets/introduction)。通过遵循以下简单步骤，您将能够测试我们的核心功能，并评估我们的机构级托管服务是否满足您的需求：
+
+<Note>Cobo Portal 提供两种类型的全托管钱包：[资产钱包和 Web3 钱包](/cn/portal/custodial-wallets/introduction#types-of-custodial-wallets-on-cobo-portal)。本指南将重点介绍资产钱包。</Note>
+
+<img src="/cn/images/quick-start-guide-custodial-wallets/workflow.svg" className="diagram" alt="工作流程"/>
+
+## 前提条件
+
+* [联系我们的销售团队](https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
+
+* 一台 iOS 设备，用于运行 [Cobo Guard](/cn/guard/introduction)（Cobo 开发的 iOS 应用，用于多重身份验证和操作审批）。
+
+<MySnippet />
+
+## 充值
+1. 登录 Cobo Portal。
+    - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
+    - 生产环境使用[正式环境](https://portal.cobo.com)。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**。
+3. 系统会自动为您创建一个默认钱包。您也可以根据需要创建新钱包。
+4. 点击您要充值的钱包。
+5. 找到您要充值的代币，然后点击 <img src="/cn/images/mpc-wallet/icon_deposit.svg" className="icon"></img>。
+
+<img src="/cn/images/quick-start-guide-custodial-wallets/deposit.png" className="screenshot_modal"></img>
+
+6. 点击**复制地址**复制充值地址。
+7. 前往您的外部钱包，向您复制的充值地址发起转账。
+
+## 设置交易风控
+<Note>如果您处于测试阶段，想要先快速验证充值和提现功能，可以暂时跳过本节，稍后再进行设置。</Note>
+
+<Accordion title="设置交易风控">
+
+[交易风控](/cn/portal/risk-controls/tx-policies-overview)是保护您的数字资产操作的重要措施。当交易开始时，系统会按顺序检查您团队的交易风控规则。如果交易符合某个规则的触发条件，将执行指定的操作：自动审批、自动拒绝或进入审批门槛流程。
+
+在本指南中，我们将创建一个风控规则，要求对向非信任地址进行大额 USDT 提现时需要 3 位管理员中的 2 位审批。关于其他风控规则设置和高级配置，请参见[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
+
+### 前提条件
+- 您已经[邀请了足够的成员](#invite-members)，使团队中至少有 3 名成员，并且已经为其中至少 3 名成员[分配了管理员用户角色](/cn/portal/organization/assign-roles-to-members)。
+
+### 设置信任收款地址列表
+首先，创建一个预先批准用于提现的信任地址列表：
+
+<Info>在本例中，当向信任地址列表以外的地址进行大额 USDT 提现时，系统将要求 3 位管理员中的 2 位进行审批。</Info>
+
+1. 登录 Cobo Portal。
+    - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
+    - 生产环境使用[正式环境](https://portal.cobo.com)。
+
+2. 点击 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+3. 导航至**地址列表**标签页并点击**创建列表**。
+<img src="/cn/images/risk-controls/create-an-address-list-cn.png" className="screenshot_full_screen"/>
+4. 输入地址列表名称，然后点击**确认**。
+5. 点击您新创建的地址列表，点击**添加地址**，然后输入您的信任地址。
+6. 点击**提交**并使用 Google 身份验证器的验证码进行验证。
+
+有关管理地址列表的更多详细信息，包括批量上传，请参见[地址列表](/cn/portal/risk-controls/address-list)。
+
+### 创建交易风控
+现在，让我们设置一个具有以下安全规则的策略：
+- 触发条件：向非信任地址提现超过 30,000,000 USDT。
+- 操作：需要 3 位管理员用户角色中的 2 位审批。
+
+按照以下步骤操作：
+
+1. 在 Cobo Portal 中，进入 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
+2. 点击**创建交易风控规则** > **代币转账**。
+3. 按照截图所示配置设置：
+
+<img src="/cn/images/quick-start-guide-custodial-wallets/example-policy.png" className="screenshot_full_screen" alt="风控规则已创建"/>
+
+4. 点击**下一页**并按照屏幕上的说明完成风控规则设置。
+
+您的风控规则现在已经生效，对于向非信任地址提现超过 30,000,000 USDT 的交易将需要 3 位管理员中的 2 位审批。有关更多风控规则配置和使用案例，请访问[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
+</Accordion>
+
+## 提现
+1. 登录 Cobo Portal。
+   - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
+   - 生产环境使用[正式环境](https://portal.cobo.com)。
+
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**。
+3. 点击您要提现代币的钱包。
+4. 找到您要提现的代币，然后点击 <img src="/cn/images/custodial-wallet/withdraw-icon.png" className="icon"/> 打开**转账**对话框。
+
+5. 填写必要信息，然后点击**提交**。
+
+<img src="/cn/images/quick-start-guide-custodial-wallets/withdraw.png" className="screenshot_modal" alt="提现截图" />
+
+6. 在 Cobo Guard 上二次确认提现。
+
+<Info>要了解更多关于从资产钱包转账的信息，请参见[从全托管钱包（资产钱包）转账](/cn/portal/transfers/from-asset-wallets)。</Info>
+
+## 查看交易详情和状态
+在进行资产钱包的转入或转出后，您可以在 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **交易记录**中查看其交易状态。
+<img src="/cn/images/quick-start-guide-custodial-wallets/transaction-history.png" className="screenshot_full_screen" alt="交易历史截图" />
+
+## 下一步
+### 可以尝试的其他设置
+
+#### 设置交易风控
+设置交易风控是一项关键的安全措施，可实现自动化和受控的交易审批。要设置交易风控，请参见[设置交易风控](#设置交易风控)获取详细说明。
+
+#### 设置业务风控和用户角色
+设置业务风控和用户角色对于管理团队的访问控制和安全性至关重要。有关详细说明，请参见[设置业务风控规则和用户角色](/cn/portal/quick-start-guide-custodial-wallets#设置业务风控和用户角色)。
+
+### 集成我们的 API
+如果您需要以编程方式管理您的钱包，可以考虑使用 Cobo 的 WaaS 2.0 API。我们全面的[开发者指南](https://www.cobo.com/developers/v2_cn/guides/custodial-wallets/get-started-asset-wallets)将帮助您开始 API 集成。
+
+### 实施安全最佳实践
+遵循我们的[安全检查清单](/cn/portal/security-checklist)，确保您的团队实施我们的安全最佳实践。
+
+### 了解更多
+- [观看产品视频](https://www.youtube.com/watch?v=D4CMsRf3WW0)
+- [访问官方网站](https://www.cobo.com/products/wallet/custodial-wallet)
+- [阅读产品手册](https://manuals.cobo.com/cn/portal/custodial-wallets/introduction)
+
+
+
+<Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>
