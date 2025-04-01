@@ -1,5 +1,5 @@
 ---
-title: "全托管钱包（资产钱包）快速入门"
+title: "全托管钱包快速入门"
 sidebarTitle: "全托管钱包"
 lang: "cn"
 og:description: "了解如何快速设置和管理全托管钱包。分步指南介绍机构级数字资产安全托管和最佳实践。"
@@ -41,7 +41,7 @@ import MySnippet2 from '/snippets/transfer-category-and-description-cn.mdx';
 
 <Accordion title="设置交易风控">
 
-[交易风控](/cn/portal/risk-controls/tx-policies-overview)是保护您的数字资产操作的重要措施。当交易开始时，系统会按顺序检查您团队的交易风控规则。如果交易符合某个规则的触发条件，将执行指定的操作：自动审批、自动拒绝或进入审批门槛流程。
+[交易风控](/cn/portal/risk-controls/tx-policies-overview)是保护您的数字资产操作的重要措施。当交易开始时，系统会按顺序检查您团队的交易风控规则。如果交易符合某个规则的触发条件，将执行指定的操作：自动通过、自动拒绝或进入审批门槛流程。
 
 在本指南中，我们将创建一个风控规则，要求对向非信任地址进行大额 USDT 提现时需要 3 位管理员中的 2 位审批。关于其他风控规则设置和高级配置，请参见[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
 
@@ -106,12 +106,10 @@ import MySnippet2 from '/snippets/transfer-category-and-description-cn.mdx';
 <img src="/cn/images/quick-start-guide-custodial-wallets/transaction-history.png" className="screenshot_full_screen" alt="交易历史截图" />
 
 ## 下一步
-### 可以尝试的其他设置
-
-#### 设置交易风控
+### 设置交易风控
 设置交易风控是一项关键的安全措施，可实现自动化和受控的交易审批。要设置交易风控，请参见[设置交易风控](#设置交易风控)获取详细说明。
 
-#### 设置业务风控和用户角色
+### 设置业务风控和用户角色
 设置业务风控和用户角色对于管理团队的访问控制和安全性至关重要。有关详细说明，请参见[设置业务风控规则和用户角色](/cn/portal/quick-start-guide-custodial-wallets#设置业务风控和用户角色)。
 
 ### 集成我们的 API
