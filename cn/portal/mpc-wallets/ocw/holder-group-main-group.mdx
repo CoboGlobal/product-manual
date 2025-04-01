@@ -6,7 +6,7 @@ description: "了解持有者组中的主控组，确保安全的资产操作。
 ---
 
 ## 主控组
-在创建 MPC 钱包之前，必须先创建主控组。成功创建主控组之后，便可以开始使用 MPC 钱包。为了最大程度确保资产的安全性，最好尽快创建签名组和恢复组，并备份所有持有者组。可以创建多个签名组来满足业务需求，但建议只创建一个恢复组。（后续我们的开发者中心将提供持有者组的最佳安全实践）。
+在创建 MPC 钱包之前，必须先创建主控组。成功创建主控组之后，便可以开始使用 MPC 钱包。为了最大程度确保资产的安全性，最好尽快创建签名组和恢复组，并备份所有持有者组。可以创建多个签名组来满足业务需求，但建议只创建一个恢复组。
 
 <a id="create-main-group"></a>
 ### 创建主控组
@@ -25,7 +25,7 @@ description: "了解持有者组中的主控组，确保安全的资产操作。
       移动端签名人是一名团队成员，负责通过 [Cobo Guard](/cn/guard/introduction) 安全签署交易。其 TSS Node ID 由 Cobo Guard 生成，并将自动填入。<Note>如果您是从我们的 [WaaS 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) 文章被重定向到这里，您可以在 Cobo Guard 中复制 TSS Node ID，步骤如下：点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> > <img src="/en/images/cobo-guard/common/icon_key.svg" className="icon"></img> **我的公钥** > **TSS Node ID** > **复制 TSS Node ID**。</Note>
     </td>
     <td>
-      服务端签名人是一个服务器节点，用于自动通过 TSS Node 软件包签署交易。其 TSS Node ID 通过 Cobo 提供的 TSS 软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见[服务端签名人介绍](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)。
+      服务端签名人是一个服务器节点，用于自动通过 TSS Node 软件包签署交易。其 TSS Node ID 通过 Cobo 提供的 TSS 软件包生成，且必须在设置钱包之前生成。有关进一步说明，请参见[服务端签名人介绍](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview)。<Info>对于高频交易，我们建议选择服务端签名人进行自动签名。</Info>
     </td>
   </tr>
   <tr>

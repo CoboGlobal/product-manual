@@ -57,9 +57,10 @@ For more details, see [Introduction to governance policies](/en/portal/organizat
 
 ### Key share holder groups
 
-With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key shares is referred to as a holder group.
+With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key share holders is referred to as a holder group.
 
 - To ensure the safety and recoverability of your assets, create at least one Signing Group and one Recovery Group in addition to the Main Group.
+- For Main and Recovery Groups, choose high-ranking executives in your organization as key share holders, preferably with [Viewer](/en/portal/organization/roles-and-permissions) roles to minimize their involvement in daily operations. For Signing Groups, key share holders can be selected from various organizational levels based on operational needs and security considerations.
 - The same private key share holder (the same [TSS Node ID](/en/portal/glossary#tss-node)) should not belong to different types of key share holder groups simultaneously, such as both the Main Group and the Signing Group. If this situation occurs, please ensure that there is more than one Signing Group.
 
 For more details, see [Holder group overview](/en/portal/mpc-wallets/ocw/holder-group-overview).
