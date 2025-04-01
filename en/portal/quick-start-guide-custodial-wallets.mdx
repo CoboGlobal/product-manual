@@ -1,14 +1,16 @@
 ---
-title: "Get started with Custodial Wallets (Asset Wallets)"
-sidebarTitle: "Custodial Wallets (Asset Wallets)"
+title: "Get started with Custodial Wallets"
+sidebarTitle: "Custodial Wallets"
 lang: "en"
-og:description: "Learn how to quickly set up and manage Custodial Wallets to evaluate Cobo's solutions. Step-by-step guide for secure digital asset custody and best practices for institutional wallet solutions."
+og:description: "Learn how to quickly set up and manage Custodial Wallets. Step-by-step guide for secure digital asset custody and best practices for institutional wallets."
 ---
 
 import MySnippet from '/snippets/account-setup-en.mdx';
 import MySnippet2 from '/snippets/transfer-category-and-description-en.mdx';
 
-This quick start guide helps you explore and evaluate Cobo's [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/introduction) solution through our web interface. By following these simple steps, you'll be able to test our core features and assess if our enterprise-grade custody solution meets your needs:
+This quick start guide helps you explore and evaluate Cobo's [Custodial Wallets](/en/portal/custodial-wallets/introduction). By following these simple steps, you'll be able to test our core features and assess if our institutional-grade custody service meets your needs:
+
+<Note>Cobo Portal offers two types of Custodial Wallets: [Asset Wallets and Web3 Wallets](/en/portal/custodial-wallets/introduction#types-of-custodial-wallets-on-cobo-portal). This guide will focus on Asset Wallets.</Note>
 
 <img src="/en/images/quick-start-guide-custodial-wallets/workflow.svg" className="diagram" alt="Workflow"/>
 
@@ -24,28 +26,29 @@ This quick start guide helps you explore and evaluate Cobo's [Custodial Wallets 
 1. Log in to Cobo Portal.
     - For testing, use the [development environment](https://portal.dev.cobo.com).
     - For production, use the [production environment](https://portal.cobo.com).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets** > **Asset Wallets**.
-3. Click the wallet you want to deposit into. A default wallet would have been automatically created for you.
-4. Locate the type of tokens you want to deposit into the wallet, and then click <img src="/en/images/mpc-wallet/icon_deposit.svg" className="icon"></img>.
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets**.
+3. A default wallet is automatically created for you. You can also create a new one if needed.
+4. Click the wallet you want to deposit into.
+5. Locate the token you want to deposit into the wallet, and then click <img src="/en/images/mpc-wallet/icon_deposit.svg" className="icon"></img>.
 
 <img src="/en/images/quick-start-guide-custodial-wallets/deposit.png" className="screenshot_modal"></img>
 
-5. Click **Copy Address** to copy the deposit address.
-6. Proceed to your preferred external wallet to initiate the transfer to the deposit address you have copied.
+6. Click **Copy Address** to copy the deposit address.
+7. Proceed to your preferred external wallet to initiate the transfer to the deposit address you have copied.
 
-## Set up transaction policies
+## Configure transaction policies
 <Note>If you're in the testing phase and want to quickly verify deposits and withdrawals first, you can skip this section for now and set them up later.</Note>
 
-<Accordion title="Set up transaction policies">
+<Accordion title="Configure transaction policies">
 
-Transaction policies help you automate transaction approvals and enhance security by defining specific conditions and approval requirements. These policies can include auto-approval, auto-rejection, or approval quorum requirements.
+[Transaction policies](/en/portal/risk-controls/tx-policies-overview) are essential measures to secure your digital asset operations. When a transaction starts, it's checked against your organization's transaction policies in sequential order. If it matches a policy's trigger condition, the specified action will be taken: auto-approve, auto-reject, or an approval quorum process.
 
 In this guide, we'll create a policy that requires 2-of-3 Admin approval for large USDT withdrawals to non-trusted addresses. For other policy setups and advanced configurations, see [Set up token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer).
 
 ### Prerequisites
 - You have [invited enough members](#invite-members) to have at least 3 members in the organization and have [assigned the Admin user role](/en/portal/organization/assign-roles-to-members) to at least 3 of them.
 
-### Set up a trusted receiving address list
+### Configure a trusted receiving address list
 First, create a list of trusted addresses that are pre-approved for withdrawals:
 
 <Info>In our case, we will configure the system so that any large USDT withdrawals to addresses outside this trusted receiving address list will require multi-signature approval (2 out of 3 Admin signers).</Info>
@@ -86,13 +89,15 @@ Your policy is now active and will require 2-of-3 approval for any USDT withdraw
    - For testing, use the [development environment](https://portal.dev.cobo.com).
    - For production, use the [production environment](https://portal.cobo.com).
 
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets** > **Asset Wallets**, click your wallet, then click <img src="/en/images/custodial-wallet/withdraw-icon.png" className="icon"/> next to the token you want to withdraw to open the **Transfer** dialog.
+2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets**.
+3. Click the wallet from which you want to withdraw tokens.
+4. Locate the token you want to withdraw, then click <img src="/en/images/custodial-wallet/withdraw-icon.png" className="icon"/> to open the **Transfer** dialog.
 
-3. Fill in the required information, then click **Submit**.
+5. Fill in the required information, then click **Submit**.
 
 <img src="/en/images/quick-start-guide-custodial-wallets/withdraw.png" className="screenshot_modal" alt="Screenshot of the withdrawal" />
 
-4. Double confirm the withdrawal on Cobo Guard.
+6. Double confirm the withdrawal on Cobo Guard.
 
 <Info>To learn more about making transfers from Asset Wallets, see [Transfer from Custodial Wallets (Asset Wallets)](/en/portal/transfers/from-asset-wallets).</Info>
 
@@ -103,10 +108,10 @@ After making a transfer to or from your Asset Wallets, you can view its transact
 ## What's next
 ### Additional setups to experiment with
 
-#### Set up transaction policies
-Setting up transaction policies is a crucial security measure that enables automated and controlled transaction approvals. To set up policies, see [Set up transaction policies](#set-up-transaction-policies) for detailed instructions.
+#### Configure transaction policies
+Setting up transaction policies is a crucial security measure that enables automated and controlled transaction approvals. To configure policies, see [Configure transaction policies](#configure-transaction-policies) for detailed instructions.
 
-#### Set up governance policies and user roles
+#### Configure governance policies and user roles
 Setting up governance policies and user roles is essential for managing access control and security in your organization. For detailed instructions, see [
 Set up governance policies and user roles](/en/portal/quick-start-guide-custodial-wallets#set-up-governance-policies-and-user-roles).
 
@@ -116,12 +121,9 @@ If you need programmatic access to manage your wallets, consider using Cobo's Wa
 ### Implement security best practices
 Follow our [security checklist](/en/portal/security-checklist) to ensure your organization is implementing our security best practices.
 
-### Learn more about Custodial Wallets (Asset Wallets)
+### Learn more
 - [Watch product video](https://www.youtube.com/watch?v=D4CMsRf3WW0)
 - [Visit official website](https://www.cobo.com/products/wallet/custodial-wallet)
 - [Read product manuals](https://manuals.cobo.com/en/portal/custodial-wallets/introduction)
-
-### Upgrade to a paid plan
-Once you've evaluated our Custodial Wallets (Asset Wallets) solution and are ready to upgrade, contact your Cobo sales representative to discuss your needs and get personalized assistance with selecting the right plan for your organization.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

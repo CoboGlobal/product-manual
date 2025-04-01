@@ -1,13 +1,16 @@
 ---
 title: "全托管钱包（资产钱包）快速入门"
-sidebarTitle: "全托管钱包（资产钱包）"
+sidebarTitle: "全托管钱包"
 lang: "cn"
-og:description: "了解如何快速设置和管理全托管钱包以评估 Cobo 的解决方案。分步指导机构钱包解决方案的安全数字资产托管和最佳实践。"
+og:description: "了解如何快速设置和管理全托管钱包。分步指南介绍机构级数字资产安全托管和最佳实践。"
 ---
 
 import MySnippet from '/snippets/account-setup-cn.mdx';
+import MySnippet2 from '/snippets/transfer-category-and-description-cn.mdx';
 
-本快速入门指南帮助您通过我们的网页界面探索和评估 Cobo 的[全托管钱包（资产钱包）](/cn/portal/custodial-wallets/introduction)解决方案。按照以下简单步骤，您将能够测试我们的核心功能，并评估我们的企业级托管解决方案是否满足您的需求：
+本快速入门指南将帮助您探索和评估 Cobo 的[全托管钱包](/cn/portal/custodial-wallets/introduction)。通过遵循以下简单步骤，您将能够测试我们的核心功能，并评估我们的机构级托管服务是否满足您的需求：
+
+<Note>Cobo Portal 提供两种类型的全托管钱包：[资产钱包和 Web3 钱包](/cn/portal/custodial-wallets/introduction#types-of-custodial-wallets-on-cobo-portal)。本指南将重点介绍资产钱包。</Note>
 
 <img src="/cn/images/quick-start-guide-custodial-wallets/workflow.svg" className="diagram" alt="工作流程"/>
 
@@ -24,20 +27,21 @@ import MySnippet from '/snippets/account-setup-cn.mdx';
     - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
     - 生产环境使用[正式环境](https://portal.cobo.com)。
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**。
-3. 点击您要充值的钱包。系统会自动为您创建一个默认钱包。
-4. 找到您要充值的代币类型，然后点击 <img src="/cn/images/mpc-wallet/icon_deposit.svg" className="icon"></img>。
+3. 系统会自动为您创建一个默认钱包。您也可以根据需要创建新钱包。
+4. 点击您要充值的钱包。
+5. 找到您要充值的代币，然后点击 <img src="/cn/images/mpc-wallet/icon_deposit.svg" className="icon"></img>。
 
 <img src="/cn/images/quick-start-guide-custodial-wallets/deposit.png" className="screenshot_modal"></img>
 
-5. 点击**复制地址**复制充值地址。
-6. 前往您的外部钱包，向您复制的充值地址发起转账。
+6. 点击**复制地址**复制充值地址。
+7. 前往您的外部钱包，向您复制的充值地址发起转账。
 
 ## 设置交易风控
 <Note>如果您处于测试阶段，想要先快速验证充值和提现功能，可以暂时跳过本节，稍后再进行设置。</Note>
 
 <Accordion title="设置交易风控">
 
-交易风控通过定义特定条件和审批要求，帮助您自动化交易审批并增强安全性。这些风控规则可以包括自动审批、自动拒绝或指定审批门槛。
+[交易风控](/cn/portal/risk-controls/tx-policies-overview)是保护您的数字资产操作的重要措施。当交易开始时，系统会按顺序检查您团队的交易风控规则。如果交易符合某个规则的触发条件，将执行指定的操作：自动审批、自动拒绝或进入审批门槛流程。
 
 在本指南中，我们将创建一个风控规则，要求对向非信任地址进行大额 USDT 提现时需要 3 位管理员中的 2 位审批。关于其他风控规则设置和高级配置，请参见[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
 
@@ -85,13 +89,15 @@ import MySnippet from '/snippets/account-setup-cn.mdx';
    - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
    - 生产环境使用[正式环境](https://portal.cobo.com)。
 
-2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**，点击您的钱包，然后点击您要提现的代币旁边的 <img src="/cn/images/custodial-wallet/withdraw-icon.png" className="icon"/> 打开**转账**对话框。
+2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**。
+3. 点击您要提现代币的钱包。
+4. 找到您要提现的代币，然后点击 <img src="/cn/images/custodial-wallet/withdraw-icon.png" className="icon"/> 打开**转账**对话框。
 
-3. 填写必要信息，然后点击**提交**。
+5. 填写必要信息，然后点击**提交**。
 
 <img src="/cn/images/quick-start-guide-custodial-wallets/withdraw.png" className="screenshot_modal" alt="提现截图" />
 
-4. 在 Cobo Guard 上二次确认提现。
+6. 在 Cobo Guard 上二次确认提现。
 
 <Info>要了解更多关于从资产钱包转账的信息，请参见[从全托管钱包（资产钱包）转账](/cn/portal/transfers/from-asset-wallets)。</Info>
 
@@ -114,12 +120,11 @@ import MySnippet from '/snippets/account-setup-cn.mdx';
 ### 实施安全最佳实践
 遵循我们的[安全检查清单](/cn/portal/security-checklist)，确保您的团队实施我们的安全最佳实践。
 
-### 了解更多关于全托管钱包（资产钱包）的信息
+### 了解更多
 - [观看产品视频](https://www.youtube.com/watch?v=D4CMsRf3WW0)
 - [访问官方网站](https://www.cobo.com/products/wallet/custodial-wallet)
 - [阅读产品手册](https://manuals.cobo.com/cn/portal/custodial-wallets/introduction)
 
-### 升级到付费计划
-一旦您评估了我们的全托管钱包（资产钱包）解决方案并准备升级，请联系您的 Cobo 销售代表讨论您的需求，并获取为您的团队选择合适计划的个性化协助。
+
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>
