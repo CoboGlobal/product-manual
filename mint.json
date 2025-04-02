@@ -483,8 +483,7 @@
     {
       "group": "RESOURCES",
       "pages": [
-        "en/portal/glossary",
-        "en/portal/changelog"
+        "en/portal/glossary"
       ],
       "version": "English"
     },
@@ -1044,8 +1043,7 @@
     {
       "group": "资源文档",
       "pages": [
-        "cn/portal/glossary",
-        "cn/portal/changelog"
+        "cn/portal/glossary"
       ],
       "version": "简体中文"
     },
