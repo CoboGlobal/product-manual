@@ -703,7 +703,8 @@
     {
       "group": "GET STARTED",
       "pages": [
-        "cn/portal/quick-start-guide-custodial-wallets"
+        "cn/portal/quick-start-guide-custodial-wallets",
+        "cn/portal/quick-start-guide-mpc"
       ],
       "version": "简体中文"
     },
