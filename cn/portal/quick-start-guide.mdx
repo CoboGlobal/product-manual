@@ -1,164 +1,23 @@
 ---
-title: "快速入门"
-sidebarTitle: "快速入门"
+title: "创建您的团队"
 lang: "zh-hans"
-description: "通过快速入门指南，轻松上手 Cobo Portal，从创建账户到进行交易的全流程介绍。"
+og:description: "在 Cobo Portal 上创建账户和团队的快速入门指南。"
 ---
+import Snippet from '/snippets/account-setup-cn.mdx';
 
-## 概览
 
-本文将引导您完成整个用户旅程，从成为 Cobo 的访客，到免费试用用户，最终成为付费客户。
+本指南介绍在 Cobo Portal 上设置账户和团队的步骤。
 
-{/*  <iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+## 前提条件
 
-## 基础设置
-<Steps>
-  <Step icon="1" title="开始免费试用，创建 Cobo Account 并创建团队">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/gNWGhrKWcgY?si=kcazFmI0QPuWT253" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <Note>如果 Cobo 销售代表已向您发送电子邮件邀请，则可以跳过这一部分。只需完成电子邮件中的步骤，然后从**基础设置**中的**设置 Cobo Guard** 部分继续操作即可。</Note>
-    <Note>您的[免费试用期](/cn/portal/bills-and-payments/introduction#pricing-plans)将在您完成此章节后立即生效。</Note>
-    1. 前往 [cobo.com](https://www.cobo.com/)，然后点击**免费试用**。
-    2. 输入您的**邮箱**、**姓名**和**公司名称**，然后点击**注册**。
-    3. 在**注册**（Sign Up）页面上，确认您的**电子邮件**（Email），然后点击**继续**（Continue）。
-    4. 在**密码**（Password）页面上，输入您的**密码**（Password）及**确认密码**（Confirm Password)，然后点击**继续**（Continue）。
-    5. 在**电子邮件验证**（Email Verification）页面上，输入向您的电子邮件地址发送的验证码，然后点击**继续**（Continue）。
-    6. 在 **Google Authenticator** 页面上，按照屏幕提示下载和安装 Google Authenticator，用 Google Authenticator 扫描二维码，然后输入 Google Authenticator 代码并点击**提交**（Submit）。
-    7. 在**最后一步！**页面上，输入团队名称、**优惠券码（可选）**，然后点击**开始使用**。
-    8. 在**恭喜！** 页面上，查看信息并勾选复选框，然后点击**确认**。
-    {/* 9.  *（即将推出）* 本视频展示第 1 步至第 8 步操作：<iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
-  </Step>
-  <Step title="设置 Cobo Guard">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ykPiHV8_gik?si=WrEMi4PhXE_6BQpK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    1. 在**欢迎使用 Cobo Portal** 页面，点击 **设置 Cobo Guard** 旁边的**开始使用**，以打开 Cobo Accounts 的**登录**（Log In）页面。
-    2. 输入您注册免费试用时使用的 **Email** 和**密码**（Password），然后点击**登录**（Log In）。
-    3. 在 **Cobo Accounts** 页面，点击**多重验证管理**（MFA Management），然后在 **Cobo Guard** 旁边点击**设置**（Set up）。
-    4. 按照屏幕上的指示下载 Cobo Guard，然后点击**继续**（Continue）。
-    5. 在 **设置 Cobo Guard**（Set Up Cobo Guard）页面，点击 Cobo Guard App 上的 <img src="/en/images/cobo-guard/common/icon_scan.svg" className="icon"></img>，然后用 Cobo Guard 扫描二维码。
-    6. 在您的 Cobo Guard 上，您会看到**绑定 Cobo Accounts** 页面。点击**绑定**。
-    7. 你已经成功链接 Cobo Guard。在你的电脑上，点击**继续**（Continue），在**成功**（Successful）页面返回到 Cobo Accounts 页面。
-    {/* 7.*（即将推出）* 本视频展示第 1 步至第 6 步操作：<iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
-  </Step>
-</Steps>
+* [联系我们的销售团队](https://www.cobo.com/zh/book-demo?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
 
-## 具体设置
+* 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多因素认证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
 
-<Tabs>
-  <Tab title="财资管理用户">
-    ### 财资管理用户的具体设置
-    <Note>本章节适用于主要在 Cobo Portal 上创建钱包和进行交易的财资管理用户。如果您是一位开发人员，想使用 Cobo 的[钱包即服务 (WaaS) 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) 创建钱包和进行交易，还是建议您在阅读[使用 WaaS API 的开发人员]章节之前，先完成本章节的设置。</Note>
-    <Info>Cobo Portal 提供四种类型的钱包：[全托管钱包](/cn/portal/custodial-wallets/introduction)、[MPC 钱包](/cn/portal/mpc-wallets/introduction)、[智能合约钱包](/cn/portal/smart-contract-wallets/introduction)和[交易所钱包](/cn/portal/exchange-wallets/introduction)。在这一部分中，您将了解如何创建 [MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)。如果想要创建其他类型的钱包，请参阅**财资管理用户的具体设置**下方的**创建其他类型的钱包并进行交易**，获取详细说明。</Info>
-  <Steps>
-      <Step title="创建 MPC 钱包（机构钱包）">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/b6EZO9MU7VU?si=mfefe-WwAcUdgGYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <Info>创建 MPC 钱包包括三个基本步骤：创建 Vault、主控组和钱包。</Info>
-        1. 前往[欢迎使用 Cobo Portal](https://portal.cobo.com/guide) 页面，然后点击**创建 MPC 钱包**旁边的**开始使用**。
-        2. 点击**创建 Vault** 以创建 Vault。有关更多信息，请参见[创建 MPC Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault)。
-        3. 点击**生成主控组私钥分片**以创建主控组。有关更多信息，请参见[创建主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)中的**移动端签名人**相关内容。
-        4. 创建钱包。有关更多信息，请参见[创建 MPC 钱包](/cn/portal/mpc-wallets/ocw/create-mpc-wallet)。
-        <Info>完成第三步后，将自动创建一个钱包。</Info>
-        {/* 5.*（即将推出）* 本视频展示第 1 步至第 4 步操作：<iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
-      </Step>
-      <Step title="进行交易">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/twwLXic_bLM?si=fL2lVrJbcYWBjDxS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        1. 您的 MPC 钱包已准备就绪，可以立即开始交易。若要充币，请参见[从外部钱包充币](/cn/portal/mpc-wallets/ocw/transfers)。
-        <Info>在这一阶段，如果只是试用功能，则无需按照[从外部钱包充币](/cn/portal/mpc-wallets/ocw/transfers)的指示设置交易风控。如果已准备好扩大规模，请确保设置适当的交易风控。</Info>
-        2. 若要提币，请参见[从 MPC 钱包（机构钱包）转账](/cn/portal/transfers/from-mpc-wallets)。
-        {/* 3.*（即将推出）* 本视频展示第 1 步至第 2 步操作：<iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
-      </Step>
-      <Step title="创建其他类型的钱包并进行交易">
-        此时，您已经设置了基本的 MPC 钱包，并作为财资管理用户进行了交易。Cobo 在一个平台上提供 4 种钱包。您可以尝试创建不同类型的钱包，并使用下表中的资源从这些钱包创建交易。
+<Snippet />
 
-        <table class="six-columns">
-          <tr>
-            <th>钱包类型</th>
-            <th>全托管钱包</th>
-            <th>MPC 钱包（机构钱包）</th>
-            <th>智能合约钱包</th>
-            <th>交易所钱包</th>
-          </tr>
-          <tr>
-            <td>创建</td>
-            <td><a href="/cn/portal/custodial-wallets/asset-wallets/set-up">链接至文档</a></td>
-            <td><a href="/cn/portal/mpc-wallets/ocw/set-up">链接至文档</a></td>
-            <td><a href="/cn/portal/smart-contract-wallets/create">链接至文档</a></td>
-            <td><a href="/cn/portal/exchange-wallets/generate-binance-api-key">链接至文档</a></td>
-          </tr>
-          <tr>
-            <td>充币</td>
-            <td><a href="/cn/portal/custodial-wallets/asset-wallets/transfers">链接至文档</a></td>
-            <td><a href="/cn/portal/mpc-wallets/ocw/transfers#deposit-from-external-wallets">链接至文档</a></td>
-            <td><a href="/cn/portal/smart-contract-wallets/deposit-assets">链接至文档</a></td>
-            <td><a href="/cn/portal/exchange-wallets/transfers">链接至文档</a></td>
-          </tr>
-          <tr>
-            <td>提币</td>
-            <td><a href="/cn/portal/transfers/from-asset-wallets">链接至文档</a></td>
-            <td><a href="/cn/portal/transfers/from-mpc-wallets">链接至文档</a></td>
-            <td><a href="/cn/portal/smart-contract-wallets/withdraw-assets">链接至文档</a></td>
-            <td><a href="/cn/portal/exchange-wallets/within-wallet">链接至文档</a></td>
-          </tr>
-          <tr>
-            <td>注意事项</td>
-            <td>全托管钱包不可免费试用。请参见<a href="/cn/portal/bills-and-payments/introduction#pricing-plans">付费套餐</a>。</td>
-            <td></td>
-            <td>智能合约钱包不可免费试用。请参见<a href="/cn/portal/bills-and-payments/introduction#pricing-plans">付费套餐</a>。</td>
-            <td></td>
-          </tr>
-        </table>
+## 下一步
 
-      </Step>
-  </Steps>
-  </Tab>
+通过在 Cobo Accounts 中设置额外的 MFA 方式来增强您的账户安全性。有关详细步骤说明，请参阅[设置多因素认证（MFA）方式](/cn/accounts/set-up-mfa)。
 
-  <Tab title="使用 WaaS API 的开发人员">
-    ### 使用 WaaS API 的开发人员的具体设置
-    <Note>本章节适用于使用 Cobo 的[钱包即服务 (WaaS) 2.0 API](https://www.cobo.com/developers/v2/guides/overview/introduction) 创建钱包和进行交易的开发人员，建议在阅读这一章节之前，先完成[财资管理用户]章节的设置。</Note>
-
-    <Steps>
-      <Step title="基础设置">
-        在开始使用 WaaS 2.0 API 创建钱包和进行交易之前，需要先完成一些基本设置：
-
-        1. [生成 API Key](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas#generate-an-api-key)
-        2. [注册 API Key](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas#register-the-api-key)
-        3. [验证您的请求](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas#authenticate-your-requests)
-        4. [发送请求](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas#send-a-request)
-        5. [使用 WaaS SDK](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas#use-a-waas-sdk)
-        {/* 6.*（即将推出）* 本视频展示第 1 步至第 5 步操作：<iframe width="560" height="315" src="https://www.youtube.com/embed/cDsaEapQ1_E?si=uovqU34qpxMMXSvW" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/}
-      </Step>
-      <Step title="创建钱包并进行交易">
-        完成基础设置后，请使用下表了解如何使用 WaaS 2.0 API 创建钱包和进行交易。
-
-      <table class="six-columns">
-        <tr>
-          <th>钱包类型</th>
-          <th>全托管钱包</th>
-          <th>MPC 钱包（机构钱包）</th>
-          <th>智能合约钱包</th>
-          <th>交易所钱包</th>
-        </tr>
-        <tr>
-          <td>文档</td>
-          <td><a href="https://www.cobo.com/developers/v2/guides/custodial-wallets/get-started-asset-wallets">链接至文档</a></td>
-          <td><a href="https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw">链接至文档</a></td>
-          <td>链接至文档 <em>（即将推出）</em></td>
-          <td>链接至文档 <em>（即将推出）</em></td>
-        </tr>
-        <tr>
-          <td>注意事项</td>
-          <td>全托管钱包不可免费试用。请参见<a href="/cn/portal/bills-and-payments/introduction#pricing-plans">付费套餐</a>。</td>
-          <td></td>
-          <td>智能合约钱包不可免费试用。请参见<a href="/cn/portal/bills-and-payments/introduction#pricing-plans">付费套餐</a>。</td>
-          <td></td>
-        </tr>
-      </table>
-      </Step>
-    </Steps>
-  </Tab>
-</Tabs>
-
-## 升级至付费方案
-
-在充分体验免费试用版的内容后，可以[进一步了解我们的付费套餐](/cn/portal/bills-and-payments/introduction)。在准备升级时，请按照[购买付费套餐](/cn/portal/bills-and-payments/purchase-pricing-plan)中的说明购买付费套餐。<a id="waas-section"></a>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0cdpy_y_cWg?si=mkFwFt4-O2RnOvNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
+<Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>
