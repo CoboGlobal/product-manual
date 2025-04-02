@@ -5,14 +5,61 @@ lang: "en"
 description: "Learn how to set up and edit off-chain and on-chain transaction policies in Cobo Portal, automating transaction handling."
 ---
 
-<Note>Prerequisite: Please assign the [Operator](/en/portal/organization/roles-and-permissions) role to the designated team members who will set up transaction policies.</Note>
-
-You can effortlessly set up and edit both off-chain and on-chain transaction policies. Note that on-chain transaction policies are governed by smart contracts on the blockchain networks, whereas off-chain transaction policies are managed by the backend system of Cobo Portal.
-
-You can also automate how each transaction will be handled by setting up an approval action. This could include auto approval, auto rejection, and approval quorum.
-
 Each organization manages a list of off-chain and/or on-chain transaction policies. When a transaction is initiated, it undergoes a matching process against the ordered policies in the list. If a matching policy is identified, the corresponding approval action will be automatically executed.
 
+<Note>Prerequisite: Please assign the [Operator](/en/portal/organization/roles-and-permissions) role to the designated team members who will set up transaction policies.</Note>
+
 <Note>Transaction policies are an important security measure for your organization. It is recommended to strictly configure these policies, especially for large withdrawal scenarios, to avoid high-risk situations such as having no transaction policies, having transactions that are not covered by a transaction policy, automatically approving all transactions, or allowing the same role to both withdraw and approve transactions.</Note>
+
+## Understanding transaction policies
+
+Transaction policies in Cobo Portal come in two main types: 
+- On-chain transaction policies
+- Off-chain transaction policies
+
+### On-chain transaction policies
+
+On-chain transaction policies are governed by smart contracts on the blockchain networks and are specifically designed for Smart Contract Wallets. These policies provide:
+- Delegate management for single-signature operations
+- Token approval controls
+- Token transfer controls
+- Custom contract call controls
+
+Once created, modifications to on-chain transaction policies require multi-signature confirmation from Safe{Wallet} signers.
+
+### Off-chain transaction policies
+
+Off-chain transaction policies are managed by Cobo Portal's backend system. They offer:
+- **Flexibility**: Easy to modify and update as needed
+- **Compatibility**: Works with multiple wallet types
+- **Immediate effect**: Changes take effect instantly without blockchain transactions
+
+Off-chain transaction policies include three types of controls:
+
+| Policy Type | Main Purpose | Key Controls |
+|------------|--------------|--------------|
+| Token transfer | Control token movements and limits | • Initiators<br/>• Amounts<br/>• Receiving addresses<br/>• Token types |
+| Contract call | Manage smart contract interactions | • Initiators<br/>• Token approvals<br/>• Token transfers<br/>• Contract addresses, methods, and parameters |
+| Message signing | Control transaction signing | • Initiators<br/>• Message types<br/>• Safe{Wallet} message signing controls |
+
+### Smart Contract Wallet policy guide
+
+Smart Contract Wallets can use both on-chain and off-chain transaction policies. Here's when to use each:
+
+**Use on-chain transaction policies when:**
+- Setting up delegate permissions that need to be enforced at the smart contract level
+- Implementing permanent or long-term rules that shouldn't be easily changed
+- Configuring rules that must be executed on-chain for security
+- Changes require multi-signature approval from Safe{Wallet} signers
+
+**Use off-chain transaction policies when:**
+- Need quick policy updates without requiring multi-sig approval
+- Want additional control layers beyond on-chain rules
+- Managing temporary or frequently changing rules
+- Controlling specific transaction initiators or API access
+
+For maximum security, you can combine both:
+1. Use on-chain transaction policies for core security rules
+2. Add off-chain transaction policies for flexible, day-to-day control
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
