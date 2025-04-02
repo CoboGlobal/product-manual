@@ -121,13 +121,6 @@
       "pages": [
         "en/portal/introduction",
         {
-          "group": "Quick start guide",
-          "pages": [
-            "/en/portal/quick-start-guide-custodial-wallets",
-            "/en/portal/quick-start-guide-mpc"
-          ]
-        },
-        {
           "group": "Token & chain support",
           "pages": [
             "en/portal/supported-tokens-and-chains",
@@ -142,9 +135,15 @@
             "en/portal/troubleshoot/mpc-wallets",
             "en/portal/troubleshoot/exchange-wallets"
           ]
-        },
-        "en/portal/glossary",
-        "en/portal/changelog"
+        }
+      ],
+      "version": "English"
+    },
+    {
+      "group": "GET STARTED",
+      "pages": [
+        "en/portal/quick-start-guide-custodial-wallets",
+        "en/portal/quick-start-guide-mpc"
       ],
       "version": "English"
     },
@@ -184,7 +183,7 @@
               "pages": [
                 "en/portal/mpc-wallets/ocw/introduction",
                 {
-                  "group": "Set up Organization-Controlled Wallets",
+                  "group": "Set up wallets",
                   "pages": [
                     "en/portal/mpc-wallets/ocw/set-up",
                     "en/portal/mpc-wallets/ocw/create-mpc-vault",
@@ -482,6 +481,13 @@
       "version": "English"
     },
     {
+      "group": "RESOURCES",
+      "pages": [
+        "en/portal/glossary"
+      ],
+      "version": "English"
+    },
+    {
       "group": "ABOUT COBO PORTAL APPS",
       "pages": [
         "en/apps/introduction",
@@ -525,27 +531,14 @@
           ]
         },
         {
-          "group": "Token Swap",
+          "group": "Token Bridge",
           "pages": [
-            {
-              "group": "Bridge",
-              "pages": [
-                "en/apps/bridge/introduction",
-                "en/apps/bridge/how-to-use/setup",
-                "en/apps/bridge/how-to-use/manage/dashboard",
-                "en/apps/bridge/how-to-use/manage/bridge-form",
-                "en/apps/bridge/how-to-use/manage/confirmation",
-                "en/apps/bridge/how-to-use/manage/supported-assets"
-              ]
-            },
-            {
-              "group": "Swap",
-              "pages": [
-                "en/apps/swap/introduction",
-                "en/apps/swap/how-to",
-                "en/apps/swap/supported-assets"
-              ]
-            }
+            "en/apps/bridge/introduction",
+            "en/apps/bridge/how-to-use/setup",
+            "en/apps/bridge/how-to-use/manage/dashboard",
+            "en/apps/bridge/how-to-use/manage/bridge-form",
+            "en/apps/bridge/how-to-use/manage/confirmation",
+            "en/apps/bridge/how-to-use/manage/supported-assets"
           ]
         },
         {
@@ -618,13 +611,8 @@
           "group": "Batch Payouts",
           "pages": [
             "en/apps/batch-payouts/introduction",
-            {
-              "group": "How to use",
-              "pages": [
-                "en/apps/batch-payouts/make-payout",
-                "en/apps/batch-payouts/manage-payouts"
-              ]
-            }
+            "en/apps/batch-payouts/make-payout",
+            "en/apps/batch-payouts/manage-payouts"
           ]
         }
       ],
@@ -693,7 +681,6 @@
       "group": "概览",
       "pages": [
         "cn/portal/introduction",
-        "cn/portal/quick-start-guide",
         {
           "group": "代币与链支持",
           "pages": [
@@ -709,9 +696,14 @@
             "cn/portal/troubleshoot/mpc-wallets",
             "cn/portal/troubleshoot/exchange-wallets"
           ]
-        },
-        "cn/portal/glossary",
-        "cn/portal/changelog"
+        }
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "GET STARTED",
+      "pages": [
+        "cn/portal/quick-start-guide-custodial-wallets"
       ],
       "version": "简体中文"
     },
@@ -751,7 +743,7 @@
               "pages": [
                 "cn/portal/mpc-wallets/ocw/introduction",
                 {
-                  "group": "创建机构钱包",
+                  "group": "设置钱包",
                   "pages": [
                     "cn/portal/mpc-wallets/ocw/set-up",
                     "cn/portal/mpc-wallets/ocw/create-mpc-vault",
@@ -1049,6 +1041,13 @@
       "version": "简体中文"
     },
     {
+      "group": "资源文档",
+      "pages": [
+        "cn/portal/glossary"
+      ],
+      "version": "简体中文"
+    },
+    {
       "group": "了解 COBO PORTAL APPS",
       "pages": [
         "cn/apps/introduction",
@@ -1092,27 +1091,14 @@
           ]
         },
         {
-          "group": "Token Swap",
+          "group": "Token Bridge",
           "pages": [
-            {
-              "group": "Bridge",
-              "pages": [
-                "cn/apps/bridge/introduction",
-                "cn/apps/bridge/how-to-use/setup",
-                "cn/apps/bridge/how-to-use/manage/dashboard",
-                "cn/apps/bridge/how-to-use/manage/bridge-form",
-                "cn/apps/bridge/how-to-use/manage/confirmation",
-                "cn/apps/bridge/how-to-use/manage/supported-assets"
-              ]
-            },
-            {
-              "group": "Swap",
-              "pages": [
-                "cn/apps/swap/introduction",
-                "cn/apps/swap/how-to",
-                "cn/apps/swap/supported-assets"
-              ]
-            }
+            "cn/apps/bridge/introduction",
+            "cn/apps/bridge/how-to-use/setup",
+            "cn/apps/bridge/how-to-use/manage/dashboard",
+            "cn/apps/bridge/how-to-use/manage/bridge-form",
+            "cn/apps/bridge/how-to-use/manage/confirmation",
+            "cn/apps/bridge/how-to-use/manage/supported-assets"
           ]
         },
         {
@@ -1185,13 +1171,8 @@
           "group": "Batch Payouts",
           "pages": [
             "cn/apps/batch-payouts/introduction",
-            {
-              "group": "使用说明",
-              "pages": [
-                "cn/apps/batch-payouts/make-payout",
-                "cn/apps/batch-payouts/manage-payouts"
-              ]
-            }
+            "cn/apps/batch-payouts/make-payout",
+            "cn/apps/batch-payouts/manage-payouts"
           ]
         }
       ],
