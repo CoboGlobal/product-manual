@@ -40,6 +40,7 @@ When the command contains "rococo-translate":
 | Operator   | 操作员      | |
 | Admin      | 管理员      | |
 | Signer     | 签名人      | |
+| Manager     | 经理      | |
 
 ### Transaction & Asset Related
 | **English**        | **Chinese**  | **Context/Notes** |
