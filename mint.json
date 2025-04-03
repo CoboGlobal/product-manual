@@ -129,7 +129,7 @@
         },
         "en/portal/security-checklist",
         {
-          "group": "FAQs and troubleshooting",
+          "group": "FAQs",
           "pages": [
             "en/portal/troubleshoot/custodial-wallets",
             "en/portal/troubleshoot/mpc-wallets",
@@ -690,7 +690,7 @@
         },
         "cn/portal/security-checklist",
         {
-          "group": "常见问题与排查",
+          "group": "常见问题",
           "pages": [
             "cn/portal/troubleshoot/custodial-wallets",
             "cn/portal/troubleshoot/mpc-wallets",
