@@ -32,7 +32,7 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
     <Info>如果您使用 WaaS 2.0 API，可以使用 [Check Cobo Loop Transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) 操作来确定交易是否可以作为 Cobo Loop 转账执行。或者直接调用 [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) 操作，强制将交易作为 Cobo Loop 转账执行。</Info>
 
 6. 输入转账金额。
-7. 查看交易费用。交易费用包括网络费用。该费用是固定的，无法修改。相关费用将从选择的“转出”地址扣除，具体金额因转账的代币而异。
+7. 查看交易手续费。该费用是固定的，无法修改。具体金额因转账的代币而异，费用将从选择的源地址扣除，您需要确保该地址有足够的余额支付。
 8. <MySnippet />
 9. 点击**提交**。
 10. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
