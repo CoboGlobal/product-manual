@@ -20,10 +20,10 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
 
 <img src="/cn/images/transfers/mpc-withdrawal-process.svg" className="diagram" alt="从机构钱包提币的流程"/>
 
-1. **发起提币请求**：用户通过 Cobo Portal 或 [WaaS API](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw#withdraw-tokens) 发起提币请求。
+1. **发起提币请求**：用户通过 Cobo Portal 或 [WaaS API](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/get-started-ocw#withdraw-tokens) 发起提币请求。
 2. **二次确认**：
    - 通过 Cobo Portal 发起的提币：需要在 [Cobo Guard](/cn/guard/introduction) 上确认提币请求。
-   - 通过 WaaS API 发起的提币：您的 [Callback Endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) 需要返回 "ok" 以确认提币请求。
+   - 通过 WaaS API 发起的提币：您的 [Callback Endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/introduction) 需要返回 "ok" 以确认提币请求。
 3. **[风控](/cn/portal/risk-controls/tx-policies-overview)**：如果已配置，Cobo Portal 中的交易风控将评估提币请求。当需要人工审核时，审批员需要在 Cobo Guard 上审批该交易。
 4. **签名**：Cobo 根据在线状态等条件选择一个可用的[签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group)来签署交易。请确保至少有一个签名人在线。您可以通过 Cobo Portal 查看签名人是否在线。详情请参见本文**查看签名人状态**一节。
 5. **广播**：Cobo 创建交易并将其广播到网络。
@@ -50,7 +50,7 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
     - **我的钱包**：选择钱包类别，然后点击您希望转入的钱包。
 5. 输入转账金额。注意，对于 DOT、XRP 或 KSM 代币，所选的 MPC 钱包（机构钱包）中持有的余额必须满足最低要求。DOT 代币的最低余额为 1 DOT，XRP 为 10 XRP，KSM 为 0.000333333 KSM。
 
-    <Info>您可转账的最大金额受交易费、可用余额和锁定金额的影响：<ul><li>（提币金额+交易费）\>可用余额：无法提交提币请求。</li><li>（提币金额+交易费）≤（当前余额-锁定金额）：您的提币请求将被立即处理。</li><li>（当前余额-锁定金额）\<（提币金额+交易费）≤ 可用余额：您可以成功提交提币请求，但您的交易将被排队进行。</li></ul>更多信息请参阅 [MPC 钱包余额和交易金额信息](https://www.cobo.com/developers/v2/guides/mpc-wallets/balance-amounts)。</Info>
+    <Info>您可转账的最大金额受交易费、可用余额和锁定金额的影响：<ul><li>（提币金额+交易费）\>可用余额：无法提交提币请求。</li><li>（提币金额+交易费）≤（当前余额-锁定金额）：您的提币请求将被立即处理。</li><li>（当前余额-锁定金额）\<（提币金额+交易费）≤ 可用余额：您可以成功提交提币请求，但您的交易将被排队进行。</li></ul>更多信息请参阅 [MPC 钱包余额和交易金额信息](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/balance-amounts)。</Info>
 
 6. 查看交易费用。根据交易速度，网络费用分为三个级别：慢、标准和快。
 7. 要调整该费用，请点击下图圈出的按钮。所有字段都是必填项，并将根据您选择的交易速度自动填充。您可以根据自己的具体要求编辑各个参数。
