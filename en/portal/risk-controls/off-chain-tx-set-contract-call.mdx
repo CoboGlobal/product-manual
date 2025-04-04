@@ -14,7 +14,13 @@ description: "Discover how to set up contract call policies in Cobo Portal, enha
 3. Click **Create Policy** > **Contract Call.**
 <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**. The name should not exceed 30 characters.
-5. Select all the **Applicable Wallets** for the policy you are about to create.
+5. Select all the **Applicable Wallets** for the policy you are about to create. The following wallet types support contract call policies:
+   - Custodial Wallets
+     - Web3 Wallets
+   - MPC Wallets
+     - Organization-Controlled Wallets
+     - User-Controlled Wallets
+   - Smart Contract Wallets
 6. Select an **Applicable Network** for the policy you are about to create. For Web3 wallets and MPC Wallets, the supported networks are **All EVM Networks** and **SOL**.
 7. Under **If**, click **+ Add condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-contract-call#select-condition-template).
    - You have the option to skip setting any conditions and proceed directly to the next step. This means that any transaction signing associated with the applicable wallets will trigger this policy.

@@ -13,7 +13,15 @@ description: "Learn the steps to set up token transfer policies in Cobo Portal, 
 3. Click **Create Policy** > **Transfer**.
 <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**, then click **Next**. The name should not exceed 30 characters.
-5. Select all the wallets under **Applicable Wallets** that are applicable to the policy you are about to create, then click **Next**.
+5. Select all the wallets under **Applicable Wallets** that are applicable to the policy you are about to create, then click **Next**. The following wallet types support token transfer policies:
+   - Custodial Wallets
+     - Asset Wallets
+     - Web3 Wallets
+   - MPC Wallets
+     - Organization-Controlled Wallets
+     - User-Controlled Wallets
+   - Smart Contract Wallets
+   - Exchange Wallets
 6. Under **If**, click **+ Add Condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-transfer#select-condition-template).
    - You have the option to skip setting any conditions and proceed directly to the next step. This means that any token transfers associated with the applicable wallets will trigger this policy.
 7. Under **Then**, Select the action to be taken if the policy is triggered (i.e., **Auto Approval**, **Auto Rejection**, and **Approval Quorum**), then click **Next**. To learn more about approval actions, see [Set approval action](/en/portal/risk-controls/off-chain-tx-set-transfer#set-approval-action).
