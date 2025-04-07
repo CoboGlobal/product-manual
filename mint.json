@@ -25,12 +25,10 @@
   },
   "versions": [
     {
-      "name": "English",
-      "locale": "en"
+      "name": "English"
     },
     {
-      "name": "简体中文",
-      "locale": "cn"
+      "name": "简体中文"
     }
   ],
   "topbarLinks": [
