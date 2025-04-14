@@ -772,7 +772,7 @@
                 },
                 "cn/portal/mpc-wallets/ocw/transfers",
                 {
-                  "group": "自动归集代币",
+                  "group": "自动代币归集",
                   "pages": [
                     "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
                     "cn/portal/mpc-wallets/ocw/enable-auto-sweep"
