@@ -2,17 +2,17 @@
 title: "MPC Wallets FAQs"
 sidebarTitle: "MPC Wallets"
 lang: "en"
-description: "Learn about frequently asked questions about MPC Wallets, including Auto-Sweep issues."
+description: "Learn about frequently asked questions about MPC Wallets, including auto token sweeping issues."
 ---
 
-## Auto-Sweep related issues
+## Auto token sweeping related issues
 
 ### Why can't some tokens be fully swept from the deposit address?  
 
-In certain blockchain networks, after an Auto-Sweep operation, a small amount of funds may still remain in the deposit address. The main reasons are as follows:  
+In certain blockchain networks, after an auto token sweeping operation, a small amount of funds may still remain in the deposit address. The main reasons are as follows:  
 
-- Minimum balance requirement for certain tokens: Some blockchains (such as XRP) require addresses to maintain a minimum balance. For example, an XRP address must retain at least 1 XRP, so even after Auto-Sweep, the deposit address will still have 1 XRP that cannot be transferred.  
-- L1 fee estimation discrepancies in L2 Auto-Sweep: On Layer 2 networks (such as Base), sweep transactions require L1 fees, but the actual fee consumed may be lower than the estimated amount. As a result, after Auto-Sweep, the deposit address may still hold an amount equal to `blockchain estimated L1 fee - actually paid L1 fee`, which cannot be fully swept.  
+- Minimum balance requirement for certain tokens: Some blockchains (such as XRP) require addresses to maintain a minimum balance. For example, an XRP address must retain at least 1 XRP, so even after auto token sweeping, the deposit address will still have 1 XRP that cannot be transferred.  
+- L1 fee estimation discrepancies in L2 auto token sweeping: On Layer 2 networks (such as Base), sweep transactions require L1 fees, but the actual fee consumed may be lower than the estimated amount. As a result, after auto token sweeping, the deposit address may still hold an amount equal to `blockchain estimated L1 fee - actually paid L1 fee`, which cannot be fully swept.  
 - Gas estimation discrepancies in EVM transactions: On EVM-compatible chains (such as Ethereum and BSC), sweep transactions require gas fees, which are estimated based on the maximum possible consumption (gas limit). However, the actual gas consumed might be lower than the gas limit, leading to a remaining balance of `gas price * unused gas` in the deposit address.  
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
