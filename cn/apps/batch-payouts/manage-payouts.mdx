@@ -16,6 +16,16 @@ description: "学习如何在 Batch Payouts 中管理批量转账，查看交易
 1. 点击 Cobo Portal 上的 Apps 图标 <img src="/en/images/common/icon_apps.svg" className="icon" alt="Apps 图标" />，找到 Batch Payouts，点击**打开**。
 2. 在 Batch Payouts 的概览页面，您可以看到您所在团队内所有批量转账。您也可以查看总付款金额、交易总数和使用的收款地址总数。
     <img src="/en/images/portal-apps/batch-payouts/payouts.png" className="screenshot_full_screen" alt="概览页面截图" />
+    Batch Payouts 的批量转账状态可以为以下几种：
+    - 待审批：批量转账正等待审批员审批。
+    - 待收款人确认：批量转账正在等待收款人在 Cobo Guard 中确认，确认后将构造交易。
+    - 等待中：批量转账已审批通过并正在处理。
+    - 已完成：批量转账已完成。
+    - 部分完成：批量转账部分交易完成，部分交易失败。
+    - 已撤销：批量转账被发起请求的用户撤销。
+    - 已拒绝：批量转账被审批员拒绝。
+    - 已失败：批量转账交易链上执行失败或审批超时。
+    
 3. 如果您想要对某笔批量转账进行操作，请在**操作**（Actions）栏中点击相应的图标，执行以下操作：
     - <img src="/en/images/portal-apps/batch-payouts/icon_revoke.svg" className="icon" alt="撤销图标" />（撤回）：如果您不再需要某笔批量转账，可以撤回该批量转账请求。
 

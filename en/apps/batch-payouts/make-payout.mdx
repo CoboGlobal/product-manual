@@ -30,7 +30,7 @@ This article describes how to make a batch payout in the Batch Payouts app.
     - **Receiving address**: Enter the recipient's address manually, or import it from your Address Book or a CSV file.
     - **Amount to Receive**: Specify the transfer amount.
 
-        <Note>If the total payout amount is more than 100 USD, the payout will trigger an approval workflow and its status will be **Pending Approval**. It will require one organization admin to approve, otherwise the transactions in the payout will not be proceeded. If no approval or rejection is made within 7 days (168 hours) after the payout is made, its status will automatically become **Failed**. For more details about approval workflows, refer to [View and update approval workflows](/en/apps/workflow).</Note>
+        <Note>If the total payout amount is more than 100 USD, the payout will trigger an approval workflow and its status will be **Pending Approval**. It will require an approver to approve, otherwise the transactions in the payout will not be proceeded. If no approval or rejection is made within 7 days (168 hours) after the payout is made, its status will automatically become **Failed**. For more details about approval workflows, refer to [View and update approval workflows](/en/apps/workflow).</Note>
 
     - **Note**: Include any additional information about the transfer.
     - **Cobo Account** (or **Email** if **Recipient Confirmation on Cobo Guard** is disabled):
@@ -38,9 +38,9 @@ This article describes how to make a batch payout in the Batch Payouts app.
       - If **Recipient Confirmation on Cobo Guard** is disabled, enter the recipient's email address, which will receive a notification upon payout receipt.
 7. In the **Transaction Cost** section, select a transaction fee level, or customize the transaction fee by clicking the settings icon <img src="/en/images/common/icon_advanced.svg" className="icon" alt="the settings icon" />.
 8. Verify the transaction cost and click **Submit**.
-9. Approve the payout on Cobo Guard.
+9. In the **Security Verification** dialog, verify your identity with an MFA method such as Cobo Guard or Google Authenticator.
 
-Now you have submitted a batch payout request. 
+Now you have submitted a batch payout request. The request might require approval before it is processed based on the approval workflow settings.
 
 ## Next-Steps
 
