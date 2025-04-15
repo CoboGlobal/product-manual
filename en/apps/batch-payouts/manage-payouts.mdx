@@ -16,6 +16,16 @@ This article describes how to manage batch payouts in the Batch Payouts app, inc
 1. Click the Apps icon <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon" /> on Cobo Portal, find Batch Payouts, and then click **Open** to open the app.
 2. On the overview page, you can find all the batch payouts in your organization. You can also view the total payout amount, total number of transactions, and total number of used receiving addresses.
     <img src="/en/images/portal-apps/batch-payouts/payouts.png" className="screenshot_full_screen" alt="Screenshot of the payouts overview page" />
+    The status of a batch payout can be as follows:
+    - Pending Approval: The payout is waiting for approvers to approve.
+    - Pending Recipient Confirmation: The payout is waiting for recipient's confirmation on Cobo Guard. The transactions will be constructed after the confirmation.
+    - Pending: The payout is approved and being processed.
+    - Completed: The payout is completed and received by the recipients.
+    - Partially Completed: Some transactions in the payout are completed while others failed
+    - Revoked: The payout is revoked by the user who submitted the request.
+    - Rejected: The payout is rejected by the approvers.
+    - Failed: The payout failed on chain or approval timed out.
+
 3. To perform actions on a batch payout, click the corresponding icons in the **Actions** column to perform the actions as follows:
 
     - <img src="/en/images/portal-apps/batch-payouts/icon_revoke.svg" className="icon" alt="the Revoke icon" /> (Revoke): Revoke a batch payout request if you do not need it anymore.
