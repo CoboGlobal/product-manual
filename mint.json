@@ -294,7 +294,15 @@
             "en/portal/transfers/from-web3-wallets",
             "en/portal/transfers/from-mpc-wallets",
             "en/portal/transfers/from-smart-contract-wallets",
-            "en/portal/transfers/from-exchange-wallets"
+            "en/portal/transfers/from-exchange-wallets",
+            {
+              "group": "Address Book",
+              "pages": [
+                "en/portal/address-book/introduction",
+                "en/portal/address-book/set-up",
+                "en/portal/address-book/manage"
+              ]
+            }
           ]
         },
         {
@@ -325,7 +333,8 @@
                     "en/portal/risk-controls/safe-risk-controls",
                     "en/portal/risk-controls/manage-emergency-policy"
                   ]
-                }
+                },
+                "en/portal/risk-controls/address-list"
               ]
             },
             {
@@ -343,8 +352,7 @@
                 "en/portal/risk-controls/governance-edit",
                 "en/portal/risk-controls/governance-notifications"
               ]
-            },
-            "en/portal/risk-controls/address-list"
+            }
           ]
         }
       ],
@@ -417,14 +425,6 @@
             "en/portal/bills-and-payments/manage-bills",
             "en/portal/bills-and-payments/payment-methods"
           ]
-        },
-        {
-          "group": "Address Book",
-          "pages": [
-            "en/portal/address-book/introduction",
-            "en/portal/address-book/set-up",
-            "en/portal/address-book/manage"
-          ]
         }
       ],
       "version": "English"
@@ -486,19 +486,23 @@
       "version": "English"
     },
     {
-      "group": "ABOUT COBO PORTAL APPS",
+      "group": "OVERVIEW",
       "pages": [
         "en/apps/introduction",
         "en/apps/browse-and-install",
-        "en/apps/transaction-policies",
-        "en/apps/app-settings",
-        "en/apps/workflow",
-        "en/apps/build"
+        {
+          "group": "Manage apps",
+          "pages": [
+            "en/apps/transaction-policies",
+            "en/apps/app-settings",
+            "en/apps/workflow"
+          ]
+        }
       ],
       "version": "English"
     },
     {
-      "group": "BUILT BY COBO",
+      "group": "AVAILABLE APPS",
       "pages": [
         {
           "group": "Earn",
@@ -617,42 +621,61 @@
       "version": "English"
     },
     {
-      "group": "Cobo Accounts",
+      "group": "OVERVIEW",
       "pages": [
         "en/accounts/introduction",
+        "en/accounts/troubleshoot"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "GET STARTED",
+      "pages": [
+        "en/accounts/sign-up",
+        "en/accounts/log-in",
+        "en/accounts/set-up-mfa"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "MANAGE",
+      "pages": [
         {
-          "group": "Set up Cobo Accounts",
-          "pages": [
-            "en/accounts/sign-up",
-            "en/accounts/log-in",
-            "en/accounts/set-up-mfa"
-          ]
-        },
-        {
-          "group": "Manage login methods",
+          "group": "Login methods",
           "pages": [
             "en/accounts/add-passkey-as-login-method",
             "en/accounts/modify-existing-login-methods"
           ]
         },
         {
-          "group": "Manage multi-factor authentications",
+          "group": "Multi-factor authentications (MFA)",
           "pages": [
             "en/accounts/reset-google-authenticator",
             "en/accounts/delete-security-keys",
             "en/accounts/reset-cobo-guard"
           ]
-        },
-        "en/accounts/troubleshoot"
+        }
       ],
       "version": "English"
     },
     {
-      "group": "Cobo Guard",
+      "group": "OVERVIEW",
       "pages": [
-        "en/guard/introduction",
+        "en/guard/introduction"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "GET STARTED",
+      "pages": [
         "en/guard/download",
-        "en/guard/set-up",
+        "en/guard/set-up"
+      ],
+      "version": "English"
+    },
+    {
+      "group": "MANAGE",
+      "pages": [
         "en/guard/manage",
         "en/guard/generate-and-back-up-key-shares",
         "en/guard/reset"
@@ -660,7 +683,7 @@
       "version": "English"
     },
     {
-      "group": "Cobo Connect",
+      "group": "OVERVIEW",
       "pages": [
         "en/cobo-connect/introduction",
         "en/cobo-connect/set-up",
@@ -699,7 +722,7 @@
       "version": "简体中文"
     },
     {
-      "group": "GET STARTED",
+      "group": "快速开始",
       "pages": [
         "cn/portal/quick-start-guide-custodial-wallets",
         "cn/portal/quick-start-guide-mpc"
@@ -855,7 +878,15 @@
             "cn/portal/transfers/from-web3-wallets",
             "cn/portal/transfers/from-mpc-wallets",
             "cn/portal/transfers/from-smart-contract-wallets",
-            "cn/portal/transfers/from-exchange-wallets"
+            "cn/portal/transfers/from-exchange-wallets",
+            {
+              "group": "地址簿",
+              "pages": [
+                "cn/portal/address-book/introduction",
+                "cn/portal/address-book/set-up",
+                "cn/portal/address-book/manage"
+              ]
+            }
           ]
         },
         {
@@ -886,7 +917,8 @@
                     "cn/portal/risk-controls/safe-risk-controls",
                     "cn/portal/risk-controls/manage-emergency-policy"
                   ]
-                }
+                },
+                "cn/portal/risk-controls/address-list"
               ]
             },
             {
@@ -904,8 +936,7 @@
                 "cn/portal/risk-controls/governance-edit",
                 "cn/portal/risk-controls/governance-notifications"
               ]
-            },
-            "cn/portal/risk-controls/address-list"
+            }
           ]
         }
       ],
@@ -978,14 +1009,6 @@
             "cn/portal/bills-and-payments/manage-bills",
             "cn/portal/bills-and-payments/payment-methods"
           ]
-        },
-        {
-          "group": "地址簿",
-          "pages": [
-            "cn/portal/address-book/introduction",
-            "cn/portal/address-book/set-up",
-            "cn/portal/address-book/manage"
-          ]
         }
       ],
       "version": "简体中文"
@@ -1047,19 +1070,23 @@
       "version": "简体中文"
     },
     {
-      "group": "了解 COBO PORTAL APPS",
+      "group": "概览",
       "pages": [
         "cn/apps/introduction",
         "cn/apps/browse-and-install",
-        "cn/apps/transaction-policies",
-        "cn/apps/app-settings",
-        "cn/apps/workflow",
-        "cn/apps/build"
+        {
+          "group": "管理应用",
+          "pages": [
+            "cn/apps/transaction-policies",
+            "cn/apps/app-settings",
+            "cn/apps/workflow"
+          ]
+        }
       ],
       "version": "简体中文"
     },
     {
-      "group": "COBO 出品",
+      "group": "已上架 APP",
       "pages": [
         {
           "group": "Earn",
@@ -1178,42 +1205,61 @@
       "version": "简体中文"
     },
     {
-      "group": "Cobo Accounts",
+      "group": "概览",
       "pages": [
         "cn/accounts/introduction",
+        "cn/accounts/troubleshoot"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "快速开始",
+      "pages": [
+        "cn/accounts/sign-up",
+        "cn/accounts/log-in",
+        "cn/accounts/set-up-mfa"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "管理",
+      "pages": [
         {
-          "group": "设置 Cobo Accounts",
-          "pages": [
-            "cn/accounts/sign-up",
-            "cn/accounts/log-in",
-            "cn/accounts/set-up-mfa"
-          ]
-        },
-        {
-          "group": "管理登录方式",
+          "group": "登录方式",
           "pages": [
             "cn/accounts/add-passkey-as-login-method",
             "cn/accounts/modify-existing-login-methods"
           ]
         },
         {
-          "group": "管理多重身份验证 (MFA) 方式",
+          "group": "多重身份验证 (MFA)",
           "pages": [
             "cn/accounts/reset-google-authenticator",
             "cn/accounts/delete-security-keys",
             "cn/accounts/reset-cobo-guard"
           ]
-        },
-        "cn/accounts/troubleshoot"
+        }
       ],
       "version": "简体中文"
     },
     {
-      "group": "Cobo Guard",
+      "group": "概览",
       "pages": [
-        "cn/guard/introduction",
+        "cn/guard/introduction"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "快速开始",
+      "pages": [
         "cn/guard/download",
-        "cn/guard/set-up",
+        "cn/guard/set-up"
+      ],
+      "version": "简体中文"
+    },
+    {
+      "group": "管理",
+      "pages": [
         "cn/guard/manage",
         "cn/guard/generate-and-back-up-key-shares",
         "cn/guard/reset"
@@ -1221,7 +1267,7 @@
       "version": "简体中文"
     },
     {
-      "group": "Cobo Connect",
+      "group": "概览",
       "pages": [
         "cn/cobo-connect/introduction",
         "cn/cobo-connect/set-up",
