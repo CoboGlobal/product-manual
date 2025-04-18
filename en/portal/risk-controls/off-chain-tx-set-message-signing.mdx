@@ -16,7 +16,12 @@ description: "Learn the steps to set up message signing policies in Cobo Portal.
 <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 4. Enter a **Policy Name**. The name should not exceed 30 characters.
 5. Select applicable networks. 
-6. Select the wallets under **Applicable Wallets** that are applicable to the policy you are about to create. Select addresses.
+6. Select the wallets under **Applicable Wallets** that are applicable to the policy you are about to create. Select addresses. The following wallet types support message signing policies:
+   - Custodial Wallets
+     - Web3 Wallets
+   - MPC Wallets
+     - Organization-Controlled Wallets
+     - User-Controlled Wallets
 7. Under **If**, click **+ Add Condition** to select a condition template. You can add one or more conditions to each policy. If multiple conditions are applied, the policy will be triggered only if the transaction satisfies all conditions. To learn more about conditions, see [Select condition template](/en/portal/risk-controls/off-chain-tx-set-message-signing#select-condition-template).
    - You have the option to skip setting any conditions and proceed directly to the next step. This means that any message signing requests associated with the applicable wallets will trigger this policy.
 8. Under **Then**, Select the action to be taken if the policy is triggered (i.e., **Auto Approval**, **Auto Rejection**, and **Approval Quorum**), then click **Next**. To learn more about approval actions, see [Set approval action](/en/portal/risk-controls/off-chain-tx-set-message-signing#set-approval-action).
