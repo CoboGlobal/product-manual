@@ -414,18 +414,7 @@
             "en/portal/bills-and-payments/payment-methods"
           ]
         },
-        {
-          "group": "Dashboard",
-          "pages": [
-            "en/portal/dashboard/introduction",
-            "en/portal/dashboard/quick-snapshot",
-            "en/portal/dashboard/total-assets-trend",
-            "en/portal/dashboard/portfolio",
-            "en/portal/dashboard/package-usage",
-            "en/portal/dashboard/transaction-overview",
-            "en/portal/dashboard/cobo-news"
-          ]
-        }
+        "en/portal/dashboard/introduction"
       ],
       "version": "English"
     },
@@ -977,18 +966,7 @@
             "cn/portal/bills-and-payments/payment-methods"
           ]
         },
-        {
-          "group": "数据概览",
-          "pages": [
-            "cn/portal/dashboard/introduction",
-            "cn/portal/dashboard/quick-snapshot",
-            "cn/portal/dashboard/total-assets-trend",
-            "cn/portal/dashboard/portfolio",
-            "cn/portal/dashboard/package-usage",
-            "cn/portal/dashboard/transaction-overview",
-            "cn/portal/dashboard/cobo-news"
-          ]
-        }
+        "cn/portal/dashboard/introduction"
       ],
       "version": "简体中文"
     },
