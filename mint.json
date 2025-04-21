@@ -434,45 +434,24 @@
       "pages": [
         "en/portal/developer-console/introduction",
         {
-          "group": "WaaS 2.0",
+          "group": "API keys",
           "pages": [
-            "en/portal/developer-console/overview",
-            {
-              "group": "API keys",
-              "pages": [
-                "en/portal/developer-console/why-create-api-keys",
-                "en/portal/developer-console/create-api-key",
-                "en/portal/developer-console/manage-api-key"
-              ]
-            },
-            {
-              "group": "Webhooks",
-              "pages": [
-                "en/portal/developer-console/webhooks-intro",
-                "en/portal/developer-console/webhooks-create",
-                "en/portal/developer-console/webhooks-manage"
-              ]
-            },
-            {
-              "group": "Callbacks",
-              "pages": [
-                "en/portal/developer-console/callbacks-intro",
-                "en/portal/developer-console/callbacks-notif-subs",
-                "en/portal/developer-console/callbacks-register"
-              ]
-            },
-            "en/portal/developer-console/api-logs",
-            "en/portal/developer-console/webhook-events",
-            "en/portal/developer-console/callback-messages"
+            "en/portal/developer-console/why-create-api-keys",
+            "en/portal/developer-console/create-api-key"
           ]
         },
         {
-          "group": "Cobo Portal Apps",
+          "group": "Webhooks",
           "pages": [
-            "en/portal/developer-console/api-dashboard",
-            "en/portal/developer-console/app-usage",
-            "en/portal/developer-console/app-api-logs",
-            "en/portal/developer-console/app-webhooks"
+            "en/portal/developer-console/webhooks-intro",
+            "en/portal/developer-console/webhooks-create"
+          ]
+        },
+        {
+          "group": "Callbacks",
+          "pages": [
+            "en/portal/developer-console/callbacks-intro",
+            "en/portal/developer-console/callbacks-register"
           ]
         }
       ],
@@ -1018,45 +997,24 @@
       "pages": [
         "cn/portal/developer-console/introduction",
         {
-          "group": "WaaS 2.0",
+          "group": "API Key",
           "pages": [
-            "cn/portal/developer-console/overview",
-            {
-              "group": "API keys",
-              "pages": [
-                "cn/portal/developer-console/why-create-api-keys",
-                "cn/portal/developer-console/create-api-key",
-                "cn/portal/developer-console/manage-api-key"
-              ]
-            },
-            {
-              "group": "Webhooks",
-              "pages": [
-                "cn/portal/developer-console/webhooks-intro",
-                "cn/portal/developer-console/webhooks-create",
-                "cn/portal/developer-console/webhooks-manage"
-              ]
-            },
-            {
-              "group": "Callbacks",
-              "pages": [
-                "cn/portal/developer-console/callbacks-intro",
-                "cn/portal/developer-console/callbacks-notif-subs",
-                "cn/portal/developer-console/callbacks-register"
-              ]
-            },
-            "cn/portal/developer-console/api-logs",
-            "cn/portal/developer-console/webhook-events",
-            "cn/portal/developer-console/callback-messages"
+            "cn/portal/developer-console/why-create-api-keys",
+            "cn/portal/developer-console/create-api-key"
           ]
         },
         {
-          "group": "Cobo Portal Apps",
+          "group": "Webhooks",
           "pages": [
-            "cn/portal/developer-console/api-dashboard",
-            "cn/portal/developer-console/app-usage",
-            "cn/portal/developer-console/app-api-logs",
-            "cn/portal/developer-console/app-webhooks"
+            "cn/portal/developer-console/webhooks-intro",
+            "cn/portal/developer-console/webhooks-create"
+          ]
+        },
+        {
+          "group": "Callbacks",
+          "pages": [
+            "cn/portal/developer-console/callbacks-intro",
+            "cn/portal/developer-console/callbacks-register"
           ]
         }
       ],
