@@ -1,12 +1,24 @@
 ---
-title: "为什么要在开发者控制台上注册 API Key？"
-sidebarTitle: "为什么要在开发者控制台上注册 API Key？"
+title: "简介"
+sidebarTitle: "简介"
 lang: "zh-hans"
-description: "了解创建 API Key 的必要性，确保您的 App 安全和高效运行。"
+description: "了解什么是 API Key 以及为什么将其注册到 Developer Console 对于实现安全且基于权限的 API 访问至关重要。"
 ---
 
-管理员和操作员可以在开发者控制台上注册 API Key，并分配特定的用户角色、权限和 IP 白名单。根据不同的使用场景，可以注册多个 API Key 。
+## 什么是 API Key？
 
-- **指定用户角色和权限**：为 API Key 确定和分配特定的用户角色和权限。
-- **指定 IP 白名单**：确定能够访问 API Key 的 IP 地址。
+为了实现客户端与 WaaS 2.0 服务之间的安全通信和身份认证，Cobo 使用了 API Key 和 API Secret 机制。该机制依赖于加密密钥对来验证客户端的身份和请求的完整性。API Key 是该加密密钥对中的公钥，用于识别发起请求的客户端。
+
+每个 API Key 都关联特定的权限和钱包作用范围，用于定义该客户端可以执行的操作以及可以访问的钱包。通过为不同的 API Key 分配不同的权限和范围，你可以在团队内部实现对 API 访问的精细化控制。
+
+关于 WaaS 2.0 中身份验证机制的更多信息，请参阅[身份验证](https://www.cobo.com/developers/v2_cn/guides/overview/cobo-auth)。
+
+关于如何使用 Ed25519 算法生成 API Key 及其对应的 API Secret，请参阅[生成 API Key 和 API Secret](https://www.cobo.com/developers/v2_cn/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret)。
+
+## 为什么要在开发者控制台中注册 API Key？
+
+生成 API Key 之后，你需要在开发者控制台中注册该 API Key。这样 Cobo 才能对你的 API 请求进行身份验证，同时你也可以在控制台中管理该 API Key 的权限、钱包范围以及相关的安全设置。你可以根据不同的环境或使用场景注册多个 API Key，例如用于测试、生产、内部系统或第三方集成等。
+
+关于如何在开发者控制台中注册 API Key，请参阅[注册 API Key](/cn/portal/developer-console/create-api-key)。
+
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

@@ -4,7 +4,12 @@ sidebarTitle: "创建 MPC Vault"
 lang: "zh-hans"
 description: "了解如何创建 MPC Vault，确保资产的安全存储。"
 ---
-<Note>注意：只有拥有[操作员](/cn/portal/organization/roles-and-permissions)角色的用户能够创建 Vault。</Note>
+
+## 前提条件
+
+您已被分配了操作员、经理或管理员[角色](/cn/portal/organization/roles-and-permissions)。
+
+## 步骤
 
 Vault 是一个钱包集合，这些钱包具有相同的根扩展私钥。系统将自动为您创建一个默认 Vault。若您希望创建其他 Vault，请按照以下步骤操作：
 
@@ -17,4 +22,26 @@ Vault 是一个钱包集合，这些钱包具有相同的根扩展私钥。系�
 3. 在弹出的对话框中，点击**返回 Vault 列表**。
 
 4. 点击页面右上角的**创建 Vault**。
+
+5. 输入新 Vault 的名称。您还可以将该 Vault 设置为默认 Vault。
+
+6. 点击**创建**。
+
+现在您已创建了一个新的 Vault。
+
+## 后续步骤
+
+创建 Vault 后，您可以：
+
+- 设置默认 Vault。
+- 修改 Vault 的名称。
+- 导出详细信息，如 Vault 下的地址列表及其相应余额。仅当成功创建[主控组](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)后才会显示该按钮。
+- 查看与 Vault 相关联的所有交易。仅当成功创建[主控组](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)后才会显示该按钮。
+- 查看与每个 Vault 相关联的根扩展公钥，管理主控组、签名组和恢复组。有关更多信息，请参阅[管理持有者组](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)。
+- 按钱包名称搜索所在 Vault 中的钱包。
+- 按创建时间对所在 Vault 中的钱包进行排序。
+- 在网格视图和列表视图之间切换 Vault 的显示方式。
+
+<img src="/cn/images/mpc-wallet/vault-page.png" className="screenshot_full_screen" alt="Vault 页面"/>
+
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

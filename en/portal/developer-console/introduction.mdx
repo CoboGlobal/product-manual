@@ -1,56 +1,42 @@
 ---
-title: "Introduction to Developer Console"
-sidebarTitle: "Introduction"
+title: "Overview"
+sidebarTitle: "Overview"
 lang: "en"
-description: "Discover the Developer Console in Cobo Portal, your control center for managing API keys, logs, webhook events, and callback messages."
+description: "Learn about Developer Console for managing API keys, monitoring webhook and callback events, and tracking app usage across your organization."
 ---
 
-Developer Console in Cobo Portal is a comprehensive control center, designed to simplify and enhance the management of API keys, API logs, webhook events, and callback messages across different sections of your organization’s infrastructure. 
+Developer Console in Cobo Portal is your organization’s control center for everything related to APIs and integrations. Whether you’re building Cobo Portal Apps or other WaaS 2.0 apps, the console helps you ensure everything runs smoothly, from API key issuance to webhook reliability.
 
-Now split into **WaaS 2.0** and **Cobo Portal Apps**, the console provides focused tools and real-time insights, helping developers streamline workflows and manage applications more easily. The WaaS 2.0 tab covers a full suite of API management functionalities, while the Cobo Portal Apps tab provides streamlined monitoring for Cobo platform applications. 
+The console is split into two sections, each with tools tailored to different development activities:
 
-This console provides extensive logs and real-time metrics, offering developers the visibility and resources needed to maintain control over their organization’s operations at all times.
+## WaaS 2.0
 
-## Key features
+Use this tab to monitor and manage API operations connected to WaaS 2.0. It gives you full visibility into your org’s backend API traffic and integrations.
 
-### WaaS 2.0
-The WaaS 2.0 tab provides an in-depth view of API requests made by members of your organization to the WaaS 2.0 service, offering tools and insights to ensure secure, efficient, and responsive operations.
+Here’s what you can do in the WaaS 2.0 tab:
 
-#### Overview
-Comprehensive overview that displays real-time metrics and visualizations of your organization's API Requests, API Request Distribution, Top 5 API Operations, Webhooks, and Callbacks. These insights provide valuable information about your users' usage patterns, enabling you to optimize resources and identify potential issues proactively.
+- **Overview dashboard**: Visual summary of real-time API usage, top endpoints, and request distribution—great for understanding traffic patterns or identifying anomalies.
+- **API Keys**: Create, edit, revoke, and monitor API keys used by your organization to access the WaaS 2.0 service. You can also register callback endpoints and associate them with specific API keys.
+- **Webhooks**: Register, edit, or revoke webhook endpoints and view event history.
+- **API Logs**: Searchable log viewer for all API requests and responses. Ideal for debugging and audits.
+- **Webhook Events**: Browse and search past webhook events sent from WaaS 2.0. For each event, you can view detailed metadata, payload content, and the full history of delivery attempts. You can also retry sending webhook events.
+- **Callback Messages**: View and search all callback messages triggered by user actions. For each message, you can inspect delivery attempts, status, error details, and message data.
 
-#### API keys
-Manage your organization's API keys, which are essential for authenticating and authorizing requests to your organization on Cobo Portal. You can create, edit, revoke, and monitor the usage of your API keys on this page.
+<img src="/en/images/developer-console/overview.png" className="screenshot_full_screen" alt="The overview tab" />
 
-#### Webhooks
-Webhooks enable real-time event notifications. Configure and manage your webhook endpoints, ensuring that the desired organization users stay informed about critical events as they occur.
+## Cobo Portal Apps
 
-#### Callbacks
-Callbacks execute codes in response to a specific event. Configure and manage your callback endpoints, ensuring that specific user-initiated events will trigger a predetermined response.
+This tab helps you track API activity for Cobo Portal Apps that are built and deployed by your organization.
 
-#### API logs
-Comprehensive log viewer, providing detailed information about all the API communication requests with your organization. This feature is important for debugging, troubleshooting, and auditing purposes, ensuring that you have complete visibility into the interactions between your organization and users.
+<Info>This tab only appears if your organization has developed one or more Cobo Portal Apps.</Info>
 
-#### Webhook events
-Detailed view of all the webhook events that have occurred between Cobo Portal and your integrated application. This feature allows you to track and monitor specific events, enabling you to gain oversight of the status of all event notifications.
+Here’s what you can do in the Cobo Portal Apps tab:
 
-#### Callback messages
-Monitor the status of all triggered callback messages here. This feature is useful for debugging and ensuring that your organization is handling user-initiated responses correctly.
+- **API Dashboard**: Visualize real-time request metrics for each app.
+- **App Usage**: Monitor how each app is being used across organizations, including the number of organizations and users, as well as launch and view counts.
+- **API Logs**: View detailed logs of all API requests made by the app.
+- **Webhook Events**: Review webhook events triggered by the app.
 
-### Cobo Portal Apps
-The **Cobo Portal Apps** tab lists all Cobo Portal Apps developed by members of your organization, highlighting API activity at the app level.
-<Info>If no Cobo Portal Apps have been developed by members of your organization, this tab will not display.</Info>
-
-#### API dashboard
-The API Dashboard serves as a central hub for real-time visualizations and metrics related to API requests made by the Cobo Portal Apps developed by your organization's members. This dashboard offers valuable insights into usage patterns, enabling developers to optimize resources and proactively address potential issues.
-
-#### App usage
-This dedicated page allows you to monitor the usage metrics of the Cobo Portal Apps developed by members of your organization. It helps developers track performance and identify areas for improvement, facilitating efficient resource management.
-
-#### API logs
-Similar to the WaaS 2.0 API Logs, this section provides comprehensive information on all API communications specific to Cobo Portal Apps. It supports debugging, troubleshooting, and auditing, ensuring you have full visibility into app interactions.
-
-#### Webhook events
-This section provides a complete view of all webhook events associated with the Cobo Portal Apps developed by members of your organization. It allows you to track, monitor, and verify event notifications, helping maintain real-time awareness of all app activities.
+<img src="/en/images/developer-console/api_dashboard.png" className="screenshot_full_screen" alt="The API Dashboard tab" />
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
