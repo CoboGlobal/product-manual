@@ -157,7 +157,8 @@
               "pages": [
                 "en/portal/custodial-wallets/asset-wallets/set-up",
                 "en/portal/custodial-wallets/asset-wallets/manage",
-                "en/portal/custodial-wallets/asset-wallets/transfers"
+                "en/portal/custodial-wallets/asset-wallets/transfers",
+                "en/portal/custodial-wallets/cobo-loop"
               ]
             },
             {
@@ -168,8 +169,7 @@
                 "en/portal/custodial-wallets/web3-wallets/transfers",
                 "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            },
-            "en/portal/custodial-wallets/cobo-loop"
+            }
           ]
         },
         {
@@ -709,7 +709,8 @@
               "pages": [
                 "cn/portal/custodial-wallets/asset-wallets/set-up",
                 "cn/portal/custodial-wallets/asset-wallets/manage",
-                "cn/portal/custodial-wallets/asset-wallets/transfers"
+                "cn/portal/custodial-wallets/asset-wallets/transfers",
+                "cn/portal/custodial-wallets/cobo-loop"
               ]
             },
             {
@@ -720,8 +721,7 @@
                 "cn/portal/custodial-wallets/web3-wallets/transfers",
                 "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            },
-            "cn/portal/custodial-wallets/cobo-loop"
+            }
           ]
         },
         {
