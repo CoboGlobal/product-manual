@@ -493,14 +493,25 @@
           ]
         },
         {
-          "group": "Token Bridge",
+          "group": "Token Swap",
           "pages": [
-            "en/apps/bridge/introduction",
-            "en/apps/bridge/how-to-use/setup",
-            "en/apps/bridge/how-to-use/manage/dashboard",
-            "en/apps/bridge/how-to-use/manage/bridge-form",
-            "en/apps/bridge/how-to-use/manage/confirmation",
-            "en/apps/bridge/how-to-use/manage/supported-assets"
+            "en/apps/token-swap/introduction",
+            {
+              "group": "Bridge",
+              "pages": [
+                "en/apps/token-swap/bridge/introduction",
+                "en/apps/token-swap/bridge/how-to",
+                "en/apps/token-swap/bridge/supported-assets"
+              ]
+            },
+            {
+              "group": "Swap",
+              "pages": [
+                "en/apps/token-swap/swap/introduction",
+                "en/apps/token-swap/swap/how-to",
+                "en/apps/token-swap/swap/supported-assets"
+              ]
+            }
           ]
         },
         {
@@ -1030,14 +1041,25 @@
           ]
         },
         {
-          "group": "Token Bridge",
+          "group": "Token Swap",
           "pages": [
-            "cn/apps/bridge/introduction",
-            "cn/apps/bridge/how-to-use/setup",
-            "cn/apps/bridge/how-to-use/manage/dashboard",
-            "cn/apps/bridge/how-to-use/manage/bridge-form",
-            "cn/apps/bridge/how-to-use/manage/confirmation",
-            "cn/apps/bridge/how-to-use/manage/supported-assets"
+            "cn/apps/token-swap/introduction",
+            {
+              "group": "Bridge",
+              "pages": [
+                "cn/apps/token-swap/bridge/introduction",
+                "cn/apps/token-swap/bridge/how-to",
+                "cn/apps/token-swap/bridge/supported-assets"
+              ]
+            },
+            {
+              "group": "Swap",
+              "pages": [
+                "cn/apps/token-swap/swap/introduction",
+                "cn/apps/token-swap/swap/how-to",
+                "cn/apps/token-swap/swap/supported-assets"
+              ]
+            }
           ]
         },
         {
