@@ -1,56 +1,42 @@
 ---
-title: "开发者控制台简介"
-sidebarTitle: "简介"
-lang: "zh-hans"
-description: "了解开发者控制台的功能和使用方法，帮助您更好地管理 API 和 App。"
+title: "概览"
+sidebarTitle: "概览"
+lang: "zh"
+description: "了解开发者控制台如何用于管理 API Key、监控 Webhook 和回调事件，并跟踪团队内应用的使用情况。"
 ---
 
-Cobo Portal 的开发者控制台是开发者统一管理 API Key、跟踪 API 日志、监督 Webhook 事件和处理 Callback 消息的平台。
+Cobo Portal 的 开发者控制台是您的团队在 API 与集成相关事务的控制中心。无论您是在构建 Cobo Portal Apps 还是其他 WaaS 2.0 App，开发者控制台都能帮助您从 API Key 创建到 Webhook 稳定性监控，全流程保持运行顺畅。
 
-开发者控制台分为 **WaaS 2.0** 和 **Cobo Portal Apps** 两个板块，提供了针对性的的工具和实时洞察，帮助开发人员简化工作流程，更轻松地管理 Cobo Portal Apps。**WaaS 2.0** 标签页提供了一系列 API 管理功能，而 **Cobo Portal Apps** 标签页则提供 Cobo Portal Apps 相关的监控功能。
+控制台分为两个部分，每个部分都提供了适用于不同开发场景的功能：
 
-开发者控制台提供了详尽的日志和实时指标，让开发人员访问所需的数据和资源，随时保持对团队使用 API 情况的全面掌控。
+## WaaS 2.0
 
-## 主要特点
+该标签页用于监控和管理与 WaaS 2.0 服务相关的 API 操作，为您提供团队后端 API 流量和集成的全面可视性。
 
-### WaaS 2.0
-WaaS 2.0 板块提供了您团队成员对 WaaS 2.0 服务发起的 API 请求的深入视图，提供实用工具和洞察数据，以确保操作的安全、高效和响应及时。
+在 WaaS 2.0 标签页中，您可以：
 
-#### 概览
-通过概览，您可以查看团队一系列实时指标及相关的可视化呈现，包括 API 请求、API 请求分布、排名前 5 的 API 请求、Webhook 和 Callback。这些洞察提供了有关用户使用模式的宝贵信息，便于优化资源并主动发现潜在问题。
+- **概览面板**：以可视化方式展示实时 API 使用情况、调用最多的接口以及请求分布，帮助您了解流量模式或识别异常。
+- **API Key**：创建、编辑、撤销和监控团队中用于访问 WaaS 2.0 的 API Key。您还可以注册 Callback Endpoint，并将其与特定 API Key关联。
+- **Webhook**：注册、编辑或撤销 Webhook Endpoint，并查看事件历史。
+- **API 日志**：可搜索的日志查看器，记录所有 API 请求与响应，适用于调试和审计。
+- **Webhook 事件**：浏览和搜索从 WaaS 2.0 发出的 Webhook 事件。每个事件都可查看其基本数据、Payload 数据和完整的投递历史记录。您还可以重新发送 Webhook 事件。
+- **回调消息**：查看和搜索由用户行为触发的回调消息。每条消息都可以查看其投递尝试、状态、错误信息以及消息数据，便于调试和确保正确处理事件。
 
-#### API Key
-管理团队的 API Key，这对于在 Cobo Portal 上验证和授权 API 请求非常重要。您可以在此页面创建、编辑、失效 API Key，监控 API Key 的使用情况。
+<img src="/cn/images/developer-console/overview.png" className="screenshot_full_screen" alt="概览标签页" />
 
-#### Webhook
-Webhook 支持实时事件通知。配置和管理 Webhook Endpoint，确保指定团队用户在发生关键事件时随时了解相关信息。
+## Cobo Portal Apps
 
-#### Callback
-Callback 可响应特定事件，执行相应的代码。配置和管理 Callback Endpoint，确保用户发起的特定事件会触发预定的响应。
+该标签页用于跟踪由团队开发并部署的 Cobo Portal Apps 的 API 活动。
 
-#### API 日志
-一个全面的日志查看器，提供与团队有关的所有 API 通信请求的详细信息。该功能对于调试、故障排除和审计非常重要，可确保您全面了解团队与用户之间的交互情况。
+<Info>仅当您的团队开发了一个或多个 Cobo Portal Apps 时，该标签页才会显示。</Info>
 
-#### Webhook 事件
-Cobo Portal 与集成 App 之间发生的所有 Webhook 事件的详细视图。该功能允许您跟踪和监控特定事件，使您能够监督所有事件通知的状态。
+在 Cobo Portal Apps 标签页中，您可以：
 
-#### Callback 消息
-用于监控所有触发的 callback 消息的状态。该功能可用于调试并确保您的团队妥当处理用户发起的响应。
+- **API 仪表板**：可视化查看每个 App 的实时 API 请求指标。
+- **应用使用情况**：监控每个 App 被多少个团队和用户使用，以及启动和浏览次数，帮助评估应用的使用情况和受欢迎程度。
+- **API 日志**：查看该 App 发出的所有 API 请求的详细日志。
+- **Webhook 事件**：查看由该 App 触发的 Webhook 事件历史。
 
-### Cobo Portal Apps
-**Cobo Portal Apps** 板块展示由您的团队成员开发的所有 Cobo Portal Apps，突出 App 级别的 API 活动。
-<Info>如果您的团队成员尚未开发任何 Cobo Portal Apps，则不会展示该板块。</Info>
-
-#### API 看板
-API 看板用于实时监控和可视化由您团队成员开发的 Cobo Portal Apps 发起的 API 请求相关的指标。该看板提供了有关使用模式的宝贵见解，使开发人员能够优化资源并主动解决潜在问题。
-
-#### App 使用情况
-该页面用于监控由您团队成员开发的 Cobo Portal Apps 的使用情况，帮助开发人员跟踪性能并识别改进空间，促进高效的资源管理。
-
-#### API 日志
-与 WaaS 2.0 API 日志类似，此部分提供了与 Cobo Portal Apps 相关的所有 API 通讯的全面信息，支持调试、故障排除和审计，确保您全面了解 App 交互情况。
-
-#### Webhook 事件
-该部分提供了与您团队成员开发的 Cobo Portal Apps 相关的 Webhook 事件的详细视图，帮助您跟踪、监控和验证 Webhook 事件，实时了解所有 App 活动。
+<img src="/cn/images/developer-console/api_dashboard.png" className="screenshot_full_screen" alt="API 看板标签页" />
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

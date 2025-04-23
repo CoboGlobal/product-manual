@@ -156,7 +156,6 @@
               "group": "Asset Wallets",
               "pages": [
                 "en/portal/custodial-wallets/asset-wallets/set-up",
-                "en/portal/custodial-wallets/asset-wallets/manage",
                 "en/portal/custodial-wallets/asset-wallets/transfers"
               ]
             },
@@ -164,7 +163,6 @@
               "group": "Web3 Wallets",
               "pages": [
                 "en/portal/custodial-wallets/web3-wallets/set-up",
-                "en/portal/custodial-wallets/web3-wallets/manage",
                 "en/portal/custodial-wallets/web3-wallets/transfers",
                 "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
@@ -198,8 +196,6 @@
                     "en/portal/mpc-wallets/ocw/create-mpc-wallet"
                   ]
                 },
-                "en/portal/mpc-wallets/ocw/manage-vaults",
-                "en/portal/mpc-wallets/ocw/manage-wallets",
                 "en/portal/mpc-wallets/ocw/manage-key-share-groups",
                 {
                   "group": "Recover holder groups",
@@ -280,7 +276,6 @@
                 "en/portal/exchange-wallets/set-up"
               ]
             },
-            "en/portal/exchange-wallets/manage",
             "en/portal/exchange-wallets/transfers",
             "en/portal/transfers/from-exchange-wallets",
             "en/portal/exchange-wallets/within-wallet"
@@ -299,8 +294,7 @@
               "group": "Address Book",
               "pages": [
                 "en/portal/address-book/introduction",
-                "en/portal/address-book/set-up",
-                "en/portal/address-book/manage"
+                "en/portal/address-book/set-up"
               ]
             }
           ]
@@ -384,8 +378,7 @@
                 "en/portal/organization/governance-edit",
                 "en/portal/organization/governance-notifications"
               ]
-            },
-            "en/portal/organization/activity-logs"
+            }
           ]
         },
         {
@@ -399,7 +392,6 @@
                 "en/portal/fee-station/set-up-for-mpc"
               ]
             },
-            "en/portal/fee-station/manage",
             "en/portal/fee-station/deposit",
             "en/portal/fee-station/transaction-records"
           ]
@@ -414,18 +406,7 @@
             "en/portal/bills-and-payments/payment-methods"
           ]
         },
-        {
-          "group": "Dashboard",
-          "pages": [
-            "en/portal/dashboard/introduction",
-            "en/portal/dashboard/quick-snapshot",
-            "en/portal/dashboard/total-assets-trend",
-            "en/portal/dashboard/portfolio",
-            "en/portal/dashboard/package-usage",
-            "en/portal/dashboard/transaction-overview",
-            "en/portal/dashboard/cobo-news"
-          ]
-        }
+        "en/portal/dashboard/introduction"
       ],
       "version": "English"
     },
@@ -434,45 +415,24 @@
       "pages": [
         "en/portal/developer-console/introduction",
         {
-          "group": "WaaS 2.0",
+          "group": "API keys",
           "pages": [
-            "en/portal/developer-console/overview",
-            {
-              "group": "API keys",
-              "pages": [
-                "en/portal/developer-console/why-create-api-keys",
-                "en/portal/developer-console/create-api-key",
-                "en/portal/developer-console/manage-api-key"
-              ]
-            },
-            {
-              "group": "Webhooks",
-              "pages": [
-                "en/portal/developer-console/webhooks-intro",
-                "en/portal/developer-console/webhooks-create",
-                "en/portal/developer-console/webhooks-manage"
-              ]
-            },
-            {
-              "group": "Callbacks",
-              "pages": [
-                "en/portal/developer-console/callbacks-intro",
-                "en/portal/developer-console/callbacks-notif-subs",
-                "en/portal/developer-console/callbacks-register"
-              ]
-            },
-            "en/portal/developer-console/api-logs",
-            "en/portal/developer-console/webhook-events",
-            "en/portal/developer-console/callback-messages"
+            "en/portal/developer-console/why-create-api-keys",
+            "en/portal/developer-console/create-api-key"
           ]
         },
         {
-          "group": "Cobo Portal Apps",
+          "group": "Webhooks",
           "pages": [
-            "en/portal/developer-console/api-dashboard",
-            "en/portal/developer-console/app-usage",
-            "en/portal/developer-console/app-api-logs",
-            "en/portal/developer-console/app-webhooks"
+            "en/portal/developer-console/webhooks-intro",
+            "en/portal/developer-console/webhooks-create"
+          ]
+        },
+        {
+          "group": "Callbacks",
+          "pages": [
+            "en/portal/developer-console/callbacks-intro",
+            "en/portal/developer-console/callbacks-register"
           ]
         }
       ],
@@ -588,7 +548,6 @@
           "pages": [
             "en/apps/invoicing/introduction",
             "en/apps/invoicing/set-up",
-            "en/apps/invoicing/dashboard",
             {
               "group": "Invoices",
               "pages": [
@@ -597,13 +556,7 @@
                 "en/apps/invoicing/invoices/manage"
               ]
             },
-            {
-              "group": "Settlements",
-              "pages": [
-                "en/apps/invoicing/settlements/request",
-                "en/apps/invoicing/settlements/view"
-              ]
-            },
+            "en/apps/invoicing/settlements/request",
             "en/apps/invoicing/clients",
             "en/apps/invoicing/titles",
             "en/apps/invoicing/payment"
@@ -740,7 +693,6 @@
               "group": "资产钱包",
               "pages": [
                 "cn/portal/custodial-wallets/asset-wallets/set-up",
-                "cn/portal/custodial-wallets/asset-wallets/manage",
                 "cn/portal/custodial-wallets/asset-wallets/transfers"
               ]
             },
@@ -748,7 +700,6 @@
               "group": "Web3 钱包",
               "pages": [
                 "cn/portal/custodial-wallets/web3-wallets/set-up",
-                "cn/portal/custodial-wallets/web3-wallets/manage",
                 "cn/portal/custodial-wallets/web3-wallets/transfers",
                 "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
@@ -782,8 +733,6 @@
                     "cn/portal/mpc-wallets/ocw/create-mpc-wallet"
                   ]
                 },
-                "cn/portal/mpc-wallets/ocw/manage-vaults",
-                "cn/portal/mpc-wallets/ocw/manage-wallets",
                 "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
                 {
                   "group": "恢复持有者组",
@@ -864,7 +813,6 @@
                 "cn/portal/exchange-wallets/set-up"
               ]
             },
-            "cn/portal/exchange-wallets/manage",
             "cn/portal/exchange-wallets/transfers",
             "cn/portal/transfers/from-exchange-wallets",
             "cn/portal/exchange-wallets/within-wallet"
@@ -883,8 +831,7 @@
               "group": "地址簿",
               "pages": [
                 "cn/portal/address-book/introduction",
-                "cn/portal/address-book/set-up",
-                "cn/portal/address-book/manage"
+                "cn/portal/address-book/set-up"
               ]
             }
           ]
@@ -968,8 +915,7 @@
                 "cn/portal/organization/governance-edit",
                 "cn/portal/organization/governance-notifications"
               ]
-            },
-            "cn/portal/organization/activity-logs"
+            }
           ]
         },
         {
@@ -983,7 +929,6 @@
                 "cn/portal/fee-station/set-up-for-mpc"
               ]
             },
-            "cn/portal/fee-station/manage",
             "cn/portal/fee-station/deposit",
             "cn/portal/fee-station/view-tx-records"
           ]
@@ -998,18 +943,7 @@
             "cn/portal/bills-and-payments/payment-methods"
           ]
         },
-        {
-          "group": "数据概览",
-          "pages": [
-            "cn/portal/dashboard/introduction",
-            "cn/portal/dashboard/quick-snapshot",
-            "cn/portal/dashboard/total-assets-trend",
-            "cn/portal/dashboard/portfolio",
-            "cn/portal/dashboard/package-usage",
-            "cn/portal/dashboard/transaction-overview",
-            "cn/portal/dashboard/cobo-news"
-          ]
-        }
+        "cn/portal/dashboard/introduction"
       ],
       "version": "简体中文"
     },
@@ -1018,45 +952,24 @@
       "pages": [
         "cn/portal/developer-console/introduction",
         {
-          "group": "WaaS 2.0",
+          "group": "API Key",
           "pages": [
-            "cn/portal/developer-console/overview",
-            {
-              "group": "API keys",
-              "pages": [
-                "cn/portal/developer-console/why-create-api-keys",
-                "cn/portal/developer-console/create-api-key",
-                "cn/portal/developer-console/manage-api-key"
-              ]
-            },
-            {
-              "group": "Webhooks",
-              "pages": [
-                "cn/portal/developer-console/webhooks-intro",
-                "cn/portal/developer-console/webhooks-create",
-                "cn/portal/developer-console/webhooks-manage"
-              ]
-            },
-            {
-              "group": "Callbacks",
-              "pages": [
-                "cn/portal/developer-console/callbacks-intro",
-                "cn/portal/developer-console/callbacks-notif-subs",
-                "cn/portal/developer-console/callbacks-register"
-              ]
-            },
-            "cn/portal/developer-console/api-logs",
-            "cn/portal/developer-console/webhook-events",
-            "cn/portal/developer-console/callback-messages"
+            "cn/portal/developer-console/why-create-api-keys",
+            "cn/portal/developer-console/create-api-key"
           ]
         },
         {
-          "group": "Cobo Portal Apps",
+          "group": "Webhooks",
           "pages": [
-            "cn/portal/developer-console/api-dashboard",
-            "cn/portal/developer-console/app-usage",
-            "cn/portal/developer-console/app-api-logs",
-            "cn/portal/developer-console/app-webhooks"
+            "cn/portal/developer-console/webhooks-intro",
+            "cn/portal/developer-console/webhooks-create"
+          ]
+        },
+        {
+          "group": "Callbacks",
+          "pages": [
+            "cn/portal/developer-console/callbacks-intro",
+            "cn/portal/developer-console/callbacks-register"
           ]
         }
       ],
@@ -1172,7 +1085,6 @@
           "pages": [
             "cn/apps/invoicing/introduction",
             "cn/apps/invoicing/set-up",
-            "cn/apps/invoicing/dashboard",
             {
               "group": "发票",
               "pages": [
@@ -1181,13 +1093,7 @@
                 "cn/apps/invoicing/invoices/manage"
               ]
             },
-            {
-              "group": "结算",
-              "pages": [
-                "cn/apps/invoicing/settlements/request",
-                "cn/apps/invoicing/settlements/view"
-              ]
-            },
+            "cn/apps/invoicing/settlements/request",
             "cn/apps/invoicing/clients",
             "cn/apps/invoicing/titles",
             "cn/apps/invoicing/payment"
@@ -1573,6 +1479,190 @@
     {
       "source": "/cn/portal/mpc-wallets/ocw/object-model",
       "destination": "/cn/mpc-wallets/ucw/introduction"
+    },
+    {
+      "source": "/en/portal/developer-console/api-dashboard",
+      "destination": "/en/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/en/portal/developer-console/app-webhooks",
+      "destination": "/en/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/en/portal/developer-console/overview",
+      "destination": "/en/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/en/portal/dashboard/transaction-overview",
+      "destination": "/en/portal/dashboard/introduction"
+    },
+    {
+      "source": "/en/portal/dashboard/cobo-news",
+      "destination": "/en/portal/dashboard/introduction"
+    },
+    {
+      "source": "/en/portal/address-book/manage",
+      "destination": "/en/portal/address-book/set-up#next-steps"
+    },
+    {
+      "source": "/en/portal/dashboard/quick-snapshot",
+      "destination": "/en/portal/dashboard/introduction"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/manage-vaults",
+      "destination": "/en/portal/mpc-wallets/ocw/create-mpc-vault#next-steps"
+    },
+    {
+      "source": "/en/portal/dashboard/total-assets-trend",
+      "destination": "/en/portal/dashboard/introduction"
+    },
+    {
+      "source": "/en/portal/mpc-wallets/ocw/manage-wallets",
+      "destination": "/en/portal/mpc-wallets/ocw/create-mpc-wallet#next-steps"
+    },
+    {
+      "source": "/en/apps/invoicing/settlements/view",
+      "destination": "/en/apps/invoicing/settlements/request#next-steps"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/asset-wallets/manage",
+      "destination": "/en/portal/custodial-wallets/asset-wallets/set-up#next-steps"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/web3-wallets/manage",
+      "destination": "/en/portal/custodial-wallets/web3-wallets/set-up#next-steps"
+    },
+    {
+      "source": "/en/portal/fee-station/manage",
+      "destination": "/en/portal/fee-station/set-up-for-mpc#next-steps"
+    },
+    {
+      "source": "/en/portal/developer-console/webhooks-manage",
+      "destination": "/en/portal/developer-console/webhooks-create#next-steps"
+    },
+    {
+      "source": "/en/portal/developer-console/app-usage",
+      "destination": "/en/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/en/portal/developer-console/app-api-logs",
+      "destination": "/en/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/en/portal/invoicing/dashboard",
+      "destination": "/en/apps/invoicing/introduction"
+    },
+    {
+      "source": "/en/portal/dashboard/package-usage",
+      "destination": "/en/portal/dashboard/introduction"
+    },
+    {
+      "source": "/en/portal/developer-console/api-logs",
+      "destination": "/en/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/en/portal/developer-console/callbacks-notif-subs",
+      "destination": "/en/portal/developer-console/callbacks-intro"
+    },
+    {
+      "source": "/en/portal/developer-console/callback-messages",
+      "destination": "/en/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/en/portal/dashboard/portfolio",
+      "destination": "/en/portal/dashboard/introduction"
+    },
+    {
+      "source": "/cn/portal/developer-console/api-dashboard",
+      "destination": "/cn/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/cn/portal/developer-console/app-webhooks",
+      "destination": "/cn/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/cn/portal/developer-console/overview",
+      "destination": "/cn/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/cn/portal/dashboard/transaction-overview",
+      "destination": "/cn/portal/dashboard/introduction"
+    },
+    {
+      "source": "/cn/portal/dashboard/cobo-news",
+      "destination": "/cn/portal/dashboard/introduction"
+    },
+    {
+      "source": "/cn/portal/address-book/manage",
+      "destination": "/cn/portal/address-book/set-up#next-steps"
+    },
+    {
+      "source": "/cn/portal/dashboard/quick-snapshot",
+      "destination": "/cn/portal/dashboard/introduction"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/manage-vaults",
+      "destination": "/cn/portal/mpc-wallets/ocw/create-mpc-vault#next-steps"
+    },
+    {
+      "source": "/cn/portal/dashboard/total-assets-trend",
+      "destination": "/cn/portal/dashboard/introduction"
+    },
+    {
+      "source": "/cn/portal/mpc-wallets/ocw/manage-wallets",
+      "destination": "/cn/portal/mpc-wallets/ocw/create-mpc-wallet#next-steps"
+    },
+    {
+      "source": "/cn/apps/invoicing/settlements/view",
+      "destination": "/cn/apps/invoicing/settlements/request#next-steps"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/asset-wallets/manage",
+      "destination": "/cn/portal/custodial-wallets/asset-wallets/set-up#next-steps"
+    },
+    {
+      "source": "/cn/portal/custodial-wallets/web3-wallets/manage",
+      "destination": "/cn/portal/custodial-wallets/web3-wallets/set-up#next-steps"
+    },
+    {
+      "source": "/cn/portal/fee-station/manage",
+      "destination": "/cn/portal/fee-station/set-up-for-mpc#next-steps"
+    },
+    {
+      "source": "/cn/portal/developer-console/webhooks-manage",
+      "destination": "/cn/portal/developer-console/webhooks-create#next-steps"
+    },
+    {
+      "source": "/cn/portal/developer-console/app-usage",
+      "destination": "/cn/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/cn/portal/developer-console/app-api-logs",
+      "destination": "/cn/portal/developer-console/introduction#cobo-portal-apps"
+    },
+    {
+      "source": "/cn/portal/invoicing/dashboard",
+      "destination": "/cn/apps/invoicing/introduction"
+    },
+    {
+      "source": "/cn/portal/dashboard/package-usage",
+      "destination": "/cn/portal/dashboard/introduction"
+    },
+    {
+      "source": "/cn/portal/developer-console/api-logs",
+      "destination": "/cn/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/cn/portal/developer-console/callbacks-notif-subs",
+      "destination": "/cn/portal/developer-console/callbacks-intro"
+    },
+    {
+      "source": "/cn/portal/developer-console/callback-messages",
+      "destination": "/cn/portal/developer-console/introduction#waas-2-0"
+    },
+    {
+      "source": "/cn/portal/dashboard/portfolio",
+      "destination": "/cn/portal/dashboard/introduction"
     }
   ]
 }

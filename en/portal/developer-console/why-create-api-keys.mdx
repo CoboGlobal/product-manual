@@ -1,12 +1,22 @@
 ---
-title: "Why register API keys on Developer Console?"
-sidebarTitle: "Why register API keys on Developer Console?"
+title: "Introduction"
+sidebarTitle: "Introduction"
 lang: "en"
-description: "Understand the importance of registering API keys in Cobo's Developer Console, including user roles and permissions."
+description: "Learn what API keys are and why registering them in the Developer Console is essential for secure and permission-based API access."
 ---
 
-Admins and Operators can register API keys on the Developer Console and assign specific user roles, permissions, and IP whitelists. Multiple API keys can be registered depending on the different usage scenarios.
+## What is an API key?
+To enable secure and authenticated communication between clients and the WaaS 2.0 service, a mechanism based on the API key and API secret is used. This mechanism relies on cryptographic key pairs to verify the identity of the client and the integrity of the requests. The API key is the public key in this cryptographic key pair and serves to identify the client making the request.
 
-- **Specify user roles and permissions**: Determine and assign specific user roles and permissions for the API key.
-- **Specify IP whitelist**: Determine the IP addresses that are able to access the API keys.
+Each API key is associated with specific permissions and wallet scopes, defining what actions the client with the API key can perform and which wallets they can access. By assigning different permissions and wallet scopes to different keys, you can maintain fine-grained control over API access within your organization.
+
+For more details about authentication in WaaS 2.0, refer to [Authentication](https://www.cobo.com/developers/v2/guides/overview/cobo-auth).
+
+For more details on how to generate an API key and its corresponding secret using the Ed25519 algorithm, refer to [Generate an API key and an API secret](https://www.cobo.com/developers/v2/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret).
+
+## Why register API keys on Developer Console?
+After generating an API key, you need to register it on Developer Console. This allows Cobo to authenticate your API requests, and enables you to manage the API key's permissions, wallet scopes, and associated security settings through Developer Console. You can register multiple API keys for different environments or usage scenarios.
+
+For more details on how to register an API key on Developer Console, refer to [Register an API key](h/en/portal/developer-console/create-api-key).
+
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
