@@ -2,15 +2,19 @@
 title: "Enable auto token sweeping"
 sidebarTitle: "Enable auto token sweeping"
 lang: "en"
-description: "Learn how to enable auto token sweeping for MPC Wallets (Organization-Controlled Wallets) and explore the resulting updates to wallet features and transaction management."
+description: "Learn how to enable auto token sweeping and explore the resulting updates to wallet features and transaction management."
 ---
 
-This guide explains how to enable the auto token sweeping feature for an Organization-Controlled Wallet on Cobo Portal. For more details about auto token sweeping, refer to [Overview](/en/portal/mpc-wallets/ocw/auto-sweep-overview).
+This guide explains how to enable the auto token sweeping feature for MPC Wallets (Organization-Controlled Wallets) or Custodial Wallets (Web3 Wallets) on Cobo Portal. For more details about auto token sweeping, refer to [Overview](/en/portal/auto-sweep-overview).
 
 ## Prerequisites
-- You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
-- Due to the high volume of consolidation transactions and their concentrated execution time, please ensure you have set up at least one [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as your [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
-- If you use a TSS Node Callback server for risk control review, you can add the sweep-to address to the server's whitelist to automatically approve sweep transactions. For more details, refer to the sample project in [Auto token sweeping implementation](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation).
+
+- For MPC Wallets (Organization-Controlled Wallets):
+  - You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
+  - Due to the high volume of consolidation transactions and their concentrated execution time, please ensure you have set up at least one [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as your [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
+  - If you use a TSS Node Callback server for risk control review, you can add the sweep-to address to the server's whitelist to automatically approve sweep transactions. For more details, refer to the sample project in [Auto token sweeping implementation](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation).
+- For Custodial Wallets (Web3 Wallets):
+  - You have created a Custodial Wallet and set it up as described in [Set up Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up).
 - You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
 - Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the deposit address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the deposit address.
 <Info>For more details, refer to [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc).</Info>

@@ -2,20 +2,25 @@
 title: "启用自动代币归集"
 sidebarTitle: "启用自动代币归集"
 lang: "zh-hans"
-description: "了解如何为 MPC 钱包（机构钱包）启用自动代币归集功能，并探索钱包功能和交易管理的更新。"
+description: "了解如何为钱包启用自动代币归集功能，并探索钱包功能和交易管理的更新。"
 ---
 
-本指南解释了如何在 Cobo Portal 上为 MPC 钱包（机构钱包）启用自动代币归集功能。有关自动代币归集的更多详细信息，请参阅[概览](/cn/portal/mpc-wallets/ocw/auto-sweep-overview)。
+本指南解释了如何在 Cobo Portal 上为 MPC 钱包（机构钱包）或全托管钱包 (Web3 钱包)启用自动代币归集功能。有关自动代币归集的更多详细信息，请参阅[概览](/cn/portal/auto-sweep-overview)。
 
 ## 前提条件
-- 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
-- 由于归集交易数量较多且交易时间集中，请确保您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
-- 如果您使用 TSS Node Callback 服务器进行风控审核，您可以将归集地址写入 TSS Node Callback 服务器的白名单中，以自动批准归集交易。详情请参阅 [自动代币归集实现](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation) 中的示例项目。
+- 对于 MPC 钱包（机构钱包）：
+  - 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
+  - 由于归集交易数量较多且交易时间集中，请确保您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
+  - 如果您使用 TSS Node Callback 服务器进行风控审核，您可以将归集地址写入 TSS Node Callback 服务器的白名单中，以自动批准归集交易。详情请参阅 [自动代币归集实现](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation) 中的示例项目。
+- 对于全托管钱包 (Web3 钱包)：
+  - 您已创建全托管钱包 (Web3 钱包)并按照[设置 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)中的说明进行设置。
 - 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的同等[角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。
 <Info>更多详情请参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc)。</Info>
 
 ## 步骤
+
+以下步骤以 MPC 钱包（机构钱包）为例，全托管钱包（Web3 钱包）的步骤类似。
 
 ### 为新钱包启用
 
