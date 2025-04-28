@@ -10,7 +10,7 @@ description: "学习如何生成和备份私钥分片，确保私钥的安全管
 
 生成私钥分片后，私钥分片持有者可以使用 Cobo Guard 将其备份到 iCloud。备份过程中，私钥分片会被加密。私钥分片持有者需要设置一个恢复口令以确保从 iCloud 恢复备份时的安全性。私钥分片备份适用于设备丢失或更换等情况。
 
-## 发起私钥分片生成过程
+## 生成私钥分片
 
 私钥分片生成过程由 Cobo Portal 上的管理员发起。私钥分片将归类到以下三组之一：主控组、签名组和恢复组。我们将用主控组来说明这一过程。
 
@@ -22,24 +22,22 @@ description: "学习如何生成和备份私钥分片，确保私钥的安全管
 
     <Note>所选参与方的 Cobo Guard 必须已绑定到管理员的团队账号，这样他们才有资格被选为私钥分片持有者。</Note>
 
-3. 管理员发起主控组创建过程后，选定的参与方将通过其 Cobo Guard 收到通知。点击请求即可打开**详情**页。
+3. 管理员发起主控组创建过程后，选定的参与方将通过其 Cobo Guard 收到通知。点击**您有 1 个私钥分片生成请求。
 
-<img src="/cn/images/cobo-guard/common/1.png" className="screenshot_nav_bar"></img>
+    <img src="/cn/images/cobo-guard/request.png" className="screenshot_nav_bar" alt="The banner" />
 
-4. 在**详情**页面上，点击**同意**确认您愿意成为私钥分片持有者。您需要使用 Face ID 进行身份验证。
+4. 在**私钥分片**页面上，检查私钥分片生成请求相关信息，并点击**开始**启动私钥分片生成程序。
 
-<img src="/cn/images/cobo-guard/common/2.png" className="screenshot_nav_bar"></img>
+    <img src="/cn/images/cobo-guard/review.png" className="screenshot_nav_bar" alt="The key share generation request" />
 
-看到**已审批**消息时，即表示您已成功成为私钥分片持有者。点击 Cobo Guard App 主屏幕上的**全部**可查看此操作的状态。
+5. 生成过程需要 30 秒左右。当您看到**私钥分片生成成功**消息时，点击**立即备份**。
 
-## 使用 Cobo Guard 生成私钥分片
+    <img src="/cn/images/cobo-guard/complete.png" className="screenshot_nav_bar" alt="The key share generation completion page" />
 
-点击请求进入**生成私钥分片**屏幕，然后点击**开始**，通过 Face ID 进行身份验证。
-<Note>当所有参与方均在线时，私钥生成过程将自动开启。</Note>
+6. 您可以点击**开始**[备份私钥分片](#备份私钥分片)，或者点击**跳过**完成私钥分片生成过程。
 
-<img src="/cn/images/cobo-guard/common/3.png" className="screenshot_nav_bar"></img>
+    <img src="/cn/images/cobo-guard/skip.png" className="screenshot_nav_bar" alt="The key share backup page" />
 
-看到绿色的**私钥分片已生成**消息时，点击**确定**，返回“我的账户”，并查看新生成的私钥分片的详细信息。
 
 ## 备份私钥分片
 
@@ -58,6 +56,8 @@ description: "学习如何生成和备份私钥分片，确保私钥的安全管
     <Warning>请妥善保存口令，遗失口令将无法恢复私钥分片。</Warning>
 
 5. 在**备份成功**对话框中，点击**确定**，完成备份过程。
+
+<img src="/cn/images/cobo-guard/backup.png" className="screenshot_nav_bar" alt="The key share backup completion page" />
 
 您可以在手机的**文件** > **iCloud 云盘** > **Cobo Guard** > **Backup** 中查看文件名前缀为 `recovery-secrets-cobo` 的备份文件。
 
