@@ -319,8 +319,8 @@
                   "group": "Off-chain transaction policies",
                   "pages": [
                     "en/portal/risk-controls/default-transaction-policies",
-                    "en/portal/risk-controls/off-chain-tx-create-general-policy",
                     "en/portal/risk-controls/off-chain-tx-set-general-policy",
+                    "en/portal/risk-controls/off-chain-tx-manage-general-policy",
                     "en/portal/risk-controls/off-chain-tx-set-transfer",
                     "en/portal/risk-controls/off-chain-tx-manage-transfer",
                     "en/portal/risk-controls/off-chain-tx-set-contract-call",
@@ -870,8 +870,8 @@
                   "group": "链下交易风控",
                   "pages": [
                     "cn/portal/risk-controls/default-transaction-policies",
-                    "cn/portal/risk-controls/off-chain-tx-create-general-policy",
                     "cn/portal/risk-controls/off-chain-tx-set-general-policy",
+                    "cn/portal/risk-controls/off-chain-tx-manage-general-policy",
                     "cn/portal/risk-controls/off-chain-tx-set-transfer",
                     "cn/portal/risk-controls/off-chain-tx-manage-transfer",
                     "cn/portal/risk-controls/off-chain-tx-set-contract-call",
