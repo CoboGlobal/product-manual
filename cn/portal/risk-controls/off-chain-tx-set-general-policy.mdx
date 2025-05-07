@@ -1,0 +1,47 @@
+---
+title: "设置通用风控"
+sidebarTitle: "设置通用风控"
+lang: "cn"
+description: "了解如何在 Cobo Portal 中设置通用交易风控规则。"
+---
+
+<Note>交易风控是您团队的重要安全保障之一，建议您严格配置交易风控策略，重点关注大额提币场景，确保不存在没有设置风控规则、交易未被任何交易风控覆盖、所有交易自动通过或同一角色既可提币又可审批等高风险情况。</Note>
+
+通用风控规则适用于所有类型的交易。
+
+## 创建通用规则
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+
+2. 在左侧菜单栏中，点击 <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+
+3. 点击**创建规则** > **通用规则**。
+<img src="/cn/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+
+4. 输入**规则名称**，名称不得超过 50 个字符。
+
+5. 在**适用钱包**下选择所有适用于您要创建的规则的钱包。以下钱包类型支持通用规则：
+   - 全托管钱包
+     - 资产钱包
+     - Web3 钱包
+   - MPC 钱包
+     - 机构钱包
+     - 终端用户钱包
+   - 智能合约钱包
+   - 交易所钱包
+
+6. 通用规则的条件固定为**任意交易**。选择当交易匹配规则时要执行的操作：
+   - **自动通过**：自动批准交易，无需人工审核。
+   - **自动拒绝**：自动拒绝交易。
+   - **审批流程**：需要指定数量的批准才能继续。点击**+ 选择审批人**以添加一个或多个团队成员作为审批人。您可以按**用户角色**或**用户**选择。然后，设置审批人数。
+   <img src="/cn/images/risk-controls/general_policy_if_then.png" className="screenshot_full_screen"/>
+
+7. 点击**下一页**，检查规则详情，确认无误后点击**下一页**。
+
+8. 检查规则的顺序。交易将根据规则的优先级顺序进行匹配。
+    - 一旦触发了优先级较高的规则，后续规则将不再触发。
+    - 默认情况下，新创建的规则将被放置在规则列表的顶部并高亮显示。您可以通过拖放来更改顺序。
+
+9. 点击**提交**，完成二次验证。
+
+<img src="/cn/images/risk-controls/approval-action.png" className="screenshot_full_screen"/>
+<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
