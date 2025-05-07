@@ -14,23 +14,36 @@ Follow the steps below to navigate to the **Holder Groups Management** page:
 
 <img src="/en/images/mpc-wallet/manage-key-share-groups.png" className="screenshot_full_screen"/>
 
-
 ## View root extended public keys
 Depending on the number of cryptographic algorithms supported on Cobo Portal, a set of root extended public keys associated with your vault will be displayed. Note that all public keys for MPC Wallets in this vault are derived from these root extended public keys.
 
-## Manage Main Group
+## Manage Holder Groups
+
+<Note>Prerequisite: To manage key share groups, you need to have the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.</Note>
+
+### Manage Main Group
+
 Under the **Main Group** tab, you can view information such as its creation time, key share holders, their TSS Node IDs, group status, and Group IDs.
 
-## Manage Signing Groups
+### Manage Signing Groups
 Under the **Signing Group** tab, you can view or delete existing Signing Groups, create new Signing Groups, or upgrade a Signing Group to function as the Main Group.
 Notes:
 - Upon deletion, the key share holders in the designated Signing Group will no longer receive any signature requests. In the event that key holders associated with the deleted Signing Group require reinstatement for receiving signature requests, they must undergo a new key generation process.
 - Upon upgrading, the designated Signing Group will assume the responsibilities of the original Main Group, such as aiding in the creation of new Signing Groups and Recovery Groups. The original Main Group will be automatically deleted.
 
-## Manage Recovery Groups
-Under the **Recovery Group** tab, you can view or delete existing Recovery Groups, create new Recovery Groups, or use a Recovery Group to reshare a new Main Group.
-Notes:
-- Upon deletion, the key share holders in the designated Recovery Group can no longer be used to reshare a new Main Group. In the event that key holders associated with the deleted Recovery Group require reinstatement, they must undergo a new key generation process.
-- Upon resharing, the original Main Group will be automatically deleted and replaced by the new Main Group. This new Main Group can then be used to facilitate the creation of new Signing Groups and Recovery Groups.
+### Manage Recovery Groups
+Under the **Recovery Group** tab, you can:
+- View existing Recovery Groups
+- Delete existing Recovery Groups
+    <img src="/en/images/mpc-wallet/delete-recovery-group-popup.png" className="screenshot_modal"/>
+    <Info>Upon deletion, the key share holders in the designated Recovery Group can no longer be used to recover a new Main Group. In the event that key holders associated with the deleted Recovery Group require reinstatement, they must undergo a new key generation process.</Info>
+
+- Create new Recovery Groups
+    <img src="/en/images/mpc-wallet/create-new-recovery-group.png" className="screenshot_modal"/>
+
+- Use a Recovery Group to recover a new Main Group
+    <img src="/en/images/mpc-wallet/recover-main-group.png" className="screenshot_modal"/>
+    <img src="/en/images/mpc-wallet/recover-new-main-group-config.png" className="screenshot_modal"/>
+    <Info>Upon recovering, the original Main Group will be automatically deleted and replaced by the new Main Group. This new Main Group can then be used to facilitate the creation of new Signing Groups and Recovery Groups.</Info>
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
