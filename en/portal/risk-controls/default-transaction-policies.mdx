@@ -14,7 +14,7 @@ There are standard default transaction policies applied to all organizations, an
 This is the standard set of policies activated for most new organizations:
 
 | Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                 | Action                         |
-| :------- | :--------------------------------- | :------------- | :----------------- | :---------------------------------------- | :----------------------------- |
+| ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------- | ----------------------------- |
 | 1 (High) | High-value token transfer - approval | Token Transfer | All wallets        | Any token with a price > 10,000 USD per tx | Require 1 approval from admins |
 | 2        | Regular token transfer - auto approval | Token Transfer | All wallets        | Any token with a price <= 10,000 USD per tx | Auto approval                  |
 | 3 (Low)  | All transactions - auto rejection    | General Policy | All wallets        | Any transaction                           | Auto rejection                 |
@@ -33,7 +33,7 @@ For certain customer profiles with distinct operational needs, Cobo may activate
 This is the set of policies focused on common exchange security concerns:
 
 | Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                                                                                         | Action                         |
-| :------- | :--------------------------------- | :------------- | :----------------- | :---------------------------------------------------------------------------------------------------------------- | :----------------------------- |
+| ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------- |
 | 1 (High) | High-value token transfer approval | Token Transfer | All wallets        | Any token with a price > 10,000 USD per tx                                                                        | Require 1 approval from admins |
 | 2        | Web token transfer approval        | Token Transfer | All wallets        | Initiator is any web user                                                                                         | Require 1 approval from admins |
 | 3        | Token transfer time-based limit    | Token Transfer | All wallets        | Amounts across all wallets:<br/>- Any token with a price > 100,000 USD in 1 hour<br/>- Any token with a price > 500,000 USD in 24 hours | Require 1 approval from admins |
@@ -46,6 +46,6 @@ In addition to the general policies introduced in the last section, this set spe
 
 ## Edit or delete default transaction policies
 
-On the **Transaction Policie** page, under **Operations**, click <img src="/en/images/common/icon_more.svg" className="icon"/> > <img src="/en/images/common/icon_edit.svg" className="icon"/> **Edit** or **Delete** next to the policy you want to modify or delete.
+On the **Transaction Policies** page, under **Operations**, click <img src="/en/images/common/icon_more.svg" className="icon"/> > <img src="/en/images/common/icon_edit.svg" className="icon"/> **Edit** or **Delete** next to the policy you want to modify or delete.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
