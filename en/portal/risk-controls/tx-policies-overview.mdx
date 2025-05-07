@@ -34,10 +34,13 @@ Off-chain transaction policies include the following types:
 
 | Policy Type | Main Purpose | Key Controls |
 |------------|--------------|--------------|
+| General Policy | Applicable to all transaction types | • Condition is fixed to **Any Transaction** |
 | Token transfer | Control token movements and limits | • Initiators<br/>• Amounts<br/>• Receiving addresses<br/>• Token types |
 | Contract call | Manage smart contract interactions | • Initiators<br/>• Token approvals<br/>• Token transfers<br/>• Contract addresses, methods, and parameters |
 | Message signing | Control transaction signing | • Initiators<br/>• Message types<br/>• Safe{Wallet} message signing controls |
 | Emergency policy | Immediate risk control for contingency | Enforcing auto rejection or auto quorum for all transactions |
+
+To simplify the initial setup process, Cobo Portal pre-configures a set of [default transaction policies](/en/portal/risk-controls/default-transaction-policies) for new organizations, designed to provide foundational security. You can adjust these default policies according to your organization's specific needs.
 
 ### Smart Contract Wallet policy guide
 
@@ -69,6 +72,9 @@ For detailed setup instructions, see:
 - On-chain transaction policies:
     - [Create contract call policy](/en/portal/risk-controls/create-on-chain-policy)
 - Off-chain transaction policies:
+  - [Default transaction policies](/en/portal/risk-controls/default-transaction-policies)
+  - [Set up general policy](/en/portal/risk-controls/off-chain-tx-set-general-policy)
+  - [Manage general policy](/en/portal/risk-controls/off-chain-tx-manage-general-policy)
   - [Set up token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer)
   - [Set up contract call policy](/en/portal/risk-controls/off-chain-tx-set-contract-call)
   - [Set up message signing policy](/en/portal/risk-controls/off-chain-tx-set-message-signing)
