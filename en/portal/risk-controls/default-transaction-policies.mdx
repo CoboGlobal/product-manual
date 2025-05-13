@@ -1,0 +1,51 @@
+---
+title: "Default transaction policies"
+sidebarTitle: "Default transaction policies"
+lang: "en"
+description: "Learn about the pre-configured default transaction policies activated for new organizations in Cobo Portal."
+---
+
+To provide baseline security and simplify the initial setup process, Cobo Portal automatically activates a set of default transaction policies when the first Admin of a new organization activates their account. These policies are designed to cover common risk scenarios, reducing the complexity of initial configuration and minimizing potential gaps in coverage.
+
+There are standard default transaction policies applied to all organizations, and specific sets tailored for different customer profiles.
+
+## General default policy set
+
+This is the standard set of policies activated for most new organizations:
+
+| Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                 | Action                         |
+| ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------- | ----------------------------- |
+| 1 (High) | High-value token transfer - approval | Token Transfer | All wallets        | Any token with a price \> 10,000 USD per tx | Require 1 approval from admins |
+| 2        | Regular token transfer - auto approval | Token Transfer | All wallets        | Any token with a price \<= 10,000 USD per tx | Auto approval                  |
+| 3 (Low)  | All transactions - auto rejection    | General Policy | All wallets        | Any transaction                           | Auto rejection                 |
+
+This configuration ensures that:
+- Large token transfers (\> $10,000) require Admin approval.
+- Smaller token transfers (\<= $10,000) are automatically approved.
+- All other transaction types (e.g., contract calls, message signing) are automatically rejected by default, requiring specific policies to be created if needed.
+
+## Profile-specific default policy sets
+
+For certain customer profiles with distinct operational needs, Cobo may activate a more tailored set of default policies.
+
+### Default policy set for exchanges
+
+This is the set of policies focused on common exchange security concerns:
+
+| Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                                                                                         | Action                         |
+| ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| 1 (High) | High-value token transfer approval | Token Transfer | All wallets        | Any token with a price > 10,000 USD per tx                                                                        | Require 1 approval from admins |
+| 2        | Web token transfer approval        | Token Transfer | All wallets        | Initiator is any web user                                                                                         | Require 1 approval from admins |
+| 3        | Token transfer time-based limit    | Token Transfer | All wallets        | Amounts across all wallets:<br/>- Any token with a price > 100,000 USD in 1 hour<br/>- Any token with a price > 500,000 USD in 24 hours | Require 1 approval from admins |
+| 4        | Regular token transfer - auto approval | Token Transfer | All wallets        | Any token with a price \<= 10,000 USD per tx                                                                       | Auto approval                  |
+| 5 (Low)  | All transactions - auto rejection    | General Policy | All wallets        | Any transaction                                                                                                   | Auto rejection                 |
+
+In addition to the general policies introduced in the last section, this set specifically requires Admin approval for:
+- Any token transfer initiated from the Cobo Portal web interface.
+- Token transfers exceeding hourly or daily velocity limits.
+
+## Edit or delete default transaction policies
+
+On the **Transaction Policies** page, under **Operations**, click <img src="/en/images/common/icon_more.svg" className="icon"/> > <img src="/en/images/common/icon_edit.svg" className="icon"/> **Edit** or **Delete** next to the policy you want to modify or delete.
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

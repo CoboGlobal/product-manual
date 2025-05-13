@@ -318,6 +318,9 @@
                 {
                   "group": "Off-chain transaction policies",
                   "pages": [
+                    "en/portal/risk-controls/default-transaction-policies",
+                    "en/portal/risk-controls/off-chain-tx-set-general-policy",
+                    "en/portal/risk-controls/off-chain-tx-manage-general-policy",
                     "en/portal/risk-controls/off-chain-tx-set-transfer",
                     "en/portal/risk-controls/off-chain-tx-manage-transfer",
                     "en/portal/risk-controls/off-chain-tx-set-contract-call",
@@ -866,6 +869,9 @@
                 {
                   "group": "链下交易风控",
                   "pages": [
+                    "cn/portal/risk-controls/default-transaction-policies",
+                    "cn/portal/risk-controls/off-chain-tx-set-general-policy",
+                    "cn/portal/risk-controls/off-chain-tx-manage-general-policy",
                     "cn/portal/risk-controls/off-chain-tx-set-transfer",
                     "cn/portal/risk-controls/off-chain-tx-manage-transfer",
                     "cn/portal/risk-controls/off-chain-tx-set-contract-call",
@@ -999,7 +1005,7 @@
         "cn/apps/introduction",
         "cn/apps/browse-and-install",
         {
-          "group": "管理应用",
+          "group": "管理 App",
           "pages": [
             "cn/apps/transaction-policies",
             "cn/apps/app-settings",

@@ -11,7 +11,7 @@ The key share generation process is initiated on the Cobo Portal by an admin. Th
 
 After the key shares have been generated, key share holders can back up their key shares to iCloud using Cobo Guard. During the backup process, the key shares are encrypted, and a recovery passphrase is set to ensure security when restoring the backup from iCloud. This backup can be particularly useful in situations such as device loss or replacement.
 
-## Initiate the key generation process
+## Generate key shares
 The key share generation process is initiated by the admins on the Cobo Portal. The key shares are categorized into one of the three groups: Main Group, Signing Group, and Recovery Group. We will use the Main Group to illustrate the process.
 
 1. On the Cobo Portal, admins create a Main Group by navigating to **MPC Wallets** > **[vault-name]** > **Create Main Group**.
@@ -22,24 +22,21 @@ The key share generation process is initiated by the admins on the Cobo Portal. 
 
     <Note>Selected members' Cobo Guard must already be linked to the admin’s organization for them to be eligible for selection as a key share holder.</Note>
 
-3. Once the Main Group creation is initiated by the admins, selected members will be notified on their Cobo Guard to confirm whether they want to become key share holders. Simply tap the request to open the **Details** page.
+3. Once the Main Group creation is initiated by the admins, selected members will be notified on their Cobo Guard. Simply tap the **1 key share needs to be generated** banner.
 
-    <img src="/en/images/cobo-guard/common/become.png" className="screenshot_nav_bar"></img>
+    <img src="/en/images/cobo-guard/request.png" className="screenshot_nav_bar" alt="The banner" />
 
-4. On the **Details** page, tap **Approve** to confirm your willingness to become a key share holder. You will need to authenticate yourself with Face ID.
+4. On the **Group Information** page, review the key share generation request, and tap **Start Key Gen** to start generating the key share.
 
-    <img src="/en/images/cobo-guard/common/become1.png" className="screenshot_nav_bar"></img>
+    <img src="/en/images/cobo-guard/review.png" className="screenshot_nav_bar" alt="The key share generation request" />
 
-When you see the **Approved** message, you have successfully become a key share holder. You can view the status of this operation by tapping **All** on the main screen of your Cobo Guard app.
+5. The process takes about 30 seconds. When you see the **Key Generated Successfully** message, tap **Back Up Now**.
 
-## Generate key shares using Cobo Guard
-Tap the request to enter the **Generate Private Key Shares** screen, then tap **Start** to authenticate yourself through Face ID.  
+    <img src="/en/images/cobo-guard/complete.png" className="screenshot_nav_bar" alt="The key share generation completion page" />
 
-<Note>Key generation process will start automatically when all selected members are online.</Note>
+6. You can tap **Start** to [back up the key share now](#back-up-your-key-shares), or tap **Skip** to complete key generation process.
 
-<img src="/en/images/cobo-guard/common/keygen.png" className="screenshot_nav_bar"></img>
-
-When you see the green **Private Key Shares Generated** message, tap **OK** to return to My Accounts and review the details of your newly generated key share.
+    <img src="/en/images/cobo-guard/skip.png" className="screenshot_nav_bar" alt="The key share backup page" />
 
 ## Back up your key shares
 1. Return to the home screen of Cobo Guard. Access My Accounts by tapping <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> and then <img src="/en/images/cobo-guard/common/icon_account.svg" className="icon"></img> **My Accounts**.
@@ -56,6 +53,8 @@ When you see the green **Private Key Shares Generated** message, tap **OK** to r
 <Warning>Please save the passphrase securely; losing it will prevent you from restoring your key shares.</Warning>
 
 5. On the **Backup Successful** dialog, tap **OK** to complete the backup process.
+
+<img src="/en/images/cobo-guard/backup.png" className="screenshot_nav_bar" alt="The key share backup completion page" />
 
 You can find the backup file on your phone by navigating to **Files** > **iCloud Drive** > **Cobo Guard** > **Backup** folder. The file name starts with `recovery-secrets-cobo`.
 
