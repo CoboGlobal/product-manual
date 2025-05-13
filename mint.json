@@ -206,13 +206,6 @@
                   ]
                 },
                 "en/portal/mpc-wallets/ocw/transfers",
-                {
-                  "group": "Auto token sweeping",
-                  "pages": [
-                    "en/portal/mpc-wallets/ocw/auto-sweep-overview",
-                    "en/portal/mpc-wallets/ocw/enable-auto-sweep"
-                  ]
-                },
                 "en/portal/mpc-wallets/ocw/key-share-verification",
                 "en/portal/mpc-wallets/ocw/dapp-interaction"
               ]
@@ -297,6 +290,13 @@
                 "en/portal/address-book/set-up"
               ]
             }
+          ]
+        },
+        {
+          "group": "Auto token sweeping",
+          "pages": [
+            "en/portal/auto-sweep-overview",
+            "en/portal/enable-auto-sweep"
           ]
         },
         {
@@ -757,13 +757,6 @@
                   ]
                 },
                 "cn/portal/mpc-wallets/ocw/transfers",
-                {
-                  "group": "自动代币归集",
-                  "pages": [
-                    "cn/portal/mpc-wallets/ocw/auto-sweep-overview",
-                    "cn/portal/mpc-wallets/ocw/enable-auto-sweep"
-                  ]
-                },
                 "cn/portal/mpc-wallets/ocw/key-share-verification",
                 "cn/portal/mpc-wallets/ocw/dapp-interaction"
               ]
@@ -848,6 +841,13 @@
                 "cn/portal/address-book/set-up"
               ]
             }
+          ]
+        },
+        {
+          "group": "自动代币归集",
+          "pages": [
+            "cn/portal/auto-sweep-overview",
+            "cn/portal/enable-auto-sweep"
           ]
         },
         {
@@ -1477,11 +1477,11 @@
       "destination": "/cn/portal/troubleshoot/exchange-wallets"
     },
     {
-      "source": "/en/portal/mpc-wallets/ocw/enable-auto-sweep#frequently-asked-questions-faq",
+      "source": "/en/portal/enable-auto-sweep#frequently-asked-questions-faq",
       "destination": "/en/portal/troubleshoot/mpc-wallets"
     },
     {
-      "source": "/cn/portal/mpc-wallets/ocw/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
+      "source": "/cn/portal/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
       "destination": "/cn/portal/troubleshoot/mpc-wallets"
     },
     {
