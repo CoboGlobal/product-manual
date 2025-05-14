@@ -1,20 +1,20 @@
 ---
-title: "设置交易签名风控"
-sidebarTitle: "设置交易签名风控"
+title: "设置消息签名风控"
+sidebarTitle: "设置消息签名风控"
 lang: "zh-hans"
-description: "了解如何设置链下交易的交易签名。"
+description: "了解如何设置链下交易的消息签名。"
 ---
 
-<Note>要设置 Safe&#123;Wallet&#125; 的消息签名规则，请参阅 [Safe&#123;Wallet&#125; 消息签名风控](/cn/portal/risk-controls/safe-risk-controls)。本指南介绍如何设置以**发起者**或**消息类型**为条件的交易签名规则。</Note>
+<Note>要设置 Safe&#123;Wallet&#125; 的消息签名规则，请参阅 [Safe&#123;Wallet&#125; 消息签名风控](/cn/portal/risk-controls/safe-risk-controls)。本指南介绍如何设置以**发起者**或**消息类型**为条件的消息签名规则。</Note>
 
 <Note>交易风控是您团队的重要安全保障之一，建议您严格配置交易风控策略，重点关注大额提币场景，确保不存在没有设置风控规则、交易未被任何交易风控覆盖、所有交易自动通过或同一角色既可提币又可审批等高风险情况。</Note>
 
-## 创建交易签名风控
+## 创建消息签名风控
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 
 2. 点击左侧主菜单中的 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
 
-3. 点击**创建交易风控规则** > **交易签名**。
+3. 点击**创建交易风控规则** > **消息签名**。
 
 <img src="/cn/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
 
@@ -30,7 +30,7 @@ description: "了解如何设置链下交易的交易签名。"
      - 终端用户钱包
 
 7. 在**如果**下，点击 **+ 添加条件** 选择条件模板。您可以为每个规则添加一个或多个条件。如果应用了多个条件，则只有当交易满足所有条件时，才会触发该规则。要了解更多关于条件的信息，请参阅[选择条件模板](/cn/portal/risk-controls/off-chain-tx-set-message-signing#select-condition-template)。
-   - 您可以选择跳过设置任何条件，直接进入下一页。这意味着与适用钱包相关的任何交易签名请求都将触发此规则。
+   - 您可以选择跳过设置任何条件，直接进入下一页。这意味着与适用钱包相关的任何消息签名请求都将触发此规则。
 
 8. 在**则**下，选择规则触发时要采取的操作（即**自动通过**、**自动拒绝**和**审批人数**），然后点击**下一页**。要了解更多关于审批操作的信息，请参阅[设置审批操作](/cn/portal/risk-controls/off-chain-tx-set-message-signing#set-approval-action)。
 
@@ -45,8 +45,8 @@ description: "了解如何设置链下交易的交易签名。"
 ## 选择条件模板 <a id="select-condition-template"></a>
 
 **发起者**：只有当发起者符合时，规则才会被触发。
-- **Cobo Connect**：交易签名通过 Cobo Connect 发起。
-- **API Keys**：交易签名由任意 API Key 或仅指定 API Key 发起的。
+- **Cobo Connect**：消息签名通过 Cobo Connect 发起。
+- **API Keys**：消息签名由任意 API Key 或仅指定 API Key 发起的。
 <img src="/cn/images/risk-controls/message-signing-initiators.png" className="screenshot_full_screen"/>
 
 **消息类型**：只有当消息类型被选中时，规则才会被触发。
