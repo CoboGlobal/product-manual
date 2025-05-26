@@ -14,7 +14,7 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
   - 如果您使用 TSS Node Callback 服务器进行风控审核，您可以将归集地址写入 TSS Node Callback 服务器的白名单中，以自动批准归集交易。详情请参阅 [自动代币归集实现](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation) 中的示例项目。
 - 对于全托管钱包 (Web3 钱包)：
   - 您已创建全托管钱包 (Web3 钱包)并按照[设置 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)中的说明进行设置。
-- 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的同等[角色](/cn/portal/organization/roles-and-permissions)。
+- 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的[用户角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。
 <Info>更多详情请参照[为 MPC 钱包设置 Fee Station](/cn/portal/fee-station/set-up-for-mpc)。</Info>
 
