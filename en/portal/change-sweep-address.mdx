@@ -1,0 +1,26 @@
+---
+title: "Change sweep-to addresses"
+sidebarTitle: "Change sweep-to addresses"
+lang: "en"
+description: "Learn how to change the sweep-to addresses for your wallet."
+---
+
+When auto token sweeping is enabled, incoming tokens are automatically moved to a designated sweep-to address. You may need to change this address if your setup changes, you switch networks, or the current address is compromised or tainted by suspicious funds. This guide explains how to change the sweep-to addresses.
+
+## Prerequisites
+
+- You have [enabled auto token sweeping](/en/portal/enable-auto-sweep) for the wallet.
+- You have been assigned the [Operator](/en/portal/organization/roles-and-permissions) role or a role with higher-level permissions.
+
+## Steps
+1. Select the wallet you want to change the sweep-to address for.
+2. Click the **Addresses** tab and then the **Sweep-To** tab.
+3. Click the **Change Sweep-To Address** button.
+4. In the dialog, choose the network that the sweep-to address belongs to, and click **Confirm**.
+5. Verify your identity using Cobo Guard or another MFA method.
+
+After you verify your identity, the change request will be processed and a new sweep-to address will be automatically generated. The new address will be displayed in the **Sweep-To** tab with a status of **In Use**, while the old address displayed with a status of **Not In Use**.
+
+## Next steps
+
+After the sweep-to address is changed, any incoming deposits to the deposit addresses will be periodically swept to the new address, and the old address itself will no longer be in use. You can filter addresses by the **Not In Use** status and manually withdraw any remaining balances from the old sweep-to addresses to the new address or another designated destination.

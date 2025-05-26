@@ -296,7 +296,8 @@
           "group": "Auto token sweeping",
           "pages": [
             "en/portal/auto-sweep-overview",
-            "en/portal/enable-auto-sweep"
+            "en/portal/enable-auto-sweep",
+            "en/portal/change-sweep-address"
           ]
         },
         {
@@ -847,7 +848,8 @@
           "group": "自动代币归集",
           "pages": [
             "cn/portal/auto-sweep-overview",
-            "cn/portal/enable-auto-sweep"
+            "cn/portal/enable-auto-sweep",
+            "cn/portal/change-sweep-address"
           ]
         },
         {
