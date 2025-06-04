@@ -1,15 +1,15 @@
 ---
-title: "为 MPC 钱包设置 Fee Station 以支付交易手续费"
-sidebarTitle: "为 MPC 钱包设置 Fee Station"
+title: "设置 Fee Station 以支付交易手续费"
+sidebarTitle: "设置 Fee Station"
 lang: "zh-hans"
-description: "掌握如何针对 MPC 钱包设置 Fee Station，确保手续费的自动化处理。"
+description: "掌握如何设置 Fee Station，确保手续费的自动化处理。"
 ---
 
-注意：请确保您的 Fee Station 账户中有足够的费用代币以支付 MPC 交易手续费。当您从 MPC 钱包发起交易时，我们会提醒您 Fee Station 的余额情况，并告知是否需要充值。
+注意：请确保您的 Fee Station 账户中有足够的费用代币以支付交易手续费。当您从 MPC 钱包发起交易时，我们会提醒您 Fee Station 的余额情况，并告知是否需要充值。
 
-您可以手动设置 Fee Station 以自动支付 MPC 钱包的交易手续费。目前，这项功能仅适用于通过 Cobo Portal 网页端从 MPC 钱包（机构钱包）发起的 EVM 和 TRON 交易。设置完成后，支付方式将根据区块链的不同而有所变化：
+您可以手动设置 Fee Station 以自动支付 MPC 钱包和资产钱包（Web3 钱包）的交易手续费。目前，这项功能仅适用于通过 Cobo Portal 网页端从 MPC 钱包（机构钱包）和资产钱包（Web3 钱包）发起的 EVM 和 TRON 交易。设置完成后，支付方式将根据区块链的不同而有所变化：
 
-- EVM 链：Fee Station 会通过预先将所需金额充值到您的 MPC 钱包中来自动管理交易手续费。例如，如果您从 MPC 钱包发起一笔 1,000 AAVE 的交易，交易手续费为 0.05 ETH，但您的钱包余额不足支付这笔交易费用，Fee Station 会自动将 0.05 ETH 转入您的钱包，以确保您的 MPC 交易顺利进行。
+- EVM 链：Fee Station 会通过预先将所需金额充值到您的 MPC 钱包或资产钱包（Web3 钱包）中来自动管理交易手续费。例如，如果您从钱包发起一笔 1,000 AAVE 的交易，交易手续费为 0.05 ETH，但您的钱包余额不足支付这笔交易费用，Fee Station 会自动将 0.05 ETH 转入您的钱包，以确保您的交易顺利进行。
 
 - TRON 链： 交易手续费将直接从 Fee Station 中扣除。
 
@@ -19,11 +19,11 @@ description: "掌握如何针对 MPC 钱包设置 Fee Station，确保手续费�
 2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
 3. 切换到**付款偏好**标签页，点击**展开**。
 4. 对于 EVM 链：选择**不使用 Fee Station**或**使用 Fee Station**：
-- 不使用 Fee Station：交易手续费将由 MPC 钱包自身支付。
-- 使用 Fee Station：如果 MPC 钱包中的费用代币余额不足，交易手续费用将通过 Fee Station 支付。如果 MPC 钱包中有足够的费用代币，则由 MPC 钱包自身支付。
+- 不使用 Fee Station：交易手续费将由 MPC 钱包或资产钱包（Web3 钱包）自身支付。
+- 使用 Fee Station：如果 MPC 钱包或资产钱包（Web3 钱包）中的费用代币余额不足，交易手续费用将通过 Fee Station 支付。如果 MPC 钱包或资产钱包（Web3 钱包）中有足够的费用代币，则由 MPC 钱包或资产钱包（Web3 钱包）自身支付。
 5. 对于 TRON 链：选择**不使用 Fee Station**或**使用 Fee Station**：
-- 不使用 Fee Station：交易手续费将由 MPC 钱包自身支付。
-- 使用 Fee Station：无论 MPC 钱包中是否有足够的费用代币，交易手续费都将通过 Fee Station 支付。
+- 不使用 Fee Station：交易手续费将由 MPC 钱包或资产钱包（Web3 钱包）自身支付。
+- 使用 Fee Station：无论 MPC 钱包或资产钱包（Web3 钱包）中是否有足够的费用代币，交易手续费都将通过 Fee Station 支付。
 <img src="/cn/images/fee-station/1.png" className="screenshot_full_screen"/>
 6. 点击**保存更改**。
 7. 完成安全验证以完成设置。
