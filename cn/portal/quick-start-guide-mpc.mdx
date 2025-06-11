@@ -160,9 +160,17 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 <img src="/cn/images/get-started/withdraw.png" className="screenshot_modal"/>
 3. 在**转账**对话框中，填写所需信息，然后点击**提交**。
 4. 在 Cobo Guard 中二次确认提币。
-5. 系统将根据在线状态和其他条件自动选择一个签名人来签署交易。请确保至少有一个签名人可以完成签名。
+5. 提币请求通过二次确认后，系统将根据在线状态和其他条件自动选择一个签名人来签署交易。您需要确保至少有一个签名人在线。交易将保持 Pending 状态，直到收到必要的签名。您可以通过 Cobo Portal 查看签名人是否在线：
+   1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+   2. 点击 <img src="/cn/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+   3. 选择您的 Vault，然后点击右上角的 <img src="/cn/images/transfers/manage-key-share-group.svg" className="icon"></img> 图标。
+   4. 在**私钥分片管理**页面，找到您的私钥分片持有者组，并查看每个私钥分片持有者旁边的状态指示器：
+      - 🟢 绿点：签名人在线并准备签署交易
+      - 无绿点：签名人离线，无法签署交易。
 
-在您签署交易后，Cobo 会构建交易并将其广播到网络。代币转账可能需要一些时间才能完成，具体取决于网络条件。
+    <img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="密钥份额管理页面显示签名人状态"/>
+
+    在您签署交易后，Cobo 会构建交易并将其广播到网络。代币转账可能需要一些时间才能完成，具体取决于网络条件。
 
 ### 查看交易详情和状态
 在向资产钱包转入或转出代币后，您可以在 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **交易记录**中查看其交易状态。
