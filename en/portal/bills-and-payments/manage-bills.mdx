@@ -5,6 +5,8 @@ lang: "en"
 description: "Understand how to manage your bills in Cobo, including viewing, settling, and handling overage charges effectively."
 ---
 
+import PaymentMethods from '/snippets/bills/methods-en.mdx';
+
 Every pricing plan has its billing cycle starting from the day of purchase, and a bill is generated at the end of the billing cycle.
 
 Your total amount payable is composed of three parts:
@@ -23,7 +25,13 @@ To view your bills, follow the steps below:
 2. Click the profile icon at the bottom left, and choose **Pricing Plans**. 
 3. Click **Bills** on the left-hand side navigation menu.
 
-<img src="/en/images/bills-and-payments/view-your-bills.png" className="screenshot_full_screen"/>
+    <img src="/en/images/bills-and-payments/view-your-bills.png" className="screenshot_full_screen" />
+
+4. Click the view icon <img src="/en/images/common/icon_view.svg" className="icon" alt="the View icon" /> to view the bill details in a PDF file, which includes a payment link.
+
+    <img src="/en/images/bills-and-payments/bill.png" className="screenshot_full_screen" alt="The bill details" />
+
+    <Info>Payment links are generated using either Fee Station or Cobo Pay, depending on your payment method settings.</Info>
 
 ## Pay your bills
 
@@ -33,7 +41,8 @@ To manually pay your bills, follow the steps below:
 2. Click the profile icon at the bottom left, and choose **Pricing Plans**. 
 3. Click **Bills** on the left-hand side navigation menu.
 4. Navigate to the bill you want to pay and click the <img src="/en/images/bills-and-payments/pay-your-bills.svg" className="icon" alt="Pay the bill icon"></img> icon.
-5. Follow the instructions on the screen to complete the payment process. To learn how to make a payment, see [Payment methods](/en/portal/bills-and-payments/payment-methods).
+5. Review the bill information and click **Pay**.
+6. <PaymentMethods />
 
 ## Add a billing email
 
