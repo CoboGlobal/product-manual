@@ -160,9 +160,17 @@ Follow the steps below to withdraw tokens from your wallet.
 <img src="/en/images/get-started/withdraw.png" className="screenshot_modal"/>
 3. In the **Transfer** dialog box, fill in the required information, and then click **Submit**.
 4. Double confirm the withdrawal on Cobo Guard.
-5. One of your co-signers will be automatically selected to sign the transaction based on their online status and other criteria. Ensure that at least one co-signer is ready to complete the signing process.
+5. After the withdrawal is confirmed, one of your co-signers will be automatically selected to sign the transaction based on their online status and other criteria. You need to ensure that at least one of your co-signers is online. The transaction will remain pending until it receives the necessary signature. You can check if a co-signer is online through Cobo Portal:
+   1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+   2. Click <img src="/en/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+   3. Select your vault and then click the **Manage Share Management** icon <img src="/en/images/transfers/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
+   4. In the **Key Group Management** page, locate your key share holder group, and check the status indicator next to each key share holder:
+      - 🟢 Green dot: The co-signer is online and ready to sign transactions
+      - No dot: The co-signer is offline and cannot sign transactions.
 
-After you sign the transaction, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
+      <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing co-signer status"/>
+
+    After the transaction is signed, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
 
 ### View transaction details and status
 After making a transfer to or from your Asset Wallets, you can view its transaction status in <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Transaction History**. 
