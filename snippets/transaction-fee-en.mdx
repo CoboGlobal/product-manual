@@ -1,0 +1,52 @@
+- EVM  chains: For EVM chains, transaction fees vary between the EIP1559 and Legacy methods.
+    - EIP 1559
+        - Under the EIP1559 method, users can customize 3 parameters: max priority fee (gwei), max fee, and gas limit.
+        - The estimated fee is calculated by multiplying the max fee by the gas limit: (max fee * gas limit).
+        - For Mantle and Optimism, the displayed fee amount pertains to Layer 2 only. After you submit the transaction, Layer 1 fees will be auto deducted from your source wallet address. Please ensure that your address has sufficient gas tokens to cover all fees.
+        - There are no fees for Chiliz, whereas fees apply to Chiliz Chain 2.0.
+
+        <a id="eip1559"></a>	
+        | Parameter        | Definition                                                                                                                                                                                                                             |
+        | --------         | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
+        | Max priority fee | The priority fee, often referred to as the 'miner tip,' serves as an incentive for miners to prioritize your transaction. The max priority fee represents the highest amount of miner tips you are willing to pay for your transaction.|
+        | Max fee          | The max fee represents the total gas price you are willing to pay for your transaction.                                                                                                                                                |
+        | Gas limit        | The gas limit represents the max number of gas units you are willing to pay for the execution of a transaction or Ethereum Virtual Machine (EVM) operation. Different operations require varying quantities of gas units.              |
+
+    - Legacy
+        - Under the Legacy method, users can customize 2 parameters: gas price (gwei) and gas limit.
+        - The estimated fee is calculated by multiplying the gas price by the gas limit: (gas price * gas limit).
+
+        | Parameter | Definition                                                                                                                                                  |
+        | --------  | ----------------------------------------------------------------------------------------------------------------------------------------------------------  |
+        | Gas price | The gas price represents the amount of ETH (in a smaller unit known as gwei) that must be paid to validators for processing transactions.                   |
+        | Gas limit | The gas limit represents the max number of gas units you are willing to pay for the execution of a transaction or Ethereum Virtual Machine (EVM) operation. |   
+        
+- UTXO-based chains
+    - Users can customize the fee rate (sat/vByte).
+    - The estimated fee is calculated by multiplying the fee rate by the transaction size: (fee rate * transaction size).
+
+        | Parameter | Definition                                                                                                                               |
+        | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
+        | Fee rate  | The fee rate is calculated in satoshis per unit of data that your transaction will consume on the blockchain, abbreviated as sats/vByte. |
+- Solana chain
+    - Users can customize 2 parameters: compute unit (CU) price and CU limit.
+    - The estimated fee is calculated as: `base fee + (CU price * CU limit)`.
+
+        | Parameter           | Definition                                                                                                                                                     |
+        |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | Compute unit price  | The fee paid per compute unit to prioritize a transaction. It is specified in micro lamports (μlamports), where 1 lamport = 1,000,000 μlamports.              |
+        | Compute unit limit  | The maximum number of compute units the transaction is allowed to consume. A higher value may increase priority but results in higher fees.                   |
+
+    <Note>If you want to use the legacy fee model, please call the API operation and specify the model explicitly.</Note>
+
+- Filecoin chain
+    - Users can customize 3 parameters: gas fee cap, gas premium, and gas limit.
+    - The estimated fee is calculated as: `min(gas fee cap, base fee + gas premium) * gas limit`.
+
+        | Parameter     | Definition                                                                                                                                                           |
+        |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | Gas fee cap   | The maximum fee per gas unit you are willing to pay. The final effective fee per unit is capped at this value.                                                      |
+        | Gas premium   | A tip paid to incentivize block producers to prioritize your transaction. It is charged based on the full gas limit, regardless of actual gas used.                 |
+        | Gas limit     | The maximum gas amount the transaction is allowed to consume. Overestimating this value can trigger an overestimation burn penalty on the unused portion.           |
+
+    <Note>If you want to use the legacy fee model, please call the API operation and specify the model explicitly.</Note>
