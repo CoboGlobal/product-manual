@@ -6,6 +6,7 @@ description: "了解如何从 MPC 钱包（机构钱包）转账，提升机构�
 ---
 
 import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
+import Fee from '/snippets/transaction-fee-cn.mdx';
 
 本文介绍 MPC 钱包（机构钱包）的提币流程，并指导您如何在 Cobo Portal 中发起提币。
 
@@ -55,35 +56,7 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
 6. 查看交易费用。根据交易速度，网络费用分为三个级别：慢、标准和快。
 7. 要调整该费用，请点击下图圈出的按钮。所有字段都是必填项，并将根据您选择的交易速度自动填充。您可以根据自己的具体要求编辑各个参数。
     <img src="/cn/images/transfers/customize-fees.png" className="screenshot_modal"/>
-    - EVM 链：对于 EVM 链，EIP1559 和 Legacy 方式的交易费用有所不同。
-        - EIP 1559
-            - 在 EIP1559 方式下，用户可以定制 3 个参数：Max Priority Fee (gwei)、Max Fee 和 Gas Limit。
-            - 预估费用的计算方式是 Max Fee 乘以 Gas Limit：（Max Fee x Gas Limit）。
-            - 对于 Mantle 和 Optimism，显示的费用仅涵盖 Layer 2。提交交易后，Layer 1 费用将自动从您的出金地址扣除。请确保您的地址有足够的 Gas 代币以支付所有费用。
-            - Chiliz 不收取费用，但 Chiliz Chain 2.0 收费。
-
-            <a id="eip1559"></a>	
-            | 参数        | 定义                                                                                                                                                                                                                             |
-            | --------         | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
-            | Max Priority Fee | Max Priority Fee 通常也被称为“矿工小费”，支付给矿工，激励他们优先处理您的交易。Max Priority Fee 是您愿意为交易支付的最高矿工小费。
-            | Max Fee          | Max Fee 是您愿意为交易支付的 Gas 总价。                                                                                                                                                |
-            | Gas Limit        | Gas Limit 是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最高 Gas Unit 数量。不同的运行方式需要消耗不同数量的 Gas Unit。              |
-
-        - Legacy
-            - 在 Legacy 方式下，用户可以定义 2 个参数：Gas Price (gwei) 和 Gas Limit。
-            - 预估费用的计算方式是 Gas Price 乘以 Gas Limit：（Gas Price x Gas Limit）。
-
-            | 参数 | 定义    |
-            | -------- | -------------------------------------------------------------------------- |
-            | Gas Price | Gas Price 是必须支付给验证者以便处理交易的 ETH（单位较小，称为 gwei）数量。 |
-            | Gas Limit | Gas Limit 是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最多 Gas Unit 数量。 |
-    - 基于 UTXO 的链
-        - 用户可以自定义费率 (sat/vByte)。
-        - 预估费用的计算方式是费率乘以交易数据量：（费率 x 交易数据量）。
-
-            | 参数 | 定义                                                                                                                               |
-            | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
-            | 费率  | 费率的计算方式是您的交易在区块链上消耗的每单位数据对应多少 satoshis（缩写为 sats/vByte）。|
+    <Fee />
 8. <MySnippet />
 9. 点击**提交**。
 10. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
