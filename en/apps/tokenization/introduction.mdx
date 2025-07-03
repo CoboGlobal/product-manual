@@ -81,10 +81,10 @@ The interface is separated into two tabs: **Read** for querying information and 
 
     Use Read functions to look up real-time information from the smart contract without creating a transaction. Key queries include:
 
-    - **Role Information:** View identifiers for all permission roles (e.g., `MINTER_ROLE`, `PAUSER_ROLE`) and check if an address `hasRole` for a specific permission
-    - **Token & Account Details:** Get the token's `name`, `symbol`, `decimals`, `totalSupply`, and check the `balanceOf` any address or the `allowance` an address has given to another
-    - **Access Control Status:** Check if the `accessListEnabled`, if an address `isAccessListed` or `isBlocklisted`, and view the full `getAccessList` or `getBlocklist`
-    - **Contract Status & Metadata:** Check if the contract is `paused`, get the `contractUri`, view the `version` and `UPGRADE_INTERFACE_VERSION`, and check for feature support with `supportsInterface`
+    - **Role information:** View identifiers for all permission roles (e.g., `MINTER_ROLE`, `PAUSER_ROLE`) and check if an address `hasRole` for a specific permission
+    - **Token & account details:** Get the token's `name`, `symbol`, `decimals`, `totalSupply`, and check the `balanceOf` any address or the `allowance` an address has given to another
+    - **Access control status:** Check if the `accessListEnabled`, if an address `isAccessListed` or `isBlocklisted`, and view the full `getAccessList` or `getBlocklist`
+    - **Contract status & metadata:** Check if the contract is `paused`, get the `contractUri`, view the `version` and `UPGRADE_INTERFACE_VERSION`, and check for feature support with `supportsInterface`
     <img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
 
 - **Write functions (executing actions)**
