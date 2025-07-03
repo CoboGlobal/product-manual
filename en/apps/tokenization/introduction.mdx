@@ -21,10 +21,13 @@ Tokenization simplifies how you issue, manage, and operate your own tokens—no 
 Design and issue tokens tailored to your business needs, covering a wide range of use cases from stablecoins and security tokens to the tokenization of real-world assets.
 
 ### Complete lifecycle management
-Securely mint, burn, upgrade, and pause your tokens. With role-based access control, you have precise command over permissions for every operation.
+Manage every stage of your token's lifecycle through a single, intuitive interface—no coding required. Securely mint new tokens for issuance, burn them upon redemption, pause the contract in an emergency, and seamlessly upgrade it to add new features.
 
-### No-code simplicity
-An intuitive, user-friendly interface makes all token functionalities accessible, no smart contract development or coding skills required.
+### Robust token access controls
+Enforce compliance and security at the smart contract level. Use a **blocklist** to prevent any interaction with unauthorized or suspicious addresses and an **allowlist** to restrict token interactions to verified, eligible investors.
+
+### Granular permission controls
+Enhance your operational security by delegating specific responsibilities to different team members. You can grant distinct permissions for critical actions from minting and burning tokens to managing token access controls.
 
 ## How it works
 
@@ -35,10 +38,12 @@ Easily create and issue your own tokens. You can also update token information a
 
 <img src="/en/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="Create token window2"/>
 
-### 2. Manage permissions
+### 2. Manage token access controls and permissions
 
-#### Use blocklists and allowlists
-Use blocklists and allowlists to control who can interact with your tokens.
+#### Use blocklist and allowlist
+
+Use blocklist and allowlist to control who can interact with your tokens.
+
 - **Blocklist**: Addresses on the blocklist are prevented from performing any token operations.
 
     <img src="/en/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="blocklist"/>
@@ -55,10 +60,10 @@ Assign specific permissions to different wallet addresses. You can designate whi
 ### 3. Other day-to-day operations
 
 #### Control the token supply
-Perform core lifecycle operations including:
-- Mint
-- Burn
-- Pause/Unpause token activities
+Perform core lifecycle operations with dedicated, easy-to-use functions:
+- **Mint:** Issue new tokens to increase the total supply, for example, when new investors subscribe.
+- **Burn:** Permanently remove tokens from circulation, for example, when processing investor redemptions.
+- **Pause/Unpause:** Instantly freeze or resume all token activities (transfers, minting, burning) to respond to emergencies or security threats.
 
     <img src="/en/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="Mint token window"/>
 
@@ -66,6 +71,30 @@ Perform core lifecycle operations including:
 View detailed information on token holders and track a complete history of all operations for transparent oversight.
 
 #### Interact directly with the contract
-A visual interface is available for direct interaction with the token's smart contract. You can call any public Read or Write function on the contract, covering both common features available in the UI and advanced operations for more complex needs.
+For maximum flexibility, the Tokenization app provides a visual interface for direct interaction with the token's smart contract. This allows you to call any public function on the contract, covering both common features available in the main UI and advanced operations for more complex needs.
 
-<img src="/en/images/portal-apps/tokenization/functions.png" className="screenshot_modal" alt="functions"/>
+The interface is separated into two tabs: **Read** for querying information and **Write** for executing transactions that change the state of the contract.
+
+- **Read functions (querying data)**
+    Use Read functions to look up real-time information from the smart contract without creating a transaction. Key queries include:
+    - **Token details:** Get the token's `Name`, `Symbol`, `Decimals`, and `Total Supply`
+    - **Account balances:** Check the `Balance of` any specific address
+    - **Security & access controls:** Check if an address `isBlockListed` or `isAccessListed`, view the full `getBlockList` or `getAccessList`, verify if the allowlist feature is currently active, see if the contract is `Paused`, or check if an address `Has Role` for a specific permission
+    - **Contract metadata:** Get the contract's `Version` and `Contract URI`
+    <img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
+
+- **Write functions (executing actions)**
+    Use Write functions to perform actions that modify the smart contract. These require a transaction to be signed and broadcasted to the network. Key actions, in the order they appear in the interface, include:
+    - `Mint`: Issue new tokens (supports batch operations)
+    - `Burn`: Destroy tokens that the wallet itself holds
+    - `Approve`: Allow another address or contract to spend tokens on your behalf
+    - `Add Blocklist`: Add or remove addresses from the blocklist (supports batch operations)
+    - `Grant Role`: Assign specific permissions to team members
+    - `Revoke Role`: Remove specific permissions from team members
+    - `Transfer`: Send tokens to another address
+    - `Contract URI Update`: Change the token's metadata URI
+    - `Salvage`: Recover ETH or other ERC-20 tokens accidentally sent to the contract
+    - `Pause`: Freeze all activity
+    - `Unpause`: Resume all activity
+    - `Upgrade`: Seamlessly upgrade the contract to a new version
+    <img src="/en/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="Contract Write Functions"/>
