@@ -23,7 +23,7 @@ Cobo provides an integrated infrastructure stack to help fund managers issue and
 **Key benefits for fund managers:**
 - Enhanced security through MPC technology and compliance-enforced standards
 - Streamlined lifecycle management of tokens (issuance, minting, burning, etc.) through a single interface, ensuring reliable alignment with off-chain legal ownership
-- Reduced operational overhead through automated compliance controls enforced at the smart-contract level, such as allowlisting
+- Reduced operational overhead through automated compliance controls enforced at the smart-contract level, such as token access controls
 - Improved investor experience with digital access and management
 
 ## Step-by-step workflow for EVM-based bond tokenization
@@ -33,13 +33,7 @@ Cobo provides an integrated infrastructure stack to help fund managers issue and
 As a fund manager, you'll begin by establishing the foundation for your tokenized fund:
 
 1. Establish fund structure and governance according to your jurisdiction's regulatory requirements.
-2. Configure, deploy, and manage your token using Cobo's Tokenization app:
-   
-   a. **Create your token**: Define your token's core parameters (name, symbol, etc.) and set up critical access controls like operational permissions, allowlists, or blocklists.
-
-   b. **Mint tokens**: After the token is created, you have the flexibility to mint tokens immediately or on-demand as investors subscribe.
-
-   c. **Manage token lifecycle**: Manage all aspects of your token post-launch, including pausing the contract, burning tokens, and updating access controls in a comprehensive dashboard.
+2. Use Cobo's Tokenization app to **create your token**: Define its core parameters (name, symbol, etc.) and set up operational permissions.
 
 ### 2. Onboard investors
 
@@ -56,14 +50,17 @@ As a fund manager, you'll guide investors through a compliant onboarding process
 
 To receive and manage their tokens, investors can either:
 
-1. Provide their existing wallet addresses
-2. Use a secure and easy-to-use [MPC Wallet](/en/portal/mpc-wallets/introduction) on Cobo Portal
+- Provide their existing wallet addresses
+- Use a secure and easy-to-use [MPC Wallet](/en/portal/mpc-wallets/introduction) on Cobo Portal
 
-As a fund manager, you will verify all investor wallet addresses and manage their access using allowlist or blocklist in the Tokenization app.
+As a fund manager, you will verify all investor wallet addresses and manage their token access in the Tokenization app.
 
-### 4. Mint and distribute tokens
+### 4. Mint, distribute, and manage tokens
 
-Once the off-chain subscription is finalized, you will use the Tokenization app to perform the on-chain issuance. This involves minting the exact number of tokens corresponding to the investor's subscription and distributing them directly to their verified wallet address. Each token serves as a digital representation of the investor's beneficial interest in the fund.
+Once the off-chain subscription is finalized, you will use the Tokenization app to perform the on-chain issuance and manage the token's lifecycle:
+
+- **Mint and distribute tokens**: You have the flexibility to mint tokens immediately or on-demand as investors subscribe. This involves minting the exact number of tokens corresponding to the investor's subscription and distributing them directly to their verified wallet address. Each token serves as a digital representation of the investor's beneficial interest in the fund.
+- **Manage token lifecycle**: Manage all aspects of your token post-launch, including burning tokens and pausing the contract.
 
 ### 5. Manage ongoing token operations
 
@@ -73,10 +70,10 @@ As a fund manager, you will provide ongoing management of the tokenized fund:
    - View token balances through Cobo's dashboard or integrated interfaces
    - Monitor Net Asset Value (NAV) updates through standard reporting channels
    - Submit redemption or transfer requests according to fund terms
-2. Enforce access controls:
-   - Maintain and update blocklist to prevent unauthorized transactions
-   - Restrict transfers to allowlisted wallets only
-3. Assign permissions such as minting, burning, and pausing to team members, or revoke permissions
+2. Maintain token access controls:
+   - Restrict token access to eligible investors
+   - Maintain the blocklist to prevent unauthorized transactions
+3. Update operational permissions such as minting, burning, and pausing for team members
 4. Ensure continuous alignment between off-chain ledger records and on-chain token balances
 
 ### 6. Process investor redemptions

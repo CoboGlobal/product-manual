@@ -20,16 +20,23 @@ Tokenization simplifies how you issue, manage, and operate your own tokens—no 
 ### Versatile token creation
 Design and issue tokens tailored to your business needs, covering a wide range of use cases from stablecoins and security tokens to the tokenization of real-world assets.
 
+### Built on a secure foundation
+All tokens are powered by **CoboERC20**, our in-house, audited smart contract that extends the standard ERC-20 with enhanced features for access control and lifecycle management.
+
+Support for more chains like Solana is coming soon.
+
 ### Complete lifecycle management
 Manage every stage of your token's lifecycle through a single, intuitive interface—no coding required. Securely mint new tokens for issuance, burn them upon redemption, pause the contract in an emergency, and seamlessly upgrade it to add new features.
 
 ### Robust token access controls
-Enforce compliance and security at the smart contract level. Use a **blocklist** to prevent any interaction with unauthorized or suspicious addresses and an **allowlist** to restrict token interactions to verified, eligible investors.
+Enforce compliance and security at the smart contract level. Set up **token access** controls to restrict token interactions to verified, eligible investors and a **blocklist** to prevent any interaction with unauthorized or suspicious addresses.
 
 ### Granular permission controls
 Enhance your operational security by delegating specific responsibilities to different team members. You can grant distinct permissions for critical actions from minting and burning tokens to managing token access controls.
 
 ## How it works
+
+The Tokenization app supports operations through both MPC Wallets and Web3 wallets on Cobo Portal.
 
 ### 1. Create your token
 Easily create and issue your own tokens. You can also update token information as needed.
@@ -40,24 +47,24 @@ Easily create and issue your own tokens. You can also update token information a
 
 ### 2. Manage token access controls and permissions
 
-#### Use blocklist and allowlist
+#### Set up token access and blocklist
 
-Use blocklist and allowlist to control who can interact with your tokens.
+Use token access settings and blocklist to control who can interact with your tokens.
+
+- **Token access**: By default, all addresses not on the blocklist can transact freely. To enhance control, you can enable **Restricted Access** to activate an allowlist, limiting all token circulation exclusively to addresses that are on your allowlist AND not on the blocklist.
+
+    <img src="/en/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="token access"/>
 
 - **Blocklist**: Addresses on the blocklist are prevented from performing any token operations.
 
     <img src="/en/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="blocklist"/>
-
-- **Allowlist (Restricted Access)**: By default, all addresses not on the blocklist can transact freely. To enhance control, you can enable **Restricted Access** to activate an allowlist, limiting all token circulation exclusively to addresses that are on your allowlist AND not on the blocklist.
-
-    <img src="/en/images/portal-apps/tokenization/allowlist.png" className="screenshot_modal" alt="allowlist"/>
 
 #### Assign permissions
 Assign specific permissions to different wallet addresses. You can designate which wallets are authorized to perform certain actions, such as minting or pausing the token.
 
     <img src="/en/images/portal-apps/tokenization/permissions.png" className="screenshot_modal" alt="permissions"/>
 
-### 3. Other day-to-day operations
+### 3. Day-to-day operations
 
 #### Perform core lifecycle operations
 
@@ -95,8 +102,8 @@ The interface is separated into two tabs: **Read** for querying information and 
     - `mint`: Issue new tokens to increase the total supply
     - `burn`: Destroy tokens that the wallet itself holds
     - `contractUriUpdate`: Change the token's metadata URI
-    - `accessListAdd`: Add one or more addresses to the allowlist
-    - `accessListRemove`: Remove one or more addresses from the allowlist
+    - `accessListAdd`: Add one or more addresses to the token access list
+    - `accessListRemove`: Remove one or more addresses from the token access list
     - `blockListAdd`: Add one or more addresses to the blocklist
     - `blockListRemove`: Remove one or more addresses from the blocklist
     - `grantRole`: Assign a specific permission to a team member
@@ -104,7 +111,7 @@ The interface is separated into two tabs: **Read** for querying information and 
     - `renounceRole`: Relinquish a role that your own address holds
     - `salvageERC20`: Recover other ERC-20 tokens accidentally sent to the contract
     - `salvageNative`: Recover native currency (e.g., ETH) accidentally sent to the contract
-    - `toggleAccesslist`: Enable or disable the allowlist requirement for transfers
+    - `toggleAccesslist`: Enable or disable token access controls for transfers
     - `transfer`: Send tokens to another address
     - `transferFrom`: Execute a pre-approved transfer from another address
     - `pause`: Freeze all token activity
