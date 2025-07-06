@@ -41,9 +41,9 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 ### 1. 创建您的代币
 轻松创建和发行您自己的代币。如有需要，您还可以更新代币信息。
 
-<img src="/en/images/portal-apps/tokenization/create-token1.png" className="screenshot_modal" alt="Create token window1"/>
+<img src="/cn/images/portal-apps/tokenization/create-token1.png" className="screenshot_modal" alt="创建代币窗口第一步"/>
 
-<img src="/en/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="Create token window2"/>
+<img src="/cn/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="创建代币窗口第二步"/>
 
 ### 2. 管理代币流通和权限
 
@@ -53,16 +53,16 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 
 - **代币流通限制**：建议您启用**受限访问**来激活白名单，将所有代币流通限制在白名单上（且不在黑名单上）的地址。
 
-    <img src="/en/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="token access"/>
+    <img src="/cn/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="代币流通限制"/>
 
 - **黑名单**：黑名单上的地址将被禁止执行任何代币操作。
 
-    <img src="/en/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="blocklist"/>
+    <img src="/cn/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="黑名单"/>
 
 #### 分配权限
 为不同的钱包地址分配特定权限。您可以指定哪些钱包有权执行某些操作，例如铸造或暂停代币。
 
-    <img src="/en/images/portal-apps/tokenization/permissions.png" className="screenshot_modal" alt="permissions"/>
+    <img src="/cn/images/portal-apps/tokenization/permissions.png" className="screenshot_modal" alt="管理操作权限"/>
 
 ### 3. 日常操作
 
@@ -72,7 +72,7 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 - **销毁 (Burn):** 永久性地从流通中移除代币，例如在处理投资者赎回时。
 - **暂停/取消暂停 (Pause/Unpause):** 立即冻结或恢复所有代币活动（转账、铸造、销毁），以应对紧急情况或安全威胁。
 
-    <img src="/en/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="Mint token window"/>
+    <img src="/cn/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="铸造代币窗口"/>
 
 #### 监控活动
 
@@ -92,7 +92,7 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
     - **代币和账户详情：** 获取代币的 `name`、`symbol`、`decimals`、`totalSupply`，并检查任何地址的 `balanceOf` 或某个地址授予另一个地址的 `allowance`
     - **访问控制状态：** 检查 `accessListEnabled` 是否启用，某个地址是否 `isAccessListed` 或 `isBlocklisted`，并查看完整的 `getAccessList` 或 `getBlocklist`
     - **合约状态和元数据：** 检查合约是否 `paused`，获取 `contractUri`，查看 `version` 和 `UPGRADE_INTERFACE_VERSION`，并使用 `supportsInterface` 检查功能支持
-    <img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
+    <img src="/cn/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="读取函数（查询数据）"/>
 
 - **写入函数（执行操作）**
 
@@ -117,4 +117,4 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
     - `pause`：冻结所有代币活动
     - `unpause`：恢复所有代币活动
     - `upgradeToAndCall`：无缝升级合约到新版本
-    <img src="/en/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="Contract Write Functions"/>
+    <img src="/cn/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="写入函数（执行操作）"/>
