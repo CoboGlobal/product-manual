@@ -1051,7 +1051,8 @@
         {
           "group": "Tokenization",
           "pages": [
-            "cn/apps/tokenization/introduction"
+            "cn/apps/tokenization/introduction",
+            "cn/apps/tokenization/bond-tokenization-best-practice"
           ]
         },
         {

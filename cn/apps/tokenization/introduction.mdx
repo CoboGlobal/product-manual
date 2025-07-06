@@ -20,13 +20,23 @@ Tokenization 简化了发行、管理和操作自有代币的流程——无需�
 ### 多功能的代币创建
 按您的业务需要设计和发行代币，覆盖从稳定币、证券型代币到真实世界资产代币化的广泛应用场景。
 
+### 构建于安全的基础之上
+所有代币均由我们内部审计的 **CoboERC20** 智能合约提供支持，该合约扩展了标准的 ERC-20，增加了访问控制和生命周期管理的增强功能。
+
+即将支持更多合约和公链（如 Solana）。
+
 ### 完整的生命周期管理
-安全地进行代币的铸造、销毁、升级和暂停。通过基于角色的访问控制，您可以精确掌控每一项操作的执行权限。
+通过单一、直观的界面管理代币生命周期的每个阶段——无需任何编程技能。您可以安全地铸造新代币用于发行，在赎回时销毁代币，在紧急情况下暂停合约，并无缝升级合约以添加新功能。
 
-### 无需代码的简洁性
-直观、用户友好的界面使所有代币功能都易于使用，无需智能合约开发或编程技能。
+### 强大的代币流通管控
+在智能合约层面强制执行合规性和安全性。您可以启用**代币流通限制**，将代币交互限制在经过验证的投资者范围内，并设置**黑名单**以防止与未经授权或可疑地址的任何交互。
 
-## 使用简介
+### 精细的权限控制
+您可以将关键操作权限，如铸造和销毁代币、管理代币流通限制等，委派给不同的团队成员，增强操作安全性。
+
+## 工作原理
+
+Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行操作。
 
 ### 1. 创建您的代币
 轻松创建和发行您自己的代币。如有需要，您还可以更新代币信息。
@@ -35,38 +45,76 @@ Tokenization 简化了发行、管理和操作自有代币的流程——无需�
 
 <img src="/en/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="Create token window2"/>
 
-### 2. 权限控制
+### 2. 管理代币流通和权限
 
-#### 使用黑名单和白名单
+#### 代币流通限制和黑名单
 
-使用黑名单和白名单来控制谁可以与您的代币进行交互。
+使用代币流通限制和黑名单来控制谁可以与您的代币进行交互。
+
+- **代币流通限制**：建议您启用**受限访问**来激活白名单，将所有代币流通限制在白名单上（且不在黑名单上）的地址。
+
+    <img src="/en/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="token access"/>
+
 - **黑名单**：黑名单上的地址将被禁止执行任何代币操作。
 
     <img src="/en/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="blocklist"/>
 
-- **白名单（受限访问）**：默认情况下，所有不在黑名单上的地址都可以自由交易。为加强控制，您可以启用**受限访问**来激活白名单，将所有代币流通限制在白名单上（且不在黑名单上）的地址。
-
-    <img src="/en/images/portal-apps/tokenization/allowlist.png" className="screenshot_modal" alt="allowlist"/>
-
 #### 分配权限
-为不同的钱包地址分配特定权限。您可以指定哪些钱包有权执行某些操作，例如增发或暂停代币。
+为不同的钱包地址分配特定权限。您可以指定哪些钱包有权执行某些操作，例如铸造或暂停代币。
 
     <img src="/en/images/portal-apps/tokenization/permissions.png" className="screenshot_modal" alt="permissions"/>
 
-### 3. 其他日常管理操作
+### 3. 日常操作
 
-#### 控制代币供应
-执行核心的生命周期操作，包括：
-- 铸造
-- 销毁
-- 暂停/取消暂停代币活动
+#### 执行核心的生命周期操作
+
+- **铸造 (Mint):** 发行新代币以增加总供应量，例如在新投资者认购时。
+- **销毁 (Burn):** 永久性地从流通中移除代币，例如在处理投资者赎回时。
+- **暂停/取消暂停 (Pause/Unpause):** 立即冻结或恢复所有代币活动（转账、铸造、销毁），以应对紧急情况或安全威胁。
 
     <img src="/en/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="Mint token window"/>
 
 #### 监控活动
+
 查看代币持有者的详细信息，并跟踪所有操作的完整历史记录，以实现透明的监督。
 
 #### 直接与合约交互
-我们提供了一个可视化界面，允许直接与代币的智能合约进行交互。您可以调用合约上的任何公共读取或写入函数，涵盖了 UI 中可用的常用功能以及满足更复杂需求的高级操作。
 
-<img src="/en/images/portal-apps/tokenization/functions.png" className="screenshot_modal" alt="functions"/>
+为了获得最大的灵活性，Tokenization App 提供了一个可视化界面，用于直接与代币的智能合约进行交互。这使您可以调用合约上的任何公共函数，涵盖了主界面中的常用功能，以及用于处理复杂需求的高级操作。
+
+该界面分为两个选项卡：**读取 (Read)** 用于查询信息，**写入 (Write)** 用于执行改变合约状态的交易。
+
+- **读取函数（查询数据）**
+
+    使用读取函数，您可以从智能合约中查询实时信息，且该过程无需创建链上交易。关键查询包括：
+
+    - **角色信息：** 查看所有权限角色的标识符（例如 `MINTER_ROLE`、`PAUSER_ROLE`），并检查某个地址 `hasRole` 是否具有特定权限
+    - **代币和账户详情：** 获取代币的 `name`、`symbol`、`decimals`、`totalSupply`，并检查任何地址的 `balanceOf` 或某个地址授予另一个地址的 `allowance`
+    - **访问控制状态：** 检查 `accessListEnabled` 是否启用，某个地址是否 `isAccessListed` 或 `isBlocklisted`，并查看完整的 `getAccessList` 或 `getBlocklist`
+    - **合约状态和元数据：** 检查合约是否 `paused`，获取 `contractUri`，查看 `version` 和 `UPGRADE_INTERFACE_VERSION`，并使用 `supportsInterface` 检查功能支持
+    <img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
+
+- **写入函数（执行操作）**
+
+    使用写入函数执行修改智能合约的操作。这些操作需要签署交易并广播到网络。按界面中出现的顺序列出的关键操作包括：
+
+    - `approve`：允许另一个地址或合约代表您花费代币
+    - `mint`：铸造新代币以增加总供应量
+    - `burn`：销毁钱包自身持有的代币
+    - `contractUriUpdate`：更改代币的元数据 URI
+    - `accessListAdd`：向代币流通白名单添加一个或多个地址
+    - `accessListRemove`：从代币流通白名单中移除一个或多个地址
+    - `blockListAdd`：向黑名单添加一个或多个地址
+    - `blockListRemove`：从黑名单中移除一个或多个地址
+    - `grantRole`：为团队成员分配特定权限
+    - `revokeRole`：从团队成员中移除特定权限
+    - `renounceRole`：放弃您自己地址持有的角色
+    - `salvageERC20`：恢复意外发送到合约的其他 ERC-20 代币
+    - `salvageNative`：恢复意外发送到合约的原生代币（例如 ETH）
+    - `toggleAccesslist`：启用或禁用代币流通限制
+    - `transfer`：向另一个地址发送代币
+    - `transferFrom`：执行从另一个地址预先批准的转账
+    - `pause`：冻结所有代币活动
+    - `unpause`：恢复所有代币活动
+    - `upgradeToAndCall`：无缝升级合约到新版本
+    <img src="/en/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="Contract Write Functions"/>
