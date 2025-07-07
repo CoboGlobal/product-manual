@@ -493,7 +493,8 @@
         {
           "group": "Tokenization",
           "pages": [
-            "en/apps/tokenization/introduction"
+            "en/apps/tokenization/introduction",
+            "en/apps/tokenization/bond-tokenization-best-practice"
           ]
         },
         {
