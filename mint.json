@@ -491,6 +491,13 @@
           ]
         },
         {
+          "group": "Tokenization",
+          "pages": [
+            "en/apps/tokenization/introduction",
+            "en/apps/tokenization/bond-tokenization-best-practice"
+          ]
+        },
+        {
           "group": "OTC",
           "pages": [
             "en/apps/otc/introduction"
@@ -1040,6 +1047,13 @@
             "cn/apps/screening/risk-policies",
             "cn/apps/screening/viewscreening",
             "cn/apps/screening/recipients"
+          ]
+        },
+        {
+          "group": "Tokenization",
+          "pages": [
+            "cn/apps/tokenization/introduction",
+            "cn/apps/tokenization/bond-tokenization-best-practice"
           ]
         },
         {
