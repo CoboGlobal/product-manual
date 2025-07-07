@@ -1,7 +1,7 @@
 --- 
 title: "Tokenization 简介"
 sidebarTitle: "简介"
-lang: "cn"
+lang: "zh-hans"
 description: "使用 Tokenization，您可以完全掌控您的数字资产。它简化了发行、管理和操作自有代币的流程。"
 ---
 
@@ -20,19 +20,19 @@ Tokenization 简化了发行、管理和操作自有代币的流程——无需�
 ### 多功能的代币创建
 按您的业务需要设计和发行代币，覆盖从稳定币、证券型代币到真实世界资产代币化的广泛应用场景。
 
-### 构建于安全的基础之上
+### 构建于安全的基础
 所有代币均由我们内部审计的 **CoboERC20** 智能合约提供支持，该合约扩展了标准的 ERC-20，增加了访问控制和生命周期管理的增强功能。
 
-即将支持更多合约和公链（如 Solana）。
+Tokenization App 即将支持更多合约和公链（如 Solana）。
 
 ### 完整的生命周期管理
-通过单一、直观的界面管理代币生命周期的每个阶段——无需任何编程技能。您可以安全地铸造新代币用于发行，在赎回时销毁代币，在紧急情况下暂停合约，并无缝升级合约以添加新功能。
+通过单一、直观的界面管理**代币生命周期**的每个阶段——无需任何编程技能。您可以安全地铸造新代币用于发行，在赎回时销毁代币，在紧急情况下暂停合约，并无缝升级合约以添加新功能。
 
 ### 强大的代币流通管控
 在智能合约层面强制执行合规性和安全性。您可以启用**代币流通限制**，将代币交互限制在经过验证的投资者范围内，并设置**黑名单**以防止与未经授权或可疑地址的任何交互。
 
 ### 精细的权限控制
-您可以将关键操作权限，如铸造和销毁代币、管理代币流通限制等，委派给不同的团队成员，增强操作安全性。
+您可以将关键**操作权限**，如铸造和销毁代币、管理代币流通限制等，委派给不同的团队成员，增强操作安全性。
 
 ## 工作原理
 
@@ -66,7 +66,7 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 
 ### 3. 日常操作
 
-#### 执行核心的生命周期操作
+#### 执行核心的代币生命周期操作
 
 - **铸造 (Mint):** 发行新代币以增加总供应量，例如在新投资者认购时。
 - **销毁 (Burn):** 永久性地从流通中移除代币，例如在处理投资者赎回时。
@@ -90,7 +90,7 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 
     - **角色信息：** 查看所有权限角色的标识符（例如 `MINTER_ROLE`、`PAUSER_ROLE`），并检查某个地址 `hasRole` 是否具有特定权限
     - **代币和账户详情：** 获取代币的 `name`、`symbol`、`decimals`、`totalSupply`，并检查任何地址的 `balanceOf` 或某个地址授予另一个地址的 `allowance`
-    - **访问控制状态：** 检查 `accessListEnabled` 是否启用，某个地址是否 `isAccessListed` 或 `isBlocklisted`，并查看完整的 `getAccessList` 或 `getBlocklist`
+    - **代币流通限制状态：** 检查 `accessListEnabled` 是否启用，某个地址是否 `isAccessListed` 或 `isBlocklisted`，并查看完整的 `getAccessList` 或 `getBlocklist`
     - **合约状态和元数据：** 检查合约是否 `paused`，获取 `contractUri`，查看 `version` 和 `UPGRADE_INTERFACE_VERSION`，并使用 `supportsInterface` 检查功能支持
     <img src="/cn/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="读取函数（查询数据）"/>
 
