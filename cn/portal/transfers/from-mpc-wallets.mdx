@@ -53,13 +53,10 @@ import Fee from '/snippets/transaction-fee-cn.mdx';
 
     <Info>您可转账的最大金额受交易费、可用余额和锁定金额的影响：<ul><li>（提币金额+交易费）\>可用余额：无法提交提币请求。</li><li>（提币金额+交易费）≤（当前余额-锁定金额）：您的提币请求将被立即处理。</li><li>（当前余额-锁定金额）\<（提币金额+交易费）≤ 可用余额：您可以成功提交提币请求，但您的交易将被排队进行。</li></ul>更多信息请参阅 [MPC 钱包余额和交易金额信息](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/balance-amounts)。</Info>
 
-6. 查看交易费用。根据交易速度，网络费用分为三个级别：慢、标准和快。
-7. 要调整该费用，请点击下图圈出的按钮。所有字段都是必填项，并将根据您选择的交易速度自动填充。您可以根据自己的具体要求编辑各个参数。
-    <img src="/cn/images/transfers/customize-fees.png" className="screenshot_modal"/>
-    <Fee />
-8. <MySnippet />
-9. 点击**提交**。
-10. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
+6. <Fee />
+7. <MySnippet />
+8. 点击**提交**。
+9. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
 
 ## 查看签名人状态
 

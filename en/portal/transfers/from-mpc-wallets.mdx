@@ -50,12 +50,10 @@ Then, fill in the required information as follows:
 
     <Info>The maximum amount you can transfer is affected by transaction fees, available balance, and locked amounts: <ul><li>(Withdrawal amount + transaction fee) \> available balance: The withdrawal request cannot be submitted.</li><li>(Withdrawal amount + transaction fee) ≤ (current balance - locked amount): Your withdrawal request will be processed immediately.</li><li>(current balance - locked amount) \< (withdrawal amount + transaction fee) ≤ available balance: You can successfully submit a withdrawal request, but your transaction will be queued.</li></ul>For more information, please refer to [Balances and transaction amounts for MPC Wallets](https://www.cobo.com/developers/v2/guides/mpc-wallets/balance-amounts).</Info>
 
-6. Review the transaction cost. Network fees will be displayed in 3 tiers based on transaction speeds: slow, standard, and fast.
-7. To adjust the fees, click the button highlighted below. All fields are mandatory and will be auto-populated based on the transaction speed you have selected. You may edit the parameters based on your specific requirements.
-    <img src="/en/images/transfers/customize-fees.png" className="screenshot_modal"/>
-    <Fee />
-8. <MySnippet />
-9. Click **Submit**.
+6. <Fee />
+7. <MySnippet />
+8. Click **Submit**.
+9. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
 
 ## Check co-signer status
 
