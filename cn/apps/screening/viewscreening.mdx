@@ -9,7 +9,6 @@ description: "查看和管理交易扫描结果。查看风险级别，审查合
 Screening App 将很快提供中文本地化版本。目前，本文档所有 UI 名称（如按钮名称）和术语均为 AI 翻译，可能与您在使用 App 时看到的英文 UI 不符。如需查看实际的英文 UI 名称，请参阅相应的英文手册：[Manage screening results](/en/apps/screening/viewscreening)
 </Note>
 
-
 <Info>
 访问此功能：
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)
@@ -18,17 +17,11 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 4. 点击**扫描结果**
 </Info> 
 
-## 扫描结果界面
-
-<Note>您可以在[Screening 设置](/cn/apps/screening/screening-settings#aml-供应商设置)中选择和配置您偏好的 AML 供应商。</Note>
-
-**扫描结果**界面使您能够通过以下部分监控和管理交易扫描结果：
+您可以通过**扫描结果**界面监控和管理交易扫描结果：
 
 <img src="/en/images/portal-apps/screening/screening-summary.png" className="screenshot_full_screen" alt="扫描摘要和交易列表"/>
 
 ## 交易列表
-
-### 交易列表
 
 **关键信息：**
 
@@ -81,7 +74,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 您可以按方向、AML 供应商（CipherOwl 或 Elliptic）、审核状态、资金状态、创建时间和更新时间筛选交易。
 
-### 扫描详情
+## 扫描详情
 
 点击 <img src="/en/images/common/icon_view.svg" className="icon" alt="查看图标"/> 查看交易的详细扫描信息：
 
@@ -140,140 +133,140 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 显示交易的详细风险分析，具体内容因 AML 供应商而异：
 
-#### 使用 CipherOwl 时
+- 使用 CipherOwl 时
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>扫描地址</td>
-      <td>被扫描的地址及其关联钱包：<br/>• 对于充币：发送地址<br/>• 对于提币：接收地址<br/>*注意：UTXO 交易可能有多个发送/接收地址*</td>
-    </tr>
-    <tr>
-      <td>金额</td>
-      <td>扫描地址的交易金额</td>
-    </tr>
-    <tr>
-      <td>制裁</td>
-      <td>指示扫描地址是否在任何制裁名单上<br/>标记为**是**时，点击信息图标查看制裁详情：<br/>• **制裁计划**：制裁机构<br/>• **管辖区**：机构的管辖范围<br/>• **被制裁实体**：受制裁实体<br/>• **参考 URL**：制裁信息链接</td>
-    </tr>
-    <tr>
-      <td>风险暴露</td>
-      <td>识别的风险类型（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）：<br/>• **直接**（对应 CipherOwl 的"直接风险"）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的"暴露风险"）：扫描地址与具有风险标签的其他地址有交易<br/><i>注意：交易可同时标记为直接和间接</i></td>
-    </tr>
-    <tr>
-      <td>风险类别</td>
-      <td>从扫描结果中识别的特定风险标签</td>
-    </tr>
-    <tr>
-      <td>暴露地址</td>
-      <td>交易路径中识别的风险地址（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）。<br/>点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址）</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table six-columns">
+    <thead>
+      <tr>
+        <th>字段</th>
+        <th>描述</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>扫描地址</td>
+        <td>被扫描的地址及其关联钱包：<br/>• 对于充币：发送地址<br/>• 对于提币：接收地址<br/>*注意：UTXO 交易可能有多个发送/接收地址*</td>
+      </tr>
+      <tr>
+        <td>金额</td>
+        <td>扫描地址的交易金额</td>
+      </tr>
+      <tr>
+        <td>制裁</td>
+        <td>指示扫描地址是否在任何制裁名单上<br/>标记为**是**时，点击信息图标查看制裁详情：<br/>• **制裁计划**：制裁机构<br/>• **管辖区**：机构的管辖范围<br/>• **被制裁实体**：受制裁实体<br/>• **参考 URL**：制裁信息链接</td>
+      </tr>
+      <tr>
+        <td>风险暴露</td>
+        <td>识别的风险类型（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）：<br/>• **直接**（对应 CipherOwl 的"直接风险"）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的"暴露风险"）：扫描地址与具有风险标签的其他地址有交易<br/><i>注意：交易可同时标记为直接和间接</i></td>
+      </tr>
+      <tr>
+        <td>风险类别</td>
+        <td>从扫描结果中识别的特定风险标签</td>
+      </tr>
+      <tr>
+        <td>暴露地址</td>
+        <td>交易路径中识别的风险地址（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）。<br/>点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址）</td>
+      </tr>
+    </tbody>
+  </table>
 
-#### 使用 Elliptic 时
+- 使用 Elliptic 时
 
-Elliptic 根据扫描场景有三种不同的显示样式：
+  Elliptic 根据扫描场景有三种不同的显示样式：
 
-1. **地址扫描，实体未知**
-2. **地址扫描，实体明确**
-3. **交易扫描**
+  1. **地址扫描，实体未知**
+  2. **地址扫描，实体明确**
+  3. **交易扫描**
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-      <th>显示场景</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>风险评分</td>
-      <td>从 0.0-10.0 的数值分数（增量为 0.1）或 NA，分数越高表示风险越高</td>
-      <td>所有场景</td>
-    </tr>
-    <tr>
-      <td>实体</td>
-      <td>与地址关联的实体（如果已知），例如特定的交易所或服务</td>
-      <td>地址扫描场景</td>
-    </tr>
-    <tr>
-      <td>类别</td>
-      <td>与地址关联的风险类别（例如，制裁、恐怖主义融资）</td>
-      <td>地址扫描场景</td>
-    </tr>
-    <tr>
-      <td>标签</td>
-      <td>提供有关风险类别的更多详细信息的特定标签</td>
-      <td>地址扫描场景</td>
-    </tr>
-    <tr>
-      <td>集群大小</td>
-      <td>与此地址关联的集群中的地址数</td>
-      <td>地址扫描场景</td>
-    </tr>
-    <tr>
-      <td>交易对手风险评分</td>
-      <td>与被扫描地址交易过的地址的风险评分</td>
-      <td>交易扫描场景</td>
-    </tr>
-    <tr>
-      <td>交易对手类别</td>
-      <td>与被扫描地址交易过的实体的类别</td>
-      <td>交易扫描场景</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table six-columns">
+    <thead>
+      <tr>
+        <th>字段</th>
+        <th>描述</th>
+        <th>显示场景</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>风险评分</td>
+        <td>从 0.0-10.0 的数值分数（增量为 0.1）或 NA，分数越高表示风险越高</td>
+        <td>所有场景</td>
+      </tr>
+      <tr>
+        <td>实体</td>
+        <td>与地址关联的实体（如果已知），例如特定的交易所或服务</td>
+        <td>地址扫描场景</td>
+      </tr>
+      <tr>
+        <td>类别</td>
+        <td>与地址关联的风险类别（例如，制裁、恐怖主义融资）</td>
+        <td>地址扫描场景</td>
+      </tr>
+      <tr>
+        <td>标签</td>
+        <td>提供有关风险类别的更多详细信息的特定标签</td>
+        <td>地址扫描场景</td>
+      </tr>
+      <tr>
+        <td>集群大小</td>
+        <td>与此地址关联的集群中的地址数</td>
+        <td>地址扫描场景</td>
+      </tr>
+      <tr>
+        <td>交易对手风险评分</td>
+        <td>与被扫描地址交易过的地址的风险评分</td>
+        <td>交易扫描场景</td>
+      </tr>
+      <tr>
+        <td>交易对手类别</td>
+        <td>与被扫描地址交易过的实体的类别</td>
+        <td>交易扫描场景</td>
+      </tr>
+    </tbody>
+  </table>
 
-风险信息：
+  风险信息：
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>风险信息</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>直接暴露</td>
-      <td>表示与被扫描地址直接相关的风险</td>
-    </tr>
-    <tr>
-      <td>间接暴露</td>
-      <td>表示与已同被扫描地址交易的地址相关的风险</td>
-    </tr>
-    <tr>
-      <td>金融犯罪</td>
-      <td>与洗钱、欺诈或诈骗等活动的关联</td>
-    </tr>
-    <tr>
-      <td>制裁</td>
-      <td>与受制裁实体或地区的关联</td>
-    </tr>
-    <tr>
-      <td>暗网市场</td>
-      <td>与暗网市场或服务的关联</td>
-    </tr>
-    <tr>
-      <td>高风险交易所</td>
-      <td>与合规标准差的交易所的关联</td>
-    </tr>
-    <tr>
-      <td>混币服务</td>
-      <td>与加密货币混币或滚筒服务的关联</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table six-columns">
+    <thead>
+      <tr>
+        <th>风险信息</th>
+        <th>描述</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>直接暴露</td>
+        <td>表示与被扫描地址直接相关的风险</td>
+      </tr>
+      <tr>
+        <td>间接暴露</td>
+        <td>表示与已同被扫描地址交易的地址相关的风险</td>
+      </tr>
+      <tr>
+        <td>金融犯罪</td>
+        <td>与洗钱、欺诈或诈骗等活动的关联</td>
+      </tr>
+      <tr>
+        <td>制裁</td>
+        <td>与受制裁实体或地区的关联</td>
+      </tr>
+      <tr>
+        <td>暗网市场</td>
+        <td>与暗网市场或服务的关联</td>
+      </tr>
+      <tr>
+        <td>高风险交易所</td>
+        <td>与合规标准差的交易所的关联</td>
+      </tr>
+      <tr>
+        <td>混币服务</td>
+        <td>与加密货币混币或滚筒服务的关联</td>
+      </tr>
+    </tbody>
+  </table>
 
-有关解读 Elliptic 风险评分和信息的更多详情，请参阅其[文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)。
+  有关解读 Elliptic 风险评分的更多详情，请参阅其[文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)。
 
 ### 时间线部分
 
