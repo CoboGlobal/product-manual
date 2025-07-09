@@ -43,7 +43,7 @@ The **Screening Results** interface enables you to monitor and manage transactio
     </tr>
     <tr>
       <td>Status</td>
-      <td><b>Review Status:</b><br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Scan results awaiting manual review<br/>• **Approved**: Transaction passed AML/CFT scan<br/>• **Rejected**: Transaction rejected by AML/CFT scan<br/>• **Not Supported**: Chain not supported by Screening, transaction proceeds without AML/CFT review<br/><br/><b>Fund Status:</b><br/>• **Unfrozen**: Transaction funds are unfrozen, user can access the funds<br/>• **Frozen**: User cannot access the transaction funds<br/>• **Returned**: Transaction funds have been returned to the from address</td>
+      <td><b>Review Status:</b><br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Scan results awaiting manual review<br/>• **Approved**: Transaction passed AML/CFT scan<br/>• **Rejected**: Transaction rejected by AML/CFT scan<br/>• **Not Supported**: Chain not supported by Screening, transaction proceeds without AML/CFT review<br/><br/><b>Fund Status:</b><br/>• **Not Frozen**: Transaction funds are not frozen, and the user can access the funds.<br/>• **Frozen**: The user cannot access the transaction funds.<br/>• **Returned**: Transaction funds have been returned to the from address.<br/>• **Unfrozen**: Previously frozen funds have been released, and the user can now access them.</td>
     </tr>
     <tr>
       <td>Amount</td>
@@ -275,12 +275,13 @@ The following actions are available based on the transaction's current status:
 
 | Action | Effect |
 | :---- | :---- |
-| Approve | • For deposits: Transaction passes screening, funds become available to user<br/>• For withdrawals: Transaction passes screening, proceeds to next stage |
-| Approve with Alert | • For deposits: Transaction passes screening, funds become available to user, with additional risk transaction notification<br/>• For withdrawals: Transaction passes screening, proceeds to next stage, with additional risk transaction notification |
-| Reject | • For deposits: Transaction fails screening<br/>&nbsp;&nbsp;• Transactions are flagged and funds will be frozen<br/>&nbsp;&nbsp;&nbsp;&nbsp;• *Note about frozen funds: If you are using the [auto token sweeping feature of MPC Wallets](/en/portal/auto-sweep-overview), frozen funds will not be included in sweep operations*<br/>• For withdrawals: Transaction fails screening, withdrawal is rejected<br/>• Risk notification is always sent |
-| Manual Review | • For deposits: Will enable manual review of transactions<br/>• For withdrawals: Will enable manual review of transactions |
-| Return | • For deposits: Will enable returning funds from "to address" to specified address<br/>• For withdrawals: Not applicable |
-| Unfreeze | • Will enable releasing frozen funds, making them available to user<br/>• For withdrawals: Not applicable |
+| Approve | • For inbound: Transaction passes AML screening, and the funds become available to the user.<br/>• For outbound: Transaction passes AML screening and proceeds to the next stage. |
+| Approve with Alert | • For inbound: Transaction passes AML screening, and the funds become available to the user. An additional risk transaction notification is sent.<br/>• For outbound: Transaction passes AML screening and proceeds to the next stage. An additional risk transaction notification is sent. |
+| Reject | • For inbound: Transaction fails AML screening, and the funds are frozen.<br/>• For outbound: Transaction fails AML screening, and the withdrawal is rejected. |
+| Manual Review | • For inbound: Awaits manual review.<br/>• For outbound: Awaits manual review. |
+| Unfreeze | • For inbound: Releases frozen funds, making them available to the user.<br/>• For outbound: Not applicable. |
+| Refund | • For inbound: Returns the funds from the receiving address to a user-specified address.<br/>• For outbound: Not applicable. |
+| Isolate | • For inbound: Returns the funds from the receiving address to a user-specified isolation address.<br/>• For outbound: Not applicable. |
 
 ## Send appeal
 
