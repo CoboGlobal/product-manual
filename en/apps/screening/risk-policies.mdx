@@ -5,7 +5,9 @@ lang: "en"
 description: "Create custom crypto compliance rules in Screening based on risk levels, transaction directions, and amount thresholds. Automate AML/CFT policy enforcement."
 ---
 
-## The Post-Screening Policies interface
+## Post-screening policies
+
+Post-screening policies automatically handle transactions based on their screening results. Each policy defines when it should apply (criteria) and what action to take when it matches.
 
 <Info>
 To access this feature:
@@ -15,9 +17,15 @@ To access this feature:
 4. Click **Post-Screening Policies**
 </Info>
 
-The **Post-Screening Policies** interface enables you to manage your [post-screening policies](#post-screening-policies) through the following sections:
+The **Post-Screening Policies** interface enables you to manage your post-screening policies.
 
-<img src="/en/images/portal-apps/screening/manage-post-screening-policies.svg" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
+- Post-Screening Policies when using CipherOwl as the AML provider:
+  <img src="/en/images/portal-apps/screening/manage-post-screening-policies-cipherowl.png" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
+
+- Post-Screening Policies when using Elliptic as the AML provider:
+  <img src="/en/images/portal-apps/screening/manage-post-screening-policies-elliptic.png" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
+
+<Note>You can select and configure your preferred AML provider in the [Screening settings](/en/apps/screening/screening-settings#aml-provider-settings).</Note>
 
 ### Policy list fields
 
@@ -38,8 +46,11 @@ The **Post-Screening Policies** interface enables you to manage your [post-scree
       <td>Transaction direction: Inbound/Outbound</td>
     </tr>
     <tr>
-      <td>Risk Level</td>
-      <td>Risk level: Low/Medium/High</td>
+      <td>Risk</td>
+      <td>Risk: 
+        • CipherOwl: Low/Medium/High
+        • Elliptic: NA or numerical score from 0.0 to 10.0 (in 0.1 increments)
+      </td>
     </tr>
     <tr>
       <td>Min USD</td>
@@ -75,8 +86,11 @@ The **Post-Screening Policies** interface enables you to manage your [post-scree
       <td>Inbound/Outbound</td>
     </tr>
     <tr>
-      <td>Risk Level</td>
-      <td>Low/Medium/High</td>
+      <td>Risk</td>
+      <td>
+        • CipherOwl: Low/Medium/High
+        • Elliptic: NA or numerical score from 0.0 to 10.0 (in 0.1 increments)
+      </td>
     </tr>
     <tr>
       <td>USD Amount</td>
@@ -93,18 +107,26 @@ The **Post-Screening Policies** interface enables you to manage your [post-scree
   </tbody>
 </table>
 
-## Post-screening policies
+## Creating, editing, and deleting policies
 
-Post-screening policies automatically handle transactions based on their screening results. Each policy defines when it should apply (criteria) and what action to take when it matches.
+### Creating policies
 
-<img src="/en/images/portal-apps/screening/creating-post-screening-policy.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog"/>
+To create a new policy:
+1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface)
+2. Click **Create Policy**
+  - Create Post-Screening Policy dialog when using CipherOwl
+  <img src="/en/images/portal-apps/screening/creating-post-screening-policy-cipherowl.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog when using CipherOwl"/>
 
-### Policy criteria
+  - Create Post-Screening Policy dialog when using Elliptic
+  <img src="/en/images/portal-apps/screening/creating-post-screening-policy-elliptic.png" className="screenshot_modal" alt="Create Post-Screening Policy dialog when using Elliptic"/>
 
+3. Define policy criteria and action.
+
+**Policy criteria**
 <table class="table six-columns">
   <thead>
     <tr>
-      <th>Policy criteria</th>
+      <th>Policy Criteria</th>
       <th>Options</th>
       <th>Description</th>
     </tr>
@@ -116,9 +138,9 @@ Post-screening policies automatically handle transactions based on their screeni
       <td>Transaction flow direction</td>
     </tr>
     <tr>
-      <td>Risk Level</td>
-      <td>• Low<br/>• Medium<br/>• High</td>
-      <td>Risk classification from [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)</td>
+      <td>Risk</td>
+      <td>When using CipherOwl:<br/>• Low<br/>• Medium<br/>• High<br/><br/>When using Elliptic:<br/>• NA<br/>• Numerical score from 0.0 to 10.0 (in 0.1 increments)</td>
+      <td>CipherOwl: Risk classification from [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)<br/><br/>Elliptic: Numerical risk score with higher values indicating higher risk. For details, see [Elliptic's Risk Score documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)</td>
     </tr>
     <tr>
       <td>Amount Range</td>
@@ -128,8 +150,7 @@ Post-screening policies automatically handle transactions based on their screeni
   </tbody>
 </table>
 
-### Policy actions
-
+**Policy actions**
 <table class="table six-columns">
   <thead>
     <tr>
@@ -157,33 +178,21 @@ Post-screening policies automatically handle transactions based on their screeni
   </tbody>
 </table>
 
+4. Click **Submit** to enable the policy
+
 <Note>
 When Screening has the scan results:
 - Due to [overlap prevention rules](#overlap-prevention-rules), at most one policy will match any given transaction
-- A policy matches when the transaction's direction, risk level, and amount range match the policy's criteria
+- A policy matches when the transaction's direction, risk level (CipherOwl) or risk score (Elliptic), and amount range match the policy's criteria
 - When a match is found, Screening executes that policy's action
 </Note>
 
 <Warning>If no policy matches, the transaction is automatically proceeded **without risk assessment**. To ensure proper risk management, make sure to set up appropriate policies that cover all your transaction scenarios before using Screening.</Warning>
 
-## Creating, editing, and deleting policies
-
-### Creating policies
-
-To create a new policy:
-1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface)
-2. Click **Create Policy**
-<img src="/en/images/portal-apps/screening/creating-post-screening-policy.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog"/>
-
-3. Define policy criteria and action (see [Policy criteria](#policy-criteria) and [Policy actions](#policy-actions))
-4. Click **Submit** to enable the policy
-
-
-
 #### Overlap prevention rules
 The system prevents creation of overlapping policies. A policy cannot be created if it has all of the following in common with an existing active policy:
 - Same direction (Inbound/Outbound)
-- Same risk level
+- Same risk level/score range
 - Overlapping amount range
 
 For example:
@@ -198,7 +207,7 @@ Policy 3: Outbound + Medium risk + ≥ 1000 + < 7000 USD (Valid - different dire
 <Warning>
 The policy examples above are for illustration purposes only. Your actual policies should be tailored to your organization's specific compliance requirements and risk management strategy.
 
-For guidance on risk assessment and policy creation, refer to CipherOwl's [Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) documentation or consult with their compliance experts via [CipherOwl](https://www.cipherowl.com/)'s website.
+For guidance on risk assessment and policy creation, refer to CipherOwl's [Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) documentation or consult with their compliance experts via [CipherOwl](https://www.cipherowl.com/)'s website. For Elliptic's risk scoring system, refer to their [Interpreting Risk Scores](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores) and [Configuring Your Risk Rules](https://help.elliptic.co/en/articles/8216353-configuring-your-risk-rules) documentation.
 </Warning>
 
 ### Editing policies

@@ -7,9 +7,9 @@ description: "Discover Screening's real-time crypto transaction monitoring with 
 
 ## What is Screening?
 
-Screening is a [Cobo Portal App](/en/apps/introduction) that streamlines Anti-Money Laundering (AML) and Countering the Financing of Terrorism (CFT) compliance through automated transaction monitoring. Using advanced Know Your Address (KYA) and Know Your Transaction (KYT) capabilities, it provides comprehensive protection for your selected [MPC Wallets](/en/portal/mpc-wallets/introduction) while your team focuses on business growth.
+Screening is a [Cobo Portal App](/en/apps/introduction) that streamlines Anti-Money Laundering (AML) and Countering the Financing of Terrorism (CFT) compliance through automated transaction monitoring. Using advanced Know Your Address (KYA) and Know Your Transaction (KYT) capabilities, it provides comprehensive protection for your selected [MPC Wallets](/en/portal/mpc-wallets/introduction) and [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up) while your team focuses on business growth.
 
-Once [installed](/en/apps/screening/set-up), the app continuously monitors transactions in real-time, providing intelligent risk detection and automated compliance controls.
+Once [installed](/en/apps/screening/set-up), the app continuously monitors transactions in real-time, providing intelligent risk detection and automated compliance controls. CipherOwl directly scans transactions, while using Elliptic requires [API Key configuration](/en/apps/screening/screening-settings#aml-provider-settings) before use.
 
 <img src="/en/images/portal-apps/screening/screening-in-app-store.png" className="screenshot_modal" alt="Image showing Screening Appears as a Cobo Portal App."/>
 
@@ -17,28 +17,40 @@ Once [installed](/en/apps/screening/set-up), the app continuously monitors trans
 
 ### Intelligent risk detection
 
-Screening automatically analyzes transactions in real-time using advanced risk assessment technology through our integration with [CipherOwl](https://www.cipherowl.com/), a leading provider of cryptocurrency compliance solutions that ensures professional and reliable AML/CFT screening results.
+Screening automatically analyzes transactions in real-time using advanced risk assessment technology through our integrations with:
+
+- [CipherOwl](https://www.cipherowl.com/): A leading provider of cryptocurrency compliance solutions that ensures professional and reliable AML/CFT screening results.
+- [Elliptic](https://www.elliptic.co/): A leading provider of crypto compliance solutions that pioneered the use of blockchain analytics for financial crime compliance.
 
 The screening results include:
 
 1. **Real-time scanning**: Instant analysis of transactions for immediate threat detection
-2. **Smart risk classification**: Transactions are automatically classified into three risk levels (Low, Medium, High) based on CipherOwl's risk scoring system. For detailed information about these risk levels, please refer to [CipherOwl's Address Risk Score documentation](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea). You can then decide how to manage transactions based on their assigned risk levels.
+2. **Smart risk classification**: 
+   - With CipherOwl: Transactions are automatically classified into three risk levels (Low, Medium, High) based on CipherOwl's risk scoring system. For detailed information about these risk levels, please refer to [CipherOwl's Address Risk Score documentation](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea).
+   - With Elliptic: Risk is presented as a numerical score from 0.0 to 10.0 (in 0.1 increments), with higher scores indicating higher risk levels.
+   
+   You can then decide how to manage transactions based on their assigned risk levels or scores.
 
 <Info>
-When a transaction in your [selected monitored wallets](/en/apps/screening/settings) is being screened, Cobo transmits the following transaction details to CipherOwl for risk assessment:
+When a transaction in your [selected monitored wallets](/en/apps/screening/settings) is being screened, Cobo transmits the following transaction details to your AML provider for risk assessment:
+CihperOwl:
 - Asset's chain
 - From address (for deposits)
 - To address (for withdrawals)
+Elliptic:
+- Asset's chain
+- Receiving address (for withdrawals)
+- On-chain transaction hash (for deposits)
 </Info>
 
 ### Automated defense and risk management
 
 After Screening analyzes transactions, automatically handle them based on your configured post-screening policies:
 
-- [**Post-screening policies**](/en/apps/screening/risk-policies#post-screening-policies):
+- [**Post-screening policies**](/en/apps/screening/risk-policies):
   Define policies using these criteria:
   - Transaction direction (Inbound/Outbound)
-  - Risk level (Low/Medium/High)
+  - Risk (Low/Medium/High for CipherOwl; 0.0-10.0 numerical score for Elliptic)
   - Amount range (Min-Max in USD)
 
 - **Automated responses**:

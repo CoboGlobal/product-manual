@@ -14,79 +14,11 @@ To access this feature:
 4. Click **Screening Results**
 </Info> 
 
-## The Screening Results interface
-
 The **Screening Results** interface enables you to monitor and manage transaction screening results through the following sections:
 
-<img src="/en/images/portal-apps/screening/screening-summary.svg" className="screenshot_full_screen" alt="Screening summary showing risk level counts and transaction list"/>
+<img src="/en/images/portal-apps/screening/screening-summary.png" className="screenshot_full_screen" alt="Screening summary and transaction list"/>
 
-### Risk summary dashboard
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Risk Level</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>High Risk</td>
-      <td>Total count of high-risk transactions</td>
-    </tr>
-    <tr>
-      <td>Medium Risk</td>
-      <td>Total count of medium-risk transactions</td>
-    </tr>
-    <tr>
-      <td>Low Risk</td>
-      <td>Total count of low-risk transactions</td>
-    </tr>
-  </tbody>
-</table>
-
-<Note>For detailed information about these risk levels, please refer to [CipherOwl's Address Risk Score documentation](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea). You can then decide how to manage transactions based on their assigned risk levels.</Note>
-
-### Transactions filters
-
-**Available filters:**
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Filter</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Direction</td>
-      <td>Inbound/Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk Level</td>
-      <td>Low/Medium/High</td>
-    </tr>
-    <tr>
-      <td>Review Status</td>
-      <td>Pending Screening/Screened/Approved/Rejected/Not Supported<br/><i>Coming soon: Pending Review</i></td>
-    </tr>
-    <tr>
-      <td>Fund Status (Coming soon)</td>
-      <td>Unfrozen/Frozen/Returned</td>
-    </tr>
-    <tr>
-      <td>Created Time</td>
-      <td>Filter by when transaction was first created in Cobo's system</td>
-    </tr>
-    <tr>
-      <td>Updated Time</td>
-      <td>Filter by when Review Status or Fund Status was last changed</td>
-    </tr>
-  </tbody>
-</table>
-
-### Transaction list
+## Transaction list
 
 **Key information:**
 
@@ -107,8 +39,8 @@ The **Screening Results** interface enables you to monitor and manage transactio
       <td>Inbound or Outbound</td>
     </tr>
     <tr>
-      <td>Risk Level</td>
-      <td>Low/Medium/High</td>
+      <td>Risk</td>
+      <td>• CipherOwl: Low/Medium/High<br/>• Elliptic: 0.0-10.0 numerical score</td>
     </tr>
     <tr>
       <td>Review Status</td>
@@ -137,13 +69,19 @@ The **Screening Results** interface enables you to monitor and manage transactio
   </tbody>
 </table>
 
-### Screening details
+You can filter transactions by Direction, AML Provider (CipherOwl or Elliptic), Review Status, Fund Status, Created Time, and Updated Time.
+
+## Screening details
 
 Click <img src="/en/images/common/icon_view.svg" className="icon" alt="view icon"/> to view detailed screening information for a transaction:
 
-<img src="/en/images/portal-apps/screening/view-screening-details.svg" className="screenshot_full_screen" alt="Detailed screening information"/>
+- When using CipherOwl:
+  <img src="/en/images/portal-apps/screening/view-screening-details-cipherowl.png" className="screenshot_full_screen" alt="Detailed screening information using CipherOwl"/>
 
-#### Information section
+- When using Elliptic:
+  <img src="/en/images/portal-apps/screening/view-screening-details-elliptic.png" className="screenshot_full_screen" alt="Detailed screening information using Elliptic"/>
+
+### Information section
 
 <table class="table six-columns">
   <thead>
@@ -160,10 +98,6 @@ Click <img src="/en/images/common/icon_view.svg" className="icon" alt="view icon
     <tr>
       <td>Direction</td>
       <td>Inbound or Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk level</td>
-      <td>Low/Medium/High risk classification</td>
     </tr>
     <tr>
       <td>Amount</td>
@@ -188,9 +122,11 @@ Click <img src="/en/images/common/icon_view.svg" className="icon" alt="view icon
   </tbody>
 </table>
 
-#### Risk details section
+### Risk assessment section
 
-Shows detailed risk analysis for the transaction:
+Shows detailed risk analysis for the transaction, which varies based on the AML provider:
+
+#### When using CipherOwl
 
 <table class="table six-columns">
   <thead>
@@ -227,7 +163,110 @@ Shows detailed risk analysis for the transaction:
   </tbody>
 </table>
 
-#### Timeline section
+#### When using Elliptic
+
+Elliptic has three different display styles depending on the scanning scenario:
+
+1. **Address scanning with Entity as Unknown**
+2. **Address scanning with a specified Entity**
+3. **Transaction scanning**
+
+<table class="table six-columns">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+      <th>Display Scenario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Risk Score</td>
+      <td>Numerical score from 0.0-10.0 (in 0.1 increments) or NA, with higher scores indicating higher risk</td>
+      <td>All scenarios</td>
+    </tr>
+    <tr>
+      <td>Entity</td>
+      <td>The entity associated with the address. May be Unknown or a specific entity name</td>
+      <td>All scenarios</td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>Classification of the entity or address (e.g., Exchange, Mixer, etc.)</td>
+      <td>When Entity is specified</td>
+    </tr>
+    <tr>
+      <td>Identification Confidence</td>
+      <td>Confidence level of the entity identification (e.g., Confirmed, Suspected)</td>
+      <td>When Entity is specified</td>
+    </tr>
+    <tr>
+      <td>Address First/Last Seen</td>
+      <td>Timestamps when the address was first and last observed on the blockchain</td>
+      <td>Address scanning scenarios</td>
+    </tr>
+    <tr>
+      <td>Cluster Size</td>
+      <td>Number of addresses in the cluster associated with this address</td>
+      <td>Address scanning scenarios</td>
+    </tr>
+    <tr>
+      <td>Counterparty Risk Scores</td>
+      <td>Risk scores of addresses that have transacted with the screened address</td>
+      <td>Transaction scanning scenario</td>
+    </tr>
+    <tr>
+      <td>Counterparty Categories</td>
+      <td>Categories of entities that have transacted with the screened address</td>
+      <td>Transaction scanning scenario</td>
+    </tr>
+  </tbody>
+</table>
+
+Risk information:
+
+<table class="table six-columns">
+  <thead>
+    <tr>
+      <th>Risk Information</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Direct Exposure</td>
+      <td>Indicates risk associated directly with the screened address</td>
+    </tr>
+    <tr>
+      <td>Indirect Exposure</td>
+      <td>Indicates risk associated with addresses that have transacted with the screened address</td>
+    </tr>
+    <tr>
+      <td>Financial Crime</td>
+      <td>Associations with activities like money laundering, fraud, or scams</td>
+    </tr>
+    <tr>
+      <td>Sanctions</td>
+      <td>Associations with sanctioned entities or territories</td>
+    </tr>
+    <tr>
+      <td>Darknet Markets</td>
+      <td>Associations with darknet marketplaces or services</td>
+    </tr>
+    <tr>
+      <td>High-Risk Exchanges</td>
+      <td>Connections to exchanges with poor compliance standards</td>
+    </tr>
+    <tr>
+      <td>Mixing Services</td>
+      <td>Associations with cryptocurrency mixing or tumbling services</td>
+    </tr>
+  </tbody>
+</table>
+
+For more details on interpreting Elliptic's risk scores and information, refer to their [documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores).
+
+### Timeline section
 
 The timeline section provides a centralized interface to manage and track all compliance activities in one place:
 
@@ -235,7 +274,7 @@ The timeline section provides a centralized interface to manage and track all co
 - Transaction fund status monitoring
 - Complete audit trails and action histories
 
-#### Available actions
+### Available actions
 
 The following actions are available based on the transaction's current status:
 
@@ -245,10 +284,10 @@ The following actions are available based on the transaction's current status:
 | Approve with Alert | • For deposits: Transaction passes screening, funds become available to user, with additional risk transaction notification<br/>• For withdrawals: Transaction passes screening, proceeds to next stage, with additional risk transaction notification |
 | Reject | • For deposits: Transaction fails screening<br/>&nbsp;&nbsp;• Transactions are flagged and funds will be frozen<br/>&nbsp;&nbsp;&nbsp;&nbsp;• *Note about frozen funds: If you are using the [auto token sweeping feature of MPC Wallets](/en/portal/auto-sweep-overview), frozen funds will not be included in sweep operations*<br/>• For withdrawals: Transaction fails screening, withdrawal is rejected<br/>• Risk notification is always sent |
 | Manual Review<br/><i>(Coming soon)</i> | • For deposits: Will enable manual review of transactions<br/>• For withdrawals: Will enable manual review of transactions |
-| Return<br/><i>(Coming soon)</i> | • For deposits: Will enable returning funds from "to address" to "from address"<br/>• For withdrawals: Not applicable |
+| Return<br/><i>(Coming soon)</i> | • For deposits: Will enable returning funds from "to address" to specified address<br/>• For withdrawals: Not applicable |
 | Unfreeze<br/><i>(Coming soon)</i> | • Will enable releasing frozen funds, making them available to user<br/>• For withdrawals: Not applicable |
 
-### Send appeal
+## Send appeal
 
 Click <img src="/en/images/common/More.svg" className="icon" alt="more icon" /> to send an appeal email if you need to dispute or request a review of the screening results.
 
