@@ -44,7 +44,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
   - 使用 Elliptic 时的**创建风险处置规则**对话框
   <img src="/en/images/portal-apps/screening/creating-post-screening-policy-elliptic.png" className="screenshot_modal" alt="使用 Elliptic 时创建风险处置规则对话框"/>
 
-3. 定义规则的条件和行动。
+3. 定义规则的条件和操作。
 
 】¿
 **规则的条件**
@@ -76,7 +76,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
   </tbody>
 </table>
 
-### 规则行动
+### 规则操作
 
 <table class="table six-columns">
   <thead>
@@ -109,14 +109,10 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 当 Screening 完成交易扫描后：
 - 由于[防重複規則](#防重複規則)，每笔交易最多只会匹配一个规则
 - 当交易的方向、风险级别（CipherOwl）或风险评分（Elliptic）以及金额范围符合规则的条件时，则触发该规则
-- 找到匹配的规则后，Screening 将执行该规则所指定的行动
+- 找到匹配的规则后，Screening 将执行该规则所指定的操作
 </Note>
 
 <Warning>如果没有匹配的规则，交易将自动继续进行，**不会进行风险评估**。为确保安全的风险管理，请在使用 Screening 前设置好相应的规则，以涵盖所有可能的交易场景。</Warning>
-
-
-
-
 
 #### 防重複規則
 系统会防止创建重复的规则。如果新规则与现有的活动规则具有以下所有共同点，则无法创建：
@@ -143,7 +139,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 1. 进入[风险处置规则界面](#风险处置规则界面)
 2. 点击要编辑的规则旁边的 <img src="/en/images/common/icon_edit.svg" className="icon" alt="编辑图标"/>
-3. 在**编辑风险处置规则**对话框中，根据需要修改规则的条件和行动（参见[规则的条件](#规则的条件)和[规则的行动](#规则的行动))
+3. 在**编辑风险处置规则**对话框中，根据需要修改规则的条件和操作（参见[规则的条件](#规则的条件)和[规则的操作](#规则的操作))
 4. 点击**提交**
 
 <Info>编辑规则时同样适用[防重複規則](#防重複規則)。</Info>
