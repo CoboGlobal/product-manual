@@ -25,89 +25,11 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
 - Post-Screening Policies when using Elliptic as the AML provider:
   <img src="/en/images/portal-apps/screening/manage-post-screening-policies-elliptic.png" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
 
-<Note>You can select and configure your preferred AML provider in the [Screening settings](/en/apps/screening/screening-settings#aml-provider-settings).</Note>
-
-### Policy list fields
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Policy No.</td>
-      <td>Unique identifier for the policy</td>
-    </tr>
-    <tr>
-      <td>Direction</td>
-      <td>Transaction direction: Inbound/Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk</td>
-      <td>Risk: 
-        • CipherOwl: Low/Medium/High
-        • Elliptic: NA or numerical score from 0.0 to 10.0 (in 0.1 increments)
-      </td>
-    </tr>
-    <tr>
-      <td>Min USD</td>
-      <td>Minimum transaction amount in USD (inclusive)</td>
-    </tr>
-    <tr>
-      <td>Max USD</td>
-      <td>Maximum transaction amount in USD (exclusive)</td>
-    </tr>
-    <tr>
-      <td>Decision</td>
-      <td>Action to take when policy matches:<br/>• Approve<br/>• Approve with Alert<br/>• Reject<br/><i>Coming soon:</i><br/>• Manual Review</td>
-    </tr>
-    <tr>
-      <td>Updated Time</td>
-      <td>When the policy was last modified</td>
-    </tr>
-  </tbody>
-</table>
-
-### Available filters
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Filter</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Direction</td>
-      <td>Inbound/Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk</td>
-      <td>
-        • CipherOwl: Low/Medium/High
-        • Elliptic: NA or numerical score from 0.0 to 10.0 (in 0.1 increments)
-      </td>
-    </tr>
-    <tr>
-      <td>USD Amount</td>
-      <td>Filter by amount (positive numbers only)</td>
-    </tr>
-    <tr>
-      <td>Decision</td>
-      <td>• Approve<br/>• Approve with Alert<br/>• Reject<br/><i>Coming soon:</i><br/>• Manual Review</td>
-    </tr>
-    <tr>
-      <td>Updated Time</td>
-      <td>Filter by when policy was last modified</td>
-    </tr>
-  </tbody>
-</table>
+You can filter by Direction, AML Provider (CipherOwl or Elliptic), Review Status, Fund Status, Created Time, and Updated Time.
 
 ## Creating, editing, and deleting policies
+
+<Note>Select and configure your preferred AML provider in [Settings](/en/apps/screening/screening-settings#aml-provider-settings) first.</Note>
 
 ### Creating policies
 

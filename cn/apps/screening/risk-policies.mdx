@@ -21,92 +21,17 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 **风险处置规则**界面使您能够管理您的风险处置规则。
 
-- 使用 CipherOwl 作为 AML 供应商时的风险处置规则：
+- 使用 CipherOwl 作为 AML 供应商时的风险处置规则界面：
   <img src="/en/images/portal-apps/screening/manage-post-screening-policies-cipherowl.png" className="screenshot_full_screen" alt="管理风险处置规则界面，显示带有编辑和删除选项的规则列表"/>
 
-- 使用 Elliptic 作为 AML 供应商时的风险处置规则：
+- 使用 Elliptic 作为 AML 供应商时的风险处置规则界面：
   <img src="/en/images/portal-apps/screening/manage-post-screening-policies-elliptic.png" className="screenshot_full_screen" alt="管理风险处置规则界面，显示带有编辑和删除选项的规则列表"/>
 
-<Note>请先在[Screening 设置](/cn/apps/screening/screening-settings)中选择和配置您偏好的 AML 供应商。</Note>
-
-### 规则列表字段
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>规则编号</td>
-      <td>规则的唯一编号</td>
-    </tr>
-    <tr>
-      <td>方向</td>
-      <td>交易方向：充币或提币</td>
-    </tr>
-    <tr>
-      <td>风险</td>
-      <td>风险：
-        • CipherOwl：低/中/高
-        • Elliptic：NA 或 0.0 到 10.0 的数值评分（以 0.1 为增量）</td>
-    </tr>
-    <tr>
-      <td>最小美元</td>
-      <td>最小交易金额（美元，包含）</td>
-    </tr>
-    <tr>
-      <td>最大美元</td>
-      <td>最大交易金额（美元，不包含）</td>
-    </tr>
-    <tr>
-      <td>决策</td>
-      <td>规则触发时的处理方式：<br/>• 批准<br/>• 批准并发出警报<br/>• 拒绝<br/><i>即将推出：</i><br/>• 人工审核</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>规则上次修改的时间</td>
-    </tr>
-  </tbody>
-</table>
-
-### 可用筛选器
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>筛选器</th>
-      <th>选项</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>方向</td>
-      <td>充币/提币</td>
-    </tr>
-    <tr>
-      <td>风险</td>
-      <td>• CipherOwl：低/中/高
-• Elliptic：数值范围（0.0-10.0）</td>
-    </tr>
-    <tr>
-      <td>美元金额</td>
-      <td>按美元金额筛选（仅支持正数）</td>
-    </tr>
-    <tr>
-      <td>决策</td>
-      <td>• 批准<br/>• 批准并发出警报<br/>• 拒绝<br/><i>即将推出：</i><br/>• 人工审核</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>按规则的最近修改时间筛选</td>
-    </tr>
-  </tbody>
-</table>
+您可以根据交易方向、AML 供应商、审核状态、基金状态、创建时间和更新时间，对风险处置规则进行筛选。
 
 ## 创建、编辑和删除规则
+
+<Note>请先在[Screening 设置](/cn/apps/screening/screening-settings)中选择和配置您偏好的 AML 供应商。</Note>
 
 ### 创建规则
 
