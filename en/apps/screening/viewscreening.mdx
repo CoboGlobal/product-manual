@@ -42,12 +42,8 @@ The **Screening Results** interface enables you to monitor and manage transactio
       <td>• CipherOwl: Low/Medium/High<br/>• Elliptic: 0.0-10.0 numerical score</td>
     </tr>
     <tr>
-      <td>Review Status</td>
-      <td>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Scan results awaiting manual review (Coming soon)<br/>• **Approved**: Transaction passed AML/CFT scan<br/>• **Rejected**: Transaction rejected by AML/CFT scan<br/>• **Not Supported**: Chain not supported by Screening, transaction proceeds without AML/CFT review</td>
-    </tr>
-    <tr>
-      <td>Fund Status (Coming soon)</td>
-      <td>• **Unfrozen**: Transaction funds are unfrozen, user can access the funds<br/>• **Frozen**: User cannot access the transaction funds<br/>• **Returned**: Transaction funds have been returned to the from address</td>
+      <td>Status</td>
+      <td><b>Review Status:</b><br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Scan results awaiting manual review<br/>• **Approved**: Transaction passed AML/CFT scan<br/>• **Rejected**: Transaction rejected by AML/CFT scan<br/>• **Not Supported**: Chain not supported by Screening, transaction proceeds without AML/CFT review<br/><br/><b>Fund Status:</b><br/>• **Unfrozen**: Transaction funds are unfrozen, user can access the funds<br/>• **Frozen**: User cannot access the transaction funds<br/>• **Returned**: Transaction funds have been returned to the from address</td>
     </tr>
     <tr>
       <td>Amount</td>
@@ -282,9 +278,9 @@ The following actions are available based on the transaction's current status:
 | Approve | • For deposits: Transaction passes screening, funds become available to user<br/>• For withdrawals: Transaction passes screening, proceeds to next stage |
 | Approve with Alert | • For deposits: Transaction passes screening, funds become available to user, with additional risk transaction notification<br/>• For withdrawals: Transaction passes screening, proceeds to next stage, with additional risk transaction notification |
 | Reject | • For deposits: Transaction fails screening<br/>&nbsp;&nbsp;• Transactions are flagged and funds will be frozen<br/>&nbsp;&nbsp;&nbsp;&nbsp;• *Note about frozen funds: If you are using the [auto token sweeping feature of MPC Wallets](/en/portal/auto-sweep-overview), frozen funds will not be included in sweep operations*<br/>• For withdrawals: Transaction fails screening, withdrawal is rejected<br/>• Risk notification is always sent |
-| Manual Review<br/><i>(Coming soon)</i> | • For deposits: Will enable manual review of transactions<br/>• For withdrawals: Will enable manual review of transactions |
-| Return<br/><i>(Coming soon)</i> | • For deposits: Will enable returning funds from "to address" to specified address<br/>• For withdrawals: Not applicable |
-| Unfreeze<br/><i>(Coming soon)</i> | • Will enable releasing frozen funds, making them available to user<br/>• For withdrawals: Not applicable |
+| Manual Review | • For deposits: Will enable manual review of transactions<br/>• For withdrawals: Will enable manual review of transactions |
+| Return | • For deposits: Will enable returning funds from "to address" to specified address<br/>• For withdrawals: Not applicable |
+| Unfreeze | • Will enable releasing frozen funds, making them available to user<br/>• For withdrawals: Not applicable |
 
 ## Send appeal
 
