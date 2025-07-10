@@ -68,7 +68,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
   </tbody>
 </table>
 
-您可以按交易方向、AML 供应商（CipherOwl 或 Elliptic）、审核状态、资金状态、创建时间和更新时间筛选交易。
+您可以按交易方向、AML 服务商（CipherOwl 或 Elliptic）、审核状态、资金状态、创建时间和更新时间筛选交易。
 
 ## 扫描详情
 
@@ -127,7 +127,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 ### 风险评估部分
 
-显示交易的详细风险分析，具体内容因 AML 供应商而异：
+显示交易的详细风险分析，具体内容因 AML 服务商而异：
 
 - 使用 CipherOwl 时
 
@@ -184,7 +184,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
     <tbody>
       <tr>
         <td>AML Provider</td>
-        <td>交易扫描的厂商，本列表仅说明 Elliptic 对应字段：<br/>• CipherOwl<br/>• Elliptic</td>
+        <td>交易扫描的服务商<br/>• CipherOwl<br/>• Elliptic</td>
       </tr>
       <tr>
         <td>Risk</td>
@@ -192,19 +192,19 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       </tr>
       <tr>
         <td>Screening Type</td>
-        <td>Elliptic 的扫描方式：<br/>• Wallet Screening: 地址扫描<br/>• Transaction Screening: 交易扫描</td>
+        <td>Elliptic 的扫描方式：<br/>• 地址扫描<br/>• 交易扫描</td>
       </tr>
       <tr>
         <td>Address</td>
-        <td>使用地址扫描时，指定扫描的地址，使用交易扫描时不显示此栏位</td>
+        <td>使用地址扫描时，指定扫描的地址</td>
       </tr>
       <tr>
         <td>Txn Hash</td>
-        <td>使用交易扫描时，指定扫描的链上交易 Hash，使用地址扫描时不显示此栏位</td>
+        <td>使用交易扫描时，指定扫描的链上交易 Hash</td>
       </tr>
       <tr>
         <td>Output Address</td>
-        <td>使用交易扫描时，指定扫描的输出地址，使用地址扫描时不显示此栏位</td>
+        <td>使用交易扫描时，指定扫描的输出地址</td>
       </tr>
       <tr>
         <td>Coverage</td>
@@ -212,19 +212,19 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       </tr>
       <tr>
         <td>Entity</td>
-        <td>使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`cluster_entities { is_primary_entity 为 true 的 name }`</td>
+        <td>使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown</td>
       </tr>
       <tr>
         <td>Category</td>
-        <td>使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`cluster_entities { is_primary_entity 为 true 的 category }`</td>
+        <td>使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown</td>
       </tr>
       <tr>
         <td>Wallet Inflow (USD)</td>
-        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表入账金额，因此 Screening App 不展示对应信息）<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`blockchain_info { cluster { inflow_value } }`<br/>• 四舍五入到小数点第二位展示</td>
+        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表入账金额，因此 Screening App 不展示对应信息</td>
       </tr>
       <tr>
         <td>Wallet Outflow (USD)</td>
-        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表出账金额，因此 Screening App 不展示对应信息）<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`blockchain_info { cluster { outflow_value } }`<br/>• 四舍五入到小数点第二位展示</td>
+        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表出账金额，因此 Screening App 不展示对应信息</td>
       </tr>
       <tr>
         <td>Value (USD)</td>
@@ -232,7 +232,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       </tr>
       <tr>
         <td>Triggered Rules</td>
-        <td>使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`evaluation_detail { source { rule_name }, destination { ... }}`<br/>• 需要去重，相同规则只展示一笔</td>
+        <td>使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个</td>
       </tr>
     </tbody>
   </table>

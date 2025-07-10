@@ -176,7 +176,7 @@ Elliptic has three different display styles depending on the scanning scenario:
   <tbody>
     <tr>
       <td>AML Provider</td>
-      <td>The vendor used for transaction screening. This list only describes the fields for Elliptic:<br/>• CipherOwl<br/>• Elliptic</td>
+      <td>The vendor used for transaction screening</td>
     </tr>
     <tr>
       <td>Risk</td>
@@ -188,15 +188,15 @@ Elliptic has three different display styles depending on the scanning scenario:
     </tr>
     <tr>
       <td>Address</td>
-      <td>The specified address for wallet screening. This field is not displayed for transaction screening.</td>
+      <td>The specified address for wallet screening</td>
     </tr>
     <tr>
       <td>Txn Hash</td>
-      <td>The on-chain transaction hash for transaction screening. This field is not displayed for wallet screening.</td>
+      <td>The on-chain transaction hash for transaction screening</td>
     </tr>
     <tr>
       <td>Output Address</td>
-      <td>The output address for transaction screening. This field is not displayed for wallet screening.</td>
+      <td>The output address for transaction screening</td>
     </tr>
     <tr>
       <td>Coverage</td>
@@ -204,19 +204,19 @@ Elliptic has three different display styles depending on the scanning scenario:
     </tr>
     <tr>
       <td>Entity</td>
-      <td>The `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific entity<br/>• Unknown<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`cluster_entities { name where is_primary_entity is true }`</td>
+      <td>The `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific entity<br/>• Unknown</td>
     </tr>
     <tr>
       <td>Category</td>
-      <td>The risk category of `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific risk category (may have multiple)<br/>• Unknown<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`cluster_entities { category where is_primary_entity is true }`</td>
+      <td>The risk category of `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific risk category (may have multiple)<br/>• Unknown</td>
     </tr>
     <tr>
       <td>Wallet Inflow (USD)</td>
-      <td>For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`blockchain_info { cluster { inflow_value } }`<br/>• Rounded to two decimal places.</td>
+      <td>For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.</td>
     </tr>
     <tr>
       <td>Wallet Outflow (USD)</td>
-      <td>For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`blockchain_info { cluster { outflow_value } }`<br/>• Rounded to two decimal places.</td>
+      <td>For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.</td>
     </tr>
     <tr>
       <td>Value (USD)</td>
@@ -224,7 +224,7 @@ Elliptic has three different display styles depending on the scanning scenario:
     </tr>
     <tr>
       <td>Triggered Rules</td>
-      <td>Displayed for wallet screening when the Entity is not Unknown. May have multiple rules.<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`evaluation_detail { source { rule_name }, destination { ... }}`<br/>• Duplicates are removed; the same rule is shown only once.</td>
+      <td>Displayed for wallet screening when the Entity is not Unknown. May have multiple rules.</td>
     </tr>
   </tbody>
 </table>
