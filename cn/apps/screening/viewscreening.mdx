@@ -170,44 +170,72 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
   Elliptic 根据扫描场景有三种不同的显示样式：
 
-  1. **地址扫描，实体未知**
-  2. **地址扫描，实体明确**
-  3. **交易扫描**
+  - 地址扫描，实体未知
+  - 地址扫描，实体明确
+  - 交易扫描
 
-  <table class="table six-columns">
+  <table class="table two-columns">
     <thead>
       <tr>
         <th>字段</th>
-        <th>描述</th>
-        <th>显示场景</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>风险评分</td>
-        <td>从 0.0-10.0 的数值分数（增量为 0.1）或 NA，分数越高表示风险越高</td>
-        <td>所有场景</td>
+        <td>AML Provider</td>
+        <td>交易扫描的厂商，本列表仅说明 Elliptic 对应字段：<br/>• CipherOwl<br/>• Elliptic</td>
       </tr>
       <tr>
-        <td>实体</td>
-        <td>与地址关联的实体（如果已知），例如特定的交易所或服务</td>
-        <td>地址扫描场景</td>
+        <td>Risk</td>
+        <td>Elliptic 返回的扫描结果，范围为 0.0 - 10.0，级距 0.1</td>
       </tr>
       <tr>
-        <td>类别</td>
-        <td>与地址关联的风险类别（例如，制裁、恐怖主义融资）</td>
-        <td>地址扫描场景</td>
+        <td>Screening Type</td>
+        <td>Elliptic 的扫描方式：<br/>• Wallet Screening: 地址扫描<br/>• Transaction Screening: 交易扫描</td>
       </tr>
       <tr>
-        <td>标签</td>
-        <td>提供有关风险类别的更多详细信息的特定标签</td>
-        <td>地址扫描场景</td>
+        <td>Address</td>
+        <td>使用地址扫描时，指定扫描的地址，使用交易扫描时不显示此栏位</td>
       </tr>
       <tr>
-        <td>集群大小</td>
-        <td>与此地址关联的集群中的地址数</td>
-        <td>地址扫描场景</td>
+        <td>Txn Hash</td>
+        <td>使用交易扫描时，指定扫描的链上交易 Hash，使用地址扫描时不显示此栏位</td>
       </tr>
+      <tr>
+        <td>Output Address</td>
+        <td>使用交易扫描时，指定扫描的输出地址，使用地址扫描时不显示此栏位</td>
+      </tr>
+      <tr>
+        <td>Coverage</td>
+        <td>扫描指定的链与资产覆盖方式，分为：<br/>• Holistic<br/>• Single asset</td>
+      </tr>
+      <tr>
+        <td>Entity</td>
+        <td>使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`cluster_entities { is_primary_entity 为 true 的 name }`</td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td>使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`cluster_entities { is_primary_entity 为 true 的 category }`</td>
+      </tr>
+      <tr>
+        <td>Wallet Inflow (USD)</td>
+        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表入账金额，因此 Screening App 不展示对应信息）<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`blockchain_info { cluster { inflow_value } }`<br/>• 四舍五入到小数点第二位展示</td>
+      </tr>
+      <tr>
+        <td>Wallet Outflow (USD)</td>
+        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表出账金额，因此 Screening App 不展示对应信息）<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`blockchain_info { cluster { outflow_value } }`<br/>• 四舍五入到小数点第二位展示</td>
+      </tr>
+      <tr>
+        <td>Value (USD)</td>
+        <td>使用交易扫描时，Elliptic 返回指定扫描的交易金额</td>
+      </tr>
+      <tr>
+        <td>Triggered Rules</td>
+        <td>使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个<br/><br/>*Elliptic Wallet Screening API 对应字段：*<br/>`evaluation_detail { source { rule_name }, destination { ... }}`<br/>• 需要去重，相同规则只展示一笔</td>
+      </tr>
+    </tbody>
+  </table>
       <tr>
         <td>交易对手风险评分</td>
         <td>与被扫描地址交易过的地址的风险评分</td>
@@ -223,41 +251,50 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
   风险信息：
 
-  <table class="table six-columns">
+  <table class="table two-columns">
     <thead>
       <tr>
-        <th>风险信息</th>
-        <th>描述</th>
+        <th>字段</th>
+        <th>说明</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>直接暴露</td>
-        <td>表示与被扫描地址直接相关的风险</td>
+        <td>Funds Flow</td>
+        <td>Elliptic 返回扫描对象的资金流向
+          <ul>
+            <li>Source of Funds: 资金流入</li>
+            <li>Destination of Funds: 资金流出，地址扫描才有资金流出</li>
+          </ul>
+        </td>
       </tr>
       <tr>
-        <td>间接暴露</td>
-        <td>表示与已同被扫描地址交易的地址相关的风险</td>
+        <td>Risk Score</td>
+        <td>Elliptic 返回对应 Trigger Rule 的风险分数</td>
       </tr>
       <tr>
-        <td>金融犯罪</td>
-        <td>与洗钱、欺诈或诈骗等活动的关联</td>
+        <td>Triggered Rule</td>
+        <td>Elliptic 返回触发的风险规则，规则信息由用户在 Elliptic 风险设定配置</td>
       </tr>
       <tr>
-        <td>制裁</td>
-        <td>与受制裁实体或地区的关联</td>
+        <td>Total (%)</td>
+        <td>Elliptic 返回触发规则的总资金占比
+          <ul>
+            <li>地址扫描且 Entity 为 Unknown 时，代表的是对应触发规则，资金占比</li>
+            <li>交易扫描时，代表的是对应触发规则，交易总流入的资金占比</li>
+          </ul>
+          (地址扫描且 Entity 具有特定实体时，代表的是 Cluster 的总体资金占比)
+        </td>
       </tr>
       <tr>
-        <td>暗网市场</td>
-        <td>与暗网市场或服务的关联</td>
-      </tr>
-      <tr>
-        <td>高风险交易所</td>
-        <td>与合规标准差的交易所的关联</td>
-      </tr>
-      <tr>
-        <td>混币服务</td>
-        <td>与加密货币混币或滚筒服务的关联</td>
+        <td>Total (USD)</td>
+        <td>Elliptic 返回触发规则的总资金金额
+          <ul>
+            <li>地址扫描且 Entity 为 Unknown 时，代表的是对应触发规则，资金金额</li>
+            <li>交易扫描时，代表的是对应触发规则，交易总流入的资金金额</li>
+          </ul>
+          (地址扫描且 Entity 具有特定实体时，代表的是 Cluster 的总体资金金额)
+        </td>
       </tr>
     </tbody>
   </table>

@@ -166,45 +166,68 @@ Elliptic has three different display styles depending on the scanning scenario:
 2. **Address scanning with a specified Entity**
 3. **Transaction scanning**
 
-<table class="table six-columns">
+<table class="table two-columns">
   <thead>
     <tr>
       <th>Field</th>
       <th>Description</th>
-      <th>Display Scenario</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Risk Score</td>
-      <td>Numerical score from 0.0-10.0 (in 0.1 increments) or NA, with higher scores indicating higher risk</td>
-      <td>All scenarios</td>
+      <td>AML Provider</td>
+      <td>The vendor used for transaction screening. This list only describes the fields for Elliptic:<br/>• CipherOwl<br/>• Elliptic</td>
+    </tr>
+    <tr>
+      <td>Risk</td>
+      <td>The screening result from Elliptic, ranging from 0.0 to 10.0 in 0.1 increments.</td>
+    </tr>
+    <tr>
+      <td>Screening Type</td>
+      <td>Elliptic's screening method:<br/>• Wallet Screening<br/>• Transaction Screening</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>The specified address for wallet screening. This field is not displayed for transaction screening.</td>
+    </tr>
+    <tr>
+      <td>Txn Hash</td>
+      <td>The on-chain transaction hash for transaction screening. This field is not displayed for wallet screening.</td>
+    </tr>
+    <tr>
+      <td>Output Address</td>
+      <td>The output address for transaction screening. This field is not displayed for wallet screening.</td>
+    </tr>
+    <tr>
+      <td>Coverage</td>
+      <td>The chain and asset coverage for the scan:<br/>• Holistic<br/>• Single asset</td>
     </tr>
     <tr>
       <td>Entity</td>
-      <td>The entity associated with the address. May be Unknown or a specific entity name</td>
-      <td>All scenarios</td>
+      <td>The `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific entity<br/>• Unknown<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`cluster_entities { name where is_primary_entity is true }`</td>
     </tr>
     <tr>
       <td>Category</td>
-      <td>Classification of the entity or address (e.g., Exchange, Mixer, etc.)</td>
-      <td>When Entity is specified</td>
+      <td>The risk category of `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific risk category (may have multiple)<br/>• Unknown<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`cluster_entities { category where is_primary_entity is true }`</td>
     </tr>
     <tr>
-      <td>Identification Confidence</td>
-      <td>Confidence level of the entity identification (e.g., Confirmed, Suspected)</td>
-      <td>When Entity is specified</td>
+      <td>Wallet Inflow (USD)</td>
+      <td>For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`blockchain_info { cluster { inflow_value } }`<br/>• Rounded to two decimal places.</td>
     </tr>
     <tr>
-      <td>Address First/Last Seen</td>
-      <td>Timestamps when the address was first and last observed on the blockchain</td>
-      <td>Address scanning scenarios</td>
+      <td>Wallet Outflow (USD)</td>
+      <td>For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`blockchain_info { cluster { outflow_value } }`<br/>• Rounded to two decimal places.</td>
     </tr>
     <tr>
-      <td>Cluster Size</td>
-      <td>Number of addresses in the cluster associated with this address</td>
-      <td>Address scanning scenarios</td>
+      <td>Value (USD)</td>
+      <td>For transaction screening, the value of the scanned transaction returned by Elliptic.</td>
     </tr>
+    <tr>
+      <td>Triggered Rules</td>
+      <td>Displayed for wallet screening when the Entity is not Unknown. May have multiple rules.<br/><br/>*Corresponding Elliptic Wallet Screening API field:*<br/>`evaluation_detail { source { rule_name }, destination { ... }}`<br/>• Duplicates are removed; the same rule is shown only once.</td>
+    </tr>
+  </tbody>
+</table>
     <tr>
       <td>Counterparty Risk Scores</td>
       <td>Risk scores of addresses that have transacted with the screened address</td>
@@ -220,41 +243,50 @@ Elliptic has three different display styles depending on the scanning scenario:
 
 Risk information:
 
-<table class="table six-columns">
+<table class="table two-columns">
   <thead>
     <tr>
-      <th>Risk Information</th>
+      <th>Field</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Direct Exposure</td>
-      <td>Indicates risk associated directly with the screened address</td>
+      <td>Funds Flow</td>
+      <td>The direction of funds returned by Elliptic for the scanned object
+        <ul>
+          <li>Source of Funds: Funds flowing in</li>
+          <li>Destination of Funds: Funds flowing out (only available for wallet screening)</li>
+        </ul>
+      </td>
     </tr>
     <tr>
-      <td>Indirect Exposure</td>
-      <td>Indicates risk associated with addresses that have transacted with the screened address</td>
+      <td>Risk Score</td>
+      <td>The risk score corresponding to the Trigger Rule returned by Elliptic</td>
     </tr>
     <tr>
-      <td>Financial Crime</td>
-      <td>Associations with activities like money laundering, fraud, or scams</td>
+      <td>Triggered Rule</td>
+      <td>The risk rules triggered by Elliptic, with rule information configured by users in Elliptic risk settings</td>
     </tr>
     <tr>
-      <td>Sanctions</td>
-      <td>Associations with sanctioned entities or territories</td>
+      <td>Total (%)</td>
+      <td>The percentage of total funds related to triggered rules returned by Elliptic
+        <ul>
+          <li>For wallet screening when Entity is Unknown: Represents the fund percentage for the corresponding triggered rule</li>
+          <li>For transaction screening: Represents the percentage of total transaction inflow for the corresponding triggered rule</li>
+        </ul>
+        (For wallet screening when Entity has a specific entity, represents the overall fund percentage of the Cluster)
+      </td>
     </tr>
     <tr>
-      <td>Darknet Markets</td>
-      <td>Associations with darknet marketplaces or services</td>
-    </tr>
-    <tr>
-      <td>High-Risk Exchanges</td>
-      <td>Connections to exchanges with poor compliance standards</td>
-    </tr>
-    <tr>
-      <td>Mixing Services</td>
-      <td>Associations with cryptocurrency mixing or tumbling services</td>
+      <td>Total (USD)</td>
+      <td>The total monetary amount related to triggered rules returned by Elliptic
+        <ul>
+          <li>For wallet screening when Entity is Unknown: Represents the fund amount for the corresponding triggered rule</li>
+          <li>For transaction screening: Represents the total transaction inflow amount for the corresponding triggered rule</li>
+        </ul>
+        (For wallet screening when Entity has a specific entity, represents the overall fund amount of the Cluster)
+      </td>
     </tr>
   </tbody>
 </table>
