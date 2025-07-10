@@ -27,13 +27,13 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
         - **地址簿**<img src="/en/images/common/icon_address_book.svg" className="icon" alt="Address Book icon" />：仅列出与所选代币的区块链网络相关联的地址。
         - **我的钱包**：选择钱包类别，然后点击您希望转入的钱包。
     
-    如果该转账可以作为 [Cobo Loop](/cn/portal/custodial-wallets/cobo-loop) 转账执行，UI 上会出现相关信息栏，如以下截图所示。
+    如果该转账可以作为 [Cobo Loop](/cn/portal/custodial-wallets/asset-wallets/cobo-loop) 转账执行，UI 上会出现相关信息栏，如以下截图所示。
         
         <img src="/cn/images/transfers/loop_info_bar.png" className="screenshot_full_screen" alt="Cobo Loop 信息栏截图" />
 
     <Info>如果您使用 WaaS 2.0 API，可以使用 [Check Cobo Loop Transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) 操作来确定交易是否可以作为 Cobo Loop 转账执行。或者直接调用 [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) 操作，强制将交易作为 Cobo Loop 转账执行。</Info>
 6. 输入转账金额。
-7. 查看交易手续费。该费用是固定的，无法修改，具体金额因转账的代币而异。费用将从选择的源钱包扣除，您需要确保源钱包中已开通相应的代币且有足够的余额支付。
+7. 查看交易手续费。该费用是固定的，无法修改，具体金额因转账的代币而异。费用将从您在第三步中选择的源钱包扣除，您需要确保源钱包中已开通相应的代币且有足够的余额支付。
 
 8. <MySnippet />
 9. 点击**提交**。

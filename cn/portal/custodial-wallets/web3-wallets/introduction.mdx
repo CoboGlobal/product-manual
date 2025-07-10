@@ -1,0 +1,49 @@
+---
+title: "Web3 钱包简介"
+sidebarTitle: "简介"
+lang: "zh-hans"
+description: "了解 Cobo Portal 的 Web3 钱包，掌握安全、合规的数字资产管理方案。"
+---
+
+import Mpc from "/snippets/wallets/mpc-web3-cn.mdx"
+import Asset from "/snippets/wallets/asset-web3-cn.mdx"
+
+Web3 钱包是一种全托管钱包的子类型，适用于您在 DeFi、NFT、dApp 等 Web3 生态中进行链上交互。您可以通过它完成智能合约调用、资产授权、消息签名等操作，而无需管理私钥或部署节点。
+
+与侧重资产集中管理的资产钱包不同，Web3 钱包让您可以独立管理每个地址，在发起交易或链上交互时明确指定来源地址，操作更加灵活、清晰。
+
+您可以通过 Cobo Portal 网页端或 WaaS 2.0 API 使用 Web3 钱包，也可以使用 [Cobo Connect](/cn/cobo-connect/introduction) 浏览器插件，将钱包连接到各种 dApp，安全地进行链上操作。
+
+
+## 主要特点
+
+### 完整支持链上交互  
+您可以安全地进行合约调用、消息签名、授权操作，满足参与 DeFi 策略、NFT 交易、dApp 登录等多种链上使用场景。
+
+### 私钥由 Cobo 全托管  
+您无需担心私钥管理问题。Cobo 会确保私钥不可导出，并通过多重安全机制保护资金，即使发生授权误签，风险也被限制在当前地址内。
+
+### 地址操作清晰、灵活  
+您可以为每笔操作明确指定发起地址，实现资产隔离与操作可追溯，适合有合规或审计要求的场景。
+
+### 支持多种费用策略  
+您可以自由设置交易 Gas 费，也可以启用 [Fee Station](/cn/portal/fee-station/introduction)，实现 Gas 费统一代扣，有效降低使用门槛。
+
+### 快速接入 Web3 应用  
+您可以通过 Cobo Connect 等插件或 WaaS 2.0 API 将 Web3 钱包集成至各类 Web3 应用，实现安全、便捷的链上交互，而无需导出私钥。
+
+
+## Web3 钱包 vs. 资产钱包
+
+<Asset />
+
+## Web3 钱包 vs. MPC 钱包
+
+<Mpc />
+
+进一步了解如何使用 Web3 钱包：
+- [创建 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)
+- [充币到 Web3 钱包或从 Web3 钱包提币](/cn/portal/custodial-wallets/web3-wallets/transfers)
+- [使用 Web3 钱包连接 dApp](/cn/portal/custodial-wallets/web3-wallets/dapp-interaction)
+
+<Tip>这篇文档对您有帮助吗？欢迎[提交反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI)，让我们知道您的想法。</Tip>
