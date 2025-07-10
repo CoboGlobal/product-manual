@@ -1,0 +1,62 @@
+---
+title: "Configure Screening settings"
+sidebarTitle: "Configure settings"
+lang: "en"
+description: "Configure settings such as AML providers, screening timeouts, and notifications for the Screening app."
+---
+
+Screening settings allow you to customize how the app operates, including AML provider configuration, screening behavior, and notifications.
+
+<Info>
+To access settings:
+1. Log in to [Cobo Portal](https://portal.cobo.com/login)
+2. Click <img src="/en/images/common/icon_apps.svg" className="icon" alt="the Apps icon"/> to open Cobo Portal Apps
+3. Find and open **Screening**
+4. Click **Settings**
+</Info>
+
+## AML Provider Settings
+
+Configure your AML/KYT providers in this section. Currently, the Screening app supports two providers: CipherOwl and Elliptic.
+
+<img src="/en/images/portal-apps/screening/settings-provider.png" className="screenshot_modal" alt="AML Provider Settings"/>
+
+| Setting | Description |
+| --- | --- |
+| AML Provider | Select between CipherOwl and Elliptic |
+| API Key | Required for Elliptic integration |
+| Secret | Required for Elliptic integration |
+
+<Note>
+- Elliptic requires valid API credentials to function
+</Note>
+
+## AML & Screening Settings
+
+Customize how transaction screening behaves in different scenarios.
+
+<img src="/en/images/portal-apps/screening/settings-aml.png" className="screenshot_modal" alt="Screening Timeout Settings"/>
+
+- Screening Timeout**
+
+    Configure what happens if an AML scan takes too long to complete. If the options are not checked, transactions will stay in the **Pending Screening** status until a result is received.
+
+    <Info>Setting appropriate timeout values is important for balance between security and user experience:</Info>
+
+- Refund & Isolation Screening
+
+    Determine whether to apply AML screening to refund and isolation transactions. If the options are not checked, refund and isolation transactions will be automatically bypassed.
+
+## Notification Settings
+
+Manage who receives email notifications about important screening events.
+
+<img src="/en/images/portal-apps/screening/settings-notification.png" className="screenshot_modal" alt="Manage Notification Recipients"/>
+
+<Note>
+It is recommended to include your Risk Management and Compliance teams as notification recipients to ensure proper oversight of screening activities.
+</Note>
+
+<Info>At least one recipient must remain - you cannot delete the only remaining recipient.</Info>
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
