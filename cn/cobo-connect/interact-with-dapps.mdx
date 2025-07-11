@@ -5,6 +5,8 @@ lang: "zh-hans"
 description: "了解 Cobo Connect 的功能，作为 Chrome 扩展程序，连接 dApp 和 Cobo Portal 钱包，增强交易安全性。"
 ---
 
+在使用 Cobo Connect 与 dApp 交互之前，请确保您已经完成[设置 Cobo Connect](/cn/cobo-connect/set-up) 中的步骤。
+
 ## 发起交易或消息签名流程
 
 在 dApp 网站上发起交易或对消息签名之前，您需要连接您的钱包。许多 dApp 网站都有**连接**或**连接钱包**按钮。点击该按钮并选择 Cobo Connect 作为您的钱包服务。从 Cobo Connect 中选择您想在 dApp 网站上使用的 Cobo Portal 钱包地址。
@@ -38,5 +40,39 @@ Cobo Connect 会检查您是否拥有使用 [MPC 钱包](/cn/portal/mpc-wallets/
 您可以在 Cobo Connect 的**活动**（Activity）选项卡中查看交易状态。要查看某一条活动的更多详细信息，请在 Cobo Connect 上点击该活动，然后点击请求 ID（蓝色超链接文本）以打开 Cobo Portal 的**交易记录**（Transaction History）页面。在**交易记录**（Transaction History）页面，点击 <img src="/en/images/common/icon_view.svg" className="icon" alt="View details icon" /> 查看交易详情，如下图所示。
 
 <img src="/cn/images/cobo-connect/transaction-details.png" className="screenshot_full_screen" alt="Transaction details in Cobo Portal" />
+
+## 示例：连接 Hyperliquid
+
+本章节以 Hyperliquid 为例，展示了如何使用 Cobo Connect 将钱包连接至 dApp进行交互。
+
+1. 打开 [Hyperliquid](https://app.hyperliquid.xyz/) 页面，点击右上角的 **Connect**（连接） 按钮，并在弹窗中选择 **Cobo Connect**。
+
+    <img src="/en/images/cobo-connect/homepage.png" className="screenshot_full_screen" alt="Hyperliquid homepage" />
+
+    <img src="/en/images/cobo-connect/connect-button.png" className="screenshot_nav_bar" alt="Connect to Hyperliquid" />
+
+2. 在弹出的 **Cobo Connect Extension** 对话框中，选择您希望用于连接 Hyperliquid 的 Cobo Portal 钱包地址，然后点击 **Next**（下一步）。
+
+    <img src="/en/images/cobo-connect/dialog.png" className="screenshot_nav_bar" alt="Select wallet" />
+
+3. 点击 **Connect**（连接） 继续。
+
+    <img src="/en/images/cobo-connect/confirm.png" className="screenshot_nav_bar" alt="Connect" />
+
+4. 在 Hyperliquid 页面，阅读条款与政策后，点击 **Accept**（接受）。
+
+    <img src="/en/images/cobo-connect/policies.png" className="screenshot_modal" alt="Accept" />
+
+5. 在弹出的 **Cobo Connect Extension** 对话框中，查看签名请求详情，点击 **Sign**（签名）。
+
+    <img src="/en/images/cobo-connect/sign.png" className="screenshot_nav_bar" alt="Sign" />
+
+6. 在 Cobo Connect Extension 对话框中，会有弹窗提示您前往 Cobo Guard 确认交易。请打开 Cobo Guard 并点击批准该请求。
+
+    <img src="/en/images/cobo-connect/guard.png" className="screenshot_nav_bar" alt="Guard" />
+
+批准请求后，页面将跳转至 Hyperliquid 首页，顶部会显示欢迎提示。此时，您即可使用 Cobo 钱包与 Hyperliquid 进行链上交互。
+
+    <img src="/en/images/cobo-connect/connected.png" className="screenshot_full_screen" alt="Hyperliquid" />
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
