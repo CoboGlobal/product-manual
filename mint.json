@@ -1709,8 +1709,12 @@
       "destination": "/cn/portal/developer-console/introduction#waas-2-0"
     },
     {
-      "source": "/cn/portal/dashboard/portfolio",
-      "destination": "/cn/portal/dashboard/introduction"
+      "source": "/cn/portal/custodial-wallets/cobo-loop",
+      "destination": "/cn/portal/custodial-wallets/asset-wallets/cobo-loop"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/cobo-loop",
+      "destination": "/en/portal/custodial-wallets/asset-wallets/cobo-loop"
     }
   ]
 }
