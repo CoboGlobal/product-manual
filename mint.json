@@ -537,8 +537,7 @@
             "en/apps/staking/unstake",
             "en/apps/staking/withdraw",
             "en/apps/staking/view",
-            "en/apps/staking/fee-structure",
-            "en/apps/staking/supported"
+            "en/apps/staking/fee-structure"
           ]
         },
         {
@@ -1098,8 +1097,7 @@
             "cn/apps/staking/unstake",
             "cn/apps/staking/withdraw",
             "cn/apps/staking/view",
-            "cn/apps/staking/fee-structure",
-            "cn/apps/staking/supported"
+            "cn/apps/staking/fee-structure"
           ]
         },
         {
