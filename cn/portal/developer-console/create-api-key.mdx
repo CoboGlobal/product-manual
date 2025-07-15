@@ -35,16 +35,11 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
 
 9. 选择此 API Key 使用的 Callback Endpoint，或注册一个新的 Callback Endpoint。所选的 Callback Endpoint 将接收由该 API Key 触发的消息。有关更多信息，请参阅[注册 Callback Endpoint](/cn/portal/developer-console/callbacks-register)。
 10. 选择 Key 类型。
-    - **长期**：要使用此 Key 类型，您需要指定一个静态 IP 地址作为发送 API 请求的地址。
-    - **临时**：临时 Key 在 30 天后过期。如果您还没有准备好静态 IP 地址，可以选择此选项。
-11. 如果您注册的是长期 API Key，输入要列入白名单的 IP 地址（如果要列入白名单的 IP 地址不止一个，则每个 IP 地址之间用逗号隔开）。
-    <Info>临时 API Key 无法设置 IP 白名单。</Info>
-12. 点击**注册**。
-13. 如果您注册的是临时 API Key，请在弹窗中点击**创建**。
-
-    <img src="/cn/images/developer-console/temporary.png" className="screenshot_modal" alt="临时 API Key 对话框" />
-
-14. 在**安全验证**对话框中，使用多重身份验证（MFA）方式验证您的身份。
+    - **长期**: 此 Key 类型需要 IP 地址白名单以增强安全性。您必须指定发送 API 请求的静态 IP 地址。如果有多个 IP 地址，请用逗号分隔。
+    <Note>避免在 [API Playground](https://www.cobo.com/developers/v2/api-references/playground) 中使用长期 Key，因为请求是从 API Playground 发送的，而不是从您指定的 IP 地址发送的。</Note>
+    - **临时**: 临时 Key 在 30 天后过期。如果您还没有准备好静态 IP 地址，可以选择此选项。
+11. 按照屏幕上的说明完成注册。
+12. 在**安全验证**对话框中，使用多重身份验证（MFA）方式验证您的身份。
 
     <img src="/cn/images/developer-console/verify.png" className="screenshot_modal" alt="安全验证对话框" />
 
