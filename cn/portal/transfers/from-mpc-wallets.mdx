@@ -6,6 +6,7 @@ description: "了解如何从 MPC 钱包（机构钱包）转账，提升机构�
 ---
 
 import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
+import Fee from '/snippets/transaction-fee-cn.mdx';
 
 本文介绍 MPC 钱包（机构钱包）的提币流程，并指导您如何在 Cobo Portal 中发起提币。
 
@@ -31,59 +32,26 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
 
 ## 发起提币
 
-要从机构钱包转账，请登录 [Cobo Portal](https://portal.cobo.com/login)，然后点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
 
-<img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
+    <img src="/cn/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
 
-<Note>在 Cobo Portal 上，单次提币只能有一个接收地址。要一次性提币到多个接收地址，请使用 [Transfer token API 操作](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)。</Note>
+    <Note>在 Cobo Portal 上，单次提币只能有一个接收地址。要一次性提币到多个接收地址，请使用 [Transfer token API 操作](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)。</Note>
 
-然后填写所需的信息，具体如下：
+3. 选择 **MPC 钱包 > 机构钱包**作为源钱包。对于钱包地址，可以从下拉菜单中选择，或通过地址、Vault 名称、钱包名称或标签进行搜索，结果中将列出通过 Cobo Portal 和 WaaS 2.0 API 创建的 MPC 钱包（机构钱包）。
 
-1. 对于**钱包类型**，选择**MPC 钱包（机构钱包）**。
+4. 选择转账的代币类型和网络。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请参阅[从外部钱包充币](https://manuals.cobo.com/cn/portal/mpc-wallets/ocw/transfers#)中的步骤 1 到 6。
 
-2. 对于钱包地址，可以从下拉菜单中选择，或通过地址、Vault 名称、钱包名称或标签进行搜索，结果中将列出通过 Cobo Portal 和 WaaS 2.0 API 创建的 MPC 钱包（机构钱包）。
-
-3. 选择转账的代币类型和网络。可选代币类型仅限于团队账户的订阅包中所含的代币。要启用新的代币类型（额外收费），请参阅[从外部钱包充币](https://manuals.cobo.com/cn/portal/mpc-wallets/ocw/transfers#)中的步骤 1 到 6。
-
-4. 从地址簿或您在 Cobo Portal 上的钱包中选择**接收地址**，也可以手动输入地址。
+5. 从地址簿或您在 Cobo Portal 上的钱包中选择**接收地址**，也可以手动输入地址。
     - **地址簿**<img src="/en/images/common/icon_address_book.svg" className="icon" alt="Address Book icon" />：仅列出与所选代币的区块链网络相关联的地址。
     - **我的钱包**：选择钱包类别，然后点击您希望转入的钱包。
-5. 输入转账金额。注意，对于 DOT、XRP 或 KSM 代币，所选的 MPC 钱包（机构钱包）中持有的余额必须满足最低要求。DOT 代币的最低余额为 1 DOT，XRP 为 10 XRP，KSM 为 0.000333333 KSM。
+
+6. 输入转账金额。注意，对于 DOT、XRP 或 KSM 代币，所选的 MPC 钱包（机构钱包）中持有的余额必须满足最低要求。DOT 代币的最低余额为 1 DOT，XRP 为 10 XRP，KSM 为 0.000333333 KSM。
 
     <Info>您可转账的最大金额受交易费、可用余额和锁定金额的影响：<ul><li>（提币金额+交易费）\>可用余额：无法提交提币请求。</li><li>（提币金额+交易费）≤（当前余额-锁定金额）：您的提币请求将被立即处理。</li><li>（当前余额-锁定金额）\<（提币金额+交易费）≤ 可用余额：您可以成功提交提币请求，但您的交易将被排队进行。</li></ul>更多信息请参阅 [MPC 钱包余额和交易金额信息](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/balance-amounts)。</Info>
 
-6. 查看交易费用。根据交易速度，网络费用分为三个级别：慢、标准和快。
-7. 要调整该费用，请点击下图圈出的按钮。所有字段都是必填项，并将根据您选择的交易速度自动填充。您可以根据自己的具体要求编辑各个参数。
-    <img src="/cn/images/transfers/customize-fees.png" className="screenshot_modal"/>
-    - EVM 链：对于 EVM 链，EIP1559 和 Legacy 方式的交易费用有所不同。
-        - EIP 1559
-            - 在 EIP1559 方式下，用户可以定制 3 个参数：Max Priority Fee (gwei)、Max Fee 和 Gas Limit。
-            - 预估费用的计算方式是 Max Fee 乘以 Gas Limit：（Max Fee x Gas Limit）。
-            - 对于 Mantle 和 Optimism，显示的费用仅涵盖 Layer 2。提交交易后，Layer 1 费用将自动从您的出金地址扣除。请确保您的地址有足够的 Gas 代币以支付所有费用。
-            - Chiliz 不收取费用，但 Chiliz Chain 2.0 收费。
-
-            <a id="eip1559"></a>	
-            | 参数        | 定义                                                                                                                                                                                                                             |
-            | --------         | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
-            | Max Priority Fee | Max Priority Fee 通常也被称为“矿工小费”，支付给矿工，激励他们优先处理您的交易。Max Priority Fee 是您愿意为交易支付的最高矿工小费。
-            | Max Fee          | Max Fee 是您愿意为交易支付的 Gas 总价。                                                                                                                                                |
-            | Gas Limit        | Gas Limit 是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最高 Gas Unit 数量。不同的运行方式需要消耗不同数量的 Gas Unit。              |
-
-        - Legacy
-            - 在 Legacy 方式下，用户可以定义 2 个参数：Gas Price (gwei) 和 Gas Limit。
-            - 预估费用的计算方式是 Gas Price 乘以 Gas Limit：（Gas Price x Gas Limit）。
-
-            | 参数 | 定义    |
-            | -------- | -------------------------------------------------------------------------- |
-            | Gas Price | Gas Price 是必须支付给验证者以便处理交易的 ETH（单位较小，称为 gwei）数量。 |
-            | Gas Limit | Gas Limit 是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最多 Gas Unit 数量。 |
-    - 基于 UTXO 的链
-        - 用户可以自定义费率 (sat/vByte)。
-        - 预估费用的计算方式是费率乘以交易数据量：（费率 x 交易数据量）。
-
-            | 参数 | 定义                                                                                                                               |
-            | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
-            | 费率  | 费率的计算方式是您的交易在区块链上消耗的每单位数据对应多少 satoshis（缩写为 sats/vByte）。|
+7. <Fee />
 8. <MySnippet />
 9. 点击**提交**。
 10. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
@@ -102,6 +70,6 @@ import MySnippet from '/snippets/transfer-category-and-description-cn.mdx';
         - 对于服务端签名人，请确保已启动 TSS Node 以保持在线。
         - 对于移动端签名人，请确保已打开 Cobo Guard 应用以保持在线。
 
-<img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="密钥份额管理页面显示签名人状态"/>
+<img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="私钥分片管理页面显示签名人状态"/>
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

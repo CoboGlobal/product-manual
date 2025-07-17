@@ -6,6 +6,7 @@ description: "Understand how to transfer assets from Custodial Wallets (Web3 Wal
 ---
 
 import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
+import Fee from '/snippets/transaction-fee-en.mdx';
 
 ## Prerequisite
 
@@ -20,7 +21,7 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 
     <img src="/en/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
 
-3. For **Wallet Type**, select **Web3 Wallets**. For the wallet address, select from the drop-down menu or search by wallet name, address, or label. Web3 Wallets created via both Cobo Portal and WaaS 2.0 API will be listed.
+3. Select **Custodial Wallets > Web3 Wallets** as the source wallet. For the wallet address, select from the drop-down menu or search by wallet name, address, or label. Web3 Wallets created via both Cobo Portal and WaaS 2.0 API will be listed.
 
 4. Select the token type and network for the transfer. To enable a new token type, navigate to your Web3 Wallet page and click **Add Tokens**.
 
@@ -31,8 +32,7 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 
 6. Enter the transfer amount.
 
-7. Review the transaction cost. You are unable to modify or customize this fee. The fee amount varies depending on the token being transferred and will be deducted from the source address. Please ensure that the source address has sufficient balance for the fee payment.
-
+7. <Fee />
 8. <MySnippet />
 
 9. Click **Submit**.
@@ -41,9 +41,6 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 
 ## Next steps
 
-After making a transfer from your Asset Wallets, you can view its transaction status in **Transaction History**. The flash icon <img src="/en/images/custodial-wallet/icon_loop.png" className="icon" alt="The flash icon" /> indicates it was executed as a Cobo Loop transfer as the following screenshot shows.
-<img src="/en/images/transfers/loop_history.png" className="screenshot_full_screen" alt="Screenshot of the transaction history" />
+After making a transfer from your Web3 Wallets, you can view its transaction status in **Transaction History**.
 
-If you are using the WaaS 2.0 API, you can call the [Get transaction information](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) or [List all transactions operations](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) and check the `is_loop` property in the response. 
-Additionally, you can use the [Cobo Loop Explorer](https://loop.top/) along with the Loop ID (the transaction hash of the transfer) to track the status of Cobo Loop transfers.
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

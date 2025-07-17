@@ -155,19 +155,21 @@
             {
               "group": "Asset Wallets",
               "pages": [
+                "en/portal/custodial-wallets/asset-wallets/introduction",
                 "en/portal/custodial-wallets/asset-wallets/set-up",
-                "en/portal/custodial-wallets/asset-wallets/transfers"
+                "en/portal/custodial-wallets/asset-wallets/transfers",
+                "en/portal/custodial-wallets/asset-wallets/cobo-loop"
               ]
             },
             {
               "group": "Web3 Wallets",
               "pages": [
+                "en/portal/custodial-wallets/web3-wallets/introduction",
                 "en/portal/custodial-wallets/web3-wallets/set-up",
                 "en/portal/custodial-wallets/web3-wallets/transfers",
                 "en/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            },
-            "en/portal/custodial-wallets/cobo-loop"
+            }
           ]
         },
         {
@@ -491,6 +493,13 @@
           ]
         },
         {
+          "group": "Tokenization",
+          "pages": [
+            "en/apps/tokenization/introduction",
+            "en/apps/tokenization/bond-tokenization-best-practice"
+          ]
+        },
+        {
           "group": "OTC",
           "pages": [
             "en/apps/otc/introduction"
@@ -528,8 +537,7 @@
             "en/apps/staking/unstake",
             "en/apps/staking/withdraw",
             "en/apps/staking/view",
-            "en/apps/staking/fee-structure",
-            "en/apps/staking/supported"
+            "en/apps/staking/fee-structure"
           ]
         },
         {
@@ -707,19 +715,21 @@
             {
               "group": "资产钱包",
               "pages": [
+                "cn/portal/custodial-wallets/asset-wallets/introduction",
                 "cn/portal/custodial-wallets/asset-wallets/set-up",
-                "cn/portal/custodial-wallets/asset-wallets/transfers"
+                "cn/portal/custodial-wallets/asset-wallets/transfers",
+                "cn/portal/custodial-wallets/asset-wallets/cobo-loop"
               ]
             },
             {
               "group": "Web3 钱包",
               "pages": [
+                "cn/portal/custodial-wallets/web3-wallets/introduction",
                 "cn/portal/custodial-wallets/web3-wallets/set-up",
                 "cn/portal/custodial-wallets/web3-wallets/transfers",
                 "cn/portal/custodial-wallets/web3-wallets/dapp-interaction"
               ]
-            },
-            "cn/portal/custodial-wallets/cobo-loop"
+            }
           ]
         },
         {
@@ -1043,6 +1053,13 @@
           ]
         },
         {
+          "group": "Tokenization",
+          "pages": [
+            "cn/apps/tokenization/introduction",
+            "cn/apps/tokenization/bond-tokenization-best-practice"
+          ]
+        },
+        {
           "group": "OTC",
           "pages": [
             "cn/apps/otc/introduction"
@@ -1080,8 +1097,7 @@
             "cn/apps/staking/unstake",
             "cn/apps/staking/withdraw",
             "cn/apps/staking/view",
-            "cn/apps/staking/fee-structure",
-            "cn/apps/staking/supported"
+            "cn/apps/staking/fee-structure"
           ]
         },
         {
@@ -1691,8 +1707,12 @@
       "destination": "/cn/portal/developer-console/introduction#waas-2-0"
     },
     {
-      "source": "/cn/portal/dashboard/portfolio",
-      "destination": "/cn/portal/dashboard/introduction"
+      "source": "/cn/portal/custodial-wallets/cobo-loop",
+      "destination": "/cn/portal/custodial-wallets/asset-wallets/cobo-loop"
+    },
+    {
+      "source": "/en/portal/custodial-wallets/cobo-loop",
+      "destination": "/en/portal/custodial-wallets/asset-wallets/cobo-loop"
     }
   ]
 }

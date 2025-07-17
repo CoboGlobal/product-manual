@@ -1,0 +1,57 @@
+Review the transaction cost. The fee will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment. Alternatively, you can enable [Fee Station](/en/portal/fee-station/introduction) for transaction fee payment.
+
+Network fees will be displayed in 3 tiers based on transaction speeds: slow, standard, and fast. To adjust the fees, click the button highlighted below. All fields are mandatory and will be auto-populated based on the transaction speed you have selected. You may edit the parameters based on your specific requirements.
+
+<img src="/en/images/transfers/customize-fees.png" className="screenshot_modal"/>
+
+- EVM  chains: For EVM chains, transaction fees vary between the EIP1559 and Legacy methods.
+    - EIP 1559
+        - Under the EIP1559 method, users can customize 3 parameters: max priority fee (gwei), max fee, and gas limit.
+        - The estimated fee is calculated by multiplying the max fee by the gas limit: (max fee * gas limit).
+        - Currently supported chains are Ethereum Mainnet (`ETH`), Sepolia Testnet (`SETH`), and Scroll Mainnet (`SCROLL_ETH`)
+
+        <a id="eip1559"></a>	
+        | Parameter        | Definition                                                                                                                                                                                                                             |
+        | --------         | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
+        | Max priority fee | The priority fee, often referred to as the 'miner tip,' serves as an incentive for miners to prioritize your transaction. The max priority fee represents the highest amount of miner tips you are willing to pay for your transaction.|
+        | Max fee          | The max fee represents the total gas price you are willing to pay for your transaction.                                                                                                                                                |
+        | Gas limit        | The gas limit represents the max number of gas units you are willing to pay for the execution of a transaction or Ethereum Virtual Machine (EVM) operation. Different operations require varying quantities of gas units.              |
+
+    - Legacy
+        - Under the Legacy method, users can customize 2 parameters: gas price (gwei) and gas limit.
+        - The estimated fee is calculated by multiplying the gas price by the gas limit: (gas price * gas limit).
+
+        | Parameter | Definition                                                                                                                                                  |
+        | --------  | ----------------------------------------------------------------------------------------------------------------------------------------------------------  |
+        | Gas price | The gas price represents the amount of ETH (in a smaller unit known as gwei) that must be paid to validators for processing transactions.                   |
+        | Gas limit | The gas limit represents the max number of gas units you are willing to pay for the execution of a transaction or Ethereum Virtual Machine (EVM) operation. |   
+        
+- UTXO-based chains
+    - Users can customize the fee rate (sat/vByte).
+    - The estimated fee is calculated by multiplying the fee rate by the transaction size: (fee rate * transaction size).
+
+        | Parameter | Definition                                                                                                                               |
+        | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
+        | Fee rate  | The fee rate is calculated in satoshis per unit of data that your transaction will consume on the blockchain, abbreviated as sats/vByte. |
+- Solana chain
+    - Users can customize 2 parameters: compute unit (CU) price and CU limit.
+    - The estimated fee is calculated as: `base fee + (CU price * CU limit)`.
+
+        | Parameter           | Definition                                                                                                                                                     |
+        |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | Compute unit price  | The fee paid per compute unit to prioritize a transaction. It is specified in lamports.              |
+        | Compute unit limit  | The maximum number of compute units the transaction is allowed to consume. A higher value may increase priority but results in higher fees.                   |
+
+    <Note>If you want to use the legacy fee model, please call the API operation and specify the model explicitly.</Note>
+
+- Filecoin chain
+    - Users can customize 3 parameters: gas fee cap, gas premium, and gas limit.
+    - The estimated fee is calculated as: `min(gas fee cap, base fee + gas premium) * gas limit`.
+
+        | Parameter     | Definition                                                                                                                                                           |
+        |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | Gas fee cap   | The maximum fee per gas unit you are willing to pay. The final effective fee per unit is capped at this value.                                                      |
+        | Gas premium   | A tip paid to incentivize block producers to prioritize your transaction.                 |
+        | Gas limit     | The maximum gas amount the transaction is allowed to consume.           |
+
+    <Note>If you want to use the legacy fee model, please call the API operation and specify the model explicitly.</Note>

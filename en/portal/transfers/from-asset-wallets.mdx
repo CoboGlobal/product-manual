@@ -20,7 +20,7 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 
     <img src="/en/images/transfers/transfer-button-location.png" className="screenshot_modal"/>
 
-3. For **Wallet Type**, select **Asset Wallets**. For the wallet address, select from the drop-down menu or search by wallet name, address, or label. Asset Wallets created via both Cobo Portal and WaaS 2.0 API will be listed.
+3. Select **Custodial Wallets > Asset Wallets** as the source wallet. The transfer amount and gas fee will be deducted from this wallet. For the wallet address, select from the drop-down menu or search by wallet name, address, or label. Asset Wallets created via both Cobo Portal and WaaS 2.0 API will be listed.
 
 4. Select the token type and network for the transfer. To enable a new token type, navigate to your Asset Wallet page and click **Add Tokens**.
 
@@ -29,13 +29,13 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
     - **Address Book**<img src="/en/images/common/icon_address_book.svg" className="icon" alt="Address Book icon" />: Only addresses associated with the blockchain network of the selected token will be listed.
     - **My Wallets**: Select a wallet type and then click on the specific wallet you would like to transfer to.
 
-    If this transfer can be executed as a [Cobo Loop](/en/portal/custodial-wallets/cobo-loop) transfer, a related information bar will appear on the UI as the following screenshot shows.
+    If this transfer can be executed as a [Cobo Loop](/en/portal/custodial-wallets/asset-wallets/cobo-loop) transfer, a related information bar will appear on the UI as the following screenshot shows.
     <img src="/en/images/transfers/loop_info_bar.png" className="screenshot_modal" alt="Screenshot of the information bar" />
 
     <Info>If you are using the WaaS 2.0 API, you can use the [Check Cobo Loop transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) operation to determine if a transaction can be executed as a Cobo Loop transfer. Or directly call the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) operation to enforce a transaction as a Cobo Loop transfer.</Info>
 
 6. Enter the transfer amount.
-7. Review the transaction cost. You are unable to modify or customize this fee. The fee amount varies depending on the token being transferred and will be deducted from the source wallet. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
+7. Review the transaction cost. You are unable to modify or customize this fee. The fee amount varies depending on the token being transferred and will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
 8. <MySnippet />
 9. Click **Submit**.
 10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.

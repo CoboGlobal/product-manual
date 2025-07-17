@@ -1,0 +1,119 @@
+---
+title: "Introduction to Tokenization"
+sidebarTitle: "Introduction"
+lang: "en"
+description: "Take full control of your digital assets with Tokenization. It simplifies how you issue, manage, and operate your own tokens."
+---
+
+Tokenization simplifies how you issue, manage, and operate your own tokens—no technical expertise needed.
+
+## Why issue your own tokens?
+
+- **For asset/fund managers**: Tokenize the art, antiques, or real estate funds you manage to easily fractionalize shares, attract global investors, and increase asset liquidity.
+
+- **For stablecoin issuers**: Quickly and securely issue and manage your own stablecoins to build an efficient and reliable settlement system for your ecosystem.
+
+- **For exchanges**: Tokenize traditional financial assets like stocks to offer innovative investment products to your users.
+
+## Key features of the Tokenization app
+
+### Versatile token creation
+Design and issue tokens tailored to your business needs, covering a wide range of use cases from stablecoins and security tokens to the tokenization of real-world assets.
+
+### Built on a secure foundation
+All tokens are powered by **CoboERC20**, our in-house, audited smart contract that extends the standard ERC-20 with enhanced features for access control and lifecycle management.
+
+Support for more contracts and chains like Solana is coming soon.
+
+### Complete lifecycle management
+Manage **every stage of your token's lifecycle** through a single, intuitive interface—no coding required. Securely mint new tokens for issuance, burn them upon redemption, pause the contract in an emergency, and seamlessly upgrade it to add new features.
+
+### Robust token access controls
+Enforce compliance and security at the smart contract level. Set up **token access** controls to restrict token interactions to verified, eligible investors and a **blocklist** to prevent any interaction with unauthorized or suspicious addresses.
+
+### Granular permission controls
+Enhance your operational security by delegating specific **permissions** (from minting and burning tokens to managing token access controls) to different team members.
+
+## How it works
+
+The Tokenization app supports operations through both MPC Wallets and Web3 wallets on Cobo Portal.
+
+### 1. Create your token
+Easily create and issue your own tokens. You can also update token information as needed.
+
+<img src="/en/images/portal-apps/tokenization/create-token1.png" className="screenshot_modal" alt="Create token window1"/>
+
+<img src="/en/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="Create token window2"/>
+
+### 2. Manage token access controls and permissions
+
+#### Set up token access and blocklist
+
+Use token access settings and blocklist to control who can interact with your tokens.
+
+- **Token access**: It's recommended to enable **Restricted Access** to activate an allowlist, limiting all token circulation exclusively to addresses that are on your allowlist AND not on the blocklist.
+
+    <img src="/en/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="token access"/>
+
+- **Blocklist**: Addresses on the blocklist are prevented from performing any token operations.
+
+    <img src="/en/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="blocklist"/>
+
+#### Assign permissions
+Assign specific permissions to different wallet addresses. You can designate which wallets are authorized to perform certain actions, such as minting or pausing the token.
+
+<img src="/en/images/portal-apps/tokenization/permissions.png" className="screenshot_modal" alt="permissions"/>
+
+### 3. Day-to-day operations
+
+#### Perform core lifecycle operations
+
+- **Mint:** Issue new tokens to increase the total supply, for example, when new investors subscribe.
+- **Burn:** Permanently remove tokens from circulation, for example, when processing investor redemptions.
+- **Pause/Unpause:** Instantly freeze or resume all token activities (transfers, minting, burning) to respond to emergencies or security threats.
+    <img src="/en/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="Mint token window"/>
+
+#### Monitor activity
+
+View detailed information on token holders and track a complete history of all operations for transparent oversight.
+
+#### Interact directly with the contract
+
+For maximum flexibility, the Tokenization app provides a visual interface for direct interaction with the token's smart contract. This allows you to call any public function on the contract, covering both common features available in the main UI and advanced operations for more complex needs.
+
+The interface is separated into two tabs: **Read** for querying information and **Write** for executing transactions that change the state of the contract.
+
+- **Read functions (querying data)**
+
+    Use Read functions to look up real-time information from the smart contract without creating a transaction. Key queries include:
+
+    - **Role information:** View identifiers for all permission roles (e.g., `MINTER_ROLE`, `PAUSER_ROLE`) and check if an address `hasRole` for a specific permission
+    - **Token & account details:** Get the token's `name`, `symbol`, `decimals`, `totalSupply`, and check the `balanceOf` any address or the `allowance` an address has given to another
+    - **Access control status:** Check if the `accessListEnabled`, if an address `isAccessListed` or `isBlocklisted`, and view the full `getAccessList` or `getBlocklist`
+    - **Contract status & metadata:** Check if the contract is `paused`, get the `contractUri`, view the `version` and `UPGRADE_INTERFACE_VERSION`, and check for feature support with `supportsInterface`
+    <img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
+
+- **Write functions (executing actions)**
+
+    Use Write functions to perform actions that modify the smart contract. These require a transaction to be signed and broadcasted to the network. Key actions, in the order they appear in the interface, include:
+
+    - `approve`: Allow another address or contract to spend tokens on your behalf
+    - `mint`: Issue new tokens to increase the total supply
+    - `burn`: Destroy tokens that the wallet itself holds
+    - `contractUriUpdate`: Change the token's metadata URI
+    - `accessListAdd`: Add one or more addresses to the token access allowlist
+    - `accessListRemove`: Remove one or more addresses from the token access allowlist
+    - `blockListAdd`: Add one or more addresses to the blocklist
+    - `blockListRemove`: Remove one or more addresses from the blocklist
+    - `grantRole`: Assign a specific permission to a team member
+    - `revokeRole`: Remove a specific permission from a team member
+    - `renounceRole`: Relinquish a role that your own address holds
+    - `salvageERC20`: Recover other ERC-20 tokens accidentally sent to the contract
+    - `salvageNative`: Recover native currency (e.g., ETH) accidentally sent to the contract
+    - `toggleAccesslist`: Enable or disable token access controls for transfers
+    - `transfer`: Send tokens to another address
+    - `transferFrom`: Execute a pre-approved transfer from another address
+    - `pause`: Freeze all token activity
+    - `unpause`: Resume all token activity
+    - `upgradeToAndCall`: Seamlessly upgrade the contract to a new version
+    <img src="/en/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="Contract Write Functions"/>
