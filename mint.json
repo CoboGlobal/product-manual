@@ -122,7 +122,8 @@
           "group": "Token & chain support",
           "pages": [
             "en/portal/supported-tokens-and-chains",
-            "en/portal/self-service-token-listing"
+            "en/portal/self-service-token-listing",
+            "en/portal/add-chains"
           ]
         },
         "en/portal/security-checklist",
@@ -683,7 +684,8 @@
           "group": "代币与链支持",
           "pages": [
             "cn/portal/supported-tokens-and-chains",
-            "cn/portal/self-service-token-listing"
+            "cn/portal/self-service-token-listing",
+            "cn/portal/add-chains"
           ]
         },
         "cn/portal/security-checklist",
