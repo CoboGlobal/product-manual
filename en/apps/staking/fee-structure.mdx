@@ -21,11 +21,12 @@ ETH staking rewards are divided into two parts: Consensus Layer Rewards and Exec
 
 The reward distribution structure for Stakefish and Figment is as follows:
 
-<Note>The distribution ratio between Consensus Layer and Execution Layer is for illustration only. User reward examples are based on hypothetical reward rates and do not represent actual performance.</Note>
+<Note>
+The distribution ratio between Consensus Layer and Execution Layer is for illustration only; the commission is always 10% of total rewards, and the commission percentage on Execution Layer rewards will be dynamically adjusted based on the actual Consensus/Execution Layer distribution ratio; user reward examples are based on hypothetical reward rates and do not represent actual performance.
+</Note>
 
-| Node Provider | Consensus Layer Rewards (approx. % of total) | Execution Layer Rewards (approx. % of total) | Commission Fee | User Reward Example |
-|---------------|---------------------------------------------|---------------------------------------------|--------------|-------------------------|
-| Stakefish | 80% | 20%<br>Execution Layer rewards must be claimed by staking addresses | 50% of Execution Layer rewards<br>(approx. 10% of total rewards) | Consensus Layer: 2.8%<br>Execution Layer (before fee): 0.7%<br>Execution Layer (after fee): 0.35%<br>**Total: 3.15%** |
-| Figment | 80% | 20%<br>Execution Layer rewards are automatically distributed through smart contracts deployed by Figment | 30% of Execution Layer rewards<br>(approx. 6% of total rewards) | Consensus Layer: 2.8%<br>Execution Layer (before fee): 0.7%<br>Execution Layer (after fee): 0.49%<br>**Total: 3.29%** |
+| Node Provider | Consensus Layer Rewards | Execution Layer Rewards | Commission Fee | User Reward Example |
+|---------------|------------------------|------------------------|--------------|-------------------------|
+| Stakefish / Figment | 80% | 20%<br>Stakefish: Execution Layer rewards must be claimed by staking addresses<br>Figment: Execution Layer rewards are automatically distributed through smart contracts deployed by Figment | 10% of total rewards<br>(when Execution Layer is 20% of total rewards, this equals 50% of Execution Layer rewards) | Consensus Layer: 2.8%<br>Execution Layer (before fee): 0.7%<br>Execution Layer (after fee): 0.35%<br>**Total: 3.15%** |
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
