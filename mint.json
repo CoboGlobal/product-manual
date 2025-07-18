@@ -123,7 +123,7 @@
           "pages": [
             "en/portal/supported-tokens-and-chains",
             "en/portal/self-service-token-listing",
-            "en/portal/add-chains"
+            "en/portal/enable-or-disable-chains"
           ]
         },
         "en/portal/security-checklist",
@@ -685,7 +685,7 @@
           "pages": [
             "cn/portal/supported-tokens-and-chains",
             "cn/portal/self-service-token-listing",
-            "cn/portal/add-chains"
+            "cn/portal/enable-or-disable-chains"
           ]
         },
         "cn/portal/security-checklist",
