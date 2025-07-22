@@ -53,8 +53,8 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
           <ul style="margin-top: 5px; margin-bottom: 15px;">
             <li>**待扫描**：已收到交易，等待 AML/CFT 扫描</li>
             <li>**已扫描**：已收到 AML/CFT 扫描结果</li>
-            <li>**已批准**：根据 [风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核通过</li>
-            <li>**已拒绝**：根据 [风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核拒绝</li>
+            <li>**已批准**：根据[风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核通过</li>
+            <li>**已拒绝**：根据[风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核拒绝</li>
             <li>**不支持**：Screening 尚未支持该资产，交易未经扫描直接放行</li>
             <li>**已略过**：根据 [Screening 设置](/cn/apps/screening/screening-settings)，交易未经扫描直接放行</li>
           </ul>
@@ -158,10 +158,10 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
     <tbody>
       <tr>
         <td>AML Provider</td>
-        <td>交易扫描的服务商<br/>• CipherOwl<br/>• CipherOwl</td>
+        <td>交易扫描的服务商<br/>• CipherOwl</td>
       </tr>
       <tr>
-        <td>Risk</td>
+        <td>风险</td>
         <td>CipherOwl返回的风险级别<br/>• 低<br/>• 中<br/>• 高</td>
       </tr>
       <tr>
@@ -209,54 +209,54 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
     <tbody>
       <tr>
         <td>AML Provider</td>
-        <td>交易扫描的服务商<br/>• CipherOwl<br/>• Elliptic</td>
+        <td>交易扫描的服务商<br/>• Elliptic</td>
       </tr>
       <tr>
-        <td>Risk</td>
+        <td>风险</td>
         <td>Elliptic 返回的扫描结果，范围为 0.0 - 10.0，级距 0.1</td>
       </tr>
       <tr>
-        <td>Screening Type</td>
+        <td>扫描类型</td>
         <td>Elliptic 的扫描方式：<br/>• 地址扫描<br/>• 交易扫描</td>
       </tr>
       <tr>
-        <td>Address</td>
+        <td>扫描地址</td>
         <td>使用地址扫描时，指定扫描的地址</td>
       </tr>
       <tr>
-        <td>Txn Hash</td>
+        <td>交易哈希</td>
         <td>使用交易扫描时，指定扫描的链上交易 Hash</td>
       </tr>
       <tr>
-        <td>Output Address</td>
+        <td>输出地址</td>
         <td>使用交易扫描时，指定扫描的输出地址</td>
       </tr>
       <tr>
-        <td>Coverage</td>
+        <td>覆盖方式</td>
         <td>扫描指定的链与资产覆盖方式，分为：<br/>• Holistic<br/>• Single asset</td>
       </tr>
       <tr>
-        <td>Entity</td>
+        <td>实体</td>
         <td>使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown</td>
       </tr>
       <tr>
-        <td>Category</td>
+        <td>风险分类</td>
         <td>使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown</td>
       </tr>
       <tr>
-        <td>Wallet Inflow (USD)</td>
+        <td>钱包流入 (USD)</td>
         <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示</td>
       </tr>
       <tr>
-        <td>Wallet Outflow (USD)</td>
+        <td>钱包流出 (USD)</td>
         <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示</td>
       </tr>
       <tr>
-        <td>Value (USD)</td>
+        <td>金额 (USD)</td>
         <td>使用交易扫描时，Elliptic 返回指定扫描的交易金额</td>
       </tr>
       <tr>
-        <td>Triggered Rules</td>
+        <td>触发规则</td>
         <td>使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个</td>
       </tr>
     </tbody>
@@ -273,7 +273,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
     </thead>
     <tbody>
       <tr>
-        <td>Funds Flow</td>
+        <td>资金流向</td>
         <td>Elliptic 返回扫描对象的资金流向
           <ul>
             <li>Source of Funds: 资金流入</li>
@@ -282,19 +282,19 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
         </td>
       </tr>
       <tr>
-        <td>Risk Score</td>
+        <td>风险评分</td>
         <td>Elliptic 返回对应 Trigger Rule 的风险分数</td>
       </tr>
       <tr>
-        <td>Triggered Rule</td>
+        <td>触发规则</td>
         <td>Elliptic 返回触发的风险规则，规则信息由用户在 Elliptic 风险设定配置</td>
       </tr>
       <tr>
-        <td>Total (%)</td>
+        <td>总资金占比 (%)</td>
         <td>Elliptic 返回触发规则的总资金占比</td>
       </tr>
       <tr>
-        <td>Total (USD)</td>
+        <td>总资金 (USD)</td>
         <td>Elliptic 返回触发规则的总资金金额</td>
       </tr>
     </tbody>
