@@ -43,7 +43,28 @@ The **Screening Results** interface enables you to monitor and manage transactio
     </tr>
     <tr>
       <td>Status</td>
-      <td><b>Review Status:</b><br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Scan results awaiting manual review<br/>• **Approved**: Transaction passed AML/CFT scan<br/>• **Rejected**: Transaction rejected by AML/CFT scan<br/>• **Not Supported**: Chain not supported by Screening, transaction proceeds without AML/CFT review<br/><br/><b>Fund Status:</b><br/>• **Not Frozen**: Transaction funds are not frozen, and the user can access the funds.<br/>• **Frozen**: The user cannot access the transaction funds.<br/>• **Returned**: Transaction funds have been returned to the from address.<br/>• **Unfrozen**: Previously frozen funds have been released, and the user can now access them.</td>
+      <td>
+        <div style="margin-bottom: 10px;">
+          <b>Review Status:</b>
+          <ul style="margin-top: 5px; margin-bottom: 15px;">
+            <li>**Pending Screening**: Transaction received, waiting for AML/CFT scan</li>
+            <li>**Screened**: AML/CFT scan results received</li>
+            <li>**Approved**: Transaction approved based on [Risk Policies](/en/apps/screening/risk-policies) settings</li>
+            <li>**Rejected**: Transaction rejected based on [Risk Policies](/en/apps/screening/risk-policies) settings</li>
+            <li>**Not Supported**: Asset not yet supported by Screening, transaction proceeds without screening</li>
+            <li>**Bypassed**: Transaction bypassed based on [Screening Settings](/en/apps/screening/screening-settings)</li>
+          </ul>
+        </div>
+        <div>
+          <b>Fund Status:</b>
+          <ul style="margin-top: 5px;">
+            <li>**Frozen**: Transaction funds cannot be transferred by users or auto-swept</li>
+            <li>**Returned**: Transaction funds have been returned to the specified address</li>
+            <li>**Unfrozen**: Transaction funds can be transferred by users and auto-swept</li>
+            <li>**Isolated**: Transaction funds have been isolated to a specified address</li>
+          </ul>
+        </div>
+      </td>
     </tr>
     <tr>
       <td>Amount</td>
@@ -132,6 +153,14 @@ Shows detailed risk analysis for the transaction, which varies based on the AML 
   </thead>
   <tbody>
     <tr>
+      <td>AML Provider</td>
+      <td>The service provider used for transaction screening<br/>• CipherOwl</td>
+    </tr>
+    <tr>
+      <td>Risk</td>
+      <td>Risk level returned by CipherOwl<br/>• Low<br/>• Medium<br/>• High</td>
+    </tr>
+    <tr>
       <td>Screening Address</td>
       <td>The address being screened and its associated wallet:<br/>• For inbound: From address<br/>• For outbound: To address<br/>*Note: UTXO transactions may have multiple from/to addresses*</td>
     </tr>
@@ -145,15 +174,15 @@ Shows detailed risk analysis for the transaction, which varies based on the AML 
     </tr>
     <tr>
       <td>Risk Exposure</td>
-      <td>Types of risks identified (as defined in [CipherOwl's Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)):<br/>• **Direct** (maps to CipherOwl's "Direct Risk"): The screened address itself has a risk label<br/>• **Indirect** (maps to CipherOwl's "Exposure Risk"): The screened address has transacted with other addresses that have risk labels<br/><i>Note: A transaction can be labeled as both Direct and Indirect</i></td>
+      <td>Types of risks identified<br/>• **Direct** (maps to CipherOwl's "Direct Risk"): The screened address itself has a risk label<br/>• **Indirect** (maps to CipherOwl's "Exposure Risk"): The screened address has transacted with other addresses that have risk labels<br/><i>Note: A transaction can be labeled as both Direct and Indirect</i></td>
     </tr>
     <tr>
       <td>Risk Categories</td>
-      <td>Specific risk labels identified from scanning results</td>
+      <td>Specific risk labels identified from scanning results, refer to [CipherOwl's Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)</td>
     </tr>
     <tr>
       <td>Exposure Address</td>
-      <td>The risky address (as defined in [CipherOwl's Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)) identified in the transaction path.<br/>Click the info icon to view the Exposure Path, which shows:<br/>• **Send** path: The sequence of addresses from your address to the exposure address (e.g., Your Address → B → C → Exposure Address)<br/>• **Receive** path: The sequence of addresses from the exposure address back to your address (e.g., Exposure Address → E → Your Address)</td>
+      <td>The risky address identified in the transaction path<br/>Click the info icon to view the Exposure Path, which shows:<br/>• **Send** path: The sequence of addresses from your address to the exposure address (e.g., Your Address → B → C → Exposure Address)<br/>• **Receive** path: The sequence of addresses from the exposure address back to your address (e.g., Exposure Address → E → Your Address)</td>
     </tr>
   </tbody>
 </table>
@@ -212,11 +241,11 @@ Elliptic has three different display styles depending on the scanning scenario:
     </tr>
     <tr>
       <td>Wallet Inflow (USD)</td>
-      <td>For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.</td>
+      <td>For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown</td>
     </tr>
     <tr>
       <td>Wallet Outflow (USD)</td>
-      <td>For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown.</td>
+      <td>For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown</td>
     </tr>
     <tr>
       <td>Value (USD)</td>
@@ -258,23 +287,11 @@ Risk information:
     </tr>
     <tr>
       <td>Total (%)</td>
-      <td>The percentage of total funds related to triggered rules returned by Elliptic
-        <ul>
-          <li>For wallet screening when Entity is Unknown: Represents the fund percentage for the corresponding triggered rule</li>
-          <li>For transaction screening: Represents the percentage of total transaction inflow for the corresponding triggered rule</li>
-        </ul>
-        (For wallet screening when Entity has a specific entity, represents the overall fund percentage of the Cluster, therefore the Screening App does not display this information)
-      </td>
+      <td>The percentage of total funds related to triggered rules returned by Elliptic</td>
     </tr>
     <tr>
       <td>Total (USD)</td>
-      <td>The total monetary amount related to triggered rules returned by Elliptic
-        <ul>
-          <li>For wallet screening when Entity is Unknown: Represents the total inflow fund amount for the corresponding triggered rule</li>
-          <li>For transaction screening: Represents the total transaction inflow amount for the corresponding triggered rule</li>
-        </ul>
-        (For wallet screening when Entity has a specific entity, represents the overall fund amount of the Cluster, therefore the Screening App does not display this information)
-      </td>
+      <td>The total monetary amount related to triggered rules returned by Elliptic</td>
     </tr>
   </tbody>
 </table>
@@ -298,13 +315,8 @@ The following actions are available based on the transaction's current status:
 | Approve | • For inbound: Transaction passes AML screening, and the funds become available to the user.<br/>• For outbound: Transaction passes AML screening and proceeds to the next stage. |
 | Approve with Alert | • For inbound: Transaction passes AML screening, and the funds become available to the user. An additional risk transaction notification is sent.<br/>• For outbound: Transaction passes AML screening and proceeds to the next stage. An additional risk transaction notification is sent. |
 | Reject | • For inbound: Transaction fails AML screening, and the funds are frozen.<br/>• For outbound: Transaction fails AML screening, and the withdrawal is rejected. |
-| Manual Review (Coming Soon) | • For inbound: Awaits manual review.<br/>• For outbound: Awaits manual review. |
 | Unfreeze | • For inbound: Releases frozen funds, making them available to the user.<br/>• For outbound: Not applicable. |
 | Refund | • For inbound: Returns the funds from the receiving address to a user-specified address.<br/>• For outbound: Not applicable. |
 | Isolate | • For inbound: Returns the funds from the receiving address to a user-specified isolation address.<br/>• For outbound: Not applicable. |
-
-## Send appeal
-
-Click <img src="/en/images/common/More.svg" className="icon" alt="more icon" /> to send an appeal email if you need to dispute or request a review of the screening results.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

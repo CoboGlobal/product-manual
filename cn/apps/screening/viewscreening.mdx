@@ -47,7 +47,28 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
     </tr>
     <tr>
       <td>状态</td>
-      <td><b>审核状态：</b><br/>• **待扫描**：已收到交易，等待 AML/CFT 扫描<br/>• **已扫描**：已收到 AML/CFT 扫描结果<br/>• **待审核**：扫描结果等待人工审核<br/>• **已批准**：交易通过 AML/CFT 扫描<br/>• **已拒绝**：交易被 AML/CFT 扫描拒绝<br/>• **不支持**：Screening 不支持该链，交易未经 AML/CFT 审核直接进行<br/><br/><b>资金状态：</b><br/>• **未冻结**：交易资金未冻结，用户可使用资金<br/>• **已冻结**：用户无法使用交易资金<br/>• **已退回**：交易资金已退回至指定地址<br/>• **已解除冻结**：用户可使用资金</td>
+      <td>
+        <div style="margin-bottom: 10px;">
+          <b>审核状态：</b>
+          <ul style="margin-top: 5px; margin-bottom: 15px;">
+            <li>**待扫描**：已收到交易，等待 AML/CFT 扫描</li>
+            <li>**已扫描**：已收到 AML/CFT 扫描结果</li>
+            <li>**已批准**：根据 [风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核通过</li>
+            <li>**已拒绝**：根据 [风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核拒绝</li>
+            <li>**不支持**：Screening 尚未支持该资产，交易未经扫描直接放行</li>
+            <li>**已略过**：根据 [Screening 设置](/cn/apps/screening/screening-settings)，交易未经扫描直接放行</li>
+          </ul>
+        </div>
+        <div>
+          <b>资金状态：</b>
+          <ul style="margin-top: 5px;">
+            <li>**已冻结**：交易资金无法被用户转移，也不会被自动归集</li>
+            <li>**已退回**：交易资金已退回至指定地址</li>
+            <li>**已解除冻结**：交易资金可被用户转移与自动归集</li>
+            <li>**已隔离**：交易资金已隔离至指定地址</li>
+          </ul>
+        </div>
+      </td>
     </tr>
     <tr>
       <td>金额</td>
@@ -99,10 +120,6 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       <td>入金或出金</td>
     </tr>
     <tr>
-      <td>风险级别</td>
-      <td>低/中/高风险分类</td>
-    </tr>
-    <tr>
       <td>金额</td>
       <td>交易金额</td>
     </tr>
@@ -140,6 +157,14 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
     </thead>
     <tbody>
       <tr>
+        <td>AML Provider</td>
+        <td>交易扫描的服务商<br/>• CipherOwl<br/>• CipherOwl</td>
+      </tr>
+      <tr>
+        <td>Risk</td>
+        <td>CipherOwl返回的风险级别<br/>• 低<br/>• 中<br/>• 高</td>
+      </tr>
+      <tr>
         <td>扫描地址</td>
         <td>被扫描的地址及其关联钱包：<br/>• 对于入金：发送地址<br/>• 对于出金：接收地址<br/>*注意：UTXO 交易可能有多个发送/接收地址*</td>
       </tr>
@@ -153,15 +178,15 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       </tr>
       <tr>
         <td>风险暴露</td>
-        <td>识别的风险类型（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）：<br/>• **直接**（对应 CipherOwl 的"直接风险"）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的"暴露风险"）：扫描地址与具有风险标签的其他地址有交易<br/><i>注意：交易可同时标记为直接和间接</i></td>
+        <td>识别的风险类型<br/>• **直接**（对应 CipherOwl 的"直接风险"）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的"暴露风险"）：扫描地址与具有风险标签的其他地址有交易<br/><i>注意：交易可同时标记为直接和间接</i></td>
       </tr>
       <tr>
         <td>风险类别</td>
-        <td>从扫描结果中识别的特定风险标签</td>
+        <td>从扫描结果中识别的特定风险标签，参考[CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)</td>
       </tr>
       <tr>
         <td>暴露地址</td>
-        <td>交易路径中识别的风险地址（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）。<br/>点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址）</td>
+        <td>交易路径中识别的风险地址<br/>点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址）</td>
       </tr>
     </tbody>
   </table>
@@ -220,11 +245,11 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       </tr>
       <tr>
         <td>Wallet Inflow (USD)</td>
-        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表入账金额，因此 Screening App 不展示对应信息</td>
+        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示</td>
       </tr>
       <tr>
         <td>Wallet Outflow (USD)</td>
-        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示（地址扫描且 Entity 具有特定实体时，代表出账金额，因此 Screening App 不展示对应信息</td>
+        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示</td>
       </tr>
       <tr>
         <td>Value (USD)</td>
@@ -266,23 +291,11 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
       </tr>
       <tr>
         <td>Total (%)</td>
-        <td>Elliptic 返回触发规则的总资金占比
-          <ul>
-            <li>地址扫描且 Entity 为 Unknown 时，代表的是对应触发规则，资金占比</li>
-            <li>交易扫描时，代表的是对应触发规则，交易总流入的资金占比</li>
-          </ul>
-          (地址扫描且 Entity 具有特定实体时，代表的是 Cluster 的总体资金占比，因此 Screening App 不展示对应信息)
-        </td>
+        <td>Elliptic 返回触发规则的总资金占比</td>
       </tr>
       <tr>
         <td>Total (USD)</td>
-        <td>Elliptic 返回触发规则的总资金金额
-          <ul>
-            <li>地址扫描且 Entity 为 Unknown 时，代表的是对应触发规则，扫描地址上总流入的资金金额</li>
-            <li>交易扫描时，代表的是对应触发规则，交易总流入的资金金额</li>
-          </ul>
-          (地址扫描且 Entity 具有特定实体时，代表的是 Cluster 的总体资金金额，因此 Screening App 不展示对应信息)
-        </td>
+        <td>Elliptic 返回触发规则的总资金金额</td>
       </tr>
     </tbody>
   </table>
@@ -306,13 +319,8 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 | 批准 | • 对于入金：交易通过 AML 审核，用户可动用交易资金<br/>• 对于出金：交易通过 AML 审核，交易状态往下流转 |
 | 批准并告警 | • 对于入金：交易通过 AML 审核，用户可动用交易资金，额外发送风险交易通知<br/>• 对于出金：交易通过 AML 审核，交易状态往下流转，额外发送风险交易通知 |
 | 拒绝 | • 对于入金：交易不通过 AML 审核，交易资金被冻结<br/>• 对于出金：交易不通过 AML 审核，出金交易被拒绝 |
-| 人工审核（即将推出） | • 对于入金：等待人工审核<br/>• 对于出金：等待人工审核 |
 | 解除冻结 | • 对于入金：解除冻结的资金，用户可动用交易资金<br/>• 对于出金：无此操作 |
 | 退回 | • 对于入金：交易资金从受益地址退回到用户指定地址<br/>• 对于出金：无此操作 |
 | 隔离 | • 对于入金：交易资金从受益地址退回到用户指定的隔离地址<br/>• 对于出金：无此操作 |
-
-### 发送申诉
-
-点击 <img src="/en/images/common/More.svg" className="icon" alt="更多图标" /> 发送申诉电子邮件，如果您需要对扫描结果提出异议或请求审核。
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>
