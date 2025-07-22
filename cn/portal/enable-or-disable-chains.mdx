@@ -1,0 +1,60 @@
+---
+title: "为团队启用或禁用公链"
+sidebarTitle: "启用或禁用公链"
+lang: "zh-hans"
+description: "了解如何为您的团队启用或禁用支持的公链，以及这些设置如何影响钱包使用和套餐额度。"
+---
+
+Cobo 支持 80 多条主流公有链。为了满足常见的使用场景，部分常用链默认已启用。
+
+全托管钱包和 MPC 钱包的[套餐](/cn/portal/bills-and-payments/introduction)对可启用的公链数量设有额度限制。为了更好地管理资源分配与计费，其他公链需按需手动启用。
+
+## 启用公链
+
+当某条公链被添加到您的团队后，该链支持的所有代币都可以在钱包中使用。该链将被视为已启用，并计入您的套餐额度。如果启用的链数量超过额度，将产生额外费用。
+
+### 前提条件
+
+- 所需启用的公链必须是 Cobo 支持的链。如需查看完整的支持链与代币列表，请参阅[支持的代币与链](/cn/portal/supported-tokens-and-chains)。
+- 您已被分配管理员，经理或操作员[角色](/cn/portal/organization/roles-and-permissions)。
+
+### 在套餐管理中启用链
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的个人资料图标，然后点击**套餐**。
+3. 找到**可用公链数**，点击旁边的**管理**图标。
+
+    <img src="/cn/images/get-started/add-chain.png" className="screenshot_modal" alt="添加链"/>
+
+4. 在**管理**页面，点击**添加公链**。
+5. 在弹出的对话框中，选择您要添加的公链，并点击**确认**。
+6. 选择一种多重身份验证（MFA）方式进行验证。
+
+身份验证成功后，页面将提示添加成功。
+
+### 在启用代币时启用链
+
+您还可以在钱包中启用代币时直接启用其所属的链。  
+如果需要启用的代币所属链尚未启用，系统会弹出**激活链**对话框，显示需要激活的链与代币。完成多重身份验证（MFA）后，该链将被添加到您的团队中。
+
+<img src="/cn/images/enable-chains.png" className="screenshot_modal" alt="激活链" />
+
+## 禁用公链
+
+禁用某条公链后，该链上的代币将不再显示在钱包中。如需再次查看这些代币，您需要先重新启用该链。从下一个计费周期开始，该链将不再计入使用额度，也不会再产生相关费用。
+
+### 操作步骤
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的个人资料图标，然后点击**套餐**。
+3. 找到**可用公链数**，点击旁边的**管理**图标。
+
+    <img src="/cn/images/get-started/add-chain.png" className="screenshot_full_screen" alt="添加链"/>
+
+4. 在**管理**页面，点击您想要删除的公链右侧的删除图标。
+5. 在确认对话框中点击**确认**。
+6. 选择一种多重身份验证（MFA）方式进行验证。
+
+身份验证成功后，页面将提示删除成功。
+
+<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
