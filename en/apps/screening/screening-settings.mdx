@@ -27,9 +27,7 @@ Configure your AML/KYT providers in this section. Currently, the Screening app s
 | API Key | Required for Elliptic integration |
 | Secret | Required for Elliptic integration |
 
-<Note>
-- Elliptic requires valid API credentials to function
-</Note>
+<Note>Elliptic requires valid API credentials to function.</Note>
 
 ## AML & Screening Settings
 
@@ -37,15 +35,15 @@ Customize how transaction screening behaves in different scenarios.
 
 <img src="/en/images/portal-apps/screening/settings-aml.png" className="screenshot_modal" alt="Screening Timeout Settings"/>
 
-- Screening Timeout**
+- **Screening Timeout**
+  
+  Configure what happens if an AML scan takes too long to complete. If the options are not checked, transactions will stay in the **Pending Screening** status until a result is received.
+  
+  <Info>Setting appropriate timeout values is important for balance between security and user experience.</Info>
 
-    Configure what happens if an AML scan takes too long to complete. If the options are not checked, transactions will stay in the **Pending Screening** status until a result is received.
-
-    <Info>Setting appropriate timeout values is important for balance between security and user experience:</Info>
-
-- Refund & Isolation Screening
-
-    Determine whether to apply AML screening to refund and isolation transactions. If the options are not checked, refund and isolation transactions will be automatically bypassed.
+- **Refund & Isolation Screening**
+  
+  Determine whether to apply AML screening to refund and isolation transactions. If the options are not checked, refund and isolation transactions will be automatically bypassed.
 
 ## Notification Settings
 

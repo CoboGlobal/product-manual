@@ -33,7 +33,6 @@ You can filter the policies by Direction, Risk, USD Amount, Decision, AML Provid
 
 ### Create policies
 
-To create a new policy:
 1. Go to the [Post-Screening Policies interface].(#the-post-screening-policies-interface)
 2. Click **Create Policy**.
   - Create Post-Screening Policy dialog when using CipherOwl
@@ -62,7 +61,7 @@ To create a new policy:
     <tr>
       <td>Risk</td>
       <td>When using CipherOwl:<br/>• Low<br/>• Medium<br/>• High<br/><br/>When using Elliptic:<br/>• NA<br/>• Numerical score from 0.0 to 10.0 (in 0.1 increments)</td>
-      <td>CipherOwl: Risk classification from [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)<br/><br/>Elliptic: Numerical risk score with higher values indicating higher risk. For details, see [Elliptic's Risk Score documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores).</td>
+      <td>CipherOwl: Risk classification from [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)<br/><br/>Elliptic: Numerical risk score with higher values indicating higher risk (see [Elliptic's Risk Score documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores))</td>
     </tr>
     <tr>
       <td>Amount Range</td>
@@ -125,15 +124,16 @@ Policy 3: Outbound + Medium risk + ≥ 1000 + < 7000 USD (Valid - different dire
 <Warning>
 The policy examples above are for illustration purposes only. Your actual policies should be tailored to your organization's specific compliance requirements and risk management strategy.
 
-For guidance on risk assessment and policy creation, refer to CipherOwl's [Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) documentation or consult with their compliance experts via [CipherOwl](https://www.cipherowl.com/)'s website. For Elliptic's risk scoring system, refer to their [Interpreting Risk Scores](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores) and [Configuring Your Risk Rules](https://help.elliptic.co/en/articles/8216353-configuring-your-risk-rules) documentation.
+For CipherOwl, refer to CipherOwl's [Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) documentation or consult with their compliance experts via [CipherOwl](https://www.cipherowl.com/)'s website. 
+For Elliptic, refer to their [Interpreting Risk Scores](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores) and [Configuring Your Risk Rules](https://help.elliptic.co/en/articles/8216353-configuring-your-risk-rules) documentation.
 </Warning>
 
 ### Edit policies
 
-1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface)
-2. Click <img src="/en/images/common/icon_edit.svg" className="icon" alt="edit icon"/> next to the policy you want to edit
-3. On the **Edit Post-Screening Policy** dialog, make the necessary changes to the policy criteria and action (see [Policy criteria](#policy-criteria) and [Policy actions](#policy-actions))
-4. Click **Submit**
+1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface).
+2. Click <img src="/en/images/common/icon_edit.svg" className="icon" alt="edit icon"/> next to the policy you want to edit.
+3. On the **Edit Post-Screening Policy** dialog, make the necessary changes to the policy criteria and action (see [Policy criteria](#policy-criteria) and [Policy actions](#policy-actions)).
+4. Click **Submit**.
 
 <Info>The same [overlap prevention rules](#overlap-prevention-rules) apply when editing policies.</Info>
 

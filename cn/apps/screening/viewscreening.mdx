@@ -25,69 +25,16 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 **关键信息：**
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>交易 ID</td>
-      <td>Cobo Portal 唯一标识符</td>
-    </tr>
-    <tr>
-      <td>方向</td>
-      <td>入金或出金</td>
-    </tr>
-    <tr>
-      <td>风险</td>
-      <td>• CipherOwl: 低/中/高<br/>• Elliptic: 0.0-10.0 数值分数</td>
-    </tr>
-    <tr>
-      <td>状态</td>
-      <td>
-        <div style="margin-bottom: 10px;">
-          <b>审核状态：</b>
-          <ul style="margin-top: 5px; margin-bottom: 15px;">
-            <li>**待扫描**：已收到交易，等待 AML/CFT 扫描</li>
-            <li>**已扫描**：已收到 AML/CFT 扫描结果</li>
-            <li>**已批准**：根据[风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核通过</li>
-            <li>**已拒绝**：根据[风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核拒绝</li>
-            <li>**不支持**：Screening 尚未支持该资产，交易未经扫描直接放行</li>
-            <li>**已略过**：根据 [Screening 设置](/cn/apps/screening/screening-settings)，交易未经扫描直接放行</li>
-          </ul>
-        </div>
-        <div>
-          <b>资金状态：</b>
-          <ul style="margin-top: 5px;">
-            <li>**已冻结**：交易资金无法被用户转移，也不会被自动归集</li>
-            <li>**已退回**：交易资金已退回至指定地址</li>
-            <li>**已解除冻结**：交易资金可被用户转移与自动归集</li>
-            <li>**已隔离**：交易资金已隔离至指定地址</li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>金额</td>
-      <td>交易金额</td>
-    </tr>
-    <tr>
-      <td>发送方/接收方</td>
-      <td>来源和目标地址</td>
-    </tr>
-    <tr>
-      <td>交易哈希</td>
-      <td>交易哈希（仅显示入金交易）</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>最新状态变更时间</td>
-    </tr>
-  </tbody>
-</table>
+| 字段 | 描述 |
+| --- | --- |
+| 交易 ID | Cobo Portal 唯一标识符 |
+| 方向 | 入金或出金 |
+| 风险 | • CipherOwl: 低/中/高<br/>• Elliptic: 0.0-10.0 数值分数 |
+| 状态 | **审核状态：**<br/>• **待扫描**：已收到交易，等待 AML/CFT 扫描<br/>• **已扫描**：已收到 AML/CFT 扫描结果<br/>• **已批准**：根据[风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核通过<br/>• **已拒绝**：根据[风险处置规则](/cn/apps/screening/risk-policies) 设置，交易 AML/CFT 审核拒绝<br/>• **不支持**：Screening 尚未支持该资产，交易未经扫描直接放行<br/>• **已略过**：根据 [Screening 设置](/cn/apps/screening/screening-settings)，交易未经扫描直接放行<br/><br/>**资金状态：**<br/>• **已冻结**：交易资金无法被用户转移，也不会被自动归集<br/>• **已退回**：交易资金已退回至指定地址<br/>• **已解除冻结**：交易资金可被用户转移与自动归集<br/>• **已隔离**：交易资金已隔离至指定地址 |
+| 金额 | 交易金额 |
+| 发送方/接收方 | 来源和目标地址 |
+| 交易哈希 | 交易哈希（仅显示入金交易） |
+| 更新时间 | 最新状态变更时间 |
 
 您可以按交易方向、AML 服务商（CipherOwl 或 Elliptic）、审核状态、资金状态、创建时间和更新时间筛选交易。
 
@@ -95,52 +42,25 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 点击 <img src="/en/images/common/icon_view.svg" className="icon" alt="查看图标"/> 查看交易的详细扫描信息：
 
-- 使用 CipherOwl 时：
-  <img src="/en/images/portal-apps/screening/view-screening-details-cipherowl.png" className="screenshot_full_screen" alt="使用 CipherOwl 时的详细扫描信息"/>
+使用 CipherOwl 时：
 
-- 使用 Elliptic 时：
-  <img src="/en/images/portal-apps/screening/view-screening-details-elliptic.png" className="screenshot_full_screen" alt="使用 Elliptic 时的详细扫描信息"/>
+<img src="/en/images/portal-apps/screening/view-screening-details-cipherowl.png" className="screenshot_full_screen" alt="使用 CipherOwl 时的详细扫描信息"/>
+
+使用 Elliptic 时：
+
+<img src="/en/images/portal-apps/screening/view-screening-details-elliptic.png" className="screenshot_full_screen" alt="使用 Elliptic 时的详细扫描信息"/>
 
 ### 概览部分
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>交易 ID</td>
-      <td>交易的唯一标识符</td>
-    </tr>
-    <tr>
-      <td>方向</td>
-      <td>入金或出金</td>
-    </tr>
-    <tr>
-      <td>金额</td>
-      <td>交易金额</td>
-    </tr>
-    <tr>
-      <td>发送地址</td>
-      <td>交易的源地址</td>
-    </tr>
-    <tr>
-      <td>接收地址</td>
-      <td>交易的目标地址</td>
-    </tr>
-    <tr>
-      <td>交易哈希</td>
-      <td>交易哈希（仅显示入金交易）</td>
-    </tr>
-    <tr>
-      <td>创建时间</td>
-      <td>交易创建时间</td>
-    </tr>
-  </tbody>
-</table>
+| 字段 | 描述 |
+| --- | --- |
+| 交易 ID | 交易的唯一标识符 |
+| 方向 | 入金或出金 |
+| 金额 | 交易金额 |
+| 发送地址 | 交易的源地址 |
+| 接收地址 | 交易的目标地址 |
+| 交易哈希 | 交易哈希（仅显示入金交易） |
+| 创建时间 | 交易创建时间 |
 
 ### 风险评估部分
 
@@ -148,157 +68,64 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 - 使用 CipherOwl 时
 
-  <table class="table six-columns">
-    <thead>
-      <tr>
-        <th>字段</th>
-        <th>描述</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>AML Provider</td>
-        <td>交易扫描的服务商<br/>• CipherOwl</td>
-      </tr>
-      <tr>
-        <td>风险</td>
-        <td>CipherOwl返回的风险级别<br/>• 低<br/>• 中<br/>• 高</td>
-      </tr>
-      <tr>
-        <td>扫描地址</td>
-        <td>被扫描的地址及其关联钱包：<br/>• 对于入金：发送地址<br/>• 对于出金：接收地址<br/>*注意：UTXO 交易可能有多个发送/接收地址*</td>
-      </tr>
-      <tr>
-        <td>金额</td>
-        <td>扫描地址的交易金额</td>
-      </tr>
-      <tr>
-        <td>制裁</td>
-        <td>指示扫描地址是否在任何制裁名单上<br/>标记为**是**时，点击信息图标查看制裁详情：<br/>• **制裁计划**：制裁机构<br/>• **管辖区**：机构的管辖范围<br/>• **被制裁实体**：受制裁实体<br/>• **参考 URL**：制裁信息链接</td>
-      </tr>
-      <tr>
-        <td>风险暴露</td>
-        <td>识别的风险类型<br/>• **直接**（对应 CipherOwl 的"直接风险"）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的"暴露风险"）：扫描地址与具有风险标签的其他地址有交易<br/><i>注意：交易可同时标记为直接和间接</i></td>
-      </tr>
-      <tr>
-        <td>风险类别</td>
-        <td>从扫描结果中识别的特定风险标签，参考[CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)</td>
-      </tr>
-      <tr>
-        <td>暴露地址</td>
-        <td>交易路径中识别的风险地址<br/>点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址）</td>
-      </tr>
-    </tbody>
-  </table>
+  | 字段 | 描述 |
+  | --- | --- |
+  | AML Provider | 交易扫描的服务商• CipherOwl |
+  | 风险 | CipherOwl返回的风险级别• 低• 中• 高 |
+  | 扫描地址 | 被扫描的地址及其关联钱包：• 对于入金：发送地址• 对于出金：接收地址*注意：UTXO 交易可能有多个发送/接收地址* |
+  | 金额 | 扫描地址的交易金额 |
+  | 制裁 | 指示扫描地址是否在任何制裁名单上标记为**是**时，点击信息图标查看制裁详情：• **制裁计划**：制裁机构• **管辖区**：机构的管辖范围• **被制裁实体**：受制裁实体• **参考 URL**：制裁信息链接 |
+  | 风险暴露 | 识别的风险类型• **直接**（对应 CipherOwl 的“直接风险”）：扫描地址本身有风险标签• **间接**（对应 CipherOwl 的“暴露风险”）：扫描地址与具有风险标签的其他地址有交易*注意：交易可同时标记为直接和间接* |
+  | 风险类别 | 从扫描结果中识别的特定风险标签，参考[CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) |
+  | 暴露地址 | 交易路径中识别的风险地址点击信息图标查看暴露路径，显示：• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址） |
 
 - 使用 Elliptic 时
 
   Elliptic 根据扫描场景有三种不同的显示样式：
 
-  - 地址扫描，实体未知
+  | 字段 | 说明 |
+  | --- | --- |
+  | AML Provider | 交易扫描的服务商• Elliptic |
+  | 风险 | Elliptic 返回的扫描结果，范围为 0.0 - 10.0，级距 0.1 |
+  | 扫描类型 | Elliptic 的扫描方式：• 地址扫描• 交易扫描 |
+  | 扫描地址 | 使用地址扫描时，指定扫描的地址 |
+  | 交易哈希 | 使用交易扫描时，指定扫描的链上交易 Hash |
+  | 输出地址 | 使用交易扫描时，指定扫描的输出地址 |
+  | 覆盖方式 | 扫描指定的链与资产覆盖方式，分为：• Holistic• Single asset |
+  | 实体 | 使用地址扫描时，Elliptic 返回的 cluster_entities，分为：• 特定实体对象• Unknown |
+  | 风险分类 | 使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：• 特定风险分类，可能有多个风险分类• Unknown |
+  | 钱包流入 (USD) | 使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示 |
+  | 钱包流出 (USD) | 使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示 |
+  | 金额 (USD) | 使用交易扫描时，Elliptic 返回指定扫描的交易金额 |
+  | 触发规则 | 使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个 |
   - 地址扫描，实体明确
   - 交易扫描
 
-  <table class="table two-columns">
-    <thead>
-      <tr>
-        <th>字段</th>
-        <th>说明</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>AML Provider</td>
-        <td>交易扫描的服务商<br/>• Elliptic</td>
-      </tr>
-      <tr>
-        <td>风险</td>
-        <td>Elliptic 返回的扫描结果，范围为 0.0 - 10.0，级距 0.1</td>
-      </tr>
-      <tr>
-        <td>扫描类型</td>
-        <td>Elliptic 的扫描方式：<br/>• 地址扫描<br/>• 交易扫描</td>
-      </tr>
-      <tr>
-        <td>扫描地址</td>
-        <td>使用地址扫描时，指定扫描的地址</td>
-      </tr>
-      <tr>
-        <td>交易哈希</td>
-        <td>使用交易扫描时，指定扫描的链上交易 Hash</td>
-      </tr>
-      <tr>
-        <td>输出地址</td>
-        <td>使用交易扫描时，指定扫描的输出地址</td>
-      </tr>
-      <tr>
-        <td>覆盖方式</td>
-        <td>扫描指定的链与资产覆盖方式，分为：<br/>• Holistic<br/>• Single asset</td>
-      </tr>
-      <tr>
-        <td>实体</td>
-        <td>使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown</td>
-      </tr>
-      <tr>
-        <td>风险分类</td>
-        <td>使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown</td>
-      </tr>
-      <tr>
-        <td>钱包流入 (USD)</td>
-        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示</td>
-      </tr>
-      <tr>
-        <td>钱包流出 (USD)</td>
-        <td>使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示</td>
-      </tr>
-      <tr>
-        <td>金额 (USD)</td>
-        <td>使用交易扫描时，Elliptic 返回指定扫描的交易金额</td>
-      </tr>
-      <tr>
-        <td>触发规则</td>
-        <td>使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个</td>
-      </tr>
-    </tbody>
-  </table>
+  | 字段 | 说明 |
+  | --- | --- |
+  | AML Provider | 交易扫描的服务商<br/>• Elliptic |
+  | 风险 | Elliptic 返回的扫描结果，范围为 0.0 - 10.0，级距 0.1 |
+  | 扫描类型 | Elliptic 的扫描方式：<br/>• 地址扫描<br/>• 交易扫描 |
+  | 扫描地址 | 使用地址扫描时，指定扫描的地址 |
+  | 交易哈希 | 使用交易扫描时，指定扫描的链上交易 Hash |
+  | 输出地址 | 使用交易扫描时，指定扫描的输出地址 |
+  | 覆盖方式 | 扫描指定的链与资产覆盖方式，分为：<br/>• Holistic<br/>• Single asset |
+  | 实体 | 使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown |
+  | 风险分类 | 使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown |
+  | 钱包流入 (USD) | 使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示 |
+  | 钱包流出 (USD) | 使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示 |
+  | 金额 (USD) | 使用交易扫描时，Elliptic 返回指定扫描的交易金额 |
+  | 触发规则 | 使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个 |
 
   风险信息：
 
-  <table class="table two-columns">
-    <thead>
-      <tr>
-        <th>字段</th>
-        <th>说明</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>资金流向</td>
-        <td>Elliptic 返回扫描对象的资金流向
-          <ul>
-            <li>Source of Funds: 资金流入</li>
-            <li>Destination of Funds: 资金流出（地址扫描才有资金流出）</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>风险评分</td>
-        <td>Elliptic 返回对应 Trigger Rule 的风险分数</td>
-      </tr>
-      <tr>
-        <td>触发规则</td>
-        <td>Elliptic 返回触发的风险规则，规则信息由用户在 Elliptic 风险设定配置</td>
-      </tr>
-      <tr>
-        <td>总资金占比 (%)</td>
-        <td>Elliptic 返回触发规则的总资金占比</td>
-      </tr>
-      <tr>
-        <td>总资金 (USD)</td>
-        <td>Elliptic 返回触发规则的总资金金额</td>
-      </tr>
-    </tbody>
-  </table>
+  | 字段 | 说明 |
+  | --- | --- |
+  | 资金流向 | Elliptic 返回扫描对象的资金流向<br/>• Source of Funds: 资金流入<br/>• Destination of Funds: 资金流出（地址扫描才有资金流出） |
+  | 风险评分 | Elliptic 返回对应 Trigger Rule 的风险分数 |
+  | 触发规则 | Elliptic 返回触发的风险规则，规则信息由用户在 Elliptic 风险设定配置 |
+  | 总资金占比 (%) | Elliptic 返回触发规则的总资金占比 |
+  | 总资金 (USD) | Elliptic 返回触发规则的总资金金额 |
 
   有关解读 Elliptic 风险评分的更多详情，请参阅其[文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)。
 
@@ -315,7 +142,7 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 根据交易的当前状态，可以使用以下操作：
 
 | 操作 | 效果 |
-| :---- | :---- |
+| ---- | ---- |
 | 批准 | • 对于入金：交易通过 AML 审核，用户可动用交易资金<br/>• 对于出金：交易通过 AML 审核，交易状态往下流转 |
 | 批准并告警 | • 对于入金：交易通过 AML 审核，用户可动用交易资金，额外发送风险交易通知<br/>• 对于出金：交易通过 AML 审核，交易状态往下流转，额外发送风险交易通知 |
 | 拒绝 | • 对于入金：交易不通过 AML 审核，交易资金被冻结<br/>• 对于出金：交易不通过 AML 审核，出金交易被拒绝 |
