@@ -21,69 +21,16 @@ The **Screening Results** interface enables you to monitor and manage transactio
 
 **Key information:**
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Transaction ID</td>
-      <td>Unique Cobo Portal identifier</td>
-    </tr>
-    <tr>
-      <td>Direction</td>
-      <td>Inbound or Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk</td>
-      <td>• CipherOwl: Low/Medium/High<br/>• Elliptic: 0.0-10.0 numerical score</td>
-    </tr>
-    <tr>
-      <td>Status</td>
-      <td>
-        <div style="margin-bottom: 10px;">
-          <b>Review Status:</b>
-          <ul style="margin-top: 5px; margin-bottom: 15px;">
-            <li>**Pending Screening**: Transaction received, waiting for AML/CFT scan</li>
-            <li>**Screened**: AML/CFT scan results received</li>
-            <li>**Approved**: Transaction approved based on [post-screening policies](/en/apps/screening/risk-policies) settings</li>
-            <li>**Rejected**: Transaction rejected based on [post-screening policies](/en/apps/screening/risk-policies) settings</li>
-            <li>**Not Supported**: Asset not yet supported by Screening, transaction proceeds without screening</li>
-            <li>**Bypassed**: Transaction bypassed based on [Screening Settings](/en/apps/screening/screening-settings)</li>
-          </ul>
-        </div>
-        <div>
-          <b>Fund Status:</b>
-          <ul style="margin-top: 5px;">
-            <li>**Frozen**: Transaction funds cannot be transferred by users or auto-swept</li>
-            <li>**Returned**: Transaction funds have been returned to the specified address</li>
-            <li>**Unfrozen**: Transaction funds can be transferred by users and auto-swept</li>
-            <li>**Isolated**: Transaction funds have been isolated to a specified address</li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>Amount</td>
-      <td>Transaction amount</td>
-    </tr>
-    <tr>
-      <td>From/To</td>
-      <td>Source and target addresses</td>
-    </tr>
-    <tr>
-      <td>Txn Hash</td>
-      <td>Transaction hash (only displayed for inbound transactions)</td>
-    </tr>
-    <tr>
-      <td>Updated Time</td>
-      <td>Time of latest status change</td>
-    </tr>
-  </tbody>
-</table>
+| Field | Description |
+| --- | --- |
+| Transaction ID | Unique Cobo Portal identifier |
+| Direction | Inbound or Outbound |
+| Risk | • CipherOwl: Low/Medium/High<br/>• Elliptic: 0.0-10.0 numerical score |
+| Status | **Review Status:**<br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Approved**: Transaction approved based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Rejected**: Transaction rejected based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Not Supported**: Asset not yet supported by Screening, transaction proceeds without screening<br/>• **Bypassed**: Transaction bypassed based on [Screening Settings](/en/apps/screening/screening-settings)<br/><br/>**Fund Status:**<br/>• **Frozen**: Transaction funds cannot be transferred by users or auto-swept<br/>• **Returned**: Transaction funds have been returned to the specified address<br/>• **Unfrozen**: Transaction funds can be transferred by users and auto-swept<br/>• **Isolated**: Transaction funds have been isolated to a specified address |
+| Amount | Transaction amount |
+| From/To | Source and target addresses |
+| Txn Hash | Transaction hash (only displayed for inbound transactions) |
+| Updated Time | Time of latest status change |
 
 You can filter transactions by Direction, AML Provider (CipherOwl or Elliptic), Review Status, Fund Status, Created Time, and Updated Time.
 
@@ -91,52 +38,23 @@ You can filter transactions by Direction, AML Provider (CipherOwl or Elliptic), 
 
 Click <img src="/en/images/common/icon_view.svg" className="icon" alt="view icon"/> to view detailed screening information for a transaction:
 
-- When using CipherOwl:
-  <img src="/en/images/portal-apps/screening/view-screening-details-cipherowl.png" className="screenshot_full_screen" alt="Detailed screening information using CipherOwl"/>
+When using CipherOwl:
+<img src="/en/images/portal-apps/screening/view-screening-details-cipherowl.png" className="screenshot_full_screen" alt="Detailed screening information using CipherOwl"/>
 
-- When using Elliptic:
-  <img src="/en/images/portal-apps/screening/view-screening-details-elliptic.png" className="screenshot_full_screen" alt="Detailed screening information using Elliptic"/>
+When using Elliptic:
+<img src="/en/images/portal-apps/screening/view-screening-details-elliptic.png" className="screenshot_full_screen" alt="Detailed screening information using Elliptic"/>
 
 ### Overview section
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Transaction ID</td>
-      <td>Unique identifier for the transaction</td>
-    </tr>
-    <tr>
-      <td>Direction</td>
-      <td>Inbound or Outbound</td>
-    </tr>
-    <tr>
-      <td>Amount</td>
-      <td>Transaction amount</td>
-    </tr>
-    <tr>
-      <td>From address</td>
-      <td>Source address of the transaction</td>
-    </tr>
-    <tr>
-      <td>To address</td>
-      <td>Destination address of the transaction</td>
-    </tr>
-    <tr>
-      <td>Transaction hash</td>
-      <td>Transaction hash (displayed for inbound transactions only)</td>
-    </tr>
-    <tr>
-      <td>Created time</td>
-      <td>Time when the transaction was created</td>
-    </tr>
-  </tbody>
-</table>
+| Field | Description |
+| --- | --- |
+| Transaction ID | Unique identifier for the transaction |
+| Direction | Inbound or Outbound |
+| Amount | Transaction amount |
+| From address | Source address of the transaction |
+| To address | Destination address of the transaction |
+| Transaction hash | Transaction hash (displayed for inbound transactions only) |
+| Created time | Time when the transaction was created |
 
 ### Risk assessment section
 
@@ -144,48 +62,16 @@ Shows detailed risk analysis for the transaction, which varies based on the AML 
 
 #### When using CipherOwl
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AML Provider</td>
-      <td>The service provider used for transaction screening<br/>• CipherOwl</td>
-    </tr>
-    <tr>
-      <td>Risk</td>
-      <td>Risk level returned by CipherOwl<br/>• Low<br/>• Medium<br/>• High</td>
-    </tr>
-    <tr>
-      <td>Screening Address</td>
-      <td>The address being screened and its associated wallet:<br/>• For inbound: From address<br/>• For outbound: To address<br/>*Note: UTXO transactions may have multiple from/to addresses*</td>
-    </tr>
-    <tr>
-      <td>Amount</td>
-      <td>Transaction amount for the screened address</td>
-    </tr>
-    <tr>
-      <td>Sanctioned</td>
-      <td>Indicates if the screened address is on any sanctions list<br/>When marked as **Yes**, click the info icon to view the sanction details:<br/>• **Sanctions Program**: Sanctioning authority<br/>• **Jurisdiction**: Authority's jurisdiction<br/>• **Sanctioned Entity**: Entity under sanctions<br/>• **Reference URL**: Link to sanction information</td>
-    </tr>
-    <tr>
-      <td>Risk Exposure</td>
-      <td>Types of risks identified<br/>• **Direct** (maps to CipherOwl's "Direct Risk"): The screened address itself has a risk label<br/>• **Indirect** (maps to CipherOwl's "Exposure Risk"): The screened address has transacted with other addresses that have risk labels<br/><i>Note: A transaction can be labeled as both Direct and Indirect</i></td>
-    </tr>
-    <tr>
-      <td>Risk Categories</td>
-      <td>Specific risk labels identified from scanning results, refer to [CipherOwl's Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)</td>
-    </tr>
-    <tr>
-      <td>Exposure Address</td>
-      <td>The risky address identified in the transaction path<br/>Click the info icon to view the Exposure Path, which shows:<br/>• **Send** path: The sequence of addresses from your address to the exposure address (e.g., Your Address → B → C → Exposure Address)<br/>• **Receive** path: The sequence of addresses from the exposure address back to your address (e.g., Exposure Address → E → Your Address)</td>
-    </tr>
-  </tbody>
-</table>
+| Field | Description |
+| --- | --- |
+| AML Provider | The service provider used for transaction screening<br/>• CipherOwl |
+| Risk | Risk level returned by CipherOwl<br/>• Low<br/>• Medium<br/>• High |
+| Screening Address | The address being screened and its associated wallet:<br/>• For inbound: From address<br/>• For outbound: To address<br/>*Note: UTXO transactions may have multiple from/to addresses* |
+| Amount | Transaction amount for the screened address |
+| Sanctioned | Indicates if the screened address is on any sanctions list<br/>When marked as **Yes**, click the info icon to view the sanction details:<br/>• **Sanctions Program**: Sanctioning authority<br/>• **Jurisdiction**: Authority's jurisdiction<br/>• **Sanctioned Entity**: Entity under sanctions<br/>• **Reference URL**: Link to sanction information |
+| Risk Exposure | Types of risks identified<br/>• **Direct** (maps to CipherOwl's "Direct Risk"): The screened address itself has a risk label<br/>• **Indirect** (maps to CipherOwl's "Exposure Risk"): The screened address has transacted with other addresses that have risk labels<br/>*Note: A transaction can be labeled as both Direct and Indirect* |
+| Risk Categories | Specific risk labels identified from scanning results, refer to [CipherOwl's Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) |
+| Exposure Address | The risky address identified in the transaction path<br/>Click the info icon to view the Exposure Path, which shows:<br/>• **Send** path: The sequence of addresses from your address to the exposure address (e.g., Your Address → B → C → Exposure Address)<br/>• **Receive** path: The sequence of addresses from the exposure address back to your address (e.g., Exposure Address → E → Your Address) |
 
 #### When using Elliptic
 
@@ -195,106 +81,31 @@ Elliptic has three different display styles depending on the scanning scenario:
 2. **Address scanning with a specified Entity**
 3. **Transaction scanning**
 
-<table class="table two-columns">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AML Provider</td>
-      <td>The vendor used for transaction screening<br/>• Elliptic</td>
-    </tr>
-    <tr>
-      <td>Risk</td>
-      <td>The screening result from Elliptic, ranging from 0.0 to 10.0 in 0.1 increments</td>
-    </tr>
-    <tr>
-      <td>Screening Type</td>
-      <td>Elliptic's screening method:<br/>• Wallet Screening<br/>• Transaction Screening</td>
-    </tr>
-    <tr>
-      <td>Address</td>
-      <td>The specified address for wallet screening</td>
-    </tr>
-    <tr>
-      <td>Txn Hash</td>
-      <td>The on-chain transaction hash for transaction screening</td>
-    </tr>
-    <tr>
-      <td>Output Address</td>
-      <td>The output address for transaction screening</td>
-    </tr>
-    <tr>
-      <td>Coverage</td>
-      <td>The chain and asset coverage for the scan:<br/>• Holistic<br/>• Single asset</td>
-    </tr>
-    <tr>
-      <td>Entity</td>
-      <td>The `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific entity<br/>• Unknown</td>
-    </tr>
-    <tr>
-      <td>Category</td>
-      <td>The risk category of `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific risk category (may have multiple)<br/>• Unknown</td>
-    </tr>
-    <tr>
-      <td>Wallet Inflow (USD)</td>
-      <td>For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown</td>
-    </tr>
-    <tr>
-      <td>Wallet Outflow (USD)</td>
-      <td>For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown</td>
-    </tr>
-    <tr>
-      <td>Value (USD)</td>
-      <td>For transaction screening, the value of the scanned transaction returned by Elliptic</td>
-    </tr>
-    <tr>
-      <td>Triggered Rules</td>
-      <td>Displayed for wallet screening when the Entity is not Unknown. May have multiple rules.</td>
-    </tr>
-  </tbody>
-</table>
+| Field | Description |
+| --- | --- |
+| AML Provider | The vendor used for transaction screening<br/>• Elliptic |
+| Risk | The screening result from Elliptic, ranging from 0.0 to 10.0 in 0.1 increments |
+| Screening Type | Elliptic's screening method:<br/>• Wallet Screening<br/>• Transaction Screening |
+| Address | The specified address for wallet screening |
+| Txn Hash | The on-chain transaction hash for transaction screening |
+| Output Address | The output address for transaction screening |
+| Coverage | The chain and asset coverage for the scan:<br/>• Holistic<br/>• Single asset |
+| Entity | The `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific entity<br/>• Unknown |
+| Category | The risk category of `cluster_entities` returned by Elliptic for wallet screening:<br/>• Specific risk category (may have multiple)<br/>• Unknown |
+| Wallet Inflow (USD) | For wallet screening, the total inflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown |
+| Wallet Outflow (USD) | For wallet screening, the total outflow amount for the scanned address, returned by Elliptic. Note: Only displayed when the entity is Unknown |
+| Value (USD) | For transaction screening, the value of the scanned transaction returned by Elliptic |
+| Triggered Rules | Displayed for wallet screening when the Entity is not Unknown. May have multiple rules. |
 
 Risk information:
 
-<table class="table two-columns">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Funds Flow</td>
-      <td>The direction of funds returned by Elliptic for the scanned object
-        <ul>
-          <li>Source of Funds: Funds flowing in</li>
-          <li>Destination of Funds: Funds flowing out (only available for wallet screening)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Risk Score</td>
-      <td>The risk score corresponding to the Trigger Rule returned by Elliptic</td>
-    </tr>
-    <tr>
-      <td>Triggered Rule</td>
-      <td>The risk rules triggered by Elliptic, with rule information configured by users in Elliptic risk settings</td>
-    </tr>
-    <tr>
-      <td>Total (%)</td>
-      <td>The percentage of total funds related to triggered rules returned by Elliptic</td>
-    </tr>
-    <tr>
-      <td>Total (USD)</td>
-      <td>The total monetary amount related to triggered rules returned by Elliptic</td>
-    </tr>
-  </tbody>
-</table>
+| Field | Description |
+| --- | --- |
+| Funds Flow | The direction of funds returned by Elliptic for the scanned object<br/>• Source of Funds: Funds flowing in<br/>• Destination of Funds: Funds flowing out (only available for wallet screening) |
+| Risk Score | The risk score corresponding to the Trigger Rule returned by Elliptic |
+| Triggered Rule | The risk rules triggered by Elliptic, with rule information configured by users in Elliptic risk settings |
+| Total (%) | The percentage of total funds related to triggered rules returned by Elliptic |
+| Total (USD) | The total monetary amount related to triggered rules returned by Elliptic |
 
 For more details on interpreting Elliptic's risk scores and information, refer to their [documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores).
 
