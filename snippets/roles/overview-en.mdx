@@ -4,9 +4,9 @@ User roles consist of predefined sets of rules that enable you to assign specifi
 
 <table class="six-columns-fixed-first-row">
   <tr>
-    <th>Permissions</th>
-    <th></th>
-    <th></th>
+    <th>Permission Scope</th>
+    <th>Resource</th>
+    <th>Operation</th>
     <th>Viewer</th>
     <th>Spender</th>
     <th>Approver</th>
@@ -16,103 +16,9 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <th>Admin</th>
   </tr>
   <tr>
-    <td>Primary Function</td>
-    <td>Secondary Function</td>
-    <td>Tertiary Function</td>
-    <td>View Only</td>
-    <td>Initiate Withdrawal</td>
-    <td>Approve Transactions</td>
-    <td>Manage Staking</td>
-    <td>Configure Wallets</td>
-    <td>Assist Organization Management</td>
-    <td>Highest Permission</td>
-  </tr>
-  <tr>
-    <td rowspan="16">Organization Management</td>
-    <td rowspan="4">Member Management</td>
-    <td>View Members</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Add Members</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Remove Members</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Edit Members (Status / User Role)</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td rowspan="3">Organization Management</td>
-    <td>Edit Organization Information</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Freeze Organization</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Unfreeze Organization</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td rowspan="2">Fee Station</td>
-    <td>View</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Edit</td>
+    <td rowspan="26">Organization Management</td>
+    <td rowspan="6">team_member</td>
+    <td>read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -122,8 +28,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">Operation Logs & Governance Policies</td>
-    <td>View</td>
+    <td>create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -133,18 +38,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td rowspan="2">Transaction Categorization</td>
-    <td>View</td>
+    <td>delete</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -154,28 +48,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td rowspan="3">Pricing Plan Usage and Billing Management</td>
-    <td>View Pricing Plan</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Edit Pricing Plan</td>
+    <td>update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -185,7 +58,226 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
     <tr>
-    <td>Edit Added Chains</td>
+    <td>freeze</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+    <tr>
+    <td>unfreeze</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">organization_profile</td>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>freeze</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>unfreeze</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">kyc_profile</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">fee_station</td>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+    <tr>
+    <td rowspan="3">roles</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+    <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">governance_policy</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">app_governance_policy</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>activity_logs</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">transaction_category</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">pricing_plan</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update_supported_chains</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -195,9 +287,9 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="12">Transaction Management</td>
-    <td rowspan="2">Wallet Management</td>
-    <td>View Wallet Info</td>
+    <td rowspan="8">Wallet Management</td>
+    <td rowspan="8">wallet</td>
+    <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -207,9 +299,9 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit Wallet Configuration</td>
+    <td>update</td>
     <td>-</td>
-    <td>✔️</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>✔️</td>
@@ -217,8 +309,69 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="4">Transaction Management</td>
-    <td>View Transaction Records</td>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>connect</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>import</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>delete</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create_address</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>manage_utxo</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="19">Transaction Management</td>
+    <td rowspan="11">transaction</td>
+    <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -228,7 +381,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
     <tr>
-    <td>Download Transaction Records</td>
+    <td>export</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -238,7 +391,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Initiate Withdrawal</td>
+    <td>create</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -248,7 +401,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Stake / Unstake</td>
+    <td>stake</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -258,8 +411,99 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">MPC Wallets Private Key Shares Management</td>
-    <td>View</td>
+    <td>estimate_fee</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>contract_call</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>message_sign</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>manage</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>unstake</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>unstake_withdraw</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">travel_rule</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>edit</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">mpc_key_share</td>
+    <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -269,7 +513,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit</td>
+    <td>update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -279,8 +523,8 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">Address Book</td>
-    <td>View</td>
+    <td rowspan="2">address_book</td>
+    <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -290,7 +534,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit</td>
+    <td>update</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -300,8 +544,8 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">Transaction Policies</td>
-    <td>View</td>
+    <td rowspan="2">transaction_policy</td>
+    <td>read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -311,7 +555,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit</td>
+    <td>update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -322,8 +566,8 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   </tr>
   <tr>
     <td rowspan="2">Developer Console</td>
-    <td rowspan="2">All Modules</td>
-    <td>View</td>
+    <td rowspan="2">developer_console</td>
+    <td>read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -333,7 +577,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Edit</td>
+    <td>update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
