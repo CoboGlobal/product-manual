@@ -16,7 +16,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <th>Admin</th>
   </tr>
   <tr>
-    <td rowspan="26">Organization Management</td>
+    <td rowspan="33">Organization Management</td>
     <td rowspan="6">team_member</td>
     <td>read</td>
     <td>-</td>
@@ -78,13 +78,23 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="3">organization_profile</td>
+    <td rowspan="4">organization_profile</td>
     <td>update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -111,11 +121,11 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   <tr>
     <td rowspan="2">kyc_profile</td>
     <td>read</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -145,7 +155,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
-    <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -153,11 +163,11 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <tr>
     <td rowspan="3">roles</td>
     <td>read</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -182,18 +192,38 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">governance_policy</td>
+    <td rowspan="4">governance_policy</td>
     <td>read</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>delete</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -235,23 +265,43 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">transaction_category</td>
+    <td rowspan="4">transaction_category</td>
     <td>read</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>create</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>delete</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -287,8 +337,29 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
+    <td rowspan="2">bills</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update_billing_emails</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
     <td rowspan="8">Wallet Management</td>
-    <td rowspan="8">wallet</td>
+    <td rowspan="7">wallet</td>
     <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -359,9 +430,10 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>manage_utxo</td>
+    <td>address_book</td>
+    <td>delete</td>
     <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
     <td>-</td>
     <td>-</td>
     <td>✔️</td>
@@ -369,7 +441,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="19">Transaction Management</td>
+    <td rowspan="33">Transaction Management</td>
     <td rowspan="11">transaction</td>
     <td>read</td>
     <td>✔️</td>
@@ -380,7 +452,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
     <td>✔️</td>
   </tr>
-    <tr>
+  <tr>
     <td>export</td>
     <td>-</td>
     <td>✔️</td>
@@ -391,7 +463,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>withdraw</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -413,7 +485,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   <tr>
     <td>estimate_fee</td>
     <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -423,7 +495,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   <tr>
     <td>contract_call</td>
     <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -433,7 +505,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   <tr>
     <td>message_sign</td>
     <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -443,7 +515,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   <tr>
     <td>manage</td>
     <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -453,11 +525,11 @@ User roles consist of predefined sets of rules that enable you to assign specifi
   <tr>
     <td>update</td>
     <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
@@ -465,7 +537,7 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
+    <td>✔️</td>
     <td>-</td>
     <td>-</td>
     <td>✔️</td>
@@ -475,19 +547,301 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">mpc_project</td>
+    <td>create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">mpc_vault</td>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="4">mpc_key_group</td>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>delete</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">utxo</td>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>manage</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>wallet</td>
+    <td>manage_utxo</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td rowspan="2">travel_rule</td>
     <td>read</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>edit</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">address_book</td>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="4">transaction_policy</td>
+    <td>read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>delete</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="11">Developer Management</td>
+    <td>developer_dashboard</td>
+    <td>view</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">api_key</td>
+    <td>edit</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">api_log</td>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>export</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">webhook</td>
+    <td>read</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -502,7 +856,17 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">mpc_key_share</td>
+    <td>resend</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">callback</td>
     <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -513,7 +877,46 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>edit</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>resend</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+</table>
+
+## App Management
+
+<table class="six-columns-fixed-first-row">
+  <tr>
+    <th>Resource</th>
+    <th>Operation</th>
+    <th>Viewer</th>
+    <th>Spender</th>
+    <th>Operator</th>
+    <th>Approver</th>
+    <th>Manager</th>
+    <th>Admin</th>
+    <th>Payment Admin</th>
+    <th>Payment Member</th>
+  </tr>
+  <tr>
+    <td rowspan="3">payment_orders_payin</td>
+    <td>read</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -523,7 +926,234 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">address_book</td>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td rowspan="3">payment_orders_refund</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">payment_settlement</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">payment_merchant</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="4">payment_bank_account</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>delete</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="3">payment_topup_address</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td rowspan="2">payment_force_sweep</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>payment_balance</td>
+    <td>read</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td rowspan="2">swap_orders</td>
     <td>read</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -531,60 +1161,88 @@ User roles consist of predefined sets of rules that enable you to assign specifi
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>create</td>
+    <td>-</td>
+    <td>-</td>
+    <td>✔️</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
   </tr>
   <tr>
-    <td rowspan="2">transaction_policy</td>
+    <td rowspan="2">bridge_orders</td>
     <td>read</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
-    <td>-</td>
-    <td>-</td>
+    <td>create</td>
     <td>-</td>
     <td>-</td>
     <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
-    <td rowspan="2">Developer Console</td>
-    <td rowspan="2">developer_console</td>
+    <td>screening_results</td>
     <td>read</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td rowspan="3">screening_funds</td>
+    <td>refund</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>isolate</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>unfreeze</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
 </table>
 
