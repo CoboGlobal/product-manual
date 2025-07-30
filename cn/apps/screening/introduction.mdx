@@ -2,7 +2,7 @@
 title: "Screening 简介"
 sidebarTitle: "简介"
 lang: "zh-hans"
-description: "了解 Screening 的实时加密货币交易扫描功能，具备 KYA/KYT 能力。通过风险检测和智能策略执行实现 AML/CFT 合规自动化。"
+description: "了解 Screening 的实时加密货币交易扫描功能，具备 KYA/KYT 能力。通过风险检测和智能规则执行实现 AML/CFT 合规自动化。"
 ---
 
 <Note>
@@ -11,51 +11,53 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 
 ## 什么是 Screening？
 
-Screening 是一款 [Cobo Portal App](/cn/apps/introduction)，通过自动化交易扫描简化反洗钱（AML）和反恐融资（CFT）合规流程。利用先进的“了解您的地址”（KYA）和“了解您的交易”（KYT）功能，它为您选择的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)提供全面保护，同时让您的团队专注于业务增长。
+Screening 是一款 [Cobo Portal App](/cn/apps/introduction)，通过自动化交易扫描简化反洗钱（AML）和反恐融资（CFT）合规流程。利用先进的“了解您的地址”（KYA）和“了解您的交易”（KYT）功能，它为您选择的 [MPC 钱包](/cn/portal/mpc-wallets/introduction)和[Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)提供全面保护，同时让您的团队专注于业务增长。
 
-一旦[安装](/cn/apps/screening/set-up)，Screening 将持续实时扫描交易，提供智能风险扫描和自动化合规控制。
+一旦[安装](/cn/apps/screening/set-up)和配置，Screening 将持续实时扫描交易，提供智能风险扫描和自动化合规控制。
+
+<Note>CipherOwl 可直接扫描交易，而使用 Elliptic 需要先进行 [API 密钥配置](/cn/apps/screening/screening-settings)。</Note>
 
 <img src="/en/images/portal-apps/screening/screening-in-app-store.png" className="screenshot_modal" alt="显示 Screening 作为 Cobo Portal App 的图像"/>
 
 ## 主要特点
 
-### 智能风险扫描
+### 智能风险检测
 
-Screening 通过与 [CipherOwl](https://www.cipherowl.com/) 的集成，利用先进的风险评估技术自动实时分析交易。CipherOwl 是加密货币合规解决方案的领先提供商，确保专业可靠的 AML/CFT 扫描结果。
+Screening 与合规解决方案的领先提供商集成，利用先进的风险评估技术自动实时分析交易：
 
-扫描结果包括：
+- [CipherOwl](https://www.cipherowl.com/)：Screening 安装后即可直接对交易进行扫描。
+- [Elliptic](https://www.elliptic.co/)：使用前需要先进行 API 密钥配置，获取 API 密钥请联系 [Cobo 客服](mailto:help@cobo.com)。
 
-1. **实时扫描**：即时分析交易以立即检测威胁
-2. **智能风险分类**：交易根据 CipherOwl 的风险评分系统自动分为三个风险级别（低、中、高）。有关这些风险级别的详细信息，请参阅 [CipherOwl 的地址风险评分文档](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)。然后，您可以根据交易的风险级别决定如何管理交易。
+Screening 分析交易后，会提供智能风险评估：
+   - 使用 CipherOwl：交易根据 CipherOwl 的风险评分系统自动分为三个风险级别（低、中、高）。有关详细信息，请参阅 [CipherOwl 的地址风险评分文档](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)。
+   - 使用 Elliptic：风险以 0.0 到 10.0 的数值评分呈现（以 0.1 为增量），评分越高表示风险级别越高。有关详细信息，请参阅 [Elliptic 的风险评分文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)。
+
+   您可以根据交易的风险级别或评分来决定如何管理交易。
 
 <Info>
-当您[选定的扫描钱包](/cn/apps/screening/settings)中的交易被扫描时，Cobo 会将以下交易详情传输给 CipherOwl 进行风险评估：
-- 资产的链
-- 发送地址（对于存款）
-- 接收地址（对于提款）
+当您[选定的扫描钱包](/cn/apps/screening/settings)中的交易被扫描时，Cobo 会将以下交易详情传输给您的 AML 服务商进行风险评估：
+- CipherOwl：资产的链、发送地址（对于充币）、接收地址（对于提币）
+- Elliptic：资产的链、接收地址（对于提币）、链上交易哈希（对于充币）
 </Info>
 
 ### 自动防御和风险管理
 
-Screening 分析交易后，根据您配置的风险处置策略自动处理：
+Screening 分析交易后，会根据您配置的风险处置规则自动处理交易：
 
-- [**风险处置策略**](/cn/apps/screening/risk-policies#风险处置策略)：
-  使用以下标准定义策略：
-  - 交易方向（入币/提币）
-  - 风险级别（低/中/高）
+- [**风险处置规则**](/cn/apps/screening/risk-policies)：
+  使用以下条件定义规则：
+  - **交易方向**（转入/转出）
+  - 风险（CipherOwl：低/中/高；Elliptic：0.0-10.0 的数值评分）
   - 金额范围（最小-最大，以美元计）
 
 - **自动响应**：
-  当策略匹配时，自动：
+  当规则匹配时，自动：
   - **批准**：允许交易继续进行
   - **批准并发出警报**：允许交易并发送风险交易通知
   - **拒绝**：
-    - 对于入币交易：
-      - 目前：交易被标记
-      - 资金将被冻结
-    - 对于提币交易：交易被阻止
+    - 对于转入交易：资金将被冻结
+    - 对于转出交易：交易将被拦截
     - 始终发送风险交易通知
-  - **人工审核**：*即将推出*
 
 ### 统一合规仪表板
 

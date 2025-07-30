@@ -1,114 +1,58 @@
 ---
-title: "管理风险处置策略"
-sidebarTitle: "管理风险处置策略"
+title: "管理风险处置规则"
+sidebarTitle: "管理风险处置规则"
 lang: "zh-hans"
-description: "在 Screening 中根据风险级别、交易方向和金额阈值创建自定义加密货币合规规则。实现 AML/CFT 策略自动执行。"
+description: "在 Screening 中根据风险级别、交易方向和金额阈值创建自定义加密货币合规规则。实现 AML/CFT 规则自动执行。"
 ---
 
 <Note>
 Screening App 将很快提供中文本地化版本。目前，本文档所有 UI 名称（如按钮名称）和术语均为 AI 翻译，可能与您在使用 App 时看到的英文 UI 不符。如需查看实际的英文 UI 名称，请参阅相应的英文手册：[Manage post-screening policies](/en/apps/screening/risk-policies)
 </Note>
 
-## 风险处置策略界面
+风险处置规则可以根据扫描结果自动处理交易。每条规则定义了触发条件，以及条件匹配时要采取的操作。
+
+## 风险处置规则界面
 
 <Info>
 访问此功能：
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)
 2. 点击 <img src="/en/images/common/icon_apps.svg" className="icon" alt="App 图标"/> 打开 Cobo Portal App
 3. 找到并打开 **Screening**
-4. 点击 **风险处置策略**
+4. 点击**风险处置规则**
 </Info>
 
-**风险处置策略**界面使您能够通过以下部分管理您的[风险处置策略](#风险处置策略)：
+在**风险处置规则**界面，您可以管理您的风险处置规则。
 
-<img src="/en/images/portal-apps/screening/manage-post-screening-policies.svg" className="screenshot_full_screen" alt="管理风险处置策略界面，显示带有编辑和删除选项的策略列表"/>
+- 使用 CipherOwl 作为 AML 服务商时的风险处置规则界面：
+  <img src="/en/images/portal-apps/screening/manage-post-screening-policies-cipherowl.png" className="screenshot_full_screen" alt="管理风险处置规则界面，显示带有编辑和删除选项的规则列表"/>
 
-### 策略列表字段
+- 使用 Elliptic 作为 AML 服务商时的风险处置规则界面：
+  <img src="/en/images/portal-apps/screening/manage-post-screening-policies-elliptic.png" className="screenshot_full_screen" alt="管理风险处置规则界面，显示带有编辑和删除选项的规则列表"/>
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>策略编号</td>
-      <td>策略的唯一编号</td>
-    </tr>
-    <tr>
-      <td>方向</td>
-      <td>交易方向：入币或提币</td>
-    </tr>
-    <tr>
-      <td>风险级别</td>
-      <td>风险级别：低、中或高</td>
-    </tr>
-    <tr>
-      <td>最小美元</td>
-      <td>最小交易金额（美元，包含）</td>
-    </tr>
-    <tr>
-      <td>最大美元</td>
-      <td>最大交易金额（美元，不包含）</td>
-    </tr>
-    <tr>
-      <td>决策</td>
-      <td>策略触发时的处理方式：<br/>• 批准<br/>• 批准并发出警报<br/>• 拒绝<br/><i>即将推出：</i><br/>• 人工审核</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>策略上次修改的时间</td>
-    </tr>
-  </tbody>
-</table>
+您可以通过方向、风险、美元金额、决策、AML 服务商（CipherOwl 或 Elliptic）和更新时间来筛选规则。
 
-### 可用筛选器
+## 创建、编辑和删除规则
+
+<Note>请先在 [Screening 设置](/cn/apps/screening/screening-settings)中选择和配置您偏好的 AML 服务商。</Note>
+
+### 创建规则
+
+1. 进入**风险处置规则**界面。
+2. 点击**创建规则**。
+  - 使用 CipherOwl 时的**创建风险处置规则**对话框：
+  <img src="/en/images/portal-apps/screening/creating-post-screening-policy-cipherowl.svg" className="screenshot_modal" alt="使用 CipherOwl 时创建风险处置规则对话框"/>
+
+  - 使用 Elliptic 时的**创建风险处置规则**对话框：
+  <img src="/en/images/portal-apps/screening/creating-post-screening-policy-elliptic.png" className="screenshot_modal" alt="使用 Elliptic 时创建风险处置规则对话框"/>
+
+3. 定义规则的条件和操作。
+
+**规则条件**
 
 <table class="table six-columns">
   <thead>
     <tr>
-      <th>筛选器</th>
-      <th>选项</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>方向</td>
-      <td>入币/提币</td>
-    </tr>
-    <tr>
-      <td>风险级别</td>
-      <td>低/中/高</td>
-    </tr>
-    <tr>
-      <td>美元金额</td>
-      <td>按美元金额筛选（仅支持正数）</td>
-    </tr>
-    <tr>
-      <td>决策</td>
-      <td>• 批准<br/>• 批准并发出警报<br/>• 拒绝<br/><i>即将推出：</i><br/>• 人工审核</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>按策略的最近修改时间筛选</td>
-    </tr>
-  </tbody>
-</table>
-
-## 风险处置策略
-
-风险处置策略根据扫描结果自动处理交易。每个策略定义了触发条件（标准）和相应的处理方式。
-
-<img src="/en/images/portal-apps/screening/creating-post-screening-policy.svg" className="screenshot_modal" alt="创建风险处置策略对话框"/>
-
-### 策略标准
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>策略标准</th>
+      <th>规则的条件</th>
       <th>选项</th>
       <th>描述</th>
     </tr>
@@ -116,23 +60,23 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
   <tbody>
     <tr>
       <td>方向</td>
-      <td>• 入币交易<br/>• 提币交易</td>
+      <td>• 转入交易<br/>• 转出交易</td>
       <td>交易方向</td>
     </tr>
     <tr>
-      <td>风险级别</td>
-      <td>• 低风险<br/>• 中风险<br/>• 高风险</td>
-      <td>来自 [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) 的风险分类</td>
+      <td>风险</td>
+      <td>使用 CipherOwl 时：<br/>• 低<br/>• 中<br/>• 高<br/><br/>使用 Elliptic 时：<br/>• NA<br/>• 0.0 到 10.0 的数值评分（以 0.1 为增量）</td>
+      <td>CipherOwl：来自 [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) 的风险分类<br/><br/>Elliptic：数值风险评分，评分越高表示风险越高（参阅 [Elliptic 的风险评分文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)）</td>
     </tr>
     <tr>
       <td>金额范围</td>
-      <td>• 最小交易金额<br/>• 最大交易金额</td>
+      <td>• 最小金额<br/>• 最大金额</td>
       <td>交易金额范围（美元）</td>
     </tr>
   </tbody>
 </table>
 
-### 策略行动
+### 规则操作
 
 <table class="table six-columns">
   <thead>
@@ -144,80 +88,66 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
   <tbody>
     <tr>
       <td>批准</td>
-      <td>• 入币交易：释放资金<br/>• 提币交易：允许继续</td>
+      <td>• 转入交易：释放资金<br/>• 转出交易：允许继续</td>
     </tr>
     <tr>
       <td>批准并发出警报</td>
-      <td>• 入币交易：释放资金并发送风险交易通知<br/>• 提币交易：允许继续并发送风险交易通知</td>
+      <td>• 转入交易：释放资金并发送风险交易通知<br/>• 转出交易：允许继续并发送风险交易通知</td>
     </tr>
     <tr>
       <td>拒绝</td>
-      <td>• 入币交易：<br/>&nbsp;&nbsp;• 标记交易并且冻结资金 <br/>&nbsp;&nbsp;&nbsp;&nbsp;• *注意：如果您使用 [MPC 钱包的自动代币归集功能](/cn/portal/auto-sweep-overview)，冻结的资金将不会被包含在归集操作中。*<br/>• 提币交易：阻止交易<br/>• 始终发送风险交易通知</td>
-    </tr>
-    <tr>
-      <td>人工审核 *(即将推出)*</td>
-      <td>• 在批准或拒绝交易前，需要由您的团队进行审核。</td>
+      <td>• 转入交易：<br/>&nbsp;&nbsp;• 标记交易并且冻结资金 <br/>&nbsp;&nbsp;&nbsp;&nbsp;• 注意：如果您使用 [MPC 钱包的自动代币归集功能](/cn/portal/auto-sweep-overview)，冻结的资金将不会被包含在归集操作中。<br/>• 转出交易：阻止交易<br/>• 始终发送风险交易通知</td>
     </tr>
   </tbody>
 </table>
 
+4. 点击**提交**启用规则。
+
 <Note>
 当 Screening 完成交易扫描后：
-- 由于[防重複規則](#防重複規則)，每笔交易最多只会匹配一个策略
-- 当交易的方向、风险级别和金额范围符合策略的标准时，则触发该策略
-- 找到匹配的策略后，Screening 将执行该策略所指定的行动
+- 由于防重复规则（见下文），每笔交易最多只会匹配一个规则
+- 当交易的方向、风险级别（CipherOwl）或风险评分（Elliptic）以及金额范围符合规则的条件时，则触发该规则
+- 找到匹配的规则后，Screening 将执行该规则所指定的操作
 </Note>
 
-<Warning>如果没有匹配的策略，交易将自动继续进行，**不会进行风险评估**。为确保安全的风险管理，请在使用 Screening 前设置好相应的策略，以涵盖所有可能的交易场景。</Warning>
+<Warning>如果没有匹配的规则，交易将自动审核通过。为确保安全的风险管理，请在使用 Screening 前设置好相应的规则，以涵盖所有可能的交易场景。</Warning>
 
-## 创建、编辑和删除策略
-
-### 创建策略
-
-创建新策略：
-1. 进入[风险处置策略界面](#风险处置策略界面)
-2. 点击**创建策略**
-<img src="/en/images/portal-apps/screening/creating-post-screening-policy.svg" className="screenshot_modal" alt="创建风险处置策略对话框"/>
-
-3. 配置策略的触发条件和处理方式（参见[策略标准](#策略标准)和[策略行动](#策略行动)）
-4. 点击**提交**启用策略
-
-
-
-#### 防重複規則
-系统会防止创建重复的策略。如果新策略与现有的活动策略具有以下所有共同点，则无法创建：
-- 相同方向（入币或提币）
-- 相同风险级别
+#### 防重复规则
+系统会防止创建重复的规则。如果新规则与现有的活动规则具有以下所有共同点，则无法创建：
+- 相同方向（转入交易或转出交易）
+- 相同风险级别/评分范围
 - 重复金额范围
 
 例如：
 ```
-策略 1：入币 + 中等风险 + ≥ 500 + < 1000 美元（有效）
-策略 2：入币 + 中等风险 + ≥ 400 + < 7000 美元（无效 - 金额范围与策略 1 重复）
-策略 2：入币 + 中等风险 + ≥ 600 + < 700 美元（无效 - 金额范围与策略 1 重复）
-策略 2：入币 + 中等风险 + ≥ 1000 + < 7000 美元（有效 - 金额范围不重复）
-策略 3：提币 + 中等风险 + ≥ 1000 + < 7000 美元（有效 - 不同方向）
+规则 1：转入交易 + 中等风险 + ≥ 500 + < 1000 美元（有效）
+规则 2：转入交易 + 中等风险 + ≥ 400 + < 7000 美元（无效 - 金额范围与规则 1 重复）
+规则 2：转入交易 + 中等风险 + ≥ 600 + < 700 美元（无效 - 金额范围与规则 1 重复）
+规则 2：转入交易 + 中等风险 + ≥ 1000 + < 7000 美元（有效 - 金额范围不重复）
+规则 3：转出交易 + 中等风险 + ≥ 1000 + < 7000 美元（有效 - 不同方向）
 ```
 
 <Warning>
-上述策略示例仅供说明之用。您的实际策略应根据团队的特定合规要求和风险管理策略量身定制。
+上述规则示例仅供说明之用。您的实际规则应根据团队的特定合规要求和风险管理规则量身定制。
 
-有关风险评估和策略创建的指导，请参阅 CipherOwl 的[地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)文档，或通过 [CipherOwl](https://www.cipherowl.com/) 网站咨询其合规专家。
+有关 CipherOwl，请参阅 CipherOwl 的[地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)文档，或通过 [CipherOwl](https://www.cipherowl.com/) 网站咨询其合规专家。
+
+有关 Elliptic，请参阅其[解读风险评分](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)和[配置您的风险规则](https://help.elliptic.co/en/articles/8216353-configuring-your-risk-rules)文档。
 </Warning>
 
-### 编辑策略
+### 编辑规则
 
-1. 进入[风险处置策略界面](#风险处置策略界面)
-2. 点击要编辑的策略旁边的 <img src="/en/images/common/icon_edit.svg" className="icon" alt="编辑图标"/>
-3. 在**编辑风险处置策略**对话框中，根据需要修改策略条件和行动（参见[策略条件](#策略条件)和[策略行动](#策略行动)）
-4. 点击**提交**
+1. 进入[风险处置规则界面](#风险处置规则界面)。  
+2. 点击要编辑的规则旁边的 <img src="/en/images/common/icon_edit.svg" className="icon" alt="编辑图标"/>。
+3. 在**编辑风险处置规则**对话框中，根据需要修改规则的条件和操作（参见上文**规则条件**和**规则操作**）。
+4. 点击**提交**。
 
-<Info>编辑策略时同样适用[防重複規則](#防重複規則)。</Info>
+<Info>编辑规则时同样适用上文的防重复规则。</Info>
 
-### 删除策略
+### 删除规则
 
-1. 进入[风险处置策略界面](#风险处置策略界面)
-2. 点击要删除的策略旁边的 <img src="/en/images/common/icon_delete.svg" className="icon" alt="删除图标"/>
-3. 在**删除策略**对话框中，点击**是**确认删除
+1. 进入[风险处置规则界面](#风险处置规则界面)。
+2. 点击要删除的规则旁边的 <img src="/en/images/common/icon_delete.svg" className="icon" alt="删除图标"/>。
+3. 在**删除规则**对话框中，点击**是**确认删除。
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>
