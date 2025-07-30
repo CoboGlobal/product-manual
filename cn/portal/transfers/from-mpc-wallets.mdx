@@ -27,6 +27,7 @@ import Fee from '/snippets/transaction-fee-cn.mdx';
    - 通过 WaaS API 发起的提币：您的 [Callback Endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/introduction) 需要返回 "ok" 以确认提币请求。
 3. **[风控](/cn/portal/risk-controls/tx-policies-overview)**：如果已配置，Cobo Portal 中的交易风控将评估提币请求。当需要人工审核时，审批员需要在 Cobo Guard 上审批该交易。
 4. **签名**：Cobo 根据在线状态等条件选择一个可用的[签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group)来签署交易。请确保至少有一个签名人在线。您可以通过 Cobo Portal 查看签名人是否在线。详情请参见本文**查看签名人状态**一节。
+   <Note>如果您使用带有 [TSS Node Callback 机制](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/callback-server-overview)的[服务端签名人](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/tss-node-overview)，您的 TSS Node Callback 服务器必须首先批准签名请求，然后服务端签名人才能继续进行交易签名。</Note>
 5. **广播**：Cobo 创建交易并将其广播到网络。
 
 

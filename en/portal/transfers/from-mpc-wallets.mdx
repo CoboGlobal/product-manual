@@ -27,6 +27,8 @@ The diagram below outlines the withdrawal flow from an Organization-Controlled W
    - For WaaS API initiated withdrawals: Your [callback endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) needs to respond with "ok" to confirm.
 3. **[Risk control](/en/portal/risk-controls/tx-policies-overview)**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Cobo Guard.
 4. **Sign the transaction**: A [co-signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) will be selected to sign the transaction based on their online status and other criteria. Ensure that at least one of your co-signers is online. You can check if a co-signer is online through Cobo Portal. For details, see [Check co-signer status](#check-co-signer-status).
+   
+   <Note>If you use a [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) with the [TSS Node callback mechanism](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/callback-server-overview), your TSS Node callback server must first approve the signing request before the server co-signer can proceed with transaction signing.</Note>
 5. **Broadcast the transaction**: Cobo creates the transaction and broadcasts it to the network.
 
 
