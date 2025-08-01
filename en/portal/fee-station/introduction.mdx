@@ -2,20 +2,58 @@
 title: "Introduction to Fee Station"
 sidebarTitle: "Introduction"
 lang: "en"
-description: "Discover Fee Station, your all-in-one solution for managing expenses and automating payments on Cobo Portal."
+description: "Discover Fee Station, your all-in-one solution for managing expenses and automating fee payments on Cobo Portal."
 ---
 
-## What is Fee Station?
+## What is Fee Station
 
-Fee Station is your all-in-one solution for managing expenses. It automatically settles your Cobo bills and transaction fees for your wallets. With Fee Station, you can enjoy the convenience of having your expenses deducted from a single, integrated account.
+On different blockchains, transactions require different native tokens (gas tokens like ETH, TRX, or SOL) to pay for gas fees. This means you need to prepare and manage gas balances for each chain. If any address runs out of gas, transactions may fail.
 
-## Key features
+Fee Station helps you simplify this. It’s a one-stop fee management platform on Cobo Portal. Once any member tops up the Fee Station account, it can automatically cover on-chain gas fees for all [MCP Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure.
 
-### Simplified Payment Process
-Fee Station automatically handles your Cobo bills, preventing overdue payments and eliminating the need to track outstanding bills.
+<Note>Currently, Fee Station supports EVM and TRON chains. Solana support is coming soon.</Note>
 
-### Automatic Payment of Transaction Fees
+## Who should use Fee Station
 
-Fee Station can be configured to automatically cover transaction fees for your MPC Wallets and Custodial Wallets (Web3 Wallets). This feature eliminates the need for ongoing balance monitoring and manual top-ups, ensuring that your transactions from these wallets are always covered.
+Fee Station is ideal for any Web3 team looking to simplify on-chain fee management, especially:
+
+- **Exchanges and wallet service providers**: Centrally manage and prepay gas fees for end-user transactions, reducing operational overhead.
+- **Payment service providers**: Use flat-rate or unified billing models to abstract away blockchain complexity and deliver smoother user experiences.
+- **Enterprise developers using Cobo wallets**: Automate fee budgeting, track spending in real time, and receive Webhook alerts for transaction status and balance changes.
+
+## What Fee Station can do for you
+
+### Automatic gas fee handling
+
+Fee Station can automatically cover gas fees for transactions initiated from MCP Wallets and Web3 Wallets. You can choose to cover fees only when the wallet balance is insufficient, or to always cover them. Once configured, the system automatically checks the condition and processes the gas fee without manual input.
+
+### Flexible deposit options
+
+You can deposit gas tokens directly, or simply use USD stablecoins like USDT or USDC as a unified balance. Fee Station will convert them into the required gas tokens at the time of transaction, avoiding the manual work of preparing tokens for each chain.
+
+### Significant savings on TRON gas fees
+
+Using Fee Station for TRON transactions can reduce your gas costs by up to 80%. Higher-volume transactions enjoy even greater discounts. Contact our sales team to learn more details.
+
+### Unified fee settlement
+
+In addition to covering gas fees, your Fee Station balance can also be used to settle all platform-related charges within Cobo Portal, including service fees, Cobo Bills, and commission fees. You don't need to maintain separate balances for each fee type. A single balance simplifies the billing process and gives you a clear, consolidated view of your spending.
+
+### API and webhook integration
+
+Fee Station offers standardized APIs and webhook support, allowing your system to access real-time fee data and receive timely notifications. This makes monitoring and operations tracking easier and more efficient.
+
+For more details, please refer to the [Fee Station API](https://www.cobo.com/developers/v2/api-references/feestation/get-fee-station-transaction-information) and [Webhook documentation](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-event-type#webhook-事件类型).
+
+## Benefits of using Fee Station
+
+| **Category**            | **Without Fee Station**                                    | **With Fee Station**                                         |
+| ----------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| **Gas preparation**     | Manually prepare gas tokens for each individual blockchain | Deposit gas tokens or USD stablecoins once, and Fee Station will automatically cover gas fees. |
+| **Gas fee strategy**    | Manual intervention required                               | Automatically applies configured rules, such as paying only when the wallet balance is insufficient, or always paying |
+| **Fee settlement**      | Separate records across multiple chains and tokens         | All fees settled through a single account, easier to track   |
+| **Failed transactions** | High risk of failure due to insufficient gas               | Automatically detect and top up gas, significantly lower failure rate |
+| **Maintenance cost**    | Frequent manual operations, time-consuming                 | One-time setup enables ongoing automation with less operational effort |
+| **Data tracking**       | No unified record of fee activity                          | Exportable and well-organized records of deposits and spending |
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
