@@ -29,7 +29,7 @@ description: "Learn how to create and manage Address Lists in Cobo Portal, facil
 <img src="/en/images/risk-controls/batch-upload.png" className="screenshot_full_screen"/>
 
    - Batch upload addresses
-      1. Download the template file, which outlines the format requirements for uploading addresses. The template includes columns for **Address** and **Label**, where you can input address data and labels (labels are optional and limited to 100 characters). For addresses without labels in the uploaded file, if the address already exists in the address book with a label, the system will automatically fill in that label.
+      1. Download the template file, which outlines the format requirements for uploading addresses. The template includes columns for **Address** and **Label**, where you can input address data and labels (labels are optional and limited to 100 characters). The system prioritizes labels from the uploaded file, and if no label is provided in the uploaded file, it will automatically sync labels from the Address Book.
       2. Click **Choose File** to select and upload your address file. Please ensure that the file is in CSV format and does not exceed 1MB in size.
       3. Upon successful upload, the name of the uploaded file will be displayed. If you want to replace the currently uploaded file with a new one, click **Choose File** again.
          <Note>If the uploaded file contains addresses that already exist in the current address list, the system will automatically filter out these duplicate addresses, retaining only the new addresses.</Note>
@@ -40,7 +40,7 @@ description: "Learn how to create and manage Address Lists in Cobo Portal, facil
       2. In the pop-up window, enter an address and optionally add a label for each address (limited to 100 characters). To add more than one address, click **+ Add**.
          <Info>
          - If the address entered already exists in the address list or has been added to the current pop-up window, an error message will appear and the addition will fail.
-         - If the address already exists in the address book with a label, the system will automatically fill in that label, which you can modify.
+         - If the address already exists in the Address Book with a label, the system will automatically fill in that label, which you can modify.
          </Info>
       3. Click **Submit** and, if required, complete the 2FA verification.
 
@@ -54,12 +54,12 @@ You can set labels when batch uploading or manually adding addresses. For addres
 
 **Differences between Address Lists and Address Book**:
 - **Address Book**: Global address information storage, typically maintained by withdrawal operators, used for quick address lookup during transfers
-- **Address Lists**: White/blacklists for risk control policies, typically managed by internal risk control or security operations specialists, used to establish transaction legitimacy rules
+- **Address Lists**: White/blacklists for transaction policies, typically managed by internal risk control or security operations specialists, used to establish transaction legitimacy rules
 
 **Label synchronization mechanism**:
    - **When first adding addresses**:
-      - Batch upload: For addresses without labels in the uploaded file, if the address already exists in the address book with a label, the system will automatically fill in that label.
-      - Manual addition: If the address already exists in the address book with a label, the system will automatically fill in that label, which you can modify.
-   - **When changing labels**: Labels in transaction policy address lists and the address book are independent of each other. Changing a label in one place does not affect the label in the other.
+      - Batch upload: The system prioritizes labels from the uploaded file, and if no label is provided in the uploaded file, it will automatically sync labels from the Address Book.
+      - Manual addition: If the address already exists in the Address Book with a label, the system will automatically fill in that label, which you can modify.
+   - **When changing labels**: Labels in transaction policy address lists and the Address Book are independent of each other. Changing a label in one place does not affect the label in the other.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
