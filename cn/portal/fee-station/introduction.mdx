@@ -47,6 +47,8 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 
 ## 使用 Fee Station 的优势
 
+下表展示了使用 Fee Station 前后在链上费用管理等方面的差异，帮助你直观了解其带来的优势：
+
 | **功能维度** | **使用 Fee Station 前**          | **使用 Fee Station 后**                                    |
 | ------------ | -------------------------------- | ---------------------------------------------------------- |
 | Gas 准备     | 每条链都需要手动准备 Gas Token   | 可充值 Gas Token 或美元稳定币，统一由 Fee Station 自动代付 |
@@ -55,5 +57,14 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | 失败交易     | Gas 不足导致交易失败风险高       | 自动检测并补足 Gas，显著降低失败率                         |
 | 维护成本     | 人工操作频繁、耗时               | 一次配置即可自动运行，减少维护工作                         |
 | 数据追踪     | 缺乏统一的费用记录               | 可在 Fee Station 导出完整充值与支出记录                    |
+
+## 支持的链
+
+下表展示了 Fee Station 在不同 Gas 费用支付方式下支持的链：
+
+| Gas 费支付方式                 | 支持的链 |
+| ------------------------ | -------- |
+| USD 稳定币  | **EVM 链：** ETH， BSC_BNB， MATIC， BASE_ETH， ARBITRUM_ETH， MNT， AVAXC， OPT_ETH<br />**TRON 链：** TRON |
+| Gas Token   | **EVM 测试链（仅[开发环境](https://www.cobo.com/developers/v2_cn/guides/overview/environments)可用）：** SETH， TBSC_BNB<br />**EVM 链：** ETH， CHZ， CHZ2， CRO， MNT， MTR， ETHW， ETC， RBTC， TOMO， CMT， BSC_BNB， MATIC， FTM， AVAXC， ARBITRUM_ETH， BASE_ETH， OPT_ETH<br />**TRON 链：** TTRON（仅开发环境可用），TRON |
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
