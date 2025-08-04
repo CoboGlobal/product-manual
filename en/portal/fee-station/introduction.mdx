@@ -2,7 +2,7 @@
 title: "Introduction to Fee Station"
 sidebarTitle: "Introduction"
 lang: "en"
-description: "Discover Fee Station, your all-in-one solution for managing expenses and automating fee payments on Cobo Portal."
+description: "Fee Station is your all-in-one solution for managing expenses and automating gas fee handling on Cobo Portal."
 ---
 
 ## What is Fee Station
@@ -58,13 +58,80 @@ The table below shows the differences between using Fee Station and not using it
 | **Maintenance cost**    | Frequent manual operations, time-consuming                 | One-time setup enables ongoing automation with less operational effort |
 | **Data tracking**       | No unified record of fee activity                          | Exportable and well-organized records of deposits and spending |
 
-## Supported chains
+## Supported chains for gas fee payment
 
 The table below shows the chains supported by Fee Station for different ways of paying gas fees:
 
-| How to Pay Gas Fees         | Supported Chains |
-| ------------------------------ | ---------------- |
-| USD stablecoin    | **EVM Chain:** ETH, BSC_BNB, MATIC, BASE_ETH, ARBITRUM_ETH, MNT, AVAXC, OPT_ETH<br />**TRON Chain:** TRON |
-| Gas token           | **EVM Test Chain (available only in [development environment](https://www.cobo.com/developers/v2/guides/overview/environments)):** SETH, TBSC_BNB<br />**EVM Chain:** ETH, CHZ, CHZ2, CRO, MNT, MTR, ETHW, ETC, RBTC, TOMO, CMT, BSC_BNB, MATIC, FTM, AVAXC, ARBITRUM_ETH, BASE_ETH, OPT_ETH<br />**TRON Chain:** TTRON (available only in development environment), TRON |
+| Chain                       | Support gas fee paid by USD stablecoin | Support gas fee paid by gas token |
+| ------------------------ | --------- | --------- |
+| Ethereum                 | ✅        | ✅        |
+| BNB Smart Chain (BSC)     | ✅        | ✅        |
+| Polygon                  | ✅        | ✅        |
+| Base                     | ✅        | ✅        |
+| Arbitrum                 | ✅        | ✅        |
+| Mantle                   | ✅        | ✅        |
+| Avalanche C-Chain        | ✅        | ✅        |
+| Optimism                 | ✅        | ✅        |
+| Tron                     | ✅        | ✅        |
+| Chiliz                   | -         | ✅        |
+| Chiliz 2                 | -         | ✅        |
+| Cronos                   | -         | ✅        |
+| Meter                    | -         | ✅        |
+| EthereumPoW              | -         | ✅        |
+| Ethereum Classic         | -         | ✅        |
+| Rootstock (RBTC)         | -         | ✅        |
+| TomoChain                | -         | ✅        |
+| CyberMiles               | -         | ✅        |
+| SETH (available only in [development environment](https://www.cobo.com/developers/v2/guides/overview/environments))       | -         | ✅        |
+| TBSC (available only in development environment)       | -         | ✅        |
+| TTRON (available only in development environment)      | -         | ✅        |
+
+## Supported token types
+
+Fee Station supports two types of tokens for deposits, used to pay for gas fees and settle Cobo Portal-related fees.
+
+### USD stablecoin (recommended)
+
+You can deposit USD stablecoins to cover the gas fees of multiple chains. No need to prepare gas tokens for each chain.  
+
+| Chain        | Supported USD Stablecoin               |
+| --------- | ------------------------------ |
+| Tron        | USDT                         |
+| Ethereum    | USDC, USDT                   |
+| Solana      | USDT, USDC                   |
+| Polygon     | USDT, USDC, USDC2            |
+| Avalanche   | USDT, USDC                   |
+| Optimism    | USDT, USDC                   |
+| Arbitrum    | USDT, USDCOIN                |
+| BSC         | USDT                         |
+
+### Gas token
+
+You can also deposit the native gas token of the chain, and Fee Station will pay the gas fee based on the transaction needs.
+
+| Chain                       | Gas Token |
+| ------------------------ | --------- |
+| Ethereum                 | ETH       |
+| BNB Smart Chain (BSC)     | BNB       |
+| Polygon                  | MATIC     |
+| Base                     | ETH       |
+| Arbitrum                 | ETH       |
+| Mantle                   | MNT       |
+| Avalanche C-Chain        | AVAX      |
+| Optimism                 | ETH       |
+| Tron                     | TRX       |
+| Chiliz                   | CHZ       |
+| Chiliz 2                 | CHZ       |
+| Cronos                   | CRO       |
+| Meter                    | MTR       |
+| EthereumPoW              | ETHW      |
+| Ethereum Classic         | ETC       |
+| Rootstock (RBTC)         | RBTC      |
+| TomoChain                | TOMO      |
+| CyberMiles               | CMT       |
+| SETH (available only in development environment)       | ETH       |
+| TBSC (available only in development environment)       | BNB       |
+| TTRON (available only in development environment)      | TRX       |
+
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
