@@ -1,0 +1,64 @@
+---
+title: "Screening 设置"
+sidebarTitle: "设置"
+lang: "zh-hans"
+description: "配置 Screening 应用的设置，如 AML 服务商、扫描超时和通知。"
+---
+
+<Note>
+Screening App 将很快提供中文本地化版本。目前，本文档所有 UI 名称（如按钮名称）和术语均为 AI 翻译，可能与您在使用 App 时看到的英文 UI 不符。如需查看实际的英文 UI 名称，请参阅相应的英文手册：[Configure Screening settings](/en/apps/screening/screening-settings)
+</Note>
+
+Screening 设置允许您自定义应用的运行方式，包括 AML 服务商配置、扫描行为和通知。
+
+<Info>
+访问设置：
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)
+2. 点击 <img src="/en/images/common/icon_apps.svg" className="icon" alt="App 图标"/> 打开 Cobo Portal App
+3. 找到并打开 **Screening**
+4. 点击 **设置**
+</Info>
+
+## AML 服务商设置
+
+在此部分配置您的 AML/KYT 服务商。目前，Screening 应用支持两个服务商：CipherOwl 和 Elliptic。
+
+<img src="/en/images/portal-apps/screening/settings-provider.png" className="screenshot_modal" alt="AML 服务商设置"/>
+
+| 设置 | 描述 |
+| --- | --- |
+| AML 服务商 | 在 CipherOwl 和 Elliptic 之间选择 |
+| API Key | 选择 Elliptic 时必填 |
+| Secret | 选择 Elliptic 时必填 |
+
+<Note>选择 Elliptic 时，请确保输入有效的 API Key 和 Secret。</Note>
+
+## AML 和扫描设置
+
+自定义交易扫描在不同场景下的行为。
+
+<img src="/en/images/portal-apps/screening/settings-aml.png" className="screenshot_modal" alt="扫描超时设置"/>
+
+- **扫描超时**：
+
+    配置 AML 扫描花费太长时间的处理方式。如果未选中这些选项，交易将保持在**等待扫描**的状态，直到收到结果。
+
+    <Info>设置适当的超时值对于安全性和用户体验之间的平衡很重要。</Info>
+
+- **退款和隔离扫描**：
+
+    确定是否对退款和隔离应用 AML 扫描。如果未选中这些选项，退款和隔离交易将自动跳过扫描。
+
+## 通知设置
+
+管理重要扫描事件的邮件通知接收人。
+
+<img src="/en/images/portal-apps/screening/settings-notification.png" className="screenshot_modal" alt="管理通知接收人"/>
+
+<Note>
+建议将风控和合规团队加入通知接收人，以确保对扫描活动进行适当监督。
+</Note>
+
+<Info>必须保留至少一个接收人 - 您不能删除唯一剩余的接收人。</Info>
+
+<Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>

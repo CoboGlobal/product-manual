@@ -490,7 +490,7 @@
             "en/apps/screening/settings",
             "en/apps/screening/risk-policies",
             "en/apps/screening/viewscreening",
-            "en/apps/screening/recipients"
+            "en/apps/screening/screening-settings"
           ]
         },
         {
@@ -1051,7 +1051,7 @@
             "cn/apps/screening/settings",
             "cn/apps/screening/risk-policies",
             "cn/apps/screening/viewscreening",
-            "cn/apps/screening/recipients"
+            "cn/apps/screening/screening-settings"
           ]
         },
         {
