@@ -347,15 +347,7 @@
           "group": "Fee Station",
           "pages": [
             "en/portal/fee-station/introduction",
-            {
-              "group": "Set up Fee Station",
-              "pages": [
-                "en/portal/fee-station/overview",
-                "en/portal/fee-station/set-up-for-mpc"
-              ]
-            },
-            "en/portal/fee-station/deposit",
-            "en/portal/fee-station/transaction-records"
+            "en/portal/fee-station/set-up"
           ]
         },
         {
@@ -901,15 +893,7 @@
           "group": "Fee Station",
           "pages": [
             "cn/portal/fee-station/introduction",
-            {
-              "group": "设置 Fee Station",
-              "pages": [
-                "cn/portal/fee-station/overview",
-                "cn/portal/fee-station/set-up-for-mpc"
-              ]
-            },
-            "cn/portal/fee-station/deposit",
-            "cn/portal/fee-station/view-tx-records"
+            "cn/portal/fee-station/set-up"
           ]
         },
         {
@@ -1247,8 +1231,36 @@
       "destination": "/en/portal/developer-console/callbacks-register"
     },
     {
-      "source": "/cn/portal/fee-station/set-up-mpc",
-      "destination": "/cn/portal/fee-station/set-up-for-mpc"
+      "source": "/cn/portal/fee-station/overview",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/cn/portal/fee-station/set-up-for-mpc",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/cn/portal/fee-station/deposit",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/cn/portal/fee-station/view-tx-records",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/overview",
+      "destination": "/en/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/set-up-for-mpc",
+      "destination": "/en/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/deposit",
+      "destination": "/en/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/transaction-records",
+      "destination": "/en/portal/fee-station/set-up"
     },
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
