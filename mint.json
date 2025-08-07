@@ -347,15 +347,7 @@
           "group": "Fee Station",
           "pages": [
             "en/portal/fee-station/introduction",
-            {
-              "group": "Set up Fee Station",
-              "pages": [
-                "en/portal/fee-station/overview",
-                "en/portal/fee-station/set-up-for-mpc"
-              ]
-            },
-            "en/portal/fee-station/deposit",
-            "en/portal/fee-station/transaction-records"
+            "en/portal/fee-station/set-up"
           ]
         },
         {
@@ -901,15 +893,7 @@
           "group": "Fee Station",
           "pages": [
             "cn/portal/fee-station/introduction",
-            {
-              "group": "设置 Fee Station",
-              "pages": [
-                "cn/portal/fee-station/overview",
-                "cn/portal/fee-station/set-up-for-mpc"
-              ]
-            },
-            "cn/portal/fee-station/deposit",
-            "cn/portal/fee-station/view-tx-records"
+            "cn/portal/fee-station/set-up"
           ]
         },
         {
