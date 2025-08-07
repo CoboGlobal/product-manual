@@ -25,10 +25,10 @@
   },
   "versions": [
     {
-      "name": "English"
+      "name": "🌐 English"
     },
     {
-      "name": "简体中文"
+      "name": "🌐 简体中文"
     }
   ],
   "topbarLinks": [
@@ -53,64 +53,52 @@
     {
       "name": "Cobo Portal",
       "url": "en/portal",
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "name": "Cobo Portal Apps",
       "url": "en/apps",
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "name": "Cobo Accounts",
       "url": "en/accounts",
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "name": "Cobo Guard",
       "url": "en/guard",
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "name": "Cobo Connect",
       "url": "en/cobo-connect",
-      "version": "English"
-    },
-    {
-      "name": "Private Content",
-      "url": "private",
-      "isDefaultHidden": true,
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "name": "Cobo Portal",
       "url": "cn/portal",
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "name": "Cobo Portal Apps",
       "url": "cn/apps",
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "name": "Cobo Accounts",
       "url": "cn/accounts",
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "name": "Cobo Guard",
       "url": "cn/guard",
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "name": "Cobo Connect",
       "url": "cn/cobo-connect",
-      "version": "简体中文"
-    },
-    {
-      "name": "Private Content",
-      "url": "private",
-      "isDefaultHidden": true,
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     }
   ],
   "navigation": [
@@ -136,7 +124,7 @@
           ]
         }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "GET STARTED",
@@ -144,7 +132,7 @@
         "en/portal/quick-start-guide-custodial-wallets",
         "en/portal/quick-start-guide-mpc"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "WALLETS & TRANSACTIONS",
@@ -212,40 +200,7 @@
                 "en/portal/mpc-wallets/ocw/key-share-verification",
                 "en/portal/mpc-wallets/ocw/dapp-interaction"
               ]
-            },
-            {
-              "group": "User-Controlled Wallets",
-              "pages": [
-                "en/portal/mpc-wallets/ucw/introduction",
-                "en/portal/mpc-wallets/ucw/set-up",
-                "en/portal/mpc-wallets/ucw/project-management",
-                "en/portal/mpc-wallets/ucw/vault-management",
-                "en/portal/mpc-wallets/ucw/wallet-management"
-              ]
             }
-          ]
-        },
-        {
-          "group": "Smart Contract Wallets",
-          "pages": [
-            "en/portal/smart-contract-wallets/introduction",
-            {
-              "group": "Set up Smart Contract Wallets",
-              "pages": [
-                "en/portal/smart-contract-wallets/create",
-                "en/portal/smart-contract-wallets/import"
-              ]
-            },
-            "en/portal/smart-contract-wallets/manage",
-            "en/portal/smart-contract-wallets/manage-delegate-keys",
-            {
-              "group": "Deposit and withdraw assets",
-              "pages": [
-                "en/portal/smart-contract-wallets/deposit-assets",
-                "en/portal/smart-contract-wallets/withdraw-assets"
-              ]
-            },
-            "en/portal/smart-contract-wallets/dapp-interaction"
           ]
         },
         {
@@ -357,7 +312,7 @@
           ]
         }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "MANAGE YOUR ACCOUNTS",
@@ -415,7 +370,7 @@
         },
         "en/portal/dashboard/introduction"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "DEVELOPER CONSOLE",
@@ -443,14 +398,47 @@
           ]
         }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "RESOURCES",
       "pages": [
-        "en/portal/glossary"
+        "en/portal/glossary",
+        {
+          "group": "User-Controlled Wallets",
+          "pages": [
+            "en/portal/mpc-wallets/ucw/introduction",
+            "en/portal/mpc-wallets/ucw/set-up",
+            "en/portal/mpc-wallets/ucw/project-management",
+            "en/portal/mpc-wallets/ucw/vault-management",
+            "en/portal/mpc-wallets/ucw/wallet-management"
+          ]
+        },
+        {
+          "group": "Smart Contract Wallets",
+          "pages": [
+            "en/portal/smart-contract-wallets/introduction",
+            {
+              "group": "Set up Smart Contract Wallets",
+              "pages": [
+                "en/portal/smart-contract-wallets/create",
+                "en/portal/smart-contract-wallets/import"
+              ]
+            },
+            "en/portal/smart-contract-wallets/manage",
+            "en/portal/smart-contract-wallets/manage-delegate-keys",
+            {
+              "group": "Deposit and withdraw assets",
+              "pages": [
+                "en/portal/smart-contract-wallets/deposit-assets",
+                "en/portal/smart-contract-wallets/withdraw-assets"
+              ]
+            },
+            "en/portal/smart-contract-wallets/dapp-interaction"
+          ]
+        }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "OVERVIEW",
@@ -466,7 +454,7 @@
           ]
         }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "AVAILABLE APPS",
@@ -490,7 +478,7 @@
             "en/apps/screening/settings",
             "en/apps/screening/risk-policies",
             "en/apps/screening/viewscreening",
-            "en/apps/screening/recipients"
+            "en/apps/screening/screening-settings"
           ]
         },
         {
@@ -595,7 +583,7 @@
           ]
         }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "OVERVIEW",
@@ -603,7 +591,7 @@
         "en/accounts/introduction",
         "en/accounts/troubleshoot"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "GET STARTED",
@@ -612,7 +600,7 @@
         "en/accounts/log-in",
         "en/accounts/set-up-mfa"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "MANAGE",
@@ -633,14 +621,14 @@
           ]
         }
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "OVERVIEW",
       "pages": [
         "en/guard/introduction"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "GET STARTED",
@@ -648,7 +636,7 @@
         "en/guard/download",
         "en/guard/set-up"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "MANAGE",
@@ -657,7 +645,7 @@
         "en/guard/generate-and-back-up-key-shares",
         "en/guard/reset"
       ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "OVERVIEW",
@@ -666,14 +654,7 @@
         "en/cobo-connect/set-up",
         "en/cobo-connect/interact-with-dapps"
       ],
-      "version": "English"
-    },
-    {
-      "group": "Private Content",
-      "pages": [
-        "en/private/introduction"
-      ],
-      "version": "English"
+      "version": "🌐 English"
     },
     {
       "group": "概览",
@@ -697,7 +678,7 @@
           ]
         }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "快速开始",
@@ -705,7 +686,7 @@
         "cn/portal/quick-start-guide-custodial-wallets",
         "cn/portal/quick-start-guide-mpc"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "钱包与交易",
@@ -773,40 +754,7 @@
                 "cn/portal/mpc-wallets/ocw/key-share-verification",
                 "cn/portal/mpc-wallets/ocw/dapp-interaction"
               ]
-            },
-            {
-              "group": "终端用户钱包",
-              "pages": [
-                "cn/portal/mpc-wallets/ucw/introduction",
-                "cn/portal/mpc-wallets/ucw/set-up",
-                "cn/portal/mpc-wallets/ucw/project-management",
-                "cn/portal/mpc-wallets/ucw/vault-management",
-                "cn/portal/mpc-wallets/ucw/wallet-management"
-              ]
             }
-          ]
-        },
-        {
-          "group": "智能合约钱包",
-          "pages": [
-            "cn/portal/smart-contract-wallets/introduction",
-            {
-              "group": "设置智能合约钱包",
-              "pages": [
-                "cn/portal/smart-contract-wallets/create",
-                "cn/portal/smart-contract-wallets/import"
-              ]
-            },
-            "cn/portal/smart-contract-wallets/manage",
-            "cn/portal/smart-contract-wallets/manage-delegate-keys",
-            {
-              "group": "充币和提币",
-              "pages": [
-                "cn/portal/smart-contract-wallets/deposit-assets",
-                "cn/portal/smart-contract-wallets/withdraw-assets"
-              ]
-            },
-            "cn/portal/smart-contract-wallets/dapp-interaction"
           ]
         },
         {
@@ -918,7 +866,7 @@
           ]
         }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "账户管理",
@@ -976,7 +924,7 @@
         },
         "cn/portal/dashboard/introduction"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "开发者控制台",
@@ -1004,14 +952,47 @@
           ]
         }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "资源文档",
       "pages": [
-        "cn/portal/glossary"
+        "cn/portal/glossary",
+        {
+          "group": "终端用户钱包",
+          "pages": [
+            "cn/portal/mpc-wallets/ucw/introduction",
+            "cn/portal/mpc-wallets/ucw/set-up",
+            "cn/portal/mpc-wallets/ucw/project-management",
+            "cn/portal/mpc-wallets/ucw/vault-management",
+            "cn/portal/mpc-wallets/ucw/wallet-management"
+          ]
+        },
+        {
+          "group": "智能合约钱包",
+          "pages": [
+            "cn/portal/smart-contract-wallets/introduction",
+            {
+              "group": "设置智能合约钱包",
+              "pages": [
+                "cn/portal/smart-contract-wallets/create",
+                "cn/portal/smart-contract-wallets/import"
+              ]
+            },
+            "cn/portal/smart-contract-wallets/manage",
+            "cn/portal/smart-contract-wallets/manage-delegate-keys",
+            {
+              "group": "充币和提币",
+              "pages": [
+                "cn/portal/smart-contract-wallets/deposit-assets",
+                "cn/portal/smart-contract-wallets/withdraw-assets"
+              ]
+            },
+            "cn/portal/smart-contract-wallets/dapp-interaction"
+          ]
+        }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "概览",
@@ -1027,7 +1008,7 @@
           ]
         }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "已上架 APP",
@@ -1051,7 +1032,7 @@
             "cn/apps/screening/settings",
             "cn/apps/screening/risk-policies",
             "cn/apps/screening/viewscreening",
-            "cn/apps/screening/recipients"
+            "cn/apps/screening/screening-settings"
           ]
         },
         {
@@ -1156,7 +1137,7 @@
           ]
         }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "概览",
@@ -1164,7 +1145,7 @@
         "cn/accounts/introduction",
         "cn/accounts/troubleshoot"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "快速开始",
@@ -1173,7 +1154,7 @@
         "cn/accounts/log-in",
         "cn/accounts/set-up-mfa"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "管理",
@@ -1194,14 +1175,14 @@
           ]
         }
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "概览",
       "pages": [
         "cn/guard/introduction"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "快速开始",
@@ -1209,7 +1190,7 @@
         "cn/guard/download",
         "cn/guard/set-up"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "管理",
@@ -1218,7 +1199,7 @@
         "cn/guard/generate-and-back-up-key-shares",
         "cn/guard/reset"
       ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     },
     {
       "group": "概览",
@@ -1227,14 +1208,7 @@
         "cn/cobo-connect/set-up",
         "cn/cobo-connect/interact-with-dapps"
       ],
-      "version": "简体中文"
-    },
-    {
-      "group": "Private Content",
-      "pages": [
-        "cn/private/introduction"
-      ],
-      "version": "简体中文"
+      "version": "🌐 简体中文"
     }
   ],
   "footerSocials": {

@@ -9,7 +9,6 @@ description: "查看和管理交易扫描结果。查看风险级别，审查合
 Screening App 将很快提供中文本地化版本。目前，本文档所有 UI 名称（如按钮名称）和术语均为 AI 翻译，可能与您在使用 App 时看到的英文 UI 不符。如需查看实际的英文 UI 名称，请参阅相应的英文手册：[Manage screening results](/en/apps/screening/viewscreening)
 </Note>
 
-
 <Info>
 访问此功能：
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)
@@ -18,220 +17,105 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 4. 点击**扫描结果**
 </Info> 
 
-## 扫描结果界面
+您可以通过**扫描结果**界面监控和管理交易扫描结果：
 
-**扫描结果**界面使您能够通过以下部分查看和管理交易扫描结果：
+<img src="/en/images/portal-apps/screening/screening-summary.png" className="screenshot_full_screen" alt="扫描摘要和交易列表"/>
 
-<img src="/en/images/portal-apps/screening/screening-summary.svg" className="screenshot_full_screen" alt="扫描摘要，显示风险级别计数和交易列表"/>
-
-### 风险摘要仪表板
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>风险级别</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>高风险</td>
-      <td>高风险交易总数</td>
-    </tr>
-    <tr>
-      <td>中风险</td>
-      <td>中风险交易总数</td>
-    </tr>
-    <tr>
-      <td>低风险</td>
-      <td>低风险交易总数</td>
-    </tr>
-  </tbody>
-</table>
-
-<Note>有关这些风险级别的详细信息，请参阅 [CipherOwl 的地址风险评分文档](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)。然后，您可以根据交易的风险级别决定如何管理交易。</Note>
-
-### 交易筛选器
-
-**可用筛选器：**
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>筛选器</th>
-      <th>选项</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>方向</td>
-      <td>入币/提币</td>
-    </tr>
-    <tr>
-      <td>风险级别</td>
-      <td>低/中/高</td>
-    </tr>
-    <tr>
-      <td>审核状态</td>
-      <td>待扫描/已扫描/已批准/已拒绝/不支持<br/><i>即将推出：待审核</i></td>
-    </tr>
-    <tr>
-      <td>资金状态（即将推出）</td>
-      <td>未冻结/已冻结/已退回</td>
-    </tr>
-    <tr>
-      <td>创建时间</td>
-      <td>按交易首次在 Cobo 系统中创建的时间筛选</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>按审核状态或资金状态上次更改的时间筛选</td>
-    </tr>
-  </tbody>
-</table>
-
-### 交易列表
+## 交易列表
 
 **关键信息：**
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>交易 ID</td>
-      <td>Cobo Portal 唯一标识符</td>
-    </tr>
-    <tr>
-      <td>方向</td>
-      <td>入币或提币</td>
-    </tr>
-    <tr>
-      <td>风险级别</td>
-      <td>低/中/高</td>
-    </tr>
-    <tr>
-      <td>审核状态</td>
-      <td>• **待扫描**：已收到交易，等待 AML/CFT 扫描<br/>• **已扫描**：已收到 AML/CFT 扫描结果<br/>• **待审核**：扫描结果等待人工审核（即将推出）<br/>• **已批准**：交易通过 AML/CFT 扫描<br/>• **已拒绝**：交易被 AML/CFT 扫描拒绝<br/>• **不支持**：Screening 不支持该链，交易在没有 AML/CFT 审核的情况下继续进行</td>
-    </tr>
-    <tr>
-      <td>资金状态（即将推出）</td>
-      <td>• **未冻结**：交易资金未冻结，用户可以访问资金<br/>• **已冻结**：用户无法访问交易资金<br/>• **已退回**：交易资金已退回发送地址</td>
-    </tr>
-    <tr>
-      <td>金额</td>
-      <td>交易金额</td>
-    </tr>
-    <tr>
-      <td>发送/接收</td>
-      <td>源地址和目标地址</td>
-    </tr>
-    <tr>
-      <td>交易哈希</td>
-      <td>交易哈希（仅显示入币交易）</td>
-    </tr>
-    <tr>
-      <td>更新时间</td>
-      <td>最新状态变更时间</td>
-    </tr>
-  </tbody>
-</table>
+| 字段 | 描述 |
+| --- | --- |
+| 交易 ID | Cobo Portal 唯一标识符 |
+| 方向 | 转入或转出 |
+| 风险 | • CipherOwl: 低/中/高<br/>• Elliptic: 0.0-10.0 数值分数 |
+| 状态 | **审核状态：**<br/>• **待扫描**：已收到交易，等待 AML/CFT 扫描<br/>• **已扫描**：已收到 AML/CFT 扫描结果<br/>• **已批准**：根据[风险处置规则](/cn/apps/screening/risk-policies)设置，交易 AML/CFT 审核通过<br/>• **已拒绝**：根据[风险处置规则](/cn/apps/screening/risk-policies)设置，交易 AML/CFT 审核拒绝<br/>• **不支持**：Screening 尚未支持该资产，交易未经扫描直接放行<br/>• **已略过**：根据 [Screening 设置](/cn/apps/screening/screening-settings)，交易未经扫描直接放行<br/><br/>**资金状态：**<br/>• **已冻结**：交易资金无法被用户转移，也不会被自动归集<br/>• **已退回**：交易资金已退回至指定地址<br/>• **已解除冻结**：交易资金可被用户转移与自动归集<br/>• **已隔离**：交易资金已隔离至指定地址 |
+| 金额 | 交易金额 |
+| 发送方/接收方 | 来源和目标地址 |
+| 交易哈希 | 交易哈希（仅显示转入交易） |
+| 更新时间 | 最新状态变更时间 |
 
-### 扫描详情
+您可以按交易方向、AML 服务商（CipherOwl 或 Elliptic）、审核状态、资金状态、创建时间和更新时间筛选交易。
+
+## 扫描详情
 
 点击 <img src="/en/images/common/icon_view.svg" className="icon" alt="查看图标"/> 查看交易的详细扫描信息：
 
-<img src="/en/images/portal-apps/screening/view-screening-details.svg" className="screenshot_full_screen" alt="详细扫描信息"/>
+使用 CipherOwl 时：
 
-#### 信息部分
+<img src="/en/images/portal-apps/screening/view-screening-details-cipherowl.png" className="screenshot_full_screen" alt="使用 CipherOwl 时的详细扫描信息"/>
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>交易 ID</td>
-      <td>交易的唯一标识符</td>
-    </tr>
-    <tr>
-      <td>方向</td>
-      <td>入币或提币</td>
-    </tr>
-    <tr>
-      <td>风险级别</td>
-      <td>低/中/高风险分类</td>
-    </tr>
-    <tr>
-      <td>金额</td>
-      <td>交易金额</td>
-    </tr>
-    <tr>
-      <td>发送地址</td>
-      <td>交易的源地址</td>
-    </tr>
-    <tr>
-      <td>接收地址</td>
-      <td>交易的目标地址</td>
-    </tr>
-    <tr>
-      <td>交易哈希</td>
-      <td>交易哈希（仅显示入币交易）</td>
-    </tr>
-    <tr>
-      <td>创建时间</td>
-      <td>交易创建时间</td>
-    </tr>
-  </tbody>
-</table>
+使用 Elliptic 时：
 
-#### 风险详情部分
+<img src="/en/images/portal-apps/screening/view-screening-details-elliptic.png" className="screenshot_full_screen" alt="使用 Elliptic 时的详细扫描信息"/>
 
-显示交易的详细风险分析：
+### 概览部分
 
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>字段</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>扫描地址</td>
-      <td>被扫描的地址及其关联钱包：<br/>• 对于入币：发送地址<br/>• 对于提币：接收地址<br/>*注意：UTXO 交易可能有多个发送/接收地址*</td>
-    </tr>
-    <tr>
-      <td>金额</td>
-      <td>扫描地址的交易金额</td>
-    </tr>
-    <tr>
-      <td>制裁</td>
-      <td>指示扫描地址是否在任何制裁名单上<br/>标记为**是**时，点击信息图标查看制裁详情：<br/>• **制裁计划**：制裁机构<br/>• **管辖区**：机构的管辖范围<br/>• **被制裁实体**：受制裁实体<br/>• **参考 URL**：制裁信息链接</td>
-    </tr>
-    <tr>
-      <td>风险暴露</td>
-      <td>识别的风险类型（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）：<br/>• **直接**（对应 CipherOwl 的"直接风险"）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的"暴露风险"）：扫描地址与具有风险标签的其他地址有交易<br/><i>注意：交易可同时标记为直接和间接</i></td>
-    </tr>
-    <tr>
-      <td>风险类别</td>
-      <td>从扫描结果中识别的特定风险标签</td>
-    </tr>
-    <tr>
-      <td>暴露地址</td>
-      <td>交易路径中识别的风险地址（如 [CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)中定义）。<br/>点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址）</td>
-    </tr>
-  </tbody>
-</table>
+| 字段 | 描述 |
+| --- | --- |
+| 交易 ID | 交易的唯一标识符 |
+| 方向 | 转入或转出 |
+| 金额 | 交易金额 |
+| 发送地址 | 交易的源地址 |
+| 接收地址 | 交易的目标地址 |
+| 交易哈希 | 交易哈希（仅显示转入交易） |
+| 创建时间 | 交易创建时间 |
 
-#### 时间线部分
+### 风险评估部分
+
+显示交易的详细风险分析，具体内容因 AML 服务商而异：
+
+使用 CipherOwl 时：
+
+| 字段 | 描述 |
+| --- | --- |
+| AML Provider | 交易扫描的服务商<br/>• CipherOwl |
+| 风险 | CipherOwl返回的风险级别<br/>• 低<br/>• 中<br/>• 高 |
+| 扫描地址 | 被扫描的地址及其关联钱包：<br/>• 对于转入交易：发送地址<br/>• 对于转出交易：接收地址<br/>*注意：UTXO 交易可能有多个发送/接收地址* |
+| 金额 | 扫描地址的交易金额 |
+| 制裁 | 指示扫描地址是否在任何制裁名单上标记为**是**时，点击信息图标查看制裁详情：<br/>• **制裁计划**：制裁机构<br/>• **管辖区**：机构的管辖范围<br/>• **被制裁实体**：受制裁实体<br/>• **参考 URL**：制裁信息链接 |
+| 风险暴露 | 识别的风险类型<br/>• **直接**（对应 CipherOwl 的“直接风险”）：扫描地址本身有风险标签<br/>• **间接**（对应 CipherOwl 的“暴露风险”）：扫描地址与具有风险标签的其他地址有交易<br/>*注意：交易可同时标记为直接和间接* |
+| 风险类别 | 从扫描结果中识别的特定风险标签，参考[CipherOwl 的地址风险评分](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) |
+| 暴露地址 | 交易路径中识别的风险地址点击信息图标查看暴露路径，显示：<br/>• **发送**路径：从您的地址到暴露地址的地址序列（例如，您的地址 → B → C → 暴露地址）<br/>• **接收**路径：从暴露地址回到您的地址的地址序列（例如，暴露地址 → E → 您的地址） |
+
+使用 Elliptic 时：
+
+Elliptic 根据扫描场景有三种不同的显示样式：
+
+- 地址扫描，实体未知
+- 地址扫描，实体明确
+- 交易扫描
+
+| 字段 | 说明 |
+| --- | --- |
+| AML Provider | 交易扫描的服务商<br/>• Elliptic |
+| 风险 | Elliptic 返回的扫描结果，范围为 0.0 - 10.0，级距 0.1 |
+| 扫描类型 | Elliptic 的扫描方式：<br/>• 地址扫描<br/>• 交易扫描 |
+| 扫描地址 | 使用地址扫描时，指定扫描的地址 |
+| 交易哈希 | 使用交易扫描时，指定扫描的链上交易 Hash |
+| 输出地址 | 使用交易扫描时，指定扫描的输出地址 |
+| 覆盖方式 | 扫描指定的链与资产覆盖方式，分为：<br/>• Holistic<br/>• Single asset |
+| 实体 | 使用地址扫描时，Elliptic 返回的 cluster_entities，分为：<br/>• 特定实体对象<br/>• Unknown |
+| 风险分类 | 使用地址扫描时，Elliptic 返回 cluster_entities 的风险分类，分为：<br/>• 特定风险分类，可能有多个风险分类<br/>• Unknown |
+| 钱包流入 (USD) | 使用地址扫描，Elliptic 返回扫描地址过去总共的入账金额，注：Unknown 时才显示 |
+| 钱包流出 (USD) | 使用地址扫描，Elliptic 返回扫描地址过去总共的出账金额，注：Unknown 时才显示 |
+| 金额 (USD) | 使用交易扫描时，Elliptic 返回指定扫描的交易金额 |
+| 触发规则 | 使用地址扫描，且 Entity 不是 Unknown 时才显示，可能有多个 |
+
+风险信息：
+
+| 字段 | 说明 |
+| --- | --- |
+| 资金流向 | Elliptic 返回扫描对象的资金流向<br/>• Source of Funds: 资金流入<br/>• Destination of Funds: 资金流出（地址扫描才有资金流出） |
+| 风险评分 | Elliptic 返回对应 Trigger Rule 的风险分数 |
+| 触发规则 | Elliptic 返回触发的风险规则，规则信息由用户在 Elliptic 风险设定配置 |
+| 总资金占比 (%) | Elliptic 返回触发规则的总资金占比 |
+| 总资金 (USD) | Elliptic 返回触发规则的总资金金额 |
+
+有关解读 Elliptic 风险评分的更多详情，请参阅其[文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)。
+
+### 时间线部分
 
 时间线部分提供一个集中界面，在一个地方管理和跟踪所有合规活动：
 
@@ -244,16 +128,12 @@ Screening App 将很快提供中文本地化版本。目前，本文档所有 UI
 根据交易的当前状态，可以使用以下操作：
 
 | 操作 | 效果 |
-| :---- | :---- |
-| 批准 | • 对于存款：交易通过扫描，资金对用户可用<br/>• 对于提款：交易通过扫描，进入下一阶段 |
-| 批准并发出警报 | • 对于存款：交易通过扫描，资金对用户可用，并附加风险交易通知<br/>• 对于提款：交易通过扫描，进入下一阶段，并附加风险交易通知 |
-| 拒绝 | • 对于存款：交易未通过扫描<br/>&nbsp;&nbsp;• 交易被标记并且资金将被冻结<br/>&nbsp;&nbsp;&nbsp;&nbsp;• *关于冻结资金的注意事项：如果您使用 [MPC 钱包的自动代币归集功能](/cn/portal/auto-sweep-overview)，冻结资金将不会包含在归集操作中*<br/>• 对于提款：交易未通过扫描，提款被拒绝<br/>• 始终发送风险交易通知 |
-| 人工审核<br/><i>（即将推出）</i> | • 对于存款：将启用交易的人工审核<br/>• 对于提款：将启用交易的人工审核 |
-| 退回<br/><i>（即将推出）</i> | • 对于存款：将启用从"接收地址"到"发送地址"的资金退回<br/>• 对于提款：不适用 |
-| 解冻<br/><i>（即将推出）</i> | • 将启用释放冻结资金，使其对用户可用<br/>• 对于提款：不适用 |
-
-### 发送申诉
-
-点击 <img src="/en/images/common/More.svg" className="icon" alt="更多图标" /> 发送申诉电子邮件，如果您需要对扫描结果提出异议或请求审核。
+| ---- | ---- |
+| 批准 | • 对于转入交易：交易通过 AML 审核，用户可动用交易资金<br/>• 对于转出交易：交易通过 AML 审核，交易状态往下流转 |
+| 批准并发出警报 | • 对于转入交易：交易通过 AML 审核，用户可动用交易资金，额外发送风险交易通知<br/>• 对于转出交易：交易通过 AML 审核，交易状态往下流转，额外发送风险交易通知 |
+| 拒绝 | • 对于转入交易：交易不通过 AML 审核，交易资金被冻结<br/>• 对于转出交易：交易不通过 AML 审核，转出交易被拒绝 |
+| 解除冻结 | • 对于转入交易：解除冻结的资金，用户可动用交易资金<br/>• 对于转出交易：无此操作 |
+| 退回 | • 对于转入交易：交易资金从受益地址退回到用户指定地址<br/>• 对于转出交易：无此操作 |
+| 隔离 | • 对于转入交易：交易资金从受益地址退回到用户指定的隔离地址<br/>• 对于转出交易：无此操作 |
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>
