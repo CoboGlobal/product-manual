@@ -5,7 +5,9 @@ lang: "en"
 description: "Create custom crypto compliance rules in Screening based on risk levels, transaction directions, and amount thresholds. Automate AML/CFT policy enforcement."
 ---
 
-## The Post-Screening Policies interface
+Post-screening policies automatically handle transactions based on their screening results. Each policy defines when it should apply (criteria) and what action to take when it matches.
+
+## **Post-Screening Policies** interface
 
 <Info>
 To access this feature:
@@ -15,96 +17,37 @@ To access this feature:
 4. Click **Post-Screening Policies**
 </Info>
 
-The **Post-Screening Policies** interface enables you to manage your [post-screening policies](#post-screening-policies) through the following sections:
+The **Post-Screening Policies** interface enables you to manage your post-screening policies.
 
-<img src="/en/images/portal-apps/screening/manage-post-screening-policies.svg" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
+- Post-Screening Policies when using CipherOwl as the AML provider:
+  <img src="/en/images/portal-apps/screening/manage-post-screening-policies-cipherowl.png" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
 
-### Policy list fields
+- Post-Screening Policies when using Elliptic as the AML provider:
+  <img src="/en/images/portal-apps/screening/manage-post-screening-policies-elliptic.png" className="screenshot_full_screen" alt="Manage Post-Screening Policies interface showing list of policies with edit and delete options"/>
 
+You can filter the policies by Direction, Risk, USD Amount, Decision, AML Provider (CipherOwl or Elliptic), and Updated Time.
+
+## Create, edit, and delete policies
+
+<Note>Select and configure your preferred AML provider in [Settings](/en/apps/screening/screening-settings#aml-provider-settings) first.</Note>
+
+### Create policies
+
+1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface).
+2. Click **Create Policy**.
+  - **Create Post-Screening Policy** dialog when using CipherOwl:
+  <img src="/en/images/portal-apps/screening/creating-post-screening-policy-cipherowl.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog when using CipherOwl"/>
+
+  - **Create Post-Screening Policy** dialog when using Elliptic:
+  <img src="/en/images/portal-apps/screening/creating-post-screening-policy-elliptic.png" className="screenshot_modal" alt="Create Post-Screening Policy dialog when using Elliptic"/>
+
+3. Define policy criteria and action.
+
+**Policy criteria**
 <table class="table six-columns">
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Policy No.</td>
-      <td>Unique identifier for the policy</td>
-    </tr>
-    <tr>
-      <td>Direction</td>
-      <td>Transaction direction: Inbound/Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk Level</td>
-      <td>Risk level: Low/Medium/High</td>
-    </tr>
-    <tr>
-      <td>Min USD</td>
-      <td>Minimum transaction amount in USD (inclusive)</td>
-    </tr>
-    <tr>
-      <td>Max USD</td>
-      <td>Maximum transaction amount in USD (exclusive)</td>
-    </tr>
-    <tr>
-      <td>Decision</td>
-      <td>Action to take when policy matches:<br/>• Approve<br/>• Approve with Alert<br/>• Reject<br/><i>Coming soon:</i><br/>• Manual Review</td>
-    </tr>
-    <tr>
-      <td>Updated Time</td>
-      <td>When the policy was last modified</td>
-    </tr>
-  </tbody>
-</table>
-
-### Available filters
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Filter</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Direction</td>
-      <td>Inbound/Outbound</td>
-    </tr>
-    <tr>
-      <td>Risk Level</td>
-      <td>Low/Medium/High</td>
-    </tr>
-    <tr>
-      <td>USD Amount</td>
-      <td>Filter by amount (positive numbers only)</td>
-    </tr>
-    <tr>
-      <td>Decision</td>
-      <td>• Approve<br/>• Approve with Alert<br/>• Reject<br/><i>Coming soon:</i><br/>• Manual Review</td>
-    </tr>
-    <tr>
-      <td>Updated Time</td>
-      <td>Filter by when policy was last modified</td>
-    </tr>
-  </tbody>
-</table>
-
-## Post-screening policies
-
-Post-screening policies automatically handle transactions based on their screening results. Each policy defines when it should apply (criteria) and what action to take when it matches.
-
-<img src="/en/images/portal-apps/screening/creating-post-screening-policy.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog"/>
-
-### Policy criteria
-
-<table class="table six-columns">
-  <thead>
-    <tr>
-      <th>Policy criteria</th>
+      <th>Policy Criteria</th>
       <th>Options</th>
       <th>Description</th>
     </tr>
@@ -116,9 +59,9 @@ Post-screening policies automatically handle transactions based on their screeni
       <td>Transaction flow direction</td>
     </tr>
     <tr>
-      <td>Risk Level</td>
-      <td>• Low<br/>• Medium<br/>• High</td>
-      <td>Risk classification from [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)</td>
+      <td>Risk</td>
+      <td>When using CipherOwl:<br/>• Low<br/>• Medium<br/>• High<br/><br/>When using Elliptic:<br/>• NA<br/>• Numerical score from 0.0 to 10.0 (in 0.1 increments)</td>
+      <td>CipherOwl: Risk classification from [CipherOwl](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)<br/><br/>Elliptic: Numerical risk score with higher values indicating higher risk (see [Elliptic's Risk Score documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores))</td>
     </tr>
     <tr>
       <td>Amount Range</td>
@@ -128,8 +71,7 @@ Post-screening policies automatically handle transactions based on their screeni
   </tbody>
 </table>
 
-### Policy actions
-
+**Policy actions**
 <table class="table six-columns">
   <thead>
     <tr>
@@ -148,42 +90,26 @@ Post-screening policies automatically handle transactions based on their screeni
     </tr>
     <tr>
       <td>Reject</td>
-      <td>• Inbound:<br/>&nbsp;&nbsp;• Flag transactions and freeze funds <br/>&nbsp;&nbsp;&nbsp;&nbsp;• *Note: If you are using the [auto token sweeping feature of MPC Wallets](/en/portal/auto-sweep-overview), frozen funds will not be included in the sweep operation.*<br/>• Outbound: Block transaction<br/>• Risk notification is always sent</td>
-    </tr>
-    <tr>
-      <td>Manual Review *(Coming soon)*</td>
-      <td>• Enable transactions to be reviewed by your team before being approved or rejected.</td>
+      <td>• Inbound:<br/>&nbsp;&nbsp;• Flag transactions and freeze funds <br/>&nbsp;&nbsp;&nbsp;&nbsp;• Note: If you are using the [auto token sweeping feature of MPC Wallets](/en/portal/auto-sweep-overview), frozen funds will not be included in the sweep operation.<br/>• Outbound: Block transaction<br/>• Risk notification is always sent</td>
     </tr>
   </tbody>
 </table>
 
+4. Click **Submit** to enable the policy.
+
 <Note>
 When Screening has the scan results:
 - Due to [overlap prevention rules](#overlap-prevention-rules), at most one policy will match any given transaction
-- A policy matches when the transaction's direction, risk level, and amount range match the policy's criteria
+- A policy matches when the transaction's direction, risk level (CipherOwl) or risk score (Elliptic), and amount range match the policy's criteria
 - When a match is found, Screening executes that policy's action
 </Note>
 
-<Warning>If no policy matches, the transaction is automatically proceeded **without risk assessment**. To ensure proper risk management, make sure to set up appropriate policies that cover all your transaction scenarios before using Screening.</Warning>
-
-## Creating, editing, and deleting policies
-
-### Creating policies
-
-To create a new policy:
-1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface)
-2. Click **Create Policy**
-<img src="/en/images/portal-apps/screening/creating-post-screening-policy.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog"/>
-
-3. Define policy criteria and action (see [Policy criteria](#policy-criteria) and [Policy actions](#policy-actions))
-4. Click **Submit** to enable the policy
-
-
+<Warning>If no policy matches, the transaction is automatically approved. To ensure proper risk management, make sure to set up appropriate policies that cover all your transaction scenarios before using Screening.</Warning>
 
 #### Overlap prevention rules
 The system prevents creation of overlapping policies. A policy cannot be created if it has all of the following in common with an existing active policy:
 - Same direction (Inbound/Outbound)
-- Same risk level
+- Same risk level/score range
 - Overlapping amount range
 
 For example:
@@ -198,22 +124,23 @@ Policy 3: Outbound + Medium risk + ≥ 1000 + < 7000 USD (Valid - different dire
 <Warning>
 The policy examples above are for illustration purposes only. Your actual policies should be tailored to your organization's specific compliance requirements and risk management strategy.
 
-For guidance on risk assessment and policy creation, refer to CipherOwl's [Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) documentation or consult with their compliance experts via [CipherOwl](https://www.cipherowl.com/)'s website.
+For CipherOwl, refer to CipherOwl's [Address Risk Score](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea) documentation or consult with their compliance experts via [CipherOwl](https://www.cipherowl.com/)'s website. 
+For Elliptic, refer to their [Interpreting Risk Scores](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores) and [Configuring Your Risk Rules](https://help.elliptic.co/en/articles/8216353-configuring-your-risk-rules) documentation.
 </Warning>
 
-### Editing policies
+### Edit policies
 
-1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface)
-2. Click <img src="/en/images/common/icon_edit.svg" className="icon" alt="edit icon"/> next to the policy you want to edit
-3. On the **Edit Post-Screening Policy** dialog, make the necessary changes to the policy criteria and action (see [Policy criteria](#policy-criteria) and [Policy actions](#policy-actions))
-4. Click **Submit**
+1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface).
+2. Click <img src="/en/images/common/icon_edit.svg" className="icon" alt="edit icon"/> next to the policy you want to edit.
+3. On the **Edit Post-Screening Policy** dialog, make the necessary changes to the policy criteria and action (see [Policy criteria](#policy-criteria) and [Policy actions](#policy-actions)).
+4. Click **Submit**.
 
 <Info>The same [overlap prevention rules](#overlap-prevention-rules) apply when editing policies.</Info>
 
-### Deleting policies
+### Delete policies
 
-1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface)
-2. Click <img src="/en/images/common/icon_delete.svg" className="icon" alt="delete icon"/> next to the policy you want to delete
-3. On the **Delete Policy** dialog, click **Yes** to confirm deletion
+1. Go to the [Post-Screening Policies interface](#the-post-screening-policies-interface).
+2. Click <img src="/en/images/common/icon_delete.svg" className="icon" alt="delete icon"/> next to the policy you want to delete.
+3. On the **Delete Policy** dialog, click **Yes** to confirm deletion.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
