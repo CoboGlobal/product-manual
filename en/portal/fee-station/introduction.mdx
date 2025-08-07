@@ -9,7 +9,9 @@ description: "Fee Station is your all-in-one solution for managing expenses and 
 
 On different blockchains, transactions require different native tokens (gas tokens like ETH, TRX, or SOL) to pay for gas fees. This means you need to prepare and manage gas balances for each chain. If any address runs out of gas, transactions may fail.
 
-Fee Station helps you simplify this. It’s a one-stop fee management platform on Cobo Portal. Once any member tops up the Fee Station account, it can automatically cover on-chain gas fees for all [MCP Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure.
+Meanwhile, you might need to settle various types of fees across Cobo Portal, such as service fees and custody fees. These are often handled via emails, spreadsheets, and manual reconciliation—making the process inefficient and error-prone.
+
+Fee Station helps you simplify this. It’s a one-stop fee management platform on Cobo Portal. Once any member deposits to the Fee Station account, it can automatically cover on-chain gas fees for all [MCP Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure, and also settle various types of fees with a single balance.
 
 <Note>Currently, Fee Station supports EVM and TRON chains. Solana support is coming soon.</Note>
 
@@ -27,6 +29,16 @@ Fee Station is ideal for any Web3 team looking to simplify on-chain fee manageme
 
 Fee Station can automatically cover gas fees for transactions initiated from MCP Wallets and Web3 Wallets. You can choose to cover fees only when the wallet balance is insufficient, or to always cover them. Once configured, the system automatically checks the condition and processes the gas fee without manual input. For more details about the chain support, please refer to [Supported chains for gas fee payment](#supported-chains-for-gas-fee-payment).
 
+### Unified fee settlement
+
+In addition to covering gas fees, your Fee Station balance can also be used to settle all platform-related charges within Cobo Portal, including service fees and custody fees. You don't need to maintain separate balances for each fee type. A single balance simplifies the billing process and gives you a clear, consolidated view of your spending.
+
+<Tip>
+Fee Station supports the following types of fees:
+- [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/asset-wallets/introduction): Custody fees
+- [MCP Wallets](/en/portal/mpc-wallets/ocw/introduction) / [Custodial Wallets (Web3 Wallets)](/en/portal/custodial-wallets/web3-wallets/introduction): Gas fees, service fees, and custody fees
+</Tip>
+
 ### Flexible deposit options
 
 You can deposit gas tokens directly, or simply use USD stablecoins like USDT or USDC as a unified balance. Fee Station will convert them into the required gas tokens at the time of transaction, avoiding the manual work of preparing tokens for each chain. For more details about the token support, please refer to [Supported token types](#supported-token-types).
@@ -36,10 +48,6 @@ You can deposit gas tokens directly, or simply use USD stablecoins like USDT or 
 Fee Station automatically leverages energy rental on the Tron network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
 
 With Fee Station enabled, Tron transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high-volume transactions, please contact our sales team.
-
-### Unified fee settlement
-
-In addition to covering gas fees, your Fee Station balance can also be used to settle all platform-related charges within Cobo Portal, including service fees, Cobo Bills, and commission fees. You don't need to maintain separate balances for each fee type. A single balance simplifies the billing process and gives you a clear, consolidated view of your spending.
 
 ### API and webhook integration
 

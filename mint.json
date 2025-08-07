@@ -405,41 +405,36 @@
       "pages": [
         "en/portal/glossary",
         {
-          "group": "Archived",
+          "group": "User-Controlled Wallets",
           "pages": [
+            "en/portal/mpc-wallets/ucw/introduction",
+            "en/portal/mpc-wallets/ucw/set-up",
+            "en/portal/mpc-wallets/ucw/project-management",
+            "en/portal/mpc-wallets/ucw/vault-management",
+            "en/portal/mpc-wallets/ucw/wallet-management"
+          ]
+        },
+        {
+          "group": "Smart Contract Wallets",
+          "pages": [
+            "en/portal/smart-contract-wallets/introduction",
             {
-              "group": "User-Controlled Wallets",
+              "group": "Set up Smart Contract Wallets",
               "pages": [
-                "en/portal/mpc-wallets/ucw/introduction",
-                "en/portal/mpc-wallets/ucw/set-up",
-                "en/portal/mpc-wallets/ucw/project-management",
-                "en/portal/mpc-wallets/ucw/vault-management",
-                "en/portal/mpc-wallets/ucw/wallet-management"
+                "en/portal/smart-contract-wallets/create",
+                "en/portal/smart-contract-wallets/import"
               ]
             },
+            "en/portal/smart-contract-wallets/manage",
+            "en/portal/smart-contract-wallets/manage-delegate-keys",
             {
-              "group": "Smart Contract Wallets",
+              "group": "Deposit and withdraw assets",
               "pages": [
-                "en/portal/smart-contract-wallets/introduction",
-                {
-                  "group": "Set up Smart Contract Wallets",
-                  "pages": [
-                    "en/portal/smart-contract-wallets/create",
-                    "en/portal/smart-contract-wallets/import"
-                  ]
-                },
-                "en/portal/smart-contract-wallets/manage",
-                "en/portal/smart-contract-wallets/manage-delegate-keys",
-                {
-                  "group": "Deposit and withdraw assets",
-                  "pages": [
-                    "en/portal/smart-contract-wallets/deposit-assets",
-                    "en/portal/smart-contract-wallets/withdraw-assets"
-                  ]
-                },
-                "en/portal/smart-contract-wallets/dapp-interaction"
+                "en/portal/smart-contract-wallets/deposit-assets",
+                "en/portal/smart-contract-wallets/withdraw-assets"
               ]
-            }
+            },
+            "en/portal/smart-contract-wallets/dapp-interaction"
           ]
         }
       ],
@@ -964,41 +959,36 @@
       "pages": [
         "cn/portal/glossary",
         {
-          "group": "归档内容",
+          "group": "终端用户钱包",
           "pages": [
+            "cn/portal/mpc-wallets/ucw/introduction",
+            "cn/portal/mpc-wallets/ucw/set-up",
+            "cn/portal/mpc-wallets/ucw/project-management",
+            "cn/portal/mpc-wallets/ucw/vault-management",
+            "cn/portal/mpc-wallets/ucw/wallet-management"
+          ]
+        },
+        {
+          "group": "智能合约钱包",
+          "pages": [
+            "cn/portal/smart-contract-wallets/introduction",
             {
-              "group": "终端用户钱包",
+              "group": "设置智能合约钱包",
               "pages": [
-                "cn/portal/mpc-wallets/ucw/introduction",
-                "cn/portal/mpc-wallets/ucw/set-up",
-                "cn/portal/mpc-wallets/ucw/project-management",
-                "cn/portal/mpc-wallets/ucw/vault-management",
-                "cn/portal/mpc-wallets/ucw/wallet-management"
+                "cn/portal/smart-contract-wallets/create",
+                "cn/portal/smart-contract-wallets/import"
               ]
             },
+            "cn/portal/smart-contract-wallets/manage",
+            "cn/portal/smart-contract-wallets/manage-delegate-keys",
             {
-              "group": "智能合约钱包",
+              "group": "充币和提币",
               "pages": [
-                "cn/portal/smart-contract-wallets/introduction",
-                {
-                  "group": "设置智能合约钱包",
-                  "pages": [
-                    "cn/portal/smart-contract-wallets/create",
-                    "cn/portal/smart-contract-wallets/import"
-                  ]
-                },
-                "cn/portal/smart-contract-wallets/manage",
-                "cn/portal/smart-contract-wallets/manage-delegate-keys",
-                {
-                  "group": "充币和提币",
-                  "pages": [
-                    "cn/portal/smart-contract-wallets/deposit-assets",
-                    "cn/portal/smart-contract-wallets/withdraw-assets"
-                  ]
-                },
-                "cn/portal/smart-contract-wallets/dapp-interaction"
+                "cn/portal/smart-contract-wallets/deposit-assets",
+                "cn/portal/smart-contract-wallets/withdraw-assets"
               ]
-            }
+            },
+            "cn/portal/smart-contract-wallets/dapp-interaction"
           ]
         }
       ],
