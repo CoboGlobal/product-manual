@@ -200,40 +200,7 @@
                 "en/portal/mpc-wallets/ocw/key-share-verification",
                 "en/portal/mpc-wallets/ocw/dapp-interaction"
               ]
-            },
-            {
-              "group": "User-Controlled Wallets",
-              "pages": [
-                "en/portal/mpc-wallets/ucw/introduction",
-                "en/portal/mpc-wallets/ucw/set-up",
-                "en/portal/mpc-wallets/ucw/project-management",
-                "en/portal/mpc-wallets/ucw/vault-management",
-                "en/portal/mpc-wallets/ucw/wallet-management"
-              ]
             }
-          ]
-        },
-        {
-          "group": "Smart Contract Wallets",
-          "pages": [
-            "en/portal/smart-contract-wallets/introduction",
-            {
-              "group": "Set up Smart Contract Wallets",
-              "pages": [
-                "en/portal/smart-contract-wallets/create",
-                "en/portal/smart-contract-wallets/import"
-              ]
-            },
-            "en/portal/smart-contract-wallets/manage",
-            "en/portal/smart-contract-wallets/manage-delegate-keys",
-            {
-              "group": "Deposit and withdraw assets",
-              "pages": [
-                "en/portal/smart-contract-wallets/deposit-assets",
-                "en/portal/smart-contract-wallets/withdraw-assets"
-              ]
-            },
-            "en/portal/smart-contract-wallets/dapp-interaction"
           ]
         },
         {
@@ -436,7 +403,45 @@
     {
       "group": "RESOURCES",
       "pages": [
-        "en/portal/glossary"
+        "en/portal/glossary",
+        {
+          "group": "Archived",
+          "pages": [
+            {
+              "group": "User-Controlled Wallets",
+              "pages": [
+                "en/portal/mpc-wallets/ucw/introduction",
+                "en/portal/mpc-wallets/ucw/set-up",
+                "en/portal/mpc-wallets/ucw/project-management",
+                "en/portal/mpc-wallets/ucw/vault-management",
+                "en/portal/mpc-wallets/ucw/wallet-management"
+              ]
+            },
+            {
+              "group": "Smart Contract Wallets",
+              "pages": [
+                "en/portal/smart-contract-wallets/introduction",
+                {
+                  "group": "Set up Smart Contract Wallets",
+                  "pages": [
+                    "en/portal/smart-contract-wallets/create",
+                    "en/portal/smart-contract-wallets/import"
+                  ]
+                },
+                "en/portal/smart-contract-wallets/manage",
+                "en/portal/smart-contract-wallets/manage-delegate-keys",
+                {
+                  "group": "Deposit and withdraw assets",
+                  "pages": [
+                    "en/portal/smart-contract-wallets/deposit-assets",
+                    "en/portal/smart-contract-wallets/withdraw-assets"
+                  ]
+                },
+                "en/portal/smart-contract-wallets/dapp-interaction"
+              ]
+            }
+          ]
+        }
       ],
       "version": "🌐 English"
     },
@@ -754,40 +759,7 @@
                 "cn/portal/mpc-wallets/ocw/key-share-verification",
                 "cn/portal/mpc-wallets/ocw/dapp-interaction"
               ]
-            },
-            {
-              "group": "终端用户钱包",
-              "pages": [
-                "cn/portal/mpc-wallets/ucw/introduction",
-                "cn/portal/mpc-wallets/ucw/set-up",
-                "cn/portal/mpc-wallets/ucw/project-management",
-                "cn/portal/mpc-wallets/ucw/vault-management",
-                "cn/portal/mpc-wallets/ucw/wallet-management"
-              ]
             }
-          ]
-        },
-        {
-          "group": "智能合约钱包",
-          "pages": [
-            "cn/portal/smart-contract-wallets/introduction",
-            {
-              "group": "设置智能合约钱包",
-              "pages": [
-                "cn/portal/smart-contract-wallets/create",
-                "cn/portal/smart-contract-wallets/import"
-              ]
-            },
-            "cn/portal/smart-contract-wallets/manage",
-            "cn/portal/smart-contract-wallets/manage-delegate-keys",
-            {
-              "group": "充币和提币",
-              "pages": [
-                "cn/portal/smart-contract-wallets/deposit-assets",
-                "cn/portal/smart-contract-wallets/withdraw-assets"
-              ]
-            },
-            "cn/portal/smart-contract-wallets/dapp-interaction"
           ]
         },
         {
@@ -990,7 +962,45 @@
     {
       "group": "资源文档",
       "pages": [
-        "cn/portal/glossary"
+        "cn/portal/glossary",
+        {
+          "group": "归档内容",
+          "pages": [
+            {
+              "group": "终端用户钱包",
+              "pages": [
+                "cn/portal/mpc-wallets/ucw/introduction",
+                "cn/portal/mpc-wallets/ucw/set-up",
+                "cn/portal/mpc-wallets/ucw/project-management",
+                "cn/portal/mpc-wallets/ucw/vault-management",
+                "cn/portal/mpc-wallets/ucw/wallet-management"
+              ]
+            },
+            {
+              "group": "智能合约钱包",
+              "pages": [
+                "cn/portal/smart-contract-wallets/introduction",
+                {
+                  "group": "设置智能合约钱包",
+                  "pages": [
+                    "cn/portal/smart-contract-wallets/create",
+                    "cn/portal/smart-contract-wallets/import"
+                  ]
+                },
+                "cn/portal/smart-contract-wallets/manage",
+                "cn/portal/smart-contract-wallets/manage-delegate-keys",
+                {
+                  "group": "充币和提币",
+                  "pages": [
+                    "cn/portal/smart-contract-wallets/deposit-assets",
+                    "cn/portal/smart-contract-wallets/withdraw-assets"
+                  ]
+                },
+                "cn/portal/smart-contract-wallets/dapp-interaction"
+              ]
+            }
+          ]
+        }
       ],
       "version": "🌐 简体中文"
     },
