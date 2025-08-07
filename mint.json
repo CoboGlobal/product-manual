@@ -76,12 +76,6 @@
       "version": "🌐 English"
     },
     {
-      "name": "Private Content",
-      "url": "private",
-      "isDefaultHidden": true,
-      "version": "🌐 English"
-    },
-    {
       "name": "Cobo Portal",
       "url": "cn/portal",
       "version": "🌐 简体中文"
@@ -104,12 +98,6 @@
     {
       "name": "Cobo Connect",
       "url": "cn/cobo-connect",
-      "version": "🌐 简体中文"
-    },
-    {
-      "name": "Private Content",
-      "url": "private",
-      "isDefaultHidden": true,
       "version": "🌐 简体中文"
     }
   ],
@@ -669,13 +657,6 @@
       "version": "🌐 English"
     },
     {
-      "group": "Private Content",
-      "pages": [
-        "en/private/introduction"
-      ],
-      "version": "🌐 English"
-    },
-    {
       "group": "概览",
       "pages": [
         "cn/portal/introduction",
@@ -1226,13 +1207,6 @@
         "cn/cobo-connect/introduction",
         "cn/cobo-connect/set-up",
         "cn/cobo-connect/interact-with-dapps"
-      ],
-      "version": "🌐 简体中文"
-    },
-    {
-      "group": "Private Content",
-      "pages": [
-        "cn/private/introduction"
       ],
       "version": "🌐 简体中文"
     }
