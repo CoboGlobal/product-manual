@@ -9,7 +9,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 <Note>Cobo Portal 提供两种类型的 MPC 钱包：[机构钱包](/cn/portal/mpc-wallets/ocw/introduction)和[终端用户钱包](/cn/portal/mpc-wallets/ucw/introduction)。本指南将介绍机构钱包的设置和使用。</Note>
 
-本指南将为您提供在 Cobo Portal 开发环境中设置和使用 MPC 钱包的分步指导。您将学习如何：
+本指南将为您提供在 Cobo Portal 开发环境中设置和使用 MPC 钱包的分步指导，包括：
 
 1. 注册并激活账户
 2. 设置 Cobo Guard
@@ -56,7 +56,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 ## 添加链（可选）
 
-为方便测试，系统已在开发环境为您默认生成 SETH / ETH / BTC / Tron / BNB / SOL / TON 的地址。如需添加其他链，请参考[添加链](/cn/portal/mpc-wallets/ocw/add-chain)文档。
+为方便测试，系统已在开发环境为您默认生成 SETH / ETH / BTC / Tron / BNB / SOL / TON 的地址。如需添加其他链，请参考[添加链](/cn/portal/enable-or-disable-chains)文档。
 
 ## 创建钱包（可选）
 
@@ -69,10 +69,10 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 如需完整体验 MPC 钱包的创建流程，请参考：
 - [MPC 机构钱包介绍](/cn/portal/mpc-wallets/ocw/introduction)
-- [创建 MPC Vault](/cn/portal/mpc-wallets/ocw/create-vault)
-- [设置主控组](/cn/portal/mpc-wallets/ocw/main-group)
-- [设置签名组](/cn/portal/mpc-wallets/ocw/signing-group)
-- [设置恢复组](/cn/portal/mpc-wallets/ocw/recovery-group)
+- [创建 MPC Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault)
+- [设置主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)
+- [设置签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)
+- [设置恢复组](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group)
 - [主控组 / 签名组 / 恢复组的区别](/cn/portal/mpc-wallets/ocw/holder-group-overview)
 
 ## 开启代币自动归集（可选）
@@ -97,28 +97,33 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 本章节将介绍如何使用 WaaS 2.0 API 在 MPC 钱包（机构钱包）场景中完成充币、提币及自动归集功能。
 
-#### 1. 生成 API Key 与 API Secret
+1. **生成 API Key 与 API Secret**
 
 您需要在本地生成一对 Ed25519 密钥对，作为 API Key（公钥）和 API Secret（私钥）。更多生成 API Key 密钥对的说明，请参阅[生成 API Key 和 API Secret](https://www.cobo.com/developers/v2_cn/guides/overview/cobo-auth#%E7%94%9F%E6%88%90-api-key-%E5%92%8C-api-secret)。
 
-#### 2. 注册 API Key
+2. **注册 API Key**
+
 生成 API Key 后，您需要在 Cobo Portal 上注册 API Key，并为其设置用户角色和可访问的钱包范围。更多注册 API Key 的说明，请参阅[注册 API Key](/cn/portal/developer-console/create-api-key)。
 
-#### 3. 接入 WaaS SDK（以 JavaScript 为例）
+3. **接入 WaaS SDK**
 
-在完成 API Key 配置后，您可以接入 WaaS SDK。您可以先调用一个只读接口（如列出支持的链）来测试 SDK 是否配置成功，详情请参阅 [JavaScript SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-javascript)。如果调用成功，说明您的开发环境已准备就绪，可以继续实现提币等功能。
+在完成 API Key 配置后，您可以接入 WaaS SDK。您可以先调用一个只读接口（如列出支持的链）来测试 SDK 是否配置成功，如果调用成功，说明您的开发环境已准备就绪，可以继续实现提币等功能。详情请参阅以下文档：
+- [JavaScript SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-javascript)
+- [Python SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-python)
+- [Go SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-go)
+- [Java SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-java)
 
-### 4. 设置 Callback 和 Webhook（可选）
+4. **设置 Callback 和 Webhook（可选）**
 
 为了增强安全性，您应该设置一个 Callback Endpoint 来二次确认提现请求。当您通过 WaaS 2.0 API 发起提现时，该 Endpoint 将接收交易详情，并且必须确认这些详情后才能继续进行交易。要进行设置，请参考 [Webhook 和 Callback 指南](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/introduction)。
 
-### 5. 发起提币交易
+5. **发起提币交易**
 
 如果您在开发环境中配置了交易风控，钱包中配置了主控组，或者配置了 Callback Endpoint 等，这些设置会对提币流程产生影响。例如，您可能需要额外审批步骤才能完成交易。
 
 在提币前，请确保钱包中有足够主链币用于支付链上手续费，或者已启用 [Fee Station](/cn/portal/fee-station/introduction) 代付功能。
 
-以下为示例代码，更多详情可参阅[发起转账 API 文档](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)
+以下为 JavaScript SDK 示例代码，更多详情可参阅[发起转账 API 文档](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)
 
 ```javascript
 const CoboWaas2 = require("@cobo/cobo-waas2");
@@ -175,11 +180,11 @@ API called successfully. Returned data: {
 发起交易后，您可以通过以下方式查看交易状态：
 
 - **Cobo Portal 网页端**：  
-  登录 Cobo Portal，进入 **钱包** > **交易记录**，在列表中找到对应交易即可查看其状态。
+  登录 Cobo Portal，进入**钱包** > **交易记录**，在列表中找到对应交易即可查看其状态。
 
 - **WaaS 2.0 API**：  
-  调用 [Get transaction information](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) 接口查询交易详情。
-  调用 [List all transactions](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) 接口查询交易列表。
+  调用[获取交易详情](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) 接口查询交易详情。
+  调用[获取交易列表](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) 接口查询交易列表。
 
 至此，您已完成 MPC 钱包在开发环境中的主要功能快速体验，包括账户设置、充币与提币等操作。如果您想要在生产环境中正式部署和使用 MPC 钱包，请参考[正式使用指南](/cn/portal/quick-start-guide-mpc)。
 
