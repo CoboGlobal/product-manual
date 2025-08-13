@@ -1,5 +1,5 @@
 ---
-title: "MPC 钱包快速入门"
+title: "MPC 钱包快速体验指南"
 sidebarTitle: "快速体验"
 lang: "zh-hans"
 og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 钱包。"
@@ -17,10 +17,11 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 4. 设置交易风控（可选）
 5. 添加链（可选）
 6. 创建钱包（可选）
-7. 开启代币自动归集（可选）
-8. 配置 KYA / KYT 扫描工具（可选）
-9. 充币（可选）
-10. 提币
+7. 设置 Fee Station（可选）
+8. 开启代币自动归集（可选）
+9. 配置 KYA / KYT 扫描工具（可选）
+10. 充币（可选）
+11. 提币
     - Cobo Portal 网页端
     - WaaS 2.0 API 端
 
@@ -45,7 +46,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 绑定目的：
 - 作为 Cobo Portal 的 MFA 认证方式。
-- 在 APP 中审批 Cobo Portal 的各类消息。
+- 在 APP 中审批 Cobo Portal 的各类审批请求。
 更多信息请参阅 [Cobo Guard](/cn/guard/introduction#主要功能)。
 
 ## 邀请成员（可选）
@@ -75,6 +76,9 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 - [设置恢复组](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group)
 - [主控组 / 签名组 / 恢复组的区别](/cn/portal/mpc-wallets/ocw/holder-group-overview)
 
+## 设置 Fee Station（可选）
+如果您希望在开发环境中使用 Cobo 的美元稳定币代付链上交易手续费功能，或集中管理主链币以支付 Gas，可以启用 Fee Station。它相当于一个团队共享的费用账户，可根据配置策略为链上交易自动代付 Gas，并统一结算各类平台费用。详情请参阅[Fee Station 简介](/cn/portal/fee-station/introduction)。
+
 ## 开启代币自动归集（可选）
 如果需要进行 MPC 钱包资金的自动归集，请参考[启用自动代币归集](/cn/portal/auto-sweep-overview)。
 
@@ -83,7 +87,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 ## 充币（可选）
 
-在开发环境中，系统已为您自动分配测试币 SETH。如果需要充值其他币种（例如 USDC 或 USDT），请确认所用链（Tron / BEP-20 / ERC-20 等），并参考[充值](/cn/portal/mpc-wallets/ocw/transfers)文档。
+为方便测试，在开发环境中，系统已为您自动分配测试币 SETH。如果需要充值其他币种（例如 USDC 或 USDT），请确认所用链（Tron / BEP-20 / ERC-20 等），并参考[充值](/cn/portal/mpc-wallets/ocw/transfers)文档。
 
 充值主链币：如需支付链上手续费，请确保钱包中有足够对应链的主链币。您可以在 [Fee Station](/cn/portal/fee-station/introduction) 预充值对应链的主链币，或充值美元稳定币用以代付链上手续费。
 
@@ -95,7 +99,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 ### WaaS 2.0 API 端
 
-本章节将介绍如何使用 WaaS 2.0 API 在 MPC 钱包（机构钱包）场景中完成充币、提币及自动归集功能。
+本章节将介绍如何使用 WaaS 2.0 API 在 MPC 钱包（机构钱包）场景中完成充币和提币。
 
 1. **生成 API Key 与 API Secret**
 
@@ -125,45 +129,46 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 以下为 JavaScript SDK 示例代码，更多详情可参阅[发起转账 API 文档](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)
 
-```javascript
-const CoboWaas2 = require("@cobo/cobo-waas2");
-// 初始化 API 客户端
-const apiClient = CoboWaas2.ApiClient.instance;
-// 设置运行环境（开发环境：Env.DEV，生产环境：Env.PROD）
-apiClient.setEnv(CoboWaas2.Env.DEV);
-// 配置 API Secret，请将 <YOUR_PRIVATE_KEY> 替换为您的 API Secret
-apiClient.setPrivateKey("<YOUR_PRIVATE_KEY>");
-// 创建 TransactionsApi 实例
-const apiInstance = new CoboWaas2.TransactionsApi();
-// 构造提币交易参数
-const opts = {
-  TransferParams: CoboWaas2.TransferParams.constructFromObject({
-    request_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 请求 ID，需唯一
-    source: {
-      source_type: "Asset", // 资产钱包
-      wallet_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 钱包 ID
-    },
-    token_id: "ETH_USDT", // 代币 ID
-    destination: {
-      destination_type: "Address",
-      account_output: {
-        address: "19AR6YWEGbSoY8UT9Ksy9WrmrZPD5sL4Ku", // 收款地址
-        amount: "1.5", // 转账代币数量
+  ```javascript
+  const CoboWaas2 = require("@cobo/cobo-waas2");
+  // 初始化 API 客户端
+  const apiClient = CoboWaas2.ApiClient.instance;
+  // 设置运行环境（开发环境：Env.DEV，生产环境：Env.PROD）
+  apiClient.setEnv(CoboWaas2.Env.DEV);
+  // 配置 API Secret，请将 <YOUR_PRIVATE_KEY> 替换为您的 API Secret
+  apiClient.setPrivateKey("<YOUR_PRIVATE_KEY>");
+  // 创建 TransactionsApi 实例
+  const apiInstance = new CoboWaas2.TransactionsApi();
+  // 构造提币交易参数
+  const opts = {
+    TransferParams: CoboWaas2.TransferParams.constructFromObject({
+      request_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 请求 ID，需唯一
+      source: {
+        source_type: "Org-Controlled", // 钱包类型：MPC 钱包（机构钱包）
+        wallet_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 钱包 ID
+        address: "0xYourFromAddress", // 转出地址
       },
+      token_id: "ETH_USDT", // 代币 ID
+      destination: {
+        destination_type: "Address", // 收款地址类型
+        account_output: {
+          address: "19AR6YWEGbSoY8UT9Ksy9WrmrZPD5sL4Ku", // 收款地址
+          amount: "1.5", // 转账代币数量
+        },
+      },
+    }),
+  };
+  // 发起提币交易请求
+  apiInstance.createTransferTransaction(opts).then(
+    (data) => {
+      console.log("API called successfully. Returned data: " + data);
     },
-  }),
-};
-// 发起提币交易请求
-apiInstance.createTransferTransaction(opts).then(
-  (data) => {
-    console.log("API called successfully. Returned data: " + data);
-  },
-  (error) => {
-    console.error(error);
-  },
-);
+    (error) => {
+      console.error(error);
+    },
+  );
 
-```
+  ```
 
 请求成功返回示例：
 

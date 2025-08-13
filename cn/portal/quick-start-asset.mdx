@@ -1,128 +1,170 @@
 ---
-title: "全托管钱包快速入门"
-sidebarTitle: "全托管钱包"
+title: "全托管钱包快速体验指南"
+sidebarTitle: "快速体验"
 lang: "cn"
 og:description: "了解如何快速设置和管理全托管钱包。分步指南介绍机构级数字资产安全托管和最佳实践。"
 ---
 
-import MySnippet from '/snippets/account-setup-cn.mdx';
-import MySnippet2 from '/snippets/transfer-category-and-description-cn.mdx';
+本文将引导您在开发环境中快速体验全托管钱包（资产钱包）的主要功能。在开发环境中，部分生产环境需要手动完成的配置已由系统默认启用，因此流程更简单、必需步骤更少。如果您已准备好在生产环境中正式使用，请参考[正式使用](/cn/portal/quick-start-guide-custodial-wallets)文档。
 
-本快速入门指南将帮助您探索和评估 Cobo 的[全托管钱包](/cn/portal/custodial-wallets/introduction)。通过遵循以下简单步骤，您将能够测试我们的核心功能，并评估我们的机构级托管服务是否满足您的需求：
+<Note>Cobo Portal 提供两种类型的全托管钱包：[资产钱包](/cn/portal/custodial-wallets/asset-wallets/introduction)和[ Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/introduction)。本指南将介绍资产钱包的设置和使用。</Note>
 
-<Note>Cobo Portal 提供两种类型的全托管钱包：[资产钱包和 Web3 钱包](/cn/portal/custodial-wallets/introduction#types-of-custodial-wallets-on-cobo-portal)。虽然本指南重点介绍资产钱包，但您也可以将其作为设置和管理 Web3 钱包的一般指导。</Note>
+本指南将为您提供在 Cobo Portal 开发环境中设置和使用全托管钱包（资产钱包）的分步指导，包括：
 
-<img src="/cn/images/quick-start-guide-custodial-wallets/workflow.svg" className="diagram" alt="工作流程"/>
+1. 注册并激活账户
+2. 设置 Cobo Guard
+3. 邀请成员（可选）
+4. 设置交易风控（可选）
+5. 添加链（可选）
+6. 创建钱包（可选）
+7. 充币（可选）
+8. 提币
+    - Cobo Portal 网页端
+    - WaaS 2.0 API 端
 
 ## 前提条件
 
-* [联系我们的销售团队](https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
+- [联系我们的销售团队](https://www.cobo.com/zh/book-demo?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
+- 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多因素认证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
 
-* 一台 iOS 设备，用于运行 [Cobo Guard](/cn/guard/introduction)（Cobo 开发的 iOS 应用，用于多重身份验证和操作审批）。
+## 注册并激活账户
 
-<MySnippet />
+使用我们销售团队提供的激活链接创建您的 Cobo Portal 账户。按邮件中的注册邀请链接完成激活：
+1. 设置密码
+2. 输入邮箱验证码
+3. 加入团队
 
-## 充值
-1. 登录 Cobo Portal。
-    - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
-    - 生产环境使用[正式环境](https://portal.cobo.com)。
-2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**。
-3. 系统会自动为您创建一个默认钱包。您也可以根据需要创建新钱包。
-4. 点击您要充值的钱包。
-5. 找到您要充值的代币，然后点击 <img src="/cn/images/mpc-wallet/icon_deposit.svg" className="icon"></img>。
+## 设置 Cobo Guard
+登录[开发环境](https://portal.dev.cobo.com/login)的 Cobo Portal，在左下角的弹窗中点击**绑定 Cobo Guard**。按照屏幕上的说明在您的 iOS 设备上安装 Cobo Guard，并将您的账户与 Cobo Guard 关联。
 
-<img src="/cn/images/quick-start-guide-custodial-wallets/deposit.png" className="screenshot_modal"></img>
+<img src="/cn/images/get-started/cobo-guard.png" className="screenshot_nav_bar" alt="绑定 Cobo Guard"/>
 
-6. 点击**复制地址**复制充值地址。
-7. 前往您的外部钱包，向您复制的充值地址发起转账。
+如果提示框被关闭，可点击左侧菜单的**指南**重新打开。
 
-## 设置交易风控
-<Note>如果您处于测试阶段，想要先快速验证充值和提现功能，可以暂时跳过本节，稍后再进行设置。</Note>
+绑定目的：
+- 作为 Cobo Portal 的 MFA 认证方式。
+- 在 APP 中审批 Cobo Portal 的各类消息。
+更多信息请参阅 [Cobo Guard](/cn/guard/introduction#主要功能)。
 
-<Accordion title="设置交易风控">
+## 邀请成员（可选）
+您可以邀请团队成员并分配权限。每个权限对应的可执行操作详见[成员权限说明](/cn/portal/organization/roles-and-permissions)。
 
-[交易风控](/cn/portal/risk-controls/tx-policies-overview)是保护您的数字资产操作的重要措施。当交易开始时，系统会按顺序检查您团队的交易风控规则。如果交易符合某个规则的触发条件，将执行指定的操作：自动通过、自动拒绝或进入审批门槛流程。
+## 设置风控（可选）
+配置代币转账的风控规则，包括币种、金额、黑/白名单、审批阈值（m/n 审批）。更多详情请参阅[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)文档。
 
-在本指南中，我们将创建一个风控规则，要求对向非信任地址进行大额 USDT 提现时需要 3 位管理员中的 2 位审批。关于其他风控规则设置和高级配置，请参见[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
+## 添加链（可选）
 
-### 前提条件
-- 您已经[邀请了足够的成员](#invite-members)，使团队中至少有 3 名成员，并且已经为其中至少 3 名成员[分配了管理员用户角色](/cn/portal/organization/assign-roles-to-members)。
+为方便测试，系统已在开发环境为您默认生成 SETH / ETH / BTC / Tron / BNB / SOL / TON 的地址。如需添加其他链，请参考[添加链](/cn/portal/enable-or-disable-chains)文档。
 
-### 设置信任收款地址列表
-首先，创建一个预先批准用于提现的信任地址列表：
+## 创建钱包（可选）
 
-<Info>在本例中，当向信任地址列表以外的地址进行大额 USDT 提现时，系统将要求 3 位管理员中的 2 位进行审批。</Info>
+为方便测试，系统已为您默认创建一个名为 `Default Wallet` 的钱包。如需创建更多钱包，请参考[设置资产钱包](/cn/portal/custodial-wallets/asset-wallets/set-up)文档。
 
-1. 登录 Cobo Portal。
-    - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
-    - 生产环境使用[正式环境](https://portal.cobo.com)。
+## 充币（可选）
 
-2. 点击 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
-3. 导航至**地址列表**标签页并点击**创建列表**。
-<img src="/cn/images/risk-controls/create-an-address-list-cn.png" className="screenshot_full_screen"/>
-4. 输入地址列表名称，然后点击**确认**。
-5. 点击您新创建的地址列表，点击**添加地址**，然后输入您的信任地址。
-6. 点击**提交**并使用 Google 身份验证器的验证码进行验证。
+在开发环境中，系统已为您自动分配测试币 SETH。如果需要充值其他币种（例如 USDC 或 USDT），请确认所用链（Tron / BEP-20 / ERC-20 等），并参考[充值](/cn/portal/mpc-wallets/ocw/transfers)文档。
 
-有关管理地址列表的更多详细信息，包括批量上传，请参见[地址列表](/cn/portal/risk-controls/address-list)。
+充值主链币：如需支付链上手续费，请确保钱包中有足够对应链的主链币。
 
-### 创建交易风控
-现在，让我们设置一个具有以下安全规则的策略：
-- 触发条件：向非信任地址提现超过 30,000,000 USDT。
-- 操作：需要 3 位管理员用户角色中的 2 位审批。
+## 提币
 
-按照以下步骤操作：
+### Cobo Portal 网页端
 
-1. 在 Cobo Portal 中，进入 <img src="/cn/images/common/wallets_icon_cn.svg" className="icon"/> > **交易风控**。
-2. 点击**创建交易风控规则** > **代币转账**。
-3. 按照截图所示配置设置：
+请参阅[从全托管钱包（资产钱包）转账](/cn/portal/transfers/from-asset-wallets)文档。
 
-<img src="/cn/images/quick-start-guide-custodial-wallets/example-policy.png" className="screenshot_full_screen" alt="风控规则已创建"/>
+### WaaS 2.0 API 端
 
-4. 点击**下一页**并按照屏幕上的说明完成风控规则设置。
+本章节将介绍如何使用 WaaS 2.0 API 在全托管钱包（资产钱包）场景中完成充币和提币。
 
-您的风控规则现在已经生效，对于向非信任地址提现超过 30,000,000 USDT 的交易将需要 3 位管理员中的 2 位审批。有关更多风控规则配置和使用案例，请访问[设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)。
-</Accordion>
+1. **生成 API Key 与 API Secret**
 
-## 提现
-1. 登录 Cobo Portal。
-   - 测试环境使用[开发环境](https://portal.dev.cobo.com)。
-   - 生产环境使用[正式环境](https://portal.cobo.com)。
+您需要在本地生成一对 Ed25519 密钥对，作为 API Key（公钥）和 API Secret（私钥）。更多生成 API Key 密钥对的说明，请参阅[生成 API Key 和 API Secret](https://www.cobo.com/developers/v2_cn/guides/overview/cobo-auth#%E7%94%9F%E6%88%90-api-key-%E5%92%8C-api-secret)。
 
-2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **全托管钱包**。
-3. 点击您要提现代币的钱包。
-4. 找到您要提现的代币，然后点击 <img src="/cn/images/custodial-wallet/withdraw-icon.png" className="icon"/> 打开**转账**对话框。
+2. **注册 API Key**
 
-5. 填写必要信息，然后点击**提交**。
+生成 API Key 后，您需要在 Cobo Portal 上注册 API Key，并为其设置用户角色和可访问的钱包范围。更多注册 API Key 的说明，请参阅[注册 API Key](/cn/portal/developer-console/create-api-key)。
 
-<img src="/cn/images/quick-start-guide-custodial-wallets/withdraw.png" className="screenshot_modal" alt="提现截图" />
+3. **接入 WaaS SDK**
 
-6. 在 Cobo Guard 上二次确认提现。
+在完成 API Key 配置后，您可以接入 WaaS SDK。您可以先调用一个只读接口（如列出支持的链）来测试 SDK 是否配置成功，如果调用成功，说明您的开发环境已准备就绪，可以继续实现提币等功能。详情请参阅以下文档：
+- [JavaScript SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-javascript)
+- [Python SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-python)
+- [Go SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-go)
+- [Java SDK 快速入门](https://www.cobo.com/developers/v2_cn/developer-tools/quickstart-java)
 
-<Info>要了解更多关于从资产钱包转账的信息，请参见[从全托管钱包（资产钱包）转账](/cn/portal/transfers/from-asset-wallets)。</Info>
+4. **设置 Callback 和 Webhook（可选）**
 
-## 查看交易详情和状态
-在进行资产钱包的转入或转出后，您可以在 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **交易记录**中查看其交易状态。
-<img src="/cn/images/quick-start-guide-custodial-wallets/transaction-history.png" className="screenshot_full_screen" alt="交易历史截图" />
+为了增强安全性，您应该设置一个 Callback Endpoint 来二次确认提现请求。当您通过 WaaS 2.0 API 发起提现时，该 Endpoint 将接收交易详情，并且必须确认这些详情后才能继续进行交易。要进行设置，请参考 [Webhook 和 Callback 指南](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/introduction)。
 
-## 下一步
-### 设置交易风控
-设置交易风控是一项关键的安全措施，可实现自动化和受控的交易审批。要设置交易风控，请参见[设置交易风控](#设置交易风控)获取详细说明。
+5. **发起提币交易**
 
-### 设置业务风控和用户角色
-设置业务风控和用户角色对于管理团队的访问控制和安全性至关重要。有关详细说明，请参见[设置业务风控规则和用户角色](/cn/portal/quick-start-guide-custodial-wallets#设置业务风控和用户角色)。
+如果您在开发环境中配置了交易风控，钱包中配置了主控组，或者配置了 Callback Endpoint 等，这些设置会对提币流程产生影响。例如，您可能需要额外审批步骤才能完成交易。
 
-### 集成我们的 API
-如果您需要以编程方式管理您的钱包，可以考虑使用 Cobo 的 WaaS 2.0 API。我们全面的[开发者指南](https://www.cobo.com/developers/v2_cn/guides/custodial-wallets/get-started-asset-wallets)将帮助您开始 API 集成。
+如需支付链上手续费，请确保钱包中有足够对应链的主链币；若转账双方均为资产钱包，则可自动通过 [Cobo Loop](/cn/portal/custodial-wallets/asset-wallets/cobo-loop) 网络完成转账，无需消耗链上 Gas。
 
-### 实施安全最佳实践
-遵循我们的[安全检查清单](/cn/portal/security-checklist)，确保您的团队实施我们的安全最佳实践。
+以下为 JavaScript SDK 示例代码，更多详情可参阅[发起转账 API 文档](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)
 
-### 了解更多
-- [观看产品视频](https://www.youtube.com/watch?v=D4CMsRf3WW0)
-- [访问官方网站](https://www.cobo.com/products/wallet/custodial-wallet)
-- [阅读产品手册](https://manuals.cobo.com/cn/portal/custodial-wallets/introduction)
+```javascript
+const CoboWaas2 = require("@cobo/cobo-waas2");
+// 初始化 API 客户端
+const apiClient = CoboWaas2.ApiClient.instance;
+// 设置运行环境（开发环境：Env.DEV，生产环境：Env.PROD）
+apiClient.setEnv(CoboWaas2.Env.DEV);
+// 配置 API Secret，请将 <YOUR_PRIVATE_KEY> 替换为您的 API Secret
+apiClient.setPrivateKey("<YOUR_PRIVATE_KEY>");
+// 创建 TransactionsApi 实例
+const apiInstance = new CoboWaas2.TransactionsApi();
+// 构造提币交易参数
+const opts = {
+  TransferParams: CoboWaas2.TransferParams.constructFromObject({
+    request_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 请求 ID，需唯一
+    source: {
+      source_type: "Asset", // 钱包类型：资产钱包
+      wallet_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 钱包 ID
+    },
+    token_id: "ETH_USDT", // 代币 ID
+    destination: {
+      destination_type: "Address",
+      account_output: {
+        address: "19AR6YWEGbSoY8UT9Ksy9WrmrZPD5sL4Ku", // 收款地址
+        amount: "1.5", // 转账代币数量
+      },
+    },
+  }),
+};
+// 发起提币交易请求
+apiInstance.createTransferTransaction(opts).then(
+  (data) => {
+    console.log("API called successfully. Returned data: " + data);
+  },
+  (error) => {
+    console.error(error);
+  },
+);
 
+```
 
+请求成功返回示例：
+
+```javascript
+API called successfully. Returned data: {
+  "request_id": "f47ac10b-58cc-4372-a567-0e02b2c3d471",
+  "transaction_id": "c8964e6b-32d7-4da3-8407-6c4a4a8c92d7",
+  "status": "Submitted"
+}
+```
+
+## 查看交易状态
+
+发起交易后，您可以通过以下方式查看交易状态：
+
+- **Cobo Portal 网页端**：  
+  登录 Cobo Portal，进入**钱包** > **交易记录**，在列表中找到对应交易即可查看其状态。
+
+- **WaaS 2.0 API**：  
+  调用[获取交易详情](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) 接口查询交易详情。
+  调用[获取交易列表](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) 接口查询交易列表。
+
+至此，您已完成全托管钱包（资产钱包）在开发环境中的主要功能快速体验，包括账户设置、充币与提币等操作。如果您想要在生产环境中正式部署和使用全托管钱包（资产钱包），请参考[正式使用指南](/cn/portal/quick-start-guide-custodial-wallets)。
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>
