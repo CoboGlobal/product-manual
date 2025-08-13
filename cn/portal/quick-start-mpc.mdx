@@ -1,15 +1,15 @@
 ---
-title: "全托管钱包快速体验指南"
+title: "MPC 钱包快速体验指南"
 sidebarTitle: "快速体验"
 lang: "zh-hans"
-og:description: "了解如何快速设置和管理全托管钱包。分步指南介绍机构级数字资产安全托管和最佳实践。"
+og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 钱包。"
 ---
 
-本文将引导您在开发环境中快速体验全托管钱包（资产钱包）的主要功能。在开发环境中，部分生产环境需要手动完成的配置已由系统默认启用，因此流程更简单、必需步骤更少。如果您已准备好在生产环境中正式使用，请参考[正式使用](/cn/portal/quick-start-guide-custodial-wallets)文档。
+本文将引导您在开发环境中快速体验 MPC 钱包的主要功能。在开发环境中，部分生产环境需要手动完成的配置已由系统默认启用，因此流程更简单、必需步骤更少。如果您已准备好在生产环境中正式使用，请参考[正式使用](/cn/portal/quick-start-guide-mpc)文档。
 
-<Note>Cobo Portal 提供两种类型的全托管钱包：[资产钱包](/cn/portal/custodial-wallets/asset-wallets/introduction)和[ Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/introduction)。本指南将介绍资产钱包的设置和使用。</Note>
+<Note>Cobo Portal 提供两种类型的 MPC 钱包：[机构钱包](/cn/portal/mpc-wallets/ocw/introduction)和[终端用户钱包](/cn/portal/mpc-wallets/ucw/introduction)。本指南将介绍机构钱包的设置和使用。</Note>
 
-本指南将为您提供在 Cobo Portal 开发环境中设置和使用全托管钱包（资产钱包）的分步指导，包括：
+本指南将为您提供在 Cobo Portal 开发环境中设置和使用 MPC 钱包的分步指导，包括：
 
 1. 注册并激活账户
 2. 设置 Cobo Guard
@@ -17,8 +17,11 @@ og:description: "了解如何快速设置和管理全托管钱包。分步指南
 4. 设置交易风控（可选）
 5. 添加链（可选）
 6. 创建钱包（可选）
-7. 充币（可选）
-8. 提币
+7. 设置 Fee Station（可选）
+8. 开启代币自动归集（可选）
+9. 配置 KYA / KYT 扫描工具（可选）
+10. 充币（可选）
+11. 提币
     - Cobo Portal 网页端
     - WaaS 2.0 API 端
 
@@ -43,7 +46,7 @@ og:description: "了解如何快速设置和管理全托管钱包。分步指南
 
 绑定目的：
 - 作为 Cobo Portal 的 MFA 认证方式。
-- 在 APP 中审批 Cobo Portal 的各类消息。
+- 在 APP 中审批 Cobo Portal 的各类审批请求。
 更多信息请参阅 [Cobo Guard](/cn/guard/introduction#主要功能)。
 
 ## 邀请成员（可选）
@@ -58,23 +61,45 @@ og:description: "了解如何快速设置和管理全托管钱包。分步指南
 
 ## 创建钱包（可选）
 
-为方便测试，系统已为您默认创建一个名为 `Default Wallet` 的钱包。如需创建更多钱包，请参考[设置资产钱包](/cn/portal/custodial-wallets/asset-wallets/set-up)文档。
+为方便测试，系统已为您默认创建：
+
+- 一个 Vault：`Cobo Demo Vault (Testing Only)`
+- 一个钱包：`Cobo Demo Vault (Testing Only)` 中的 `Default MPC wallet`
+- 私钥：主控组 2/2，签名组与恢复组在开发环境中暂不配置。
+<Note>两片私钥均由 Cobo 默认配置，因此您在开发环境中使用该 MPC 钱包发起交易时，Cobo 会自动完成交易的签名，您无需手动签名。</Note>
+
+如需完整体验 MPC 钱包的创建流程，请参考：
+- [MPC 机构钱包介绍](/cn/portal/mpc-wallets/ocw/introduction)
+- [创建 MPC Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault)
+- [设置主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)
+- [设置签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)
+- [设置恢复组](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group)
+- [主控组 / 签名组 / 恢复组的区别](/cn/portal/mpc-wallets/ocw/holder-group-overview)
+
+## 设置 Fee Station（可选）
+如果您希望在开发环境中使用 Cobo 的美元稳定币代付链上交易手续费功能，或集中管理主链币以支付 Gas，可以启用 Fee Station。它相当于一个团队共享的费用账户，可根据配置策略为链上交易自动代付 Gas，并统一结算各类平台费用。详情请参阅[Fee Station 简介](/cn/portal/fee-station/introduction)。
+
+## 开启代币自动归集（可选）
+如果需要进行 MPC 钱包资金的自动归集，请参考[启用自动代币归集](/cn/portal/auto-sweep-overview)。
+
+## 配置 KYA / KYT 扫描工具（可选）
+如果需要对 MPC 钱包进行 KYA / KYT 扫描，请参考[Screening App 简介](/cn/apps/screening/introduction)。
 
 ## 充币（可选）
 
-在开发环境中，系统已为您自动分配测试币 SETH。如果需要充值其他币种（例如 USDC 或 USDT），请确认所用链（Tron / BEP-20 / ERC-20 等），并参考[充值](/cn/portal/mpc-wallets/ocw/transfers)文档。
+为方便测试，在开发环境中，系统已为您自动分配测试币 SETH。如果需要充值其他币种（例如 USDC 或 USDT），请确认所用链（Tron / BEP-20 / ERC-20 等），并参考[充值](/cn/portal/mpc-wallets/ocw/transfers)文档。
 
-充值主链币：如需支付链上手续费，请确保钱包中有足够对应链的主链币。
+充值主链币：如需支付链上手续费，请确保钱包中有足够对应链的主链币。您可以在 [Fee Station](/cn/portal/fee-station/introduction) 预充值对应链的主链币，或充值美元稳定币用以代付链上手续费。
 
 ## 提币
 
 ### Cobo Portal 网页端
 
-请参阅[从全托管钱包（资产钱包）转账](/cn/portal/transfers/from-asset-wallets)文档。
+请参阅[从 MPC 钱包（机构钱包）转账](/cn/portal/transfers/from-mpc-wallets)文档。
 
 ### WaaS 2.0 API 端
 
-本章节将介绍如何使用 WaaS 2.0 API 在全托管钱包（资产钱包）场景中完成充币和提币。
+本章节将介绍如何使用 WaaS 2.0 API 在 MPC 钱包（机构钱包）场景中完成充币和提币。
 
 1. **生成 API Key 与 API Secret**
 
@@ -100,49 +125,50 @@ og:description: "了解如何快速设置和管理全托管钱包。分步指南
 
 如果您在开发环境中配置了交易风控，钱包中配置了主控组，或者配置了 Callback Endpoint 等，这些设置会对提币流程产生影响。例如，您可能需要额外审批步骤才能完成交易。
 
-如需支付链上手续费，请确保钱包中有足够对应链的主链币；若转账双方均为资产钱包，则可自动通过 [Cobo Loop](/cn/portal/custodial-wallets/asset-wallets/cobo-loop) 网络完成转账，无需消耗链上 Gas。
+在提币前，请确保钱包中有足够主链币用于支付链上手续费，或者已启用 [Fee Station](/cn/portal/fee-station/introduction) 代付功能。
 
 以下为 JavaScript SDK 示例代码，更多详情可参阅[发起转账 API 文档](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)
 
-```javascript
-const CoboWaas2 = require("@cobo/cobo-waas2");
-// 初始化 API 客户端
-const apiClient = CoboWaas2.ApiClient.instance;
-// 设置运行环境（开发环境：Env.DEV，生产环境：Env.PROD）
-apiClient.setEnv(CoboWaas2.Env.DEV);
-// 配置 API Secret，请将 <YOUR_PRIVATE_KEY> 替换为您的 API Secret
-apiClient.setPrivateKey("<YOUR_PRIVATE_KEY>");
-// 创建 TransactionsApi 实例
-const apiInstance = new CoboWaas2.TransactionsApi();
-// 构造提币交易参数
-const opts = {
-  TransferParams: CoboWaas2.TransferParams.constructFromObject({
-    request_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 请求 ID，需唯一
-    source: {
-      source_type: "Asset", // 钱包类型：资产钱包
-      wallet_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 钱包 ID
-    },
-    token_id: "ETH_USDT", // 代币 ID
-    destination: {
-      destination_type: "Address",
-      account_output: {
-        address: "19AR6YWEGbSoY8UT9Ksy9WrmrZPD5sL4Ku", // 收款地址
-        amount: "1.5", // 转账代币数量
+  ```javascript
+  const CoboWaas2 = require("@cobo/cobo-waas2");
+  // 初始化 API 客户端
+  const apiClient = CoboWaas2.ApiClient.instance;
+  // 设置运行环境（开发环境：Env.DEV，生产环境：Env.PROD）
+  apiClient.setEnv(CoboWaas2.Env.DEV);
+  // 配置 API Secret，请将 <YOUR_PRIVATE_KEY> 替换为您的 API Secret
+  apiClient.setPrivateKey("<YOUR_PRIVATE_KEY>");
+  // 创建 TransactionsApi 实例
+  const apiInstance = new CoboWaas2.TransactionsApi();
+  // 构造提币交易参数
+  const opts = {
+    TransferParams: CoboWaas2.TransferParams.constructFromObject({
+      request_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 请求 ID，需唯一
+      source: {
+        source_type: "Org-Controlled", // 钱包类型：MPC 钱包（机构钱包）
+        wallet_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // 钱包 ID
+        address: "0xYourFromAddress", // 转出地址
       },
+      token_id: "ETH_USDT", // 代币 ID
+      destination: {
+        destination_type: "Address", // 收款地址类型
+        account_output: {
+          address: "19AR6YWEGbSoY8UT9Ksy9WrmrZPD5sL4Ku", // 收款地址
+          amount: "1.5", // 转账代币数量
+        },
+      },
+    }),
+  };
+  // 发起提币交易请求
+  apiInstance.createTransferTransaction(opts).then(
+    (data) => {
+      console.log("API called successfully. Returned data: " + data);
     },
-  }),
-};
-// 发起提币交易请求
-apiInstance.createTransferTransaction(opts).then(
-  (data) => {
-    console.log("API called successfully. Returned data: " + data);
-  },
-  (error) => {
-    console.error(error);
-  },
-);
+    (error) => {
+      console.error(error);
+    },
+  );
 
-```
+  ```
 
 请求成功返回示例：
 
@@ -165,6 +191,6 @@ API called successfully. Returned data: {
   调用[获取交易详情](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information) 接口查询交易详情。
   调用[获取交易列表](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) 接口查询交易列表。
 
-至此，您已完成全托管钱包（资产钱包）在开发环境中的主要功能快速体验，包括账户设置、充币与提币等操作。如果您想要在生产环境中正式部署和使用全托管钱包（资产钱包），请参考[正式使用指南](/cn/portal/quick-start-guide-custodial-wallets)。
+至此，您已完成 MPC 钱包在开发环境中的主要功能快速体验，包括账户设置、充币与提币等操作。如果您想要在生产环境中正式部署和使用 MPC 钱包，请参考[正式使用指南](/cn/portal/quick-start-guide-mpc)。
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以帮助我们改进文档！</Tip>

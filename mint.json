@@ -129,8 +129,20 @@
     {
       "group": "GET STARTED",
       "pages": [
-        "en/portal/quick-start-guide-custodial-wallets",
-        "en/portal/quick-start-guide-mpc"
+        {
+          "group": "MPC Wallets",
+          "pages": [
+            "en/portal/quick-start-mpc",
+            "en/portal/quick-start-guide-mpc"
+          ]
+        },
+        {
+          "group": "Custodial Wallets",
+          "pages": [
+            "en/portal/quick-start-asset",
+            "en/portal/quick-start-guide-custodial-wallets"
+          ]
+        }
       ],
       "version": "🌐 English"
     },
@@ -675,8 +687,20 @@
     {
       "group": "快速开始",
       "pages": [
-        "cn/portal/quick-start-guide-custodial-wallets",
-        "cn/portal/quick-start-guide-mpc"
+        {
+          "group": "MPC 钱包",
+          "pages": [
+            "cn/portal/quick-start-mpc",
+            "cn/portal/quick-start-guide-mpc"
+          ]
+        },
+        {
+          "group": "全托管钱包",
+          "pages": [
+            "cn/portal/quick-start-asset",
+            "cn/portal/quick-start-guide-custodial-wallets"
+          ]
+        }
       ],
       "version": "🌐 简体中文"
     },
