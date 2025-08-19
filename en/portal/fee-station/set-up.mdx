@@ -1,28 +1,39 @@
 ---
-title: "Overview"
-sidebarTitle: "Overview"
+title: "How to use Fee Station"
+sidebarTitle: "How to use"
 lang: "en"
-description: "Understand how to set up Fee Station for seamless expense management on Cobo Portal."
+description: "Learn how to deposit tokens, track transaction records, and set up gas fee payment preferences in Fee Station."
 ---
 
-Fee Station offers a streamlined solution for automating your expense management. It can be used to automatically handle a range of payments, including:
+This article introduces how to complete the following operations in Fee Station:
 
-- Cobo Bill Payments:
-    - Standard monthly bills based on your selected pricing plan
-    - Overage charges
-    - Add-on packages
+- Deposit tokens
+- View transaction records
+- Set up gas fee payment preferences
 
-- MPC Transaction Fee Payments:
-    - Transaction fees for MPC Wallets
+## Deposit tokens
 
-Fee Station does not support partial payments. For example, if you have a transaction fee payment and the balance in your Fee Station is insufficient to cover the full amount, the payment cannot be made using Fee Station. To avoid such issues, ensure that you always maintain a sufficient balance in your Fee Station.
+In the **Tokens** tab, you can view the balance of supported tokens in your account and their usage (including transaction fees and service fees). For supported tokens, refer to [Supported Token Types](/en/portal/fee-station/introduction#supported-token-types).
 
-With a sufficient balance, Fee Station will automatically settle payments for your Cobo bills. Manual configuration is only required if you want to use Fee Station to pay MPC transaction fees.
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Switch to the **Tokens** tab, where you will see a list of fee tokens supported by Fee Station.
+4. Click <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> next to the token you want to deposit into Fee Station.
 
-Fee Station accepts the following payment assets for **Cobo bills**, processing them in the order listed: **TRON_USDC, TRON_USDT, ETH_USDC, and ETH_USDT**.
+    <img src="/en/images/fee-station/2.png" className="screenshot_full_screen"/>
 
-For **MPC transaction fees**, Fee Station offers automatic fee settlement for transactions on both EVM and TRON chains, using the **respective fee tokens** of each chain.
+5. In the pop-up window, click <img src="/en/images/fee-station/copy.svg" className="icon"></img> to copy the deposit address or scan the QR code with your wallet. If you want to make a transfer from other wallets created on Cobo Portal, click **Deposit from other wallets**. Then, follow the instructions [here](/en/portal/transfers/introduction) to complete the transfer.
 
-The Fee Station service itself is free of charge, and Cobo does not impose additional fees for transactions processed within Fee Station. If a transaction is recorded on-chain, only blockchain fees will apply. Transactions that are not recorded on-chain will not incur any extra fees.
+## View transaction records
+
+In the **Transaction Records** tab, you can track all deposit and spending records for each token. You can filter by time, token, or transaction type, and download data for reconciliation or auditing purposes.
+
+<img src="/en/images/fee-station/tx-records.png" className="screenshot_full_screen"/>
+
+## Configure payment preferences
+
+In the **Payment Preferences** tab, you can configure separate fee payment strategies for MCP Wallets and Web3 Wallets.
+
+<img src="/en/images/fee-station/preferences.png" className="screenshot_full_screen"/>
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

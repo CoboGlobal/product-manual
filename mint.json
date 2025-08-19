@@ -129,8 +129,20 @@
     {
       "group": "GET STARTED",
       "pages": [
-        "en/portal/quick-start-guide-custodial-wallets",
-        "en/portal/quick-start-guide-mpc"
+        {
+          "group": "MPC Wallets",
+          "pages": [
+            "en/portal/quick-start-mpc",
+            "en/portal/quick-start-guide-mpc"
+          ]
+        },
+        {
+          "group": "Custodial Wallets",
+          "pages": [
+            "en/portal/quick-start-asset",
+            "en/portal/quick-start-guide-custodial-wallets"
+          ]
+        }
       ],
       "version": "🌐 English"
     },
@@ -200,40 +212,7 @@
                 "en/portal/mpc-wallets/ocw/key-share-verification",
                 "en/portal/mpc-wallets/ocw/dapp-interaction"
               ]
-            },
-            {
-              "group": "User-Controlled Wallets",
-              "pages": [
-                "en/portal/mpc-wallets/ucw/introduction",
-                "en/portal/mpc-wallets/ucw/set-up",
-                "en/portal/mpc-wallets/ucw/project-management",
-                "en/portal/mpc-wallets/ucw/vault-management",
-                "en/portal/mpc-wallets/ucw/wallet-management"
-              ]
             }
-          ]
-        },
-        {
-          "group": "Smart Contract Wallets",
-          "pages": [
-            "en/portal/smart-contract-wallets/introduction",
-            {
-              "group": "Set up Smart Contract Wallets",
-              "pages": [
-                "en/portal/smart-contract-wallets/create",
-                "en/portal/smart-contract-wallets/import"
-              ]
-            },
-            "en/portal/smart-contract-wallets/manage",
-            "en/portal/smart-contract-wallets/manage-delegate-keys",
-            {
-              "group": "Deposit and withdraw assets",
-              "pages": [
-                "en/portal/smart-contract-wallets/deposit-assets",
-                "en/portal/smart-contract-wallets/withdraw-assets"
-              ]
-            },
-            "en/portal/smart-contract-wallets/dapp-interaction"
           ]
         },
         {
@@ -380,15 +359,7 @@
           "group": "Fee Station",
           "pages": [
             "en/portal/fee-station/introduction",
-            {
-              "group": "Set up Fee Station",
-              "pages": [
-                "en/portal/fee-station/overview",
-                "en/portal/fee-station/set-up-for-mpc"
-              ]
-            },
-            "en/portal/fee-station/deposit",
-            "en/portal/fee-station/transaction-records"
+            "en/portal/fee-station/set-up"
           ]
         },
         {
@@ -436,7 +407,40 @@
     {
       "group": "RESOURCES",
       "pages": [
-        "en/portal/glossary"
+        "en/portal/glossary",
+        {
+          "group": "User-Controlled Wallets",
+          "pages": [
+            "en/portal/mpc-wallets/ucw/introduction",
+            "en/portal/mpc-wallets/ucw/set-up",
+            "en/portal/mpc-wallets/ucw/project-management",
+            "en/portal/mpc-wallets/ucw/vault-management",
+            "en/portal/mpc-wallets/ucw/wallet-management"
+          ]
+        },
+        {
+          "group": "Smart Contract Wallets",
+          "pages": [
+            "en/portal/smart-contract-wallets/introduction",
+            {
+              "group": "Set up Smart Contract Wallets",
+              "pages": [
+                "en/portal/smart-contract-wallets/create",
+                "en/portal/smart-contract-wallets/import"
+              ]
+            },
+            "en/portal/smart-contract-wallets/manage",
+            "en/portal/smart-contract-wallets/manage-delegate-keys",
+            {
+              "group": "Deposit and withdraw assets",
+              "pages": [
+                "en/portal/smart-contract-wallets/deposit-assets",
+                "en/portal/smart-contract-wallets/withdraw-assets"
+              ]
+            },
+            "en/portal/smart-contract-wallets/dapp-interaction"
+          ]
+        }
       ],
       "version": "🌐 English"
     },
@@ -683,8 +687,20 @@
     {
       "group": "快速开始",
       "pages": [
-        "cn/portal/quick-start-guide-custodial-wallets",
-        "cn/portal/quick-start-guide-mpc"
+        {
+          "group": "MPC 钱包",
+          "pages": [
+            "cn/portal/quick-start-mpc",
+            "cn/portal/quick-start-guide-mpc"
+          ]
+        },
+        {
+          "group": "全托管钱包",
+          "pages": [
+            "cn/portal/quick-start-asset",
+            "cn/portal/quick-start-guide-custodial-wallets"
+          ]
+        }
       ],
       "version": "🌐 简体中文"
     },
@@ -754,40 +770,7 @@
                 "cn/portal/mpc-wallets/ocw/key-share-verification",
                 "cn/portal/mpc-wallets/ocw/dapp-interaction"
               ]
-            },
-            {
-              "group": "终端用户钱包",
-              "pages": [
-                "cn/portal/mpc-wallets/ucw/introduction",
-                "cn/portal/mpc-wallets/ucw/set-up",
-                "cn/portal/mpc-wallets/ucw/project-management",
-                "cn/portal/mpc-wallets/ucw/vault-management",
-                "cn/portal/mpc-wallets/ucw/wallet-management"
-              ]
             }
-          ]
-        },
-        {
-          "group": "智能合约钱包",
-          "pages": [
-            "cn/portal/smart-contract-wallets/introduction",
-            {
-              "group": "设置智能合约钱包",
-              "pages": [
-                "cn/portal/smart-contract-wallets/create",
-                "cn/portal/smart-contract-wallets/import"
-              ]
-            },
-            "cn/portal/smart-contract-wallets/manage",
-            "cn/portal/smart-contract-wallets/manage-delegate-keys",
-            {
-              "group": "充币和提币",
-              "pages": [
-                "cn/portal/smart-contract-wallets/deposit-assets",
-                "cn/portal/smart-contract-wallets/withdraw-assets"
-              ]
-            },
-            "cn/portal/smart-contract-wallets/dapp-interaction"
           ]
         },
         {
@@ -934,15 +917,7 @@
           "group": "Fee Station",
           "pages": [
             "cn/portal/fee-station/introduction",
-            {
-              "group": "设置 Fee Station",
-              "pages": [
-                "cn/portal/fee-station/overview",
-                "cn/portal/fee-station/set-up-for-mpc"
-              ]
-            },
-            "cn/portal/fee-station/deposit",
-            "cn/portal/fee-station/view-tx-records"
+            "cn/portal/fee-station/set-up"
           ]
         },
         {
@@ -990,7 +965,40 @@
     {
       "group": "资源文档",
       "pages": [
-        "cn/portal/glossary"
+        "cn/portal/glossary",
+        {
+          "group": "终端用户钱包",
+          "pages": [
+            "cn/portal/mpc-wallets/ucw/introduction",
+            "cn/portal/mpc-wallets/ucw/set-up",
+            "cn/portal/mpc-wallets/ucw/project-management",
+            "cn/portal/mpc-wallets/ucw/vault-management",
+            "cn/portal/mpc-wallets/ucw/wallet-management"
+          ]
+        },
+        {
+          "group": "智能合约钱包",
+          "pages": [
+            "cn/portal/smart-contract-wallets/introduction",
+            {
+              "group": "设置智能合约钱包",
+              "pages": [
+                "cn/portal/smart-contract-wallets/create",
+                "cn/portal/smart-contract-wallets/import"
+              ]
+            },
+            "cn/portal/smart-contract-wallets/manage",
+            "cn/portal/smart-contract-wallets/manage-delegate-keys",
+            {
+              "group": "充币和提币",
+              "pages": [
+                "cn/portal/smart-contract-wallets/deposit-assets",
+                "cn/portal/smart-contract-wallets/withdraw-assets"
+              ]
+            },
+            "cn/portal/smart-contract-wallets/dapp-interaction"
+          ]
+        }
       ],
       "version": "🌐 简体中文"
     },
@@ -1247,8 +1255,36 @@
       "destination": "/en/portal/developer-console/callbacks-register"
     },
     {
-      "source": "/cn/portal/fee-station/set-up-mpc",
-      "destination": "/cn/portal/fee-station/set-up-for-mpc"
+      "source": "/cn/portal/fee-station/overview",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/cn/portal/fee-station/set-up-for-mpc",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/cn/portal/fee-station/deposit",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/cn/portal/fee-station/view-tx-records",
+      "destination": "/cn/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/overview",
+      "destination": "/en/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/set-up-for-mpc",
+      "destination": "/en/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/deposit",
+      "destination": "/en/portal/fee-station/set-up"
+    },
+    {
+      "source": "/en/portal/fee-station/transaction-records",
+      "destination": "/en/portal/fee-station/set-up"
     },
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",

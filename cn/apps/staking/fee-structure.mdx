@@ -9,19 +9,29 @@ description: "了解 Staking App 中的佣金结构，包括 BTC 和 ETH 质押�
 
 ## BTC 质押
 
-对于 [Babylon](https://babylonlabs.io/) 协议下的 BTC 质押，当 Cobo 作为最终确认提供者 (Finality Provider) 时，佣金为质押奖励的 5%。
+对于 [Babylon](https://babylonlabs.io/) 协议下的 BTC 质押，当 Cobo 作为 Finality Provider 时，佣金为质押奖励的 5%。
 
 ## ETH 质押
 
-对于 [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/) 上的 ETH 质押，[Stakefish](https://stake.fish/products/classic-staking) 是目前支持的以太坊节点提供商，未来计划增加对其他节点提供商的支持，费用可能因节点提供商而异。
+对于 [Beacon Chain](https://ethereum.org/en/roadmap/beacon-chain/) 上的 ETH 质押，[Stakefish](https://stake.fish/products/classic-staking) 和 [Figment](https://figment.io/) 是目前支持的以太坊节点提供商，未来计划增加对其他节点提供商的支持，费用可能因节点提供商而异。
 
-Stakefish 作为节点提供商时，费用结构如下所示，首先解释 ETH 质押奖励的构成。
+首先解释 ETH 质押奖励的构成。
 
 ETH 质押奖励分为两部分：共识层奖励和执行层奖励。
 
-- **共识层奖励** (Consensus Layer Rewards)：约占总奖励的 80%（比例可能变化）。这些奖励来自区块生产，直接分配到您的赎回地址，不与 Cobo 和 Stakefish 分享。
-- **执行层奖励** (Execution Layer Rewards): 约占总奖励的 20%（比例可能变化）。包括 MEV（最大可提取价值）、小费和交易手续费。这些奖励的分配因节点提供商而异。对于 Stakefish，执行层奖励需由质押地址认领。
+- **共识层奖励** (Consensus Layer Rewards)：奖励来自区块生产，直接分配到您的赎回地址，不与 Cobo 和节点提供商分享。
+- **执行层奖励** (Execution Layer Rewards): 包括 MEV（最大可提取价值）、小费和交易手续费。这些奖励的分配因节点提供商而异。**只有执行层奖励与佣金相关**。
 
-只有执行层奖励与佣金相关，认领后您将获得 50% 的执行层奖励，另外 50% 由 Stakefish 和 Cobo 扣除作为佣金（约占总奖励的 10%）。例如，如果您的质押在共识层产生 2.8% 的收益率，在执行层产生 1.0% 的收益率，您的最终收益率将为 3.3%（共识层 2.8% 加上执行层 0.5%）。
+Stakefish 和 Figment 的奖励分配构成如下：
+
+<Note>
+- 注意共识层和执行层的分配比例仅为示例；
+- 佣金为总奖励的10%，佣金占执行层奖励的比例会根据共识层/执行层的实际分配比例动态调整；
+- 用户收益示例基于假设的收益率，不代表实际情况
+</Note>
+
+| 共识层奖励 | 执行层奖励 | 佣金 | 用户收益示例 |
+|----------|----------|---------|------------|
+| 占总奖励的80% | 占总奖励的20%<br></br>- Stakefish: 执行层奖励需由质押地址认领<br></br>- Figment: 执行层奖励由 Figment 部署智能合约来自动完成，将按照约定的比例进行自动分发 | 占总奖励的10%<br></br>（在执行层奖励占总奖励20%的情况下，相当于佣金占执行层奖励的50%） | - 共识层：2.8%<br></br>- 执行层（扣除佣金前）：0.7%<br></br>- 执行层（扣除佣金后）：0.35%<br></br>- 总计：3.15% |
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
