@@ -22,7 +22,7 @@ Use Read functions to look up real-time information from the smart contract with
 <img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
 
 #### Roles and permissions
-**Role identifiers (constants):**
+**Role identifiers (constants)**
 - `DEFAULT_ADMIN_ROLE`: Default admin role identifier. Addresses with this role have the highest contract management privileges and can manage all other roles.
 - `MANAGER_ROLE`: Manager role identifier. Addresses with this role can perform all management operations except contract upgrades and permission management, such as configuring token access controls, pausing/resuming contracts, etc.
 - `MINTER_ROLE`: Minter role identifier. Addresses with this role can mint new tokens.
@@ -31,7 +31,7 @@ Use Read functions to look up real-time information from the smart contract with
 - `SALVAGER_ROLE`: Salvager role identifier. Addresses with this role can recover assets accidentally sent to the contract address.
 - `UPGRADER_ROLE`: Upgrader role identifier. Addresses with this role can upgrade the contract to new versions.
 
-**Permission query functions:**
+**Permission query**
 - `getRoleAdmin(role)`: Query the admin role that manages a specific role. For example, query who can grant or revoke `MINTER_ROLE`.
 - `hasRole(role, account)`: Check if a specific address has a certain role. This is the core function for verifying operation permissions.
 

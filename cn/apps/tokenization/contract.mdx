@@ -22,7 +22,7 @@ CoboERC20 是一个基于 [ERC20](https://docs.openzeppelin.com/contracts/5.x/er
 <img src="/cn/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="读取函数（查询数据）"/>
 
 #### 角色与权限
-**角色标识符（常量）：**
+**角色标识符（常量）**
 - `DEFAULT_ADMIN_ROLE`: 默认管理员角色标识符。拥有此角色的地址具有合约最高管理权限，可以管理其他所有角色。
 - `MANAGER_ROLE`: 经理角色标识符。拥有此角色的地址可以进行除合约升级和权限管理外的所有管理操作，例如配置代币流通限制、暂停/恢复合约等。
 - `MINTER_ROLE`: 铸币者角色标识符。拥有此角色的地址可以铸造新代币。
@@ -31,7 +31,7 @@ CoboERC20 是一个基于 [ERC20](https://docs.openzeppelin.com/contracts/5.x/er
 - `SALVAGER_ROLE`: 拯救者角色标识符。拥有此角色的地址可以恢复意外发送到合约地址的资产。
 - `UPGRADER_ROLE`: 升级者角色标识符。拥有此角色的地址可以将合约升级到新版本。
 
-**权限查询函数：**
+**权限查询**
 - `getRoleAdmin(role)`: 查询管理特定角色的管理员角色。例如，查询谁可以授予或撤销 `MINTER_ROLE`。
 - `hasRole(role, account)`: 检查特定地址是否拥有某个角色。这是验证操作权限的核心函数。
 
