@@ -21,13 +21,9 @@ Tokenization simplifies how you issue, manage, and operate your own tokens—no 
 Design and issue tokens tailored to your business needs, covering a wide range of use cases from stablecoins and security tokens to the tokenization of real-world assets.
 
 ### Built on a secure foundation
-<<<<<<< Updated upstream
-All tokens are powered by **CoboERC20**, our in-house, audited smart contract that extends the standard ERC-20 with enhanced features for access control and lifecycle management.
-=======
 We support token creation across multiple blockchain platforms with secure token standards:
 - **CoboERC20 smart contract**: Extends the standard ERC-20 with enhanced features for access control and lifecycle management. The contract has undergone professional security auditing by third-party firm BlockSec to ensure high security standards. See the [Security Audit Report for CoboTokenization](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf). Currently supported chains are ETH and BSC.
 - **Solana Token-2022 Program**: Built on Solana's native token standard, providing high-performance and low-cost token operations.
->>>>>>> Stashed changes
 
 We also support API access, allowing you to programmatically manage token operations.
 
@@ -129,13 +125,15 @@ When a token operation is initiated, it will automatically enter the approval wo
 
 After passing the app approval workflow, the operation enters transaction policy approval.
 
-The default risk control rules are as follows (listed in order of application), and you can modify them.
-
-<Note>On the **Transaction Policies** page, under **Operations**, click <img src="/en/images/common/icon_more.svg" className="icon"/> > <img src="/en/images/common/icon_edit.svg" className="icon"/> **Edit** or <img src="/en/images/common/icon_delete.svg" className="icon"/> **Delete** next to the rule you want to modify or delete.</Note>
+The default risk control rules are as follows (listed in order of application):
 
 1. Contract calls initiated by the Tokenization app require approval from one Admin
 2. Large single withdrawals (> USD 10,000) require approval from one Admin
 3. Regular transfers that don't match the above conditions are automatically approved
 4. All other transactions are automatically rejected
+
+You can modify the rules according to your business needs.
+
+<Note>On the **Transaction Policies** page, under **Operations**, click <img src="/en/images/common/icon_more.svg" className="icon"/> > <img src="/en/images/common/icon_edit.svg" className="icon"/> **Edit** or <img src="/en/images/common/icon_delete.svg" className="icon"/> **Delete** next to the rule you want to modify or delete.</Note>
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
