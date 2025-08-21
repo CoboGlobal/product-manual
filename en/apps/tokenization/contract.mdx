@@ -96,6 +96,7 @@ Use Write functions to perform operations that modify the smart contract state. 
 [Solana Token-2022 Program](https://www.solana-program.com/docs/token-2022) is an enhanced token standard in the Solana ecosystem that provides more advanced features and flexible permission control mechanisms.
 
 ### Roles and permissions
+
 Permissions can only be assigned when creating tokens. After token creation, permissions cannot be reassigned or deleted (only permission holders can transfer their permissions to other addresses); each permission corresponds to only one wallet address.
 - **Mint Authority**: Authorizes a specified address to mint new tokens, thereby increasing the total supply of tokens.
 - **Freeze Authority**: Authorizes a specified address to freeze or unfreeze any account holding the token. Frozen accounts will be unable to perform transfers and other operations, which is crucial for enforcing compliance or security measures.
@@ -106,7 +107,7 @@ Permissions can only be assigned when creating tokens. After token creation, per
 
     - **Force Transfer via Permanent Delegate**: The permanent delegate can forcibly transfer tokens from any account to a designated address, bypassing normal authorization mechanisms. Used for asset freezing, court order execution, and similar scenarios.
 
-    <Note>On the Tokenization app page, under Solana tokens, click **More Actions** to enter the contract interface.</Note>
+    <Note>On the Tokenization App page, click **More Actions** under a Solana token to enter the contract interface, where you can find the **Permanent Delegate** functions for force burn and force transfer, as well as the update metadata function described below.</Note>
     
     <img src="/en/images/portal-apps/tokenization/functions-solana.png" className="screenshot_modal" alt="Solana Functions"/>
 
