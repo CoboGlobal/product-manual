@@ -102,9 +102,9 @@ CoboERC20 是一个基于 [ERC20](https://docs.openzeppelin.com/contracts/5.x/er
 - **更新权限 (Update Authority)**: 授权指定地址可以修改代币的元数据（如名称、符号等）。这允许代币信息在发行后仍能保持更新。
 - **永久委托 (Permanent Delegate)**: 授权一个地址在任何情况下对代币执行特权操作，例如强制转账和销毁，且该权限一旦设置无法修改。这是为满足高级合规和监管需求设计的强大功能。
 
-    - **Force Burn via Permanent Delegate（通过永久委托强制销毁）**: 永久委托者可以强制销毁任何账户中的代币，无需持有者同意。这在法律合规或紧急情况下特别有用。
+    - **通过永久委托强制销毁（Force Burn via Permanent Delegate）**: 永久委托者可以强制销毁任何账户中的代币，无需持有者同意。这在法律合规或紧急情况下特别有用。
 
-    - **Force Transfer via Permanent Delegate（通过永久委托强制转账）**: 永久委托者可以强制将代币从任何账户转移到指定地址，绕过正常的授权机制。用于资产冻结、法院命令执行等场景。
+    - **通过永久委托强制转账（Force Transfer via Permanent Delegate）**: 永久委托者可以强制将代币从任何账户转移到指定地址，绕过正常的授权机制。用于资产冻结、法院命令执行等场景。
 
     <Note>在 Tokenization App 页面，在 Solana 链代币下，点击**更多操作**进入合约操作界面。</Note>
     
