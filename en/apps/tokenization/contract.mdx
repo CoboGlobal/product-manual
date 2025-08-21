@@ -7,9 +7,11 @@ description: "Learn how to utilize the contract capabilities."
 
 For maximum flexibility, the Tokenization app provides a visual interface for direct interaction with the token's smart contract. This allows you to call any public function on the contract, covering both common features available in the main UI and advanced operations for more complex needs.
 
+Currently supported contracts include CoboERC20 and Solana Token-2022 Program.
+
 ## CoboERC20
 
-CoboERC20 is an upgradeable contract built on the OpenZeppelin ERC20 standard, enhanced with access control, token access restrictions, and comprehensive lifecycle management features. The contract has undergone third-party security auditing to ensure its robustness.
+CoboERC20 is an upgradeable contract built on the [ERC20 standard](https://docs.openzeppelin.com/contracts/5.x/erc20), enhanced with access control, token access restrictions, and comprehensive lifecycle management features. The contract has undergone third-party security auditing to ensure its robustness.
 
 On the Tokenization app page, click **More Operations** to enter the contract interface. CoboERC20's contract capabilities are presented in two tabs: **Read** for querying information and **Write** for executing transactions that change the state of the contract.
 
@@ -91,7 +93,7 @@ Use Write functions to perform operations that modify the smart contract state. 
 
 ## Solana Token-2022 Program
 
-Solana Token-2022 Program is an enhanced token standard in the Solana ecosystem that provides more advanced features and flexible permission control mechanisms.
+[Solana Token-2022 Program](https://www.solana-program.com/docs/token-2022) is an enhanced token standard in the Solana ecosystem that provides more advanced features and flexible permission control mechanisms.
 
 ### Roles and permissions
 Permissions can only be assigned when creating tokens. After token creation, permissions cannot be reassigned or deleted (only permission holders can transfer their permissions to other addresses); each permission corresponds to only one wallet address.

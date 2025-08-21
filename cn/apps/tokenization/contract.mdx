@@ -5,11 +5,13 @@ lang: "zh-hans"
 description: "了解如何使用合约能力。"
 ---
 
-为了获得最大的灵活性，Tokenization App 提供了一个可视化界面，用于直接与代币的智能合约进行交互。这使您可以调用合约上的任何公共函数，涵盖了主界面中的常用功能，以及用于处理复杂需求的高级操作。
+为了获得最大的灵活性，Tokenization App 提供了可视化界面，用于直接与代币的智能合约进行交互。这使您可以调用合约上的任何公共函数，涵盖了主界面中的常用功能，以及用于处理复杂需求的高级操作。
+
+目前支持的合约有 CoboERC20 和 Solana Token-2022 Program。
 
 ## CoboERC20
 
-CoboERC20 是一个基于 OpenZeppelin ERC20 标准构建的可升级合约，并增加了权限控制、代币流通限制和完整的生命周期管理等功能。该合约已通过第三方安全审计，确保其稳健性。
+CoboERC20 是一个基于 [ERC20](https://docs.openzeppelin.com/contracts/5.x/erc20) 标准构建的可升级合约，并增加了权限控制、代币流通限制和完整的生命周期管理等功能。该合约已通过第三方安全审计，确保其稳健性。
 
 在 Tokenization App 页面，在以 CoboERC20 标准创建的代币下，点击**更多操作**，进入合约操作界面。CoboERC20 的合约能力分为两个选项卡呈现：**读取 (Read)** 用于查询信息，**写入 (Write)** 用于执行改变合约状态的交易。
 
@@ -91,7 +93,7 @@ CoboERC20 是一个基于 OpenZeppelin ERC20 标准构建的可升级合约，�
 
 ## Solana Token-2022 Program
 
-Solana Token-2022 Program 是 Solana 生态系统中的增强型代币标准，提供了更高级的功能和更灵活的权限控制机制。
+[Solana Token-2022 Program](https://www.solana-program.com/docs/token-2022) 是 Solana 生态系统中的增强型代币标准，提供了更高级的功能和更灵活的权限控制机制。
 
 ### 角色与权限
 权限只能在创建代币时分配，代币创建后无法再分配或删除权限（仅权限持有者可以将自己的权限转移给其他地址）；每个权限仅对应一个钱包地址。
