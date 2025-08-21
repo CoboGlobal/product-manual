@@ -91,16 +91,22 @@ Use Write functions to perform operations that modify the smart contract state. 
 
 ## Solana Token-2022 Program
 
-Solana Token-2022 Program is an enhanced token standard in the Solana ecosystem that provides more advanced features and flexible permission control mechanisms. While maintaining compatibility with existing SPL Tokens, it adds many enterprise-grade functionalities.
+Solana Token-2022 Program is an enhanced token standard in the Solana ecosystem that provides more advanced features and flexible permission control mechanisms.
 
-### Permanent Delegate
-Permanent Delegate is a powerful feature of Token-2022 that allows designated addresses to perform privileged operations on tokens under any circumstances, including forced transfers and burns.
+### Roles and permissions
+Permissions can only be assigned when creating tokens. After token creation, permissions cannot be reassigned or deleted (only permission holders can transfer their permissions to other addresses); each permission corresponds to only one wallet address.
+- **Mint Authority**: Authorizes a specified address to mint new tokens, thereby increasing the total supply of tokens.
+- **Freeze Authority**: Authorizes a specified address to freeze or unfreeze any account holding the token. Frozen accounts will be unable to perform transfers and other operations, which is crucial for enforcing compliance or security measures.
+- **Update Authority**: Authorizes a specified address to modify the token's metadata (such as name, symbol, etc.). This allows token information to remain updatable after issuance.
+- **Permanent Delegate**: Authorizes an address to perform privileged operations on tokens under any circumstances, such as forced transfers and burns, and this permission cannot be modified once set. This is a powerful feature designed to meet advanced compliance and regulatory requirements.
 
-<Note>On the Tokenization app page, under Solana tokens, click **More Actions** to enter the contract interface.</Note>
+    - **Force Burn via Permanent Delegate**: The permanent delegate can forcibly burn tokens from any account without the holder's consent. This is particularly useful in legal compliance or emergency situations.
 
-- **Force Burn via Permanent Delegate**: The permanent delegate can forcibly burn tokens from any account without the holder's consent. This is particularly useful in legal compliance or emergency situations.
+    - **Force Transfer via Permanent Delegate**: The permanent delegate can forcibly transfer tokens from any account to a designated address, bypassing normal authorization mechanisms. Used for asset freezing, court order execution, and similar scenarios.
 
-- **Force Transfer via Permanent Delegate**: The permanent delegate can forcibly transfer tokens from any account to a designated address, bypassing normal authorization mechanisms. Used for asset freezing, court order execution, and similar scenarios.
+    <Note>On the Tokenization app page, under Solana tokens, click **More Actions** to enter the contract interface.</Note>
+    
+    <img src="/en/images/portal-apps/tokenization/functions-solana.png" className="screenshot_modal" alt="Solana Functions"/>
 
 ### Metadata Management
 
