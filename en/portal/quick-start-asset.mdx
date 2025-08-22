@@ -1,0 +1,175 @@
+---
+title: "Custodial Wallets quick-start guide"
+sidebarTitle: "Quick start"
+lang: "en"
+og:description: "Learn how to set up and use Custodial Wallets in the Cobo Portal development environment."
+---
+
+This guide walks you through the main functions of Custodial Wallets in the development environment. In this environment, some configurations that require manual setup in the production environment are already enabled by default, making the process simpler with fewer required steps. If you are ready to use Custodial Wallets in the production environment, refer to the [Production usage guide](/en/portal/quick-start-guide-custodial-wallets).
+
+<Note>Cobo Portal offers two types of Custodial Wallets: [Asset Wallets](/en/portal/custodial-wallets/asset-wallets/introduction) and [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction). This guide focuses on setting up and using Asset Wallets.</Note>
+
+This guide will walk you through the step-by-step process to set up and use Custodial Wallets (Asset Wallets) in the development environment of Cobo Portal, including:
+
+1. Register and activate Cobo Accounts
+2. Set up Cobo Guard
+3. Invite members (optional)
+4. Set up transaction policies (optional)
+5. Add chains (optional)
+6. Create a wallet (optional)
+7. Deposit tokens (optional)
+8. Withdraw tokens
+    - Cobo Portal web
+    - WaaS 2.0 API
+
+## Prerequisites
+
+- [Contact our sales team](https://www.cobo.com/book-demo?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales) to get your account activation link.
+- An iOS device to run [Cobo Guard](/en/guard/introduction), our app for multi-factor authentication (MFA), operation approval, transaction signing, and private key share management.
+
+## Register and activate Cobo Accounts
+
+Use the activation link provided by our sales team to create your Cobo Account. Follow the invitation link in the email to complete activation:
+
+1. Set a password
+2. Enter the email verification code
+3. Join the organization
+
+## Set up Cobo Guard
+
+Log in to the [development environment](https://portal.dev.cobo.com/login) of Cobo Portal, and click **Set Up Cobo Guard** in the pop-up at the lower left corner. Follow the on-screen instructions to install Cobo Guard on your iOS device and link your account to it.
+
+<img src="/images/get-started/cobo-guard.png" className="screenshot_nav_bar" alt="Set Up Cobo Guard"/>
+
+If the pop-up is closed, click **Guide** in the left-hand menu to reopen it.
+
+Purpose of setting up Cobo Guard:
+
+- Use it as the MFA method for Cobo Portal.
+- Use it to approve various requests in Cobo Portal.
+
+For more details, refer to [Cobo Guard](/en/guard/introduction#main-features).
+
+## Invite members (optional)
+
+You can invite team members to your organization and assign permissions. For the actions associated with each permission, refer to [Roles and permissions](/en/portal/organization/roles-and-permissions).
+
+## Set up transaction policies (optional)
+
+Set transaction policies (risk control rules) for token transfers, including token type, amount, blocklist/allowlist, and approval thresholds (m/n approvals). Refer to [Set up token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer) for details.
+
+## Add chains (optional)
+
+For your testing convenience, the development environment already includes pre-generated addresses for SETH, ETH, BTC, Tron, BNB, SOL, and TON.
+To add more chains, refer to [Add chains](/en/portal/enable-or-disable-chains).
+
+## Create a wallet (optional)
+
+For your testing convenience, the system has created a wallet named `Default Wallet` for you. To create more wallets, refer to [Set up Asset Wallets](/en/portal/custodial-wallets/asset-wallets/set-up).
+
+## Deposit tokens (optional)
+
+For your testing convenience, SETH test tokens are automatically allocated to you in the development environment.  
+If you need to deposit other tokens (such as USDC or USDT), confirm the chain used (Tron / BEP-20 / ERC-20, etc.) and refer to [Transfer (deposit / withdraw)](/en/portal/mpc-wallets/ocw/transfers) for more details.
+
+To pay on-chain gas fees, ensure your wallet has enough gas tokens for the corresponding chain.
+
+## Withdraw tokens
+
+### Cobo Portal web
+
+Please refer to [Transfer from Custodial Wallets (Asset Wallets)](/en/portal/transfers/from-asset-wallets).
+
+### WaaS 2.0 API
+
+This section shows how to use the WaaS 2.0 API with Custodial Wallets (Asset Wallets) to deposit and withdraw tokens.
+
+1. **Generate an API Key and API Secret**  
+   Generate an Ed25519 key pair locally to serve as your API Key (public key) and API Secret (private key).  
+   For more details, refer to [Generate API Key and API Secret](https://www.cobo.com/developers/v2/guides/overview/cobo-auth#generate-api-key-and-api-secret).
+
+2. **Register the API Key**  
+   After generating the API Key, register it in Cobo Portal and assign the user role and wallet scope.  
+   Refer to [Register API Key](/en/portal/developer-console/create-api-key).
+
+3. **Integrate the WaaS SDK**  
+   After configuring your API Key, integrate the WaaS SDK.  
+   To begin with, you can call a read-only API (such as list supported chains) to test if your SDK setup is working.  
+   For details, refer to:
+   - [JavaScript SDK quick start](https://www.cobo.com/developers/v2/developer-tools/quickstart-javascript)
+   - [Python SDK quick start](https://www.cobo.com/developers/v2/developer-tools/quickstart-python)
+   - [Go SDK quick start](https://www.cobo.com/developers/v2/developer-tools/quickstart-go)
+   - [Java SDK quick start](https://www.cobo.com/developers/v2/developer-tools/quickstart-java)
+
+4. **Set up callbacks and webhooks (optional)**  
+   For strengthened security, set a callback endpoint to confirm withdrawal requests.  
+   Refer to [Webhooks and callbacks guide](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction).
+
+5. **Initiate a withdrawal transaction**  
+   If you have configured transaction policies, a Main Group, or callback endpoints for your wallet, these settings will affect the withdrawal process. For example, you may need additional approval before the transaction can be completed.
+
+    To pay on-chain transaction fees, make sure your wallet has sufficient gas tokens. If both the sender and recipient are Asset Wallets, the transfer can be automatically completed through the [Cobo Loop](/en/portal/custodial-wallets/asset-wallets/cobo-loop) network without consuming any on-chain gas.
+
+    The following is an example code using the JavaScript WaaS SDK. For more details, see the [Transfer token API documentation](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token).
+
+    ```javascript
+    const CoboWaas2 = require("@cobo/cobo-waas2");
+    // Initialize API client
+    const apiClient = CoboWaas2.ApiClient.instance;
+    // Set environment (development: Env.DEV, production: Env.PROD)
+    apiClient.setEnv(CoboWaas2.Env.DEV);
+    // Configure API Secret. Replace <YOUR_PRIVATE_KEY> with your API Secret.
+    apiClient.setPrivateKey("<YOUR_PRIVATE_KEY>");
+    // Create TransactionsApi instance
+    const apiInstance = new CoboWaas2.TransactionsApi();
+    // Construct withdrawal parameters
+    const opts = {
+    TransferParams: CoboWaas2.TransferParams.constructFromObject({
+        request_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // Request ID, must be unique
+        source: {
+        source_type: "Asset", // Wallet type: Asset Wallets
+        wallet_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479", // Wallet ID
+        },
+        token_id: "ETH_USDT", // Token ID
+        destination: {
+        destination_type: "Address", // Destination type
+        account_output: {
+            address: "19AR6YWEGbSoY8UT9Ksy9WrmrZPD5sL4Ku", // Destination address
+            amount: "1.5", // Amount
+        },
+        },
+    }),
+    };
+    // Submit withdrawal request
+    apiInstance.createTransferTransaction(opts).then(
+    (data) => {
+        console.log("API called successfully. Returned data: " + data);
+    },
+    (error) => {
+        console.error(error);
+    },
+    );
+    ```
+
+    Example response:
+
+    ```javascript
+    API called successfully. Returned data: {
+    "request_id": "f47ac10b-58cc-4372-a567-0e02b2c3d471",
+    "transaction_id": "c8964e6b-32d7-4da3-8407-6c4a4a8c92d7",
+    "status": "Submitted"
+    }
+    ```
+
+## Check transaction status
+
+After submitting a transaction, you can check its status via:
+
+- **Cobo Portal web interface**: Go to **Wallet** > **Transaction history**.
+- **WaaS 2.0 API**:  
+  - [Get transaction information](https://www.cobo.com/developers/v2/api-references/transactions/get-transaction-information)  
+  - [List all transactions](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions)
+
+Now you have completed the quick start for Custodial Wallets (Asset Wallets) in the development environment, including key tasks such as account setup, deposits, and withdrawals. To officially deploy and use Custodial Wallets (Asset Wallets) in the production environment, refer to the [Production usage guide](/en/portal/quick-start-guide-custodial-wallets).
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

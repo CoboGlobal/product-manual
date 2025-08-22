@@ -17,7 +17,7 @@ This guide explains how to enable the auto token sweeping feature for MPC Wallet
   - You have created a Custodial Wallet and set it up as described in [Set up Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up).
 - You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
 - Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the deposit address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the deposit address.
-<Info>For more details, refer to [Set up Fee Station for Transaction Fee Payment of MPC Wallets](/en/portal/fee-station/set-up-for-mpc).</Info>
+<Info>For more details, refer to [How to use Fee Station](/en/portal/fee-station/set-up).</Info>
 
 ## Steps
 
@@ -65,7 +65,10 @@ Now you have successfully enabled auto token sweeping for the wallet. The wallet
 Once auto token sweeping is enabled, the following changes apply:
 
 ### Capabilities of original deposit addresses and sweep-to addresses
-- deposit addresses: Now deposit addresses can only receive funds and initiate sweep transactions to the designated sweep-to address. They are not enabled for withdrawals, contract calls, staking, OTC transactions, or financial product transactions, nor can they act as delegate addresses for Smart Contract Wallets.
+- deposit addresses: By default, after you enable auto token sweeping, deposit addresses can only receive funds and sweep them to the designated sweep-to address. They cannot be used for withdrawals, contract calls, staking, OTC transactions, or financial product transactions, and they cannot act as delegate addresses for smart contract wallets. To use these functions, please enable deposit address transaction via **Wallet Settings** > **Auto-Sweep Settings**.
+
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
+
 - sweep-to addresses: sweep-to addresses remain fully functional and can perform all transaction types. You can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
 
 ### Token list
