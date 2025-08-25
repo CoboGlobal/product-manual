@@ -7,6 +7,12 @@ description: "Learn how to transfer assets from Custodial Wallets (Asset Wallets
 
 import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 
+<Info>  
+For transfers on the TRON chain from a Custodial Wallet, Cobo offers transaction fee discounts:  
+- **Without staking TRX**: Each transaction fee enjoys a 50% discount.  
+- **With staking TRX**: Enjoy stacked fee discounts, with up to 71% off per transaction, equivalent to an annualized yield of around 30%.
+</Info>  
+
 ## Prerequisite
 
 - It's recommended that you set up an [off-chain transaction policy](/en/portal/risk-controls/off-chain-tx-set-transfer).
@@ -35,7 +41,17 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
     <Info>If you are using the WaaS 2.0 API, you can use the [Check Cobo Loop transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) operation to determine if a transaction can be executed as a Cobo Loop transfer. Or directly call the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) operation to enforce a transaction as a Cobo Loop transfer.</Info>
 
 6. Enter the transfer amount.
-7. Review the transaction cost. You are unable to modify or customize this fee. The fee amount varies depending on the token being transferred and will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
+7. Review the transaction cost. You are unable to modify or customize this fee. 
+
+    Transaction fees consist of the following three aspects:
+        - Sweeping gas fee: When you deposit a non-native token (e.g., USDT on Ethereum), Cobo pre-charges your deposit address with the native token (e.g., ETH) as gas to ensure future withdrawals can be processed smoothly. This fee is calculated as: Sweeping fee of current token balance × (Withdrawal amount / Current token balance)%, based on the real-time on-chain gas price.
+        - Compliance fee: Covers KYT/AML service fees for deposits and withdrawals, as well as Cobo’s compliance investigation costs. This fee is calculated as: Deposit compliance fee of current token balance × (Withdrawal amount / Current token balance)% + Withdrawal compliance fee.
+        - Withdrawal gas fee: Calculated based on the real-time on-chain gas price.
+
+The fee amount will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
+
+    <img src="/en/images/transfers/fee.png" className="screenshot_modal"/>
+
 8. <MySnippet />
 9. Click **Submit**.
 10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
