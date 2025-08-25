@@ -10,9 +10,7 @@ import MySnippet from '/snippets/transfer-category-and-description-en.mdx';
 <Info>  
 For transfers on the TRON chain from a Custodial Wallet, Cobo offers transaction fee discounts:  
 - **Without staking TRX**: Each transaction fee enjoys a 50% discount.  
-- **With staking TRX**:  
-  - Additional discount: Transaction fees can be reduced by up to 71%.  
-  - Staking yield: Staked TRX can earn up to 30% annualized returns, further lowering the overall cost of use. 
+- **With staking TRX**: Enjoy stacked fee discounts, with up to 71% off per transaction, equivalent to an annualized yield of around 30%.
 </Info>  
 
 ## Prerequisite
@@ -45,12 +43,14 @@ For transfers on the TRON chain from a Custodial Wallet, Cobo offers transaction
 6. Enter the transfer amount.
 7. Review the transaction cost. You are unable to modify or customize this fee. 
 
-    Transaction fees consist of the following three ß:
+    Transaction fees consist of the following three aspects:
         - Sweeping gas fee: When you deposit a non-native token (e.g., USDT on Ethereum), Cobo pre-charges your deposit address with the native token (e.g., ETH) as gas to ensure future withdrawals can be processed smoothly. This fee is calculated as: Sweeping fee of current token balance × (Withdrawal amount / Current token balance)%, based on the real-time on-chain gas price.
-	- Compliance fee: Covers KYT/AML service fees for deposits and withdrawals, as well as Cobo’s compliance investigation costs. This fee is calculated as: Deposit compliance fee of current token balance × (Withdrawal amount / Current token balance)% + Withdrawal compliance fee.
-	- Withdrawal gas fee: Calculated based on the real-time on-chain gas price.
+        - Compliance fee: Covers KYT/AML service fees for deposits and withdrawals, as well as Cobo’s compliance investigation costs. This fee is calculated as: Deposit compliance fee of current token balance × (Withdrawal amount / Current token balance)% + Withdrawal compliance fee.
+        - Withdrawal gas fee: Calculated based on the real-time on-chain gas price.
 
 The fee amount will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
+
+    <img src="/en/images/transfers/fee.png" className="screenshot_modal"/>
 
 8. <MySnippet />
 9. Click **Submit**.
