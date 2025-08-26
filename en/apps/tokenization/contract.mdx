@@ -100,6 +100,7 @@ Use Write functions to perform operations that modify the smart contract state. 
 Permissions can only be assigned when creating tokens. After token creation, permissions cannot be reassigned or deleted (only permission holders can transfer their permissions to other addresses); each permission corresponds to only one wallet address.
 - **Mint Authority**: Authorizes a specified address to mint new tokens, thereby increasing the total supply of tokens.
 - **Freeze Authority**: Authorizes a specified address to freeze or unfreeze any account holding the token. Frozen accounts will be unable to perform transfers and other operations, which is crucial for enforcing compliance or security measures.
+- **Pause Authority**: Authorizes a specified address to pause or unpause all token activities including transfers, burns, and mints for emergency situations,.
 - **Update Authority**: Authorizes a specified address to modify the token's metadata (such as name, symbol, etc.). This allows token information to remain updatable after issuance.
 - **Permanent Delegate**: Authorizes an address to perform privileged operations on tokens under any circumstances, such as forced transfers and burns, and this permission cannot be modified once set. This is a powerful feature designed to meet advanced compliance and regulatory requirements.
 
