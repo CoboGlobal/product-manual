@@ -24,7 +24,7 @@ This article describes how to make a batch payout in the Batch Payouts app.
 
 3. On the **Make a Payout** page, select the token type that you want to transfer in the **Token** section.
 4. In the **From** section, select the wallet from which the transfer will be made.
-    <Note>Currently Exchange Wallets are not supported for a batch payout.</Note>
+    <Note><ul><li>Currently Exchange Wallets are not supported for a batch payout.</li><li>If you select **Use smart contract batch transfer**, only MPC Wallets and Web3 Wallets are supported.</li></ul></Note>
 5. In the **Add the Payouts** section, you can enable the **Recipient Confirmation on Cobo Guard** option. This option ensures the transactions will be constructed only after recipients confirm on Cobo Guard. Therefore, all recipients' emails must be a Cobo Account and linked to Cobo Guard. If any recipient's email does not meet these requirements, you will not be able to submit the payout. You can use the **Send Setup Guide To These Emails** button to send instructional emails to help them complete Cobo Accounts registration and link Cobo Guard.
 6. Specify the details for each recipient as follows:
     - **Receiving address**: Enter the recipient's address manually, or import it from your Address Book or a CSV file.
@@ -38,8 +38,7 @@ This article describes how to make a batch payout in the Batch Payouts app.
       - If **Recipient Confirmation on Cobo Guard** is disabled, enter the recipient's email address, which will receive a notification upon payout receipt.
     - If you select **Use smart contract batch transfer**, you need to complete a token approval first. During the approval process, you can choose either a one-time approval for the current amount or a permanent approval:
         - One-time approval: Only allows the specified amount to be used for this batch transfer.
-        - Permanent approval: Allows the batch transfer smart contract to use the token for future transfers without requiring additional approvals.  
-        <Note>Permanent approval helps reduce repeated approval transactions and saves on-chain gas fees. You can manually revoke the approval in your wallet at any time.</Note>
+        - Permanent approval: Allows the batch transfer smart contract to use the token for future transfers without requiring additional approvals. Permanent approval helps reduce repeated approval transactions and saves on-chain gas fees.
     - If you have previously approved the token but the current allowance is insufficient, Cobo will automatically initiate two on-chain transactions to resolve it:
         1. Reset the allowance to 0.
         2. Set a new allowance sufficient to cover the current batch transfer.
