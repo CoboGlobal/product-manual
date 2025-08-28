@@ -1,0 +1,127 @@
+---
+title: "合约交互"
+sidebarTitle: "合约交互"
+lang: "zh-hans"
+description: "了解如何使用合约能力。"
+---
+
+为了获得最大的灵活性，Tokenization App 提供了可视化界面，用于直接与代币的智能合约进行交互。这使您可以调用合约上的任何公共函数，涵盖了主界面中的常用功能，以及用于处理复杂需求的高级操作。
+
+目前支持的合约有 CoboERC20 和 Solana Token-2022 Program。
+
+## CoboERC20
+
+CoboERC20 是一个基于 [ERC20](https://docs.openzeppelin.com/contracts/5.x/erc20) 标准构建的可升级合约，并增加了权限控制、代币流通限制和完整的生命周期管理等功能。该合约已通过[第三方安全审计](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf)，确保其稳健性。
+
+在 Tokenization App 页面，在以 CoboERC20 标准创建的代币下，点击**更多操作**，进入合约操作界面。CoboERC20 的合约能力分为两个选项卡呈现：**读取 (Read)** 用于查询信息，**写入 (Write)** 用于执行改变合约状态的交易。
+
+### 读取函数（查询数据）
+
+使用读取函数，您可以从智能合约中查询实时信息，且该过程无需创建链上交易。这对于监控代币状态、验证权限和获取合规信息至关重要。
+
+<img src="/cn/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="读取函数（查询数据）"/>
+
+#### 角色与权限
+**角色标识符（常量）**
+- `DEFAULT_ADMIN_ROLE`: 默认管理员角色标识符。拥有此角色的地址具有合约最高管理权限，可以管理其他所有角色。
+- `MANAGER_ROLE`: 经理角色标识符。拥有此角色的地址可以进行除合约升级和权限管理外的所有管理操作，例如配置代币流通限制、暂停/恢复合约等。
+- `MINTER_ROLE`: 铸币者角色标识符。拥有此角色的地址可以铸造新代币。
+- `BURNER_ROLE`: 销毁者角色标识符。拥有此角色的地址可以销毁代币。
+- `PAUSER_ROLE`: 暂停者角色标识符。拥有此角色的地址可以暂停和恢复代币的所有活动。
+- `SALVAGER_ROLE`: 拯救者角色标识符。拥有此角色的地址可以恢复意外发送到合约地址的资产。
+- `UPGRADER_ROLE`: 升级者角色标识符。拥有此角色的地址可以将合约升级到新版本。
+
+**权限查询**
+- `getRoleAdmin(role)`: 查询管理特定角色的管理员角色。例如，查询谁可以授予或撤销 `MINTER_ROLE`。
+- `hasRole(role, account)`: 检查特定地址是否拥有某个角色。这是验证操作权限的核心函数。
+
+#### 代币与账户详情
+- `name`: 获取代币的全名，例如 “Cobo Token”。
+- `symbol`: 获取代币的符号，例如 “COBO”。
+- `decimals`: 获取代币的小数位数。这决定了代币的最小单位，例如 `18` 意味着代币可以被分割到小数点后18位。
+- `totalSupply`: 查询代币的总供应量。
+- `balanceOf`: 查询特定地址持有的代币余额。
+- `allowance`: 查询一个地址授权给另一个地址可以花费的代币数量。这是 ERC20 `approve` 和 `transferFrom` 机制的一部分。
+
+#### 代币流通限制
+- `accessListEnabled`: 检查是否已启用代币流通限制（白名单）功能。返回 `true` 或 `false`。
+- `isAccessListed`: 检查特定地址是否在白名单上。
+- `getAccessList`: 获取完整的白名单地址列表。
+- `isBlocklisted`: 检查特定地址是否在黑名单上。
+- `getBlocklist`: 获取完整的黑名单地址列表。
+
+#### 合约状态与元数据
+- `paused`: 检查合约当前是否处于暂停状态。在暂停状态下，所有代币转移、铸造和销毁操作都会被阻止。
+- `contractUri`: 获取合约的元数据 URI。该 URI 指向一个 JSON 文件，其中包含代币的详细信息，符合 ERC-721 的元数据标准。
+- `version`: 查看当前合约实现的版本号。
+- `UPGRADE_INTERFACE_VERSION`: 查看当前合约的升级接口版本。
+- `supportsInterface`: 检查合约是否支持某个特定的接口标准（例如 ERC-165）。
+
+### 写入函数（执行操作）
+
+使用写入函数执行修改智能合约状态的操作。这些操作需要签署交易，消耗 Gas 费，并广播到区块链网络。所有写入操作都将受到 Tokenization App 内置审批流和交易风控的保护。
+
+<img src="/cn/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="写入函数（执行操作）"/>
+
+#### 代币核心操作
+- `mint`: 铸造新代币并将其分配给指定地址，增加 `totalSupply`。通常在投资者认购或资产发行时使用。
+- `burn`: 销毁地址自身持有的代币，减少 `totalSupply`。通常在投资者赎回或资产退市时使用。
+- `burnFrom`: 管理员角色强制销毁一个地址的代币。
+- `transfer`: 将代币从您的地址发送到另一个地址。
+- `transferFrom`: 将代币从一个地址发送到另一个地址。此操作需要您预先获得付款方地址的 `approve` 授权。
+- `approve`: 授权给另一个地址可以从您的地址中提取不超过指定数量的代币。
+
+#### 权限管理
+- `grantRole`: 将一个角色（如 `MINTER_ROLE`）授予一个地址。只有拥有该角色管理员权限的地址才能执行此操作。
+- `revokeRole`: 撤销一个地址拥有的角色。
+- `renounceRole`: 放弃您自己地址拥有的某个角色。这是一个安全操作，一旦放弃，除非管理员重新授予，否则无法取回。
+
+#### 代币流通限制
+- `toggleAccesslist`: 启用或禁用代币流通限制（白名单）功能。这是一个关键的合规控制开关。
+- `accessListAdd`: 向白名单中添加一个或多个地址。只有白名单上的地址才能接收或发送代币（如果 `toggleAccesslist` 已启用）。
+- `accessListRemove`: 从白名单中移除一个或多个地址。
+- `blockListAdd`: 向黑名单中添加一个或多个地址。黑名单上的地址无法进行任何代币交互。
+- `blockListRemove`: 从黑名单中移除一个或多个地址。
+
+#### 合约管理与维护
+- `pause`: 暂停所有代币活动（转账、铸造、销毁）。用于应对紧急情况，如发现安全漏洞或需要进行关键维护。
+- `unpause`: 恢复已暂停的合约，使代币活动恢复正常。
+- `upgradeToAndCall`: 将合约升级到新的实现地址，并可以同时调用一个函数进行初始化。这是实现合约无缝升级和功能迭代的核心。
+- `contractUriUpdate`: 更新合约的元数据 URI。
+- `salvageNative`: 恢复意外发送到合约地址的原生代币（如 ETH）。
+- `salvageERC20`: 恢复意外发送到合约地址的其他 ERC-20 代币。
+
+## Solana Token-2022 Program
+
+[Solana Token-2022 Program](https://www.solana-program.com/docs/token-2022) 是 Solana 生态系统中的增强型代币标准，提供了更高级的功能和更灵活的权限控制机制。
+
+### 角色与权限
+
+权限只能在创建代币时分配，代币创建后无法再分配或删除权限（仅权限持有者可以将自己的权限转移给其他地址）；每个权限仅对应一个钱包地址。
+- **铸造权限 (Mint Authority)**: 授权指定地址可以铸造新的代币，从而增加代币的总供应量。
+- **冻结权限 (Freeze Authority)**: 授权指定地址可以冻结或解冻任何持有该代币的账户。被冻结的账户将无法进行转账等操作，这对于执行合规或安全措施至关重要。
+- **暂停权限 (Pause Authority)**: 授权指定地址暂停或恢复所有代币活动（转账、铸造、销毁），用于应对紧急情况。
+- **更新权限 (Update Authority)**: 授权指定地址可以修改代币的元数据（如名称、符号等）。这允许代币信息在发行后仍能保持更新。
+- **永久委托 (Permanent Delegate)**: 授权一个地址在任何情况下对代币执行特权操作，例如强制转账和销毁，且该权限一旦设置无法修改。这是为满足高级合规和监管需求设计的强大功能。
+
+    - **通过永久委托强制销毁（Force Burn via Permanent Delegate）**: 永久委托者可以强制销毁任何账户中的代币，无需持有者同意。这在法律合规或紧急情况下特别有用。
+
+    - **通过永久委托强制转账（Force Transfer via Permanent Delegate）**: 永久委托者可以强制将代币从任何账户转移到指定地址，绕过正常的授权机制。用于资产冻结、法院命令执行等场景。
+
+    <Note>您可以在 Tokenization App 页面，在 Solana 链代币下，点击**更多操作**进入合约操作界面，找到**永久委托**强制销毁和强制转账的功能，以及下述的更新元数据的功能。</Note>
+    
+    <img src="/cn/images/portal-apps/tokenization/functions-solana.png" className="screenshot_modal" alt="Solana 函数"/>
+
+### 元数据管理
+
+**Update Metadata URI（更新元数据 URI）**: 更新代币的元数据信息，包括名称、符号、描述、图标等。元数据以 JSON 格式存储，支持动态更新代币信息。
+
+### Default Account State（默认账户状态）
+
+该特性对应 Tokenization 中的**地址限制**功能，提供了强大的合规控制能力：
+
+- **账户默认冻结**: 当启用地址限制时，新创建的代币账户默认被冻结，已存在的账户不受影响
+- **授权地址解冻**: 通过**授权地址**功能为特定地址的代币账户解冻，允许其进行代币操作
+- **黑名单管理**: 在黑名单中，解除屏蔽账户即为账户解冻
+
+<Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>
