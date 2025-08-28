@@ -408,6 +408,7 @@
       "group": "RESOURCES",
       "pages": [
         "en/portal/glossary",
+        "en/portal/dapp",
         {
           "group": "User-Controlled Wallets",
           "pages": [
@@ -966,6 +967,7 @@
       "group": "资源文档",
       "pages": [
         "cn/portal/glossary",
+        "cn/portal/dapp",
         {
           "group": "终端用户钱包",
           "pages": [
