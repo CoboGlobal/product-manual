@@ -408,6 +408,7 @@
       "group": "RESOURCES",
       "pages": [
         "en/portal/glossary",
+        "en/portal/dapp",
         {
           "group": "User-Controlled Wallets",
           "pages": [
@@ -489,6 +490,7 @@
           "group": "Tokenization",
           "pages": [
             "en/apps/tokenization/introduction",
+            "en/apps/tokenization/contract",
             "en/apps/tokenization/bond-tokenization-best-practice"
           ]
         },
@@ -966,6 +968,7 @@
       "group": "资源文档",
       "pages": [
         "cn/portal/glossary",
+        "cn/portal/dapp",
         {
           "group": "终端用户钱包",
           "pages": [
@@ -1047,6 +1050,7 @@
           "group": "Tokenization",
           "pages": [
             "cn/apps/tokenization/introduction",
+            "cn/apps/tokenization/contract",
             "cn/apps/tokenization/bond-tokenization-best-practice"
           ]
         },

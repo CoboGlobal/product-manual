@@ -21,9 +21,11 @@ Tokenization 简化了发行、管理和操作自有代币的流程——无需�
 按您的业务需要设计和发行代币，覆盖从稳定币、证券型代币到真实世界资产代币化的广泛应用场景。
 
 ### 构建于安全的基础
-所有代币均由我们的 **CoboERC20** 智能合约提供支持，该合约扩展了标准的 ERC-20，增加了访问控制和生命周期管理的增强功能。该合约已通过第三方机构 BlockSec 的专业安全审计，确保高度安全性，您可查看审计报告 [Security Audit Report for CoboTokenization](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf)。
+我们支持多种区块链平台的代币创建，基于安全的代币标准：
+- **CoboERC20智能合约**：扩展了标准的 [ERC-20](https://docs.openzeppelin.com/contracts/5.x/erc20)，增加了访问控制和生命周期管理的增强功能。该合约已通过第三方机构 BlockSec 的专业安全审计，确保高度安全性，您可查看审计报告 [Security Audit Report for CoboTokenization](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf)。目前支持 ETH、BSC 链。
+- [**Solana Token-2022 Program**](https://www.solana-program.com/docs/token-2022)：基于 Solana 链的原生代币标准，提供高性能和低成本的代币操作。
 
-Tokenization App 即将支持更多合约和公链（如 Solana）。
+我们同时支持 [API 访问](https://www.cobo.com/developers/v2/api-references/tokenization/issue-token)，让您可以通过编程方式管理代币操作。
 
 ### 完整的生命周期管理
 通过单一、直观的界面管理**代币生命周期**的每个阶段——无需任何编程技能。您可以安全地铸造新代币用于发行，在赎回时销毁代币，在紧急情况下暂停合约，并无缝升级合约以添加新功能。
@@ -32,11 +34,13 @@ Tokenization App 即将支持更多合约和公链（如 Solana）。
 在智能合约层面强制执行合规性和安全性。您可以启用**代币流通限制**，将代币交互限制在经过验证的投资者范围内，并设置**黑名单**以防止与未经授权或可疑地址的任何交互。
 
 ### 精细的权限控制
-您可以将关键**操作权限**，如铸造和销毁代币、管理代币流通限制等，委派给不同的团队成员，增强操作安全性。
+您可以将关键**操作权限**，如铸造代币、管理代币流通限制等，委派给不同的团队成员，增强操作安全性。
 
-## 工作原理
+## 运作模式
 
 Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行操作。
+
+<Info>如无特别说明，以下截图均以 EVM 链（CoboERC20智能合约）为例。</Info>
 
 ### 1. 创建您的代币
 轻松创建和发行您自己的代币。如有需要，您还可以更新代币信息。
@@ -49,20 +53,38 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 
 #### 代币流通限制和黑名单
 
-使用代币流通限制和黑名单来控制谁可以与您的代币进行交互。
+使用代币流通限制和黑名单来控制谁可以与您的代币进行交互。注意不同的代币标准可能有不同的逻辑。
 
-- **代币流通限制**：建议您启用**受限访问**来激活白名单，将所有代币流通限制在白名单上（且不在黑名单上）的地址。
+- **代币流通限制**：
+  - **CoboERC20智能合约**：建议您启用**地址限制**来激活白名单，将所有代币流通限制在白名单上（且不在黑名单上）的地址。
 
-    <img src="/cn/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="代币流通限制"/>
+    <img src="/cn/images/portal-apps/tokenization/token-access.png" className="screenshot_modal" alt="CoboERC 20 代币流通限制"/>
+
+  - **Solana Token-2022 Program**：启用**地址限制**后，新创建的代币账户将默认冻结，已存在的账户不受影响。您可以在下图所示界面上**授权**新账户，为其解冻。解冻后的账户可以正常收发代币，代币仅能在已解冻的地址间流通。若未启用地址限制，代币则对市场公开。
+
+    <img src="/cn/images/portal-apps/tokenization/token-access-solana.png" className="screenshot_modal" alt="Solana 代币流通限制"/>
 
 - **黑名单**：黑名单上的地址将被禁止执行任何代币操作。
 
     <img src="/cn/images/portal-apps/tokenization/blocklist.png" className="screenshot_modal" alt="黑名单"/>
 
-#### 分配权限
-为不同的钱包地址分配特定权限。您可以指定哪些钱包有权执行某些操作，例如铸造或暂停代币。
+#### 管理权限
 
-<img src="/cn/images/portal-apps/tokenization/permissions.png" className="screenshot_modal" alt="管理操作权限"/>
+不同的代币标准在权限管理方面有不同的机制：
+
+- **CoboERC20 智能合约**：
+  - 可以在创建代币时和创建后分配、修改或删除权限
+  - 支持同一权限分配给多个地址
+  - 权限包括管理权限、铸造代币、暂停合约等
+
+    <img src="/cn/images/portal-apps/tokenization/permissions-coboerc20.png" className="screenshot_modal" alt="CoboERC20 管理操作权限"/>
+
+- **Solana Token-2022 Program**：
+  - 权限只能在创建代币时分配，代币创建后无法再分配或删除权限（仅权限持有者可以将自己的权限转移给其他地址）；永久委托（Permanent Delegate）权限一旦设置无法修改
+  - 每个权限仅对应一个钱包地址
+  - 权限包括铸造代币、冻结账户等
+
+    <img src="/cn/images/portal-apps/tokenization/permissions-solana.png" className="screenshot_modal" alt="Solana 管理操作权限"/>
 
 ### 3. 日常操作
 
@@ -80,43 +102,39 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 
 #### 直接与合约交互
 
-为了获得最大的灵活性，Tokenization App 提供了一个可视化界面，用于直接与代币的智能合约进行交互。这使您可以调用合约上的任何公共函数，涵盖了主界面中的常用功能，以及用于处理复杂需求的高级操作。
+为了获得最大的灵活性和满足高级使用需求，您可以通过可视化界面直接与代币的智能合约进行交互，这使您能够访问主界面功能之外的合约函数。
 
-该界面分为两个选项卡：**读取 (Read)** 用于查询信息，**写入 (Write)** 用于执行改变合约状态的交易。
+关于 CoboERC20 和 Solana Token-2022 Program 的合约能力介绍，请参阅[合约交互](/cn/apps/tokenization/contract)。
 
-- **读取函数（查询数据）**
+### 4. 风控
 
-    使用读取函数，您可以从智能合约中查询实时信息，且该过程无需创建链上交易。关键查询包括：
+#### App 审批流程
 
-    - **角色信息：** 查看所有权限角色的标识符（例如 `MINTER_ROLE`、`PAUSER_ROLE`），并检查某个地址 `hasRole` 是否具有特定权限
-    - **代币和账户详情：** 获取代币的 `name`、`symbol`、`decimals`、`totalSupply`，并检查任何地址的 `balanceOf` 或某个地址授予另一个地址的 `allowance`
-    - **代币流通限制状态：** 检查 `accessListEnabled` 是否启用，某个地址是否 `isAccessListed` 或 `isBlocklisted`，并查看完整的 `getAccessList` 或 `getBlocklist`
-    - **合约状态和元数据：** 检查合约是否 `paused`，获取 `contractUri`，查看 `version` 和 `UPGRADE_INTERFACE_VERSION`，并使用 `supportsInterface` 检查功能支持
-    <img src="/cn/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="读取函数（查询数据）"/>
+Tokenization App 内置了灵活的审批流程，确保代币操作经过适当的审核。系统为核心代币操作预设了审批流程，包括铸造、销毁、暂停/取消暂停、权限管理等关键操作。
 
-- **写入函数（执行操作）**
+<img src="/cn/images/portal-apps/tokenization/workflow.png" className="screenshot_modal" alt="设有审批流的代币操作"/>
 
-    使用写入函数执行修改智能合约的操作。这些操作需要签署交易并广播到网络。按界面中出现的顺序列出的关键操作包括：
+您可以根据业务需求，更改审批流程的条件和对应操作。
 
-    - `approve`：允许另一个地址或合约代表您花费代币
-    - `mint`：铸造新代币以增加总供应量
-    - `burn`：销毁钱包自身持有的代币
-    - `contractUriUpdate`：更改代币的元数据 URI
-    - `accessListAdd`：向代币流通白名单添加一个或多个地址
-    - `accessListRemove`：从代币流通白名单中移除一个或多个地址
-    - `blockListAdd`：向黑名单添加一个或多个地址
-    - `blockListRemove`：从黑名单中移除一个或多个地址
-    - `grantRole`：为团队成员分配特定权限
-    - `revokeRole`：从团队成员中移除特定权限
-    - `renounceRole`：放弃您自己地址持有的角色
-    - `salvageERC20`：恢复意外发送到合约的其他 ERC-20 代币
-    - `salvageNative`：恢复意外发送到合约的原生代币（例如 ETH）
-    - `toggleAccesslist`：启用或禁用代币流通限制
-    - `transfer`：向另一个地址发送代币
-    - `transferFrom`：执行从另一个地址预先批准的转账
-    - `pause`：冻结所有代币活动
-    - `unpause`：恢复所有代币活动
-    - `upgradeToAndCall`：无缝升级合约到新版本
-    <img src="/cn/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="写入函数（执行操作）"/>
+<img src="/cn/images/portal-apps/tokenization/edit-workflow.png" className="screenshot_modal" alt="编辑审批流程"/>
+
+<Note>关于 App 审批流的更多介绍信息和具体操作步骤，请参阅[查看和更新审批流程](/cn/apps/workflow)。</Note>
+
+当您发起代币操作后，该操作会自动进入 App 审批流程。在**执行历史**页面，您可以看到该操作的状态为**待审批**。等审批通过后，Tokenization App 才会构造并提交对应的链上交易。
+
+#### 交易风控
+
+App 审批流通过后，进入交易风控的审批。
+
+默认的风控规则如下（按应用顺序排列）：
+
+1. Tokenization App 发起的合约交互需要一位管理员审核
+2. 单笔大额提币（> USD 10,000）需要一位管理员审核
+3. 未命中以上条件的普通转账自动放行
+4. 其他所有交易均自动拒绝
+
+您可以根据业务需求，更改交易风控的条件和对应操作。
+
+<Note>在**交易风控**页面上，在**操作**下，点击您想要修改或删除的规则旁边的 <img src="/en/images/common/icon_more.svg" className="icon"/> > <img src="/en/images/common/icon_edit.svg" className="icon"/> **编辑** 或 <img src="/en/images/common/icon_delete.svg" className="icon"/> **删除**。</Note>
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>
