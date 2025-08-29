@@ -290,15 +290,35 @@
                   "group": "Off-chain transaction policies",
                   "pages": [
                     "en/portal/risk-controls/default-transaction-policies",
-                    "en/portal/risk-controls/off-chain-tx-set-general-policy",
-                    "en/portal/risk-controls/off-chain-tx-manage-general-policy",
-                    "en/portal/risk-controls/off-chain-tx-set-transfer",
-                    "en/portal/risk-controls/off-chain-tx-manage-transfer",
-                    "en/portal/risk-controls/off-chain-tx-set-contract-call",
-                    "en/portal/risk-controls/off-chain-tx-manage-contract-call",
-                    "en/portal/risk-controls/off-chain-tx-set-message-signing",
-                    "en/portal/risk-controls/off-chain-tx-manage-message-signing",
-                    "en/portal/risk-controls/safe-risk-controls",
+                    {
+                      "group": "General policy",
+                      "pages": [
+                        "en/portal/risk-controls/off-chain-tx-set-general-policy",
+                        "en/portal/risk-controls/off-chain-tx-manage-general-policy"
+                      ]
+                    },
+                    {
+                      "group": "Token transfer policy",
+                      "pages": [
+                        "en/portal/risk-controls/off-chain-tx-set-transfer",
+                        "en/portal/risk-controls/off-chain-tx-manage-transfer"
+                      ]
+                    },
+                    {
+                      "group": "Contract call",
+                      "pages": [
+                        "en/portal/risk-controls/off-chain-tx-set-contract-call",
+                        "en/portal/risk-controls/off-chain-tx-manage-contract-call"
+                      ]
+                    },
+                    {
+                      "group": "Message signing policy",
+                      "pages": [
+                        "en/portal/risk-controls/off-chain-tx-set-message-signing",
+                        "en/portal/risk-controls/off-chain-tx-manage-message-signing",
+                        "en/portal/risk-controls/safe-risk-controls"
+                      ]
+                    },
                     "en/portal/risk-controls/manage-emergency-policy"
                   ]
                 },
@@ -850,15 +870,35 @@
                   "group": "链下交易风控",
                   "pages": [
                     "cn/portal/risk-controls/default-transaction-policies",
-                    "cn/portal/risk-controls/off-chain-tx-set-general-policy",
-                    "cn/portal/risk-controls/off-chain-tx-manage-general-policy",
-                    "cn/portal/risk-controls/off-chain-tx-set-transfer",
-                    "cn/portal/risk-controls/off-chain-tx-manage-transfer",
-                    "cn/portal/risk-controls/off-chain-tx-set-contract-call",
-                    "cn/portal/risk-controls/off-chain-tx-manage-contract-call",
-                    "cn/portal/risk-controls/off-chain-tx-set-message-signing",
-                    "cn/portal/risk-controls/off-chain-tx-manage-message-signing",
-                    "cn/portal/risk-controls/safe-risk-controls",
+                    {
+                      "group": "通用风控",
+                      "pages": [
+                        "cn/portal/risk-controls/off-chain-tx-set-general-policy",
+                        "cn/portal/risk-controls/off-chain-tx-manage-general-policy"
+                      ]
+                    },
+                    {
+                      "group": "代币转账风控",
+                      "pages": [
+                        "cn/portal/risk-controls/off-chain-tx-set-transfer",
+                        "cn/portal/risk-controls/off-chain-tx-manage-transfer"
+                      ]
+                    },
+                    {
+                      "group": "合约调用风控",
+                      "pages": [
+                        "cn/portal/risk-controls/off-chain-tx-set-contract-call",
+                        "cn/portal/risk-controls/off-chain-tx-manage-contract-call"
+                      ]
+                    },
+                    {
+                      "group": "消息签名风控",
+                      "pages": [
+                        "cn/portal/risk-controls/off-chain-tx-set-message-signing",
+                        "cn/portal/risk-controls/off-chain-tx-manage-message-signing",
+                        "cn/portal/risk-controls/safe-risk-controls"
+                      ]
+                    },
                     "cn/portal/risk-controls/manage-emergency-policy"
                   ]
                 },
