@@ -35,10 +35,15 @@ description: "学习如何创建 MPC 钱包，确保安全和高效的资产管�
     - 查看与代币相关的交易历史。
     - 查看代币的充币地址。
     - 搜索、过滤和排序钱包中的代币。
-    <Note>MPC 钱包在所有支持的 EVM 链上使用相同的地址，您只需创建一次即可。已经生成的 EVM 链地址将自动在所有其他支持的 EVM 链上生效。
-    目前，不同接口在查询 EVM 链地址时会有差异：
-    - [API](https://www.cobo.com/developers/v2/api-references/wallets/list-wallet-addresses)：查询结果会受 `chain_id` 限制，只返回该链上的地址。  
-    - Cobo Portal：会展示所有支持的 EVM 链上的地址，因此显示的地址数量可能比 API 返回的更多。</Note>
+
+<Note>
+MPC 钱包在所有支持的 EVM 链上使用相同的地址，您只需创建一次即可。已经生成的 EVM 链地址将自动在所有其他支持的 EVM 链上生效。
+    
+目前，不同接口在查询 EVM 链地址时会有差异：
+
+- [API](https://www.cobo.com/developers/v2/api-references/wallets/list-wallet-addresses)：查询结果会受 `chain_id` 限制，只返回该链上的地址。  
+- Cobo Portal：会展示所有支持的 EVM 链上的地址，因此显示的地址数量可能比 API 返回的更多。
+</Note>
 
 - 地址
     - 生成一个有唯一性的钱包地址。
