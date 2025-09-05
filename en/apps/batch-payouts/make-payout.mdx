@@ -36,12 +36,12 @@ This article describes how to make a batch payout in the Batch Payouts app.
     - **Cobo Account** (or **Email** if **Recipient Confirmation on Cobo Guard** is disabled):
       - If **Recipient Confirmation on Cobo Guard** is enabled, enter the recipient's Cobo Account. Once the payout is initiated, the associated Cobo Guard will receive a message that requires the recipient to approve or reject the transaction.
       - If **Recipient Confirmation on Cobo Guard** is disabled, enter the recipient's email address, which will receive a notification upon payout receipt.
-    - If you select **Use smart contract batch transfer**, you need to complete a token approval first. During the approval process, you can choose either a one-time approval for the current amount or a permanent approval:
-        - One-time approval: Only allows the specified amount to be used for this batch transfer.
-        - Permanent approval: Allows the batch transfer smart contract to use the token for future transfers without requiring additional approvals. Permanent approval helps reduce repeated approval transactions and saves on-chain gas fees.
+    - If you select **Use smart contract for batch payout**, you need to complete a token approval. During the approval process, you can choose either a one-time approval for the current amount or a permanent approval:
+        - One-time approval: Only allows the specified amount to be used for this batch payout.
+        - Permanent approval: Allows the batch transfer smart contract to use the token for future batch payouts without requiring additional approvals. Permanent approval helps reduce repeated approval transactions and saves on-chain gas fees.
     - If you have previously approved the token but the current allowance is insufficient, Cobo will automatically initiate two on-chain transactions to resolve it:
         1. Reset the allowance to 0.
-        2. Set a new allowance sufficient to cover the current batch transfer.
+        2. Set a new allowance sufficient to cover the current batch payout.
     - You can click the **Transaction ID** link on the page to view the approval transaction status. If any approval transaction fails, you can click **Resend** to resend it.
 7. In the **Transaction Cost** section, select a transaction fee level, or customize the transaction fee by clicking the settings icon <img src="/en/images/common/icon_advanced.svg" className="icon" alt="the settings icon" />.
 8. Verify the transaction cost and click **Submit**.

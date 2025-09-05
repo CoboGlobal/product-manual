@@ -18,22 +18,20 @@ description: "本文介绍如何在 Batch Payouts 中发起批量转账，确保
 ## 步骤
 
 1. 点击 Cobo Portal 上的 Apps 图标 <img src="/en/images/common/icon_apps.svg" className="icon" alt="Apps 图标" />，找到 Batch Payouts，点击**打开**。
-2. 在 Batch Payouts 中，点击**发起批量转账**（Make a Payout）。
-3. 在**发起批量转账**（Make a Payout）页面上，在**代币**（Token）字段中填入付款使用的代币类型。
+2. 在 Batch Payouts 中，点击**发起批量转账**。
+3. 在**发起批量转账**页面上，在**描述**字段中填写批量转账用途，选择转账使用的**代币**类型。
     <img src="/en/images/portal-apps/batch-payouts/make_payout.png" className="screenshot_full_screen" alt="付款页面截图" />
-4. 在**付款钱包**（From）下拉框中，选择要进行付款的钱包类型和具体钱包。
+4. 在**钱包类型**下拉框中，选择要进行付款的钱包类型和具体钱包。
     <Note><ul><li>目前交易所钱包不可用于批量转账。</li><li>如果启用了智能合约批量转账，仅支持使用 MPC 钱包或 Web3 钱包。</li></ul></Note>
-5. 在**新增转账**（Add the Payouts）下，您可以启用**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard）选项。该选项确保转账必须在收款人通过 Cobo Guard 确认交易后才能构造交易。因此，所有收款人的电子邮件必须是 Cobo Accounts 并绑定了 Cobo Guard。如果任一收款人的电子邮件不满足这些要求，您将无法提交该批量转账请求，您可以使用**发送设置指南**（Send Setup Guide To These Emails）按钮发送引导邮件以帮助他们完成 Cobo Accounts 注册和关联 Cobo Guard。
-6. 指定每个收款人的详细信息，具体如下：
-   - **收款地址**（Receiving Address）：您可以手动输入地址，或从地址簿或上传的 CSV 文件中批量导入地址。
-   - **金额**（Amount）：输入转账金额。
-
+5. 在**批量转账详情**下，您可以启用**Cobo Guard 收款人确认**选项。该选项确保转账必须在收款人通过 Cobo Guard 确认交易后才能构造交易。因此，所有收款人的电子邮件必须是 Cobo Accounts 并绑定了 Cobo Guard。如果任一收款人的电子邮件不满足这些要求，您将无法提交该批量转账请求，您可以使用**发送设置指南**按钮发送引导邮件以帮助他们完成 Cobo Accounts 注册和关联 Cobo Guard。
+6. 指定每个收款人的详细信息：
+   - **收款地址**：您可以手动输入地址，或从地址簿或上传的 CSV 文件中批量导入地址。
+   - **收款金额**：输入转账金额。
     <Note>如果批量转账总金额超过 100 美元，则将触发一个审批流程：批量转账状态将变为**待审批**，并需要一位团队内审批员批准该批量转账请求，否则批量转账中的交易将无法进行。如果在提交后 7 天（168 小时）内未进行批准或拒绝，请求状态将自动变为**失败**。有关更多审批流程的详细信息，请参阅[查看和更新审批流程](/cn/apps/workflow)。</Note>
-
-   - **备注**（Note）：填写关于转账的更多详情。
-   - **Cobo Account**（如果**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard）被禁用则显示为**邮件地址**（Email））：
-     - 如果您启用了**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard），请输入收款人的 Cobo Account。一旦付款发起，该账户关联的 Cobo Guard 将收到一条交易确认消息，需要收款人批准或拒绝交易。
-     - 如果您禁用了**收款人 Cobo Guard 确认**（Recipient Confirmation on Cobo Guard），请输入收款人的邮件地址，交易完成后将向该邮件地址发送通知邮件。
+   - **备注**：填写关于转账的更多详情。
+   - **Cobo Account**（如果 **Cobo Guard 收款人确认**被禁用则显示为**邮箱**）：
+     - 如果您启用了**Cobo Guard 收款人确认**，请输入收款人的 Cobo Account。一旦付款发起，该账户关联的 Cobo Guard 将收到一条交易确认消息，需要收款人批准或拒绝交易。
+     - 如果您禁用了**Cobo Guard 收款人确认**，请输入收款人的邮件地址，交易完成后将向该邮件地址发送通知邮件。
    - 如果您勾选了 **使用智能合约批量转账**，系统会自动引导您完成必要的授权操作，以下为相关说明：
      - 您需要先完成授权。在授权过程中，您可以选择一次性授权当前金额，或选择永久授权：
          - 一次性授权：仅允许本次批量转账消耗指定额度。
@@ -41,10 +39,10 @@ description: "本文介绍如何在 Batch Payouts 中发起批量转账，确保
      - 如果您之前已授权过该 Token，但现有授权额度不足，Cobo 会自动发起两笔链上交易完成处理：
          1. 将原授权额度重置为 0。
          2. 重新授权足够支付本次批量转账的新额度。
-     - 您可以点击页面中的 **Transaction ID** 链接，查看授权交易的链上状态。如果任意授权交易失败，您可以点击 **重新发送** 重新发起。
-7. 在**交易费用**（Transaction Cost）下，选择交易费用等级，或点击设置图标 <img src="/en/images/common/icon_advanced.svg" className="icon" alt="设置图标" />自定义交易费用。
-8. 验证交易费用并点击**提交**（Submit）。
-9. 在**安全验证**（Security Verification）对话框中，使用多重身份验证方式（如 Cobo Guard 或 Google Authenticator）验证您的身份。
+     - 您可以点击页面中的**交易 ID**链接，查看授权交易的链上状态。如果任意授权交易失败，您可以点击**重新发送**重新发起。
+7. 在**交易费用**下，选择交易费用等级，或点击设置图标 <img src="/en/images/common/icon_advanced.svg" className="icon" alt="设置图标" />自定义交易费用。
+8. 验证交易费用并点击**提交**。
+9. 在**安全验证**对话框中，使用多重身份验证方式（如 Cobo Guard 或 Google Authenticator）验证您的身份。
 
 现在您已成功提交批量转账请求。基于审批流的设置，该请求可能需要团队审批员审批才能继续进行。
 
