@@ -52,7 +52,7 @@ This is a set of policies designed for clients with on-chain interaction require
 | ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------- |
 | 1 (High) | High-value token transfer approval | Token Transfer | All wallets | Any token with a price > 10,000 USD per tx | Require 1 approval from Admins |
 | 2 | Regular token transfer - auto approval | Token Transfer | All wallets | Any token with a price \<= 10,000 USD per tx | Auto approval |
-| 3 | Tokenization app contract call | Contract Call | All wallets | Tokenization app initiates a transaction | Auto approval |
+| 3 | Contract call initiated from Tokenization app - auto approval | Contract Call | All wallets | Tokenization app initiates a transaction | Auto approval |
 | 4 | General contract call approval | Contract Call | All wallets | Any transaction | Require 1 approval from Admins |
 | 5 (Low) | All transactions - auto rejection | General Policy | All wallets | Any transaction | Auto rejection |
 
