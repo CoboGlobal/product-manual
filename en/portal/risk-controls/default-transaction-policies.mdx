@@ -15,7 +15,7 @@ This is the standard set of policies activated for most new organizations:
 
 | Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                 | Action                         |
 | ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------- | ----------------------------- |
-| 1 (High) | High-value token transfer - approval | Token Transfer | All wallets        | Any token with a price \> 10,000 USD per tx | Require 1 approval from admins |
+| 1 (High) | High-value token transfer - approval | Token Transfer | All wallets        | Any token with a price \> 10,000 USD per tx | Require 1 approval from Admins |
 | 2        | Regular token transfer - auto approval | Token Transfer | All wallets        | Any token with a price \<= 10,000 USD per tx | Auto approval                  |
 | 3 (Low)  | All transactions - auto rejection    | General Policy | All wallets        | Any transaction                           | Auto rejection                 |
 
@@ -34,15 +34,27 @@ This is the set of policies focused on common exchange security concerns:
 
 | Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                                                                                         | Action                         |
 | ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| 1 (High) | High-value token transfer approval | Token Transfer | All wallets        | Any token with a price > 10,000 USD per tx                                                                        | Require 1 approval from admins |
-| 2        | Web token transfer approval        | Token Transfer | All wallets        | Initiator is any web user                                                                                         | Require 1 approval from admins |
-| 3        | Token transfer time-based limit    | Token Transfer | All wallets        | Amounts across all wallets:<br/>- Any token with a price > 100,000 USD in 1 hour<br/>- Any token with a price > 500,000 USD in 24 hours | Require 1 approval from admins |
+| 1 (High) | High-value token transfer approval | Token Transfer | All wallets        | Any token with a price > 10,000 USD per tx                                                                        | Require 1 approval from Admins |
+| 2        | Web token transfer approval        | Token Transfer | All wallets        | Initiator is any web user                                                                                         | Require 1 approval from Admins |
+| 3        | Token transfer time-based limit    | Token Transfer | All wallets        | Amounts across all wallets:<br/>- Any token with a price > 100,000 USD in 1 hour<br/>- Any token with a price > 500,000 USD in 24 hours | Require 1 approval from Admins |
 | 4        | Regular token transfer - auto approval | Token Transfer | All wallets        | Any token with a price \<= 10,000 USD per tx                                                                       | Auto approval                  |
 | 5 (Low)  | All transactions - auto rejection    | General Policy | All wallets        | Any transaction                                                                                                   | Auto rejection                 |
 
 In addition to the general policies introduced in the last section, this set specifically requires Admin approval for:
 - Any token transfer initiated from the Cobo Portal web interface.
 - Token transfers exceeding hourly or daily velocity limits.
+
+### Default policy set for Web3 clients
+
+This is a set of policies designed for clients with on-chain interaction requirements:
+
+| Priority | Policy Content                        | Policy Type    | Applicable Wallets | Condition                                                                                                         | Action                         |
+| ------- | --------------------------------- | ------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| 1 (High) | High-value token transfer approval | Token Transfer | All wallets | Any token with a price > 10,000 USD per tx | Require 1 approval from Admins |
+| 2 | Regular token transfer - auto approval | Token Transfer | All wallets | Any token with a price \<= 10,000 USD per tx | Auto approval |
+| 3 | Contract call initiated from Tokenization app - auto approval | Contract Call | All wallets | Tokenization app initiates a transaction | Auto approval |
+| 4 | Regular contract call approval | Contract Call | All wallets | Any transaction | Require 1 approval from Admins |
+| 5 (Low) | All transactions - auto rejection | General Policy | All wallets | Any transaction | Auto rejection |
 
 ## Edit or delete default transaction policies
 
