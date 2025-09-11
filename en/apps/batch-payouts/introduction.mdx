@@ -9,10 +9,19 @@ Batch Payouts is a [Cobo Portal App](/en/apps/introduction) built by Cobo that i
 
 This app allows you to initiate batch transfer transactions to various destination addresses with a single click, effectively addressing the need for efficient, large-scale payments. It is valuable for scenarios that require sending funds to numerous recipients simultaneously, such as payroll processing. 
 
+Batch Payouts supports two batch transfer methods, and you can choose the one that best fits your needs:
+
+- Complete batch transfers through multiple individual on-chain transactions.
+- Complete multiple transfers in a single on-chain transaction through a Cobo-deployed smart contract.
+
 ## Key features
 
 ### Single-click transfers
 You can specify various recipient addresses and assign different transfer amounts to each address. This feature enables you to initiate all transactions with just one click, significantly reducing the time and effort compared to processing each transfer individually.
+
+### Support for smart contract batch transfers
+
+In addition to sending multiple transfers at once, Batch Payouts also supports completing multiple transfers in a single on-chain transaction through a Cobo-deployed smart contract. This method reduces repeated signatures and lowers on-chain fees, making it more efficient for large-scale transfers.
 
 ### Support for Address Book and CSV file import
 Easily add recipient addresses from your Address Book or by importing them from an uploaded CSV file. This flexibility streamlines the process of making batch payouts to multiple recipients.
