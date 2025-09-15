@@ -4,10 +4,10 @@
 
 <img src="/cn/images/transfers/customize-fees.png" className="screenshot_modal"/>
 
-- EVM 链：对于 EVM 链，EIP1559 和 Legacy 方式的交易费用有所不同。
-    - EIP 1559
-        - 在 EIP1559 方式下，用户可以定制 3 个参数：Max Priority Fee (gwei)、Max Fee 和 Gas Limit。
-        - 预估费用的计算方式是 Max Fee 乘以 Gas Limit：（Max Fee x Gas Limit）。
+- EVM 链：对于 EVM 链，EIP-1559 和 Legacy 方式的交易费用有所不同。
+    - EIP-1559
+        - 在 EIP-1559 方式下，用户可以定制 3 个参数：Max Priority Fee (gwei)、Max Fee 和 Gas Limit。
+        - 预估费用的计算公式为 `Max Fee * Gas Limit`。
         - 当前支持的链为 Ethereum Mainnet（`ETH`），Sepolia Testnet（`SETH`）和 Scroll Sepolia Testnet（`SCROLL_ETH`）。
 
         <a id="eip1559"></a>	
@@ -19,7 +19,7 @@
 
     - Legacy
         - 在 Legacy 方式下，用户可以定义 2 个参数：Gas Price (gwei) 和 Gas Limit。
-        - 预估费用的计算方式是 Gas Price 乘以 Gas Limit：（Gas Price x Gas Limit）。
+        - 预估费用的计算公式为 `Gas Price * Gas Limit`。
 
         | 参数 | 定义    |
         | -------- | -------------------------------------------------------------------------- |
@@ -27,15 +27,15 @@
         | Gas Limit | Gas Limit 是您愿意为执行交易或运行以太坊虚拟机 (EVM) 而支付的最多 Gas Unit 数量。 |
 - 基于 UTXO 的链
     - 用户可以自定义费率 (sat/vByte)。
-    - 预估费用的计算方式是费率乘以交易数据量：（费率 x 交易数据量）。
+    - 预估费用的计算公式为 `Fee Rate * Transaction Size`。
 
         | 参数 | 定义                                                                                                                               |
         | --------  | -----------------------------------------------------------------------------------------------------------------------------------------|
-        | 费率  | 费率的计算方式是您的交易在区块链上消耗的每单位数据对应多少 satoshis（缩写为 sats/vByte）。|
+        | Fee Rate  | 费率的计算方式是您的交易在区块链上消耗的每单位数据对应多少 satoshis（缩写为 sats/vByte）。|
 
 - Solana 链
     - 用户可自定义两个参数：Compute Unit（CU）Price 和 CU Limit。
-    - 预估交易费用计算方式为：`Base Fee + (CU Price × CU Limit)`
+    - 预估交易费用计算公式为：`Base Fee + (CU Price × CU Limit)`
 
         | 参数名        | 描述                                                                                                                                                      |
         |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +46,7 @@
 
 - Filecoin 链
     - 用户可自定义三个参数：Gas Fee Cap、Gas Premium 和 Gas Limit。
-    - 预估交易费用计算方式为：`min(Gas Fee Cap, Base Fee + Gas Premium) × Gas Limit`
+    - 预估交易费用计算公式为：`min(Gas Fee Cap, Base Fee + Gas Premium) × Gas Limit`
 
         | 参数名        | 描述                                                                                                                                                         |
         |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
