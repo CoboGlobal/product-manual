@@ -163,7 +163,6 @@
                       "en/portal/transfers/from-asset-wallets",
                       "en/portal/transfers/from-web3-wallets",
                       "en/portal/transfers/from-mpc-wallets",
-                      "en/portal/transfers/from-smart-contract-wallets",
                       "en/portal/transfers/from-exchange-wallets",
                       {
                         "group": "Address Book",
@@ -365,7 +364,8 @@
                         "group": "Deposit and withdraw assets",
                         "pages": [
                           "en/portal/smart-contract-wallets/deposit-assets",
-                          "en/portal/smart-contract-wallets/withdraw-assets"
+                          "en/portal/smart-contract-wallets/withdraw-assets",
+                          "en/portal/transfers/from-smart-contract-wallets"
                         ]
                       },
                       "en/portal/smart-contract-wallets/dapp-interaction"
@@ -758,7 +758,6 @@
                       "cn/portal/transfers/from-asset-wallets",
                       "cn/portal/transfers/from-web3-wallets",
                       "cn/portal/transfers/from-mpc-wallets",
-                      "cn/portal/transfers/from-smart-contract-wallets",
                       "cn/portal/transfers/from-exchange-wallets",
                       {
                         "group": "地址簿",
@@ -960,7 +959,8 @@
                         "group": "充币和提币",
                         "pages": [
                           "cn/portal/smart-contract-wallets/deposit-assets",
-                          "cn/portal/smart-contract-wallets/withdraw-assets"
+                          "cn/portal/smart-contract-wallets/withdraw-assets",
+                          "cn/portal/transfers/from-smart-contract-wallets"
                         ]
                       },
                       "cn/portal/smart-contract-wallets/dapp-interaction"
