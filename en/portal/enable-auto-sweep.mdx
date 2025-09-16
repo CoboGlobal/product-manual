@@ -59,41 +59,52 @@ Now you have successfully created a new Organization-Controlled Wallet with auto
 Now you have successfully enabled auto token sweeping for the wallet. The wallet has a icon indicating that the feature is enabled as the following screenshot shows.
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
+## Changes after enabling auto token sweeping
 
-## Changes after enabling this feature
+### Sweep-to addresses
 
-Once auto token sweeping is enabled, the following changes apply:
+Once you enable auto token sweeping, Cobo automatically generates a dedicated sweep-to address for each enabled chain in the wallet. These addresses are system-assigned and cannot be manually specified or modified. When any deposit address receives tokens, the system will automatically and periodically sweep these tokens to the corresponding sweep-to address. The wallet addresses are displayed under two tabs: the **Deposit** tab shows previously created deposit addresses, while the **Sweep-To** tab shows the sweep addresses.
 
-### Capabilities of original deposit addresses and sweep-to addresses
-- deposit addresses: By default, after you enable auto token sweeping, deposit addresses can only receive funds and sweep them to the designated sweep-to address. They cannot be used for withdrawals, contract calls, staking, OTC transactions, or financial product transactions, and they cannot act as delegate addresses for smart contract wallets. To use these functions, please enable deposit address transaction via **Wallet Settings** > **Auto-Sweep Settings**.
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="screenshot_full_screen" alt="Address list" />
 
-    <img src="/en/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
+### Balances
+In a wallet with auto token sweeping enabled, token balances are separated into **balance** and **withdrawable balance** columns. Hover over a token's total balance to see the swept balance and the balances with sweeping in progress, and hover over a token's withdrawable balance to view the sweep-to address.
 
-- sweep-to addresses: sweep-to addresses remain fully functional and can perform all transaction types. You can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="screenshot_full_screen" alt="Token list" />
 
-### Token list
-In a wallet with auto token sweeping enabled, you can view your token balances in two columns: total balance and withdrawable balance. Hover over a token's total balance to see the swept balance and the balances with sweeping in progress, and hover over a token's withdrawable balance to view the sweep-to address.
+- Total balance: This represents the sum of your withdrawable balance and balance with sweeping in progress in your wallet.
+- Withdrawable balance/Swept balance: This is the part of your balance located in the sweep-to address that is readily available for withdrawal, contract calls, and other transaction operations.
+- Sweeping in progress: This refers to the part of your balance that has not yet been moved to the sweep-to address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
 
-    <img src="/en/images/mpc-wallet/ocw/auto-sweep-token-list.png" className="screenshot_full_screen" alt="Token list" />
+### Transaction record type
+When sweeping occurs, two transaction records are generated:
+- For deposit addresses: displayed as **Withdrawal-Sweep**.
+- For sweep-to addresses: displayed as **Deposit-Sweep**.
 
-    - Total balance: This represents the sum of your withdrawable balance and balance with sweeping in progress in your wallet.
-    - Withdrawable balance/Swept balance: This is the part of your balance located in the sweep-to address that is readily available for withdrawal, contract calls, and other transaction operations.
-    - Sweeping in progress: This refers to the part of your balance that has not yet been moved to the sweep-to address, meaning it is not currently available for withdrawal and other transaction operations. This includes tokens that are in the process of being swept and those that have not yet been initiated for sweeping.
+<img src="/en/images/mpc-wallet/ocw/tx-history.png" className="screenshot_full_screen" alt="Sweep transactions" />
 
-### Address list
-You can find addresses organized into two tabs: **Deposit** and **Sweep-to**. The **Deposit** tab displays previously created deposit addresses, while the **Sweep-to** tab lists addresses created by Cobo for sweep transactions.
+## Optional next steps
 
-    <img src="/en/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="screenshot_full_screen" alt="Address list" />
+### Change sweep-to addresses  
+If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
 
-### Wallet list
-You can filter wallets by their **Auto-Sweep Enabled** status to easily identify which wallets have the feature turned on or off.
+### Enable deposit address transactions  
+By default, deposit addresses cannot initiate withdrawals, contract calls, staking, OTC trades, or smart contract delegations. To manually enable these capabilities for deposit addresses, follow these steps:
 
-    <img src="/en/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="screenshot_full_screen" alt="Wallet filter" />
+1. In the wallet list, find the wallet that you want to enable deposit address transactions for.
+2. In the wallet settings page, click the **Auto-Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto-Sweep Settings" />.
+3. In the **Auto-Sweep Settings** page, click **Enable**.
 
-### Transaction history
-When an auto token sweeping operation occurs, you will see two transaction records. For deposit addresses, it's recorded as a **Withdrawal-Sweep** transaction. For sweep-to addresses, it's recorded as a **Deposit-Sweep** transaction.
-You can view and filter sweep transactions in transaction history page as the following screenshot shows:
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
 
-<img src="/en/images/mpc-wallet/ocw/tx-history.png" className="screenshot_full_screen" alt="The sweep transactions" />
+4. In the **Enable Deposit Address Transactions** dialog, click **Confirm**.
+5. Verify your identity using Cobo Guard or another MFA method.
+
+Now you have successfully enabled deposit address transactions for the wallet, with the status **Enabled**.
+
+### Filter wallets by feature status  
+You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.
+
+<img src="/en/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="screenshot_full_screen" alt="Wallet filter" />
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
