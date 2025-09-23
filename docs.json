@@ -20,6 +20,7 @@
                 "group": "OVERVIEW",
                 "pages": [
                   "en/portal/introduction",
+                  "en/portal/find-right-info",
                   {
                     "group": "Token & chain support",
                     "pages": [
@@ -615,6 +616,7 @@
                 "group": "概览",
                 "pages": [
                   "cn/portal/introduction",
+                  "cn/portal/find-right-info",
                   {
                     "group": "代币与链支持",
                     "pages": [
