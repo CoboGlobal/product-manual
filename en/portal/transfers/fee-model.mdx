@@ -19,7 +19,7 @@ Some EVM chains support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). Cur
 - Sonic  
 - Berachain  
 
-Under the EIP-1559 model, the estimated transaction fee is: (base fee + priority fee) * gas limit
+In the EIP-1559 model, the estimated transaction fee is calculated as: (base fee + priority fee) * gas limit
 
 | Parameter           | Description                                                                                                                |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ You can customize the following parameters:
 
 All EVM chains support the Legacy model.
 
-Under the Legacy model, the estimated transaction fee is: gas price * gas limit
+In the Legacy model, the estimated transaction fee is calculated as: gas price * gas limit
 
 | Parameter  | Description                                                                                                                         |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -59,7 +59,7 @@ Currently supported chains include:
 - Nervos CKB  
 - Handshake  
 
-On UTXO-based chains, the estimated transaction fee is: fee rate * transaction size
+On UTXO-based chains, the estimated transaction fee is calculated as: fee rate * transaction size
 
 | Parameter        | Description                                                                                       |
 |------------------|---------------------------------------------------------------------------------------------------|
@@ -71,7 +71,7 @@ You can customize the following parameters:
 
 ## Solana
 
-On Solana, you can use the native model or choose the Legacy model. Under the native model, the estimated transaction fee is: base fee + (CU price * CU limit)
+On Solana, you can use the native model or choose the Legacy model. In the native model, the estimated transaction fee is calculated as: base fee + (CU price * CU limit)
 
 | Parameter | Description                                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------|
@@ -85,7 +85,7 @@ You can customize the following parameters:
 
 ## Filecoin
 
-On Filecoin, you can use the native model or choose the Legacy model. Under the native model, the estimated transaction fee is: min(gas fee cap, base fee + gas premium) * gas limit
+On Filecoin, you can use the native model or choose the Legacy model. In the native model, the estimated transaction fee is calculated as: min(gas fee cap, base fee + gas premium) * gas limit
 
 | Parameter     | Description                                                                                       |
 |---------------|---------------------------------------------------------------------------------------------------|
@@ -99,9 +99,9 @@ You can customize the following parameters:
 - Gas premium  
 - Gas limit  
 
-## Chains using the Fixed model
+## Chains using the fixed model
 
-The following chains adopt a Fixed fee model:  
+The following chains adopt a fixed fee model:  
 - TRON  
 - Algorand  
 - Polkadot  
