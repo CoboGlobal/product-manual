@@ -1,0 +1,117 @@
+---
+title: Transaction fee models
+description: Learn how major blockchain networks calculate transaction fees and how to configure the right parameters for your transfers.
+---
+
+In blockchain networks, transaction fees determine not only whether a transfer is confirmed but also how quickly it is processed. Since each network adopts a different calculation model, understanding these rules is essential for making informed configuration choices.
+
+## EVM chains
+
+### EIP-1559 model
+
+Some EVM chains support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). Currently supported chains include:  
+- Ethereum Mainnet  
+- Sepolia Testnet  
+- Scroll Mainnet  
+- Base  
+- BNB Smart Chain  
+- Polygon  
+- Sonic  
+- Berachain  
+
+Under the EIP-1559 model, the estimated transaction fee is: (base fee + priority fee) * gas limit
+
+| Parameter           | Description                                                                                                                |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Base fee     | The maximum amount you are willing to pay per gas unit to execute the transaction on-chain.                                |
+| Priority fee           | The maximum additional fee per gas unit paid to miners/validators to prioritize your transaction. |
+| Gas limit           | The maximum number of gas units you are willing to spend to execute the transaction or run the Ethereum Virtual Machine (EVM). Different operations consume different amounts of gas units. |
+
+<Note>For both Legacy and EIP-1559 fee models, an additional fee is charged when submitting transaction calldata to L1 (Layer 1).</Note>
+
+You can customize the following parameters:  
+- Max fee: The maximum total fee for the transaction.  
+- Max priority fee: The maximum additional fee per gas unit paid to miners/validators to prioritize your transaction.  
+- Gas limit  
+
+### Legacy model
+
+All EVM chains support the Legacy model.
+
+Under the Legacy model, the estimated transaction fee is: gas price * gas limit
+
+| Parameter  | Description                                                                                                                         |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Gas price  | The gas price in gwei, representing the amount of ETH paid to validators per gas unit to process the transaction.                    |
+| Gas limit  | The maximum number of gas units you are willing to spend to execute the transaction or run the Ethereum Virtual Machine (EVM). Different operations consume different amounts of gas units. |
+
+<Note>For both Legacy and EIP-1559 fee models, an additional fee is charged when submitting transaction calldata to L1 (Layer 1).</Note>
+
+You can customize the following parameters:  
+- Gas price  
+- Gas limit  
+
+## UTXO-based chains
+
+Currently supported chains include:  
+- Bitcoin  
+- Cardano  
+- Nervos CKB  
+- Handshake  
+
+On UTXO-based chains, the estimated transaction fee is: fee rate * transaction size
+
+| Parameter        | Description                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------|
+| Fee rate         | The fee per byte of data, indicating how many satoshis are paid per vByte (abbreviated as sats/vByte). |
+| Transaction size | The on-chain space occupied by the transaction, which affects the total fee in UTXO models.        |
+
+You can customize the following parameters:  
+- Fee rate  
+
+## Solana
+
+On Solana, you can use the native model or choose the Legacy model. Under the native model, the estimated transaction fee is: base fee + (CU price * CU limit)
+
+| Parameter | Description                                                                                         |
+|-----------|-----------------------------------------------------------------------------------------------------|
+| base fee  | A fixed fee charged per signature (by default, 5,000 Lamports per signature).                       |
+| CU price  | The price per Compute Unit (CU), used to increase transaction priority. Denominated in Lamports.    |
+| CU limit  | The maximum number of CUs the transaction is allowed to consume. A higher value increases priority but also increases cost. |
+
+You can customize the following parameters:  
+- CU price  
+- CU limit  
+
+## Filecoin
+
+On Filecoin, you can use the native model or choose the Legacy model. Under the native model, the estimated transaction fee is: min(gas fee cap, base fee + gas premium) * gas limit
+
+| Parameter     | Description                                                                                       |
+|---------------|---------------------------------------------------------------------------------------------------|
+| Gas fee cap   | The maximum price you are willing to pay per unit of gas.                                         |
+| Base fee      | The minimum fee required for block inclusion, which adjusts dynamically with network congestion and is burned after payment, thereby reducing the total FIL supply. |
+| Gas premium   | A user-specified miner tip to increase transaction priority.                                      |
+| Gas limit     | The maximum amount of gas the transaction is allowed to consume.                                  |
+
+You can customize the following parameters:  
+- Gas fee cap  
+- Gas premium  
+- Gas limit  
+
+## Chains using the Fixed model
+
+The following chains adopt a Fixed fee model:  
+- TRON  
+- Algorand  
+- Polkadot  
+- Internet Computer and its ICRC assets (ckBTC, ckETH, ckUSDC, ckUSDT, DKP, GLDGOV, ICS, NICP, OC, OGY)  
+- Stellar  
+- Ripple  
+- Tezos  
+- Sui  
+- Near  
+
+The fixed fee model charges a fixed fee for each transaction.
+
+<Note>If you need to estimate transaction fees using the WaaS 2.0 API, please refer to [Estimate transaction fees](https://www.cobo.com/developers/v2/guides/transactions/estimate-fees).</Note>

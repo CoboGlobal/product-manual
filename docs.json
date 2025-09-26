@@ -165,6 +165,7 @@
                       "en/portal/transfers/from-web3-wallets",
                       "en/portal/transfers/from-mpc-wallets",
                       "en/portal/transfers/from-exchange-wallets",
+                      "en/portal/transfers/fee-model",
                       {
                         "group": "Address Book",
                         "pages": [
@@ -759,6 +760,7 @@
                       "cn/portal/transfers/from-web3-wallets",
                       "cn/portal/transfers/from-mpc-wallets",
                       "cn/portal/transfers/from-exchange-wallets",
+                      "cn/portal/transfers/fee-model",
                       {
                         "group": "地址簿",
                         "pages": [
