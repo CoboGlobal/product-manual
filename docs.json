@@ -20,6 +20,7 @@
                 "group": "OVERVIEW",
                 "pages": [
                   "en/portal/introduction",
+                  "en/portal/find-right-info",
                   {
                     "group": "Token & chain support",
                     "pages": [
@@ -163,8 +164,8 @@
                       "en/portal/transfers/from-asset-wallets",
                       "en/portal/transfers/from-web3-wallets",
                       "en/portal/transfers/from-mpc-wallets",
-                      "en/portal/transfers/from-smart-contract-wallets",
                       "en/portal/transfers/from-exchange-wallets",
+                      "en/portal/transfers/fee-model",
                       {
                         "group": "Address Book",
                         "pages": [
@@ -241,8 +242,7 @@
                         "group": "User roles and permissions",
                         "pages": [
                           "en/portal/risk-controls/roles-and-permissions",
-                          "en/portal/risk-controls/assign-roles-to-members",
-                          "en/portal/risk-controls/create-customized-roles"
+                          "en/portal/risk-controls/assign-roles-to-members"
                         ]
                       },
                       {
@@ -272,8 +272,7 @@
                         "group": "User roles and permissions",
                         "pages": [
                           "en/portal/organization/roles-and-permissions",
-                          "en/portal/organization/assign-roles-to-members",
-                          "en/portal/organization/create-customized-roles"
+                          "en/portal/organization/assign-roles-to-members"
                         ]
                       },
                       {
@@ -365,7 +364,8 @@
                         "group": "Deposit and withdraw assets",
                         "pages": [
                           "en/portal/smart-contract-wallets/deposit-assets",
-                          "en/portal/smart-contract-wallets/withdraw-assets"
+                          "en/portal/smart-contract-wallets/withdraw-assets",
+                          "en/portal/transfers/from-smart-contract-wallets"
                         ]
                       },
                       "en/portal/smart-contract-wallets/dapp-interaction"
@@ -615,6 +615,7 @@
                 "group": "概览",
                 "pages": [
                   "cn/portal/introduction",
+                  "cn/portal/find-right-info",
                   {
                     "group": "代币与链支持",
                     "pages": [
@@ -758,8 +759,8 @@
                       "cn/portal/transfers/from-asset-wallets",
                       "cn/portal/transfers/from-web3-wallets",
                       "cn/portal/transfers/from-mpc-wallets",
-                      "cn/portal/transfers/from-smart-contract-wallets",
                       "cn/portal/transfers/from-exchange-wallets",
+                      "cn/portal/transfers/fee-model",
                       {
                         "group": "地址簿",
                         "pages": [
@@ -836,8 +837,7 @@
                         "group": "用户角色与权限",
                         "pages": [
                           "cn/portal/risk-controls/roles-and-permissions",
-                          "cn/portal/risk-controls/assign-roles-to-members",
-                          "cn/portal/risk-controls/create-customized-roles"
+                          "cn/portal/risk-controls/assign-roles-to-members"
                         ]
                       },
                       {
@@ -867,8 +867,7 @@
                         "group": "用户角色与权限",
                         "pages": [
                           "cn/portal/organization/roles-and-permissions",
-                          "cn/portal/organization/assign-roles-to-members",
-                          "cn/portal/organization/create-customized-roles"
+                          "cn/portal/organization/assign-roles-to-members"
                         ]
                       },
                       {
@@ -960,7 +959,8 @@
                         "group": "充币和提币",
                         "pages": [
                           "cn/portal/smart-contract-wallets/deposit-assets",
-                          "cn/portal/smart-contract-wallets/withdraw-assets"
+                          "cn/portal/smart-contract-wallets/withdraw-assets",
+                          "cn/portal/transfers/from-smart-contract-wallets"
                         ]
                       },
                       "cn/portal/smart-contract-wallets/dapp-interaction"

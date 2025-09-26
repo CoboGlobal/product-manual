@@ -13,7 +13,7 @@ Meanwhile, you might need to settle various types of fees across Cobo Portal, su
 
 Fee Station helps you simplify this. It’s a one-stop fee management platform on Cobo Portal. Once any member deposits to the Fee Station account, it can automatically cover on-chain gas fees for all [MPC Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure, and also settle various types of fees with a single balance.
 
-<Note>Currently, Fee Station supports EVM and TRON chains. Solana support is coming soon.</Note>
+<Note>Currently, Fee Station supports paying gas fees for transactions made with MPC Wallets and Web3 Wallets on EVM-compatible chains, TRON, and Solana.</Note>
 
 ## Who should use Fee Station
 
@@ -43,11 +43,11 @@ Fee Station supports the following types of fees:
 
 You can deposit gas tokens directly, or simply use USD stablecoins like USDT or USDC as a unified balance. Fee Station will convert them into the required gas tokens at the time of transaction, avoiding the manual work of preparing tokens for each chain. For more details about the token support, please refer to [Supported token types](#supported-token-types).
 
-### Tron gas fee optimization with energy rental
+### TRON gas fee optimization with energy rental
 
-Fee Station automatically leverages energy rental on the Tron network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
+Fee Station automatically leverages energy rental on the TRON network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
 
-With Fee Station enabled, Tron transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
+With Fee Station enabled, TRON transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
 
 ### API and webhook integration
 
@@ -76,8 +76,9 @@ The table below shows the chains supported by Fee Station for different ways of 
 
 | Chain                       | Support gas fee paid by USD stablecoin | Support gas fee paid by gas token |
 | ------------------------ | --------- | --------- |
-| Tron                     | ✅        | ✅        |
+| TRON                     | ✅        | ✅        |
 | Ethereum                 | ✅        | ✅        |
+| Solana                   | ✅        | ✅        |
 | BNB Smart Chain (BSC)     | ✅        | ✅        |
 | Polygon                  | ✅        | ✅        |
 | Base                     | ✅        | ✅        |
@@ -86,6 +87,7 @@ The table below shows the chains supported by Fee Station for different ways of 
 | Avalanche C-Chain        | ✅        | ✅        |
 | Optimism                 | ✅        | ✅        |
 | Scroll                   | ✅        | ✅        |
+| ZKsync Era                   | ✅        | ✅        |
 | Chiliz                   | -         | ✅        |
 | Chiliz Chain 2.0                 | -         | ✅        |
 | Cronos                   | -         | ✅        |
@@ -109,7 +111,7 @@ You can deposit USD stablecoins to cover the gas fees of multiple chains. No nee
 
 | Chain        | Supported USD Stablecoin               |
 | --------- | ------------------------------ |
-| Tron        | USDT                         |
+| TRON        | USDT                         |
 | Ethereum    | USDC, USDT                   |
 | Solana      | USDT, USDC                   |
 | Polygon     | USDT, USDC, USDC.e  (bridged USDC)            |
@@ -125,16 +127,12 @@ You can also deposit the native gas token of the chain, and Fee Station will pay
 | Chain                       | Gas Token |
 | ------------------------ | --------- |
 | Tron                     | TRX       |
-| Ethereum                 | ETH       |
+| Ethereum, Base, Arbitrum, Scroll, Optimism, ZKsync Era | ETH       |
 | BNB Smart Chain (BSC)     | BNB       |
 | Polygon                  | MATIC     |
-| Base                     | ETH       |
-| Arbitrum                 | ETH       |
 | Mantle                   | MNT       |
 | Avalanche C-Chain        | AVAX      |
-| Optimism                 | ETH       |
-| Chiliz                   | CHZ       |
-| Chiliz Chain 2.0                 | CHZ       |
+| Chiliz, Chiliz Chain 2.0                   | CHZ       |
 | Cronos                   | CRO       |
 | Meter                    | MTR       |
 | EthereumPoW              | ETHW      |
