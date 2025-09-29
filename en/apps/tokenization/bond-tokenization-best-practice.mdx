@@ -59,7 +59,7 @@ As a fund manager, you first establish the governance framework for the tokenize
 
 ### 2. Token creation and initial setup  
 
-#### 2.1 Initial setup  
+#### 1. Initial setup  
 Before creating tokens, complete the [basic setup of MPC Vaults and wallet addresses](/en/portal/quick-start-guide-mpc) to ensure security and compliance.  
 
 **a. Deployment Vault**  
@@ -70,12 +70,12 @@ Before creating tokens, complete the [basic setup of MPC Vaults and wallet addre
 - Managed by the security team, ensuring daily signatures are executed securely under MPC architecture.  
 - Used for day-to-day token operations (minting, burning, maintaining allow/block lists), typically initiated by the operations team, approved by risk/compliance and executives, then signed by nodes.  
 
-#### 2.2 Create tokens with Cobo’s Tokenization App  
+#### 2. Create tokens with Cobo’s Tokenization App  
 a. Define core token parameters (name, symbol, etc.) and set operational permissions.  
 b. Initiate token creation using an address under the Deployment Vault and complete contract deployment.  
 c. After deployment, review and configure steps 3, 4, and 5 to ensure security and compliance requirements are met.  
 
-#### 2.3 Token contract permissions  
+#### 3. Token contract permissions  
 **a. Definition**  
 Contract-level “signing address configuration” granting addresses specific operational permissions.  
 
@@ -90,14 +90,14 @@ Contract-level “signing address configuration” granting addresses specific o
 - **Burner**: Token burning; daily operations; managed by Operations Vault  
 - **Pauser, Upgrader, Salvager**: Low-frequency operations (pause, upgrade, asset recovery); managed by Deployment Vault  
 
-#### 2.4 Token transfer restrictions  
+#### 4. Token transfer restrictions  
 **a. Definition**  
 Smart-contract-level controls on token ownership and transfers, ensuring only eligible wallets may hold and transfer tokens.  
 
 **b. Implementation**  
 For regulated MMFs, tokens must be restricted to qualified investors, with transferability limited to addresses on an allowlist.  
 
-#### 2.5 App approval workflows  
+#### 5. App approval workflows  
 **a. Definition**  
 Internal approval workflows for token management operations, ensuring every action is authorized to prevent errors or misuse.  
 
