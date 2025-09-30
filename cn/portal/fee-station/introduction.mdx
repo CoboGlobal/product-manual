@@ -13,7 +13,7 @@ description: "Fee Station 是您在 Cobo Portal 中统一管理链上手续费�
 
 Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 Cobo 提供的一站式费用管理工具，相当于一个团队共享的费用账户：只需由团队中的任一成员为 Fee Station 账户充值，系统就能根据已配置的策略为团队内所有链上交易自动代付费用，并统一结算各类平台费用。
 
-<Note>当前 Fee Station 支持为 [MPC 钱包](/cn/portal/mpc-wallets/introduction)和 [Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/introduction)在 EVM 链和 TRON 链上自动代付手续费，即将支持 Solana 链。</Note>
+<Note>目前，Fee Station 支持为 MPC 钱包和 Web3 钱包在 EVM 兼容链、TRON 和 Solana 上发起的交易自动代付链上手续费。</Note>
 
 ## 谁适合使用 Fee Station
 
@@ -72,8 +72,9 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 
 | 链                       | 支持美元稳定币代付手续费 | 支持 Gas Token 代付手续费 |
 | ------------------------ | --------- | --------- |
-| Tron                     | ✅        | ✅        |
+| TRON                     | ✅        | ✅        |
 | Ethereum                 | ✅        | ✅        |
+| Solana                   | ✅        | ✅        |
 | BNB Smart Chain (BSC)     | ✅        | ✅        |
 | Polygon                  | ✅        | ✅        |
 | Base                     | ✅        | ✅        |
@@ -82,6 +83,7 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | Avalanche C-Chain        | ✅        | ✅        |
 | Optimism                 | ✅        | ✅        |
 | Scroll                   | ✅        | ✅        |
+| ZKsync Era               | ✅        | ✅        |
 | Chiliz                   | -         | ✅        |
 | Chiliz Chain 2.0                 | -         | ✅        |
 | Cronos                   | -         | ✅        |
@@ -105,7 +107,7 @@ Fee Station 支持以下两类代币充值，用于支付链上手续费及结�
 
 | 链        | 可充值的美元稳定币               |
 | --------- | ------------------------------ |
-| Tron        | USDT                         |
+| TRON        | USDT                         |
 | Ethereum    | USDC, USDT                   |
 | Solana      | USDT, USDC                   |
 | Polygon     | USDT, USDC, USDC.e (bridged USDC)            |
@@ -121,16 +123,12 @@ Fee Station 支持以下两类代币充值，用于支付链上手续费及结�
 | 链                       | Gas Token |
 | ------------------------ | --------- |
 | Tron                     | TRX       |
-| Ethereum                 | ETH       |
+| Ethereum, Base, Arbitrum, Scroll, Optimism, ZKsync Era | ETH       |
 | BNB Smart Chain (BSC)     | BNB       |
 | Polygon                  | MATIC     |
-| Base                     | ETH       |
-| Arbitrum                 | ETH       |
 | Mantle                   | MNT       |
 | Avalanche C-Chain        | AVAX      |
-| Optimism                 | ETH       |
-| Chiliz                   | CHZ       |
-| Chiliz Chain 2.0                 | CHZ       |
+| Chiliz, Chiliz Chain 2.0                   | CHZ       |
 | Cronos                   | CRO       |
 | Meter                    | MTR       |
 | EthereumPoW              | ETHW      |
