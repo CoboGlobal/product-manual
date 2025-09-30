@@ -70,9 +70,9 @@ To add more chains, refer to [Add chains](/en/portal/enable-or-disable-chains).
 
 For your testing convenience, the system has created the following by default:
 
-- A Vault: `Cobo Demo Vault (Testing Only)`
+- A vault: `Cobo Demo Vault (Testing Only)`
 - A wallet: `Default MPC wallet` in the above Vault
-- Private key shares: Main Group 2/2; Signing Group and Recovery Group are not configured automatically in the development environment.
+- Private key shares: Main Key 2/2; Signing Key and Recovery Key are not configured automatically in the development environment.
 
 <Note>Both key shares are held by Cobo by default. When you initiate a transaction from this MPC Wallet in the development environment, Cobo will automatically sign the transaction for you, so you don’t need to sign it manually.</Note>
 
@@ -80,10 +80,10 @@ To fully experience the MPC Wallet creation process, refer to:
 
 - [Introduction to Organization-Controlled Wallets](/en/portal/mpc-wallets/ocw/introduction)
 - [Create an MPC Vault](/en/portal/mpc-wallets/ocw/create-mpc-vault)
-- [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group)
-- [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group)
-- [Recovery Group](/en/portal/mpc-wallets/ocw/holder-group-recovery-group)
-- [Differences between Main Group, Signing Group, and Recovery Group](/en/portal/mpc-wallets/ocw/holder-group-overview)
+- [Main Key](/en/portal/mpc-wallets/ocw/holder-group-main-group)
+- [Signing Key](/en/portal/mpc-wallets/ocw/holder-group-signing-group)
+- [Recovery Key](/en/portal/mpc-wallets/ocw/holder-group-recovery-group)
+- [Differences between Main Key, Signing Key, and Recovery Key](/en/portal/mpc-wallets/ocw/holder-group-overview)
 
 ## Set up Fee Station (optional)
 
@@ -137,7 +137,7 @@ This section shows how to use the WaaS 2.0 API with MPC Wallets (Organization-Co
    Refer to [Webhooks and callbacks guide](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction).
 
 5. **Initiate a withdrawal transaction**  
-   If you have configured transaction policies, a Main Group, or callback endpoints for your wallet, these settings will affect the withdrawal process. For example, you may need additional approval before the transaction can be completed.
+   If you have configured transaction policies, a Main Key, or callback endpoints for your wallet, these settings will affect the withdrawal process. For example, you may need additional approval before the transaction can be completed.
    Before withdrawing, ensure your wallet has enough gas tokens or that you have enabled [Fee Station](/en/portal/fee-station/introduction) for gas fee payment.
 
    The following is an example code using the JavaScript WaaS SDK. For more details, see the [Transfer token API documentation](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token).
