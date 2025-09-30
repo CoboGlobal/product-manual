@@ -65,51 +65,51 @@ As a fund manager, you first establish the governance framework for the tokenize
 
 Before creating tokens, complete the [basic setup of MPC Vaults and wallet addresses](/en/portal/quick-start-guide-mpc) to ensure security and compliance.  
 
-**a. Deployment Vault**  
-- Managed by the tech & security team with MPC nodes and high-security/cold storage.  
-- Used only for high-risk, low-frequency operations (deployment, pausing, upgrading, modifying core contract permissions). Typically initiated by the security team, approved by executives, and signed by nodes.  
+- **Deployment Vault**  
+   - Managed by the tech & security team with MPC nodes and high-security/cold storage.  
+   - Used only for high-risk, low-frequency operations (deployment, pausing, upgrading, modifying core contract permissions). Typically initiated by the security team, approved by executives, and signed by nodes.  
 
-**b. Operations Vault**  
-- Managed by the security team, ensuring daily signatures are executed securely under MPC architecture.  
-- Used for day-to-day token operations (minting, burning, maintaining allow/block lists), typically initiated by the operations team, approved by risk/compliance and executives, then signed by nodes.  
+- **Operations Vault**  
+   - Managed by the security team, ensuring daily signatures are executed securely under MPC architecture.  
+   - Used for day-to-day token operations (minting, burning, maintaining allow/block lists), typically initiated by the operations team, approved by risk/compliance and executives, then signed by nodes.  
 
 #### 2. Create tokens with Cobo’s Tokenization App  
-a. Define core token parameters (name, symbol, etc.) and set operational permissions.  
-b. Initiate token creation using an address under the Deployment Vault and complete contract deployment.  
-c. After deployment, review and configure steps 3, 4, and 5 to ensure security and compliance requirements are met.  
+1. Define core token parameters (name, symbol, etc.) and set operational permissions.  
+2. Initiate token creation using an address under the Deployment Vault and complete contract deployment.  
+3. After deployment, review and configure steps 3, 4, and 5 to ensure security and compliance requirements are met.  
 
-#### 3. Token contract permissions  
-**a. Definition**  
-Contract-level “signing address configuration” granting addresses specific operational permissions.  
+#### 3. Manage token contract permissions  
 
-**b. Principles**  
-- **Segregation of duties**: Spread signing authority across different Vaults according to risk level to avoid single points of failure.  
-- **High-security Vault setup**: For high-risk operations, at least one offline or cold-backup node should be included to mitigate online compromise risks.  
+You can configure contract-level signing addresses, granting them specific operational permissions on the contract level.
 
-**c. Best practices**  
-- **Admin**: Contract deployment or modification of core permissions; high risk, low frequency; managed by Deployment Vault  
-- **Manager**: Compliance-related operations such as allow/block list updates or forced burns; managed by Operations Vault  
-- **Minter**: Token minting; daily operations; managed by Operations Vault  
-- **Burner**: Token burning; daily operations; managed by Operations Vault  
-- **Pauser, Upgrader, Salvager**: Low-frequency operations (pause, upgrade, asset recovery); managed by Deployment Vault  
+- **Principles:**
+   - **Segregation of duties**: Spread signing authority across different Vaults according to risk level to avoid single points of failure.  
+   - **High-security Vault setup**: For high-risk operations, at least one offline or cold-backup node should be included to mitigate online compromise risks.
 
-#### 4. Token transfer restrictions  
-**a. Definition**  
-Smart-contract-level controls on token ownership and transfers, ensuring only eligible wallets may hold and transfer tokens.  
+- **Best practices:**  
+   - **Admin**: Contract deployment or modification of core permissions; high risk, low frequency; managed by Deployment Vault.
+   - **Manager**: Compliance-related operations such as allow/block list updates or forced burns; managed by Operations Vault.  
+   - **Minter**: Token minting; daily operations; managed by Operations Vault.
+   - **Burner**: Token burning; daily operations; managed by Operations Vault.  
+   - **Pauser, Upgrader, Salvager**: Low-frequency operations (pause, upgrade, asset recovery); managed by Deployment Vault.
 
-**b. Implementation**  
+#### 4. Enforce token access restrictions  
+
+Enforce contract-level controls on token ownership and transfers, ensuring only eligible wallets may hold and transfer tokens. 
+
+**Best practices:**  
 For regulated MMFs, tokens must be restricted to qualified investors, with transferability limited to addresses on an allowlist.  
 
 #### 5. App approval workflows  
-**a. Definition**  
+ 
 Internal approval workflows for token management operations, ensuring every action is authorized to prevent errors or misuse.  
 
-**b. Principles**  
+**Principles:**  
 Different approval thresholds by risk level:  
 - High-risk operations: require majority Admin approval  
 - Routine operations: require approval from at least one Admin  
 
-**c. Best practices**  
+**Best practices:**  
 - **High-risk permissions**: Require approval from a majority of executives and security team members  
 - **Minting/Burning (routine)**: Approved by one or more operations team members  
 - **Transfer restrictions & allow/block list updates (medium risk)**: Approved by a majority of compliance/risk team members  
