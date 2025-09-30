@@ -2,7 +2,7 @@
 title: "Best practices for fund tokenization"
 sidebarTitle: "Best practices for fund tokenization"
 lang: "en"
-description: "Learn best practices for implementing fund tokenization with Cobo's Tokenization App, covering the entire process from fund setup to investor redemption."
+description: "Learn best practices for implementing fund tokenization with Cobo's Tokenization app, covering the entire process from fund setup to investor redemption."
 ---
 
 ## Understanding fund tokenization
@@ -17,7 +17,7 @@ Cobo provides an integrated infrastructure stack to help fund managers issue and
 
 **Our solution includes:**
 1. [**MPC Wallets**](/en/portal/mpc-wallets/introduction): Institutional-grade security for both investors and fund managers  
-2. [**Tokenization App**](/en/apps/tokenization/introduction): For smart contract deployment, token access control, and administrative operations  
+2. [**Tokenization app**](/en/apps/tokenization/introduction): For smart contract deployment, token access control, and administrative operations  
 3. **Compliance-enforced token standards**: Support for CoboERC20 smart contracts (ETH, BSC) and Token-2022 Program (Solana), ensuring continuous regulatory alignment  
 4. **Risk control and segregation of duties**: Internal approval workflows for token management operations, ensuring every action requires Admin authorization to reduce risks of misuse or error  
 
@@ -73,7 +73,7 @@ Before creating tokens, complete the [basic setup of MPC Vaults and wallet addre
    - Managed by the security team, ensuring daily signatures are executed securely under MPC architecture.  
    - Used for day-to-day token operations (minting, burning, maintaining allow/block lists), typically initiated by the operations team, approved by risk/compliance and executives, then signed by nodes.  
 
-#### 2. Create tokens with Cobo’s Tokenization App  
+#### 2. Create tokens with Cobo’s Tokenization app  
 1. Define core token parameters (name, symbol, etc.) and set operational permissions.  
 2. Initiate token creation using an address under the Deployment Vault and complete contract deployment.  
 3. After deployment, review and configure steps 3, 4, and 5 to ensure security and compliance requirements are met.  
@@ -132,11 +132,11 @@ Investors can receive and manage tokens in two ways:
 - Provide their existing wallet address  
 - Have the fund manager generate and assign an MPC wallet via Cobo for secure custody (with risk-control rules for transfers)  
 
-As a fund manager, you must verify investor wallets and add them to the allowlist in the Tokenization App.  
+As a fund manager, you must verify investor wallets and add them to the allowlist in the Tokenization app.  
 
 ### 5. Mint, distribute, and manage tokens
 
-Once off-chain subscriptions are funded and compliance confirmed, use the Tokenization App to mint and distribute tokens.  
+Once off-chain subscriptions are funded and compliance confirmed, use the Tokenization app to mint and distribute tokens.  
 
 - **Centralized minting & distribution**  
    - Use an MPC “Issuance Vault” as a unified token repository (with risk-control rules).  
@@ -182,7 +182,7 @@ When investors request redemption, as a fund manager, you will:
 
 ## Conclusion
 
-Cobo’s infrastructure and Tokenization App provide fund managers with a comprehensive solution for issuing and managing tokenized fund interests.  
+Cobo’s infrastructure and Tokenization app provide fund managers with a comprehensive solution for issuing and managing tokenized fund interests.  
 
 By following these best practices, you can leverage blockchain technology to enhance operational efficiency, improve investor experience, and maintain compliance across the fund lifecycle.  
 
