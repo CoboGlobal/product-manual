@@ -24,52 +24,50 @@ This guide provides a step-by-step walkthrough for setting up and using MPC Wall
 
 <Snippet />
 
-
 ## Set up an MPC vault
 
-After setting up your account and organization, the next step is to configure an MPC vault. A default vault is automatically created for you. You need to complete the setup by creating a Main Group and generating key shares.
+After setting up your account and organization, the next step is to configure an MPC vault. A default vault is automatically created for you. You need to complete the setup by creating a Main Key through generating key shares.
 
 <Note>To learn about vaults, key shares, and other related concepts, see [Introduction to Organization-Controlled Wallets](/en/portal/mpc-wallets/ocw/introduction).</Note>
 
+### Create a Main Key
 
-### Create a Main Group
+A set of private key shares form a [private key](/en/portal/mpc-wallets/ocw/holder-group-overview). The Main Key is the first private key you create before using MPC Wallets.
 
-A set of key share holders is referred to as a [holder group](/en/portal/mpc-wallets/ocw/holder-group-overview). The Main Group is the first holder group you create before using MPC Wallets.
-
-The diagram below illustrates a Main Group with two key share holders. Cobo holds one key share, while your organization holds the other.
+The diagram below illustrates a Main Key with two key share holders. Cobo holds one key share, while your organization holds the other.
 
 <img src="/en/images/get-started/key-shares.svg" className="diagram" alt="Key Shares"/>
 
-Follow the instructions below to create a Main Group in Cobo Portal:
+Follow the instructions below to create a Main Key in Cobo Portal:
 1. Log in to Cobo Portal.
       * For testing purposes, use the [development environment](https://portal.dev.cobo.com/login).
       * For production, use the [production environment](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
-3. Click **Create Main Group**.
-4. In the **Create Main Group** dialog box, navigate to the **Key Share Holder 2** section, and configure the holder. For detailed information about co-signer types and their setup, see [Co-Signer Type](/en/portal/mpc-wallets/ocw/holder-group-main-group#signer-type).
+3. Click **Create Main Key**.
+4. In the **Create Main Key** dialog box, configure **Key Share Holder 2**. For detailed information about signer types and their setup, see [Signer Type](/en/portal/mpc-wallets/ocw/holder-group-main-group#signer-type).
 
-    - To use a mobile co-signer, select a holder from the pull-down list. The **TSS Node ID** field will be filled in automatically. Click **Confirm**. <Note>For quick testing, you can select yourself as a holder. However, for production use, refer to our [Security best practices](/en/portal/security-checklist#key-share-holder-groups) for guidance on selecting appropriate holders.</Note>
+    - To use a mobile signer, select a holder from the pull-down list. The **TSS Node ID** field will be filled in automatically. Click **Confirm**. <Note>For quick testing, you can select yourself as a holder. However, for production use, refer to our [Security best practices](/en/portal/security-checklist#key-share-holder-groups) for guidance on selecting appropriate holders.</Note>
 
-    - To use a server co-signer, enter a holder name, fill in the TSS Node ID, and then click **Confirm**.
+    - To use a server signer, enter a holder name, fill in the TSS Node ID, and then click **Confirm**.
 
 
 5. Confirm in your Cobo Guard app that you initiated this request.
 
 ### Generate key shares
 
-To finalize the vault setup, the next crucial step is generating key shares on your co-signer. This process varies depending on your co-signer type:
+To finalize the vault setup, the next crucial step is generating key shares on your signer. This process varies depending on your signer type:
 
-* For mobile co-signers:
+* For mobile signers:
   - Wait for the **1 key share needs to be generated** banner to appear on Cobo Guard (this may take a few seconds).
   - Tap the banner to open the key generation interface.
   - Follow the on-screen instructions to complete the key share generation process.
   - We recommend backing up your key shares at this point for added security. However, you can also choose to complete this step later after finishing the guide.
 
-* For server co-signers:
+* For server signers:
   * Ensure the TSS Node server is brought online within 24 hours. The key share generation process initiates automatically when the server comes online.
   * If a [TSS Node callback server](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/callback-server-overview) is configured, the generation process will only start after approval from the callback server.
 
-Once the key generation process is completed, the holder group status will become **Active** on Cobo Portal. You might need to refresh the Cobo Portal page to see the updated result.
+Once the key generation process is completed, the status of the corresponding key share holder will become **Active** on the **Key Share Management** page on Cobo Portal. You might need to refresh the page to see the updated result.
 
 ## Create a wallet and transfer tokens
 ### Create a wallet
@@ -160,17 +158,21 @@ Follow the steps below to withdraw tokens from your wallet.
 <img src="/en/images/get-started/withdraw.png" className="screenshot_modal"/>
 3. In the **Transfer** dialog box, fill in the required information, and then click **Submit**.
 4. Double confirm the withdrawal on Cobo Guard.
-5. After the withdrawal is confirmed, one of your co-signers will be automatically selected to sign the transaction based on their online status and other criteria. You need to ensure that at least one of your co-signers is online. The transaction will remain pending until it receives the necessary signature. You can check if a co-signer is online through Cobo Portal:
-   1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-   2. Click <img src="/en/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
-   3. Select your vault and then click the **Manage Share Management** icon <img src="/en/images/transfers/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
-   4. In the **Key Group Management** page, locate your key share holder group, and check the status indicator next to each key share holder:
-      - 🟢 Green dot: The co-signer is online and ready to sign transactions
-      - No dot: The co-signer is offline and cannot sign transactions.
+5. After the withdrawal is confirmed, the transaction will be sent to signes. The transaction will remain pending until it receives the necessary signature. 
 
-      <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing co-signer status"/>
+      - For **mobile signers**, notify them to open their Cobo Guard to sign the transaction.
+      
+      - For **server signers**, you can check if they are online through Cobo Portal:
+            1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+            2. Click <img src="/en/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+            3. Select your vault and then click the **Manage Share Management** icon <img src="/en/images/transfers/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
+            4. In the **Key Share Management** page, check if there is a green dot on the avatar of the server signer:
+                  - 🟢 Green dot: The server is online and ready to sign transactions
+                  - No dot: The server is offline and cannot sign transactions.
 
-    After the transaction is signed, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
+      <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing server signer status"/>
+      
+      After the transaction is signed, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
 
 ### View transaction details and status
 After making a transfer to or from your Asset Wallets, you can view its transaction status in <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Transaction History**. 
@@ -189,7 +191,7 @@ Congratulations on successfully setting up your MPC Wallet and completing token 
 
 Follow our [security checklist](/en/portal/security-checklist) to enhance the security of your assets. For MPC Wallets specifically:
 - [Back up your key shares](/en/portal/security-checklist#key-share-backup-and-recovery)
-- [Create at least one Signing Group and one Recovery Group](/en/portal/security-checklist#key-share-holder-groups) in addition to the Main Group.
+- [Create at least one Signing Key and one Recovery Key](/en/portal/security-checklist#key-share-holder-groups) in addition to the Main Key.
 
 
 ### Explore more features
