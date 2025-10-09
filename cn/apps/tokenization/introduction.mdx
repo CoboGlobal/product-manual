@@ -20,36 +20,67 @@ Tokenization 简化了发行、管理和操作自有代币的流程——无需�
 ### 多功能的代币创建
 按您的业务需要设计和发行代币，覆盖从稳定币、证券型代币到真实世界资产代币化的广泛应用场景。
 
-### 构建于安全的基础
+### 安全管控体系 
+
+Cobo 的代币化解决方案基于安全、合规的代币标准，并在此基础上构建多层次的安全与风控体系。
+
 我们支持多种区块链平台的代币创建，基于安全的代币标准：
 - **CoboERC20智能合约**：扩展了标准的 [ERC-20](https://docs.openzeppelin.com/contracts/5.x/erc20)，增加了访问控制和生命周期管理的增强功能。该合约已通过第三方机构 BlockSec 的专业安全审计，确保高度安全性，您可查看审计报告 [Security Audit Report for CoboTokenization](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf)。目前支持 ETH、BSC 链。
 - [**Solana Token-2022 Program**](https://www.solana-program.com/docs/token-2022)：基于 Solana 链的原生代币标准，提供高性能和低成本的代币操作。
 
-我们同时支持 [API 访问](https://www.cobo.com/developers/v2/api-references/tokenization/issue-token)，让您可以通过编程方式管理代币操作。
+多层次的安全与风控体系保障整个代币生命周期的可控与透明：
+
+1. **合约层面的精细权限控制**
+
+    在链上合约层，您可明确指定可执行敏感操作（如铸造/销毁代币、暂停合约等）的签名地址。合约仅接受这些地址的签名，确保合约操作安全。
+
+2. **团队治理与风控**  
+
+    在 Cobo Portal，清晰界定内部角色权限，例如谁可提交铸造代币请求，并通过多级审批流程加以管控。确保关键操作必须由合规成员发起，并在审批通过后方能执行。
+
+3. **签名风控机制**  
+
+    当操作通过审批后，系统将依照合约授权地址的私钥配置与 MPC 签名规则，确保每笔交易都必须使用合规的私钥组合完成签名后才能上链。
 
 ### 完整的生命周期管理
 通过单一、直观的界面管理**代币生命周期**的每个阶段——无需任何编程技能。您可以安全地铸造新代币用于发行，在赎回时销毁代币，在紧急情况下暂停合约，并无缝升级合约以添加新功能。
 
+支持 [API 访问](https://www.cobo.com/developers/v2/api-references/tokenization/issue-token)，您可以通过编程方式管理代币操作。
+
 ### 强大的代币流通管控
 在智能合约层面强制执行合规性和安全性。您可以启用**代币流通限制**，将代币交互限制在经过验证的投资者范围内，并设置**黑名单**以防止与未经授权或可疑地址的任何交互。
 
-### 精细的权限控制
-您可以将关键**操作权限**，如铸造代币、管理代币流通限制等，委派给不同的团队成员，增强操作安全性。
-
 ## 运作模式
 
-Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行操作。
+Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和全托管钱包（Web3 钱包）进行操作。
 
 <Info>如无特别说明，以下截图均以 EVM 链（CoboERC20智能合约）为例。</Info>
 
-### 1. 创建您的代币
+### 1. 准备工作
+
+1. 设置 Cobo Portal 账户和 MPC 钱包或 Web3 钱包：请参阅 [MPC 钱包正式使用指南](/cn/portal/quick-start-guide-mpc)或[全托管钱包正式使用指南](/cn/portal/quick-start-guide-custodial-wallets)中的步骤。
+2. 安装 Tokenization App：请参阅[浏览和安装 App](cn/apps/browse-and-install) 中的步骤。
+
+### 2. 创建您的代币
 轻松创建和发行您自己的代币。如有需要，您还可以更新代币信息。
+
+在刚安装好的 Tokenization App 中，点击**创建您的第一个代币**。
+
+<img src="/cn/images/portal-apps/tokenization/create-button.png" className="screenshot_modal" alt="点击创建您的第一个代币"/>
+
+页面会弹出以下窗口，您可以选择代币用例。
 
 <img src="/cn/images/portal-apps/tokenization/create-token1.png" className="screenshot_modal" alt="创建代币窗口第一步"/>
 
+选择完用例，点击**继续**，进入代币详情配置。
+
 <img src="/cn/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="创建代币窗口第二步"/>
 
-### 2. 管理代币流通和权限
+### 3. 管理代币流通和权限
+
+在 Tokenization App 首页，找到您的代币，点击相应按钮进行以下操作：
+
+<img src="/cn/images/portal-apps/tokenization/menu.png" className="screenshot_modal" alt="菜单"/>
 
 #### 代币流通限制和黑名单
 
@@ -86,27 +117,37 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和 Web3 钱包进行
 
     <img src="/cn/images/portal-apps/tokenization/permissions-solana.png" className="screenshot_modal" alt="Solana 管理操作权限"/>
 
-### 3. 日常操作
+### 4. 日常操作
 
 #### 执行核心的代币生命周期操作
 
+在 Tokenization App 首页，找到您的代币，点击相应按钮进行以下操作：
+
+<img src="/cn/images/portal-apps/tokenization/menu2.png" className="screenshot_modal" alt="日常操作"/>
+
 - **铸造 (Mint):** 发行新代币以增加总供应量，例如在新投资者认购时。
+    
+    <img src="/cn/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="铸造代币窗口"/>
+
 - **销毁 (Burn):** 永久性地从流通中移除代币，例如在处理投资者赎回时。
 - **暂停/取消暂停 (Pause/Unpause):** 立即冻结或恢复所有代币活动（转账、铸造、销毁），以应对紧急情况或安全威胁。
-
-    <img src="/cn/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="铸造代币窗口"/>
 
 #### 监控活动
 
 查看代币持有者的详细信息，并跟踪所有操作的完整历史记录，以实现透明的监督。
 
+<img src="/cn/images/portal-apps/tokenization/menu4.png" className="screenshot_modal" alt="持有记录"/>
+<img src="/cn/images/portal-apps/tokenization/menu5.png" className="screenshot_modal" alt="操作历史"/>
+
 #### 直接与合约交互
 
-为了获得最大的灵活性和满足高级使用需求，您可以通过可视化界面直接与代币的智能合约进行交互，这使您能够访问主界面功能之外的合约函数。
+为了获得最大的灵活性和满足高级使用需求，您可以通过可视化界面直接与代币的智能合约进行交互，这使您能够访问主界面功能之外的合约函数（点击**更多操作**进入合约交互页面）。
+
+<img src="/cn/images/portal-apps/tokenization/menu3.png" className="screenshot_modal" alt="合约交互"/>
 
 关于 CoboERC20 和 Solana Token-2022 Program 的合约能力介绍，请参阅[合约交互](/cn/apps/tokenization/contract)。
 
-### 4. 风控
+### 5. 风控
 
 #### App 审批流程
 
