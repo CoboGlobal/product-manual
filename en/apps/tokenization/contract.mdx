@@ -24,7 +24,7 @@ Use Read functions to look up real-time information from the smart contract with
 #### Roles and permissions
 **Role identifiers (constants)**
 - `DEFAULT_ADMIN_ROLE`: Default admin role identifier. Addresses with this role have the highest contract management privileges and can manage all other roles.
-- `MANAGER_ROLE`: Manager role identifier. Addresses with this role can perform all management operations except contract upgrades and permission management, such as configuring token access controls, resuming contracts, etc.
+- `MANAGER_ROLE`: Manager role identifier. Addresses with this role can configure token access controls, manage blocklist and allowlist, force burn tokens, update contractURI, resume contracts, etc.
 - `MINTER_ROLE`: Minter role identifier. Addresses with this role can mint new tokens.
 - `BURNER_ROLE`: Burner role identifier. Addresses with this role can burn tokens.
 - `PAUSER_ROLE`: Pauser role identifier. Addresses with this role can pause all token activities.
