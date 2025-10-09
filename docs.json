@@ -123,6 +123,7 @@
                           },
                           "en/portal/mpc-wallets/ocw/transfers",
                           "en/portal/mpc-wallets/ocw/key-share-verification",
+                          "en/portal/mpc-wallets/ocw/key-share-transfer",
                           "en/portal/mpc-wallets/ocw/dapp-interaction"
                         ]
                       }
@@ -718,6 +719,7 @@
                           },
                           "cn/portal/mpc-wallets/ocw/transfers",
                           "cn/portal/mpc-wallets/ocw/key-share-verification",
+                          "cn/portal/mpc-wallets/ocw/key-share-transfer",
                           "cn/portal/mpc-wallets/ocw/dapp-interaction"
                         ]
                       }
