@@ -21,35 +21,67 @@ Tokenization simplifies how you issue, manage, and operate your own tokens—no 
 Design and issue tokens tailored to your business needs, covering a wide range of use cases from stablecoins and security tokens to the tokenization of real-world assets.
 
 ### Built on a secure foundation
-We support token creation across multiple blockchain platforms with secure token standards:
+
+Cobo’s tokenization solution is built on secure and compliant token standards, reinforced with a multi-layered security and risk control framework.
+
+We support token creation on multiple blockchain platforms, based on secure token standards:
+
 - **CoboERC20 smart contract**: Extends the standard [ERC-20](https://docs.openzeppelin.com/contracts/5.x/erc20) with enhanced features for access control and lifecycle management. The contract has undergone professional security auditing by third-party firm BlockSec to ensure high security standards. See the [Security Audit Report for CoboTokenization](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf). Currently supported chains are ETH and BSC.
 - [**Solana Token-2022 Program**](https://www.solana-program.com/docs/token-2022): Built on Solana's native token standard, providing high-performance and low-cost token operations.
 
-We also support [API access](https://www.cobo.com/developers/v2/api-references/tokenization/issue-token), allowing you to programmatically manage token operations.
+The security and risk control framework ensure transparency and control throughout the token lifecycle:
+
+1. **Granular permission controls on contract level**
+
+  At the smart contract level, only designated signing addresses are authorized to perform sensitive operations such as mint, burn, and pause contract. Contracts accept signatures exclusively from these addresses to ensure secure control.
+
+2. **Team governance and approval controls**  
+
+  Within the Cobo Portal, internal roles and permissions are clearly defined—for example, who can submit a mint request. Multi-level approval workflows ensure sensitive operations must be initiated by compliant members and executed only after approval.  
+
+3. **Signature risk control mechanism**  
+   
+  Once approved, according to the private key configuration and MPC signature rules of the authorized addresses, the system ensures every transaction requires compliant key signing before being submitted on-chain.
 
 ### Complete lifecycle management
 Manage **every stage of your token's lifecycle** through a single, intuitive interface—no coding required. Securely mint new tokens for issuance, burn them upon redemption, pause the contract in an emergency, and seamlessly upgrade it to add new features.
 
+[API access](https://www.cobo.com/developers/v2/api-references/tokenization/issue-token) is supported for programmatical management of token operations.
+
 ### Robust token access controls
 Enforce compliance and security at the smart contract level. Set up **token access** controls to restrict token interactions to verified, eligible investors and a **blocklist** to prevent any interaction with unauthorized or suspicious addresses.
 
-### Granular permission controls
-Enhance your operational security by delegating specific **permissions** (from minting tokens to managing token access controls) to different team members.
-
 ## How it works
 
-The Tokenization app supports operations through both MPC Wallets and Web3 wallets on Cobo Portal.
+The Tokenization app supports operations through both MPC Wallets and Custodial Wallets (Web3 Wallets) on Cobo Portal.
 
 <Info>Unless otherwise specified, all screenshots shown below use EVM chain (CoboERC20 smart contract) as examples.</Info>
 
-### 1. Create your token
+### 1. Preparation
+
+1. Set up your Cobo Portal account and MPC Wallet: Follow the steps in the [MPC Wallets production usage guide](/en/portal/quick-start-guide-mpc) or [Custodial Wallets production usage guide](/en/portal/quick-start-guide-custodial-wallets). 
+2. Install the Tokenization App: Follow the steps in [Browse and install apps](/en/apps/browse-and-install). 
+
+### 2. Create your token
 Easily create and issue your own tokens. You can also update token information as needed.
+
+In the Tokenization app you just installed, click **Create your first token**.
+
+<img src="/en/images/portal-apps/tokenization/create-button.png" className="screenshot_modal" alt="click create your first token"/>
+
+In the pop-up window, select your use case for the token.
 
 <img src="/en/images/portal-apps/tokenization/create-token1.png" className="screenshot_modal" alt="Create token window1"/>
 
+After you choose your use case, click **Continue** to start configuring token details.
+
 <img src="/en/images/portal-apps/tokenization/create-token2.png" className="screenshot_modal" alt="Create token window2"/>
 
-### 2. Manage token access controls and permissions
+### 3. Manage token access controls and permissions
+
+Find your token on the Tokenization landing page and click the corresponding button for the following operations.
+
+<img src="/en/images/portal-apps/tokenization/menu.png" className="screenshot_modal" alt="菜单"/>
 
 #### Set up token access and blocklist
 
@@ -86,26 +118,39 @@ Different token standards have different mechanisms for permission management:
 
     <img src="/en/images/portal-apps/tokenization/permissions-solana.png" className="screenshot_modal" alt="Solana manage permissions"/>
 
-### 3. Day-to-day operations
+### 4. Day-to-day operations
 
 #### Perform core lifecycle operations
 
+Find your token on the Tokenization landing page and click the corresponding button for the following operations.
+
+<img src="/en/images/portal-apps/tokenization/menu2.png" className="screenshot_modal" alt="day-to-day operations"/>
+
 - **Mint:** Issue new tokens to increase the total supply, for example, when new investors subscribe.
+  
+  <img src="/en/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="Mint token window"/>
+
 - **Burn:** Permanently remove tokens from circulation, for example, when processing investor redemptions.
 - **Pause/Unpause:** Instantly freeze or resume all token activities (transfers, minting, burning) to respond to emergencies or security threats.
-    <img src="/en/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="Mint token window"/>
 
 #### Monitor activity
 
 View detailed information on token holders and track a complete history of all operations for transparent oversight.
 
+<img src="/en/images/portal-apps/tokenization/menu4.png" className="screenshot_modal" alt="Holdings"/>
+<img src="/en/images/portal-apps/tokenization/menu5.png" className="screenshot_modal" alt="Execution history"/>
+
 #### Interact directly with the contract
 
 For maximum flexibility and advanced use cases, you can interact directly with your token's smart contract through a visual interface. This enables access to all contract functions beyond the main UI features.
 
+Click **More Actions** to enter the contract interaction page.
+
+<img src="/en/images/portal-apps/tokenization/menu3.png" className="screenshot_modal" alt="合约交互"/>
+
 For detailed information about CoboERC20 and Solana Token-2022 Program contract capabilities, see [Operating contracts](/en/apps/tokenization/contract).
 
-### 4. Risk controls
+### 5. Risk controls
 
 #### Approval workflow
 
