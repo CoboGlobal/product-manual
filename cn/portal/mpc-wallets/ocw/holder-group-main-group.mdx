@@ -1,16 +1,18 @@
 ---
-title: "主控组"
-sidebarTitle: "主控组"
+title: "主控私钥"
+sidebarTitle: "主控私钥"
 lang: "zh-hans"
-description: "了解持有者组中的主控组，确保安全的资产操作。"
+description: "了解主控私钥，确保安全的资产操作。"
 ---
 
-## 主控组
-在创建 MPC 钱包之前，必须先创建主控组。成功创建主控组之后，便可以开始使用 MPC 钱包。为了最大程度确保资产的安全性，最好尽快创建签名组和恢复组，并备份所有持有者组。可以创建多个签名组来满足业务需求，但建议只创建一个恢复组。
+## 主控私钥
+在创建 MPC 钱包之前，必须先创建主控私钥。成功创建主控私钥之后，便可以开始使用 MPC 钱包。
+
+为了最大程度确保资产的安全性，最好尽快创建签名私钥和恢复私钥，并备份所有私钥。可以创建多个签名私钥来满足业务需求，但建议只创建一个恢复私钥。
 
 <a id="create-main-group"></a>
-### 创建主控组
-为 MPC Vault 创建主控组时，可以选择移动端签名人或服务端签名人。在继续操作之前，请先了解下表中每种签名人的主要用途和使用前提。
+### 创建主控私钥
+为 MPC Vault 创建主控私钥时，可以选择移动端签名人或服务端签名人。在继续操作之前，请先了解下表中每种签名人的主要用途和使用前提。
 
 <a id="signer-type"></a>
 <table class="six-columns">
@@ -44,14 +46,14 @@ description: "了解持有者组中的主控组，确保安全的资产操作。
   </tr>
 </table>
 
-选择完签名人类型并完成前提步骤后，请按照以下说明创建主控组。
-<Note>注意：只有拥有[操作员](/cn/portal/organization/roles-and-permissions)角色的用户能够创建主控组。</Note>
+决定好签名人并完成前提步骤后，请按照以下说明创建主控私钥。
+<Note>注意：只有拥有[操作员](/cn/portal/organization/roles-and-permissions)角色的用户能够创建主控私钥。</Note>
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img>> **MPC 钱包**。
-3. 选择 Vault，然后点击 Vault 名称下的**生成主控组私钥分片**。
+3. 选择 Vault，然后点击 Vault 名称下的**创建主控私钥**。
 <img src="/cn/images/mpc-wallet/create-main-key-group.png" className="screenshot_full_screen"/>
-4. 在**生成主控组私钥分片**对话框中，前往**私钥分片持有者 2**，然后完成以下配置：<a id="on-the-create-main-group-dialog"></a>
+4. 在**创建主控私钥**对话框中，配置**私钥分片持有者2**：<a id="on-the-create-main-group-dialog"></a>
     - 要使用**移动端签名人**，选择一个**持有者**（**TSS Node ID** 将自动填入），持有者可以是任意一名团队成员，其用户角色不限。然后点击**确认**。
 
       <img src="/cn/images/mpc-wallet/mobile-co-signer.png" className="screenshot_modal"/>
@@ -63,7 +65,7 @@ description: "了解持有者组中的主控组，确保安全的资产操作。
         - 如果使用移动端签名人，选定的私钥分片持有者需要使用 Cobo Guard 生成私钥分片，详情参见[生成私钥分片](/cn/guard/generate-and-back-up-key-shares#生成私钥分片)。
         - 如果使用服务端签名人，请确保在 24 小时内让 TSS Node 上线。TSS Node 上线后，确认流程完成。
 
-7. 私钥分片生成过程于第 5 步完成后，**持有者组状态**将显示为**活跃**。
+7. 私钥分片生成过程于第 5 步完成后，主控私钥分片持有者的**状态**将显示为**活跃**。
 <Info>您可能需要刷新 Cobo Portal 页面以查看最新结果。</Info>
 <Info>注意：私钥成功生成后，将自动为该 Vault 创建一个默认钱包。</Info>
 <img src="/cn/images/mpc-wallet/main-group-active.png" className="screenshot_full_screen"/>
