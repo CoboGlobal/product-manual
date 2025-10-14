@@ -59,19 +59,25 @@ The diagram below outlines the withdrawal flow from an Organization-Controlled W
 9. Click **Submit**.
 10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
 
-## Check co-signer status
+## Inform mobile signers or check server signer status
 
-To successfully sign a transaction, you need to ensure that at least one of your co-signers is online. The transaction will remain pending until it receives the necessary signature. 
+After the transaction is confirmed, the transaction will be sent to signes. The transaction will remain pending until it receives the necessary signature. 
 
-You can check if a co-signer is online through Cobo Portal:
-1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
-3. Select your vault and then click the **Manage Share Management** icon <img src="/en/images/transfers/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
-4. In the **Key Group Management** page, locate your key share holder group, and check the status indicator next to each key share holder:
-   - 🟢 Green dot: The co-signer is online and ready to sign transactions
-   - No dot: The co-signer is offline and cannot sign transactions.
-      - For server co-signers, they need to start the TSS Node to stay online.
-      - For mobile co-signers, they need to open the Cobo Guard app to stay online.
+- For **mobile signers**, notify them to open their Cobo Guard to sign the transaction.
+      
+- For **server signers**, you can check if they are online through Cobo Portal:
+
+    1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+    2. Click <img src="/en/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+    3. Select your vault and then click the **Manage Share Management** icon <img src="/en/images/transfers/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
+    4. In the **Key Share Management** page, check if there is a green dot on the avatar of the server signer:
+        - 🟢 Green dot: The server is online and ready to sign transactions
+        - No dot: The server is offline and cannot sign transactions.
+
+      <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing server signer status"/>
+      
+      After the transaction is signed, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
+
 
 <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing co-signer status"/>
 
