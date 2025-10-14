@@ -1,0 +1,118 @@
+---
+title: 交易手续费模型
+description: 了解主流区块链网络的手续费计算逻辑，帮助你快速配置转账参数。
+---
+
+在区块链网络中，手续费不仅决定了转账能否被打包，还影响交易的速度和成本。不同链采用的计算方式差异较大，因此理解这些规则尤为关键。 
+
+## EVM 链
+
+### EIP-1559 模型
+
+部分 EVM 链支持 [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559)，当前支持的链包括：  
+- Ethereum Mainnet  
+- Sepolia Testnet  
+- Scroll Mainnet  
+- Base  
+- BNB Smart Chain  
+- Polygon  
+- Sonic  
+- Berachain  
+
+在 EIP-1559 模型下，交易费用的预估公式为：(Base Fee + Priority Fee) * Gas Limit
+
+| 参数              | 描述                                                                                                                   |
+|-------------------|----------------------------------------------------------------------------------------------------------------------|
+| Base Fee  | 每使用一个 Gas Unit 在链上执行交易所需的最高费用。 |
+| Priority Fee | 每使用一个 Gas Unit 向矿工支付的最高额外费用，以优先处理交易。 |
+| Gas Limit         | 你愿意为执行交易或运行以太坊虚拟机 (EVM) 所支付的最大 Gas Unit 数量。不同操作会消耗不同数量的 Gas Unit。 |
+
+<Note>对于 Legacy 和 EIP-1559 费用模型，提交交易 calldata 到 L1（Layer 1）时会额外收取费用。</Note>
+
+你可以自定义以下参数的值：  
+- Max Fee：交易费用的最大值
+- Max Priority Fee：向矿工支付的最高额外费用。
+- Gas Limit
+
+### Legacy 模型
+
+所有 EVM 链均支持 Legacy。
+
+在 Legacy 模型下，交易费用的预估公式为：Gas Price * Gas Limit
+
+| 参数      | 描述                                                                                             |
+|-----------|--------------------------------------------------------------------------------------------------|
+| Gas Price | 以 gwei 为单位的 Gas 价格，代表每使用一个 Gas Unit 处理交易需支付给验证者的 ETH 数量。                                           |
+| Gas Limit | 你愿意为执行交易或运行以太坊虚拟机 (EVM) 支付的最多 Gas Unit 数量。不同操作会消耗不同数量的 Gas Unit。 |
+
+<Note>对于 Legacy 和 EIP-1559 费用模型，提交交易 calldata 到 L1（Layer 1）时会额外收取费用。</Note>
+
+你可以自定义以下参数的值：  
+- Gas Price
+- Gas Limit
+
+## 基于 UTXO 的链
+
+当前支持的链包括：
+- Bitcoin  
+- Cardano  
+- Nervos CKB  
+- Handshake
+
+在基于 UTXO 的链上，交易费用的预估公式为：Fee Rate * Transaction Size
+
+| 参数     | 定义                                                                                  |
+|----------|-------------------------------------------------------------------------------------|
+| Fee Rate | 每字节数据消耗的手续费，表示每 vByte 需要支付多少 satoshis（缩写为 sats/vByte）。 |
+| Transaction Size | 交易在区块链上占用的空间大小，影响 UTXO 模型中的总费用。 |
+
+你可以自定义以下参数的值：  
+- Fee Rate
+
+## Solana 链
+
+在 Solana 链上，可使用原生模型，也可以选择 Legacy 模型。在原生模型下，在原生模型下，预估交易费用的计算公式为：Base Fee + (CU Price * CU Limit)
+
+| 参数    | 描述                                                                                     |
+|-----------|----------------------------------------------------------------------------------------|
+| Base Fee  | 每个签名固定收取的费用（默认每个签名 5,000 Lamports）。                            |
+| CU Price  | 每个 CU（Compute Unit，计算单元）的费用，用于提升交易优先级。单位为 Lamports。                             |
+| CU Limit  | 交易允许消耗的最大CU数量。值越高优先级越高，但费用也越高。                  |
+
+你可以自定义以下参数的值：
+- CU Price
+- CU Limit
+
+## Filecoin 链
+
+在 Filecoin 上，可选择原生模型，也可以选择 Legacy 模型。在原生模型下，预估交易费用的计算公式为：min(Gas Fee Cap, Base Fee + Gas Premium) * Gas Limit
+
+| 参数       | 描述                                                                                          |
+|--------------|---------------------------------------------------------------------------------------------|
+| Gas Fee Cap  | 你愿意为每单位 Gas 支付的最高价格。                           |
+| Base Fee  | 交易打包所需的最低费用，随网络拥堵动态调整，并在支付后销毁，从而减少 FIL 总供应量。                           |
+| Gas Premium  | 用户指定的矿工小费，用于提升交易优先级。                                      |
+| Gas Limit    | 交易可消耗的最大 Gas 数量。                                                              |
+
+你可以自定义以下参数的值：  
+- Gas Fee Cap  
+- Gas Premium  
+- Gas Limit  
+
+
+## 使用 Fixed 模型的链
+
+下列链采用固定费用模型（Fixed）：  
+- TRON  
+- Algorand 
+- Polkadot 
+- Internet Computer 及其 ICRC 资产（ckBTC、ckETH、ckUSDC、ckUSDT、DKP、GLDGOV、ICS、NICP、OC、OGY）  
+- Stellar
+- Ripple
+- Tezos
+- Sui
+- Near
+
+Fixed 模型的交易手续费是一个固定值。
+
+<Note>如果你需要使用 WaaS 2.0 API 进行交易手续费的预估，请参考[估算交易费用](https://www.cobo.com/developers/v2_cn/guides/transactions/estimate-fees)。</Note>
