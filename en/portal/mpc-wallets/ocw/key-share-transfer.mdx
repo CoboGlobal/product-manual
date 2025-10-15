@@ -7,9 +7,9 @@ description: "Learn how to complete the handover process through key share regen
 
 ## Applicable scenarios  
 
-When a team member who holds key shares (Main Group, Signing Group, or Recovery Group) leaves or transfers, their key shares need to be handed over to other team members. Failure to complete the handover may lead to the following issues:  
+When a team member who holds key shares (of Main Key, Signing Key, or Recovery Key) leaves or transfers, their key shares need to be handed over to other team members. Failure to complete the handover may lead to the following issues:  
 - Transaction signing may fail due to insufficient valid shares, making funds in the Vault temporarily inaccessible. 
-- The original holder retains Main Group, Signing Group, or Recovery Group permissions, posing security risks.  
+- The original holder retains Main Key, Signing Key, or Recovery Key permissions, posing security risks.  
 
 <Note>This scenario covers key share handover between team members. For information on Cobo Guard device replacement or loss, please refer to [Reset Cobo Guard after device change or reinstallation](/en/guard/reset).</Note>
 
@@ -21,31 +21,31 @@ When a team member who holds key shares (Main Group, Signing Group, or Recovery 
 
 ## Procedures  
 
-### Main Group handover  
+### Main Key handover  
 
 <Steps>
   <Step title="Generate new key share">
-    Original Main Group creates a Signing Group for the new holder. See [Create a Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group#create-a-signing-group).
+    Original Main Key creates a Signing Key for the new holder. See [Create a Signing Key](/en/portal/mpc-wallets/ocw/holder-group-signing-group#create-a-signing-group).
   </Step>
   <Step title="Verify new key share">
-    (Optional) Confirm the new Signing Group is available with key share verification. See [Verify key shares](/en/portal/mpc-wallets/ocw/key-share-verification).
+    (Optional) Confirm the new Signing Key is available with key share verification. See [Verify key shares](/en/portal/mpc-wallets/ocw/key-share-verification).
   </Step>
-  <Step title="Upgrade to Main Group">
-    Upgrade the Signing Group to a Main Group. The original Main Group will be automatically deleted after the upgrade. See [Convert Signing Group into Main Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group#convert-signing-group-into-main-group).
+  <Step title="Upgrade to Main Key">
+    Upgrade the Signing Key to a Main Key. The original Main Key will be automatically deleted after the upgrade. See [Convert Signing Key into Main Key](/en/portal/mpc-wallets/ocw/holder-group-signing-group#convert-signing-group-into-main-group).
   </Step>
 </Steps>
 
-### Signing Group/Recovery Group handover  
+### Signing Key/Recovery Key handover  
 
 <Steps>
   <Step title="Generate new key share">
-    The Main Group creates a Signing Group or Recovery Group for the new holder. See [Create a Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group#create-a-signing-group) or [Create a Recovery Group](/en/portal/mpc-wallets/ocw/holder-group-recovery-group#create-a-recovery-group).
+    The Main Key creates a Signing Key or Recovery Key for the new holder. See [Create a Signing Key](/en/portal/mpc-wallets/ocw/holder-group-signing-group#create-a-signing-group) or [Create a Recovery Key](/en/portal/mpc-wallets/ocw/holder-group-recovery-group#create-a-recovery-group).
   </Step>
   <Step title="Verify new key share">
     (Optional) Confirm the new key is available with key share verification. See [Verify key shares](/en/portal/mpc-wallets/ocw/key-share-verification).
   </Step>
   <Step title="Delete original key share">
-    After confirming the new key is available, delete the original holder's Signing Group or Recovery Group. See [Delete a Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group#delete-a-signing-group) or [Delete a Recovery Group](/en/portal/mpc-wallets/ocw/holder-group-recovery-group#delete-a-recovery-group).
+    After confirming the new key is available, delete the original holder's Signing Key or Recovery Key. See [Delete a Signing Key](/en/portal/mpc-wallets/ocw/holder-group-signing-group#delete-a-signing-group) or [Delete a Recovery Key](/en/portal/mpc-wallets/ocw/holder-group-recovery-group#delete-a-recovery-group).
   </Step>
 </Steps>
 
