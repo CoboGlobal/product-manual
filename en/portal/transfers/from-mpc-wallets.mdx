@@ -26,9 +26,9 @@ The diagram below outlines the withdrawal flow from an Organization-Controlled W
    - For Cobo Portal initiated withdrawals: Confirm the withdrawal on [Cobo Guard](/en/guard/introduction).
    - For WaaS API initiated withdrawals: Your [callback endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) needs to respond with "ok" to confirm.
 3. **[Risk control](/en/portal/risk-controls/tx-policies-overview)**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Cobo Guard.
-4. **Sign the transaction**: A [co-signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) will be selected to sign the transaction based on their online status and other criteria. Ensure that at least one of your co-signers is online. You can check if a co-signer is online through Cobo Portal. For details, see [Check co-signer status](#check-co-signer-status).
+4. **Sign the transaction**: A [signer](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) will be selected to sign the transaction based on their online status and other criteria. Inform your mobile signer or check if your server signer is online. For details, see [Inform mobile signers or check server signer status](#inform-mobile-signers-or-check-server-signer-status).
    
-   <Note>If you use a [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) with the [TSS Node callback mechanism](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/callback-server-overview), your TSS Node callback server must first approve the signing request before the server co-signer can proceed with transaction signing.</Note>
+   <Note>If you use a [server signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) with the [TSS Node callback mechanism](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/callback-server-overview), your TSS Node callback server must first approve the signing request before the server signer can proceed with transaction signing.</Note>
 5. **Broadcast the transaction**: Cobo creates the transaction and broadcasts it to the network.
 
 
@@ -73,12 +73,9 @@ After the transaction is confirmed, the transaction will be sent to signes. The 
     4. On the **Key Share Management** page, check if there is a green dot on the avatar of the server signer:
         - 🟢 Green dot: The server is online and ready to sign transactions
         - No dot: The server is offline and cannot sign transactions.
-
-      <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing server signer status"/>
+        
+        <img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing server signer status"/>
       
       After the transaction is signed, Cobo creates and broadcasts it to the network. The token transfer may take some time to complete, depending on network conditions.
-
-
-<img src="/en/images/transfers/main-group-active.png" className="screenshot_modal" alt="Key Share Management page showing co-signer status"/>
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
