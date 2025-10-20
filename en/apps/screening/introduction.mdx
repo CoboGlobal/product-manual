@@ -33,7 +33,7 @@ The screening results provide a smart risk assessment:
 <Info>
 When a transaction in your [selected monitored wallets](/en/apps/screening/settings) is being screened, Cobo transmits the following transaction details to your AML provider for risk assessment:
 - With CihperOwl: Asset's chain, From address (for deposits), To address (for withdrawals)
-- With Elliptic: Asset's chain, Receiving address (for withdrawals), On-chain transaction hash (for deposits)
+- With Elliptic: Asset's chain, On-chain transaction hash (for deposits), Receiving address (for withdrawals)
 </Info>
 
 ### Automated defense and risk management
@@ -54,6 +54,11 @@ After Screening analyzes transactions, automatically handle them based on your c
     - For inbound transactions: Funds will be frozen
     - For outbound transactions: The transaction is blocked
     - Risk notification is always sent
+  - **Manual Review**: Pending manual review
+
+### Support for Submitting KYT Results via API
+
+You can choose not to use the third-party providers integrated with the Screening app, and instead perform your own KYT checks and submit the decision results through API.
 
 ### Unified compliance dashboard
 
