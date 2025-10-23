@@ -2,14 +2,14 @@
 title: "Recover root extended private keys"
 sidebarTitle: "Recover root extended private keys"
 lang: "en"
-description: "Step-by-step instructions to recover root extended private keys using an active Recovery Group."
+description: "Step-by-step instructions to recover root extended private keys using an active Recovery Key."
 ---
 
-**Note**: In the unlikely event of Cobo Portal discontinuing its services, you can reconstruct the root extended private keys corresponding to the vault by utilizing an active Recovery Group. All private keys linked to the wallet addresses within this vault can be derived from these root extended private keys. Unlike restoration, recovery relies on the support from another holder group.
+**Note**: In the unlikely event of Cobo Portal discontinuing its services, you can reconstruct the root extended private keys corresponding to the vault by utilizing an active Recovery key. All private keys linked to the wallet addresses within this vault can be derived from these root extended private keys. Unlike restoration, recovery relies on the support from another private key.
 
 ## Step 1: Export private key shares
 
-#### For mobile co-signers
+#### For mobile signers
 
 1. Go to [iCloud.com](https://www.icloud.com/) and sign in with your Apple ID and password.
 2. Open iCloud Drive.
@@ -17,11 +17,11 @@ description: "Step-by-step instructions to recover root extended private keys us
 4. Click the **Download** icon at the top of the page or double-click the backed-up data file.
 5. The file will be downloaded to your default download location.
 
-#### For server co-signers
+#### For server signers
 
 1. Complete necessary pre-preparations.
 
-- Ensure accessibility to the secrets.db database files and the corresponding passwords for the two private key shares associated with your selected Recovery Group.
+- Ensure accessibility to the secrets.db database files and the corresponding passwords for the two private key shares associated with your selected Recovery Key.
 - Record the root extended public keys after jointly generating each set of private key shares. Once generated, these root extended public keys will remain constant.
 
 2. Prepare the recovery environment.
@@ -38,11 +38,11 @@ cobo-tss-node-generic
 ```
 3. Verify private key shares information.
 
-Enter the `cobo-tss-node-generic` directory to retrieve the group information.
+Enter the `cobo-tss-node-generic` directory to retrieve the key information.
 ```
 sudo ./tss-node.sh info group
 ```
-Ensure that the root extended public keys in the output match those saved during pre-preparations. If the TSS Node manages multiple private key shares, locate the group with the correct root extended public keys and take note of the Group ID.
+Ensure that the root extended public keys in the output match those saved during pre-preparations. If the TSS Node manages multiple private key shares, locate the key with the correct root extended public keys and take note of the key ID.
 
 4. (For third-party recovery only) Share with your entrusted third party the root extended public keys linked to the specific private key share you intend to export. Your entrusted third party will utilize this information to verify their private key share information.
 
@@ -60,7 +60,7 @@ Ensure that the root extended public keys in the output match those saved during
 
 ## Step 2: Reconstruct all private key shares and derive the private keys for all wallet addresses
 
-Follow the instructions below to reconstruct all private key shares and derive the private keys for all wallet addresses associated with the vault. The instructions are applicable for both mobile co-signer and server co-signer.
+Follow the instructions below to reconstruct all private key shares and derive the private keys for all wallet addresses associated with the vault. The instructions are applicable for both mobile signer and server signer.
 
 1. Complete necessary pre-preparations.
 

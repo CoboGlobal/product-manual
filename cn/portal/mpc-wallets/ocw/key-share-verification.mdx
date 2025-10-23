@@ -17,24 +17,24 @@ Cobo Portal 支持自动和手动私钥分片验证。使用此功能前，请�
 3. 点击右侧的 <img src="/cn/images/mpc-wallet/manage share.svg" className="icon" alt="管理私钥分片" />。
 4. 点击**私钥分片验证**。
 5. 点击 <img src="/cn/images/mpc-wallet/filter.svg" className="icon" alt="筛选" /> 查找需要验证的私钥分片，可按以下条件筛选：
-- 状态：包括全部、尚未验证、生效中、等待中和验证失败。详细定义请参阅下文**了解私钥分片验证状态**。
-- 设备类型：包括 Cobo Guard（即 TSS Node 存储在 Cobo Guard 中）和 API（即 TSS Node 部署在服务器上）。
-- 组类型：包括主控组、签名组和恢复组。
+    - 状态：包括全部、尚未验证、生效中、等待中和验证失败。详细定义请参阅下文**了解私钥分片验证状态**。
+    - 设备类型：包括 Cobo Guard（即 TSS Node 存储在 Cobo Guard 中）和 API（即 TSS Node 部署在服务器上）。
+- 私钥类型：包括主控私钥、签名私钥和恢复私钥。
 6. 在想要验证的私钥分片右侧，点击 <img src="/en/images/mpc-wallet/recurring.svg" className="icon" alt="设置定期私钥分片验证" />。在弹出的窗口中填写以下信息：
-- 私钥分片分片持有者：选择需要对其设置定期验证的私钥分片持有者。
-- 验证时间：选择定期验证的开始时间。
-- 频率：选择验证频率，包括每日、每周和每月。
-- 应用于所有私钥分片：勾选后，当前配置将应用于所选 MPC 钱包下的所有私钥分片。
-<img src="/cn/images/mpc-wallet/1.png" className="screenshot_modal" alt="设置定期私钥分片验证" />
+    - 私钥分片分片持有者：选择需要对其设置定期验证的私钥分片持有者。
+    - 验证时间：选择定期验证的开始时间。
+    - 频率：选择验证频率，包括每日、每周和每月。
+    - 应用于所有私钥分片：勾选后，当前配置将应用于所选 MPC 钱包下的所有私钥分片。
+    <img src="/cn/images/mpc-wallet/1.png" className="screenshot_modal" alt="设置定期私钥分片验证" />
 7. 完成 2FA 验证。验证成功后，定期验证设置将生效。
 
 ## 管理私钥分片验证
 <Note>重要提示：只有管理员和操作员角色可以手动验证私钥分片、取消失败的验证或重新发送验证消息。</Note>
 1. 如果需要查看私钥分片验证详情，点击私钥分片右侧的 <img src="/cn/images/mpc-wallet/view details.svg" className="icon" alt="查看验证详情" /> 查看详情。
 <img src="/cn/images/mpc-wallet/2.png" className="screenshot" alt="查看验证详情" />
-- 消息详情：显示发送给私钥分片持有者 Cobo Guard 或 TSS 节点服务器的签名请求信息。
-- 签名数据：展示签名详情，可通过第三方工具验证。
-<img src="/cn/images/mpc-wallet/3.png" className="screenshot_modal" alt="查看验证详情" />
+    - 消息详情：显示发送给私钥分片持有者 Cobo Guard 或 TSS 节点服务器的签名请求信息。
+    - 签名数据：展示签名详情，可通过第三方工具验证。
+    <img src="/cn/images/mpc-wallet/3.png" className="screenshot_modal" alt="查看验证详情" />
 2. 如果需要手动验证私钥分片，点击 <img src="/cn/images/mpc-wallet/manual verify.svg" className="icon" alt="手动验证" />，完成 2FA 验证后系统将自动启动手动验证。
 3. 如果需要取消失败的验证，点击 <img src="/cn/images/mpc-wallet/retry.svg" className="icon" alt="取消验证" />，完成 2FA 验证后，私钥分片状态将恢复到验证失败前的最新状态。注意，仅支持取消失败的验证。
 4. 如果需要重新发送验证消息，点击 <img src="/cn/images/mpc-wallet/revoke.svg" className="icon" alt="重新发送验证消息" />，完成 2FA 验证后，系统将重新发送验证消息到目标 Cobo Guard 设备或服务器。

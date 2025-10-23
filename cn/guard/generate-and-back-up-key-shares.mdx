@@ -6,23 +6,23 @@ description: "学习如何生成和备份私钥分片，确保私钥的安全管
 ---
 为了演示 Cobo Guard 如何充当私钥分片管理器，本部分将从私钥持有者操作 Cobo Guard App 的角度指导您完成私钥分片的生成和备份过程。
 
-私钥分片的生成过程由管理员在 Cobo Portal 上启动。管理员选择作为私钥分片持有者的参与方，这些参与方将在其 Cobo Guard App 上收到通知，需要点击确认成为私钥分片持有者。所有选定的参与者必须先确认才能开始私钥生成过程。
+私钥分片的生成过程由管理员在 Cobo Portal 上启动。管理员指定私钥分片持有者，他们将在其 Cobo Guard App 上收到通知，需要点击确认成为私钥分片持有者。所有选定的参与者必须先确认才能开始私钥生成过程。
 
 生成私钥分片后，私钥分片持有者可以使用 Cobo Guard 将其备份到 iCloud。备份过程中，私钥分片会被加密。私钥分片持有者需要设置一个恢复口令以确保从 iCloud 恢复备份时的安全性。私钥分片备份适用于设备丢失或更换等情况。
 
 ## 生成私钥分片
 
-私钥分片生成过程由 Cobo Portal 上的管理员发起。私钥分片将归类到以下三组之一：主控组、签名组和恢复组。我们将用主控组来说明这一过程。
+私钥分片生成过程由 Cobo Portal 上的管理员发起。多个私钥分片形成一个私钥，私钥有三种类型：主控私钥、签名私钥和恢复私钥。我们将用主控私钥来说明这一过程。
 
-1. 在 Cobo Portal 上, 管理员将通过点击 **MPC 钱包** > **[vault-name]** > **生成主控组私钥分片**来完成主控组的创建.
+1. 在 Cobo Portal 上, 管理员通过点击 **MPC 钱包**，选择 Vault，点击**创建主控私钥**，发起主控私钥的创建.
 
-    <img src="/cn/images/cobo-guard/common/9.png" className="screenshot_modal"></img>
+    <img src="/cn/images/cobo-guard/common/createmaingroup.png" className="screenshot_modal"></img>
 
-2. 在主控组创建过程中，管理员会选择要成为私钥分片持有者的参与者。
+2. 在创建主控私钥的对话框中，管理员指定团队成员，成为私钥分片持有者。
 
     <Note>所选参与方的 Cobo Guard 必须已绑定到管理员的团队账号，这样他们才有资格被选为私钥分片持有者。</Note>
 
-3. 管理员发起主控组创建过程后，选定的参与方将通过其 Cobo Guard 收到通知。点击**您有 1 个私钥分片生成请求**横幅。
+3. 管理提交创建主控私钥的请求后，选定的参与方将通过其 Cobo Guard 收到通知。点击**您有 1 个私钥分片生成请求**横幅。
 
     <img src="/cn/images/cobo-guard/request.png" className="screenshot_nav_bar" alt="The banner" />
 

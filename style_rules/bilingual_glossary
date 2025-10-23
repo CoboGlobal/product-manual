@@ -121,24 +121,25 @@ When the command contains "rococo-translate":
 
 ## MPC Wallets
 
-| Holder groups                                      | 持有者组                                                     |
+| Private keys                                      | 私钥                                                  |
 | -------------------------------------------------- | ------------------------------------------------------------ |
-| Key share holder groups                            | 私钥分片持有者组                                             |
 | root extended private key                          | 根扩展私钥                                                   |
-| Main GroupSigning GroupRecovery Group              | 主控组签名组恢复组                                           |
+| Main Key | 主控私钥 |
+| Signing Key | 签名私钥 |
+| Recovery Key | 恢复私钥 |
 | Key share holder 1Key share holder 2               | 私钥分片持有者 1私钥分片持有者 2                             |
 | Change Address                                     | 找零地址                                                     |
 | Sweep-To Destination                               | 归集目标地                                                   |
 | Deposit Address                                    | 收币地址                                                     |
 | Organization-Controlled VaultUser-Controlled Vault | 机构 Vault终端用户 Vault                                     |
-| Server Co-Signer                                      | 服务端签名人                                      |
-| Mobile Co-Signer                                   | 移动端签名人                                       |
+| Server signer                                      | 服务端签名人                                      |
+| Mobile signer                                   | 移动端签名人                                       |
 | priority fee                                       | 不译                                                       |
 | base fee                                           | 不翻译                                                       |
 | Project （in User-Controlled Wallets）             | 项目                                                         |
 | organization                                       | 机构（当描述 MPC 钱包时，翻译为机构；当指代 Organization 这一功能时，翻译为团队） |
 | TSS Node ID                                        | 不翻译                                                       |
-| reshare                                            | 生成一个新的主控组的私钥分片                                 |
+| reshare                                            | 生成新的主控私钥分片                                 |
 
 ## Exchange Wallets
 

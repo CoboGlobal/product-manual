@@ -2,36 +2,36 @@
 title: "Overview"
 sidebarTitle: "Overview"
 lang: "en"
-description: "Get an overview of holder groups in MPC Wallets, including Main, Signing, and Recovery Groups."
+description: "Get an overview of private keys in MPC Wallets: Main Key, Signing Key, and Recovery Key."
 ---
 
-## What are holder groups?
+## What are private keys?
 
-With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key shares is referred to as a holder group.
+With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key shares jointly form a private key.
 
-There are three types of holder groups: Main Group, Signing Group, and Recovery Group. The Main Group is the first set of key shares you create before using MPC Wallets. It will be used to create both Signing Groups and Recovery Groups.
+There are three types of private keys: Main Key, Signing Key, and Recovery Key. The Main Key is the first set of key shares you create before using MPC Wallets. It will be used to create both Signing Keys and Recovery Keys.
 
-<Note>To ensure the safety and recoverability of your assets, it is recommended to create at least one Signing Group and one Recovery Group in addition to the Main Group. It is strongly recommended that the same private key share holder (the same [TSS Node ID](/en/portal/glossary#tss-node)) should not belong to different types of key share holder groups simultaneously, such as both the Main Group and the Signing Group. If this situation occurs, please ensure that there is more than one Signing Group.</Note>
+<Note>To ensure the safety and recoverability of your assets, it is recommended to create at least one Signing Key and one Recovery Key in addition to the Main Key. It is strongly recommended that the same private key share holder (the same [TSS Node ID](/en/portal/glossary#tss-node)) should not belong to different types of key share private keys simultaneously, such as both the Main Key and the Signing Key. If this situation occurs, please ensure that there is more than one Signing Key.</Note>
 
 <table class="six-columns">
   <tr>
     <th></th>
-    <th>Main Group</th>
-    <th>Signing Group</th>
-    <th>Recovery Group</th>
+    <th>Main Key</th>
+    <th>Signing Key</th>
+    <th>Recovery Key</th>
   </tr>
   <tr>
     <td>Primary Purposes</td>
     <td>
       <ol>
-        <li>Sign transactions (if you have not created Signing Groups)</li>
-        <li>Create Signing Groups and Recovery Groups</li>
+        <li>Sign transactions (if you have not created Signing Keys)</li>
+        <li>Create Signing Keys and Recovery Keys</li>
       </ol>
     </td>
     <td>Sign transactions</td>
     <td>
       <ol>
-        <li>Create a new Main Group (if your Main Group and the backup copy are lost or compromised)</li>
+        <li>Create a new Main Key (if your Main Key and the backup copy are lost or compromised)</li>
         <li>Recover the whole private key</li>
       </ol>
     </td>
