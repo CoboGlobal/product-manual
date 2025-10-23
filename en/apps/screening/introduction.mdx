@@ -33,7 +33,7 @@ The screening results provide a smart risk assessment:
 <Info>
 When a transaction in your [selected monitored wallets](/en/apps/screening/settings) is being screened, Cobo transmits the following transaction details to your AML provider for risk assessment:
 - With CihperOwl: Asset's chain, From address (for deposits), To address (for withdrawals)
-- With Elliptic: Asset's chain, Receiving address (for withdrawals), On-chain transaction hash (for deposits)
+- With Elliptic: Asset's chain, On-chain transaction hash (for deposits), Receiving address (for withdrawals)
 </Info>
 
 ### Automated defense and risk management
@@ -54,7 +54,15 @@ After Screening analyzes transactions, automatically handle them based on your c
     - For inbound transactions: Funds will be frozen
     - For outbound transactions: The transaction is blocked
     - Risk notification is always sent
+  - **Manual Review**: Manual assessment to determine whether to approve or reject it.
+    - Suitable for clients with sufficient compliance resources or those requiring more granular risk classification, allowing an additional review of transactions with unclear risk levels.
+    - Can be submitted via the WaaS API or through the Screening app interface.
 
+### Flexible KYT integration
+
+If your organization uses its own KYT provider, you can choose not to rely on the Screening-integrated KYT providers. Instead, you can perform your own KYT checks and upload the results via API.
+
+This allows you to continue using your existing KYT workflows while keeping all compliance decisions, audit records, and transaction controls centralized within the Cobo platform — ensuring your internal risk assessments seamlessly drive transaction approval and policy enforcement.
 ### Unified compliance dashboard
 
 Manage all compliance activities efficiently through an intuitive timeline view that provides:
@@ -64,5 +72,11 @@ Manage all compliance activities efficiently through an intuitive timeline view 
 - Complete audit trails and action histories
 
 This centralized timeline interface ensures all compliance activities and their histories are easily accessible in one place.
+
+## Supported wallet types
+
+Screening supports the following wallet types:
+- [MPC Wallets](/en/portal/mpc-wallets/introduction)
+- [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up)
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
