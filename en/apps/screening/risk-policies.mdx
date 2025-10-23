@@ -92,6 +92,10 @@ You can filter the policies by Direction, Risk, USD Amount, Decision, AML Provid
       <td>Reject</td>
       <td>• Inbound:<br/>&nbsp;&nbsp;• Flag transactions and freeze funds <br/>&nbsp;&nbsp;&nbsp;&nbsp;• Note: If you are using the [auto token sweeping feature of MPC Wallets](/en/portal/auto-sweep-overview), frozen funds will not be included in the sweep operation.<br/>• Outbound: Block transaction<br/>• Risk notification is always sent</td>
     </tr>
+    <tr>
+      <td>Manual Review</td>
+      <td>• Inbound: Wait for manual review<br/>• Outbound: Wait for manual review<br/>Note: Manual review is manual assessment to determine whether to approve or reject it. It's suitable for clients with sufficient compliance resources or those requiring more granular risk classification, allowing an additional review of transactions with unclear risk levels. The review result can be submitted via the WaaS API or through the Screening app interface.</td>
+    </tr>
   </tbody>
 </table>
 
