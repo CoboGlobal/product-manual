@@ -90,6 +90,7 @@
                     "group": "MPC Wallets",
                     "pages": [
                       "en/portal/mpc-wallets/introduction",
+                      "en/portal/mpc-wallets/ocw/key-share-optimization-note",
                       {
                         "group": "Organization-Controlled Wallets",
                         "pages": [
@@ -686,6 +687,7 @@
                     "group": "MPC 钱包",
                     "pages": [
                       "cn/portal/mpc-wallets/introduction",
+                      "cn/portal/mpc-wallets/ocw/key-share-optimization-note",
                       {
                         "group": "机构钱包",
                         "pages": [
