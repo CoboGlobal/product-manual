@@ -17,25 +17,25 @@ The **Screening Results** interface enables you to monitor and manage transactio
 
 <img src="/en/images/portal-apps/screening/screening-summary.png" className="screenshot_full_screen" alt="Screening summary and transaction list"/>
 
-## Transaction list
-
-**Key information:**
-
-| Field | Description |
-| --- | --- |
-| Transaction ID | Unique Cobo Portal identifier |
-| Direction | Inbound or Outbound |
-| Risk | • CipherOwl: Low/Medium/High<br/>• Elliptic: 0.0-10.0 numerical score |
-| Status | **Review Status:**<br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Waiting for manual review.<br/>• **Pending Decision**: For clients performing their own KYT, waiting for the client to submit their KYT decision.<br/>• **Approved**: Transaction approved based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Rejected**: Transaction rejected based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Not Supported**: Asset not yet supported by Screening, transaction proceeds without screening<br/>• **Bypassed**: Transaction bypassed based on [Screening Settings](/en/apps/screening/screening-settings)<br/><br/>**Fund Status:**<br/>• **Frozen**: Transaction funds cannot be transferred by users or auto-swept<br/>• **Returned**: Transaction funds have been returned to the specified address<br/>• **Unfrozen**: Transaction funds can be transferred by users and auto-swept<br/>• **Isolated**: Transaction funds have been isolated to a specified address |
-| Amount | Transaction amount |
-| From/To | Source and target addresses |
-| Txn Hash | Transaction hash (only displayed for inbound transactions) |
-| Updated Time | Time of latest status change |
-
-You can filter transactions by Direction, AML Provider (CipherOwl or Elliptic), Review Status, Fund Status, Created Time, and Updated Time.
-
 <Tabs>
   <Tab title="CipherOwl">
+
+    ## Transaction list
+
+    **Key information:**
+
+    | Field | Description |
+    | --- | --- |
+    | Transaction ID | Unique Cobo Portal identifier |
+    | Direction | Inbound or Outbound |
+    | Risk | CipherOwl: Low/Medium/High |
+    | Status | **Review Status:**<br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Waiting for manual review.<br/>• **Pending Decision**: For clients performing their own KYT, waiting for the client to submit their KYT decision.<br/>• **Approved**: Transaction approved based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Rejected**: Transaction rejected based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Not Supported**: Asset not yet supported by Screening, transaction proceeds without screening<br/>• **Bypassed**: Transaction bypassed based on [Screening Settings](/en/apps/screening/screening-settings)<br/><br/>**Fund Status:**<br/>• **Frozen**: Transaction funds cannot be transferred by users or auto-swept<br/>• **Returned**: Transaction funds have been returned to the specified address<br/>• **Unfrozen**: Transaction funds can be transferred by users and auto-swept<br/>• **Isolated**: Transaction funds have been isolated to a specified address |
+    | Amount | Transaction amount |
+    | From/To | Source and target addresses |
+    | Txn Hash | Transaction hash (only displayed for inbound transactions) |
+    | Updated Time | Time of latest status change |
+
+    You can filter transactions by Direction, AML Provider, Review Status, Fund Status, Created Time, and Updated Time.
 
     ## Screening details
 
@@ -75,6 +75,23 @@ You can filter transactions by Direction, AML Provider (CipherOwl or Elliptic), 
 
   </Tab>
   <Tab title="Elliptic">
+
+    ## Transaction list
+
+    **Key information:**
+
+    | Field | Description |
+    | --- | --- |
+    | Transaction ID | Unique Cobo Portal identifier |
+    | Direction | Inbound or Outbound |
+    | Risk | Elliptic: 0.0-10.0 numerical score |
+    | Status | **Review Status:**<br/>• **Pending Screening**: Transaction received, waiting for AML/CFT scan<br/>• **Screened**: AML/CFT scan results received<br/>• **Pending Review**: Waiting for manual review.<br/>• **Pending Decision**: For clients performing their own KYT, waiting for the client to submit their KYT decision.<br/>• **Approved**: Transaction approved based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Rejected**: Transaction rejected based on [post-screening policies](/en/apps/screening/risk-policies) settings<br/>• **Not Supported**: Asset not yet supported by Screening, transaction proceeds without screening<br/>• **Bypassed**: Transaction bypassed based on [Screening Settings](/en/apps/screening/screening-settings)<br/><br/>**Fund Status:**<br/>• **Frozen**: Transaction funds cannot be transferred by users or auto-swept<br/>• **Returned**: Transaction funds have been returned to the specified address<br/>• **Unfrozen**: Transaction funds can be transferred by users and auto-swept<br/>• **Isolated**: Transaction funds have been isolated to a specified address |
+    | Amount | Transaction amount |
+    | From/To | Source and target addresses |
+    | Txn Hash | Transaction hash (only displayed for inbound transactions) |
+    | Updated Time | Time of latest status change |
+
+    You can filter transactions by Direction, AML Provider, Review Status, Fund Status, Created Time, and Updated Time.
 
     ## Screening details
 
