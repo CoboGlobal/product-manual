@@ -123,6 +123,7 @@
                           },
                           "en/portal/mpc-wallets/ocw/transfers",
                           "en/portal/mpc-wallets/ocw/key-share-verification",
+                          "en/portal/mpc-wallets/ocw/key-share-transfer",
                           "en/portal/mpc-wallets/ocw/dapp-interaction"
                         ]
                       }
@@ -250,7 +251,8 @@
                         "pages": [
                           "en/portal/risk-controls/governance-policies",
                           "en/portal/risk-controls/governance-edit",
-                          "en/portal/risk-controls/governance-notifications"
+                          "en/portal/risk-controls/governance-notifications",
+                          "en/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
@@ -280,7 +282,8 @@
                         "pages": [
                           "en/portal/organization/governance-intro",
                           "en/portal/organization/governance-edit",
-                          "en/portal/organization/governance-notifications"
+                          "en/portal/organization/governance-notifications",
+                          "en/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
@@ -718,6 +721,7 @@
                           },
                           "cn/portal/mpc-wallets/ocw/transfers",
                           "cn/portal/mpc-wallets/ocw/key-share-verification",
+                          "cn/portal/mpc-wallets/ocw/key-share-transfer",
                           "cn/portal/mpc-wallets/ocw/dapp-interaction"
                         ]
                       }
@@ -845,7 +849,9 @@
                         "pages": [
                           "cn/portal/risk-controls/governance-policies",
                           "cn/portal/risk-controls/governance-edit",
-                          "cn/portal/risk-controls/governance-notifications"
+                          "cn/portal/risk-controls/governance-notifications",
+                          "cn/portal/risk-controls/security-confirmation"
+                  
                         ]
                       }
                     ]
@@ -875,7 +881,8 @@
                         "pages": [
                           "cn/portal/organization/governance-intro",
                           "cn/portal/organization/governance-edit",
-                          "cn/portal/organization/governance-notifications"
+                          "cn/portal/organization/governance-notifications",
+                          "cn/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
