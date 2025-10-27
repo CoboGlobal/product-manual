@@ -39,9 +39,6 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
     - **Create Post-Screening Policy** dialog when using CipherOwl:
     <img src="/en/images/portal-apps/screening/creating-post-screening-policy-cipherowl.svg" className="screenshot_modal" alt="Create Post-Screening Policy dialog when using CipherOwl"/>
 
-    - **Create Post-Screening Policy** dialog when using Elliptic:
-    <img src="/en/images/portal-apps/screening/creating-post-screening-policy-elliptic.png" className="screenshot_modal" alt="Create Post-Screening Policy dialog when using Elliptic"/>
-
   3. Define policy criteria and action.
 
   **Policy criteria**
@@ -105,7 +102,7 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
   <Note>
   When Screening has the scan results:
   - Due to [overlap prevention rules](#overlap-prevention-rules), at most one policy will match any given transaction
-  - A policy matches when the transaction's direction, risk level (CipherOwl) or risk score (Elliptic), and amount range match the policy's criteria
+  - A policy matches when the transaction's direction, risk level, and amount range match the policy's criteria
   - When a match is found, Screening executes that policy's action
   </Note>
 
@@ -114,7 +111,7 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
   #### Overlap prevention rules
   The system prevents creation of overlapping policies. A policy cannot be created if it has all of the following in common with an existing active policy:
   - Same direction (Inbound/Outbound)
-  - Same risk level/score range
+  - Same risk level
   - Overlapping amount range
 
   For example:
@@ -169,7 +166,7 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
       <tr>
         <td>Risk</td>
         <td>When using Elliptic:<br/>• NA<br/>• Numerical score from 0.0 to 10.0 (in 0.1 increments)</td>
-        <td>Elliptic: Numerical risk score with higher values indicating higher risk (see [Elliptic's Risk Score documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores))</td>
+        <td>Numerical risk score with higher values indicating higher risk (see [Elliptic's Risk Score documentation](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores))</td>
       </tr>
       <tr>
         <td>Amount Range</td>
@@ -212,7 +209,7 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
   <Note>
   When Screening has the scan results:
   - Due to [overlap prevention rules](#overlap-prevention-rules), at most one policy will match any given transaction
-  - A policy matches when the transaction's direction, risk level (CipherOwl) or risk score (Elliptic), and amount range match the policy's criteria
+  - A policy matches when the transaction's direction, risk score, and amount range match the policy's criteria
   - When a match is found, Screening executes that policy's action
   </Note>
 
@@ -221,7 +218,7 @@ The **Post-Screening Policies** interface enables you to manage your post-screen
   #### Overlap prevention rules
   The system prevents creation of overlapping policies. A policy cannot be created if it has all of the following in common with an existing active policy:
   - Same direction (Inbound/Outbound)
-  - Same risk level/score range
+  - Same risk score range
   - Overlapping amount range
 
   For example:
