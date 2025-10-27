@@ -125,12 +125,21 @@ Tokenization App 支持通过 Cobo Portal 上的 MPC 钱包和全托管钱包（
 
 <img src="/cn/images/portal-apps/tokenization/menu2.png" className="screenshot_modal" alt="日常操作"/>
 
-- **铸造 (Mint):** 发行新代币以增加总供应量，例如在新投资者认购时。
+- **铸造代币 (Mint):** 发行新代币以增加总供应量，例如在新投资者认购时。
     
     <img src="/cn/images/portal-apps/tokenization/mint.png" className="screenshot_modal" alt="铸造代币窗口"/>
 
-- **销毁 (Burn):** 永久性地从流通中移除代币，例如在处理投资者赎回时。
-- **暂停/取消暂停 (Pause/Unpause):** 立即冻结或恢复所有代币活动（转账、铸造、销毁），以应对紧急情况或安全威胁。
+- **销毁代币 (Burn):** 永久性地从流通中移除代币，例如在处理投资者赎回时。
+
+  <Note>
+  **注意：**
+  对于 CoboERC20 智能合约，
+  - 点击 **铸造代币**（Mint）或**销毁代币**（Burn），您需要以可读数值输入代币数量（例如，输入 1 = 1 个代币）；
+  - 点击**更多操作**（More Actions）访问使用 **mint** 和 **burn** 的合约功能时，输入的是原始数值（例如，对于6位小数的代币，输入1,000,000 = 1个代币）。
+  请注意查看界面上的输入提示，以确保填写正确。
+  </Note>
+
+- **暂停/取消暂停合约 (Pause/Unpause):** 立即冻结或恢复所有代币活动（转账、铸造、销毁），以应对紧急情况或安全威胁。
 
 #### 监控活动
 
