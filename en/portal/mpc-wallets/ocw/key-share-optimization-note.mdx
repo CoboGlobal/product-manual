@@ -65,7 +65,7 @@ New interface:
 Critical operations related to keys (such as creating Signing Keys and Recovery Keys, or re-creating a Main Key) are now integrated with [Governance Policies](/en/portal/risk-controls/governance-policies).  
 These operations trigger security verifications to ensure that all critical steps are secure and controllable.
 
-### Node configuration constraints
+### Key share holder configuration constraints
 
 The system now prohibits the same node from acting as a key share holder for multiple keys within the same vault, to prevent cross-use risks and strengthen overall security.
 
@@ -78,22 +78,22 @@ The system now prohibits the same node from acting as a key share holder for mul
 | Item | Before | After | Purpose |
 |--|--|--|--|
 | Naming | • Key share holder groups<br>• Main Group<br>• Signing Group<br>• Recovery Group | • Key<br>• Main Key<br>• Signing Key<br>• Recovery Key | Clearer and more intuitive concepts |
-| UI Interaction | Key management spread across multiple tab pages | Main and Signing Key information displayed clearly with labels; Recovery Key accessible from upper-right corner | Centralized information, easier operation |
-| Recovery Key Configuration | Allowed recovery without Cobo participation | No longer supports recovery without Cobo | Simplifies configuration and ensures a secure, controllable recovery path |
+| UI/UX | Key management spread across multiple tab pages | Main and Signing Key information displayed clearly with labels; Recovery Key accessible from upper-right corner | Centralized information, easier operation |
+| Recovery key configuration | Allowed recovery without Cobo participation | No longer supports recovery without Cobo | Simplifies configuration and ensures a secure, controllable recovery path |
 
 #### For advanced MPC vaults
 
 | Item | Before | After | Purpose |
 |--|--|--|--|
 | Naming | • Main Group, Signing Group, Recovery Group<br>• Signers | • MPC Keys<br>• Regular Signers, Standby Signers | More intuitive structure and terminology |
-| UI Interaction | No interface support; required Cobo support via scripts | Clients can self-configure through the UI after enabling advanced mode | Reduces ambiguity and ensures key security |
+| UI/UX | No interface support; required Cobo support via scripts | Clients can self-configure through the UI after enabling advanced mode | Reduces ambiguity and ensures key security |
 
 #### General security mechanism enhancements
 
 | Item | Before | After | Purpose |
 |--|--|--|--|
-| Governance Policies | Key operations not covered by governance policies | Integrated with governance policies | Enhances operational security and control |
-| Key Share Holder Node Configuration | Allowed the same node to hold multiple key shares in one vault | Prohibits duplicate participation of nodes in multiple key shares | Prevents potential security risks |
+| Integration with governance policies | None | Critical key operations integrated with governance policies | Enhances operational security and control |
+| Key share holder configuration | Allowed the same node to hold multiple key shares in one vault | Prohibits duplicate participation of nodes in multiple key shares | Prevents potential security risks |
 
 ### Impact on existing keys
 
