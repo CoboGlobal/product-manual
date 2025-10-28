@@ -252,7 +252,8 @@
                         "pages": [
                           "en/portal/risk-controls/governance-policies",
                           "en/portal/risk-controls/governance-edit",
-                          "en/portal/risk-controls/governance-notifications"
+                          "en/portal/risk-controls/governance-notifications",
+                          "en/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
@@ -282,7 +283,8 @@
                         "pages": [
                           "en/portal/organization/governance-intro",
                           "en/portal/organization/governance-edit",
-                          "en/portal/organization/governance-notifications"
+                          "en/portal/organization/governance-notifications",
+                          "en/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
@@ -849,7 +851,9 @@
                         "pages": [
                           "cn/portal/risk-controls/governance-policies",
                           "cn/portal/risk-controls/governance-edit",
-                          "cn/portal/risk-controls/governance-notifications"
+                          "cn/portal/risk-controls/governance-notifications",
+                          "cn/portal/risk-controls/security-confirmation"
+                  
                         ]
                       }
                     ]
@@ -879,7 +883,8 @@
                         "pages": [
                           "cn/portal/organization/governance-intro",
                           "cn/portal/organization/governance-edit",
-                          "cn/portal/organization/governance-notifications"
+                          "cn/portal/organization/governance-notifications",
+                          "cn/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
