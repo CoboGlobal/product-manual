@@ -14,7 +14,7 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
   - 如果您使用 TSS Node Callback 服务器进行风控审核，您可以将归集地址写入 TSS Node Callback 服务器的白名单中，以自动批准归集交易。详情请参阅 [自动代币归集实现](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation) 中的示例项目。
 - 对于全托管钱包 (Web3 钱包)：
   - 您已创建全托管钱包 (Web3 钱包)并按照[设置 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)中的说明进行设置。
-- 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的[用户角色](/cn/portal/organization/roles-and-permissions)。
+- 您已被分配为管理员、操作员、或经理[用户角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。
 <Info>更多详情请参照[ Fee Station 使用指南](/cn/portal/fee-station/set-up)。</Info>
 
@@ -92,17 +92,7 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 如果您的业务设置发生变化、切换网络，或当前地址被污染，您可能需要更换归集地址，详情请参阅[修改归集地址](/cn/portal/change-sweep-address)。
 
 ### 开启充币地址交易功能
-钱包启用自动代币归集后，充币地址默认只能接收资产并发起到指定归集地址的归集交易，不再支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。您可以参照以下步骤手动开启充币地址交易功能：
-
-1. 在钱包列表中，找到您想要开启充币地址交易功能的钱包。
-2. 在钱包设置页面，点击**自动归集设置**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="自动代币归集设置" />。
-3. 在 **自动归集设置**页面，点击**启用**按钮。
-
-  <img src="/cn/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="自动归集设置" />
-
-4. 在**开启充币地址交易功能**弹窗中，点击**确认**，并完成多重身份验证（MFA）。
-
-现在，您已成功开启充币地址交易功能，状态显示为**已启用**。
+钱包启用自动代币归集后，充币地址默认只能接收资产并发起到指定归集地址的归集交易，不再支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。如有需求，您可以参照[开启充币地址交易功能](/cn/portal/deposit-address-transaction)。
 
 ### 筛选已启用的钱包
 在钱包列表中，您可以按功能启用状态筛选，快速识别哪些钱包已启用自动代币归集功能。
