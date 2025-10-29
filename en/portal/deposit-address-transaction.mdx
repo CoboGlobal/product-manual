@@ -1,0 +1,25 @@
+---
+title: "Enable deposit address transactions"
+sidebarTitle: "Enable deposit address transactions"
+lang: "en"
+description: "Learn how to enable deposit address transactions in Cobo Portal for wallets with auto token sweeping enabled, restoring the ability to perform transfers and contract calls from deposit addresses."
+---
+By default, deposit addresses cannot initiate withdrawals, contract calls, staking, OTC trades, or smart contract delegations. You can manually enable these capabilities for deposit addresses as necessary.
+
+## Prerequisites
+
+- You have been assigned the [user role](/en/portal/organization/roles-and-permissions) of Admin, Operator, or Manager.
+- You have enabled the [auto token sweeping](/en/portal/enable-auto-sweep) feature for the wallet.  
+
+## Steps
+
+1. In the wallet list, find the wallet that you want to enable deposit address transactions for.
+2. In the wallet settings page, click the **Auto-Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto-Sweep Settings" />.
+3. In the **Auto-Sweep Settings** page, click **Enable**.
+
+    <img src="/en/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
+
+4. In the **Enable Deposit Address Transactions** dialog, click **Confirm**.
+5. Verify your identity using Cobo Guard or another MFA method.
+
+Now you have successfully enabled deposit address transactions for the wallet, with the status **Enabled**. After this feature is enabled, deposit addresses have the same transaction capabilities as sweep-to addresses. When initiating an on-chain transaction (such as a [transfer](/en/portal/transfer/introduction) or a contract call), you can choose to pay the gas fee from the wallet address or have it covered by [Fee Station](/en/portal/fee-station/introduction) for automatic gas fee payment and unified settlement.
