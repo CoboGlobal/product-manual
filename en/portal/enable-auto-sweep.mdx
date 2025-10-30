@@ -63,7 +63,11 @@ Now you have successfully enabled auto token sweeping for the wallet. The wallet
 
 ### Sweep-to addresses
 
-Once you enable auto token sweeping, Cobo automatically generates a dedicated sweep-to address for each enabled chain in the wallet. These addresses are system-assigned and cannot be manually specified or modified. When any deposit address receives tokens, the system will automatically and periodically sweep these tokens to the corresponding sweep-to address. The wallet addresses are displayed under two tabs: the **Deposit** tab shows previously created deposit addresses, while the **Sweep-To** tab shows the sweep addresses.
+Once you enable auto token sweeping, Cobo automatically generates a dedicated sweep-to address for each enabled chain in the wallet. These addresses are system-assigned and cannot be manually specified. When any deposit address receives tokens, the system will automatically and periodically sweep these tokens to the corresponding sweep-to address through sweep transactions. 
+
+<Note>Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the deposit address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the deposit address.</Note>
+
+The wallet addresses are displayed under two tabs: the **Deposit** tab shows previously created deposit addresses, while the **Sweep-To** tab shows the sweep addresses.
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="screenshot_full_screen" alt="Address list" />
 
