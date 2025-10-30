@@ -11,7 +11,9 @@ description: "了解如何创建 MPC Vault，确保资产的安全存储。"
 
 ## 步骤
 
-Vault 是一个钱包集合，这些钱包具有相同的根扩展私钥。系统将自动为您创建一个默认 Vault。若您希望创建其他 Vault，请按照以下步骤操作：
+Vault 是一个钱包集合，这些钱包具有相同的根扩展私钥。系统将自动为您创建一个默认 Vault，您需要通过创建主控私钥来完成设置。
+
+若您希望创建其他 Vault，请按照以下步骤操作：
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 
@@ -27,17 +29,17 @@ Vault 是一个钱包集合，这些钱包具有相同的根扩展私钥。系�
 
 6. 点击**创建**。
 
-现在您已创建了一个新的 Vault。
+现在您已创建了一个新的 Vault，您需要通过[创建主控私钥](/cn/portal/mpc-wallets/ocw/holder-group-main-group)来完成设置。
 
 ## 后续步骤
 
-创建 Vault 后，您可以：
+创建 Vault 和主控私钥后，您可以：
 
-- 设置默认 Vault。
+- 将其设为默认 Vault。
 - 修改 Vault 的名称。
-- 导出详细信息，如 Vault 下的地址列表及其相应余额。仅当成功创建[主控组](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)后才会显示该按钮。
-- 查看与 Vault 相关联的所有交易。仅当成功创建[主控组](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)后才会显示该按钮。
-- 查看与每个 Vault 相关联的根扩展公钥，管理主控组、签名组和恢复组。有关更多信息，请参阅[管理持有者组](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)。
+- 导出详细信息，如 Vault 下的地址列表及其相应余额。仅当成功创建[主控私钥](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)后才会显示该按钮。
+- 查看与 Vault 相关联的所有交易。仅当成功创建[主控私钥](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)后才会显示该按钮。
+- 查看与每个 Vault 相关联的根扩展公钥，管理主控私钥、签名私钥和恢复私钥。有关更多信息，请参阅[管理私钥](/cn/portal/mpc-wallets/ocw/manage-key-share-groups)。
 - 按钱包名称搜索所在 Vault 中的钱包。
 - 按创建时间对所在 Vault 中的钱包进行排序。
 - 在网格视图和列表视图之间切换 Vault 的显示方式。

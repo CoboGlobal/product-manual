@@ -16,17 +16,17 @@ Cobo Portal supports both automated and manual key share verification. To use th
 2. Switch to **Organization-Controlled Wallets** and select the vault containing the key shares you want to verify.
 3. Click <img src="/en/images/mpc-wallet/manage share.svg" className="icon" alt="Manage key shares" /> on the right-hand side.
 4. Click **Key Share Verification** on the right-hand side.
-5. Click <img src="/en/images/mpc-wallet/filter.svg" className="icon" alt="Filter" /> to locate the key shares you want to verify. You can filter by status, device types, and group types:
-- Status: Options include All, Never Verified, Effective, Pending, and Verification Failed. For detailed definitions of each status, refer to the **Understand Key Share Verification Status** section below.
-- Device Types: Options are Cobo Guard (your TSS Node is stored in Cobo Guard) and API (your TSS Node is deployed on a server).
-- Group Types: Options include Main Group, Signing Group, and Recovery Group.
+5. Click <img src="/en/images/mpc-wallet/filter.svg" className="icon" alt="Filter" /> to locate the key shares you want to verify. You can filter by:
+    - Status: Options include All, Never Verified, Effective, Pending, and Verification Failed. For detailed definitions of each status, refer to the **Understand Key Share Verification Status** section below.
+    - Device Types: Options are Cobo Guard (your TSS Node is stored in Cobo Guard) and API (your TSS Node is deployed on a server).
+    - Key Types: Options include Main Key, Signing Key, and Recovery Key.
 6. Click <img src="/en/images/mpc-wallet/recurring.svg" className="icon" alt="Set up recurring key share verification" />next to the key share you want to verify.
 7. In the pop-up window, fill in the following details:
-- Key Share Holder: Select the key share holder for whom you want to set up recurring verification.
-- Verification Time: Select the start time for the recurring key share verification.
-- Frequency: Select how often the recurring key share verification will occur. Options include Daily, Weekly, and Monthly.
-- Apply to All Key Shares: If selected, your configuration will apply to all key shares associated with your selected MPC Wallet.
-<img src="/en/images/mpc-wallet/1.png" className="screenshot_modal" alt="Set up recurring key share verification" />
+    - Key Share Holder: Select the key share holder for whom you want to set up recurring verification.
+    - Verification Time: Select the start time for the recurring key share verification.
+    - Frequency: Select how often the recurring key share verification will occur. Options include Daily, Weekly, and Monthly.
+    - Apply to All Key Shares: If selected, your configuration will apply to all key shares associated with your selected MPC Wallet.
+    <img src="/en/images/mpc-wallet/1.png" className="screenshot_modal" alt="Set up recurring key share verification" />
 8. Complete a 2FA verification. Once done, your recurring key share verification will be successfully set up.
 
 ## Manage key share verification
@@ -34,9 +34,9 @@ Cobo Portal supports both automated and manual key share verification. To use th
 
 1. To view verification details, click <img src="/en/images/mpc-wallet/view details.svg" className="icon" alt="View key share verification details" /> next to the key share you want to check.
 <img src="/en/images/mpc-wallet/2.png" className="screenshot" alt="View key share verification details" />
-- Message Details: Displays the message sent to the key share holder's Cobo Guard for signing or the server where the TSS Node is deployed.
-- Signature Data: Shows your signature details, which can also be verified using a third-party tool.
-<img src="/en/images/mpc-wallet/3.png" className="screenshot_modal" alt="View key share verification details" />
+    - Message Details: Displays the message sent to the key share holder's Cobo Guard for signing or the server where the TSS Node is deployed.
+    - Signature Data: Shows your signature details, which can also be verified using a third-party tool.
+    <img src="/en/images/mpc-wallet/3.png" className="screenshot_modal" alt="View key share verification details" />
 2. To manually verify a key share, click <img src="/en/images/mpc-wallet/manual verify.svg" className="icon" alt="Manually verify key share" /> and complete the 2FA verification process. Once done, the manual verification will start automatically.
 3. To cancel a failed key share verification, click <img src="/en/images/mpc-wallet/revoke.svg" className="icon" alt="Cancel key share verification" /> and complete the 2FA verification process. Once done, the key share status will revert to the most recent state before the failed verification. Note that only failed verifications can be canceled.
 4. To resend a verification message to the key share holder's Cobo Guard or the server where your TSS Node is deployed, click <img src="/en/images/mpc-wallet/retry.svg" className="icon" alt="Resend verification details" /> and complete the 2FA verification process. Once done, a verification message will be sent to the selected destination.

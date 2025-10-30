@@ -20,33 +20,32 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 
 * [联系我们的销售团队](https://www.cobo.com/zh/book-demo?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
 
-* 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多因素认证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
+* 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多重身份验证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
 
 <Snippet />
 
-
 ## 设置 MPC Vault
 
-在设置完账户和团队后，下一步是配置 MPC Vault。系统会自动为您创建一个默认 Vault。您需要通过创建主控组和生成私钥分片来完成设置。
+在设置完账户和团队后，下一步是配置 MPC Vault。系统会自动为您创建一个默认 Vault。您需要通过创建主控私钥（生成私钥分片）来完成设置。
 
 <Note>要了解 Vault、私钥分片和其他相关概念，请参阅[机构钱包介绍](/cn/portal/mpc-wallets/ocw/introduction)。</Note>
 
 
-### 创建主控组
+### 创建主控私钥
 
-一组私钥分片持有者被称为[持有者组](/cn/portal/mpc-wallets/ocw/holder-group-overview)。主控组是您在使用 MPC 钱包之前创建的第一个持有者组。
+一组私钥分片形成一个[私钥](/cn/portal/mpc-wallets/ocw/holder-group-overview)。主控私钥是您在使用 MPC 钱包之前创建的第一个私钥。
 
-下图展示了一个包含两个私钥分片持有者的主控组。Cobo 持有一个私钥分片，而您的团队持有另一个。
+下图展示了一个包含两个私钥分片持有者的主控私钥。Cobo 持有一个私钥分片，而您的团队持有另一个。
 
 <img src="/cn/images/get-started/key-shares.svg" className="diagram" alt="私钥分片"/>
 
-按照以下步骤在 Cobo Portal 中创建主控组：
+按照以下步骤在 Cobo Portal 中创建主控私钥：
 1. 登录 Cobo Portal。
       * 如需测试，请使用[开发环境](https://portal.dev.cobo.com/login)。
       * 如需正式使用，请使用[正式环境](https://portal.cobo.com/login)。
 2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
-3. 点击**生成主控组私钥分片**。
-4. 在**生成主控组私钥分片**对话框中，导航至**私钥分片持有者 2** 部分，并配置持有者。有关签名人类型及其设置的详细信息，请参阅[签名人类型](/cn/portal/mpc-wallets/ocw/holder-group-main-group#signer-type)。
+3. 点击**创建主控私钥**。
+4. 在**创建主控私钥**对话框中，配置**私钥分片持有者2**。有关签名人类型及其设置的详细信息，请参阅[签名人类型](/cn/portal/mpc-wallets/ocw/holder-group-main-group#signer-type)。
 
     - 使用移动端签名人：从下拉列表中选择一个持有者。**TSS Node ID** 字段将自动填充。点击**确认**。<Note>对于快速测试，您可以选择自己作为持有者。但是，在生产环境中使用时，请参考我们的[安全检查清单](/cn/portal/security-checklist#key-share-holder-groups)来选择合适的持有者。</Note>
 
@@ -57,7 +56,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 
 ### 生成私钥分片
 
-要完成 Vault 设置，下一个关键步骤是在您的签名人上生成私钥分片。此过程根据您的签名人类型而有所不同：
+要完成 Vault 设置，下一个关键步骤是您所选择的签名人生成私钥分片。此过程根据您的签名人类型而有所不同：
 
 * 对于移动端签名人：
   - 等待 Cobo Guard 上出现 **1 个私钥分片需要生成**的弹出消息（这可能需要几秒钟）。
@@ -69,7 +68,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
   * 确保在 24 小时内将 TSS Node 服务器上线。当服务器上线时，私钥分片生成过程将自动启动。
   * 如果配置了 [TSS Node 回调服务器](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/callback-server-overview)，则只有在回调服务器批准后才会开始生成过程。
 
-一旦私钥生成过程完成，持有者组状态将在 Cobo Portal 上变为**活跃**。您可能需要刷新 Cobo Portal 页面才能看到更新后的结果。
+一旦私钥生成过程完成，相应的私钥分片持有者的状态将在 Cobo Portal 的**私钥分片管理**页面上变为**活跃**。您可能需要刷新该页面才能看到更新后的结果。
 
 ## 创建钱包和转账
 ### 创建钱包
@@ -160,15 +159,20 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 <img src="/cn/images/get-started/withdraw.png" className="screenshot_modal"/>
 3. 在**转账**对话框中，填写所需信息，然后点击**提交**。
 4. 在 Cobo Guard 中二次确认提币。
-5. 提币请求通过二次确认后，系统将根据在线状态和其他条件自动选择一个签名人来签署交易。您需要确保至少有一个签名人在线。交易将保持 Pending 状态，直到收到必要的签名。您可以通过 Cobo Portal 查看签名人是否在线：
-   1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-   2. 点击 <img src="/cn/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
-   3. 选择您的 Vault，然后点击右上角的 <img src="/cn/images/transfers/manage-key-share-group.svg" className="icon"></img> 图标。
-   4. 在**私钥分片管理**页面，找到您的私钥分片持有者组，并查看每个私钥分片持有者旁边的状态指示器：
-      - 🟢 绿点：签名人在线并准备签署交易
-      - 无绿点：签名人离线，无法签署交易。
+5. 提币请求通过二次确认后，交易将被发送给签名人。交易将保持 Pending 状态，直到收到必要的签名。
 
-    <img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="密钥份额管理页面显示签名人状态"/>
+      - 对于**移动端签名人**，请通知他们打开 Cobo Guard 签名。
+      
+      - 对于**服务端签名人**，您可以通过 Cobo Portal 查看服务器是否在线：
+
+            1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+            2. 点击 <img src="/cn/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+            3. 选择您的 Vault，然后点击右上角的 <img src="/cn/images/transfers/manage-key-share-group.svg" className="icon"></img> 图标。
+            4. 在**私钥分片管理**页面，查看每个服务端签名人头像上是否带有绿点：
+                  - 🟢 绿点：服务器在线，可以签署交易
+                  - 无绿点：服务器离线，无法签署交易
+
+            <img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="私钥分片管理页面显示服务签名人状态"/>
 
     在您签署交易后，Cobo 会构建交易并将其广播到网络。代币转账可能需要一些时间才能完成，具体取决于网络条件。
 
@@ -189,7 +193,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 
 按照我们的[安全检查清单](/cn/portal/security-checklist)来增强您资产的安全性。对于 MPC 钱包，特别要注意：
 - 备份您的私钥分片。
-- 除主控组外，至少创建一个签名组和一个恢复组。
+- 除主控私钥外，至少创建一个签名私钥和一个恢复私钥。
 
 
 ### 探索更多功能
@@ -200,7 +204,6 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 * [启用 Fee Station](/cn/portal/fee-station/introduction)：您的一站式账单和交易费用管理解决方案。
 
 ## 了解更多
-- [观看产品视频](https://www.youtube.com/watch?v=ELPC9_VP8tA)
 - [访问官方网站](https://www.cobo.com/zh/products/wallet/mpc)
 - [阅读产品手册](/cn/portal/mpc-wallets/introduction)
 

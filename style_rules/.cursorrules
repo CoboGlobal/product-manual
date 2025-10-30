@@ -25,12 +25,10 @@ When the command contains "rococo":
 - Exchange Wallets (Sub Account)
 - When referring to a subtype, explain the relation first and then use the subtype name directly. E.g., Asset Wallets are a subtype of Custodial Wallets. Asset Wallets ...
 
-### Holder Groups / Key Share Holder Groups
-- Main Group
-- Signing Group
-- Recovery Group
-For Product Manuals, use Holder Groups
-For Developer Hub & WaaS, use Key Share Holder Groups
+### Private keys / Key Share Holder
+- Main Key
+- Signing Key
+- Recovery Key
 - Key share holder 1
 - Key share holder 2
 
@@ -199,7 +197,7 @@ For bills and payments, use outgoing transfer volume. Do not use outgoing transa
  - Create a Web3 Wallet
  - Manage Custodial Wallets
  - **Exception**: For Safe{Wallet}, keep it singular. Use phrases like "Safe{Wallet} accounts" for plural context.
- - Avoid using (s) to indicate optional plurality. E.g., use "Signing Groups" instead of "Signing Group(s)".
+ - Avoid using (s) to indicate optional plurality. E.g., use "Signing Keys" instead of "Signing Key(s)".
 
 ### Contractions
 
@@ -324,7 +322,7 @@ For bills and payments, use outgoing transfer volume. Do not use outgoing transa
  ```
 - Link to the destination with:
  ```markdown
- [Create Main Group](/cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group#on-the-create-main-group-dialog)#
+ [Create Main Key](/cobo-portal/wallets/mpc-wallet/organization-controlled-wallet/set-up/create-key-share-group#on-the-create-main-group-dialog)#
  ```
 
 ### Reusable Snippets
