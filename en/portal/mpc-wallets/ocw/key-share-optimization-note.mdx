@@ -25,11 +25,13 @@ The structure and meaning of the keys remain unchanged. For example, the process
 
 #### UI/UX optimization
 
-Previous interface: required viewing each holder group under different tabs.
+Previous interface:
+Required viewing each holder group under different tabs.
 
 <img src="/en/images/mpc-wallet/old-ui.png" className="screenshot_modal" alt="Previous Interface"/>
 
-New interface: all key share holders are displayed together, with labels indicating Main Key holders. Recovery Keys can be managed through the upper-right entry.
+New interface:
+All key share holders are displayed together, with labels indicating Main Key holders. Recovery Keys can be managed through the upper-right entry.
 
 <img src="/en/images/mpc-wallet/new-ui.png" className="screenshot_modal" alt="New Interface"/>
 
@@ -46,6 +48,7 @@ Users can choose between Self Recovery and Third-Party Recovery. In both modes, 
 #### Naming optimization
 
 For advanced vaults, keys are referred to as **MPC Keys**, categorized as **Signing Keys** and **Standby Keys**, with no longer separate designations for Main, Signing, or Recovery Keys.  
+
 Key share holders (signers) are categorized as **Regular Signers** and **Standby Signers**. Transactions are sent to Regular Signers.
 
 #### Support for self-service configuration
@@ -62,8 +65,7 @@ New interface:
 
 ### Integration with governance policies
 
-Critical operations related to keys (such as creating Signing Keys and Recovery Keys, or re-creating a Main Key) are now integrated with [Governance Policies](/en/portal/risk-controls/governance-policies).  
-These operations trigger security verifications to ensure that all critical steps are secure and controllable.
+Critical operations related to keys (such as creating Signing Keys and Recovery Keys, or re-creating a Main Key) are now integrated with [Governance Policies](/en/portal/risk-controls/governance-policies). These operations trigger security verifications to ensure that all critical steps are secure and controllable.
 
 ### Key share holder configuration constraints
 
@@ -78,7 +80,7 @@ The system now prohibits the same node from acting as a key share holder for mul
 | Item | Before | After | Purpose |
 |--|--|--|--|
 | Naming | • Key share holder groups<br/>• Main Group<br/>• Signing Group<br/>• Recovery Group | • Key<br/>• Main Key<br/>• Signing Key<br/>• Recovery Key | Clearer and more intuitive concepts |
-| UI/UX | Key management spread across multiple tab pages | Main and Signing Key information displayed clearly with labels; Recovery Key accessible from upper-right corner | Centralized information, easier operation |
+| UI/UX | Key management spread across multiple tab pages | Main and Signing Key information displayed clearly with labels;<br/>Recovery Key accessible from upper-right corner | Centralized information, easier operation |
 | Recovery key configuration | Allowed recovery without Cobo participation | No longer supports recovery without Cobo | Simplifies configuration and ensures a secure, controllable recovery path |
 
 #### For advanced MPC vaults
@@ -97,7 +99,6 @@ The system now prohibits the same node from acting as a key share holder for mul
 
 ### Impact on existing keys
 
-This optimization does not affect existing keys. Keys created before the optimization will retain their original structure and functions, and remain fully usable.  
-The interface will present the existing key information in the new format.
+This optimization does not affect existing keys. Keys created before the optimization will retain their original structure and functions, and remain fully usable. The interface will present the existing key information in the new format.
 
 <Tip>We welcome your [feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to help us continuously improve our documentation quality!</Tip>
