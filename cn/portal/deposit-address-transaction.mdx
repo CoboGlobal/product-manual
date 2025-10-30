@@ -1,0 +1,23 @@
+---
+title: "开启充币地址交易功能"
+sidebarTitle: "开启充币地址交易功能"
+lang: "zh-hans"
+description: "了解如何在 Cobo Portal 中为已启用自动归集的钱包开启充币地址交易功能，恢复充币地址的转账和合约调用权限。"
+---
+
+钱包启用自动代币归集后，充币地址默认只能接收资产并发起到指定归集地址的归集交易，不再支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。如有需求，您可以手动开启充币地址交易功能。
+
+## 前提条件
+- 您已被分配为操作员、经理或管理员[用户角色](/cn/portal/organization/roles-and-permissions)。
+- 您已为钱包[启用自动代币归集功能](/cn/portal/enable-auto-sweep)。
+
+## 步骤
+1. 在钱包列表中，找到您想要开启充币地址交易功能的钱包。
+2. 在钱包设置页面，点击**自动归集设置**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="自动代币归集设置" />。
+3. 在 **自动归集设置**页面，点击**启用**按钮。
+
+    <img src="/cn/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="自动归集设置" />
+
+4. 在**开启充币地址交易功能**弹窗中，点击**确认**，并完成多重身份验证（MFA）。
+
+现在，您已成功开启充币地址交易功能，状态显示为**已启用**。开启该功能后，充币地址与归集地址在交易功能上完全一致。发起链上交易（如[转账](/cn/portal/transfers/introduction)或合约调用）时，您可以选择由钱包地址支付手续费，或通过 [Fee Station](/cn/portal/fee-station/introduction) 代付 Gas 费，实现自动补充与统一结算。

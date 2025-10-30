@@ -1,8 +1,8 @@
 ---
-title: "管理持有者组"
-sidebarTitle: "管理持有者组"
+title: "管理私钥"
+sidebarTitle: "管理私钥"
 lang: "zh-hans"
-description: "学习如何管理持有者组，确保安全和高效的资产管理。"
+description: "学习如何管理私钥，确保安全和高效的资产管理。"
 ---
 
 按照以下步骤，导航至**私钥分片管理**页面：
@@ -18,38 +18,45 @@ description: "学习如何管理持有者组，确保安全和高效的资产管
 ## 查看根扩展公钥
 基于 Cobo Portal 支持的加密算法数量，页面将显示一组与您的 Vault 相关的根扩展公钥。注意，该 Vault 中所有 MPC 钱包的公钥都来自这些根扩展公钥。
 
-## 管理持有者组
+## 管理私钥
 
-<Note>前提条件：要管理持有者组，您需要拥有操作员，经理，或管理员的[用户角色](/cn/portal/organization/roles-and-permissions)。</Note>
+<Note>前提条件：要管理私钥，您需要拥有操作员，经理，或管理员的[用户角色](/cn/portal/organization/roles-and-permissions)。</Note>
 
-### 管理主控组
-在**主控组**标签页下，可以查看创建时间、私钥分片持有者、其 TSS Node ID、组状态和组 ID 等信息。
+### 管理主控私钥
+在**私钥分片管理**页面，找到带有**主控私钥**标签的持有者，可以查看创建时间、私钥分片持有者的 TSS Node ID、状态、私钥 ID 等信息。
 
-### 管理签名组
-在**签名组**标签页下，可以查看或删除现有签名组、创建新签名组，或将签名组升级为主控组。
+<img src="/cn/images/mpc-wallet/manage-main-key.png" className="screenshot_modal"/>
+
+### 管理签名私钥
+
+在**私钥分片管理**页面，您可以查看或删除现有签名私钥、创建新签名私钥，或将签名私钥升级为主控私钥。
+
+<img src="/cn/images/mpc-wallet/manage-signing-keys.png" className="screenshot_modal"/>
+
 注意：
-- 删除签名组后，指定签名组中的私钥分片持有者将不会再收到任何签名请求。如果与已删除的签名组相关联的私钥持有者需要重新接收签名请求，则必须完成新的私钥生成流程。
-- 签名组升级后，指定的签名组将承担原主控组的职责，如协助创建新的签名组和恢复组。原主控组将被自动删除。
+- 删除签名私钥后，指定签名私钥中的私钥分片持有者将不会再收到任何签名请求。如果与已删除的签名私钥相关联的私钥持有者需要重新接收签名请求，则必须完成新的私钥生成流程。
+- 签名私钥升级后，指定的签名私钥将承担原主控私钥的职责，如协助创建新的签名私钥和恢复私钥。原主控私钥将被自动删除。
 
-### 管理恢复组
-在**恢复组**标签页下，您可以：
-- 查看现有的恢复组
-- 删除现有的恢复组
-    <img src="/cn/images/mpc-wallet/delete-recovery-group-popup.png" className="screenshot_modal"/>
-    <Info>删除恢复组后，指定恢复组中的私钥分片持有者将无法用于生成新的主控组的私钥分片。如果与已删除的恢复组相关联的私钥持有者需要恢复原有权限，则必须完成新的私钥生成流程。</Info>
+### 管理恢复私钥
 
-- 创建新的恢复组
+在**私钥分片管理**页面，点击**恢复私钥**，您可以：
+- 查看现有的恢复私钥
+- 删除现有的恢复私钥
+    <img src="/cn/images/mpc-wallet/delete-recovery-group.png" className="screenshot_modal"/>
+    <Info>删除恢复私钥后，指定恢复私钥中的私钥分片持有者将无法用于生成新的主控私钥的私钥分片。如果与已删除的恢复私钥相关联的私钥持有者需要恢复原有权限，则必须完成新的私钥生成流程。</Info>
+
+- 创建新的恢复私钥
     <img src="/cn/images/mpc-wallet/create-new-recovery-group.png" className="screenshot_modal"/>
 
-- 使用恢复组生成一个新的主控组
+- 使用恢复私钥生成一个新的主控私钥
     <img src="/cn/images/mpc-wallet/recover-main-group.png" className="screenshot_modal"/>
     <img src="/cn/images/mpc-wallet/recover-new-main-group-config.png" className="screenshot_modal"/>
-    <Info>使用恢复组重新创建主控组后，原始主控组会被自动删除，并由新的主控组取代。新的主控组可用于创建新的签名组和恢复组。</Info>
+    <Info>使用恢复私钥重新创建主控私钥后，原始主控私钥会被自动删除，并由新的主控私钥取代。新的主控私钥可用于创建新的签名私钥和恢复私钥。</Info>
 
 ## 常见管理场景
 
-### 持有者组人员变动
-如果持有者组需要增加、减少或更换成员，请参阅[私钥分片交接](/cn/portal/mpc-wallets/ocw/key-share-transfer)了解详细操作步骤。
+### 私钥分片持有者变动
+如果需要更换成员作为私钥分片持有者，请参阅[私钥分片交接](/cn/portal/mpc-wallets/ocw/key-share-transfer)了解详细操作步骤。
 
 ### Cobo Guard 设备问题
 如果持有者的 Cobo Guard 设备丢失，更换，或重新安装了应用，请参阅[因更换设备或重装 App 重置 Cobo Guard](/cn/guard/reset)了解详细操作步骤。

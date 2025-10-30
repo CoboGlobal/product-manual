@@ -14,6 +14,7 @@ import Fee from '/snippets/transaction-fee-cn.mdx';
 
 - 建议您设置[链下交易风控规则](/cn/portal/risk-controls/off-chain-tx-set-transfer)以确保交易安全。
 - 您已向 MPC 钱包（机构钱包）[充币](/cn/portal/mpc-wallets/ocw/transfers)。
+- 您的钱包中有足够的主链币用于支付 Gas 费（链上手续费），或已启用 [Fee Station](/cn/portal/fee-station/introduction) 代付 Gas 费。
 
 ## 提币流程
 
@@ -26,7 +27,7 @@ import Fee from '/snippets/transaction-fee-cn.mdx';
    - 通过 Cobo Portal 发起的提币：需要在 [Cobo Guard](/cn/guard/introduction) 上确认提币请求。
    - 通过 WaaS API 发起的提币：您的 [Callback Endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/introduction) 需要返回 "ok" 以确认提币请求。
 3. **[风控](/cn/portal/risk-controls/tx-policies-overview)**：如果已配置，Cobo Portal 中的交易风控将评估提币请求。当需要人工审核时，审批员需要在 Cobo Guard 上审批该交易。
-4. **签名**：Cobo 根据在线状态等条件选择一个可用的[签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group)来签署交易。请确保至少有一个签名人在线。您可以通过 Cobo Portal 查看签名人是否在线。详情请参见本文**查看签名人状态**一节。
+4. **签名**：Cobo 将根据签名人节点的在线状态等条件，将交易发送给[签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group)签署交易。请通知您的移动端签名人，或查看服务端签名人状态，详情请参见本文**通知移动端签名人或查看服务端签名人状态**一节。
    <Note>如果您使用带有 [TSS Node Callback 机制](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/callback-server-overview)的[服务端签名人](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/tss-node-overview)，您的 TSS Node Callback 服务器必须首先批准签名请求，然后服务端签名人才能继续进行交易签名。</Note>
 5. **广播**：Cobo 创建交易并将其广播到网络。
 
@@ -57,20 +58,23 @@ import Fee from '/snippets/transaction-fee-cn.mdx';
 9. 点击**提交**。
 10. 在 Cobo Guard 中批准该请求。如果该地址为新地址，不在您的地址簿或 Cobo Portal 上创建的钱包中，系统将提示您将该地址添加到地址簿。
 
-## 查看签名人状态
+## 通知移动端签名人或查看服务端签名人状态
 
-要成功签名交易，您需要确保至少有一个签名人在线。交易将保持 Pending 状态，直到收到必要的签名。
+交易请求通过二次确认后，交易将被发送给签名人。交易将保持 Pending 状态，直到收到必要的签名。
 
-您可以通过 Cobo Portal 查看签名人是否在线：
-1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-2. 点击 <img src="/cn/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
-3. 选择您的 Vault，然后点击右上角的 <img src="/cn/images/transfers/manage-key-share-group.svg" className="icon"></img> 图标。
-4. 在**私钥分片管理**页面，找到您的私钥分片持有者组，并查看每个私钥分片持有者旁边的状态指示器：
-   - 🟢 绿点：签名人在线并准备签署交易
-   - 无绿点：签名人离线，无法签署交易。
-        - 对于服务端签名人，请确保已启动 TSS Node 以保持在线。
-        - 对于移动端签名人，请确保已打开 Cobo Guard 应用以保持在线。
+- 对于**移动端签名人**，请通知他们打开 Cobo Guard 签名。
 
-<img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="私钥分片管理页面显示签名人状态"/>
+- 对于**服务端签名人**，您可以通过 Cobo Portal 查看服务器是否在线：
+
+    1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+    2. 点击 <img src="/cn/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+    3. 选择您的 Vault，然后点击右上角的 <img src="/cn/images/transfers/manage-key-share-group.svg" className="icon"></img> 图标。
+    4. 在**私钥分片管理**页面，查看每个服务端签名人头像上是否带有绿点：
+        - 🟢 绿点：服务器在线，可以签署交易
+        - 无绿点：服务器离线，无法签署交易
+        
+        <img src="/cn/images/transfers/main-group-active.png" className="screenshot_modal" alt="私钥分片管理页面显示签名人状态"/>
+
+    在您签署交易后，Cobo 会构建交易并将其广播到网络。代币转账可能需要一些时间才能完成，具体取决于网络条件。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

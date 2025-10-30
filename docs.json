@@ -94,13 +94,14 @@
                         "group": "Organization-Controlled Wallets",
                         "pages": [
                           "en/portal/mpc-wallets/ocw/introduction",
+                          "en/portal/mpc-wallets/ocw/key-share-optimization-note",
                           {
                             "group": "Set up wallets",
                             "pages": [
                               "en/portal/mpc-wallets/ocw/set-up",
                               "en/portal/mpc-wallets/ocw/create-mpc-vault",
                               {
-                                "group": "Create holder groups",
+                                "group": "Create private keys",
                                 "pages": [
                                   "en/portal/mpc-wallets/ocw/holder-group-overview",
                                   "en/portal/mpc-wallets/ocw/holder-group-main-group",
@@ -114,7 +115,7 @@
                           },
                           "en/portal/mpc-wallets/ocw/manage-key-share-groups",
                           {
-                            "group": "Recover holder groups",
+                            "group": "Recover private keys",
                             "pages": [
                               "en/portal/mpc-wallets/ocw/restore-from-backup",
                               "en/portal/mpc-wallets/ocw/recover-from-active-keys",
@@ -181,6 +182,7 @@
                     "pages": [
                       "en/portal/auto-sweep-overview",
                       "en/portal/enable-auto-sweep",
+                      "en/portal/deposit-address-transaction",
                       "en/portal/change-sweep-address"
                     ]
                   },
@@ -251,7 +253,8 @@
                         "pages": [
                           "en/portal/risk-controls/governance-policies",
                           "en/portal/risk-controls/governance-edit",
-                          "en/portal/risk-controls/governance-notifications"
+                          "en/portal/risk-controls/governance-notifications",
+                          "en/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
@@ -281,7 +284,8 @@
                         "pages": [
                           "en/portal/organization/governance-intro",
                           "en/portal/organization/governance-edit",
-                          "en/portal/organization/governance-notifications"
+                          "en/portal/organization/governance-notifications",
+                          "en/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]
@@ -690,13 +694,14 @@
                         "group": "机构钱包",
                         "pages": [
                           "cn/portal/mpc-wallets/ocw/introduction",
+                          "cn/portal/mpc-wallets/ocw/key-share-optimization-note",
                           {
                             "group": "设置钱包",
                             "pages": [
                               "cn/portal/mpc-wallets/ocw/set-up",
                               "cn/portal/mpc-wallets/ocw/create-mpc-vault",
                               {
-                                "group": "创建持有者组",
+                                "group": "创建私钥",
                                 "pages": [
                                   "cn/portal/mpc-wallets/ocw/holder-group-overview",
                                   "cn/portal/mpc-wallets/ocw/holder-group-main-group",
@@ -710,7 +715,7 @@
                           },
                           "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
                           {
-                            "group": "恢复持有者组",
+                            "group": "恢复私钥",
                             "pages": [
                               "cn/portal/mpc-wallets/ocw/restore-from-backup",
                               "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
@@ -777,6 +782,7 @@
                     "pages": [
                       "cn/portal/auto-sweep-overview",
                       "cn/portal/enable-auto-sweep",
+                      "cn/portal/deposit-address-transaction",
                       "cn/portal/change-sweep-address"
                     ]
                   },
@@ -847,7 +853,9 @@
                         "pages": [
                           "cn/portal/risk-controls/governance-policies",
                           "cn/portal/risk-controls/governance-edit",
-                          "cn/portal/risk-controls/governance-notifications"
+                          "cn/portal/risk-controls/governance-notifications",
+                          "cn/portal/risk-controls/security-confirmation"
+                  
                         ]
                       }
                     ]
@@ -877,7 +885,8 @@
                         "pages": [
                           "cn/portal/organization/governance-intro",
                           "cn/portal/organization/governance-edit",
-                          "cn/portal/organization/governance-notifications"
+                          "cn/portal/organization/governance-notifications",
+                          "cn/portal/risk-controls/security-confirmation"
                         ]
                       }
                     ]

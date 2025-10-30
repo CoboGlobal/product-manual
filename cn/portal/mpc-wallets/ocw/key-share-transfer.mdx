@@ -7,9 +7,9 @@ description: "了解在团队成员离职或转岗时，如何通过重新生成
 
 ## 适用场景  
 
-作为私钥分片持有者（主控组、签名组或恢复组）的团队成员离职或转岗，需要将其持有的私钥分片交接给其他团队成员。若不进行交接，可能导致以下问题：  
+作为私钥分片持有者（主控私钥、签名私钥或恢复私钥）的团队成员离职或转岗，需要将其持有的私钥分片交接给其他团队成员。若不进行交接，可能导致以下问题：  
 - 交易签名时可能因缺少足够的有效分片而失败，导致 Vault 中的资金暂时不可用。 
-- 原持有者依然保留主控，签名或恢复组权限，存在安全风险。  
+- 原持有者依然保留主控，签名或恢复私钥权限，存在安全风险。  
 
 <Note>本场景主要涉及团队成员之间的私钥分片交接。如需了解 Cobo Guard 设备更换或遗失时应该如何操作，请参阅[因更换设备或重装 App 重置 Cobo Guard](/cn/guard/reset)。</Note>
 
@@ -21,31 +21,31 @@ description: "了解在团队成员离职或转岗时，如何通过重新生成
 
 ## 操作流程  
 
-### 主控组人员交接  
+### 主控私钥人员交接  
 
 <Steps>
   <Step title="生成新私钥分片">
-    原主控组为新持有者创建签名组。详见[创建签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group#%E5%88%9B%E5%BB%BA%E7%AD%BE%E5%90%8D%E7%BB%84)。
+    原主控私钥为新持有者创建签名私钥。详见[创建签名私钥](/cn/portal/mpc-wallets/ocw/holder-group-signing-group#%E5%88%9B%E5%BB%BA%E7%AD%BE%E5%90%8D%E7%BB%84)。
   </Step>
   <Step title="验证新私钥分片">
-    （可选）通过验证私钥分片确认新建的签名组可用。详见[验证私钥分片](/cn/portal/mpc-wallets/ocw/key-share-verification)。
+    （可选）通过验证私钥分片确认新建的签名私钥可用。详见[验证私钥分片](/cn/portal/mpc-wallets/ocw/key-share-verification)。
   </Step>
-  <Step title="升级为主控组">
-    将新建的签名组升级为主控组，升级后原主控组将被自动删除。详见[将签名组转换为主控组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
+  <Step title="升级为主控私钥">
+    将新建的签名私钥升级为主控私钥，升级后原主控私钥将被自动删除。详见[将签名私钥转换为主控私钥](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
   </Step>
 </Steps>
 
-### 签名组/恢复组人员交接  
+### 签名私钥/恢复私钥人员交接  
 
 <Steps>
   <Step title="生成新私钥分片">
-    主控组为新持有者创建签名组或恢复组。详见[创建签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group#%E5%88%9B%E5%BB%BA%E7%AD%BE%E5%90%8D%E7%BB%84)或[创建恢复组](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group#%E5%88%9B%E5%BB%BA%E6%81%A2%E5%A4%8D%E7%BB%84)。
+    主控私钥为新持有者创建签名私钥或恢复私钥。详见[创建签名私钥](/cn/portal/mpc-wallets/ocw/holder-group-signing-group#%E5%88%9B%E5%BB%BA%E7%AD%BE%E5%90%8D%E7%BB%84)或[创建恢复私钥](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group#%E5%88%9B%E5%BB%BA%E6%81%A2%E5%A4%8D%E7%BB%84)。
   </Step>
   <Step title="验证新私钥分片">
-    （可选）通过验证私钥分片确认新建的签名组或恢复组可用，详见[验证私钥分片](/cn/portal/mpc-wallets/ocw/key-share-verification)。
+    （可选）通过验证私钥分片确认新建的签名私钥或恢复私钥可用，详见[验证私钥分片](/cn/portal/mpc-wallets/ocw/key-share-verification)。
   </Step>
   <Step title="删除旧私钥分片">
-    确认新私钥可用后，删除原私钥持有者的签名组或恢复组。详见[删除签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group#%E5%88%A0%E9%99%A4%E7%AD%BE%E5%90%8D%E7%BB%84)或[删除恢复组](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group#%E5%88%A0%E9%99%A4%E6%81%A2%E5%A4%8D%E7%BB%84)。
+    确认新私钥可用后，删除原私钥持有者的签名私钥或恢复私钥。详见[删除签名私钥](/cn/portal/mpc-wallets/ocw/holder-group-signing-group#%E5%88%A0%E9%99%A4%E7%AD%BE%E5%90%8D%E7%BB%84)或[删除恢复私钥](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group#%E5%88%A0%E9%99%A4%E6%81%A2%E5%A4%8D%E7%BB%84)。
   </Step>
 </Steps>
 

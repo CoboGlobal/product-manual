@@ -11,11 +11,11 @@ This guide explains how to enable the auto token sweeping feature for MPC Wallet
 
 - For MPC Wallets (Organization-Controlled Wallets):
   - You have created an MPC Wallet (Organization-Controlled Wallet) and set it up as described in [Overview](/en/portal/mpc-wallets/ocw/set-up).
-  - Due to the high volume of consolidation transactions and their concentrated execution time, please ensure you have set up at least one [server co-signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as your [Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Group](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
+  - Due to the high volume of consolidation transactions and their concentrated execution time, please ensure you have set up at least one [server signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) as a key share holder of your [Main Key](/en/portal/mpc-wallets/ocw/holder-group-main-group) or [Signing Key](/en/portal/mpc-wallets/ocw/holder-group-signing-group).
   - If you use a TSS Node Callback server for risk control review, you can add the sweep-to address to the server's whitelist to automatically approve sweep transactions. For more details, refer to the sample project in [Auto token sweeping implementation](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation).
 - For Custodial Wallets (Web3 Wallets):
   - You have created a Custodial Wallet and set it up as described in [Set up Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/set-up).
-- You have been assigned the role of "Admin", "Operator", "Manager" or an equivalent [role](/en/portal/organization/roles-and-permissions) with the permission "Edit Auto-Sweep".
+- You have been assigned the [user role](/en/portal/organization/roles-and-permissions) of Admin, Operator, or Manager.
 - Gas fees apply to the withdrawal part of the sweep transaction. It is recommended to enable [Fee Station](/en/portal/fee-station/introduction) to automatically supplement the gas fee when the deposit address balance is insufficient. Otherwise, you will need to ensure sufficient main chain coin balance at the deposit address.
 <Info>For more details, refer to [How to use Fee Station](/en/portal/fee-station/set-up).</Info>
 
@@ -89,18 +89,7 @@ When sweeping occurs, two transaction records are generated:
 If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
 
 ### Enable deposit address transactions  
-By default, deposit addresses cannot initiate withdrawals, contract calls, staking, OTC trades, or smart contract delegations. To manually enable these capabilities for deposit addresses, follow these steps:
-
-1. In the wallet list, find the wallet that you want to enable deposit address transactions for.
-2. In the wallet settings page, click the **Auto-Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto-Sweep Settings" />.
-3. In the **Auto-Sweep Settings** page, click **Enable**.
-
-<img src="/en/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
-
-4. In the **Enable Deposit Address Transactions** dialog, click **Confirm**.
-5. Verify your identity using Cobo Guard or another MFA method.
-
-Now you have successfully enabled deposit address transactions for the wallet, with the status **Enabled**.
+By default, deposit addresses cannot initiate withdrawals, contract calls, staking, OTC trades, or smart contract delegations. To manually enable these capabilities for deposit addresses, follow these steps in [Enable deposit address transactions](/en/portal/deposit-address-transaction).
 
 ### Filter wallets by feature status  
 You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.
