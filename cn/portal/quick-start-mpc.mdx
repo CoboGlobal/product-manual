@@ -28,7 +28,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 ## 前提条件
 
 - [联系我们的销售团队](https://www.cobo.com/zh/book-demo?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
-- 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多因素认证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
+- 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多重身份验证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
 
 ## 注册并激活账户
 
@@ -67,16 +67,16 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 - 一个 Vault：`Cobo Demo Vault (Testing Only)`
 - 一个钱包：`Cobo Demo Vault (Testing Only)` 中的 `Default MPC wallet`
-- 私钥：主控组 2/2，签名组与恢复组在开发环境中暂不配置。
-<Note>两片私钥均由 Cobo 默认配置，因此您在开发环境中使用该 MPC 钱包发起交易时，Cobo 会自动完成交易的签名，您无需手动签名。</Note>
+- 私钥：主控私钥 2/2，签名私钥与恢复私钥在开发环境中暂不配置。
+<Note>两个私钥分片均由 Cobo 默认配置，因此您在开发环境中使用该 MPC 钱包发起交易时，Cobo 会自动完成交易的签名，您无需手动签名。</Note>
 
 如需完整体验 MPC 钱包的创建流程，请参考：
 - [MPC 机构钱包介绍](/cn/portal/mpc-wallets/ocw/introduction)
 - [创建 MPC Vault](/cn/portal/mpc-wallets/ocw/create-mpc-vault)
-- [设置主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)
-- [设置签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)
-- [设置恢复组](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group)
-- [主控组 / 签名组 / 恢复组的区别](/cn/portal/mpc-wallets/ocw/holder-group-overview)
+- [设置主控私钥](/cn/portal/mpc-wallets/ocw/holder-group-main-group)
+- [设置签名私钥](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)
+- [设置恢复私钥](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group)
+- [主控私钥 / 签名私钥 / 恢复私钥的区别](/cn/portal/mpc-wallets/ocw/holder-group-overview)
 
 ## 设置 Fee Station（可选）
 如果您希望在开发环境中使用 Cobo 的美元稳定币代付链上交易手续费功能，或集中管理主链币以支付 Gas，可以启用 Fee Station。它相当于一个团队共享的费用账户，可根据配置策略为链上交易自动代付 Gas，并统一结算各类平台费用。详情请参阅[Fee Station 简介](/cn/portal/fee-station/introduction)。
@@ -125,7 +125,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 5. **发起提币交易**
 
-如果您在开发环境中配置了交易风控，钱包中配置了主控组，或者配置了 Callback Endpoint 等，这些设置会对提币流程产生影响。例如，您可能需要额外审批步骤才能完成交易。
+如果您在开发环境中配置了交易风控，钱包中配置了主控私钥，或者配置了 Callback Endpoint 等，这些设置会对提币流程产生影响。例如，您可能需要额外审批步骤才能完成交易。
 
 在提币前，请确保钱包中有足够主链币用于支付链上手续费，或者已启用 [Fee Station](/cn/portal/fee-station/introduction) 代付功能。
 

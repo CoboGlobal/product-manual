@@ -7,25 +7,20 @@ description: "Discover Organization-Controlled Wallets, a secure way to manage d
 
 ## What are Organization-Controlled Wallets?
 
-Organization-Controlled Wallets are a subtype of [MPC Wallets](/en/portal/mpc-wallets/introduction). Organization-Controlled Wallets are MPC-based wallets where the management and control of the digital assets lie with the organization itself.
+Organization-Controlled Wallets are a subtype of [MPC Wallets](/en/portal/mpc-wallets/introduction). 
 
-By leveraging MPC technology, the private key is fragmented into encrypted shares that are distributed among multiple parties. This approach enhances security and enables organizations to maintain full control over their funds or the assets of their end users. Organization-Controlled Wallets use a 2-2 signature scheme for transaction signing, where the organization and Cobo each hold a key share.
+Organization-Controlled Wallets are MPC-based wallets where the management and control of the digital assets lie with the organization itself. By leveraging MPC technology, the private key is fragmented into encrypted shares that are distributed among multiple parties. This approach enhances security and enables organizations to maintain full control over their funds or the assets of their end users. 
 
-Watch the following video to learn about the basic concepts and setup process of Organization-Controlled Wallets:
-{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/kC-Lp75RBHs?si=uAtQvSq4CgpPYfp_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kC-Lp75RBHs?si=uAtQvSq4CgpPYfp_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Organization-Controlled Wallets use a 2-2 signature scheme for transaction signing, where the organization and Cobo each hold a key share.
 
 ## Object Model
 
 <img src="/en/images/mpc-wallet/OCW.svg"/>
 
 ### Vault
-A vault is a collection of Organization-Controlled Wallets sharing the same root extended private key.
+A vault is a collection of Organization-Controlled Wallets sharing the same root extended private key. You can set up multiple vaults, and create various wallets within each vault to meet the specific requirements of your business.
 
 ### Root Extended Private Key
-Each vault is associated with a unique root extended private key. This master private key is used within the MPC framework to generate a series of key shares. Each set of key shares is referred to as a [holder group](/en/portal/mpc-wallets/ocw/holder-group-overview).
-
-You can set up multiple vaults, and create various wallets within each vault to meet the specific requirements of your business.
+Each vault is associated with a unique root extended private key. This master private key is used within the MPC framework to generate a series of key shares. Each set of key shares jointly form a [private key](/en/portal/mpc-wallets/ocw/holder-group-overview), such as Main key and Signing Key.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
