@@ -39,7 +39,7 @@ You have been assigned the [user role](/en/portal/risk-controls/roles-and-permis
 
 9. Select the callback endpoint this API key uses, or register a new one. The selected callback endpoint will receive messages triggered by the API key. For more information, see [Register a callback endpoint](/en/portal/developer-console/callbacks-register).
 10. Select the key type.
-    - **Permanent**: This key type requires IP address whitelisting for enhanced security. You must specify the static IP addresses from which API requests will be sent. If you have multiple IP addresses, separate them with commas.
+    - **Permanent**: This key type requires IP address whitelisting for enhanced security. You must specify the static IP addresses or CIDR ranges from which API requests will be sent. If you provide multiple entries, separate them with English commas (,).
     <Note>Avoid using permanent keys for testing with the [API Playground](https://www.cobo.com/developers/v2/api-references/playground), as requests are sent from the API Playground, not your specified IP addresses.</Note>
     - **Temporary**: A temporary key expires in 30 days. This option is suitable if you do not have a static IP address ready.
 11. Follow the instructions on the screen to confirm the registration.
