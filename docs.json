@@ -551,9 +551,7 @@
                 "group": "MANAGE",
                 "pages": [
                   {
-                    "group": "Login methods",
                     "pages": [
-                      "en/accounts/add-passkey-as-login-method",
                       "en/accounts/modify-existing-login-methods"
                     ]
                   },
