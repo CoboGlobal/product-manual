@@ -550,11 +550,7 @@
               {
                 "group": "MANAGE",
                 "pages": [
-                  {
-                    "pages": [
-                      "en/accounts/modify-existing-login-methods"
-                    ]
-                  },
+                  "en/accounts/modify-existing-login-methods",
                   {
                     "group": "Multi-factor authentications (MFA)",
                     "pages": [
@@ -1147,17 +1143,11 @@
                 ]
               },
               {
-                "group": "管理",
+                "group": "MANAGE",
                 "pages": [
+                  "en/accounts/modify-existing-login-methods",
                   {
-                    "group": "登录方式",
-                    "pages": [
-                      "cn/accounts/add-passkey-as-login-method",
-                      "cn/accounts/modify-existing-login-methods"
-                    ]
-                  },
-                  {
-                    "group": "多重身份验证 (MFA)",
+                    "group": "Multi-factor authentications (MFA)",
                     "pages": [
                       "cn/accounts/reset-google-authenticator",
                       "cn/accounts/delete-security-keys",
