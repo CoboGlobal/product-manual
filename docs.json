@@ -552,7 +552,7 @@
                 "pages": [
                   "en/accounts/modify-existing-login-methods",
                   {
-                    "group": "Multi-factor authentications (MFA)",
+                    "group": "Multi-factor authentication (MFA)",
                     "pages": [
                       "en/accounts/reset-google-authenticator",
                       "en/accounts/delete-security-keys",
