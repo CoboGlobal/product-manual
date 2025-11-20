@@ -1143,11 +1143,11 @@
                 ]
               },
               {
-                "group": "MANAGE",
+                "group": "管理",
                 "pages": [
-                  "en/accounts/modify-existing-login-methods",
+                  "cn/accounts/modify-existing-login-methods",
                   {
-                    "group": "Multi-factor authentications (MFA)",
+                    "group": "多重身份验证 (MFA)",
                     "pages": [
                       "cn/accounts/reset-google-authenticator",
                       "cn/accounts/delete-security-keys",
