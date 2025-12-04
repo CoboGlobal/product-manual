@@ -43,6 +43,7 @@
               {
                 "group": "GET STARTED",
                 "pages": [
+                  "en/portal/sign-up",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -636,6 +637,7 @@
               {
                 "group": "快速开始",
                 "pages": [
+                  "cn/portal/sign-up",
                   {
                     "group": "MPC 钱包",
                     "pages": [
