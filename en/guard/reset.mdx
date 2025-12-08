@@ -47,7 +47,9 @@ If Cobo Guard is still available on your old device, you will be prompted to com
 
 <img src="/en/images/cobo-guard/old-device-available.png" className="screenshot_modal" alt="old device available case" />
 
-For step 3 restore key share, below are detailed instructions:
+For step 1 (backing up your key share or checking your backup file), see [Back up your key shares](/en/guard/generate-and-back-up-key-shares#back-up-your-key-shares).
+
+For step 3 (restoring your key share), below are detailed instructions:
 
 1. Open Cobo Guard on your new device and select **Restore existing key shares first**. Cobo Guard will begin checking your key share files.
 
@@ -81,9 +83,19 @@ If Cobo Guard on your old device is unavailable, but a valid backup exists and y
 
 <img src="/en/images/cobo-guard/restore-backup.png" className="screenshot_modal" alt="restore backup" />
 
-<Note>For step 3 restore key share, see the instructions in the [**Reference: Steps to restore key share**](#steps-to-restore-key-share) section.</Note>
+For step 3 (restoring your key share), below are detailed instructions:
 
-After you complete all the items prompted in the dialog on the **Cobo Accounts** page, click **Link New Device**. Below are detailed instructions to link a new device:
+1. Open Cobo Guard on your new device and select **Restore existing key shares first**. Cobo Guard will begin checking your key share files.
+
+2. Select the TSS Node IDs associated with the key shares you wish to restore, then tap **Restore**.
+
+    <img src="/en/images/cobo-guard/common/restore2.png" className="screenshot_modal" alt="The list of TSS Node IDs" />
+
+3. Enter the recovery passphrase you previously set when creating the backups, then tap **Confirm**.
+
+    <img src="/en/images/cobo-guard/common/restore3.png" className="screenshot_modal" alt="Screenshot of entering the passphrase" />
+
+4. Once restored, Cobo Guard will display **Key shares successfully restored**. You can go to <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="Menu icon" /> → **My Public Key** to verify your TSS Node ID is the same as the one shown in Cobo Accounts.After you complete all the items prompted in the dialog on the **Cobo Accounts** page, click **Link New Device**. Below are detailed instructions to link a new device:
 
 1. Use Cobo Guard on your new device to scan the QR code that's displayed in the dialog on the Cobo Accounts page.
 
