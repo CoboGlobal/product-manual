@@ -39,7 +39,7 @@ description: "按照最新的重置流程，在更换设备或重新安装 App �
 
 <img src="/en/images/cobo-guard/old-device-available.png" className="screenshot_modal" alt="旧设备可用情形" />
 
-<Note>对于步骤 3 恢复私钥分片，详情请参阅本文档的[**私钥分片恢复步骤**](#steps-to-restore-key-share)部分。</Note>
+<Note>对于步骤 3 恢复私钥分片，详情请参阅本文档的[**参考：私钥分片恢复步骤**](#steps-to-restore-key-share)部分。</Note>
 
 #### 情景 2：旧设备不可用 + 有有效备份
 
@@ -47,13 +47,13 @@ description: "按照最新的重置流程，在更换设备或重新安装 App �
 
 <img src="/en/images/cobo-guard/restore-backup.png" className="screenshot_modal" alt="从备份恢复" />
 
-<Note>对于步骤 3“恢复私钥分片”，请参照[**私钥分片恢复步骤**](#steps-to-restore-key-share)章节中的说明。</Note>
+<Note>对于步骤 3“恢复私钥分片”，请参照[**参考：私钥分片恢复步骤**](#steps-to-restore-key-share)章节中的说明。</Note>
 
-完成所有项目后，点击 **Link New Device**（绑定新设备）。有关绑定新设备的详细流程，请参阅[**绑定新设备步骤**](#steps-to-link-new-device)。
+完成所有项目后，点击 **Link New Device**（绑定新设备）。有关绑定新设备的详细流程，详情请参阅本文档的[**参考：绑定新设备步骤**](#steps-to-link-new-device)部分。
 
 #### 情景 3：旧设备不可用 + 无有效备份
 
-系统将提示您[联系技术支持](mailto:help@cobo.com)以获得人工协助。
+系统将提示您[联系客服](mailto:help@cobo.com)以获得人工协助。
 
 ---
 
@@ -65,33 +65,33 @@ description: "按照最新的重置流程，在更换设备或重新安装 App �
 
 2. 在新设备上[下载 Cobo Guard](/en/guard/download)。
 
-3. 在新设备上打开 Cobo Guard，选择 **Link device to your account**（绑定设备到您的账户）。有关绑定新设备的详细步骤，请参阅[**绑定新设备步骤**](#steps-to-link-new-device)。
+3. 在新设备上打开 Cobo Guard，选择 **绑定您的账户**。有关绑定新设备的详细步骤，请参阅[**参考：绑定新设备步骤**](#steps-to-link-new-device)。
 
 ---
 
-## 私钥分片恢复步骤 <a id="steps-to-restore-key-share"></a>
+## 参考：私钥分片恢复步骤 <a id="steps-to-restore-key-share"></a>
 
-<Note>仅当 UI 流程提示您恢复私钥分片时，再执行以下步骤。请勿将此部分脱离上下文阅读——请确保您已完成前序流程，并确实进入了恢复私钥分片的步骤。</Note>
+<Note>仅当 UI 流程提示您恢复私钥分片时，再执行以下步骤。请勿直接单独阅读此部分——请确保您已完成前序流程，并确实进入了恢复私钥分片的步骤。</Note>
 
 1. 在新设备上打开 Cobo Guard，选择 **Restore existing key shares first**（先恢复现有私钥分片）。Cobo Guard 将开始检查您的私钥分片文件。
 
-2. 选择需要恢复的私钥分片对应的 TSS Node ID，然后点击 **Restore**（恢复）。
+2. 选择需要恢复的私钥分片对应的 TSS Node ID，然后点击 **恢复**。
 
     <img src="/en/images/cobo-guard/common/restore2.png" className="screenshot_modal" alt="TSS Node ID 列表" />
 
-3. 输入备份私钥分片时设置的恢复口令，并点击 **Confirm**（确认）。
+3. 输入备份私钥分片时设置的恢复口令，并点击 **确定**。
 
     <img src="/en/images/cobo-guard/common/restore3.png" className="screenshot_modal" alt="输入恢复口令界面" />
 
-4. 恢复完成后，Cobo Guard 将显示 **Key shares successfully restored**（私钥分片恢复成功）。
+4. 恢复完成后，Cobo Guard 将显示 **私钥分片恢复成功**。
 
-您可以通过 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **My Public Key** 检查 TSS Node ID 是否与 Cobo Accounts 显示的一致。
+您可以通过 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **我的公钥** 检查 TSS Node ID 是否与 Cobo Accounts 显示的一致。
 
 ---
 
-## 绑定新设备步骤 <a id="steps-to-link-new-device"></a>
+## 参考：绑定新设备步骤 <a id="steps-to-link-new-device"></a>
 
-<Note>仅当 UI 流程提示您绑定新设备时，再执行以下步骤。请勿将此部分脱离上下文阅读——请确保您已完成前序流程，并确实进入了绑定设备的步骤。</Note>
+<Note>仅当 UI 流程提示您绑定新设备时，再执行以下步骤。请勿直接单独阅读此部分——请确保您已完成前序流程，并确实进入了绑定新设备的步骤。</Note>
 
 1. 使用新设备上的 Cobo Guard 扫描 Cobo Accounts 页面弹窗中的二维码。
 
