@@ -97,7 +97,13 @@ When sweeping occurs, two transaction records are generated:
 If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
 
 ### Enable deposit address transactions  
-By default, deposit addresses cannot initiate withdrawals, contract calls, staking, OTC trades, or smart contract delegations. To manually enable these capabilities for deposit addresses, follow these steps in [Enable deposit address transactions](/en/portal/deposit-address-transaction).
+By default, deposit addresses cannot initiate withdrawals, contract calls, staking, OTC trades, or smart contract delegations. To manually enable these capabilities for deposit addresses, follow these steps in [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+
+### Configure network fee limits for sweep transactions  
+You can configure network fee limits for BTC and ETH sweep transactions to avoid excessive fees during periods of network congestion. For detailed configuration steps, see [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+
+### Enable automatic RBF for sweep transactions  
+If a sweep transaction is not confirmed within a specified time, you can enable automatic RBF to speed up confirmation. For detailed configuration steps, see [Auto token sweeping settings](/en/portal/auto-sweep-settings).
 
 ### Filter wallets by feature status  
 You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.
