@@ -29,17 +29,17 @@ If your Cobo Guard serves as a key share holder and participates in MPC Wallet k
 
 2. On the web, go to the **MFA Management** section of [Cobo Accounts](https://accounts.cobo.com/) and click **Complete** on the Cobo Guard reset notice.
 
-<img src="/en/images/cobo-guard/notice.png" className="screenshot_modal" alt="reset notice" />
+    <img src="/en/images/cobo-guard/notice.png" className="screenshot_modal" alt="reset notice" />
 
 3. You will be guided through a series of selections about your device and key share backup (starting with the first screen shown below), and the system will then present the actions that apply to your situation.
 
-<img src="/en/images/cobo-guard/options.png" className="screenshot_modal" alt="options" />
+    <img src="/en/images/cobo-guard/options.png" className="screenshot_modal" alt="options" />
 
 Follow the instructions for the scenario that applies to your situation.
 
-- [Scenario 1: Old device available](#scenario1)
-- [Scenario 2: Old device unavailable + backup available](#scenario2)
-- [Scenario 3: Old device unavailable + no valid backup](#scenario3)
+- [**Scenario 1: Old device available**](#scenario1): Cobo Guard is still accessible on your old device.  
+- [**Scenario 2: Old device unavailable + backup available**](#scenario2): Your old device is lost or Cobo Guard has been uninstalled, but the key share was previously backed up and you remember the iCloud account and recovery passphrase.  
+- [**Scenario 3: Old device unavailable + no valid backup**](#scenario3): Your old device is lost or Cobo Guard has been uninstalled, and you either never created a backup or no longer remember the iCloud account or recovery passphrase for the backup.
 
 #### Scenario 1: Old device available <a id="scenario1"></a>
 
@@ -51,15 +51,13 @@ For step 1 (backing up your key share or checking your backup file), see [Back u
 
 For step 3 (restoring your key share), below are detailed instructions:
 
-1. Open Cobo Guard on your new device and select **Restore existing key shares first**. Cobo Guard will begin checking your key share files.
+<img src="/en/images/cobo-guard/common/restore-3-steps.png" className="screenshot_modal" alt="steps to restore" />
+
+1. Open Cobo Guard on your new device and select **I am a key share holder**. Cobo Guard will begin checking your key share files.
 
 2. Select the TSS Node IDs associated with the key shares you wish to restore, then tap **Restore**.
 
-    <img src="/en/images/cobo-guard/common/restore2.png" className="screenshot_modal" alt="The list of TSS Node IDs" />
-
 3. Enter the recovery passphrase you previously set when creating the backups, then tap **Confirm**.
-
-    <img src="/en/images/cobo-guard/common/restore3.png" className="screenshot_modal" alt="Screenshot of entering the passphrase" />
 
 4. Once restored, Cobo Guard will display **Key shares successfully restored**. You can go to <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="Menu icon" /> → **My Public Key** to verify your TSS Node ID is the same as the one shown in Cobo Accounts.
 
@@ -67,9 +65,11 @@ After you complete all the items prompted in the dialog on the **Cobo Accounts**
 
 1. Use Cobo Guard on your new device to scan the QR code that's displayed in the dialog on the Cobo Accounts page.
 
+    <img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="Link New Device" />
+
 2. With your account successfully linked, the [Cobo Accounts](https://accounts.cobo.com/) page will display a **Security Verification** dialog.
 
-<img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="security verification" />
+    <img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="security verification" />
 
 3. On your old device, open Cobo Guard and tap **Approve**. 
 
@@ -85,15 +85,13 @@ If Cobo Guard on your old device is unavailable, but a valid backup exists and y
 
 For step 3 (restoring your key share), below are detailed instructions:
 
-1. Open Cobo Guard on your new device and select **Restore existing key shares first**. Cobo Guard will begin checking your key share files.
+<img src="/en/images/cobo-guard/common/restore-3-steps.png" className="screenshot_modal" alt="steps to restore" />
+
+1. Open Cobo Guard on your new device and select **I am a key share holder**. Cobo Guard will begin checking your key share files.
 
 2. Select the TSS Node IDs associated with the key shares you wish to restore, then tap **Restore**.
 
-    <img src="/en/images/cobo-guard/common/restore2.png" className="screenshot_modal" alt="The list of TSS Node IDs" />
-
 3. Enter the recovery passphrase you previously set when creating the backups, then tap **Confirm**.
-
-    <img src="/en/images/cobo-guard/common/restore3.png" className="screenshot_modal" alt="Screenshot of entering the passphrase" />
 
 4. Once restored, Cobo Guard will display **Key shares successfully restored**. You can go to <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="Menu icon" /> → **My Public Key** to verify your TSS Node ID is the same as the one shown in Cobo Accounts.
 
@@ -101,9 +99,11 @@ After you complete all the items prompted in the dialog on the **Cobo Accounts**
 
 1. Use Cobo Guard on your new device to scan the QR code that's displayed in the dialog on the Cobo Accounts page.
 
+    <img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="Link New Device" />
+
 2. With your account successfully linked, the [Cobo Accounts](https://accounts.cobo.com/) page will display a **Security Verification** dialog.
 
-<img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="security verification" />
+    <img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="security verification" />
 
 3. Click **Cobo Guard not available?**, and use another MFA method for authentication.
 
@@ -123,15 +123,15 @@ The system will prompt you to [**contact support**](mailto:help@cobo.com) for ma
 
 1. Go to the **MFA Management** section of [Cobo Accounts](https://accounts.cobo.com/) and click **Reset** next to Cobo Guard to start the reset flow, which will guide you to the **Link New Device** dialog.
 
-<img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="Link New Device" />
+    <img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="Link New Device" />
 
 2. [Download Cobo Guard](/en/guard/download) on your new device. 
 
-3. Open Cobo Guard on your new device, select **Link device to your account**, and scan the QR code that's displayed in the dialog on the Cobo Accounts page.
+3. Open Cobo Guard on your new device, select **I don't have key shares**, and scan the QR code that's displayed in the dialog on the Cobo Accounts page.
 
 4. With your account successfully linked, the [Cobo Accounts](https://accounts.cobo.com/) page will display a **Security Verification** dialog.
 
-<img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="security verification" />
+    <img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="security verification" />
 
 5. If you can access your old device, open Cobo Guard on it and choose **Approve**. Otherwise, click **Cobo Guard not available?**, and use another MFA method for authentication.
 
