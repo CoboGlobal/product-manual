@@ -43,6 +43,7 @@
               {
                 "group": "GET STARTED",
                 "pages": [
+                  "en/portal/sign-up",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -303,8 +304,7 @@
                       "en/portal/bills-and-payments/introduction",
                       "en/portal/bills-and-payments/purchase-pricing-plan",
                       "en/portal/bills-and-payments/manage-pricing-plan",
-                      "en/portal/bills-and-payments/manage-bills",
-                      "en/portal/bills-and-payments/payment-methods"
+                      "en/portal/bills-and-payments/manage-bills"
                     ]
                   },
                   "en/portal/dashboard/introduction"
@@ -550,15 +550,9 @@
               {
                 "group": "MANAGE",
                 "pages": [
+                  "en/accounts/modify-existing-login-methods",
                   {
-                    "group": "Login methods",
-                    "pages": [
-                      "en/accounts/add-passkey-as-login-method",
-                      "en/accounts/modify-existing-login-methods"
-                    ]
-                  },
-                  {
-                    "group": "Multi-factor authentications (MFA)",
+                    "group": "Multi-factor authentication (MFA)",
                     "pages": [
                       "en/accounts/reset-google-authenticator",
                       "en/accounts/delete-security-keys",
@@ -643,6 +637,7 @@
               {
                 "group": "快速开始",
                 "pages": [
+                  "cn/portal/sign-up",
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -904,8 +899,7 @@
                       "cn/portal/bills-and-payments/introduction",
                       "cn/portal/bills-and-payments/purchase-pricing-plan",
                       "cn/portal/bills-and-payments/manage-pricing-plan",
-                      "cn/portal/bills-and-payments/manage-bills",
-                      "cn/portal/bills-and-payments/payment-methods"
+                      "cn/portal/bills-and-payments/manage-bills"
                     ]
                   },
                   "cn/portal/dashboard/introduction"
@@ -1151,13 +1145,7 @@
               {
                 "group": "管理",
                 "pages": [
-                  {
-                    "group": "登录方式",
-                    "pages": [
-                      "cn/accounts/add-passkey-as-login-method",
-                      "cn/accounts/modify-existing-login-methods"
-                    ]
-                  },
+                  "cn/accounts/modify-existing-login-methods",
                   {
                     "group": "多重身份验证 (MFA)",
                     "pages": [
