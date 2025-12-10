@@ -763,7 +763,7 @@
                       "cn/portal/transfers/from-web3-wallets",
                       "cn/portal/transfers/from-mpc-wallets",
                       "cn/portal/transfers/from-exchange-wallets",
-                      "en/portal/transfers/travel-rule",
+                      "cn/portal/transfers/travel-rule",
                       "cn/portal/transfers/fee-model",
                       {
                         "group": "地址簿",
