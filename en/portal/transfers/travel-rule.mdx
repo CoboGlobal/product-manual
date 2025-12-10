@@ -1,0 +1,84 @@
+---
+title: "Introduction to the Travel Rule"
+sidebarTitle: "Travel Rule"
+lang: "en"
+description: "Learn what the Travel Rule is, why it is required in Singapore, and how Cobo SG applies Travel Rule requirements during deposit and withdrawal processes."
+---
+
+## What is the Travel Rule?
+
+The Travel Rule, introduced by the Financial Action Task Force (FATF) in June 2019, is a global anti-money laundering requirement.
+
+Under this rule, Virtual Asset Service Providers (VASPs) — such as cryptocurrency exchanges and custodians — **must collect and transmit specific information about the sender and recipient when transferring virtual assets across institutions**.
+
+This information may include:
+
+- Names of the sender and recipient  
+- Sender’s sending address and recipient’s receiving address  
+- Additional identity or corporate information for transfers above certain thresholds  
+
+These details **are not recorded on-chain**. Instead, they are transmitted through secure, encrypted channels between regulated institutions solely for Anti-Money Laundering (AML) and Counter-Terrorist Financing (CFT) compliance.
+
+## Why is the Travel Rule required in Singapore?
+
+The Monetary Authority of Singapore (MAS) fully adopts FATF standards and requires all Digital Payment Token (DPT) service providers to comply with the Travel Rule when transferring assets between institutions.
+
+For Cobo Singapore (SG) customers, this means that **when receiving or initiating a transfer, you must provide the required Travel Rule information before the transaction can be processed and completed**.
+
+These requirements apply only to **Cobo SG customers**, in accordance with MAS regulations.
+
+## When does the Travel Rule apply?
+
+**Applicable customers:**  
+- Cobo SG customers  
+
+**Applicable scenarios:**  
+- Receiving transactions (deposits)  
+- Initiating transactions (withdrawals)  
+
+## What information is required?
+
+The Travel Rule requires you to provide information about the **transaction counterparty** (the sender or the recipient), and the specific information required depends on whether the transaction amount exceeds 1,500 Singapore dollars (SGD).
+
+- **For transfers ≤ 1,500 SGD:**
+  - Sender name  
+  - Sender sending address  
+  - Recipient name  
+  - Recipient receiving address  
+
+- **For transfers > 1,500 SGD:**
+  - Sender name  
+  - Sender sending address  
+  - Recipient name  
+  - Recipient receiving address  
+  - Sender’s date and place of birth (individuals) or company incorporation/registration date (corporate customers)
+
+All information is encrypted and transmitted only between regulated institutions.
+
+## Travel Rule workflow in Cobo Portal
+
+<Note>
+During this process, you need to first select the counterparty wallet type and then provide the required name, address, and related details.
+
+Wallet types:
+- Self-custody wallet  
+- Wallet managed by exchanges or Virtual Asset Service Providers (VASPs)
+
+If you select a self-custody wallet, MAS requires that you connect your wallet and verify ownership through a signature.
+</Note>
+
+<img src="/en/images/tr/select-wallet-type.png" className="screenshot_modal" alt="select wallet type"/>
+
+- **Receiving transactions (deposits)**  
+
+    When you receive a transaction, you will need to provide the required Travel Rule information in the corresponding transaction record within Cobo Portal. The transaction will proceed only after the information is submitted.
+
+    <img src="/en/images/tr/send.png" className="screenshot_modal" alt="send"/>
+
+- **Initiating transactions (withdrawals)**  
+
+    When initiating a transfer, you must provide the required Travel Rule information at submission. The transaction will continue processing only after the information is completed.
+
+    <img src="/en/images/tr/send.png" className="screenshot_modal" alt="send"/>
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
