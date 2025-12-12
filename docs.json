@@ -184,7 +184,7 @@
                     "pages": [
                       "en/portal/auto-sweep-overview",
                       "en/portal/enable-auto-sweep",
-                      "en/portal/deposit-address-transaction",
+                      "en/portal/auto-sweep-settings",
                       "en/portal/change-sweep-address"
                     ]
                   },
@@ -779,7 +779,7 @@
                     "pages": [
                       "cn/portal/auto-sweep-overview",
                       "cn/portal/enable-auto-sweep",
-                      "cn/portal/deposit-address-transaction",
+                      "cn/portal/auto-sweep-settings",
                       "cn/portal/change-sweep-address"
                     ]
                   },
@@ -1752,6 +1752,14 @@
     {
       "source": "/en/portal/custodial-wallets/cobo-loop",
       "destination": "/en/portal/custodial-wallets/asset-wallets/cobo-loop"
+    },
+    {
+      "source": "/en/portal/deposit-address-transaction",
+      "destination": "/en/portal/auto-sweep-settings"
+    },
+    {
+      "source": "/cn/portal/deposit-address-transaction",
+      "destination": "/cn/portal/auto-sweep-settings"
     }
   ]
 }
