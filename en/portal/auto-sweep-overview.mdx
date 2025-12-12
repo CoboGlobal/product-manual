@@ -35,6 +35,14 @@ With just a single switch, you can quickly activate the auto token sweeping feat
 
 Once auto-sweep is enabled, the timing and frequency of sweep transactions are automatically determined and executed by Cobo based on years of operational best practices. The system initiates sweep transactions whenever the on-chain conditions are appropriate, without requiring any manual actions from you.
 
+### Automatic RBF for long-pending transactions
+
+When a sweep transaction remains unconfirmed on-chain for an extended period, you can configure the system to automatically initiate an RBF transaction to accelerate confirmation and reduce the likelihood of transactions being stuck.
+
+### Sweep fee cap control
+
+You can set a maximum fee for sweep transactions to avoid unusually high costs during periods of network congestion, making sweep expenses more controlled and predictable.
+
 ## Workflows
 
 To use auto token sweeping for MPC Wallets (Organization-Controlled Wallets) or Custodial Wallets (Web3 Wallets), you need to manually enable the feature at the wallet level. For detailed instructions, refer to [Enable auto token sweeping](/en/portal/enable-auto-sweep).
