@@ -9,10 +9,19 @@ Batch Payouts is a [Cobo Portal App](/en/apps/introduction) built by Cobo that i
 
 This app allows you to initiate batch transfer transactions to various destination addresses with a single click, effectively addressing the need for efficient, large-scale payments. It is valuable for scenarios that require sending funds to numerous recipients simultaneously, such as payroll processing. 
 
+Batch Payouts supports two batch transfer methods, and you can choose the one that best fits your needs:
+
+- Complete batch transfers through multiple individual on-chain transactions.
+- Complete multiple transfers in a single on-chain transaction through a Cobo-deployed smart contract.
+
 ## Key features
 
 ### Single-click transfers
 You can specify various recipient addresses and assign different transfer amounts to each address. This feature enables you to initiate all transactions with just one click, significantly reducing the time and effort compared to processing each transfer individually.
+
+### Support for smart contract batch transfers
+
+In addition to sending multiple transfers at once, Batch Payouts also supports completing multiple transfers in a single on-chain transaction through a Cobo-deployed smart contract. This method reduces repeated signatures and lowers on-chain fees, making it more efficient for large-scale transfers.
 
 ### Support for Address Book and CSV file import
 Easily add recipient addresses from your Address Book or by importing them from an uploaded CSV file. This flexibility streamlines the process of making batch payouts to multiple recipients.
@@ -25,5 +34,17 @@ Batch Payouts supports recipient confirmation through Cobo Guard, ensuring secur
 
 ### Batch and individual transaction management
 Batch Payouts allows you to efficiently manage transactions by enabling you to speed up, drop, resend, or cancel individual transactions or entire batches as necessary.
+
+## Supported wallet types
+
+The following wallet types can use the Batch Payouts feature:
+- [Custodial Wallets](/en/portal/custodial-wallets/introduction)
+- [MPC Wallets](/en/portal/mpc-wallets/introduction)
+
+## Supported chains and tokens
+
+Batch Payouts supports all chains and tokens that are supported by transfers on Cobo Portal, excluding tokens that require memo/tag to be entered for deposits.
+
+If you use batch transfer smart contract, please refer to [Batch transfers using smart contracts](https://www.cobo.com/developers/v2/guides/transactions/batch-transfer#supported-chains) to understand the list of supported chains and tokens.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

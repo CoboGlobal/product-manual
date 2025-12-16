@@ -13,7 +13,8 @@ This article describes how to make a batch payout in the Batch Payouts app.
 
     <img src="/en/images/portal-apps/batch-payouts/set-up.png" className="screenshot_full_screen" alt="Image showing Batch Payouts as a Cobo Portal App."/>
 
-- You have been assigned the [Admin](/en/portal/organization/roles-and-permissions) role, the [Spender](/en/portal/organization/roles-and-permissions) role, or a customized role with equivalent permissions.
+- You have been assigned the [Admin](/en/portal/organization/roles-and-permissions) role, the [Spender](/en/portal/organization/roles-and-permissions) role, or a role with equivalent permissions.
+- You can only add up to 200 recipient addresses in a single batch payout.
 
 ## Steps
 
@@ -24,7 +25,7 @@ This article describes how to make a batch payout in the Batch Payouts app.
 
 3. On the **Make a Payout** page, select the token type that you want to transfer in the **Token** section.
 4. In the **From** section, select the wallet from which the transfer will be made.
-    <Note>Currently Exchange Wallets are not supported for a batch payout.</Note>
+    <Note><ul><li>Currently Exchange Wallets are not supported for a batch payout.</li><li>If you select **Use smart contract batch transfer**, only MPC Wallets and Web3 Wallets are supported.</li></ul></Note>
 5. In the **Add the Payouts** section, you can enable the **Recipient Confirmation on Cobo Guard** option. This option ensures the transactions will be constructed only after recipients confirm on Cobo Guard. Therefore, all recipients' emails must be a Cobo Account and linked to Cobo Guard. If any recipient's email does not meet these requirements, you will not be able to submit the payout. You can use the **Send Setup Guide To These Emails** button to send instructional emails to help them complete Cobo Accounts registration and link Cobo Guard.
 6. Specify the details for each recipient as follows:
     - **Receiving address**: Enter the recipient's address manually, or import it from your Address Book or a CSV file.
@@ -36,6 +37,13 @@ This article describes how to make a batch payout in the Batch Payouts app.
     - **Cobo Account** (or **Email** if **Recipient Confirmation on Cobo Guard** is disabled):
       - If **Recipient Confirmation on Cobo Guard** is enabled, enter the recipient's Cobo Account. Once the payout is initiated, the associated Cobo Guard will receive a message that requires the recipient to approve or reject the transaction.
       - If **Recipient Confirmation on Cobo Guard** is disabled, enter the recipient's email address, which will receive a notification upon payout receipt.
+    - If you select **Use smart contract for batch payout**, you need to complete a token approval. During the approval process, you can choose either a one-time approval for the current amount or a permanent approval:
+        - One-time approval: Only allows the specified amount to be used for this batch payout.
+        - Permanent approval: Allows the batch transfer smart contract to use the token for future batch payouts without requiring additional approvals. Permanent approval helps reduce repeated approval transactions and saves on-chain gas fees.
+    - If you have previously approved the token but the current allowance is insufficient, Cobo will automatically initiate two on-chain transactions to resolve it:
+        1. Reset the allowance to 0.
+        2. Set a new allowance sufficient to cover the current batch payout.
+    - You can click the **Transaction ID** link on the page to view the approval transaction status. If any approval transaction fails, you can click **Resend** to resend it.
 7. In the **Transaction Cost** section, select a transaction fee level, or customize the transaction fee by clicking the settings icon <img src="/en/images/common/icon_advanced.svg" className="icon" alt="the settings icon" />.
 8. Verify the transaction cost and click **Submit**.
 9. In the **Security Verification** dialog, verify your identity with an MFA method such as Cobo Guard or Google Authenticator.

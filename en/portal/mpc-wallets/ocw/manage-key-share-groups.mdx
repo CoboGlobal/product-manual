@@ -1,11 +1,11 @@
 ---
-title: "Manage holder groups"
-sidebarTitle: "Manage holder groups"
+title: "Manage private keys"
+sidebarTitle: "Manage private keys"
 lang: "en"
-description: "Learn how to manage key share groups in MPC Wallets, including creating, editing, and deleting groups."
+description: "Learn how to manage private keys in MPC vaults, including creating, editing, and deleting keys."
 ---
 
-Follow the steps below to navigate to the **Holder Groups Management** page:
+Follow the steps below to navigate to the **Key Share Management** page:
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
@@ -17,33 +17,48 @@ Follow the steps below to navigate to the **Holder Groups Management** page:
 ## View root extended public keys
 Depending on the number of cryptographic algorithms supported on Cobo Portal, a set of root extended public keys associated with your vault will be displayed. Note that all public keys for MPC Wallets in this vault are derived from these root extended public keys.
 
-## Manage Holder Groups
+## Manage private keys
 
-<Note>Prerequisite: To manage key share groups, you need to have the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.</Note>
+<Note>Prerequisite: To manage keys, you need to have the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.</Note>
 
-### Manage Main Group
+### Manage Main Key
 
-Under the **Main Group** tab, you can view information such as its creation time, key share holders, their TSS Node IDs, group status, and Group IDs.
+On the **Key Share Management** page, locate the key share holder with the **Main Key** label. You can view information such as their TSS Node ID, creation time, status, and key ID.
 
-### Manage Signing Groups
-Under the **Signing Group** tab, you can view or delete existing Signing Groups, create new Signing Groups, or upgrade a Signing Group to function as the Main Group.
+<img src="/cn/images/mpc-wallet/manage-main-key.png" className="screenshot_modal"/>
+
+### Manage Signing Keys
+
+On the **Key Share Management** page, you can view or delete existing Signing Keys, create new Signing Keys, or upgrade a Signing Key to function as the Main Key.
+
+<img src="/cn/images/mpc-wallet/manage-signing-keys.png" className="screenshot_modal"/>
+
 Notes:
-- Upon deletion, the key share holders in the designated Signing Group will no longer receive any signature requests. In the event that key holders associated with the deleted Signing Group require reinstatement for receiving signature requests, they must undergo a new key generation process.
-- Upon upgrading, the designated Signing Group will assume the responsibilities of the original Main Group, such as aiding in the creation of new Signing Groups and Recovery Groups. The original Main Group will be automatically deleted.
+- Upon deletion, the key share holders in the designated Signing Key will no longer receive any signature requests. In the event that key holders associated with the deleted Signing Key require reinstatement for receiving signature requests, they must undergo a new key generation process.
+- Upon upgrading, the designated Signing Key will assume the responsibilities of the original Main Key, such as aiding in the creation of new Signing Keys and Recovery Keys. The original Main Key will be automatically deleted.
 
-### Manage Recovery Groups
-Under the **Recovery Group** tab, you can:
-- View existing Recovery Groups
-- Delete existing Recovery Groups
-    <img src="/en/images/mpc-wallet/delete-recovery-group-popup.png" className="screenshot_modal"/>
-    <Info>Upon deletion, the key share holders in the designated Recovery Group can no longer be used to recover a new Main Group. In the event that key holders associated with the deleted Recovery Group require reinstatement, they must undergo a new key generation process.</Info>
+### Manage Recovery Keys
 
-- Create new Recovery Groups
+On the **Key Share Management** page, click **Recovery Keys** to:
+- View existing Recovery Keys
+- Delete existing Recovery Keys
+    <img src="/en/images/mpc-wallet/delete-recovery-group.png" className="screenshot_modal"/>
+    <Info>Upon deletion, the key share holders in the designated Recovery Key can no longer be used to recover a new Main Key. In the event that key holders associated with the deleted Recovery Key require reinstatement, they must undergo a new key generation process.</Info>
+
+- Create new Recovery Keys
     <img src="/en/images/mpc-wallet/create-new-recovery-group.png" className="screenshot_modal"/>
 
-- Use a Recovery Group to recover a new Main Group
+- Use a Recovery Key to recover a new Main Key
     <img src="/en/images/mpc-wallet/recover-main-group.png" className="screenshot_modal"/>
     <img src="/en/images/mpc-wallet/recover-new-main-group-config.png" className="screenshot_modal"/>
-    <Info>Upon recovering, the original Main Group will be automatically deleted and replaced by the new Main Group. This new Main Group can then be used to facilitate the creation of new Signing Groups and Recovery Groups.</Info>
+    <Info>Upon recovering, the original Main Key will be automatically deleted and replaced by the new Main Key. This new Main Key can then be used to facilitate the creation of new Signing Keys and Recovery Keys.</Info>
+
+## Common management scenarios
+
+### Key share holder changes
+For replacing key share holders, see [Key share handover](/en/portal/mpc-wallets/ocw/key-share-transfer) for detailed steps.
+
+### Cobo Guard device issues
+If a holder's Cobo Guard device is lost or changed, or the Cobo Guard app is reinstalled, see [Reset Cobo Guard after device change or reinstallation](/en/guard/reset) for detailed steps.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

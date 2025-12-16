@@ -39,7 +39,7 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
 
 9. 选择此 API Key 使用的 Callback Endpoint，或注册一个新的 Callback Endpoint。所选的 Callback Endpoint 将接收由该 API Key 触发的消息。有关更多信息，请参阅[注册 Callback Endpoint](/cn/portal/developer-console/callbacks-register)。
 10. 选择 Key 类型。
-    - **长期**: 此 Key 类型需要 IP 地址白名单以增强安全性。您必须指定发送 API 请求的静态 IP 地址。如果有多个 IP 地址，请用逗号分隔。
+    - **长期**: 此 Key 类型需要 IP 地址白名单以增强安全性。您必须指定用于发送 API 请求的固定 IP 地址或 CIDR 网段。如需填写多个条目，请使用英文逗号 (,) 分隔。
     <Note>避免在 [API Playground](https://www.cobo.com/developers/v2/api-references/playground) 中使用长期 Key，因为请求是从 API Playground 发送的，而不是从您指定的 IP 地址发送的。</Note>
     - **临时**: 临时 Key 在 30 天后过期。如果您还没有准备好静态 IP 地址，可以选择此选项。
 11. 按照屏幕上的说明完成注册。

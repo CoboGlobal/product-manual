@@ -9,13 +9,15 @@ description: "Fee Station 是您在 Cobo Portal 中统一管理链上手续费�
 
 在多链环境中，每条区块链都要求使用不同的原生代币（Gas Token，如 ETH、TRX、SOL）来支付交易手续费。这使得企业和开发者不仅需要为每条链准备相应代币，还要频繁检查余额，稍有疏忽就可能导致交易失败。
 
-Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 Cobo 提供的一站式费用管理工具，相当于一个团队共享的费用账户：只需由团队中的任一成员为 Fee Station 账户充值，系统就能根据已配置的策略，为团队内所有链上交易自动代付费用。
+与此同时，服务费、托管费等平台费用，也需要单独结算，往往通过邮件、表格、人工对账完成，流程复杂、效率低。
 
-<Note>当前 Fee Station 支持为 [MCP 钱包](/cn/portal/mpc-wallets/introduction)和 [Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/introduction)在 EVM 链和 TRON 链上自动代付手续费，即将支持 Solana 链。</Note>
+Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 Cobo 提供的一站式费用管理工具，相当于一个团队共享的费用账户：只需由团队中的任一成员为 Fee Station 账户充值，系统就能根据已配置的策略为团队内所有链上交易自动代付费用，并统一结算各类平台费用。
+
+<Note>目前，Fee Station 支持为 MPC 钱包和 Web3 钱包在 EVM 兼容链、TRON 和 Solana 上发起的交易自动代付链上手续费。</Note>
 
 ## 谁适合使用 Fee Station
 
-Fee Station 适用于所有希望简化链上费用管理的 Web3 团队，特别是：
+Fee Station 适用于所有希望简化链上费用管理的团队，特别是：
 
 - 交易所或钱包服务商：集中管理和代付终端用户的链上交易 Gas，减少运维工作
 - 支付服务提供商：通过一价全包或统一结算模式屏蔽链上细节，优化用户体验
@@ -25,7 +27,17 @@ Fee Station 适用于所有希望简化链上费用管理的 Web3 团队，特�
 
 ### 自动代付 Gas
 
-支持为 MCP 和 Web3 钱包发起的交易自动支付链上手续费，可配置“仅在交易地址余额不足时代付”或“始终代付”等策略，减少因 Gas 不足导致的交易失败。设置完成后，系统将自动识别是否需要代付，整个过程无需人工干预。支持代付手续费的链请参考[支持的链](#支持的链)。
+支持为 MPC 钱包和 Web3 钱包发起的交易自动支付链上手续费，可配置“仅在交易地址余额不足时代付”或“始终代付”等策略，减少因 Gas 不足导致的交易失败。设置完成后，系统将自动识别是否需要代付，整个过程无需人工干预。支持代付手续费的链请参考[支持的链](#支持的链)。
+
+### 统一结算各类费用
+
+除了支付链上交易手续费，Fee Station 的余额还可用于结算 Cobo Portal 中产生的所有平台费用，例如服务费、托管费等。你无需为每一类费用分别管理账户或准备资金，只需维护 Fee Station 中的单一余额，就能实现统一扣费、清晰记录，极大简化财务管理流程。
+
+<Tip>
+Fee Station 支持的费用类型：
+- [全托管钱包（资产钱包）](/cn/portal/custodial-wallets/asset-wallets/introduction)：托管费
+- [MPC 钱包](/cn/portal/mpc-wallets/ocw/introduction) / [全托管钱包（Web3 钱包）](/cn/portal/custodial-wallets/web3-wallets/introduction)：链上手续费、服务费、托管费
+</Tip>
 
 ### 灵活支持多种充值方式
 
@@ -33,11 +45,7 @@ Fee Station 适用于所有希望简化链上费用管理的 Web3 团队，特�
 
 ### TRON 手续费优化与能量租赁
 
-Fee Station 在 TRON 链上会自动使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。整个过程由 Fee Station 自动完成，用户无需手动管理能量，即可享受手续费优化效果。开启 Fee Station 后，TRON 链交易手续费最高可节省约 80%。大额交易可享更多优惠，可联系销售了解详情。
-
-### 统一结算各类费用
-
-除了支付链上交易手续费，Fee Station 的余额还可用于结算 Cobo Portal 中产生的所有平台费用，例如服务费、固定账单费或一价全包的手续费等。你无需为每一类费用分别管理账户或准备资金，只需维护 Fee Station 中的单一余额，就能实现统一扣费、清晰记录，极大简化财务管理流程。
+Fee Station 在 TRON 链上会自动使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。整个过程由 Fee Station 自动完成，用户无需手动管理能量，即可享受手续费优化效果。开启 Fee Station 后，TRON 链交易手续费最高可节省约 80%。大量交易笔数可享阶梯优惠，可联系销售团队了解详情。
 
 ### 提供 API 与 Webhook 支持
 
@@ -53,7 +61,7 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | ------------ | -------------------------------- | ---------------------------------------------------------- |
 | Gas 准备     | 每条链都需要手动准备 Gas Token   | 可充值 Gas Token 或美元稳定币，统一由 Fee Station 自动代付 |
 | 代付策略     | 只能人工操作                     | 可配置交易地址 Gas Token 不足时代付或始终代付                |
-| 费用结算     | 多链多币种分散记录，难以统一核算 | 使用单一账户结算各类费用，账务更直观                       |
+| 费用结算     | 多链多币种分散记录，难以统一核算 | 使用同一币种与单一账户结算各类费用，账务更直观                       |
 | 失败交易     | Gas 不足导致交易失败风险高       | 自动检测并补足 Gas，显著降低失败率                         |
 | 维护成本     | 人工操作频繁、耗时               | 一次配置即可自动运行，减少维护工作                         |
 | 数据追踪     | 缺乏统一的费用记录               | 可在 Fee Station 导出完整充值与支出记录                    |
@@ -64,7 +72,9 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 
 | 链                       | 支持美元稳定币代付手续费 | 支持 Gas Token 代付手续费 |
 | ------------------------ | --------- | --------- |
+| TRON                     | ✅        | ✅        |
 | Ethereum                 | ✅        | ✅        |
+| Solana                   | ✅        | ✅        |
 | BNB Smart Chain (BSC)     | ✅        | ✅        |
 | Polygon                  | ✅        | ✅        |
 | Base                     | ✅        | ✅        |
@@ -72,7 +82,8 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | Mantle                   | ✅        | ✅        |
 | Avalanche C-Chain        | ✅        | ✅        |
 | Optimism                 | ✅        | ✅        |
-| Tron                     | ✅        | ✅        |
+| Scroll                   | ✅        | ✅        |
+| ZKsync Era               | ✅        | ✅        |
 | Chiliz                   | -         | ✅        |
 | Chiliz Chain 2.0                 | -         | ✅        |
 | Cronos                   | -         | ✅        |
@@ -96,7 +107,7 @@ Fee Station 支持以下两类代币充值，用于支付链上手续费及结�
 
 | 链        | 可充值的美元稳定币               |
 | --------- | ------------------------------ |
-| Tron        | USDT                         |
+| TRON        | USDT                         |
 | Ethereum    | USDC, USDT                   |
 | Solana      | USDT, USDC                   |
 | Polygon     | USDT, USDC, USDC.e (bridged USDC)            |
@@ -111,17 +122,13 @@ Fee Station 支持以下两类代币充值，用于支付链上手续费及结�
 
 | 链                       | Gas Token |
 | ------------------------ | --------- |
-| Ethereum                 | ETH       |
+| Tron                     | TRX       |
+| Ethereum, Base, Arbitrum, Scroll, Optimism, ZKsync Era | ETH       |
 | BNB Smart Chain (BSC)     | BNB       |
 | Polygon                  | MATIC     |
-| Base                     | ETH       |
-| Arbitrum                 | ETH       |
 | Mantle                   | MNT       |
 | Avalanche C-Chain        | AVAX      |
-| Optimism                 | ETH       |
-| Tron                     | TRX       |
-| Chiliz                   | CHZ       |
-| Chiliz Chain 2.0                 | CHZ       |
+| Chiliz, Chiliz Chain 2.0                   | CHZ       |
 | Cronos                   | CRO       |
 | Meter                    | MTR       |
 | EthereumPoW              | ETHW      |

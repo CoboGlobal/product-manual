@@ -29,7 +29,7 @@ Screening 与合规解决方案的领先提供商集成，利用先进的风险�
 - [Elliptic](https://www.elliptic.co/)：使用前需要先进行 API 密钥配置，获取 API 密钥请联系 [Cobo 客服](mailto:help@cobo.com)。
 
 Screening 分析交易后，会提供智能风险评估：
-   - 使用 CipherOwl：交易根据 CipherOwl 的风险评分系统自动分为三个风险级别（低、中、高）。有关详细信息，请参阅 [CipherOwl 的地址风险评分文档](https://s.cipherowl.ai/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)。
+   - 使用 CipherOwl：交易根据 CipherOwl 的风险评分系统自动分为三个风险级别（低、中、高）。有关详细信息，请参阅 [CipherOwl 的地址风险评分文档](https://cipherowl.notion.site/Address-Risk-Score-1a0d90dd030f80b5904cd4aa76e15cea)。
    - 使用 Elliptic：风险以 0.0 到 10.0 的数值评分呈现（以 0.1 为增量），评分越高表示风险级别越高。有关详细信息，请参阅 [Elliptic 的风险评分文档](https://help.elliptic.co/en/articles/2641454-interpreting-risk-scores)。
 
    您可以根据交易的风险级别或评分来决定如何管理交易。
@@ -37,7 +37,7 @@ Screening 分析交易后，会提供智能风险评估：
 <Info>
 当您[选定的扫描钱包](/cn/apps/screening/settings)中的交易被扫描时，Cobo 会将以下交易详情传输给您的 AML 服务商进行风险评估：
 - CipherOwl：资产的链、发送地址（对于充币）、接收地址（对于提币）
-- Elliptic：资产的链、接收地址（对于提币）、链上交易哈希（对于充币）
+- Elliptic：资产的链、链上交易哈希（对于充币）、接收地址（对于提币）
 </Info>
 
 ### 自动防御和风险管理
@@ -58,6 +58,15 @@ Screening 分析交易后，会根据您配置的风险处置规则自动处理�
     - 对于转入交易：资金将被冻结
     - 对于转出交易：交易将被拦截
     - 始终发送风险交易通知
+  - **人工审核**：将交易交由人工判定后决定批准或拒绝
+    - 适用于合规资源充足，或需更细致风险分级的客户，可以二次审核风险不明确的交易
+    - 可通过 WaaS API 或 Screening App 提交
+
+### 灵活的 KYT 集成方式
+
+如果您的组织已经在使用自有的 KYT 供应商，可以选择不依赖 Screening App 集成的服务商，而是自行执行 KYT 检查，并通过 API 上传结果。
+
+这种方式让您能够沿用现有的 KYT 流程，同时在 Cobo 平台上集中管理合规决策、审计记录与交易控制，实现内部风控判断与交易审批策略的无缝衔接。
 
 ### 统一合规仪表板
 
@@ -68,5 +77,11 @@ Screening 分析交易后，会根据您配置的风险处置规则自动处理�
 - 完整的审计跟踪和操作历史记录
 
 集中式的时间线界面让您能够在同一页面轻松查看所有合规活动及其历史记录。
+
+## 支持的钱包类型
+
+Screening 支持以下类型的钱包：
+- [MPC 钱包](/cn/portal/mpc-wallets/introduction)
+- [Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)
 
 <Tip>欢迎[分享您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)以改进我们的文档！</Tip>

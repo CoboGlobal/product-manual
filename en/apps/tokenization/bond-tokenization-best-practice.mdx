@@ -1,97 +1,189 @@
 ---
-title: "Best practices for bond tokenization"
-sidebarTitle: "Best practices for bond tokenization"
+title: "Best practices for fund tokenization"
+sidebarTitle: "Best practices for fund tokenization"
 lang: "en"
-description: "Learn best practices for implementing bond tokenization with Cobo's Tokenization app, from setup to investor redemption."
+description: "Learn best practices for implementing fund tokenization with Cobo's Tokenization app, covering the entire process from fund setup to investor redemption."
 ---
 
-## Understanding bond tokenization
+## Understanding fund tokenization
 
-Bond tokenization is the process of converting traditional bonds or fund interests into digital tokens on a blockchain. This enables fractional ownership, increased liquidity, reduced settlement times, and enhanced transparency while maintaining regulatory compliance. 
+Fund tokenization is the process of converting traditional fund units or bond interests into digital tokens on a blockchain. This transformation enables fractional ownership, increases liquidity, significantly reduces settlement times, and enhances transparency while ensuring regulatory compliance.  
 
-For fund managers, tokenization creates new distribution channels and operational efficiencies while potentially broadening the investor base.
+For fund managers, tokenization means broader distribution channels, more efficient operations, and the potential to attract a more diverse investor base.
 
-## Overview of Cobo's solution for bond tokenization
+## Overview of Cobo’s solution for fund tokenization
 
-Cobo provides an integrated infrastructure stack to help fund managers issue and manage tokenized representations of fund interests. Our comprehensive solution bridges traditional finance with blockchain technology, enabling secure, compliant, and efficient digital asset management.
+Cobo provides an integrated infrastructure stack to help fund managers issue and manage tokenized representations of fund interests. Our comprehensive solution bridges traditional finance with blockchain technology, enabling secure, compliant, and efficient digital asset management.  
 
 **Our solution includes:**
-- **MPC wallet** infrastructure for both investors and fund managers, ensuring institutional-grade security
-- **Tokenization** app for smart contract deployment and token access and administrative controls
-- **Compliance-enforced token standards** (CoboERC20, based on the ERC-20 standard) that maintain regulatory alignment
+1. [**MPC Wallets**](/en/portal/mpc-wallets/introduction): Institutional-grade security for both investors and fund managers  
+2. [**Tokenization app**](/en/apps/tokenization/introduction): For smart contract deployment, token access control, and administrative operations  
+3. **Compliance-enforced token standards**: Support for CoboERC20 smart contracts (ETH, BSC) and Token-2022 Program (Solana), ensuring continuous regulatory alignment  
+4. **Risk control and segregation of duties**: Internal approval workflows for token management operations, ensuring every action requires Admin authorization to reduce risks of misuse or error  
 
 **Key benefits for fund managers:**
-- Enhanced security through MPC technology and compliance-enforced standards
-- Streamlined lifecycle management of tokens (issuance, minting, burning, etc.) through a single interface, ensuring reliable alignment with off-chain legal ownership
-- Reduced operational overhead through automated compliance controls enforced at the smart-contract level, such as token access controls
-- Improved investor experience with digital access and management
 
-## Step-by-step workflow for EVM-based bond tokenization
+1. **Security**  
+   - Token issuance, burning, and transfers are strictly controlled by contract-level permissions, preventing unauthorized actions.  
+   - Customizable multi-layer approval flows reduce both human and technical risks.  
 
-### 1. Set up fund and create your token
+2. **Convenience**  
+   - Unified interface simplifies token lifecycle management (issuance, minting, burning, etc.).  
+   - Deep integration with institutional-grade MPC custody enables seamless asset and token management within the same system.  
 
-As a fund manager, you'll begin by establishing the foundation for your tokenized fund:
+3. **Compliance**  
+   - Tokens are embedded with compliance controls to meet diverse regulatory requirements.  
+   - Full auditability and traceability provide transparent, verifiable compliance assurance.  
 
-1. Establish fund structure and governance according to your jurisdiction's regulatory requirements.
-2. Use Cobo's Tokenization app to **create your token**: Define its core parameters (name, symbol, etc.) and set up operational permissions.
+4. **Role-based management**  
+   - Permissions are designed around organizational roles (finance, compliance, operations, etc.), ensuring clear responsibilities and avoiding over-centralization of authority.  
 
-### 2. Onboard investors
+## Step-by-step workflow for EVM-based fund tokenization
 
-As a fund manager, you'll guide investors through a compliant onboarding process:
+**Example:** A securities firm plans to launch a tokenized version of a money market fund (MMF) for qualified investors, with tokens representing fund units. You are the fund manager.
 
-1. Conduct thorough KYC/AML verification of potential investors.
-2. Facilitate the signing of subscription agreements and token-specific disclosures.
-3. Receive subscription proceeds directly to your fund's designated account.
-4. Update your internal ledger with critical information:
-   - Map investor name to their allocated fund units
-   - Associate wallet addresses with tokens to be issued
+### 1. Fund setup and governance design
 
-### 3. Set up investor wallets
+As a fund manager, you first establish the governance framework for the tokenized fund:
 
-To receive and manage their tokens, investors can either:
+- Register the fund in the target jurisdiction and define its nature (e.g., a regulated MMF).  
+- Build governance and compliance frameworks covering KYC/AML, investment restrictions, and liquidity management.  
+- Appoint custodians and auditors to ensure on-chain tokens align with off-chain fund assets.  
+- Define operating roles, responsibilities, and SOPs, for example:  
+  - **Product & Investment team**: Fund product design, subscription planning, issuance framework  
+  - **Operations team**: Manage token liquidity and daily subscriptions/redemptions  
+  - **Compliance & Risk team**: Verify investor KYC/AML, handle regulatory filings  
+  - **Executive team**: Approve major decisions (fund transfers, contract permissions, upgrades, etc.)  
+  - **Finance team**: Reconcile on-chain/off-chain accounts, ensure total token supply matches records, perform settlements  
+  - **Tech & Security team**: Configure MPC wallet keys, set up governance and security processes, without business decision-making authority  
 
-- Provide their existing wallet addresses
-- Use a secure and easy-to-use [MPC Wallet](/en/portal/mpc-wallets/introduction) on Cobo Portal
+### 2. Token creation and initial setup  
 
-As a fund manager, you will verify all investor wallet addresses and manage their token access in the Tokenization app.
+<Note>The following content provides best practice recommendations. For more detailed steps (such as how to create an MPC Wallet or download the Tokenization app), see [Introduction to Tokenization](/en/apps/tokenization/introduction)).</Note>
 
-### 4. Mint, distribute, and manage tokens
+#### 1. Initial setup  
 
-Once the off-chain subscription is finalized, you will use the Tokenization app to perform the on-chain issuance and manage the token's lifecycle:
+Before creating tokens, complete the [basic setup of MPC Vaults and wallet addresses](/en/portal/quick-start-guide-mpc) to ensure security and compliance.  
 
-- **Mint and distribute tokens**: You have the flexibility to mint tokens immediately or on-demand as investors subscribe. This involves minting the exact number of tokens corresponding to the investor's subscription and distributing them directly to their verified wallet address. Each token serves as a digital representation of the investor's beneficial interest in the fund.
-- **Manage token lifecycle**: Manage all aspects of your token post-launch, including burning tokens and pausing the contract.
+- **Deployment Vault**  
+   - Managed by the tech & security team with MPC nodes and high-security/cold storage.  
+   - Used only for high-risk, low-frequency operations (deployment, pausing, upgrading, modifying core contract permissions). Typically initiated by the security team, approved by executives, and signed by nodes.  
 
-### 5. Manage ongoing token operations
+- **Operations Vault**  
+   - Managed by the security team, ensuring daily signatures are executed securely under MPC architecture.  
+   - Used for day-to-day token operations (minting, burning, maintaining allow/block lists), typically initiated by the operations team, approved by risk/compliance and executives, then signed by nodes.  
 
-As a fund manager, you will provide ongoing management of the tokenized fund:
+#### 2. Create tokens with Cobo’s Tokenization app  
+1. Define core token parameters (name, symbol, etc.) and set operational permissions.  
+2. Initiate token creation using an address under the Deployment Vault and complete contract deployment.  
+3. After deployment, review and configure steps 3, 4, and 5 to ensure security and compliance requirements are met.  
 
-1. Enable investors to:
-   - View token balances through Cobo's dashboard or integrated interfaces
-   - Monitor Net Asset Value (NAV) updates through standard reporting channels
-   - Submit redemption or transfer requests according to fund terms
-2. Maintain token access controls:
-   - Restrict token access to eligible investors
-   - Maintain the blocklist to prevent unauthorized transactions
-3. Update operational permissions such as minting, burning, and pausing for team members
-4. Ensure continuous alignment between off-chain ledger records and on-chain token balances
+#### 3. Manage token contract permissions  
 
-### 6. Process investor redemptions
+You can configure contract-level signing addresses, granting them specific operational permissions on the contract level.
 
-When investors wish to exit, as a fund manager, you will:
+- **Principles:**
+   - **Segregation of duties**: Spread signing authority across different Vaults according to risk level to avoid single points of failure.  
+   - **High-security Vault setup**: For high-risk operations, at least one offline or cold-backup node should be included to mitigate online compromise risks.
 
-1. Receive and review redemption requests through your established channels
-2. Approve eligible redemptions based on fund terms, liquidity, and lock-up periods
-3. Instruct investors to transfer tokens back to your designated redemption wallet
-4. Verify token receipt and confirm transaction completion
-5. Burn the returned tokens through Cobo's platform to maintain accurate token supply
-6. Update your internal ledger to reflect the cancellation of the investor's fund units
-7. Transfer the redemption payment directly to the investor's bank account
+- **Best practices:**  
+   - **Admin**: Contract deployment or modification of core permissions; high risk, low frequency; managed by Deployment Vault.
+   - **Manager**: Compliance-related operations such as allow/block list updates or forced burns; managed by Operations Vault.  
+   - **Minter**: Token minting; daily operations; managed by Operations Vault.
+   - **Burner**: Token burning; daily operations; managed by Operations Vault.  
+   - **Pauser, Upgrader, Salvager**: Low-frequency operations (pause, upgrade, asset recovery); managed by Deployment Vault.
+
+#### 4. Enforce token access restrictions  
+
+Enforce contract-level controls on token ownership and transfers, ensuring only eligible wallets may hold and transfer tokens. 
+
+**Best practices:**  
+For regulated MMFs, tokens must be restricted to qualified investors, with transferability limited to addresses on an allowlist.  
+
+#### 5. App approval workflows  
+ 
+Internal approval workflows for token management operations, ensuring every action is authorized to prevent errors or misuse.  
+
+- **Principles:**  
+   Different approval thresholds by risk level:  
+   - High-risk operations: require majority Admin approval.
+   - Routine operations: require approval from at least two Admins. 
+
+- **Best practices:**  
+   - **High-risk permissions**: Require approval from a majority of executives and security team members.
+   - **Minting/Burning (routine)**: Approved by one or more operations team members.
+   - **Transfer restrictions & allow/block list updates (medium risk)**: Approved by a majority of compliance/risk team members.
+   - **Pausing/Resuming contracts & advanced operations (high risk)**: Approved by a majority of executives and security team members.
+
+### 3. Onboard investors
+
+As a fund manager, you will guide investors through a compliant onboarding process:
+
+1. Conduct complete KYC/AML verification.  
+2. Facilitate the signing of subscription agreements and token-related disclosures.  
+3. Receive subscription funds into the designated fund account.  
+4. Update your internal ledger with key information:  
+   - Record investor names and allocated units  
+   - Link wallet addresses with tokens to be issued  
+
+### 4. Set up investor wallets
+
+Investors can receive and manage tokens in two ways:  
+- Provide their existing wallet address  
+- Have the fund manager generate and assign an MPC wallet via Cobo for secure custody (with risk-control rules for transfers)  
+
+As a fund manager, you must verify investor wallets and add them to the allowlist in the Tokenization app.  
+
+### 5. Mint, distribute, and manage tokens
+
+Once off-chain subscriptions are funded and compliance confirmed, use the Tokenization app to mint and distribute tokens.  
+
+- **Centralized minting & distribution**  
+   - Use an MPC “Issuance Vault” as a unified token repository (with risk-control rules).  
+   - Mint tokens into the Issuance Vault, then distribute to investor wallets via operations or finance teams for internal checks and control.  
+
+- **Direct minting & distribution**  
+   - Mint tokens directly into verified investor wallets to reduce transfers and improve efficiency.  
+
+You must mint the exact number of tokens corresponding to investor subscriptions, with each token representing the investor’s beneficial interest in the fund.  
+
+### 6. Ongoing token management
+
+As a fund manager, you will continuously manage the tokenized fund:  
+
+1. Enable investors to:  
+   - View token balances via Cobo’s dashboard or integrated interfaces  
+   - Monitor NAV updates via reporting channels  
+   - Submit redemption or transfer requests in line with fund terms  
+
+2. Maintain transfer controls:  
+   - Restrict transfers strictly to KYC/AML-qualified investors  
+   - Continuously update allow/block lists to prevent unauthorized wallets  
+
+3. Permissions & approval workflows:  
+   - Regularly review and adjust contract permissions and approval thresholds (per step 2)  
+   - Dynamically optimize approval rules to balance compliance requirements and operational efficiency  
+
+4. Ledger consistency:  
+   - Ensure off-chain unit records match on-chain balances in real time  
+   - Establish automated reconciliation and periodic audits  
+
+### 7. Process investor redemptions
+
+When investors request redemption, as a fund manager, you will:  
+
+1. Receive and review redemption requests through established channels  
+2. Approve eligible redemptions based on fund terms, liquidity, and lock-ups  
+3. Instruct investors to transfer tokens back to your designated redemption wallet (optionally an MPC “Burn Vault” with risk-control rules for added security and traceability)  
+4. Verify receipt of tokens and confirm transaction completion  
+5. Burn returned tokens through Cobo’s platform to ensure supply accuracy  
+6. Update your internal ledger to reflect changes in fund units  
+7. Transfer redemption proceeds directly to investor bank accounts  
 
 ## Conclusion
 
-Cobo's infrastructure and Tokenization app provide fund managers with a comprehensive solution for issuing and managing tokenized fund interests. 
+Cobo’s infrastructure and Tokenization app provide fund managers with a comprehensive solution for issuing and managing tokenized fund interests.  
 
-By following these best practices, you can leverage blockchain technology to enhance operational efficiency, improve investor experience, and maintain regulatory compliance throughout the fund lifecycle.
+By following these best practices, you can leverage blockchain technology to enhance operational efficiency, improve investor experience, and maintain compliance across the fund lifecycle.  
 
-<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to help improve our documentation!</Tip>

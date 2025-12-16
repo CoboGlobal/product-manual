@@ -5,13 +5,32 @@ lang: "zh-hans"
 description: "了解 Cobo Accounts 常见问题及解决方案，包括密码重置和设备兼容性。"
 ---
 
+## Cobo Accounts 与 Cobo Portal 账户的区别
+
+**Cobo Accounts** 和 **Cobo Portal** 是两个不同的账户体系，但相互关联：  
+
+- [**Cobo Accounts**](https://accounts.cobo.com/)：这是用户在 Cobo 的统一身份账户，主要用于认证和安全管理（如密码、MFA 设置等）。  
+- **Cobo Portal**：这是 Cobo 的数字资产钱包平台，用户被邀请加入团队后，创建 Cobo Portal 团队成员账户的同时，实际也会创建 Cobo Accounts。
+
+## 重新邀请被删除的 Cobo Portal 成员
+
+按上述，Cobo Accounts 与 Cobo Portal 是两个不同的账户体系，但相互关联。
+
+用户第一次接受 Cobo Portal 团队成员邀请时，实际在 Cobo Accounts 注册了账号，并在此过程中绑定了 MFA。  
+
+如果该用户后来从 Cobo Portal 团队中被移除，虽然 Cobo Portal 成员资格被删除，但 Cobo Accounts 里的 MFA 信息依然保留。因此，当同一个邮箱再次作为 Cobo Portal 成员被邀请时，系统会要求输入 MFA 验证码。如果此时用户的 MFA 不可用，就无法加入团队。
+
+解决方案：
+- 使用其他邮箱账号重新接受邀请；
+- 或联系 [Cobo 客服](mailto:help@cobo.com) 重置 MFA。
+
 ## 忘记 Cobo Accounts 的登录密码
 
-如果选择了使用电子邮件和密码登录，请在 [Cobo Accounts 登录页面](https://accounts.cobo.com/) 点击 **Forgot password？**。您需要完成邮件验证后方能继续进行密码重置。
+如果选择了使用电子邮件和密码登录，请在 [Cobo Accounts 登录页面](https://accounts.cobo.com/) 点击 **Forgot your password？**。您需要完成邮件验证后方能继续进行密码重置。
 
-出于安全考虑，如果连续输入错误密码超过 10 次，您的 Cobo Accounts 将暂时被冻结。要解冻账户，请点击 **Forgot password?** 并按照提示重置密码。
+出于安全考虑，如果连续输入错误密码超过 10 次，您的 Cobo Accounts 将暂时被冻结。要解冻账户，请点击 **Forgot your password?** 并按照提示重置密码。
 
-<img src="/cn/images/cobo-accounts/5H3WFCASV4ufVONDs755JB6rE4mQtbaUW_H5e5e2a3tEcN_ek8dAQhgWa4NtVNft9ANORaE2gkZlkuRhHLqSdogzzccVLTxWs_A6_BTXVDH2NdiZgw-has1inMGJLNoXegU7_sEF6qdRMWvHWGEsCyk.png" className="screenshot_modal"/>
+<img src="/cn/images/cobo-accounts/account_login_auth0.png" className="screenshot_modal"/>
 
 ## 通行密钥无法正常使用
 
@@ -21,12 +40,12 @@ description: "了解 Cobo Accounts 常见问题及解决方案，包括密码重
 - 物理安全密钥需支持 FIDO2 协议。
 
 此外，您的设备还必须支持以下浏览器：
-- Chrome 109 或更高版本。
-- Safari 16 或更高版本。
-- Edge 109 或更高版本。
+- Chrome 109 或更高版本
+- Safari 16 或更高版本
+- Edge 109 或更高版本
 
 要使用通行密钥，您的设备还必须启用以下功能：
-- 屏幕锁定。
-- 蓝牙。
+- 屏幕锁定
+- 蓝牙
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

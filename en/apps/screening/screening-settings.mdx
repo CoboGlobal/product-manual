@@ -17,13 +17,13 @@ To access settings:
 
 ## AML Provider Settings
 
-Configure your AML/KYT providers in this section. Currently, the Screening app supports two providers: CipherOwl and Elliptic.
+Configure your AML/KYT providers in this section.
 
 <img src="/en/images/portal-apps/screening/settings-provider.png" className="screenshot_modal" alt="AML Provider Settings"/>
 
 | Setting | Description |
 | --- | --- |
-| AML Provider | Select between CipherOwl and Elliptic |
+| AML Provider | • Select between Screening-integrated providers **CipherOwl** and **Elliptic**;<br/>• You can also select **Custom Provider**, meaning you do not use the integrated providers, but instead perform your own KYT checks and submit decision results via API (When this option is selected, configuring [post-screening policies](/en/apps/screening/risk-policies) is not supported). |
 | API Key | Required for Elliptic integration |
 | Secret | Required for Elliptic integration |
 
@@ -45,6 +45,10 @@ Customize how transaction screening behaves in different scenarios.
 
     Determine whether to apply AML screening to refund and isolation transactions. If the options are not checked, refund and isolation transactions will be automatically bypassed.
 
+- **Transaction Screening Policy:**
+
+    Configure screening rules for transfers between wallets within your organization on Cobo Portal (internal transactions) and all other transfers (external transactions) based on amount thresholds. Transactions not meeting the amount thresholds will be bypassed automatically.
+    
 ## Notification Settings
 
 Manage who receives email notifications about important screening events.

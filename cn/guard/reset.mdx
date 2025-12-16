@@ -2,80 +2,144 @@
 title: "因更换设备或重装 App 重置 Cobo Guard"
 sidebarTitle: "因更换设备或重装 App 重置 Cobo Guard"
 lang: "zh-hans"
-description: "了解如何在更换设备或重装 App 时重置 Cobo Guard，确保其正常运行。"
+description: "按照最新的重置流程，在更换设备或重新安装 App 后恢复 Cobo Guard，以确保安全与正常使用。"
 ---
 
-如果您正在更换新 iOS 设备或丢失了旧设备，并希望在新设备上使用 Cobo Guard，您需要按照以下步骤重置 Cobo Guard，以确保其正常运行。
-<Note>为了避免潜在风险，我们不建议卸载和重新安装 Cobo Guard。如果您无意重装了 Cobo Guard，您也需要进行重置流程。在这种情况下，下文中的“旧设备”和“新设备”均指同一设备。</Note>
+如果您正在更换新的 iOS 设备、无法再访问旧设备，或重新安装了 Cobo Guard，则需要在新设备上重置 Cobo Guard 以确保其正常使用。
 
-<Steps>
-  <Step title="下载 Cobo Guard">
-    在新设备上下载 Cobo Guard。
-  </Step>
-  <Step title="选择是否恢复私钥分片">
-    您可以通过 iCloud 恢复私钥分片（如果您已在旧设备上通过 iCloud 进行备份并且需要恢复）。
-  </Step>
-  <Step title="关联 Cobo Accounts">
-    将新设备上的 Cobo Guard 关联至您的 Cobo Accounts。
-    您需要使用旧设备上的 Cobo Guard 或其他多重身份验证 (Multi-Factor Authentication, MFA) 方式进行身份验证。
-  </Step>
-</Steps>
+<Note>为避免潜在风险，我们不建议在设备上卸载并重新安装 Cobo Guard。如果您无意间卸载并重装了 Cobo Guard，也需要执行重置流程。在这种情况下，本文档中的“旧设备”和“新设备”均指同一台设备。</Note>
 
-## 1. 下载 Cobo Guard  
+请根据您是否创建过私钥分片，阅读适用部分：
+- [适用于已创建私钥分片的 Cobo Guard 用户](#key-share-holders)
+- [适用于尚未创建私钥分片的 Cobo Guard 用户](#non-key-share-holders)
 
-在新设备上下载 Cobo Guard，并设置一个 PIN 码。详情请参阅[下载 Cobo Guard App](/cn/guard/download)。
+## 适用于已创建私钥分片的 Cobo Guard 用户 <a id="key-share-holders"></a>
 
-## 2. 选择是否恢复私钥分片
+### 私钥分片持有者的重置指南
 
-在新设备上打开 Cobo Guard，根据需求选择**绑定您的账户**或**恢复私钥分片**。
+如果您的 Cobo Guard 作为私钥分片持有者参与 MPC 钱包密钥管理，请在执行重置前参考下方指南。
 
-<img src="/cn/images/cobo-guard/common/restore1.png" className="screenshot_modal" alt="是否恢复私钥分片选项" />
+<Info>提示：该流程图并非实际 UI 流程。实际 UI 会根据您选择的设备与备份情况，引导您执行相应步骤（详见下一部分**私钥分片持有者的重置步骤**），但可能不会覆盖某些边缘情况。此流程图提供了所有可能的私钥分片恢复路径，供您参考。</Info>
 
-### 恢复私钥分片  
+<img src="/cn/images/cobo-guard/reset&recovery.svg" className="screenshot_diagram" alt="私钥分片持有者重置指南" />
 
-<Note>恢复私钥分片的前提是您已在旧设备上通过 iCloud 备份私钥分片。请参照[备份私钥分片](/cn/guard/generate-and-back-up-key-shares#)进行操作。</Note>
-1. 选择**恢复私钥分片**。Cobo Guard 将开始检查您的私钥分片文件。
-2. 选择与您要恢复的私钥分片相关联的 TSS Node ID，并点击**恢复**。
+### 私钥分片持有者的重置步骤
 
-    <img src="/cn/images/cobo-guard/common/7.png" className="screenshot_modal" alt="TSS Node ID 列表" />
+1. 在新设备上[下载 Cobo Guard](/cn/guard/download)。
 
-3. 输入您在备份私钥分片时设置的密码口令，并点击**确定**。  
-    <Warning>如果您丢失了密码口令，将无法从 iCloud 恢复您的私钥分片，请选择**无需恢复私钥分片**。</Warning>
+2. 在网页端进入 [Cobo Accounts](https://accounts.cobo.com/)，找到 **MFA Management** 部分，点击 Cobo Guard 重置提示上的 **Complete**。
 
-    <img src="/cn/images/cobo-guard/common/8.png" className="screenshot_modal" alt="输入密码口令的界面截图" />
+  <img src="/en/images/cobo-guard/notice.png" className="screenshot_modal" alt="重置提示" />
 
-Cobo Guard 将验证并恢复您的私钥分片。私钥分片成功恢复后，将显示对话框“已成功恢复私钥分片”。点击 **OK** 退出。
+3. 系统会引导您依次进行多个选择（从下图所示的界面开始），以了解您的设备与私钥分片备份情况，并根据您的实际情况展示相应的操作步骤。
 
-您可以点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> 并点击**我的公钥**查看公钥和 TSS Node ID。在主屏幕上，您可以看到“将 Cobo Guard 关联到您的账户”的消息。
+  <img src="/en/images/cobo-guard/options.png" className="screenshot_modal" alt="选项" />
 
-### 无需恢复私钥分片
+请根据您适用的情况，查看相应的说明。
 
-如果您不需要恢复私钥分片，请选择**绑定您的账户**。  
-<Warning>如果您在这一步选择**绑定您的账户**，之后将无法恢复您的私钥分片。</Warning>
-在主屏幕上，您可以看到“将 Cobo Guard 关联到您的账户”的消息。
+- [**情况 1：旧设备可用**](#scenario1)：旧设备上的 Cobo Guard 仍可使用。
+- [**情况 2：旧设备不可用 + 有效备份可用**](#scenario2)：旧设备已丢失或 Cobo Guard 已卸载，但之前旧设备的私钥分片已备份，且记得备份存放的 iCloud 账号和恢复口令。
+- [**情况 3：旧设备不可用 + 无有效备份**](#scenario3)：旧设备已丢失或 Cobo Guard 已卸载，且没有备份，或备份过但已忘记 iCloud 账号或恢复口令。
 
-## 3. 关联 Cobo Accounts  
+#### 情况 1：旧设备可用 <a id="scenario1"></a>
 
-1. 使用其他多重身份验证方式（例如 Google Authenticator）登录 [Cobo Accounts](https://accounts.cobo.com/)。要了解更多关于 Cobo Accounts 的信息，请参阅[什么是 Cobo Accounts](/cn/accounts/introduction)。
-<Note>如果您没有设置其他 MFA 方式且无法登录 Cobo Accounts，请联系 [Cobo 技术支持团队](mailto:help@cobo.com)。</Note>
-2. 在 **Login Methods**（登录方式） 标签页或 **MFA Management**（多重身份验证管理）标签页中，点击 **Cobo Guard** 旁边的 **Reset**（重置）。
+如果旧设备上的 Cobo Guard 仍可使用，系统会提示您完成以下事项：
 
-    <img src="/en/images/cobo-guard/reset.png" className="screenshot_full_screen" alt="重置按钮" />
+<img src="/en/images/cobo-guard/old-device-available.png" className="screenshot_modal" alt="旧设备可用情形" />
 
-3. 阅读有关重置的重要信息，点击**Confirm**（确认） 以显示二维码。
+对于步骤 1（备份私钥分片或查看您的备份文件）的详细步骤，请参阅[备份私钥分片](/cn/guard/generate-and-back-up-key-shares#备份私钥分片)。
 
-  <img src="/en/images/cobo-guard/reset_note.png" className="screenshot_modal" alt="重置相关信息" />
+对于步骤 3（恢复私钥分片），以下为详细步骤：
 
-4. 在新设备上打开 Cobo Guard 并扫描该二维码。
-5. 在 Cobo Guard 中点击**绑定**。
-6. 成功关联您的账户后，Cobo Accounts 页面将显示消息 **Please open Cobo Guard on your old mobile device for authentication**（请在旧移动设备上打开 Cobo Guard 进行身份验证）。
-    - 如果您可以使用旧设备，请用它打开 Cobo Guard 并点击**批准**。  
-    - 否则，在 Cobo Accounts 页面上点击 **Cobo Guard not available?**（Cobo Guard 不可用）并使用其他 MFA 方式进行验证。  
-    <Note>如果您没有设置其他 MFA 方式，请联系 [Cobo 技术支持团队](mailto:help@cobo.com)。</Note>
-身份验证成功后，您将被重定向到 **MFA Management** 标签页。在新设备上打开 Cobo Guard，点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" />，并点击选择**我的账户**，您将看到您的 Cobo Accounts 关联的邮箱。这意味着您的 Cobo Guard 已成功关联 Cobo Accounts。
+<img src="/en/images/cobo-guard/common/restore-3-steps.png" className="screenshot_modal" alt="恢复步骤" />
 
-<Note>如您在上一步中使用其他 MFA 方式而非 Cobo Guard 进行身份验证，您的 Cobo Accounts 将被暂时冻结，需要您团队中的任意一名[管理员](/cn/portal/organization/roles-and-permissions)解除冻结。如果您是您团队中的唯一成员，整个团队将被冻结 24 小时。冻结解除后，您将可以正常登录 Cobo Portal。</Note>
+1. 打开新设备上的 Cobo Guard，选择**我有私钥分片** (I am a key share holder)。Cobo Guard 将开始检查您的私钥分片文件。
 
-至此，您已完成 Cobo Guard 的重置流程。  
+2. 选择需要恢复的私钥分片对应的 TSS Node ID（确保与 Cobo Accounts 中显示的 TSS Node ID 一致），然后点击**恢复**。
+
+3. 输入备份私钥分片时设置的恢复口令，并点击**确定**。
+
+4. 恢复完成后，Cobo Guard 将显示**私钥分片恢复成功**。您可以通过 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **我的公钥** 检查 TSS Node ID 是否与 Cobo Accounts 显示的一致。
+
+完成 **Cobo Accounts** 页面对话框提示的所有项目后，点击 **Link New Device**（绑定新设备）。以下为绑定新设备的步骤：
+
+1. 打开新设备上的 Cobo Guard，扫描 Cobo Accounts 页面弹窗中的二维码。
+
+  <img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="绑定新设备" />
+
+2. 绑定成功后，[Cobo Accounts](https://accounts.cobo.com/) 页面将显示 **Security Verification**（安全验证）对话框。
+
+  <img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="安全验证" />
+
+3. 请在旧设备上打开 Cobo Guard 并点击**批准**。  
+
+4. 验证成功后，系统会将您重定向至 **MFA Management** 页面。在您的新设备上打开 Cobo Guard，点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **我的关联账户**，您将看到与 Cobo Accounts 关联的邮箱，表示绑定成功。
+
+至此，您已完成 Cobo Guard 的重置流程。
+
+#### 情况 2：旧设备不可用 + 有效备份可用 <a id="scenario2"></a>
+
+如果旧设备上的 Cobo Guard 无法使用，但您已进行有效备份且记得备份使用的 iCloud 账号与恢复口令，系统会提示您完成以下事项：
+
+<img src="/en/images/cobo-guard/restore-backup.png" className="screenshot_modal" alt="从备份恢复" />
+
+对于步骤 3（恢复私钥分片），以下为详细步骤：
+
+<img src="/en/images/cobo-guard/common/restore-3-steps.png" className="screenshot_modal" alt="恢复步骤" />
+
+1. 打开新设备上的 Cobo Guard，选择选择**我有私钥分片** (I am a key share holder)。Cobo Guard 将开始检查您的私钥分片文件。
+
+2. 选择需要恢复的私钥分片对应的 TSS Node ID（确保与 Cobo Accounts 中显示的 TSS Node ID 一致），然后点击**恢复**。
+
+3. 输入备份私钥分片时设置的恢复口令，并点击**确定**。
+
+4. 恢复完成后，Cobo Guard 将显示**私钥分片恢复成功**。您可以通过 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **我的公钥** 检查 TSS Node ID 是否与 Cobo Accounts 显示的一致。
+
+完成 **Cobo Accounts** 页面对话框提示的所有项目后，点击 **Link New Device**（绑定新设备）。以下为绑定新设备的步骤：
+
+1. 使用新设备上的 Cobo Guard 扫描 Cobo Accounts 页面弹窗中的二维码。
+
+  <img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="绑定新设备" />
+
+2. 绑定成功后，[Cobo Accounts](https://accounts.cobo.com/) 页面将显示 **Security Verification**（安全验证）对话框。请点击 **Cobo Guard not available?**（Cobo Guard 不可用），并选择其他 MFA 方式完成身份验证。
+
+  <Note>如果您未设置其他 MFA 方式，请联系[客服](mailto:help@cobo.com)获取帮助。</Note>
+
+  <img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="安全验证" />
+
+3. 验证成功后，系统会将您重定向至 **MFA Management** 页面。在您的新设备上打开 Cobo Guard，点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **我的关联账户**，您将看到与 Cobo Accounts 关联的邮箱，表示绑定成功。
+
+  <Note>由于您使用了 Cobo Guard 以外的 MFA 方式进行验证，您的 Cobo Accounts 将被暂时冻结。需要由团队中的任意[管理员](/cn/portal/organization/roles-and-permissions)解除冻结。如果您是团队中唯一成员，则整个团队将被冻结 24 小时，之后您即可重新登录 Cobo Portal。</Note>
+
+至此，您已完成 Cobo Guard 的重置流程。
+
+#### 情况 3：旧设备不可用 + 无有效备份 <a id="scenario3"></a>
+
+系统将提示您[联系客服](mailto:help@cobo.com)以获得人工协助。
+
+## 适用于尚未创建私钥分片的 Cobo Guard 用户 <a id="non-key-share-holders"></a>
+
+1. 在网页端进入 [Cobo Accounts](https://accounts.cobo.com/)，找到 **MFA Management** 部分，点击 Cobo Guard 旁的 **Reset**（重置），系统将引导您到 **Link New Device**（绑定新设备）对话框。
+
+  <img src="/en/images/cobo-guard/link-new-device.png" className="screenshot_modal" alt="绑定新设备" />
+
+2. 在新设备上[下载 Cobo Guard](/en/guard/download)。
+
+3. 在新设备上打开 Cobo Guard，选择**我没有私钥分片** (I don't have key shares)，扫描 Cobo Accounts 页面弹窗中的二维码。
+
+4. 绑定成功后，[Cobo Accounts](https://accounts.cobo.com/) 页面将显示 **Security Verification**（安全验证）对话框。
+
+  <img src="/en/images/cobo-guard/security-verification.png" className="screenshot_modal" alt="安全验证" />
+
+5. 如果您可以使用旧设备，请在旧设备上打开 Cobo Guard 并点击**批准**。  
+如果旧设备不可用，请点击 **Cobo Guard not available?**（Cobo Guard 不可用），并选择其他 MFA 方式完成身份验证。
+
+  <Note>如果您未设置其他 MFA 方式，请联系[客服](mailto:help@cobo.com)获取帮助。</Note>
+
+6. 验证成功后，系统会将您重定向至 **MFA Management** 页面。在您的新设备上打开 Cobo Guard，点击 <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon" alt="菜单图标" /> → **我的关联账户**，您将看到与 Cobo Accounts 关联的邮箱，表示绑定成功。
+
+  <Note>如果您在上述步骤中使用了除 Cobo Guard 以外的 MFA 方式进行验证，您的 Cobo Accounts 将被暂时冻结。需要由团队中的任意[管理员](/cn/portal/organization/roles-and-permissions)解除冻结。如果您是团队中唯一成员，则整个团队将被冻结 24 小时，之后您即可重新登录 Cobo Portal。</Note>
+
+至此，您已完成 Cobo Guard 的重置流程。
 
 <Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>

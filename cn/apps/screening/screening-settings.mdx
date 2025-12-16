@@ -21,13 +21,13 @@ Screening 设置允许您自定义应用的运行方式，包括 AML 服务商�
 
 ## AML 服务商设置
 
-在此部分配置您的 AML/KYT 服务商。目前，Screening 应用支持两个服务商：CipherOwl 和 Elliptic。
+在此部分配置您的 AML/KYT 服务商。
 
 <img src="/en/images/portal-apps/screening/settings-provider.png" className="screenshot_modal" alt="AML 服务商设置"/>
 
 | 设置 | 描述 |
 | --- | --- |
-| AML 服务商 | 在 CipherOwl 和 Elliptic 之间选择 |
+| AML 服务商 | • 您可以在 Screening 集成的服务商 **CipherOwl** 和 **Elliptic** 之间选择；<br/>• 您也可以选择**自定义服务商**，即不使用 Screening 集成的服务商，自行实施 KYT 检查，并通过 API 传入决策结果（选择该设定时，不支持配置[风险处置规则](/cn/apps/screening/risk-policies)）。 |
 | API Key | 选择 Elliptic 时必填 |
 | Secret | 选择 Elliptic 时必填 |
 
@@ -48,6 +48,10 @@ Screening 设置允许您自定义应用的运行方式，包括 AML 服务商�
 - **退款和隔离扫描**：
 
     确定是否对退款和隔离应用 AML 扫描。如果未选中这些选项，退款和隔离交易将自动跳过扫描。
+
+- **交易扫描策略**：
+
+    基于金额阈值，为 Cobo Portal 上您团队的钱包之间转账（内部交易）和其他转账（外部交易）配置扫描规则。未达到金额阈值的交易将自动跳过扫描。
 
 ## 通知设置
 

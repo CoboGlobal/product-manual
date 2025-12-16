@@ -1,0 +1,127 @@
+---
+title: "Operate contracts"
+sidebarTitle: "Operate contracts"
+lang: "en"
+description: "Learn how to utilize the contract capabilities."
+---
+
+For maximum flexibility, the Tokenization app provides a visual interface for direct interaction with the token's smart contract. This allows you to call any public function on the contract, covering both common features available in the main UI and advanced operations for more complex needs.
+
+Currently supported contracts include CoboERC20 and Solana Token-2022 Program.
+
+## CoboERC20
+
+CoboERC20 is an upgradeable contract built on the [ERC20 standard](https://docs.openzeppelin.com/contracts/5.x/erc20), enhanced with access control, token access restrictions, and comprehensive lifecycle management features. The contract has undergone [third-party security auditing](https://d.cobo.com/public/documents/blocksec_CoboTokenization_v1.0-signed.pdf) to ensure its robustness.
+
+On the Tokenization app page, click **More Operations** to enter the contract interface. CoboERC20's contract capabilities are presented in two tabs: **Read** for querying information and **Write** for executing transactions that change the state of the contract.
+
+### Read functions (querying data)
+
+Use Read functions to look up real-time information from the smart contract without creating an on-chain transaction. This is crucial for monitoring token status, verifying permissions, and obtaining compliance information.
+
+<img src="/en/images/portal-apps/tokenization/function-read.png" className="screenshot_modal" alt="Contract Read Functions"/>
+
+#### Roles and permissions
+**Role identifiers (constants)**
+- `DEFAULT_ADMIN_ROLE`: Default admin role identifier. Addresses with this role have the highest contract management privileges and can manage all other roles.
+- `MANAGER_ROLE`: Manager role identifier. Addresses with this role can configure token access controls, manage blocklist and allowlist, force burn tokens, update contractURI, resume contracts, etc.
+- `MINTER_ROLE`: Minter role identifier. Addresses with this role can mint new tokens.
+- `BURNER_ROLE`: Burner role identifier. Addresses with this role can burn tokens.
+- `PAUSER_ROLE`: Pauser role identifier. Addresses with this role can pause all token activities.
+- `SALVAGER_ROLE`: Salvager role identifier. Addresses with this role can recover assets accidentally sent to the contract address.
+- `UPGRADER_ROLE`: Upgrader role identifier. Addresses with this role can upgrade the contract to new versions.
+
+**Permission query**
+- `getRoleAdmin(role)`: Query the admin role that manages a specific role. For example, query who can grant or revoke `MINTER_ROLE`.
+- `hasRole(role, account)`: Check if a specific address has a certain role. This is the core function for verifying operation permissions.
+
+#### Token and account details
+- `name`: Get the token's full name, e.g., "Cobo Token".
+- `symbol`: Get the token's symbol, e.g., "COBO".
+- `decimals`: Get the token's decimal places. This determines the smallest unit of the token, e.g., `18` means the token can be divided to 18 decimal places.
+- `totalSupply`: Query the total supply of tokens.
+- `balanceOf`: Query the token balance of a specific address.
+- `allowance`: Query the amount of tokens that one address (owner) has authorized another address (spender) to spend. This is part of the ERC20 `approve` and `transferFrom` mechanism.
+
+#### Token access controls
+- `accessListEnabled`: Check if token access restrictions (allowlist) functionality is enabled. Returns `true` or `false`.
+- `isAccessListed`: Check if a specific address is on the allowlist.
+- `getAccessList`: Get the complete list of allowlisted addresses.
+- `isBlocklisted`: Check if a specific address is on the blocklist.
+- `getBlocklist`: Get the complete list of blocklisted addresses.
+
+#### Contract status and metadata
+- `paused`: Check if the contract is currently paused. When paused, all token transfers, minting, and burning operations are blocked.
+- `contractUri`: Get the contract's metadata URI. This URI points to a JSON file containing detailed token information, following ERC-721 metadata standards.
+- `version`: View the current contract implementation version number.
+- `UPGRADE_INTERFACE_VERSION`: View the current contract's upgrade interface version.
+- `supportsInterface`: Check if the contract supports a specific interface standard (e.g., ERC-165).
+
+### Write functions (executing actions)
+
+Use Write functions to perform operations that modify the smart contract state. These operations require signing transactions, consuming gas fees, and broadcasting to the blockchain network. All write operations are protected by the Tokenization app's built-in approval workflow and transaction policies.
+
+<img src="/en/images/portal-apps/tokenization/function-write.png" className="screenshot_modal" alt="Contract Write Functions"/>
+
+#### Core token operations
+- `mint`: Mint new tokens and assign them to a specified address, increasing `totalSupply`. Typically used when investors subscribe or assets are issued.
+- `burn`: Destroy a specified amount of tokens, reducing `totalSupply`. Typically used when investors redeem or assets are retired.
+- `burnFrom`: Destroy tokens that an address has authorized to you. Requires prior authorization through the `approve` function.
+- `transfer`: Send tokens from your address to another address.
+- `transferFrom`: Send tokens from one address to another. This operation requires you to have prior `approve` authorization from the payer's address.
+- `approve`: Authorize another address (spender) to withdraw no more than a specified amount of tokens from your address. This is the foundation for creating automatic payments or decentralized trading.
+
+#### Permission management
+- `grantRole`: Grant a role (such as `MINTER_ROLE`) to an address. Only addresses with admin privileges for that role can execute this operation.
+- `revokeRole`: Revoke a role from an address.
+- `renounceRole`: Renounce a certain role that your own address holds. This is a security operation; once renounced, it cannot be recovered unless an admin re-grants it.
+
+#### Token access controls
+- `toggleAccesslist`: Enable or disable token access restrictions (allowlist) functionality. This is a key compliance control switch.
+- `accessListAdd`: Add one or more addresses to the allowlist. Only allowlisted addresses can receive or send tokens (if `toggleAccesslist` is enabled).
+- `accessListRemove`: Remove one or more addresses from the allowlist.
+- `blockListAdd`: Add one or more addresses to the blocklist. Blocklisted addresses cannot perform any token interactions.
+- `blockListRemove`: Remove one or more addresses from the blocklist.
+
+#### Contract management and maintenance
+- `pause`: Pause all token activities (transfers, minting, burning). Used for emergency situations, such as discovering security vulnerabilities or needing critical maintenance.
+- `unpause`: Resume a paused contract, returning token activities to normal.
+- `upgradeToAndCall`: Upgrade the contract to a new implementation address and optionally call a function for initialization. This is the core for seamless contract upgrades and feature iterations.
+- `contractUriUpdate`: Update the contract's metadata URI.
+- `salvageNative`: Recover native tokens (such as ETH) accidentally sent to the contract address.
+- `salvageERC20`: Recover other ERC-20 tokens accidentally sent to the contract address.
+
+## Solana Token-2022 Program
+
+[Solana Token-2022 Program](https://www.solana-program.com/docs/token-2022) is an enhanced token standard in the Solana ecosystem that provides more advanced features and flexible permission control mechanisms.
+
+### Roles and permissions
+
+Permissions can only be assigned when creating tokens. After token creation, permissions cannot be reassigned or deleted (only permission holders can transfer their permissions to other addresses); each permission corresponds to only one wallet address.
+- **Mint Authority**: Authorizes a specified address to mint new tokens, thereby increasing the total supply of tokens.
+- **Freeze Authority**: Authorizes a specified address to freeze or unfreeze any account holding the token. Frozen accounts will be unable to perform transfers and other operations, which is crucial for enforcing compliance or security measures.
+- **Pause Authority**: Authorizes a specified address to pause or unpause all token activities including transfers, burns, and mints for emergency situations,.
+- **Update Authority**: Authorizes a specified address to modify the token's metadata (such as name, symbol, etc.). This allows token information to remain updatable after issuance.
+- **Permanent Delegate**: Authorizes an address to perform privileged operations on tokens under any circumstances, such as forced transfers and burns, and this permission cannot be modified once set. This is a powerful feature designed to meet advanced compliance and regulatory requirements.
+
+    - **Force Burn via Permanent Delegate**: The permanent delegate can forcibly burn tokens from any account without the holder's consent. This is particularly useful in legal compliance or emergency situations.
+
+    - **Force Transfer via Permanent Delegate**: The permanent delegate can forcibly transfer tokens from any account to a designated address, bypassing normal authorization mechanisms. Used for asset freezing, court order execution, and similar scenarios.
+
+    <Note>On the Tokenization App page, click **More Actions** under a Solana token to enter the contract interface, where you can find the **Permanent Delegate** functions for force burn and force transfer, as well as the update metadata function described below.</Note>
+    
+    <img src="/en/images/portal-apps/tokenization/functions-solana.png" className="screenshot_modal" alt="Solana Functions"/>
+
+### Metadata Management
+
+**Update Metadata URI**: Update the token's metadata information, including name, symbol, description, icon, etc. Metadata is stored in JSON format and supports dynamic token information updates.
+
+### Default Account State
+
+This feature corresponds to the **address restrictions** functionality in Tokenization, providing powerful compliance control capabilities:
+
+- **Default Account Freezing**: When address restrictions are enabled, newly created token accounts are frozen by default, while existing accounts are not affected
+- **Authorized Address Unfreezing**: Use the **Authorize Address** feature to unfreeze token accounts for specific addresses, allowing them to perform token operations
+- **Blocklist Management**: In the blocklist, unblocking accounts unfreezes the accounts
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

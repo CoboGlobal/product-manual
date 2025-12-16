@@ -1,56 +1,58 @@
 ---
-title: "Signing Groups"
-sidebarTitle: "Signing Groups"
+title: "Signing Keys"
+sidebarTitle: "Signing Keys"
 lang: "en"
-description: "Learn how to create Signing Groups using the Main Group for enhanced security in MPC Wallets."
+description: "Learn how to create Signing Keys using the Main Key for enhanced security in MPC Wallets."
 ---
 
-## Signing Group
-Signing Groups are created using the Main Group. You can create multiple Signing Groups for different members depending on your business needs.
+## Signing Key
+Signing Keys are created using the Main Key. You can create multiple Signing Keys for different members depending on your business needs.
 
-### Create a Signing Group
-Similar to creating the Main Group, you have the option to choose either mobile co-signer or server co-signer when creating the Signing Group. Make sure you understand the primary purposes and prerequisites of each co-signer type by referring to the table in [Create a Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group#signer-type) before proceeding further.
+### Create a Signing Key
+Similar to creating the Main Key, you have the option to choose either mobile signer or server signer when creating the Signing Key. Make sure you understand the primary purposes and prerequisites of each signer type by referring to the table in [Create a Main Key](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-key) before proceeding further.
 
-After you've chosen a co-signer type and set up the prerequisites, follow the instructions below to create a Signing Group. **Note:** Only the users who have been assigned [the Operator user role in the organization](/en/portal/organization/roles-and-permissions) can create a Signing Group.
+After you've chosen a signer type and set up the prerequisites, follow the instructions below to create a Signing Key. 
+
+<Note>Only the users who have been assigned the Operator, Manager, Admin [user roles](/en/portal/organization/roles-and-permissions) in the organization can create a Signing Key.</Note>
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
 3. Select your vault and then click <img src="/en/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
-4. In the **Key Group Management** page, click **Signing Groups** > **Create Signing Group**.
+4. In the **Key Group Management** page, click **Create Signing Key**.
 
 <img src="/en/images/mpc-wallet/create-signing-group.png" className="screenshot_full_screen"/>
 
-5. The Signing Group creation process is the same as the Main Group creation process. See [Create Main Group](/en/portal/mpc-wallets/ocw/holder-group-main-group) for detailed instructions.
+5. The Signing Key creation process is the same as the Main Key creation process. See [Create Main Key](/en/portal/mpc-wallets/ocw/holder-group-main-group) for detailed instructions.
 
-### Manage Signing Group
-#### Convert Signing Group into Main Group
-In certain situations, you may want to convert a Signing Group into the Main Group. For example, if the current owner of the Main Group is leaving the organization and you need to assign a new person to own the Main Group, you may choose to convert a specific Signing Group into the new Main Group.
+### Manage Signing Key
+#### Upgrade Signing Key to Main Key
+In certain situations, you may want to upgrade a Signing Key to the Main Key. For example, if the current key share holder of the Main Key is leaving the organization and you need to assign a key share holder of the Main Key, you may choose to upgrade a specific Signing Key to the new Main Key.
 
-Follow the instructions below to convert a Signing Group into a Main Group.
+Follow the instructions below to upgrade a Signing Key to a Main Key.
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
 3. Select your vault and then click <img src="/en/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
-4. In the **Key Group Management** page, click **Signing Groups** and then select the Signing Group to be converted.
-5. Click **Upgrade to Main Group**.
+4. On the **Key Group Management** page, locate the key share holder of the Signing Key you want to upgrade. In the same row, click <img src="/en/images/common/icon_more.svg" className="icon" alt="the overflow icon showing more options"/> under the **Action** column.
+5. Click **Upgrade to Main**.
 
 <img src="/en/images/mpc-wallet/upgrade-to-main-group.png" className="screenshot_modal"/>
 
-6. Click **Confirm** to upgrade the Signing Group to the Main Group.
+6. Click **Confirm** to upgrade the Signing Key to the Main Key.
 
-7. The Signing Group is now the Main Group. **Note:** If there was only one Signing Group before the conversion, the list of Signing Groups will become empty post-conversion.
+7. The Signing Key is now the Main Key. **Note:** If there was only one Signing Key before the conversion, the list of Signing Keys will become empty post-conversion.
 
-#### Delete a Signing Group
-Follow the instructions below if you want to delete a Signing Group.
+#### Delete a Signing Key
+Follow the instructions below if you want to delete a Signing Key.
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
 3. Select your vault and then click <img src="/en/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
-4. In the **Key Group Management** page, click **Signing Groups** and then select the Signing Group to be deleted.
+4. On the **Key Group Management** page, locate the key share holder of the Signing Key you want to delete. In the same row, click <img src="/en/images/common/icon_more.svg" className="icon" alt="the overflow icon showing more options"/> under the **Action** column.
 5. Click **Delete Group**.
 <img src="/en/images/mpc-wallet/delete-sign-group.png" className="screenshot_modal"/>
 
-6. Click **Confirm** to delete the specified Signing Group.
+6. Click **Confirm** to delete the specified Signing Key.
 
-7. The specified Signing Group is now deleted.
+7. The specified Signing Key is now deleted.
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

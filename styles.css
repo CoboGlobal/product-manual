@@ -264,3 +264,32 @@ table:not(.six-columns-fixed-first-row-cn):not(.six-columns-fixed-first-row) td:
 .six-columns-fixed-first-row tr:first-child th {
   background-color: #1F32D6; /* Cobo Blue */
 }
+
+.four-columns {
+  table-layout: fixed; /* 固定列宽 */
+  width: 100%;
+}
+
+.four-columns th:nth-child(1),
+.four-columns td:nth-child(1) {
+  width: 18%;
+}
+
+.four-columns th:nth-child(2),
+.four-columns td:nth-child(2) {
+  width: 32%;
+}
+
+.four-columns th:nth-child(3),
+.four-columns td:nth-child(3) {
+  width: 20%;
+}
+
+.four-columns th:nth-child(4),
+.four-columns td:nth-child(4) {
+  width: 30%;
+}
+
+.four-columns td a {
+  word-break: break-word; /* 防止长链接撑宽 */
+}

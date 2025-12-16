@@ -50,7 +50,6 @@ The following list includes crucial operations in Cobo Portal, and it is recomme
 - Manage transaction policies
 - Manage addresses in Address List
 - Manage API keys
-- Edit custom user roles
 
 For more details, see [Introduction to governance policies](/en/portal/organization/governance-intro).
 
@@ -74,18 +73,17 @@ For more details, see [Register API Key](/en/portal/developer-console/create-api
 
 ## MPC Wallets-related configurations
 
-### Key share holder groups
+### Private keys
 
-With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key share holders is referred to as a holder group.
+With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. A set of key shares form a private key.
 
-- To ensure the safety and recoverability of your assets, create at least one Signing Group and one Recovery Group in addition to the Main Group.
-- For Main and Recovery Groups, choose high-ranking executives in your organization as key share holders, preferably with [Viewer](/en/portal/organization/roles-and-permissions) roles to minimize their involvement in daily operations. For Signing Groups, key share holders can be selected from various organizational levels based on operational needs and security considerations.
-- The same private key share holder (the same [TSS Node ID](/en/portal/glossary#tss-node)) should not belong to different types of key share holder groups simultaneously, such as both the Main Group and the Signing Group. If this situation occurs, please ensure that there is more than one Signing Group.
+- To ensure the safety and recoverability of your assets, create at least one Signing Key and one Recovery Key in addition to the Main Key.
+- For Main and Recovery Keys, choose high-ranking executives in your organization as key share holders, preferably with [Viewer](/en/portal/organization/roles-and-permissions) roles to minimize their involvement in daily operations. For Signing Keys, key share holders can be selected from various organizational levels based on operational needs and security considerations.
 
-For more details, see [Holder group overview](/en/portal/mpc-wallets/ocw/holder-group-overview).
+For more details, see [Private key overview](/en/portal/mpc-wallets/ocw/holder-group-overview).
 
 ### Key share backup and recovery
 
-After you have successfully generated a key share, you can back it up to ensure its safety and recoverability. Securely store the recovery phrase and encrypted database password for key share backup. If lost, you will need to recover the key shares using the Recovery Group, if one has been set up.
+After you have successfully generated a key share, you can back it up to ensure its safety and recoverability. Securely store the recovery phrase and encrypted database password for key share backup. If lost, you will need to recover the key shares using the Recovery Key, if one has been set up.
 
 For more details, see [Mobile signer backup key share instructions](/en/guard/generate-and-back-up-key-shares#backup-private-key-shares) and [Server signer backup key share instructions](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/key-shares-backup).

@@ -7,17 +7,17 @@ description: "Discover how auto token sweeping consolidates funds, enhances effi
 
 Auto token sweeping is a feature designed to automatically consolidate funds from multiple addresses into a single designated address (known as the sweep-to address). This functionality simplifies asset management, enhances operational efficiency, and ensures centralized control of funds.
 
-## Benefits
+## Key benefits
 
 The auto token sweeping feature streamlines asset management for centralized platform customers, such as exchanges, payment service providers, and other high-volume enterprises, by automating fund consolidation. It not only improves efficiency in fund management but also reduces the complexity of liquidity management and operational costs. Below are the key benefits of auto token sweeping:
 
 ### Support for Fee Station
 
-When the balance of the transaction address is insufficient to cover gas fees, [Fee Station](/en/portal/fee-station/overview) will automatically top it up, preventing transaction failures due to insufficient gas fees. This fully automated design eliminates the need for manual intervention, ensuring a smooth and efficient sweep process.
+When the balance of the transaction address is insufficient to cover gas fees, [Fee Station](/en/portal/fee-station/introduction) will automatically top it up, preventing transaction failures due to insufficient gas fees. This fully automated design eliminates the need for manual intervention, ensuring a smooth and efficient sweep process.
 
-### Multiple server co-signer configuration
+### Multiple server signer configuration
 
-By configuring multiple [server co-signers (TSS Nodes)](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview), the system distributes signing tasks more effectively, reducing the risk of single points of failure. This multi-node architecture enhances both system security and service reliability.
+By configuring multiple [server signers (TSS Nodes)](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview), the system distributes signing tasks more effectively, reducing the risk of single points of failure. This multi-node architecture enhances both system security and service reliability.
 
 ### Intelligent sweep strategies
 
@@ -31,6 +31,18 @@ The auto token sweeping feature is available for all chains and tokens supported
 
 With just a single switch, you can quickly activate the auto token sweeping feature. The process is intuitive and straightforward, requiring no complex technical configurations.
 
+### Automatic trigger mechanism
+
+Once auto-sweep is enabled, the timing and frequency of sweep transactions are automatically determined and executed by Cobo based on years of operational best practices. The system initiates sweep transactions whenever the on-chain conditions are appropriate, without requiring any manual actions from you.
+
+### Automatic RBF for long-pending transactions
+
+When a sweep transaction remains unconfirmed on-chain for an extended period, you can configure the system to automatically initiate an RBF transaction to accelerate confirmation and reduce the likelihood of transactions being stuck.
+
+### Sweep fee cap control
+
+You can set a maximum fee for sweep transactions to avoid unusually high costs during periods of network congestion, making sweep expenses more controlled and predictable.
+
 ## Workflows
 
 To use auto token sweeping for MPC Wallets (Organization-Controlled Wallets) or Custodial Wallets (Web3 Wallets), you need to manually enable the feature at the wallet level. For detailed instructions, refer to [Enable auto token sweeping](/en/portal/enable-auto-sweep).
@@ -38,7 +50,7 @@ To use auto token sweeping for MPC Wallets (Organization-Controlled Wallets) or 
 Once enabled, Cobo creates a dedicated sweep-to address for each blockchain in use. For UTXO-based blockchains, the sweep-to address is of Taproot type and also serves as the change address for sweep transactions.
 
 During auto token sweeping, two corresponding transactions occur:
-- Withdrawal transaction: Initiated from the deposit address, requiring signatures from both Cobo and you through a mobile co-signer (Cobo Guard) or a server co-signer (TSS Node).
+- Withdrawal transaction: Initiated from the deposit address, requiring signatures from both Cobo and you through a mobile signer (Cobo Guard) or a server signer (TSS Node).
 - Deposit transaction: Funds are deposited into the sweep-to address.
 
 <Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

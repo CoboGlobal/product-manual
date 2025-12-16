@@ -1,0 +1,64 @@
+---
+title: "Auto token sweeping settings"
+sidebarTitle: "Auto token sweeping settings"
+lang: "en"
+description: "Learn how to configure auto token sweeping in Cobo Portal, including deposit address transaction capability, network fee caps for sweep transactions, and automatic RBF acceleration."
+---
+Auto token sweeping helps you automatically consolidate assets from multiple deposit addresses into a designated address, improving asset management efficiency. To ensure sweep transactions behave as expected, you can configure several settings for a wallet, including:
+
+- Deposit address transaction capability  
+- Network fee limits for sweep transactions  
+- Automatic RBF (Replace-By-Fee) acceleration for sweep transactions  
+
+## Prerequisites
+
+- You have been assigned the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.
+- You have [enabled auto token sweeping](/en/portal/enable-auto-sweep) for the wallet.  
+
+## Enable deposit address transactions
+
+After auto token sweeping is enabled, deposit addresses are, by default, only used to receive assets and to initiate sweep transactions to the designated sweep-to address. They cannot initiate withdrawals, contract calls, staking, OTC trades, or financial product transactions, and they cannot be used as delegate addresses for smart contract wallets.
+
+If you need to restore full on-chain transaction capabilities for deposit addresses, you can manually enable deposit address transactions according to the following steps:
+
+1. In the wallet list, find the target wallet.
+2. In the wallet settings page, click the **Auto-Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto-Sweep Settings" />.
+3. On the **Auto-Sweep Settings** page, click the button next to **Deposit Address Transactions**.
+
+    <img src="/en/images/portal/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
+
+4. In the **Enable deposit address transactions** dialog, click **Confirm**, and complete multi-factor authentication (MFA).
+
+After successful verification, the system initiates the corresponding approval workflow. Once approved, the change takes effect. After this feature is enabled, deposit addresses have the same transaction capabilities as sweep-to addresses. When initiating an on-chain transaction (such as a [transfer](/en/portal/transfers/introduction) or a contract call), you can choose to pay the gas fee from the wallet address or have it covered by [Fee Station](/en/portal/fee-station/introduction) for automatic gas fee top-up and unified settlement.
+
+## Modify network fee limits for sweep transactions
+
+By default, the system sets network fee caps for BTC and ETH sweep transactions. If the estimated fee exceeds the limit, the sweep transaction will not be executed to prevent excessive fees during periods of network congestion. You can adjust these fee limits based on your business needs according to the following steps:
+
+1. In the wallet list, find the target wallet.
+2. In the wallet settings page, click the **Auto-Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto-Sweep Settings" />.
+3. On the **Auto-Sweep Settings** page, click **Edit Configuration** under **Sweep Transaction Network Fee Limits**.
+
+    <img src="/en/images/portal/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />  
+
+4. Enter the fee limit values for BTC and ETH.  
+5. Click **Submit**, and complete multi-factor authentication (MFA).
+
+After successful verification, the system initiates the corresponding approval workflow. Once approved, the updated fee limits take effect.
+
+## Automatically trigger RBF acceleration for sweep transactions
+
+If a sweep transaction is not confirmed within a specified time, you can configure to allow Cobo automatically send a Replace-By-Fee (RBF) transaction to speed up confirmation according to the following steps:
+
+1. In the wallet list, find the target wallet.
+2. In the wallet settings page, click the **Auto-Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto-Sweep Settings" />.
+3. On the **Auto-Sweep Settings** page, click the button next to **Auto RBF for Sweep Transactions**.
+
+    <img src="/en/images/portal/auto-sweep-settings.png" className="full_screen" alt="Auto-Sweep Settings" />
+
+4. Configure the trigger time and maximum number of attempts.  
+5. Click **Submit**, and complete multi-factor authentication (MFA).
+
+After successful verification, the system initiates the corresponding approval workflow. Once approved, the RBF acceleration configuration takes effect.
+
+For more details on sweep behavior, fee strategies, and transaction execution, see the [auto token sweeping introduction](/en/portal/auto-sweep-overview).
