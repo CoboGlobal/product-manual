@@ -7,32 +7,39 @@ description: "快速上手如何在 Fee Station 页面中完成充值、查看�
 
 本文介绍如何在 Fee Station 中完成以下操作：
 
-- 充值代币
-- 查看交易流水
+- 充值美元或稳定币
+- 充值 Gas Token
 - 设置手续费代付策略
 
-## 充值代币
+## 充值美元或稳定币
 
-在**代币**标签页，您可以查看当前账户中支持的代币余额及其用途（如交易费用支付、服务费支付等）。Fee Station 支持充值的代币请参考[支持充值的代币类型](/cn/portal/fee-station/introduction#支持充值的代币类型)。
+Fee Station 支持充值美元法币或美元稳定币。充值后，您可以在 Fee Station 中使用这些资金来支付交易手续费、平台服务费和托管费等账单。
+
+在**美元/美元稳定币**标签页，您可以查看当前账户中余额，充值记录及其支出记录，并发起充值操作。Fee Station 支持的稳定币类型请参考[支持充值的代币类型](/cn/portal/fee-station/introduction#支持充值的代币类型)。
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
 2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
-3. 切换到**代币**标签页。
-4. 点击您想要充值到 Fee Station 的代币旁边的<img src="/cn/images/fee-station/deposit.svg" className="icon"></img>图标。
+3. 在**美元/美元稳定币**标签页，在总价值右侧点击**充币**按钮，选择合适的充值方式，并按照指引完成充值。
 
-    <img src="/cn/images/fee-station/2.png" className="screenshot_full_screen"/>
+    <img src="/cn/images/fee-station/deposit-u.png" className="screenshot_full_screen"/>
 
-5. 在弹出的窗口中，点击<img src="/cn/images/fee-station/copy.svg" className="icon"></img>以复制充值地址，或使用钱包扫描二维码。如果您希望从其他在 Cobo Portal 创建的钱包转账到 Fee Station，请点击**从其他钱包充值**，然后按照[该文档](/cn/portal/transfers/introduction)中的指示完成转账操作。
+## 充值 Gas Token
 
-## 查看交易流水
+您也可以直接为各条链的原生 Gas Token 充值，用于代付对应链上的交易手续费。
 
-在**交易流水**标签页，您可以追踪所有代币的的充值和支出记录。支持按照时间、代币、用途等字段筛选，并可下载用于对账或审计。
+在**Gas Token**标签页，您可以查看当前账户中各链 Gas Token 的余额及其交易流水，并发起充值操作。Fee Station 支持充值的 Gas Token 请参考[支持充值的代币类型](/cn/portal/fee-station/introduction#支持充值的代币类型)。
 
-<img src="/cn/images/fee-station/tx-records.png" className="screenshot_full_screen"/>
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
+3. 切换到**Gas Token**标签页，在列表中找到目标链对应的 Gas Token（例如 TRX、ETH、MATIC 等）。
+4. 在该 Gas Token 右侧点击 <img src="/cn/images/fee-station/deposit.svg" className="icon"></img> 充值图标，并按照提示完成充值操作。
+
+    <img src="/cn/images/fee-station/deposit-gas-token.png" className="screenshot_full_screen"/>
+
 
 ## 设置手续费代付策略
 
-在**付款偏好**标签页，您可以为 MPC 钱包和 Web3 钱包基于支持的链分别设置代付策略。
+在 **Gas Token > 付款偏好** 标签页，您可以为 MPC 钱包和 Web3 钱包基于支持的链分别设置链上手续费代付策略。
 
 <img src="/cn/images/fee-station/preferences.png" className="screenshot_full_screen"/>
 
