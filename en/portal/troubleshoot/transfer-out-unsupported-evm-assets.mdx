@@ -1,0 +1,36 @@
+---
+title: "How to transfer out an unsupported EVM asset"
+sidebarTitle: "Transfer out unsupported EVM assets"
+lang: "en"
+description: "Learn how to transfer out an unsupported EVM token accidentally sent to your address."
+---
+
+**Applicable to: Custodial Wallets (Web3 Wallets), MPC Wallets**
+
+If you accidentally transferred an EVM token that is not supported by Cobo Portal to your address, you won’t be able to transfer it out through the standard Cobo Portal transfer flow. In this case, you can transfer it out on-chain by calling the token contract (for example, calling the `transfer` method). Common options include:
+
+1. Transfer out via contract call API
+    - Applicable to: Programmatic transfers. You need to construct the calldata required for the contract call.
+    - Reference: [Call smart contract](https://www.cobo.com/developers/v2/api-references/transactions/call-smart-contract).
+
+2. Transfer out via Cobo Connect in a block explorer
+    - Applicable to: Initiating a contract call via a contract interaction UI in a browser (for example, Etherscan).
+
+    <Warning>Contract calls can result in permanent asset loss (for example, wrong network, wrong contract address, incorrect amount units, or an irreversible destination address). We recommend testing with a small amount first.</Warning>
+
+    Steps (Etherscan example):
+
+    1. Open the token page in a block explorer.
+    2. Go to **Contract** and open **Write Contract**.
+    3. Click **Connect to Web3**, choose **Cobo Connect**, then select the Cobo Portal wallet address in Cobo Connect to complete the connection.
+    4. Locate the `transfer` function (commonly `transfer(address to, uint256 amount)`), and fill in the destination address and amount (in the smallest unit).
+    5. Click **Write** to submit, then complete confirmation/approval in Cobo Guard.
+
+    Before you proceed, make sure:
+
+    1. You are using a supported EVM network and have enough native gas token (for example, ETH) to pay fees.
+    2. If you use Cobo Connect, the wallet address has been imported into Cobo Connect.
+
+    Reference: [Set up Cobo Connect](/en/cobo-connect/set-up).
+
+If you still cannot resolve the issue, please contact Cobo Support (help@cobo.com).
