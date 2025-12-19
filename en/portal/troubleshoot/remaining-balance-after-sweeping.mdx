@@ -1,0 +1,14 @@
+---
+title: "Remaining balance after token sweeping"
+sidebarTitle: "Remaining balance after token sweeping"
+lang: "en"
+description: "Learn why a small balance may remain in a deposit address after auto token sweeping."
+---
+
+**Applicable to: Custodial Wallets (Web3 Wallets), MPC Wallets**
+
+On some networks, after auto token sweeping, a small amount may remain in the deposit address. Common reasons include:
+
+- Minimum balance requirements: Some chains (such as XRP) require a minimum reserve balance. For example, an XRP address must keep at least 1 XRP, so 1 XRP may remain after sweeping.
+- L1 fee estimation differences for L2 sweeping: On L2 networks (such as Base), a sweep transaction includes L1 fees. Actual L1 fees may be lower than the estimated amount, leaving a remainder of `estimated L1 fee - actual L1 fee`.
+- Gas estimation differences on EVM networks: On EVM-compatible chains (such as Ethereum and BSC), gas fees are calculated using a maximum estimate (Gas Limit). If the actual gas used is lower, `Gas Price * unused gas` may remain in the deposit address.
