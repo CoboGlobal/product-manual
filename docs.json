@@ -33,9 +33,7 @@
                   {
                     "group": "FAQs",
                     "pages": [
-                      "en/portal/troubleshoot/custodial-wallets",
-                      "en/portal/troubleshoot/mpc-wallets",
-                      "en/portal/troubleshoot/exchange-wallets"
+                      "en/portal/troubleshoot/wallet-and-transaction"
                     ]
                   }
                 ]
@@ -628,9 +626,7 @@
                   {
                     "group": "常见问题",
                     "pages": [
-                      "cn/portal/troubleshoot/custodial-wallets",
-                      "cn/portal/troubleshoot/mpc-wallets",
-                      "cn/portal/troubleshoot/exchange-wallets"
+                      "cn/portal/troubleshoot/wallet-and-transaction"
                     ]
                   }
                 ]
@@ -1503,43 +1499,67 @@
     },
     {
       "source": "/en/portal/custodial-wallets/unable-to-create-wallet",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/cn/portal/custodial-wallets/unable-to-create-wallet",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/en/portal/custodial-wallets/unsupported-tokens-and-chains",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/en/portal/custodial-wallets/transaction-not-processed-successfully",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/cn/portal/custodial-wallets/transaction-not-processed-successfully",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/en/portal/exchange-wallets/troubleshoot",
-      "destination": "/en/portal/troubleshoot/exchange-wallets"
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/cn/portal/exchange-wallets/troubleshoot",
-      "destination": "/cn/portal/troubleshoot/exchange-wallets"
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/en/portal/enable-auto-sweep#frequently-asked-questions-faq",
-      "destination": "/en/portal/troubleshoot/mpc-wallets"
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/cn/portal/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
-      "destination": "/cn/portal/troubleshoot/mpc-wallets"
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
+    },
+    {
+      "source": "/en/portal/troubleshoot/custodial-wallets",
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
+    },
+    {
+      "source": "/en/portal/troubleshoot/mpc-wallets",
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
+    },
+    {
+      "source": "/en/portal/troubleshoot/exchange-wallets",
+      "destination": "/en/portal/troubleshoot/wallet-and-transaction"
+    },
+    {
+      "source": "/cn/portal/troubleshoot/custodial-wallets",
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
+    },
+    {
+      "source": "/cn/portal/troubleshoot/mpc-wallets",
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
+    },
+    {
+      "source": "/cn/portal/troubleshoot/exchange-wallets",
+      "destination": "/cn/portal/troubleshoot/wallet-and-transaction"
     },
     {
       "source": "/en/portal/portal-apps/build",
