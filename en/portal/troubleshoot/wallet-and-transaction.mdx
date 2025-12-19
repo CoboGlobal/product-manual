@@ -1,0 +1,173 @@
+---
+title: "Wallet and transaction FAQs"
+sidebarTitle: "Wallet & transactions"
+lang: "en"
+description: "Common questions and troubleshooting tips for wallets and transactions, including transaction status, deposits, token and chain support, exchange wallet connectivity, and auto token sweeping."
+keywords:
+  - transaction failed
+  - pending
+  - stuck
+  - transaction not processed
+  - deposit not credited
+  - deposit pending
+  - confirmations
+  - finalized
+  - supported tokens
+  - supported chains
+  - token not supported
+  - chain not supported
+  - auto token sweeping
+  - sweeping
+  - sweep not triggered
+  - sweep residue
+  - exchange wallet
+  - connection failed
+  - API Not Found
+  - IP whitelist
+  - Cobo Connect
+  - contract call
+  - call smart contract
+  - calldata
+  - Etherscan
+---
+
+If you still need assistance, please contact Cobo Support: help@cobo.com.
+
+## Transaction status
+
+### Transaction failed or stuck
+
+**Applicable to: All wallets**
+
+You can check the transaction status and required actions in Cobo Portal > **Wallets** > **Transaction History**. If you still need help, please contact Cobo Support: help@cobo.com.
+
+### Deposit not credited
+
+**Applicable to: All wallets**
+
+If your deposit hasn’t been credited for a long time, we recommend checking the following in order:
+
+1. Check the transaction status in a block explorer
+    - Confirm the transaction is successfully included on-chain (Success).
+    - Confirm it has reached the required number of confirmations.
+
+2. Verify your deposit information
+    - Ensure the deposit address is correct.
+    - Ensure the chain/network is correct.
+    - If the chain/asset requires a Tag/Memo/Note, ensure it is provided correctly.
+
+3. Check common causes of crediting delays
+    - Network congestion leading to longer confirmation time.
+    - Some Layer 2 networks (such as Arbitrum, Optimism, Base, and Zora) require L1 finality (Finalized) before the deposit is credited. Even if the transaction shows as successful on the L2 explorer, it may still need to reach Finalized on L1 before it can be credited.
+    - System maintenance or service incidents.
+
+To learn the confirmation requirements for deposits on different chains, refer to [Supported tokens and chains](/en/portal/supported-tokens-and-chains#required-confirmation-for-token-deposits).
+
+If the issue persists, please prepare the TxHash, deposit address, token, and chain information, then contact Cobo Support (help@cobo.com).
+
+## Assets and balances
+
+### Token/chain not visible or unsupported
+
+**Applicable to: All wallets**
+
+All tokens and chains supported by your Cobo Custodial Wallet subscription plan are displayed in the wallet interface. You can also check the current list of supported tokens and chains in [Supported tokens and chains](/en/portal/supported-tokens-and-chains). If your subscription plan does not include the token/chain you need, or if it is not yet supported by Cobo, please contact Cobo Support at [help@cobo.com](mailto:help@cobo.com).
+
+### Transferred an unsupported EVM asset—how to transfer it out?
+
+**Applicable to: Custodial Wallets (Web3 Wallets), MPC Wallets**
+
+If you accidentally transferred an EVM token that is not supported by Cobo Portal to your address, you won’t be able to transfer it out through the standard Cobo Portal transfer flow. In this case, you can transfer it out on-chain by calling the token contract (for example, calling the `transfer` method). Common options include:
+
+1. Transfer out via contract call API
+    - Applicable to: Programmatic transfers. You need to construct the calldata required for the contract call.
+    - Reference: [Call smart contract](https://www.cobo.com/developers/v2/api-references/transactions/call-smart-contract).
+
+2. Transfer out via Cobo Connect in a block explorer
+    - Applicable to: Initiating a contract call via a contract interaction UI in a browser (for example, Etherscan).
+    - Reference: [Set up Cobo Connect](/en/cobo-connect/set-up).
+
+    <Warning>Contract calls can result in permanent asset loss (for example, wrong network, wrong contract address, incorrect amount units, or an irreversible destination address). We recommend testing with a small amount first.</Warning>
+
+    Steps (Etherscan example):
+
+    1. Open the token page in a block explorer.
+    2. Go to **Contract** and open **Write Contract**.
+    3. Click **Connect to Web3**, choose **Cobo Connect**, then select the Cobo Portal wallet address in Cobo Connect to complete the connection.
+    4. Locate the `transfer` function (commonly `transfer(address to, uint256 amount)`), and fill in the destination address and amount (in the smallest unit).
+    5. Click **Write** to submit, then complete confirmation/approval in Cobo Guard.
+
+    Before you proceed, make sure:
+
+    1. You are using a supported EVM network and have enough native gas token (for example, ETH) to pay fees.
+    2. If you use Cobo Connect, the wallet address has been imported into Cobo Connect.
+
+If you still cannot resolve the issue, please contact Cobo Support (help@cobo.com).
+
+### Auto token sweeping for Asset Wallets
+
+**Applicable to: Custodial Wallets (Asset Wallets)**
+
+Auto token sweeping for Custodial Wallets (Asset Wallets) is handled internally by Cobo. It automatically consolidates funds from deposit addresses into the designated address/wallet. You do not need to enable a switch or manage the sweeping process.
+
+### When does auto token sweeping trigger?
+
+**Applicable to: Custodial Wallets (Web3 Wallets), MPC Wallets**
+
+For Custodial Wallets (Web3 Wallets) and MPC Wallets with auto token sweeping enabled, the timing and execution strategy are managed automatically by Cobo based on internal rules. If you find that funds have arrived at the deposit address but have not been swept for some time, first confirm that the address has received the funds on-chain. Note that sweeping may be affected by network congestion, fee fluctuations, and the platform’s execution cadence.
+
+Reference: [Auto token sweeping overview](/en/portal/auto-sweep-overview).
+
+### Remaining balance after sweeping
+
+**Applicable to: Custodial Wallets (Web3 Wallets), MPC Wallets**
+
+On some networks, after auto token sweeping, a small amount may remain in the deposit address. Common reasons include:
+
+- Minimum balance requirements: Some chains (such as XRP) require a minimum reserve balance. For example, an XRP address must keep at least 1 XRP, so 1 XRP may remain after sweeping.
+- L1 fee estimation differences for L2 sweeping: On L2 networks (such as Base), a sweep transaction includes L1 fees. Actual L1 fees may be lower than the estimated amount, leaving a remainder of `estimated L1 fee - actual L1 fee`.
+- Gas estimation differences on EVM networks: On EVM-compatible chains (such as Ethereum and BSC), gas fees are calculated using a maximum estimate (Gas Limit). If the actual gas used is lower, `Gas Price * unused gas` may remain in the deposit address.
+
+## Account and permissions
+
+### Can’t create a wallet
+
+**Applicable to: All wallets**
+
+If you have trouble creating a new wallet, consider the following possibilities:
+
+1. Insufficient permissions
+    - Issue: You may not have the required permission to create a wallet.
+    - Solution: Make sure you have the [required permissions](/en/portal/organization/roles-and-permissions), or contact your admin.
+
+2. Network issues / service downtime
+    - Issue: Your network may be unstable, or Cobo services may be under maintenance or temporarily unavailable.
+    - Solution: Make sure your network is stable and Cobo services are not under maintenance. Check Cobo system status [here](https://status.cobo.com/).
+
+## Connectivity and integrations
+
+### Can’t access a connected exchange account
+
+**Applicable to: Exchange Wallets**
+
+If your connected exchange account shows **“Connection Failed”**, **“API Not Found”**, or similar errors, it may be caused by multiple factors such as expired/deleted API keys, insufficient API permissions, exchange-side network issues, account restrictions or freezes, KYC issues, and more.
+
+To resolve this, click <img src="/cn/images/exchange-wallet/24.png" className="icon"/> to reconnect. If the issue persists, check your exchange settings and make sure your network is working, your API keys are valid and up to date, required permissions are granted, and your account is active.
+
+Reference: [Set up Exchange Wallet](/en/portal/exchange-wallets/set-up)
+
+### Can’t connect an exchange account
+
+**Applicable to: Exchange Wallets**
+
+If you can’t connect an exchange account, make sure you’ve completed the following steps and try again:
+
+1. Add Cobo IPs (`18.177.234.7` and `18.180.16.190`) to the whitelist in your exchange API settings, and ensure you select the correct API key type and permissions.
+2. Ensure the API Key, API Secret, and passphrase are correct.
+3. Ensure your exchange account is active and has no pending KYC or other issues.
+4. Verify your internet connection is stable.
+5. Confirm the exchange system or service is not experiencing incidents or maintenance.
+
+Reference: [Set up Exchange Wallet](/en/portal/exchange-wallets/set-up)
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
