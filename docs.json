@@ -51,6 +51,7 @@
                 "group": "GET STARTED",
                 "pages": [
                   "en/portal/sign-up",
+                  "en/portal/onboarding-agent",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -592,7 +593,8 @@
                 "pages": [
                   "en/guard/generate-and-back-up-key-shares",
                   "en/guard/reset",
-                  "en/guard/manage"
+                  "en/guard/manage",
+                  "en/guard/assistant"
                 ]
               }
             ]
@@ -606,6 +608,17 @@
                   "en/cobo-connect/introduction",
                   "en/cobo-connect/set-up",
                   "en/cobo-connect/interact-with-dapps"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Cobo AI",
+            "groups": [
+              {
+                "group": "OVERVIEW",
+                "pages": [
+                  "en/ai/introduction"
                 ]
               }
             ]
@@ -653,6 +666,7 @@
                 "group": "快速开始",
                 "pages": [
                   "cn/portal/sign-up",
+                  "cn/portal/onboarding-agent",
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -1195,7 +1209,8 @@
                 "pages": [
                   "cn/guard/generate-and-back-up-key-shares",
                   "cn/guard/reset",
-                  "cn/guard/manage"
+                  "cn/guard/manage",
+                  "cn/guard/assistant"
                 ]
               }
             ]
@@ -1209,6 +1224,17 @@
                   "cn/cobo-connect/introduction",
                   "cn/cobo-connect/set-up",
                   "cn/cobo-connect/interact-with-dapps"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Cobo AI",
+            "groups": [
+              {
+                "group": "概览",
+                "pages": [
+                  "cn/ai/introduction"
                 ]
               }
             ]
