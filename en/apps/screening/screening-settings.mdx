@@ -23,11 +23,14 @@ Configure your AML/KYT providers in this section.
 
 | Setting | Description |
 | --- | --- |
-| AML Provider | • Select between Screening-integrated providers **CipherOwl** and **Elliptic**;<br/>• You can also select **Custom Provider**, meaning you do not use the integrated providers, but instead perform your own KYT checks and submit decision results via API (When this option is selected, configuring [post-screening policies](/en/apps/screening/risk-policies) is not supported). |
+| AML Provider | • Select between Screening-integrated providers **CipherOwl**, **Elliptic**, and **Cobo Premium**.<br/>• You can also select **Custom Provider**, meaning you do not use the integrated providers, but instead perform your own KYT checks and submit decision results via API (When this option is selected, configuring [post-screening policies](/en/apps/screening/risk-policies) is not supported). |
 | API Key | Required for Elliptic integration |
 | Secret | Required for Elliptic integration |
 
-<Note>Elliptic requires valid API credentials to function.</Note>
+<Note>
+- Elliptic requires valid API credentials to function.<br/>
+- Cobo Premium is a risk screening service tailored for payment clients. It checks addresses and transactions with stricter standards. Please contact [Cobo Support](mailto:help@cobo.com) if you need to enable it.
+</Note>
 
 ## AML & Screening Settings
 
