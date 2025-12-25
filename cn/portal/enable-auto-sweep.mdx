@@ -10,11 +10,11 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 ## 前提条件
 - 对于 MPC 钱包（机构钱包）：
   - 您已创建 MPC 钱包（机构钱包）并按照[概览](/cn/portal/mpc-wallets/ocw/set-up)中的说明进行设置。
-  - 由于归集交易数量较多且交易时间集中，请确保您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控组](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名组](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)。
+  - 由于归集交易数量较多且交易时间集中，请确保您已设置至少一个[服务端签名人](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/tss-node-overview)作为您的[主控私钥](/cn/portal/mpc-wallets/ocw/holder-group-main-group)或[签名私钥](/cn/portal/mpc-wallets/ocw/holder-group-signing-group)的私钥分片持有者。
   - 如果您使用 TSS Node Callback 服务器进行风控审核，您可以将归集地址写入 TSS Node Callback 服务器的白名单中，以自动批准归集交易。详情请参阅 [自动代币归集实现](https://www.cobo.com/developers/v2_cn/guides/mpc-wallets/server-co-signer/risk-control-best-practices#auto-sweeping-implementation) 中的示例项目。
 - 对于全托管钱包 (Web3 钱包)：
   - 您已创建全托管钱包 (Web3 钱包)并按照[设置 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)中的说明进行设置。
-- 您已被分配为“管理员”、“操作员”、“经理”或其他具有“编辑自动归集”权限的[用户角色](/cn/portal/organization/roles-and-permissions)。
+- 您已被分配为管理员、操作员、或经理[用户角色](/cn/portal/organization/roles-and-permissions)。
 - 归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。
 <Info>更多详情请参照[ Fee Station 使用指南](/cn/portal/fee-station/set-up)。</Info>
 
@@ -38,6 +38,8 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 
 现在，您已成功创建启用了自动代币归集功能的机构钱包。钱包上有一个图标，表示已启用该功能。
 
+<Note>启用自动代币归集后，Cobo 会根据预设的归集策略，在策略触发时自动扫描充币地址中符合归集条件的代币，并自动发起归集交易。无论代币是在启用自动归集前还是启用后充入，只要满足归集条件，系统都会在策略触发时正常归集。</Note>
+
 <img src="/cn/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="启用了自动代币归集功能的钱包" />
 
 ### 为现有钱包启用
@@ -57,13 +59,18 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 
 现在，您已成功为该钱包启用自动代币归集功能。钱包上有一个图标，表示已启用该功能。
 
+<Note>启用自动代币归集后，Cobo 会根据预设的归集策略，在策略触发时自动扫描充币地址中符合归集条件的代币，并自动发起归集交易。无论代币是在启用自动归集前还是启用后充入，只要满足归集条件，系统都会在策略触发时正常归集。</Note>
+
 <img src="/cn/images/mpc-wallet/ocw/auto-sweep-icon.png" className="full_screen" alt="启用了自动代币归集功能的钱包" />
 
 ## 启用后的变化
 
 ### 归集地址
 
-启用自动代币归集后，系统会自动为该钱包使用的每条链生成一个专属的归集地址，该地址由 Cobo 系统分配，用户无法手动指定或更改。当充币地址收到代币时，系统会自动、定期将这些代币转移到对应的归集地址。钱包地址分为两个标签页展示：**充币**标签页显示先前创建的充币地址，而**归集至**标签页显示归集地址。
+启用自动代币归集后，系统会自动为该钱包使用的每条链生成一个专属的归集地址，该地址由 Cobo 系统分配，用户无法手动指定。当充币地址收到代币时，系统会自动、定期地发起归集交易将这些代币转移到对应的归集地址。
+<Note>归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。</Note>
+
+钱包地址分为两个标签页展示：**充币**标签页显示先前创建的充币地址，而**归集至**标签页显示归集地址。
 
 <img src="/cn/images/mpc-wallet/ocw/auto-sweep-address-list.png" className="full_screen" alt="地址列表" />
 
@@ -92,17 +99,13 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 如果您的业务设置发生变化、切换网络，或当前地址被污染，您可能需要更换归集地址，详情请参阅[修改归集地址](/cn/portal/change-sweep-address)。
 
 ### 开启充币地址交易功能
-钱包启用自动代币归集后，充币地址默认只能接收资产并发起到指定归集地址的归集交易，不再支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。您可以参照以下步骤手动开启充币地址交易功能：
+钱包启用自动代币归集后，充币地址默认只能接收资产并发起到指定归集地址的归集交易，不再支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。如有需求，您可以参照[自动代币归集设置](/cn/portal/auto-sweep-settings)。
 
-1. 在钱包列表中，找到您想要开启充币地址交易功能的钱包。
-2. 在钱包设置页面，点击**自动归集设置**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="自动代币归集设置" />。
-3. 在 **自动归集设置**页面，点击**启用**按钮。
+### 设置归集交易网络费上限
+您可以为 BTC 链和 ETH 链的归集交易设置网络费上限，避免在网络拥堵时产生过高费用。具体配置步骤请参阅[自动代币归集设置](/cn/portal/auto-sweep-settings)。
 
-  <img src="/cn/images/mpc-wallet/ocw/auto-sweep-settings.png" className="full_screen" alt="自动归集设置" />
-
-4. 在**开启充币地址交易功能**弹窗中，点击**确认**，并完成多重身份验证（MFA）。
-
-现在，您已成功开启充币地址交易功能，状态显示为**已启用**。
+### 开启归集交易自动 RBF 加速
+当归集交易在设定时间内仍未确认时，您可以启用自动 RBF 加速以提升确认速度。具体配置步骤请参阅[自动代币归集设置](/cn/portal/auto-sweep-settings)。
 
 ### 筛选已启用的钱包
 在钱包列表中，您可以按功能启用状态筛选，快速识别哪些钱包已启用自动代币归集功能。

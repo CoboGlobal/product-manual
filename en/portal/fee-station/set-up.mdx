@@ -7,32 +7,38 @@ description: "Learn how to deposit tokens, track transaction records, and set up
 
 This article introduces how to complete the following operations in Fee Station:
 
-- Deposit tokens
-- View transaction records
+- Deposit USD or stablecoins
+- Deposit gas tokens
 - Set up gas fee payment preferences
 
-## Deposit tokens
+## Deposit USD or stablecoins
 
-In the **Tokens** tab, you can view the balance of supported tokens in your account and their usage (including transaction fees and service fees). For supported tokens, refer to [Supported Token Types](/en/portal/fee-station/introduction#supported-token-types).
+Fee Station supports deposits in fiat USD or USD stablecoins. After deposit, these funds can be used in Fee Station to pay for gas fees, platform service fees, and custody fees.
+
+In the **USD / USD stablecoin** tab, you can view your current balance, deposit history, and spending records, and initiate new deposits. For supported stablecoin types, refer to [Supported Token Types](/en/portal/fee-station/introduction#supported-token-types).
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
-3. Switch to the **Tokens** tab, where you will see a list of fee tokens supported by Fee Station.
-4. Click <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> next to the token you want to deposit into Fee Station.
+3. In the **USD / USD stablecoin** tab, next to **Total Value**, click **Deposit**, choose a suitable deposit method, and follow the on-screen instructions to complete the deposit.
 
-    <img src="/en/images/fee-station/2.png" className="screenshot_full_screen"/>
+    <img src="/en/images/fee-station/deposit-u.png" className="screenshot_full_screen"/>
 
-5. In the pop-up window, click <img src="/en/images/fee-station/copy.svg" className="icon"></img> to copy the deposit address or scan the QR code with your wallet. If you want to make a transfer from other wallets created on Cobo Portal, click **Deposit from other wallets**. Then, follow the instructions [here](/en/portal/transfers/introduction) to complete the transfer.
+## Deposit gas tokens
 
-## View transaction records
+You can also deposit native gas tokens on each supported chain, which can be used to cover gas fees on those chains.
 
-In the **Transaction Records** tab, you can track all deposit and spending records for each token. You can filter by time, token, or transaction type, and download data for reconciliation or auditing purposes.
+In the **Gas Token** tab, you can view the balance and transaction records of gas tokens on each chain and initiate deposits. For supported gas tokens, refer to [Supported Token Types](/en/portal/fee-station/introduction#supported-token-types).
 
-<img src="/en/images/fee-station/tx-records.png" className="screenshot_full_screen"/>
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Switch to the **Gas Token** tab and find the gas token for the target chain (for example, TRX, ETH, or MATIC).
+4. Click the <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> deposit icon next to the gas token, and follow the instructions to complete the deposit.
+
+    <img src="/en/images/fee-station/deposit-gas-token.png" className="screenshot_full_screen"/>
 
 ## Configure payment preferences
 
-In the **Payment Preferences** tab, you can configure fee payment strategies for MPC Wallets and Web3 Wallets based on supported chains.
+In the **Gas Token > Payment Preferences** tab, you can configure on-chain transaction fee payment strategies for MPC Wallets and Web3 Wallets based on supported chains.
 
 <img src="/en/images/fee-station/preferences.png" className="screenshot_full_screen"/>
 

@@ -33,9 +33,16 @@
                   {
                     "group": "FAQs",
                     "pages": [
-                      "en/portal/troubleshoot/custodial-wallets",
-                      "en/portal/troubleshoot/mpc-wallets",
-                      "en/portal/troubleshoot/exchange-wallets"
+                      "en/portal/troubleshoot/transaction-failed-or-stuck",
+                      "en/portal/troubleshoot/deposit-not-credited",
+                      "en/portal/troubleshoot/token-chain-not-visible-or-unsupported",
+                      "en/portal/troubleshoot/transfer-out-unsupported-evm-assets",
+                      "en/portal/troubleshoot/auto-token-sweeping-asset-wallets",
+                      "en/portal/troubleshoot/when-auto-token-sweeping-triggers",
+                      "en/portal/troubleshoot/remaining-balance-after-sweeping",
+                      "en/portal/troubleshoot/cant-create-wallet",
+                      "en/portal/troubleshoot/cant-access-connected-exchange-account",
+                      "en/portal/troubleshoot/cant-connect-exchange-account"
                     ]
                   }
                 ]
@@ -43,6 +50,7 @@
               {
                 "group": "GET STARTED",
                 "pages": [
+                  "en/portal/sign-up",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -94,13 +102,14 @@
                         "group": "Organization-Controlled Wallets",
                         "pages": [
                           "en/portal/mpc-wallets/ocw/introduction",
+                          "en/portal/mpc-wallets/ocw/key-share-optimization-note",
                           {
                             "group": "Set up wallets",
                             "pages": [
                               "en/portal/mpc-wallets/ocw/set-up",
                               "en/portal/mpc-wallets/ocw/create-mpc-vault",
                               {
-                                "group": "Create holder groups",
+                                "group": "Create private keys",
                                 "pages": [
                                   "en/portal/mpc-wallets/ocw/holder-group-overview",
                                   "en/portal/mpc-wallets/ocw/holder-group-main-group",
@@ -114,7 +123,7 @@
                           },
                           "en/portal/mpc-wallets/ocw/manage-key-share-groups",
                           {
-                            "group": "Recover holder groups",
+                            "group": "Recover private keys",
                             "pages": [
                               "en/portal/mpc-wallets/ocw/restore-from-backup",
                               "en/portal/mpc-wallets/ocw/recover-from-active-keys",
@@ -166,6 +175,7 @@
                       "en/portal/transfers/from-web3-wallets",
                       "en/portal/transfers/from-mpc-wallets",
                       "en/portal/transfers/from-exchange-wallets",
+                      "en/portal/transfers/travel-rule",
                       "en/portal/transfers/fee-model",
                       {
                         "group": "Address Book",
@@ -181,6 +191,7 @@
                     "pages": [
                       "en/portal/auto-sweep-overview",
                       "en/portal/enable-auto-sweep",
+                      "en/portal/auto-sweep-settings",
                       "en/portal/change-sweep-address"
                     ]
                   },
@@ -301,8 +312,7 @@
                       "en/portal/bills-and-payments/introduction",
                       "en/portal/bills-and-payments/purchase-pricing-plan",
                       "en/portal/bills-and-payments/manage-pricing-plan",
-                      "en/portal/bills-and-payments/manage-bills",
-                      "en/portal/bills-and-payments/payment-methods"
+                      "en/portal/bills-and-payments/manage-bills"
                     ]
                   },
                   "en/portal/dashboard/introduction"
@@ -548,15 +558,9 @@
               {
                 "group": "MANAGE",
                 "pages": [
+                  "en/accounts/modify-existing-login-methods",
                   {
-                    "group": "Login methods",
-                    "pages": [
-                      "en/accounts/add-passkey-as-login-method",
-                      "en/accounts/modify-existing-login-methods"
-                    ]
-                  },
-                  {
-                    "group": "Multi-factor authentications (MFA)",
+                    "group": "Multi-factor authentication (MFA)",
                     "pages": [
                       "en/accounts/reset-google-authenticator",
                       "en/accounts/delete-security-keys",
@@ -586,9 +590,9 @@
               {
                 "group": "MANAGE",
                 "pages": [
-                  "en/guard/manage",
                   "en/guard/generate-and-back-up-key-shares",
-                  "en/guard/reset"
+                  "en/guard/reset",
+                  "en/guard/manage"
                 ]
               }
             ]
@@ -631,9 +635,16 @@
                   {
                     "group": "常见问题",
                     "pages": [
-                      "cn/portal/troubleshoot/custodial-wallets",
-                      "cn/portal/troubleshoot/mpc-wallets",
-                      "cn/portal/troubleshoot/exchange-wallets"
+                      "cn/portal/troubleshoot/transaction-failed-or-stuck",
+                      "cn/portal/troubleshoot/deposit-not-credited",
+                      "cn/portal/troubleshoot/token-chain-not-visible-or-unsupported",
+                      "cn/portal/troubleshoot/transfer-out-unsupported-evm-assets",
+                      "cn/portal/troubleshoot/auto-token-sweeping-asset-wallets",
+                      "cn/portal/troubleshoot/when-auto-token-sweeping-triggers",
+                      "cn/portal/troubleshoot/remaining-balance-after-sweeping",
+                      "cn/portal/troubleshoot/cant-create-wallet",
+                      "cn/portal/troubleshoot/cant-access-connected-exchange-account",
+                      "cn/portal/troubleshoot/cant-connect-exchange-account"
                     ]
                   }
                 ]
@@ -641,6 +652,7 @@
               {
                 "group": "快速开始",
                 "pages": [
+                  "cn/portal/sign-up",
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -692,13 +704,14 @@
                         "group": "机构钱包",
                         "pages": [
                           "cn/portal/mpc-wallets/ocw/introduction",
+                          "cn/portal/mpc-wallets/ocw/key-share-optimization-note",
                           {
                             "group": "设置钱包",
                             "pages": [
                               "cn/portal/mpc-wallets/ocw/set-up",
                               "cn/portal/mpc-wallets/ocw/create-mpc-vault",
                               {
-                                "group": "创建持有者组",
+                                "group": "创建私钥",
                                 "pages": [
                                   "cn/portal/mpc-wallets/ocw/holder-group-overview",
                                   "cn/portal/mpc-wallets/ocw/holder-group-main-group",
@@ -712,7 +725,7 @@
                           },
                           "cn/portal/mpc-wallets/ocw/manage-key-share-groups",
                           {
-                            "group": "恢复持有者组",
+                            "group": "恢复私钥",
                             "pages": [
                               "cn/portal/mpc-wallets/ocw/restore-from-backup",
                               "cn/portal/mpc-wallets/ocw/recover-from-active-keys",
@@ -764,6 +777,7 @@
                       "cn/portal/transfers/from-web3-wallets",
                       "cn/portal/transfers/from-mpc-wallets",
                       "cn/portal/transfers/from-exchange-wallets",
+                      "cn/portal/transfers/travel-rule",
                       "cn/portal/transfers/fee-model",
                       {
                         "group": "地址簿",
@@ -779,6 +793,7 @@
                     "pages": [
                       "cn/portal/auto-sweep-overview",
                       "cn/portal/enable-auto-sweep",
+                      "cn/portal/auto-sweep-settings",
                       "cn/portal/change-sweep-address"
                     ]
                   },
@@ -900,8 +915,7 @@
                       "cn/portal/bills-and-payments/introduction",
                       "cn/portal/bills-and-payments/purchase-pricing-plan",
                       "cn/portal/bills-and-payments/manage-pricing-plan",
-                      "cn/portal/bills-and-payments/manage-bills",
-                      "cn/portal/bills-and-payments/payment-methods"
+                      "cn/portal/bills-and-payments/manage-bills"
                     ]
                   },
                   "cn/portal/dashboard/introduction"
@@ -1147,13 +1161,7 @@
               {
                 "group": "管理",
                 "pages": [
-                  {
-                    "group": "登录方式",
-                    "pages": [
-                      "cn/accounts/add-passkey-as-login-method",
-                      "cn/accounts/modify-existing-login-methods"
-                    ]
-                  },
+                  "cn/accounts/modify-existing-login-methods",
                   {
                     "group": "多重身份验证 (MFA)",
                     "pages": [
@@ -1185,9 +1193,9 @@
               {
                 "group": "管理",
                 "pages": [
-                  "cn/guard/manage",
                   "cn/guard/generate-and-back-up-key-shares",
-                  "cn/guard/reset"
+                  "cn/guard/reset",
+                  "cn/guard/manage"
                 ]
               }
             ]
@@ -1484,70 +1492,6 @@
       "destination": "/cn/portal/developer-console/introduction"
     },
     {
-      "source": "/cn/accounts/key-features",
-      "destination": "/cn/accounts/introduction"
-    },
-    {
-      "source": "/cn/guard/key-features",
-      "destination": "/cn/guard/introduction"
-    },
-    {
-      "source": "/en/accounts/forgot-password",
-      "destination": "/en/accounts/troubleshoot"
-    },
-    {
-      "source": "/cn/accounts/forgot-password",
-      "destination": "/cn/accounts/troubleshoot"
-    },
-    {
-      "source": "/en/accounts/passkeys-failed",
-      "destination": "/en/accounts/troubleshoot"
-    },
-    {
-      "source": "/cn/accounts/passkeys-failed",
-      "destination": "/cn/accounts/troubleshoot"
-    },
-    {
-      "source": "/en/portal/custodial-wallets/unable-to-create-wallet",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/cn/portal/custodial-wallets/unable-to-create-wallet",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/en/portal/custodial-wallets/unsupported-tokens-and-chains",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/en/portal/custodial-wallets/transaction-not-processed-successfully",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/cn/portal/custodial-wallets/transaction-not-processed-successfully",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/en/portal/exchange-wallets/troubleshoot",
-      "destination": "/en/portal/troubleshoot/exchange-wallets"
-    },
-    {
-      "source": "/cn/portal/exchange-wallets/troubleshoot",
-      "destination": "/cn/portal/troubleshoot/exchange-wallets"
-    },
-    {
-      "source": "/en/portal/enable-auto-sweep#frequently-asked-questions-faq",
-      "destination": "/en/portal/troubleshoot/mpc-wallets"
-    },
-    {
-      "source": "/cn/portal/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
-      "destination": "/cn/portal/troubleshoot/mpc-wallets"
-    },
-    {
       "source": "/en/portal/portal-apps/build",
       "destination": "/en/apps/build"
     },
@@ -1758,6 +1702,14 @@
     {
       "source": "/en/portal/custodial-wallets/cobo-loop",
       "destination": "/en/portal/custodial-wallets/asset-wallets/cobo-loop"
+    },
+    {
+      "source": "/en/portal/deposit-address-transaction",
+      "destination": "/en/portal/auto-sweep-settings"
+    },
+    {
+      "source": "/cn/portal/deposit-address-transaction",
+      "destination": "/cn/portal/auto-sweep-settings"
     }
   ]
 }

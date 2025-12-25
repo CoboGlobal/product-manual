@@ -33,13 +33,19 @@ description: "Discover how to set up contract call policies in Cobo Portal, enha
 
 #### Select condition template <a id="select-condition-template"></a>
 
-**Initiators**: The policy will be triggered only if the transaction is initiated by selected entities.
+The available condition templates vary depending on the applicable network you select:
 
+- **Any network**: You can configure only **Initiators**.
+- **All EVM networks**: You can configure **Initiators** + **Custom Contract Calls** (up to parameter-level).
+- **Specific EVM network**: You can configure **Initiators** + **Token Approval** + **Token Transfers** + **Custom Contract Calls** (up to parameter-level).
+- **Solana**: You can configure **Initiators** + **Custom Contract Calls** (program-level only).
+- **Other networks**: You can configure only **Initiators**.
+
+**Initiators**: The policy will be triggered only if the transaction is initiated by selected entities.
 - API Keys: You can specify whether any team members, or only specific members, are allowed to initiate transactions via APIs.
 - Web Users: You can specify whether any team members, or only specific members, are allowed to initiate transactions via the web console.
 - Apps: You can specify whether any apps, or only specific apps, are allowed to initiate transactions.
 <img src="/en/images/risk-controls/initiator.png" className="screenshot_full_screen"/>
-
 
 **Token Approval**: The policy will be triggered only if a token approval is associated with specific types of tokens, spenders, and amounts.
 - **Token Types**: You can specify the types of tokens the spenders are allowed to spend.

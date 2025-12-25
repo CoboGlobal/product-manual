@@ -1,0 +1,28 @@
+---
+title: "Deposit not credited"
+sidebarTitle: "Deposit not credited"
+lang: "en"
+description: "Learn common causes and checks when a deposit is not credited for a long time."
+---
+
+**Applicable to: All wallets**
+
+If your deposit hasn’t been credited for a long time, we recommend checking the following in order:
+
+1. Check the transaction status in a block explorer
+    - Confirm the transaction is successfully included on-chain (Success).
+    - Confirm it has reached the required number of confirmations.
+
+2. Verify your deposit information
+    - Ensure the deposit address is correct.
+    - Ensure the chain/network is correct.
+    - If the chain/asset requires a Tag/Memo/Note, ensure it is provided correctly.
+
+3. Check common causes of crediting delays
+    - Network congestion leading to longer confirmation time.
+    - Some Layer 2 networks (such as Arbitrum, Optimism, Base, and Zora) require L1 finality (Finalized) before the deposit is credited. Even if the transaction shows as successful on the L2 explorer, it may still need to reach Finalized on L1 before it can be credited.
+    - System maintenance or service incidents.
+
+To learn the confirmation requirements for deposits on different chains, refer to [Supported tokens and chains](/en/portal/supported-tokens-and-chains#required-confirmation-for-token-deposits).
+
+If the issue persists, please prepare the TxHash, deposit address, token, and chain information, then contact Cobo Support (help@cobo.com).

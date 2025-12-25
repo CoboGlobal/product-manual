@@ -1,13 +1,16 @@
-当你发起转账时，会产生链上手续费/网络费，用于支付链上交易执行的成本。
-- 手续费来源：默认情况下，手续费会从你发起提币的钱包中扣除。如果你设置了 [Fee Station](/cn/portal/fee-station/introduction) 代付手续费，则手续费会从 Fee Station 账户中扣除。
+当您发起转账时，会产生链上手续费/网络费，用于支付链上交易执行的成本。
+- 手续费来源：默认情况下，手续费会从您发起提币的钱包中扣除。
+
+    <Note>建议您设置 [Fee Station](/cn/portal/fee-station/introduction) 代付手续费，可集中管理各钱包的 Gas 费用，并支持使用稳定币支付，避免因主链币不足导致交易失败。</Note>
+
 - 费用模型：不同链采用不同的费用模型，例如 Ethereum 支持 EIP-1559 和 Legacy 两种模型。如需了解各条链的手续费计算方式，请参阅[交易手续费模型](/cn/portal/transfers/fee-model)。
-- 费用计算与参数：将鼠标悬浮在**网络费用**的问号图标 <img src="/en/images/common/icon_question_circle.svg" className="icon" alt="问号图标" /> 上，你可以看到该链的网络费用计算公式。
+- 费用计算与参数：将鼠标悬浮在**网络费用**的问号图标 <img src="/en/images/common/icon_question_circle.svg" className="icon" alt="问号图标" /> 上，您可以看到该链的网络费用计算公式。
 
     <img src="/cn/images/transfers/calculation.png" className="screenshot_modal" alt="费用计算公式" />
 
-- 转账速度选择：你可以选择不同的转账速度（慢、推荐、快），系统会根据所选速度自动匹配相应等级的费用。
-- 自定义设置：你也可以点击设置按钮（齿轮图标），调整可自定义的费用参数，确保实际手续费不超过设定值。
+- 转账速度选择：您可以在**网络费用**字段右侧选择不同的转账速度（慢、推荐、快），系统会根据所选速度自动匹配相应等级的费用。
+- 自定义设置：您也可以点击设置按钮（齿轮图标），调整可自定义的费用参数，确保实际手续费不超过设定值。
 
     <img src="/cn/images/transfers/customize-fees.png" className="screenshot_modal" alt="自定义费用参数设置" />
 
-<Info>交易完成后，你可以在交易记录的**网络费用**字段中查看实际发生的手续费。</Info>
+<Info>交易完成后，您可以在交易记录的**网络费用**字段中查看实际发生的手续费。</Info>

@@ -1,0 +1,63 @@
+---
+title: "自动代币归集设置"
+sidebarTitle: "自动代币归集设置"
+lang: "zh-hans"
+description: "了解如何在 Cobo Portal 中配置自动代币归集功能，包括充币地址交易能力、链上手续费上限设置，以及自动触发 RBF 加速归集。"
+---
+
+自动代币归集功能可帮助您自动将多个充币地址中的资产归集至指定地址，以提高资产管理效率。为确保归集交易的执行行为符合业务需求，您可以为钱包配置多项设置，包括：
+
+- 充币地址交易功能  
+- 归集交易链上手续费上限  
+- 自动触发 RBF 加速归集  
+
+## 前提条件
+- 您已被分配为操作员、经理或管理员[用户角色](/cn/portal/organization/roles-and-permissions)。
+- 您已为该钱包[启用自动代币归集功能](/cn/portal/enable-auto-sweep)。
+
+## 开启充币地址交易功能
+
+启用自动代币归集后，充币地址默认仅用于接收资产，并只能发起到指定归集地址的归集交易。不支持提币、合约调用、质押、OTC 交易或金融产品交易，也不能作为智能合约钱包的委托地址。
+
+如需恢复充币地址的链上交易能力，您可以按以下步骤手动开启充币地址交易功能：
+1. 在钱包列表中找到目标钱包。
+2. 在钱包设置页面中，点击**自动归集设置**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="自动代币归集设置" />。
+3. 在**自动归集设置**页面，点击**充币地址交易**旁边的启用按钮。
+
+    <img src="/cn/images/portal/auto-sweep-settings.png" className="full_screen" alt="自动归集设置" />
+
+4. 在**开启充币地址交易功能**弹窗中，点击**确认**，并完成多重身份验证（MFA）。
+
+验证成功后，系统会发起相应的审批流程，审批通过启用即生效。启用后，充币地址与归集地址在交易能力上保持一致。发起链上交易时（如[转账](/cn/portal/transfers/introduction)或合约调用），您可以选择由钱包地址支付手续费，或通过 [Fee Station](/cn/portal/fee-station/introduction) 代付 Gas 费，实现自动补充与统一结算。
+
+## 修改归集交易链上手续费上限
+
+系统默认为 BTC 链和 ETH 链的归集交易设定链上手续费上限。当预估手续费超出上限时，归集交易将不会执行，以避免在网络拥堵期间产生高额费用。您可以根据实际需求按照以下步骤修改归集交易链上手续费上限：
+
+1. 在钱包列表中找到目标钱包。
+2. 在钱包设置页面中，点击**自动归集设置**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="自动代币归集设置" />。
+3. 在**自动归集设置**页面中，点击**归集交易链上手续费上限**下的**修改配置**。
+
+    <img src="/cn/images/portal/auto-sweep-settings.png" className="full_screen" alt="自动归集设置" />  
+
+4. 分别填写 BTC 和 ETH 的上限值。  
+5. 点击**提交**，并完成多重身份验证（MFA）。
+
+验证成功后，系统会发起相应的审批流程，审批通过修改即生效。
+
+## 自动触发 RBF 加速归集
+
+若归集交易在设定时间内未确认，可按照以下步骤设置让 Cobo 自动发起 Replace-By-Fee (RBF) 交易以提升交易确认速度：
+
+1. 在钱包列表中找到目标钱包。
+2. 在钱包设置页面中，点击**自动归集设置**图标 <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="自动代币归集设置" />。
+3. 在**自动归集设置**页面中，点击**自动发起 RBF 加速归集交易**旁的启用按钮。
+
+    <img src="/cn/images/portal/auto-sweep-settings.png" className="full_screen" alt="自动归集设置" />
+
+4. 设置触发时间与最大尝试次数。  
+5. 点击**提交**，并完成多重身份验证（MFA）。
+
+验证成功后，系统会发起相应的审批流程，审批通过启用即生效。
+
+如需了解归集行为、手续费策略或交易执行细节，请参阅[自动代币归集功能介绍](/cn/portal/auto-sweep-overview)。

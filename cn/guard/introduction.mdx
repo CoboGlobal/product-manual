@@ -23,9 +23,9 @@ Cobo Guard 采用非对称加密来保护您的资产安全。您的公钥与 Co
 
 ## 主要功能
 
-### 多因素认证 (MFA) 方式
+### 多重身份验证 (MFA) 方式
 
-多因素认证 (MFA) 是 Cobo Portal 中的一项重要安全措施。在登录时，除密码外，您还需通过 MFA 进行额外身份验证，为账户增加一层保护，防止密码泄露后的未经授权访问。
+多重身份验证 (MFA) 是 Cobo Portal 中的一项重要安全措施。在登录时，除密码外，您还需通过 MFA 进行额外身份验证，为账户增加一层保护，防止密码泄露后的未经授权访问。
 
 Cobo Guard 作为一种 MFA 方式，可用于快速验证登录或关键操作（如邀请新用户、修改风险控制）。只需在 Cobo Guard 上点击确认，即可验证用户身份，确保账户安全无虞。
 
@@ -37,8 +37,6 @@ Cobo Guard 作为一种 MFA 方式，可用于快速验证登录或关键操作�
 安全生成、备份和管理 MPC 私钥分片，有效提升资产保护，降低单点故障风险。Cobo Guard 通过将密钥分片分散至多个参与方或设备，确保任何单一实体都无法完全控制私钥，从而大幅提升安全性。
 
 如需了解如何使用 Cobo Guard 生成和备份私钥分片，请参阅[生成并备份私钥分片](/cn/guard/generate-and-back-up-key-shares)。
-
-如需了解如何使用 Cobo Guard 对交易进行签名，请参阅[移动端签名人](/cn/portal/mpc-wallets/ocw/holder-group-main-group#signer-type)。
 
 以下截图展示了如何使用 Cobo Guard 对交易进行签名：
 
@@ -116,14 +114,32 @@ Cobo Guard 支持对团队内其他用户发起的操作进行审批，包括交
       <td>管理 Webhook Endpoints</td>
     </tr>
     <tr>
-      <td rowspan="3">[MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)</td>
-      <td>创建主控组</td>
+      <td rowspan="9">[MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)</td>
+      <td>生成签名私钥</td>
     </tr>
     <tr>
-      <td>创建签名组</td>
+      <td>删除活跃的签名私钥</td>
     </tr>
     <tr>
-      <td>创建恢复组</td>
+      <td>生成恢复私钥</td>
+    </tr>
+    <tr>
+      <td>删除活跃的恢复私钥</td>
+    </tr>
+    <tr>
+      <td>将签名私钥升级为主控私钥</td>
+    </tr>
+    <tr>
+      <td>重新生成主控私钥</td>
+    </tr>
+    <tr>
+      <td>删除活跃的私钥（高级 MPC Vaults 操作）</td>
+    </tr>
+    <tr>
+      <td>重新生成私钥（高级 MPC Vaults 操作）</td>
+    </tr>
+    <tr>
+      <td>更新签名人角色和私钥用途（高级 MPC Vaults 操作）</td>
     </tr>
     <tr>
       <td>[MPC 钱包（终端用户钱包）](/cn/portal/mpc-wallets/ucw/introduction)</td>

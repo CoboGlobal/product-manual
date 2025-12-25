@@ -7,22 +7,28 @@ description: "Learn to generate and back up key shares securely with Cobo Guard,
 
 To demonstrate how Cobo Guard functions as a key share manager, this section guides you through the key share generation and backup processes from the perspective of a key share holder operating on a Cobo Guard app.
 
-The key share generation process is initiated on the Cobo Portal by an admin. The members selected by the admin as key share holders will receive a notification on their Cobo Guard apps to become key share holders. All selected members must confirm to become key share holders before the key generation process can start. 
+The key share generation process is initiated on the Cobo Portal by an Admin. The members selected by the Admin as key share holders will receive a notification on their Cobo Guard apps to become key share holders. All selected members must confirm to become key share holders before the key generation process can start. 
 
 After the key shares have been generated, key share holders can back up their key shares to iCloud using Cobo Guard. During the backup process, the key shares are encrypted, and a recovery passphrase is set to ensure security when restoring the backup from iCloud. This backup can be particularly useful in situations such as device loss or replacement.
 
-## Generate key shares
-The key share generation process is initiated by the admins on the Cobo Portal. The key shares are categorized into one of the three groups: Main Group, Signing Group, and Recovery Group. We will use the Main Group to illustrate the process.
+Before starting the operation, we recommend watching the 2-minute video below to build a basic understanding of key shares and backups, including why key shares and their backups are critical and the key requirements for correct backups. This will help you avoid asset risks caused by misoperations.
 
-1. On the Cobo Portal, admins create a Main Group by navigating to **MPC Wallets** > **[vault-name]** > **Create Main Group**.
+After that, please follow the steps in this document to complete the operations.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WHc1O6KaZW0?si=YDcTI5-v7oTTS4bX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Generate your key share
+The key share generation process is initiated by Admins on the Cobo Portal. Key shares jointly form keys, and there are three types of keys: Main Key, Signing Key, and Recovery Key. We will use the Main Key to illustrate the process.
+
+1. On the Cobo Portal, the Admin navigates to **MPC Wallets**, selects the target vault, and clicks **Create Main Key**.
 
     <img src="/en/images/cobo-guard/common/createmaingroup.png" className="screenshot_full_screen"></img>
 
-2. During the Main Group creation process, the admins select members to become key share holders. 
+2. In the pop-up window, the Admin selects members to become key share holders. 
 
-    <Note>Selected members' Cobo Guard must already be linked to the admin’s organization for them to be eligible for selection as a key share holder.</Note>
+    <Note>Selected members' Cobo Guard must already be linked to the Admin’s organization for them to be eligible for selection as a key share holder.</Note>
 
-3. Once the Main Group creation is initiated by the admins, selected members will be notified on their Cobo Guard. Simply tap the **1 key share needs to be generated** banner.
+3. Once the Admin submits the Main Key creation request, selected members will be notified on their Cobo Guard. Simply tap the **1 key share needs to be generated** banner.
 
     <img src="/en/images/cobo-guard/request.png" className="screenshot_nav_bar" alt="The banner" />
 
@@ -34,23 +40,25 @@ The key share generation process is initiated by the admins on the Cobo Portal. 
 
     <img src="/en/images/cobo-guard/complete.png" className="screenshot_nav_bar" alt="The key share generation completion page" />
 
-6. You can tap **Start** to [back up the key share now](#back-up-your-key-shares), or tap **Skip** to complete key generation process.
+6. Tap **Start** to [back up the key share now](#back-up-your-key-share).
 
     <img src="/en/images/cobo-guard/skip.png" className="screenshot_nav_bar" alt="The key share backup page" />
 
-## Back up your key shares
+## Back up your key share
+
 1. Return to the home screen of Cobo Guard. Access My Accounts by tapping <img src="/en/images/cobo-guard/common/icon_menu.svg" className="icon"></img> and then <img src="/en/images/cobo-guard/common/icon_account.svg" className="icon"></img> **My Accounts**.
 
-2. Tap the <img src="/en/images/cobo-guard/common/icon_cloud.svg" className="icon"></img> icon on the upper right corner to enter the **Back Up Your Private Key Shares** screen.
+2. Tap the <img src="/en/images/cobo-guard/common/icon_cloud.svg" className="icon"></img> icon on the upper right corner to enter the **Back Up Your Private Key Share** screen.
 
-    <Note>If you have recently generated key shares, you can also tap **Back Up Now** instead.</Note>
+    <Note>If you have recently generated a key share, you can also tap **Back Up Now** instead.</Note>
 
-3. On the **Back Up Your Private Key Shares** screen, tap **Start**, then authenticate yourself using Face ID.
+3. On the **Back Up Your Private Key Share** screen, tap **Start**, then authenticate yourself using Face ID.
 
     <img src="/en/images/cobo-guard/common/backup.png" className="screenshot_nav_bar"></img>
 
-4. On the **Set Recovery Passphrase** screen, set a recovery passphrase that will grant access to your backups when restoring key shares from iCloud, then tap **Continue**.
-<Warning>Please save the passphrase securely; losing it will prevent you from restoring your key shares.</Warning>
+4. On the **Set Recovery Passphrase** screen, set a recovery passphrase that will grant access to your backup when restoring your key share from iCloud, then tap **Continue**.
+
+<Warning>Please save the passphrase securely; losing it will prevent you from restoring your key share.</Warning>
 
 5. On the **Backup Successful** dialog, tap **OK** to complete the backup process.
 
