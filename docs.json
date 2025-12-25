@@ -593,8 +593,8 @@
                 "pages": [
                   "en/guard/generate-and-back-up-key-shares",
                   "en/guard/reset",
-                  "en/guard/manage",
-                  "en/guard/assistant"
+                  "en/guard/assistant",
+                  "en/guard/manage"
                 ]
               }
             ]
@@ -1209,8 +1209,8 @@
                 "pages": [
                   "cn/guard/generate-and-back-up-key-shares",
                   "cn/guard/reset",
-                  "cn/guard/manage",
-                  "cn/guard/assistant"
+                  "cn/guard/assistant",
+                  "cn/guard/manage"
                 ]
               }
             ]
