@@ -51,7 +51,7 @@
                 "group": "GET STARTED",
                 "pages": [
                   "en/portal/sign-up",
-                  "en/portal/onboarding-agent",
+                  "en/portal/onboarding-agents",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -666,7 +666,7 @@
                 "group": "快速开始",
                 "pages": [
                   "cn/portal/sign-up",
-                  "cn/portal/onboarding-agent",
+                  "cn/portal/onboarding-agents",
                   {
                     "group": "MPC 钱包",
                     "pages": [
