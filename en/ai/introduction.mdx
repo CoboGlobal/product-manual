@@ -1,0 +1,105 @@
+---
+title: "Cobo AI Introduction"
+sidebarTitle: "Introduction"
+lang: "en"
+description: "Learn how Cobo AI helps you understand Cobo products, get information, and complete actions under explicit authorization."
+---
+
+## What is Cobo AI?
+
+Cobo AI is the umbrella name for Cobo's AI-assisted capabilities across Cobo Portal, Cobo Guard, and other products and scenarios. It helps you better understand product features, obtain key information, and complete controlled actions when explicitly authorized.
+
+- **Turn complex concepts and flows into understandable information:** 
+
+    Cobo AI breaks down complex configurations and multi-stage flows to explain concepts and actions, lowering the barrier to use.
+
+- **On-page explanations and tips:** 
+
+    While you browse or operate, Cobo AI provides explanations, tips, and cautions relevant to the current page and task, reducing the need to repeatedly consult documentation.
+
+- **Dynamic responses based on your context:**  
+
+    Cobo AI tailors responses to your product module, process stage, and system status, surfacing only information and suggestions relevant to your current situation.
+
+- **Natural-language queries and task assistance:**  
+
+    You can ask questions or describe goals in natural language. Cobo AI can directly answer, or when needed, help translate goals into actionable, confirmable steps.
+
+- **Assist with read/write actions under authorization:**  
+    
+    With your explicit authorization and confirmation, Cobo AI can help initiate controlled read or write actions—such as querying transactions, wallets, and balances, or assisting with configuration and transaction initiation—but it will never execute critical actions without confirmation.
+
+## Design principles
+
+### Security first
+
+Cobo AI will not bypass Cobo's security architecture, permission system, or risk-control mechanisms. All critical actions involving assets or system state changes must be completed in official Cobo interfaces with your explicit consent, following existing permissions and approval flows.
+
+### Human-centered decisions
+
+Cobo AI is an intelligent helper, not a decision maker. It will not move any process forward without confirmation. Whether interpreting information or triggering actions, decision-making and responsibility remain with you.
+
+### Scenario-driven product understanding
+
+Cobo AI is designed around product scenarios. Its understanding includes not only what you input, but also your current product module, process stage, account structure, and role permissions—so it can provide explanations and guidance highly relevant to each stage.
+
+## Available AI products
+
+### Cobo AI Assistant <a id="cobo-ai-assistant"></a>
+
+The Cobo AI Assistant lives inside Cobo Portal. You can use it to interact with various product features, retrieve information, understand your current status, and complete actions under authorization.
+
+The Cobo AI Assistant invokes the right agents based on your team's state and usage stage. For example, during onboarding to Cobo Portal, it calls the onboarding agents to help you complete initial setup.
+
+<Info>
+**What is an agent?**  
+
+An agent is an intelligent tool the AI assistant automatically invokes for a specific task scenario. Different agents handle different types of tasks.
+</Info>
+
+#### Cobo Portal onboarding agents
+
+Onboarding agents are a group of collaborating agents the Cobo AI Assistant invokes during new-user onboarding. They continuously detect your configuration progress and system status, provide clear step guidance, progress updates, and explanations, and help you smoothly complete key onboarding steps.
+
+For details, see [Cobo Portal onboarding agents](/en/portal/onboarding-agents).
+
+### Cobo Guard AI Assistant
+
+Cobo Guard AI Assistant is embedded in the Cobo Guard transaction approval flow. It helps approvers quickly understand the business context of requests, the transaction policies that triggered approval, and potential risk signals—without replacing human judgment or automating approval actions.
+
+For details, see [Cobo Guard AI Assistant](/en/guard/assistant).
+
+## Data usage and security
+
+To protect your assets and privacy, Cobo AI follows clear, controllable authorization rules for data usage.
+
+### Data it can use
+
+- Commands or questions you provide during use  
+- Team data and configuration within your permission scope  
+- Transaction information, transaction policies, or smart contract parameters related to the current operation
+- Public product documentation and market data
+
+### Data it cannot access
+
+- Private keys, mnemonics, or any key material  
+- Unauthorized internal credentials or third-party private data  
+- Account or team information outside your role permissions  
+
+## Capability boundaries
+
+To avoid misuse or overreliance, Cobo AI has clear limits on its scope:
+
+- Will not execute any critical configuration or asset-related action without your confirmation
+- Will not bypass existing permission systems, transaction policies, or approval flows
+- Will not make business, fund, or security decisions for you; you remain responsible for outcomes
+- Will not provide professional financial, legal, tax, or compliance opinions
+- Does not guarantee complete or real-time information in all cases; apply your own judgment when using AI-provided insights
+
+## Availability
+
+Cobo AI features are currently in Beta and available only to selected test users so we can gather feedback and keep improving the experience.
+
+If you are interested in trying Cobo AI, contact [Cobo Support](mailto:help@cobo.com) to request access. After access is granted, you will see the Cobo AI entry points in the relevant product interfaces and can start using them.
+
+<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>
