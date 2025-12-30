@@ -33,14 +33,18 @@
                   {
                     "group": "FAQs",
                     "pages": [
-                      "en/portal/troubleshoot/transaction-failed-or-stuck",
-                      "en/portal/troubleshoot/deposit-not-credited",
+                      "en/portal/troubleshoot/dev-environment-apply-activate-login",
+                      "en/portal/troubleshoot/cant-create-wallet",
                       "en/portal/troubleshoot/token-chain-not-visible-or-unsupported",
                       "en/portal/troubleshoot/transfer-out-unsupported-evm-assets",
+                      "en/portal/troubleshoot/transaction-failed-or-stuck",
+                      "en/portal/troubleshoot/transaction-broadcasting-or-slow-confirmation",
+                      "en/portal/troubleshoot/deposit-not-credited",
+                      "en/portal/troubleshoot/insufficient-funds",
                       "en/portal/troubleshoot/auto-token-sweeping-asset-wallets",
                       "en/portal/troubleshoot/when-auto-token-sweeping-triggers",
+                      "en/portal/troubleshoot/auto-sweep-transaction-stuck-or-unconfirmed",
                       "en/portal/troubleshoot/remaining-balance-after-sweeping",
-                      "en/portal/troubleshoot/cant-create-wallet",
                       "en/portal/troubleshoot/cant-access-connected-exchange-account",
                       "en/portal/troubleshoot/cant-connect-exchange-account"
                     ]
@@ -648,14 +652,18 @@
                   {
                     "group": "常见问题",
                     "pages": [
-                      "cn/portal/troubleshoot/transaction-failed-or-stuck",
-                      "cn/portal/troubleshoot/deposit-not-credited",
+                      "cn/portal/troubleshoot/dev-environment-apply-activate-login",
+                      "cn/portal/troubleshoot/cant-create-wallet",
                       "cn/portal/troubleshoot/token-chain-not-visible-or-unsupported",
                       "cn/portal/troubleshoot/transfer-out-unsupported-evm-assets",
+                      "cn/portal/troubleshoot/transaction-failed-or-stuck",
+                      "cn/portal/troubleshoot/transaction-broadcasting-or-slow-confirmation",
+                      "cn/portal/troubleshoot/deposit-not-credited",
+                      "cn/portal/troubleshoot/insufficient-funds",
                       "cn/portal/troubleshoot/auto-token-sweeping-asset-wallets",
                       "cn/portal/troubleshoot/when-auto-token-sweeping-triggers",
+                      "cn/portal/troubleshoot/auto-sweep-transaction-stuck-or-unconfirmed",
                       "cn/portal/troubleshoot/remaining-balance-after-sweeping",
-                      "cn/portal/troubleshoot/cant-create-wallet",
                       "cn/portal/troubleshoot/cant-access-connected-exchange-account",
                       "cn/portal/troubleshoot/cant-connect-exchange-account"
                     ]

@@ -1,0 +1,21 @@
+---
+title: "Transfer fails even though token balance is sufficient"
+sidebarTitle: "Token balance sufficient but failed"
+lang: "en"
+description: "Learn common causes and fixes when you see an insufficient funds error even though your token balance are sufficient."
+---
+
+**Applicable to: MPC Wallets, Custodial Wallets (Web3 Wallets)**
+
+If you see an insufficient funds error when initiating a transfer even though your token balance is sufficient, the most common cause is an insufficient balance of the native gas token used to pay on-chain fees. Token balances and gas token balances are different.
+
+We recommend checking the following:
+
+1. Check whether Fee Station is enabled (recommended)
+    - For MPC Wallets and Custodial Wallets (Web3 Wallets), we recommend enabling [Fee Station](/en/portal/fee-station/introduction) and completing the applicable setup. Fee Station can pay gas fee for your transfer and reduce failures caused by insufficient gas. Fee Station also supports paying fees using your fiat USD or stablecoins (such as USDT and USDC) balance.
+
+2. If Fee Station is not enabled, check whether the gas token balance is sufficient
+    - EVM networks usually require ETH (or the chain’s native token) to pay gas.
+    - On TRON, fees are typically paid with TRX (or via related energy/bandwidth mechanisms).
+
+If the issue persists, please provide your wallet type, chain, token, error message, and the time of occurrence, then contact Cobo Support (help@cobo.com).

@@ -1,0 +1,20 @@
+---
+title: "Transaction stuck in Broadcasting or slow on-chain confirmations"
+sidebarTitle: "Broadcasting/slow confirmations"
+lang: "en"
+description: "Learn common causes and checks when withdrawals, sweeps, or other transactions remain in Broadcasting or confirm slowly on-chain."
+---
+
+**Applicable to: All wallets**
+
+If a transaction stays in **Broadcasting** for a long time, or on-chain confirmations progress slowly, it usually means the transaction has been broadcast to the network but is still waiting to be included/confirmed. Confirmation requirements vary by chain, and network congestion can slow down confirmations.
+
+We recommend checking the following in order:
+
+1. Confirm the on-chain status in a block explorer
+    - If the explorer shows the transaction is not included yet, or has a low confirmation count, it is usually related to network congestion or a low fee.
+    - If the explorer shows the transaction is successful and has enough confirmations, but the status in Cobo Portal has not updated, refer to [Deposit not credited](/en/portal/troubleshoot/deposit-not-credited).
+
+2. Consider acceleration options if the chain supports it
+    - For networks/wallets that support transaction replacement (for example, Replace By Fee, RBF), you may be able to accelerate confirmations by increasing the fee when eligible.
+    - If you are not sure whether acceleration is supported or how to proceed, contact Cobo Support for assistance.
