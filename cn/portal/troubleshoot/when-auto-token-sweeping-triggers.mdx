@@ -1,12 +1,14 @@
 ---
-title: "自动代币归集什么时候触发"
-sidebarTitle: "自动代币归集触发机制"
+title: "自动代币归集为什么没有触发"
+sidebarTitle: "自动代币归集未触发"
 lang: "zh-hans"
-description: "了解启用自动代币归集后归集触发时机与常见影响因素。"
+description: "了解启用自动代币归集后归集未触发的常见原因与处理方式。"
 ---
 
 **适用范围：全托管钱包（Web3 钱包）、MPC 钱包**
 
-对于启用了自动代币归集的全托管钱包（Web3 钱包）与 MPC 钱包，自动代币归集的触发时机和执行策略由 Cobo 系统根据内部规则自动管理。如果您发现资金入账到充币地址后一段时间仍未归集，请先确认该地址在链上确实已收到资金，并注意归集可能会受到网络拥堵、手续费波动、以及平台侧策略执行节奏等因素影响。
+对于启用了自动代币归集的全托管钱包（Web3 钱包）与 MPC 钱包，自动代币归集的触发时机和执行策略由 Cobo 系统根据内部规则自动管理。如果您已为钱包启用自动代币归集，但发现资金入账到充币地址后一段时间仍未归集，请先确认该地址在链上确实已收到资金，并注意归集可能会受到网络拥堵、手续费波动、以及平台侧策略执行节奏等因素影响。
 
-参考文档：[自动代币归集概览](/cn/portal/auto-sweep-overview)。
+如需手动触发归集，您也可以通过 WaaS 2.0 API 创建归集任务，请参阅 [Create auto sweep task](https://www.cobo.com/developers/v2/api-references/autosweep/create-auto-sweep-task)。
+
+参考文档：[自动代币归集概览](/cn/portal/auto-sweep-overview)与[自动代币归集设置](/cn/portal/auto-sweep-settings)。

@@ -1,0 +1,21 @@
+---
+title: "余额充足但提币失败"
+sidebarTitle: "余额充足但提币失败"
+lang: "zh-hans"
+description: "了解提币时出现余额不足报错的常见原因与处理方式。"
+---
+
+**适用范围：MPC 钱包、全托管钱包（Web3 钱包）**
+
+如果您在提币时遇到“余额不足”报错，但确认代币余额充足，通常是因为用于支付链上手续费（Gas）的主链币（Gas Token）余额不足。代币余额与 Gas Token 余额并不相同，您需要为 Gas Token 单独准备余额，或使用 Fee Station 的自动代付能力。
+
+建议按以下步骤排查：
+
+1. 优先检查是否启用了 Fee Station（推荐）
+    - 对于 MPC 钱包与全托管钱包（Web3 钱包），建议启用 [Fee Station](/cn/portal/fee-station/introduction) 并完成相关设置，在 Gas Token 余额不足时自动补足手续费差额，减少因 Gas 不足导致的交易失败。此外，Fee Station 也支持使用美元法币或稳定币（如 USDT、USDC）支付手续费。
+
+2. 如未启用 Fee Station，请检查 Gas Token 余额是否充足
+    - EVM 链通常需要 ETH（或对应链的原生币）支付 Gas。
+    - TRON 链通常需要 TRX（或通过相关能量/带宽机制）支付手续费。
+
+如仍无法解决，请提供钱包类型、链、币种、报错信息与时间点，并联系 Cobo 客服（help@cobo.com）。
