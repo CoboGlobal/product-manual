@@ -1,0 +1,56 @@
+---
+title: "使用 WalletConnect 连接 dApp 并发起交易"
+sidebarTitle: "连接 dApp 并发起交易"
+lang: "zh-hans"
+description: "了解如何在 Cobo Portal 中通过 WalletConnect 连接 dApp、发起交易请求，并管理已连接的 dApp。"
+---
+
+## 前提条件
+
+您需要具备以下任一[角色](/cn/portal/organization/roles-and-permissions)，才可发起与管理 WalletConnect 的连接/断开连接：
+- 管理员
+- 提币员
+
+## 步骤
+
+### 1. 在 dApp 获取配对码
+
+1. 打开目标 dApp。
+2. 选择 WalletConnect 作为连接方式。
+3. 获取 WalletConnect 配对码。
+
+### 2. 在 Cobo Portal 发起连接
+
+1. 登录 Cobo Portal。
+2. 进入 **钱包** -> **WalletConnect** 页面。
+
+    <img src="/cn/images/walletconnect/intro.png" alt="intro" />
+
+3. 粘贴或输入配对码，点击**连接**。
+4. 选择要交互的钱包地址。
+5. 确认 dApp 连接信息与风险提示，建立连接。
+
+### 3. 在 dApp 发起交易请求
+
+1. 返回已连接的 dApp。
+2. 在 dApp 中发起操作，例如：兑换、质押、借贷等 DeFi 操作。
+3. dApp 将通过 WalletConnect 向 Cobo 发起交易请求。
+
+Cobo 侧将进入标准交易流程：
+
+- 提币员审核（二次确认）
+- 风控审批
+- MPC 签名
+
+您可以在 Cobo Portal 的交易记录与 Cobo Guard 的审批消息中确认 dApp 连接信息。下图展示了 Cobo Portal 的交易记录中的**连接信息**区块。
+
+<img src="/cn/images/walletconnect/tx-history.png" alt="transaction history" />
+
+## 后续步骤
+
+在 WalletConnect 管理页面，您可以查看由自己发起的当前活跃连接（过期或已断开的连接不会显示）。
+
+- 如需停止后续交易请求，您可手动断开连接。断开后，dApp 将无法继续发起交易请求，但不影响已发起并进入流程中的交易。
+- 每个连接默认有效期为 1 天。若在有效期内未主动断开，系统会自动关闭该连接。连接关闭后，dApp 将需要重新连接，才能继续进行新的操作。
+
+<Tip>欢迎[提交您的反馈](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals)，帮助我们持续优化文档质量！</Tip>
