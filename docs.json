@@ -604,10 +604,17 @@
             ]
           },
           {
-            "tab": "Cobo Connect",
+            "tab": "WalletConnect",
             "groups": [
               {
-                "group": "OVERVIEW",
+                "group": "WalletConnect",
+                "pages": [
+                  "en/walletconnect/introduction",
+                  "en/walletconnect/connect-and-send-transaction"
+                ]
+              },
+              {
+                "group": "Cobo Connect",
                 "pages": [
                   "en/cobo-connect/introduction",
                   "en/cobo-connect/set-up",
@@ -1224,10 +1231,17 @@
             ]
           },
           {
-            "tab": "Cobo Connect",
+            "tab": "WalletConnect",
             "groups": [
               {
-                "group": "概览",
+                "group": "WalletConnect",
+                "pages": [
+                  "cn/walletconnect/introduction",
+                  "cn/walletconnect/connect-and-send-transaction"
+                ]
+              },
+              {
+                "group": "Cobo Connect",
                 "pages": [
                   "cn/cobo-connect/introduction",
                   "cn/cobo-connect/set-up",
