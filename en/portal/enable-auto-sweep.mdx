@@ -86,12 +86,16 @@ In a wallet with auto token sweeping enabled, token balances are separated into 
 
 ### Transaction record type
 When sweeping occurs, two transaction records are generated:
+
 - For deposit addresses: displayed as **Withdrawal-Sweep**.
 - For sweep-to addresses: displayed as **Deposit-Sweep**.
 
 <img src="/en/images/mpc-wallet/ocw/tx-history.png" className="screenshot_full_screen" alt="Sweep transactions" />
 
 ## Optional next steps
+
+### Modify sweep strategy
+By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
 
 ### Change sweep-to addresses  
 If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
@@ -104,6 +108,12 @@ You can configure network fee limits for BTC and ETH sweep transactions to avoid
 
 ### Enable automatic RBF for sweep transactions  
 If a sweep transaction is not confirmed within a specified time, you can enable automatic RBF to speed up confirmation. For detailed configuration steps, see [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+
+### Set minimum sweep amount
+To avoid unnecessary network fees caused by small assets triggering sweeps, you can set a minimum sweep amount for sweep transactions. The system will only initiate a sweep transaction when the sweepable amount reaches this minimum value. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+
+### Pause/Resume sweeping
+When encountering unexpected situations (such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments), you can pause sweeping. After conditions return to normal, you can resume sweeping to continue executing according to the established strategy. For more details, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
 
 ### Filter wallets by feature status  
 You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.

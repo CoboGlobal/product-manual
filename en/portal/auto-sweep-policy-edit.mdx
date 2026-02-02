@@ -1,0 +1,27 @@
+---
+title: "Modify auto sweep strategy"
+sidebarTitle: "Modify auto sweep strategy"
+lang: "en"
+description: "Learn how to view and modify auto token sweep strategies for wallets in Cobo Portal"
+---
+
+After enabling auto token sweeping, the system enables two sweep strategies by default: single transaction threshold sweep and balance sweep. You can adjust the parameters of sweep strategies based on your business needs or add other sweep strategies.
+
+The currently supported sweep strategies include:
+- Single transaction threshold sweep: Triggered when a deposit amount in the deposit address reaches the set threshold.
+- Balance sweep: Triggered when the token balance in the wallet reaches the set threshold.
+- Scheduled sweep: Triggered at a fixed time every day to sweep all tokens in the wallet.
+
+## Prerequisites
+- You have been assigned the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.
+- You have [enabled auto token sweeping](/en/portal/enable-auto-sweep) for the wallet.
+
+## Modify sweep strategy
+If you need to modify sweep strategies based on your business requirements, follow these steps:
+1. Find the target wallet in the wallet list.
+2. On the wallet settings page, click the **Auto Sweep Settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto Sweep Settings icon" />.
+3. On the Auto Sweep Settings page, locate the **Sweep Strategy** section.
+4. As needed, enable or disable sweep strategies and adjust the parameters of existing sweep strategies.
+5. After configuration is complete, click the **Submit** button. A confirmation dialog will appear. Click **Confirm** and complete multi-factor authentication (MFA).
+
+After successful verification, the system will initiate the corresponding approval workflow. The changes will take effect after approval.
