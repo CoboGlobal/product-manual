@@ -1,0 +1,36 @@
+---
+title: "转入不支持的 EVM 链资产如何转出"
+sidebarTitle: "转出不支持的 EVM 资产"
+lang: "zh-hans"
+description: "了解转入不受 Cobo Portal 支持的 EVM 代币后如何通过合约调用转出。"
+---
+
+**适用范围：全托管钱包（Web3 钱包）、MPC 钱包**
+
+如果您不小心把某个不受 Cobo Portal 支持的 EVM 代币转入到了您的地址上，将无法通过 Cobo Portal 的转账流程直接转出。此时您可以通过合约调用的方式从链上转出该资产。可用方式如下：
+
+1. 通过调用智能合约接口转出（API）
+    - 适用于：通过程序化方式自行转出。您需要自行构造合约调用所需的 calldata。
+    - 参考文档：[Call smart contract](https://www.cobo.com/developers/v2/api-references/transactions/call-smart-contract)。
+
+2. 通过 Cobo Connect 在区块链浏览器上操作合约转出
+    - 适用范围：在浏览器中通过合约交互界面（例如 Etherscan 的合约交互）发起合约调用。
+
+    <Warning>合约调用存在资产损失风险（例如网络选错、合约地址选错、数量单位填写错误、目标地址不可逆等）。建议先小额测试。</Warning>
+
+    操作步骤（以 Etherscan 为例）：
+
+    1. 打开区块链浏览器上的代币页面（Token 页面）。
+    2. 进入 **Contract** 标签页并打开 **Write Contract**。
+    3. 点击 **Connect to Web3**，选择 **Cobo Connect**，并在 Cobo Connect 中选择要操作的 Cobo Portal 钱包地址完成连接。
+    4. 找到 `transfer` 方法（通常是 `transfer(address to, uint256 amount)`），填写接收地址与数量（按最小单位填写）。
+    5. 点击 **Write** 提交，并按流程在 Cobo Guard 中完成确认/审批。
+
+    请确保您已完成以下准备：
+
+    1. 选择支持该代币的 EVM 网络，并准备足够的原生 Gas（例如 ETH）支付手续费。
+    2. 若使用 Cobo Connect，请先将对应的钱包地址导入到 Cobo Connect。
+
+    参考文档：[设置 Cobo Connect](/cn/cobo-connect/set-up)。
+
+如仍无法处理，请联系 Cobo 客服（help@cobo.com）。

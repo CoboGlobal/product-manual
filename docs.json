@@ -33,9 +33,20 @@
                   {
                     "group": "FAQs",
                     "pages": [
-                      "en/portal/troubleshoot/custodial-wallets",
-                      "en/portal/troubleshoot/mpc-wallets",
-                      "en/portal/troubleshoot/exchange-wallets"
+                      "en/portal/troubleshoot/dev-environment-apply-activate-login",
+                      "en/portal/troubleshoot/cant-create-wallet",
+                      "en/portal/troubleshoot/token-chain-not-visible-or-unsupported",
+                      "en/portal/troubleshoot/transfer-out-unsupported-evm-assets",
+                      "en/portal/troubleshoot/transaction-failed-or-stuck",
+                      "en/portal/troubleshoot/transaction-broadcasting-or-slow-confirmation",
+                      "en/portal/troubleshoot/deposit-not-credited",
+                      "en/portal/troubleshoot/insufficient-funds",
+                      "en/portal/troubleshoot/auto-token-sweeping-asset-wallets",
+                      "en/portal/troubleshoot/when-auto-token-sweeping-triggers",
+                      "en/portal/troubleshoot/auto-sweep-transaction-stuck-or-unconfirmed",
+                      "en/portal/troubleshoot/remaining-balance-after-sweeping",
+                      "en/portal/troubleshoot/cant-access-connected-exchange-account",
+                      "en/portal/troubleshoot/cant-connect-exchange-account"
                     ]
                   }
                 ]
@@ -44,6 +55,7 @@
                 "group": "GET STARTED",
                 "pages": [
                   "en/portal/sign-up",
+                  "en/portal/onboarding-agents",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -583,22 +595,41 @@
               {
                 "group": "MANAGE",
                 "pages": [
-                  "en/guard/manage",
                   "en/guard/generate-and-back-up-key-shares",
-                  "en/guard/reset"
+                  "en/guard/reset",
+                  "en/guard/assistant",
+                  "en/guard/manage"
                 ]
               }
             ]
           },
           {
-            "tab": "Cobo Connect",
+            "tab": "WalletConnect",
             "groups": [
               {
-                "group": "OVERVIEW",
+                "group": "WalletConnect",
+                "pages": [
+                  "en/walletconnect/introduction",
+                  "en/walletconnect/connect-and-send-transaction"
+                ]
+              },
+              {
+                "group": "Cobo Connect",
                 "pages": [
                   "en/cobo-connect/introduction",
                   "en/cobo-connect/set-up",
                   "en/cobo-connect/interact-with-dapps"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Cobo AI",
+            "groups": [
+              {
+                "group": "OVERVIEW",
+                "pages": [
+                  "en/ai/introduction"
                 ]
               }
             ]
@@ -628,9 +659,20 @@
                   {
                     "group": "常见问题",
                     "pages": [
-                      "cn/portal/troubleshoot/custodial-wallets",
-                      "cn/portal/troubleshoot/mpc-wallets",
-                      "cn/portal/troubleshoot/exchange-wallets"
+                      "cn/portal/troubleshoot/dev-environment-apply-activate-login",
+                      "cn/portal/troubleshoot/cant-create-wallet",
+                      "cn/portal/troubleshoot/token-chain-not-visible-or-unsupported",
+                      "cn/portal/troubleshoot/transfer-out-unsupported-evm-assets",
+                      "cn/portal/troubleshoot/transaction-failed-or-stuck",
+                      "cn/portal/troubleshoot/transaction-broadcasting-or-slow-confirmation",
+                      "cn/portal/troubleshoot/deposit-not-credited",
+                      "cn/portal/troubleshoot/insufficient-funds",
+                      "cn/portal/troubleshoot/auto-token-sweeping-asset-wallets",
+                      "cn/portal/troubleshoot/when-auto-token-sweeping-triggers",
+                      "cn/portal/troubleshoot/auto-sweep-transaction-stuck-or-unconfirmed",
+                      "cn/portal/troubleshoot/remaining-balance-after-sweeping",
+                      "cn/portal/troubleshoot/cant-access-connected-exchange-account",
+                      "cn/portal/troubleshoot/cant-connect-exchange-account"
                     ]
                   }
                 ]
@@ -639,6 +681,7 @@
                 "group": "快速开始",
                 "pages": [
                   "cn/portal/sign-up",
+                  "cn/portal/onboarding-agents",
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -1179,22 +1222,41 @@
               {
                 "group": "管理",
                 "pages": [
-                  "cn/guard/manage",
                   "cn/guard/generate-and-back-up-key-shares",
-                  "cn/guard/reset"
+                  "cn/guard/reset",
+                  "cn/guard/assistant",
+                  "cn/guard/manage"
                 ]
               }
             ]
           },
           {
-            "tab": "Cobo Connect",
+            "tab": "WalletConnect",
             "groups": [
               {
-                "group": "概览",
+                "group": "WalletConnect",
+                "pages": [
+                  "cn/walletconnect/introduction",
+                  "cn/walletconnect/connect-and-send-transaction"
+                ]
+              },
+              {
+                "group": "Cobo Connect",
                 "pages": [
                   "cn/cobo-connect/introduction",
                   "cn/cobo-connect/set-up",
                   "cn/cobo-connect/interact-with-dapps"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Cobo AI",
+            "groups": [
+              {
+                "group": "概览",
+                "pages": [
+                  "cn/ai/introduction"
                 ]
               }
             ]
@@ -1476,70 +1538,6 @@
     {
       "source": "/cn/portal/developer-console/key-features",
       "destination": "/cn/portal/developer-console/introduction"
-    },
-    {
-      "source": "/cn/accounts/key-features",
-      "destination": "/cn/accounts/introduction"
-    },
-    {
-      "source": "/cn/guard/key-features",
-      "destination": "/cn/guard/introduction"
-    },
-    {
-      "source": "/en/accounts/forgot-password",
-      "destination": "/en/accounts/troubleshoot"
-    },
-    {
-      "source": "/cn/accounts/forgot-password",
-      "destination": "/cn/accounts/troubleshoot"
-    },
-    {
-      "source": "/en/accounts/passkeys-failed",
-      "destination": "/en/accounts/troubleshoot"
-    },
-    {
-      "source": "/cn/accounts/passkeys-failed",
-      "destination": "/cn/accounts/troubleshoot"
-    },
-    {
-      "source": "/en/portal/custodial-wallets/unable-to-create-wallet",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/cn/portal/custodial-wallets/unable-to-create-wallet",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/en/portal/custodial-wallets/unsupported-tokens-and-chains",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/cn/portal/custodial-wallets/unsupported-tokens-and-chains",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/en/portal/custodial-wallets/transaction-not-processed-successfully",
-      "destination": "/en/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/cn/portal/custodial-wallets/transaction-not-processed-successfully",
-      "destination": "/cn/portal/troubleshoot/custodial-wallets"
-    },
-    {
-      "source": "/en/portal/exchange-wallets/troubleshoot",
-      "destination": "/en/portal/troubleshoot/exchange-wallets"
-    },
-    {
-      "source": "/cn/portal/exchange-wallets/troubleshoot",
-      "destination": "/cn/portal/troubleshoot/exchange-wallets"
-    },
-    {
-      "source": "/en/portal/enable-auto-sweep#frequently-asked-questions-faq",
-      "destination": "/en/portal/troubleshoot/mpc-wallets"
-    },
-    {
-      "source": "/cn/portal/enable-auto-sweep#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98",
-      "destination": "/cn/portal/troubleshoot/mpc-wallets"
     },
     {
       "source": "/en/portal/portal-apps/build",
