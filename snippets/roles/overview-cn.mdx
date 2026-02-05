@@ -2,6 +2,12 @@
 
 <Note>您需要配置至少 2 名管理员，可以起到交叉验证、互为备份的作用。其他角色应根据实际需求妥善配置。不建议给同一个成员分配多个角色。</Note>
 
+Cobo Portal 根据不同的业务使用场景,提供两种组织类型:**支付类组织** 和 **托管类组织**。
+
+* **托管类组织**:适用于资产托管场景,支持全面的资产管理与操作需求。
+* **支付类组织**:适用于稳定币支付场景,支持稳定币的收款、付款及出金等操作。
+
+请注意，同一角色在不同类型的组织中，角色权限存在差异：对于带有 * 标记的权限项，仅在托管类组织中可用；对于带有 △ 标记的权限项，仅在支付类组织中可用；不带有任何标记的权限项，为通用权限，适用于所有类型的组织。
 ## Cobo Portal 用户角色
 
 以下表格列出了 Cobo Portal 中每个角色的权限。
@@ -295,7 +301,7 @@
   </tr>
   <tr>
     <td rowspan="2">transaction_category</td>
-    <td>read</td>
+    <td>*read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -306,7 +312,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -387,7 +393,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>*update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -398,7 +404,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -409,7 +415,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>connect</td>
+    <td>*connect</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -420,7 +426,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>import</td>
+    <td>*import</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -431,7 +437,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>delete</td>
+    <td>*delete</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -442,7 +448,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create_address</td>
+    <td>*create_address</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -489,7 +495,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>withdraw</td>
+    <td>*withdraw</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -500,7 +506,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>stake</td>
+    <td>*stake</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -522,7 +528,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>contract_call</td>
+    <td>*contract_call</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -544,7 +550,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>manage</td>
+    <td>*manage</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -555,7 +561,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>*update</td>
     <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -566,7 +572,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>unstake</td>
+    <td>*unstake</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -577,7 +583,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>unstake_withdraw</td>
+    <td>*unstake_withdraw</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -589,7 +595,7 @@
   </tr>
   <tr>
     <td rowspan="3">mpc_project</td>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -611,7 +617,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>*update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -623,7 +629,7 @@
   </tr>
   <tr>
     <td rowspan="3">mpc_vault</td>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -645,7 +651,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>*update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -668,7 +674,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>*update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -679,7 +685,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -713,7 +719,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>manage</td>
+    <td>*manage</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -986,7 +992,7 @@
   </tr>
   <tr>
     <td rowspan="3">payment_orders_payin</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -998,7 +1004,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1010,7 +1016,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>△update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1023,7 +1029,7 @@
   </tr>
   <tr>
     <td rowspan="3">payment_orders_refund</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1035,7 +1041,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1047,7 +1053,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>△update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1060,7 +1066,7 @@
   </tr>
   <tr>
     <td rowspan="2">payment_settlement</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1072,7 +1078,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1085,7 +1091,7 @@
   </tr>
   <tr>
     <td rowspan="3">payment_merchant</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1097,7 +1103,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1109,7 +1115,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>△update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1122,7 +1128,7 @@
   </tr>
   <tr>
     <td rowspan="4">payment_bank_account</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1134,7 +1140,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1146,7 +1152,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>△update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1158,7 +1164,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>delete</td>
+    <td>△delete</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1171,7 +1177,7 @@
   </tr>
   <tr>
     <td rowspan="3">payment_topup_address</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1183,7 +1189,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1195,7 +1201,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>update</td>
+    <td>△update</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1208,7 +1214,7 @@
   </tr>
   <tr>
     <td rowspan="2">payment_force_sweep</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1220,7 +1226,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>△create</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1233,7 +1239,7 @@
   </tr>
   <tr>
     <td>payment_balance</td>
-    <td>read</td>
+    <td>△read</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1246,7 +1252,7 @@
   </tr>
   <tr>
     <td rowspan="2">swap_orders</td>
-    <td>read</td>
+    <td>*read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1258,7 +1264,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>-</td>
     <td>✔️</td>
@@ -1271,7 +1277,7 @@
   </tr>
   <tr>
     <td rowspan="2">bridge_orders</td>
-    <td>read</td>
+    <td>*read</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1283,7 +1289,7 @@
     <td>✔️</td>
   </tr>
   <tr>
-    <td>create</td>
+    <td>*create</td>
     <td>-</td>
     <td>-</td>
     <td>✔️</td>
