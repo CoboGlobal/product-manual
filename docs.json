@@ -494,43 +494,6 @@
                     ]
                   },
                   {
-                    "group": "SuperLoop",
-                    "pages": [
-                      "en/apps/superloop/introduction",
-                      "en/apps/superloop/set-up",
-                      "en/apps/superloop/manage-overview",
-                      "en/apps/superloop/manage-fee-reserve",
-                      "en/apps/superloop/manage-an-exchange-account",
-                      {
-                        "group": "Supported exchanges",
-                        "pages": [
-                          "en/apps/superloop/supported-exchanges-overview",
-                          "en/apps/superloop/supported-exchanges-bitget",
-                          "en/apps/superloop/supported-exchanges-bitmart"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Invoicing",
-                    "pages": [
-                      "en/apps/invoicing/introduction",
-                      "en/apps/invoicing/set-up",
-                      {
-                        "group": "Invoices",
-                        "pages": [
-                          "en/apps/invoicing/invoices/create",
-                          "en/apps/invoicing/invoices/view",
-                          "en/apps/invoicing/invoices/manage"
-                        ]
-                      },
-                      "en/apps/invoicing/settlements/request",
-                      "en/apps/invoicing/clients",
-                      "en/apps/invoicing/titles",
-                      "en/apps/invoicing/payment"
-                    ]
-                  },
-                  {
                     "group": "Batch Payouts",
                     "pages": [
                       "en/apps/batch-payouts/introduction",
@@ -1118,43 +1081,6 @@
                       "cn/apps/reports/introduction",
                       "cn/apps/reports/set-up",
                       "cn/apps/reports/generate"
-                    ]
-                  },
-                  {
-                    "group": "SuperLoop",
-                    "pages": [
-                      "cn/apps/superloop/introduction",
-                      "cn/apps/superloop/set-up",
-                      "cn/apps/superloop/manage-overview",
-                      "cn/apps/superloop/manage-fee-reserve",
-                      "cn/apps/superloop/manage-an-exchange-account",
-                      {
-                        "group": "支持的交易所",
-                        "pages": [
-                          "cn/apps/superloop/supported-exchanges-overview",
-                          "cn/apps/superloop/supported-exchanges-bitget",
-                          "cn/apps/superloop/supported-exchanges-bitmart"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Invoicing",
-                    "pages": [
-                      "cn/apps/invoicing/introduction",
-                      "cn/apps/invoicing/set-up",
-                      {
-                        "group": "发票",
-                        "pages": [
-                          "cn/apps/invoicing/invoices/create",
-                          "cn/apps/invoicing/invoices/view",
-                          "cn/apps/invoicing/invoices/manage"
-                        ]
-                      },
-                      "cn/apps/invoicing/settlements/request",
-                      "cn/apps/invoicing/clients",
-                      "cn/apps/invoicing/titles",
-                      "cn/apps/invoicing/payment"
                     ]
                   },
                   {
