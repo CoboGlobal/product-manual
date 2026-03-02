@@ -197,6 +197,8 @@
                       "en/portal/auto-sweep-overview",
                       "en/portal/enable-auto-sweep",
                       "en/portal/auto-sweep-settings",
+                      "en/portal/auto-sweep-policy-edit",
+                      "en/portal/auto-sweep-pause-resume",
                       "en/portal/change-sweep-address"
                     ]
                   },
@@ -786,6 +788,8 @@
                       "cn/portal/auto-sweep-overview",
                       "cn/portal/enable-auto-sweep",
                       "cn/portal/auto-sweep-settings",
+                      "cn/portal/auto-sweep-policy-edit",
+                      "cn/portal/auto-sweep-pause-resume",
                       "cn/portal/change-sweep-address"
                     ]
                   },

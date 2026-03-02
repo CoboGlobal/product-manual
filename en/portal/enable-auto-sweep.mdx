@@ -39,7 +39,7 @@ The following steps use MPC Wallets (Organization-Controlled Wallets) as an exam
 
 Now you have successfully created a new Organization-Controlled Wallet with auto token sweeping enabled. The wallet has a icon indicating that the feature is enabled as the following screenshot shows.
 
-<Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions.</Note>
+<Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions. You can also adjust the sweep policy based on your specific business needs. For details, refer to [Sweep Poliy settings](/en/portal/auto-sweep-policy-edit).</Note>
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
 
@@ -95,7 +95,7 @@ When sweeping occurs, two transaction records are generated:
 ## Optional next steps
 
 ### Modify sweep strategy
-By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Sweep strategy settings](/en/portal/auto-sweep-policy-edit).
 
 ### Change sweep-to addresses  
 If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
