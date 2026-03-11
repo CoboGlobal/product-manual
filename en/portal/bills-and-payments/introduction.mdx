@@ -11,65 +11,80 @@ description: "Learn about Cobo's billing and payment system, including pricing p
 Cobo offers various pricing plans tailored to your special business requirements. You can find a detailed introduction of each plan on the [pricing page](https://www.cobo.com/pricing). Each plan includes predefined usage quotas, such as the number of addresses you can generate, the number of chains you can use, and the total volume of assets you can store under Cobo’s services, among others.
 
 
-## Pricing plans
+## Pricing Plans
 
 The following table provides an overview of the pricing plans available for each wallet type:
 
-<table class="six-columns">
-  <tr>
-    <th></th>
-    <th>14-Day Free Trial</th>
-    <th>Starter</th>
-    <th>Standard</th>
-    <th>Enterprise</th>
-    <th>Free</th>
-  </tr>
-  <tr>
-    <td>Custodial Wallets</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>Provided</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>MPC Wallets</td>
-    <td>Provided</td>
-    <td>Provided</td>
-    <td>Provided</td>
-    <td>Provided</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>Smart Contract Wallets</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>Users with any paid plan can access Smart Contract Wallets through the Free plan</td>
-  </tr>
-  <tr>
-    <td>Exchange Wallets</td>
-    <td>Provided</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>Users with any paid plan can access Exchange Wallets through the Free plan</td>
-  </tr>
-</table>
 
-- **Free trial**: With the 14-day free trial, you can experience Cobo Portal and access the corresponding wallets at no cost. Once your free trial expires or when you hit the usage limits of the free trial, you will have to purchase a paid plan.
+| Feature                  | Starter                          | Standard                         | Enterprise                                       |
+| ------------------------ | -------------------------------- | -------------------------------- | ------------------------------------------------ |
+| **Pricing**              | **$299 /month**                     | **$999 /month**                     | **Custom Quote**                                 |
+| **Wallet Addresses**     | 6K                               | 12.5K                            | Custom                                           |
+| **Address Overage**      | $1.50 /address                   | $1.00 /address                   | Custom                                           |
+| **Transfer Volume**      | $300K                            | $1.25M                           | Custom                                           |
+| **Volume Overage**       | 0.25%                            | 0.20%                            | Custom                                           |
+| **Assets Under Custody** | Unlimited                        | Unlimited                        | Custom                                           |
+| **Wallet Types**         | MPC, Smart Contract, Exchange    | MPC, Smart Contract, Exchange    | Custodial Wallets, MPC, Smart Contract, Exchange |
+| **Included Users**       | 2                                | 5                                | Custom                                           |
+| **Additional User**      | $100 /user                       | $100 /user                       | Custom                                           |
+| **API Calls**            | 15,000                           | 65,000                           | Custom                                           |
+| **API Overage**          | $0.02 /call                      | $0.02 /call                      | Custom                                           |
+| **Languages**            | Python, JS, Go, Java, PHP, etc.  | Python, JS, Go, Java, PHP, etc.  | Python, JS, Go, Java, PHP, etc.                  |
+| **Dev Tools**            | SDKs, Webhooks                   | SDKs, Webhooks                   | SDKs, Webhooks                                   |
+| **Governance**           | Policies, Workflows, Permissions | Policies, Workflows, Permissions | Policies, Workflows, Permissions                 |
+| **CoboApps**             | Supported                        | Supported                        | Supported                                        |
+| **Customer Support**     | Support Respond Within 24 Hours  | Support Respond Within 24 Hours  | 24/7 SupportCustomer Success Manager            |
+
+
+## Free trial
+
+With the 14-day free trial, you can experience Cobo Portal and access the corresponding wallets at no cost. Your usage limits and permissions will be identical to the Starter Plan. Once your free trial expires or when you hit the usage limits of the free trial, your access will be restricted to "view-only" mode for MPC and Exchange Wallets. A paid subscription is required to restore full functionality.
+
+## Choose Your Plan
+
 - **Starter plan and Standard plan**: These plans are designed for small and growing businesses with relatively low usage requirements.
 - **Enterprise plan**: The Enterprise plan is designed for businesses that require higher usage and custom implementations. If you’re interested in our Enterprise plan, [reach out to our sales team](https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales) who will assist you in finding a custom plan that best suits your needs.
-- **Free plan**: To use a Free plan, you must first have a paid plan (Starter, Standard, or Enterprise) for Custodial Wallets or MPC Wallets. If all of your paid plans have been suspended due to outstanding bills, your Free plans will also be suspended.
 
-<a name="usage_quota_categories"></a>
 Each pricing plan offers two distinct usage quota categories designed to cater to the specific needs of Wallet as a Service and Treasury Management customers. The table below outlines the key characteristics of each quota category:
 
-|                     | Target Users                                                 | Examples                                                     | Characteristics                                              |
-| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Wallet as a Service | Businesses that create digital asset wallets programmatically by using Cobo’s WaaS API | Exchanges, crypto native firms, OTC & brokerages, and retail platforms | Higher quota values for outgoing transfer volume and the number of wallet addresses |
-| Treasury Management | Businesses that want to safeguard and manage their digital assets directly within Cobo Portal | DeFi & staking funds, trading firms, institutional investors, and financial services | Higher quota value for Assets Under Custody                  |
+
+|                     | Target Users                                                                                  | Examples                                                                             | Characteristics                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| Wallet as a Service | Businesses that create digital asset wallets programmatically by using Cobo’s WaaS API        | Exchanges, crypto native firms, OTC & brokerages, and retail platforms               | Higher quota values for outgoing transfer volume and the number of wallet addresses |
+| Treasury Management | Businesses that want to safeguard and manage their digital assets directly within Cobo Portal | DeFi & staking funds, trading firms, institutional investors, and financial services | Higher quota value for Assets Under Custody                                         |
+
+
+- **Decision Tree for Choosing Your Plan**:
+  - **Step 1: Choose Your Wallet Type**: First, determine whether you require Full Custodial Wallets or MPC Wallets.
+    - **Starter & Standard Plans**: Support MPC Wallets only.
+    - **Enterprise Plan**: Supports both Full Custodial and MPC Wallets.
+    - **How to Choose Between Full Custodial and MPC?**
+      - **1. Regulatory and Client Requirements**  
+        Consider whether your regulators or clients mandate the use of a licensed institutional custodian or a multi-party computation (MPC) signing mechanism. Cobo is a qualified service provider that meets both requirements.
+      - **2. KYT (Know Your Transaction) Needs**
+        Consider if and how you want to perform KYT screening:
+        Full Custodial Wallets: KYT is automatically integrated, and the costs are included in the transaction fees.
+        MPC Wallets: Does not include automatic KYT. You can use Cobo’s Screening App to assist with compliance, or manage it independently. If your project does not require KYT, MPC wallets may be more suitable.
+      - **3. Integration Complexity**
+        Full Custodial Wallets: Offer a simpler integration path. They are ideal for clients seeking ease of use and convenience, as they reduce the burden of managing security architecture and private keys.
+        MPC Wallets: Integration is more complex. You may need to integrate key shards and signing logic into your application (e.g., in a 2-2 threshold scheme, the end-user holds one of the shards).
+        Recommendation: If you prioritize a fast and effortless setup, Full Custodial Wallets are the preferred choice.
+  - **Step 2: Choose Based on Usage**
+    - **If you need Full Custodial Wallets**: You must select the Enterprise Plan.
+    - **If you need MPC Wallets**: You can choose between Starter, Standard, or Enterprise by evaluating the following metrics:
+      - Monthly Outgoing Transfer Volume
+      - Number of Wallet Addresses
+      - API Call Quotas
+      - Number of Team Members
+    - **Pro Tip**: If your project is in its early stages, start with a lower-tier plan. As your business grows, you can either pay a small overage fee for extra usage or upgrade to a higher tier at any time.
+
+## How to Start a Freetrial and Upgrade
+
+You can sign up on your own to [**start a 14-day free trial**](https://www.cobo.com/lp/14-day-free-trial-cobo) and experience the full power of Cobo. 
+
+During or after your trial, you can **self-upgrade to the Starter or Standard plan** directly within the product at any time. 
+
+For the **Enterprise plan**, please [**contact our sales team**](https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales) for a custom solution.
 
 ## Usage items
 
