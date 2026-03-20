@@ -182,6 +182,7 @@
                       "en/portal/transfers/from-exchange-wallets",
                       "en/portal/transfers/travel-rule",
                       "en/portal/transfers/fee-model",
+                      "en/portal/transfers/transaction-agent",
                       {
                         "group": "Address Book",
                         "pages": [
@@ -773,6 +774,7 @@
                       "cn/portal/transfers/from-exchange-wallets",
                       "cn/portal/transfers/travel-rule",
                       "cn/portal/transfers/fee-model",
+                      "cn/portal/transfers/transaction-agent",
                       {
                         "group": "地址簿",
                         "pages": [
