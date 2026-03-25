@@ -39,7 +39,7 @@ The following steps use MPC Wallets (Organization-Controlled Wallets) as an exam
 
 Now you have successfully created a new Organization-Controlled Wallet with auto token sweeping enabled. The wallet has a icon indicating that the feature is enabled as the following screenshot shows.
 
-<Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions.</Note>
+<Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions. You can also adjust the sweep policy based on your specific business needs. For details, refer to [Sweep Poliy settings](/en/portal/auto-sweep-policy-edit).</Note>
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
 
@@ -95,7 +95,7 @@ When sweeping occurs, two transaction records are generated:
 ## Optional next steps
 
 ### Modify sweep strategy
-By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Sweep policy settings](/en/portal/auto-sweep-policy-edit).
 
 ### Change sweep-to addresses  
 If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
@@ -110,14 +110,13 @@ You can configure network fee limits for BTC and ETH sweep transactions to avoid
 If a sweep transaction is not confirmed within a specified time, you can enable automatic RBF to speed up confirmation. For detailed configuration steps, see [Auto token sweeping settings](/en/portal/auto-sweep-settings).
 
 ### Set minimum sweep amount
-To avoid unnecessary network fees caused by small assets triggering sweeps, you can set a minimum sweep amount for sweep transactions. The system will only initiate a sweep transaction when the sweepable amount reaches this minimum value. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+To avoid unnecessary network fees caused by small assets triggering sweeps, you can set a minimum sweep amount for sweep transactions. The system will only initiate a sweep transaction when the sweepable amount reaches this minimum value. For detailed configuration steps, refer to [Sweep strategy settings](/en/portal/auto-sweep-policy-edit).
 
 ### Pause/Resume sweeping
-When encountering unexpected situations (such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments), you can pause sweeping. After conditions return to normal, you can resume sweeping to continue executing according to the established strategy. For more details, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+When encountering unexpected situations (such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments), you can pause sweeping. After conditions return to normal, you can resume sweeping to continue executing according to the established strategy. For more details, refer to [Pause/Resume sweeping](/en/portal/auto-sweep-pause-resume).
 
 ### Filter wallets by feature status  
 You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.
 
 <img src="/en/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="screenshot_full_screen" alt="Wallet filter" />
 
-<Tip>Feel free to [share your feedback](https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals) to improve our documentation!</Tip>

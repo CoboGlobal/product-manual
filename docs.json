@@ -182,6 +182,7 @@
                       "en/portal/transfers/from-exchange-wallets",
                       "en/portal/transfers/travel-rule",
                       "en/portal/transfers/fee-model",
+                      "en/portal/transfers/transaction-agent",
                       {
                         "group": "Address Book",
                         "pages": [
@@ -197,6 +198,8 @@
                       "en/portal/auto-sweep-overview",
                       "en/portal/enable-auto-sweep",
                       "en/portal/auto-sweep-settings",
+                      "en/portal/auto-sweep-policy-edit",
+                      "en/portal/auto-sweep-pause-resume",
                       "en/portal/change-sweep-address"
                     ]
                   },
@@ -494,43 +497,6 @@
                     ]
                   },
                   {
-                    "group": "SuperLoop",
-                    "pages": [
-                      "en/apps/superloop/introduction",
-                      "en/apps/superloop/set-up",
-                      "en/apps/superloop/manage-overview",
-                      "en/apps/superloop/manage-fee-reserve",
-                      "en/apps/superloop/manage-an-exchange-account",
-                      {
-                        "group": "Supported exchanges",
-                        "pages": [
-                          "en/apps/superloop/supported-exchanges-overview",
-                          "en/apps/superloop/supported-exchanges-bitget",
-                          "en/apps/superloop/supported-exchanges-bitmart"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Invoicing",
-                    "pages": [
-                      "en/apps/invoicing/introduction",
-                      "en/apps/invoicing/set-up",
-                      {
-                        "group": "Invoices",
-                        "pages": [
-                          "en/apps/invoicing/invoices/create",
-                          "en/apps/invoicing/invoices/view",
-                          "en/apps/invoicing/invoices/manage"
-                        ]
-                      },
-                      "en/apps/invoicing/settlements/request",
-                      "en/apps/invoicing/clients",
-                      "en/apps/invoicing/titles",
-                      "en/apps/invoicing/payment"
-                    ]
-                  },
-                  {
                     "group": "Batch Payouts",
                     "pages": [
                       "en/apps/batch-payouts/introduction",
@@ -808,6 +774,7 @@
                       "cn/portal/transfers/from-exchange-wallets",
                       "cn/portal/transfers/travel-rule",
                       "cn/portal/transfers/fee-model",
+                      "cn/portal/transfers/transaction-agent",
                       {
                         "group": "地址簿",
                         "pages": [
@@ -823,6 +790,8 @@
                       "cn/portal/auto-sweep-overview",
                       "cn/portal/enable-auto-sweep",
                       "cn/portal/auto-sweep-settings",
+                      "cn/portal/auto-sweep-policy-edit",
+                      "cn/portal/auto-sweep-pause-resume",
                       "cn/portal/change-sweep-address"
                     ]
                   },
@@ -1121,43 +1090,6 @@
                     ]
                   },
                   {
-                    "group": "SuperLoop",
-                    "pages": [
-                      "cn/apps/superloop/introduction",
-                      "cn/apps/superloop/set-up",
-                      "cn/apps/superloop/manage-overview",
-                      "cn/apps/superloop/manage-fee-reserve",
-                      "cn/apps/superloop/manage-an-exchange-account",
-                      {
-                        "group": "支持的交易所",
-                        "pages": [
-                          "cn/apps/superloop/supported-exchanges-overview",
-                          "cn/apps/superloop/supported-exchanges-bitget",
-                          "cn/apps/superloop/supported-exchanges-bitmart"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Invoicing",
-                    "pages": [
-                      "cn/apps/invoicing/introduction",
-                      "cn/apps/invoicing/set-up",
-                      {
-                        "group": "发票",
-                        "pages": [
-                          "cn/apps/invoicing/invoices/create",
-                          "cn/apps/invoicing/invoices/view",
-                          "cn/apps/invoicing/invoices/manage"
-                        ]
-                      },
-                      "cn/apps/invoicing/settlements/request",
-                      "cn/apps/invoicing/clients",
-                      "cn/apps/invoicing/titles",
-                      "cn/apps/invoicing/payment"
-                    ]
-                  },
-                  {
                     "group": "Batch Payouts",
                     "pages": [
                       "cn/apps/batch-payouts/introduction",
@@ -1275,10 +1207,6 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Submit Feedback",
-        "href": "https://forms.zohopublic.com/cobo/form/DocumentFeedbackForm/formperma/QvLOhxJv1_JMsJ-1dleZ8Itb_7rzN-LtgvsDdxosoVI?referrername=manuals"
-      },
       {
         "label": "Developer Hub",
         "href": "https://www.cobo.com/developers/v2/guides/overview/introduction"
