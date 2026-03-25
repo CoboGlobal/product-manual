@@ -1210,12 +1210,16 @@
       {
         "label": "Developer Hub",
         "href": "https://www.cobo.com/developers/v2/guides/overview/introduction"
+      },
+      {
+        "label": "Portal Login",
+        "href": "https://portal.cobo.com/login?utm_term=manual_login.nav"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Cobo Portal",
-      "href": "https://portal.cobo.com/login"
+      "label": "Free Trial",
+      "href": "https://www.cobo.com/lp/14-day-free-trial-cobo?utm_term=manual_freetrial.nav"
     }
   },
   "footer": {
