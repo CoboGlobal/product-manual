@@ -579,14 +579,6 @@
                   "en/walletconnect/connect-and-send-transaction"
                 ]
               },
-              {
-                "group": "Cobo Connect",
-                "pages": [
-                  "en/cobo-connect/introduction",
-                  "en/cobo-connect/set-up",
-                  "en/cobo-connect/interact-with-dapps"
-                ]
-              }
             ]
           },
           {
@@ -1172,14 +1164,6 @@
                   "cn/walletconnect/connect-and-send-transaction"
                 ]
               },
-              {
-                "group": "Cobo Connect",
-                "pages": [
-                  "cn/cobo-connect/introduction",
-                  "cn/cobo-connect/set-up",
-                  "cn/cobo-connect/interact-with-dapps"
-                ]
-              }
             ]
           },
           {
