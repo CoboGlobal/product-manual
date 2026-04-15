@@ -652,10 +652,11 @@
               },
               {
                 "group": "企业版接入",
+                "pages": [
                   {
                     "group": "不同业务场景使用指南",
                     "pages": [
-                      "cn/portal/guides-by-businesstype/Guide for Exchange Clients"
+                      "cn/portal/guides-by-businesstype/guide-for-exchange-clients"
                     ]
                   },
                   {
@@ -672,6 +673,7 @@
                       "cn/portal/quick-start-guide-custodial-wallets"
                     ]
                   }
+                ]
               },
               {
                 "group": "钱包与交易",
