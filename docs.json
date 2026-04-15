@@ -648,23 +648,13 @@
                 "pages": [
                   "cn/portal/sign-up",
                   "cn/portal/onboarding-agents",
-                  "cn/portal/freetrialguide"
-                ]
-              },
-              {
-                "group": "企业版接入",
-                "pages": [
-                  {
-                    "group": "不同业务场景使用指南",
-                    "pages": [
-                      "cn/portal/guides-by-businesstype/guide-for-exchange-clients"
-                    ]
-                  },
+                  "cn/portal/freetrialguide",
                   {
                     "group": "MPC 钱包",
                     "pages": [
                       "cn/portal/quick-start-mpc",
-                      "cn/portal/quick-start-guide-mpc"
+                      "cn/portal/quick-start-guide-mpc",
+                      "cn/portal/guides-by-businesstype/guide-for-exchange-clients"
                     ]
                   },
                   {
