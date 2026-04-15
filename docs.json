@@ -644,10 +644,21 @@
                 ]
               },
               {
-                "group": "快速开始",
+                "group": "快速开始免费试用",
                 "pages": [
                   "cn/portal/sign-up",
                   "cn/portal/onboarding-agents",
+                  "cn/portal/freetrialguide"
+                ]
+              },
+              {
+                "group": "企业版接入",
+                  {
+                    "group": "不同业务场景使用指南",
+                    "pages": [
+                      "cn/portal/guides-by-businesstype/Guide for Exchange Clients"
+                    ]
+                  },
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -662,7 +673,6 @@
                       "cn/portal/quick-start-guide-custodial-wallets"
                     ]
                   }
-                ]
               },
               {
                 "group": "钱包与交易",
