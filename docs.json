@@ -60,7 +60,8 @@
                     "group": "MPC Wallets",
                     "pages": [
                       "en/portal/quick-start-mpc",
-                      "en/portal/quick-start-guide-mpc"
+                      "en/portal/quick-start-guide-mpc",
+                      "en/portal/guides-by-businesstype/guide-for-exchange-clients"
                     ]
                   },
                   {
