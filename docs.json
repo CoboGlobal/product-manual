@@ -648,7 +648,6 @@
                 "pages": [
                   "cn/portal/sign-up",
                   "cn/portal/onboarding-agents",
-                  "cn/portal/freetrialguide",
                   {
                     "group": "MPC 钱包",
                     "pages": [
