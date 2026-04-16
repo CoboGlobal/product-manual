@@ -1,0 +1,117 @@
+---
+title: "Asset Management Institution Client User Guide"
+sidebarTitle: "Asset Management Institution Client User Guide"
+lang: "en"
+og:description: "Learn how asset management institutions can achieve secure and compliant digital asset management with Cobo Portal"
+---
+
+Asset management institutions — including crypto funds, family offices, hedge funds, and VC/PE firms — have exceptionally high requirements for security, compliance, and transparency. Their core challenge is achieving flexible investment operations while ensuring asset security and meeting regulatory audit requirements.
+
+Asset management clients typically manage multiple fund products or portfolios simultaneously, each with different investment strategies, risk control rules, and operators. This creates high demands for tiered wallet management, permission isolation, and approval workflows.
+
+**Typical Client Profiles**
+
+- **Crypto Funds**: Manage LP capital with strict permission isolation and audit reporting requirements
+- **Family Offices**: Long-term secure custody of large assets with a focus on Staking yields
+- **VC/PE Funds**: Manage multiple project portfolios requiring multi-wallet tiered management
+- **Hedge Funds**: Frequent DeFi operations and exchange trading requiring flexible yet secure on-chain interactions
+
+## 1. Core Feature Modules
+
+1. **Multi-Wallet Tiered Management**: Create independent MPC wallets by project or fund product to achieve physical isolation of finances and permissions.
+2. **Granular Transaction Risk Control Engine**: Customize dedicated risk control rules for different projects, such as operation time windows and target contract allowlists/blocklists.
+3. **Customizable Multi-Level Approval Workflow**: Supports threshold signatures such as 2-of-3 and 3-of-5, matching the hierarchical authorization logic within institutions.
+4. **Asset Transparency Snapshots and Audit Logs**: Automatically generates tamper-proof on-chain asset proofs and comprehensive operation audit reports to meet regulatory compliance requirements.
+5. **Consolidated Asset Dashboard**: Intuitively manage all on-chain assets in a single interface with real-time calculation of total value and profit/loss.
+6. **Universal Staking API**: Use a unified interface to participate in staking on major PoS chains, improving institutional fund utilization.
+7. **MPC WalletConnect Secure Interaction**: Securely connect to and interact with DeFi protocols without key shares ever leaving the secure environment.
+
+| Requirement | Description | Cobo Features |
+| --- | --- | --- |
+| Multi-party multi-level approval | Match internal institutional authorization hierarchy, e.g., trader initiates, risk control reviews, management approves | Transaction Policies + Approval Workflow, User Roles & Permissions |
+| Granular risk control | Customize dedicated risk control rules for different funds/projects, such as amount limits, time windows, and allowlists | Transaction Policy Engine (on-chain + off-chain) |
+| DeFi investment operations | Securely participate in on-chain DeFi protocols such as liquidity mining, Lending, and Staking | Cobo Connect, Staking App, SuperLoop |
+| Secure asset custody | Secure storage of large-scale assets with multi-wallet isolation management | MPC Wallet, Vault, multi-wallet tiering |
+| Audit and reporting | Periodically generate compliance audit reports to meet regulatory and LP disclosure requirements | Reports App, Dashboard, Audit Logs |
+| Exchange trading security | Ensure assets are not held on exchanges while trading, reducing counterparty risk | SuperLoop off-chain settlement |
+
+## 2. Feature Details and Operation Procedures
+
+### 2.1 Quick Start
+
+- **Create a Vault**: In Cobo Portal, go to the MPC Wallets module, click "Create Vault", and generate root key shares (Main Key, Signing Key, Recovery Key)
+- **Create Multiple Wallets**: Under the same Vault, create independent wallets for different funds or projects, such as "Fund-A", "Fund-B", and "Operating"
+- **Address Management**: Each wallet can generate multiple on-chain addresses, each with independent accounting that does not affect the others
+- **Use Case**: Each fund product corresponds to an independent wallet for easy independent accounting and auditing; different wallets can be configured with different risk control policies
+
+### 2.2 Granular Transaction Risk Control Policies (Transaction Policies)
+
+- Navigate to risk control configuration: Cobo Portal → Risk Controls → Transaction Policies
+- Create a new policy: click "Create Policy", select the applicable wallet type and transaction direction (deposit/withdrawal)
+- Configure rule conditions (multiple conditions can be combined):
+  - **Amount limits**: Single or cumulative amount caps (e.g., auto-approve transactions ≤ $10,000; trigger approval for amounts above)
+  - **Target address allowlist**: Only allow transfers to verified addresses
+  - **Operation time window**: Restrict transactions to business hours only
+  - **Transaction frequency limit**: Maximum number of transactions per hour or per day
+  - **Contract interaction allowlist**: Restrict which smart contract addresses can be interacted with
+- Set trigger actions: Auto Approve, Auto Reject, or trigger an approval workflow (Quorum)
+- **Default policy**: Cobo Portal pre-configures a default transaction policy for new organizations as a global fallback rule, which can be customized
+
+### 2.3 Customizable Multi-Level Approval Workflow
+
+- **Organization-Controlled Wallet (OCW)**: 2-of-2 signing scheme where the organization and Cobo each hold one key share; transactions require both parties to co-sign
+- **Combined with transaction policies**: Small transactions are auto-approved; large transactions trigger multi-level approval (e.g., trader → risk manager → CIO)
+- **Key share management**: Each Vault supports three types of Key Share Holders: Main Key, Signing Key, and Recovery Key
+
+### 2.4 User Role and Permission Management (Roles & Permissions)
+
+- Navigate to organization management: Cobo Portal → Organization → Members
+- Add members: invite new members to the organization via email and assign roles
+- Preset roles (we recommend configuring at least 2 Admins):
+  - **Admin**: Global management permissions, including organization settings and member management
+  - **Operator**: Responsible for configuring transaction policies and risk control rules
+  - **Spender**: Initiates transaction operations
+  - **Approver**: Approves transaction requests
+  - **Viewer**: Read-only access
+- Member management operations: modify roles, freeze/unfreeze accounts, remove members
+- **Note**: It is not recommended to assign multiple roles to the same member to ensure separation of duties
+
+### 2.5 WalletConnect Secure DeFi Interaction
+
+Without key shares ever leaving the secure environment, securely connect to and interact with DeFi protocols via the WalletConnect protocol. Cobo Portal natively supports WalletConnect — no additional browser extension required — allowing MPC wallets to establish secure connections with mainstream dApps. All dApp interactions are governed by Cobo Portal's transaction policies and approval workflows.
+
+- **Connect to a dApp**: In Cobo Portal, go to the dApp interaction page in MPC Wallets, and establish a secure connection with the target dApp by scanning a QR code or pasting a connection link via WalletConnect
+- **Supported DeFi operations** (all protected by risk control policies):
+  - Liquidity mining (e.g., Uniswap, Aave, Compound)
+  - DEX trading (e.g., 1inch, Curve)
+  - Cross-chain bridging (e.g., Across, Stargate)
+  - DAO governance voting (e.g., Snapshot, Tally)
+  - NFT marketplaces (e.g., OpenSea, Blur)
+- **Transaction approval**: All dApp interactions are governed by Cobo Portal's transaction policies and approval workflows, with the same risk control protections as regular transfers
+- **Risk control integration**: Configure contract allowlists, interaction amount limits, and other rules in Risk Controls to ensure DeFi operations remain within controlled boundaries
+
+### 2.6 Staking
+
+- Entry point: Cobo Portal → Apps → Staking → click "Open"
+- Staking operation: On the Staking page, select the target protocol (e.g., Babylon) and click "Stake"
+- Fill in staking parameters:
+  - Select the PoS chain (e.g., BTC / Babylon)
+  - Select an audited node operator (Node Provider)
+  - Set the staking amount and duration
+  - Select network fee speed
+- **API integration**: Staking can also be managed programmatically via the Staking API (supports UTXO management, batch broadcasting, and lifecycle management)
+- **Unstake**: Supports one-click Unstake and Unbonding operations
+
+### 2.7 Consolidated Asset Dashboard and Reports (Dashboard & Reports)
+
+- **Dashboard**: The Cobo Portal homepage serves as the Dashboard, displaying in real time:
+  - Total asset value (daily snapshot at 23:59:59 UTC+8)
+  - Asset distribution pie chart (by token / chain / wallet)
+  - Transaction trend bar chart
+  - Plan usage and ecosystem updates
+- **Reports App**: Cobo Portal → Apps → Reports, supporting:
+  - Generate transaction history reports (filterable by time range)
+  - Monthly Asset Snapshot
+  - Export and share reports (securely within the organization)
+- **Audit Logs**: Developer Console provides a complete API request history, filterable by method, API Key, status, and other dimensions
+

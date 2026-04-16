@@ -1,0 +1,163 @@
+---
+title: "游戏客户使用指南"
+sidebarTitle: "游戏客户使用指南"
+lang: "zh-hans"
+og:description: "了解 Web3 游戏客户如何基于 Cobo Portal 构建链上资产系统"
+---
+
+本指南面向 Web3 游戏 / GameFi 客户，介绍如何基于 Cobo Portal + MPC Wallet（机构钱包） 构建一套覆盖用户地址分配、充值监听、游戏资产发放（Token / NFT）、高频交易处理、资金自动归集、Gas 成本管理（Fee Station）、风控与权限体系的链上资产系统。
+
+对于 Gaming 场景，Cobo 更适合承载以下核心诉求：
+
+- 海量用户地址管理
+- 高频、小额资产发放
+- 链上状态驱动游戏逻辑
+- 资金自动归集（降低运营成本）
+- 服务端自动签名（无需管理私钥）
+- 统一 Gas 管理，避免交易失败
+- 资金与操作安全，支持交易策略与权限控制
+
+## 一、核心功能模块
+
+针对 Gaming 业务，建议优先组合以下能力：
+
+### 1. 批量预创建地址（Address Pool）
+
+通过 Cobo WaaS 2.0 的地址管理功能，可以提前批量生成大量链上地址并构建 Address Pool，避免用户首次充值时实时生成地址造成延迟。
+
+- 实现秒级地址分配，应对海量用户增长
+- 多链统一管理（支持 80+ 链及其代币），降低开发与运维成本
+- 地址池自动补充机制，保证库存充足
+
+Manuals 参考：[WaaS Address API / Wallet 管理](https://www.cobo.com/developers/v2_cn/guides/get-started/get-started-with-waa)
+### 2. 批量转账（Batch Transfer / High-throughput Transfer）
+
+Cobo WaaS 2.0 支持高并发 Transfer API 调用，将多笔链上交易请求组合执行，并由 MPC Wallet 自动签名与广播，适用于游戏奖励、空投和 PvP / PvE 结算。
+
+- 批量分组发放降低链上压力
+- 结合 Gas 优化策略，降低成本
+- 异常交易自动重试或补偿
+
+Manuals 参考：[Transfer API / Transactions](https://www.cobo.com/developers/v2_cn/guides/get-started/get-started-with-waas)
+
+### 3. 高频事件监控（Webhook Event System）
+
+通过 Webhook 实时监听链上事件，保证游戏逻辑与链上状态保持同步。
+
+- 支持 Deposit、Transaction Status、TSS 请求状态等事件
+- Webhook 事件附带 Cobo 公钥签名，可验证事件真实性
+- Developer Console 支持历史事件查看与调试
+
+Manuals 参考：[Webhook / Callback 说明](cn/portal/developer-console/webhooks-intro)
+
+### 4. 自动归集（Auto-Sweep）
+
+自动将用户充值地址上的资金汇聚到主钱包，降低碎片化和运维成本。
+
+- 在 MPC Wallet 中启用 Auto-Sweep
+- 配置归集地址、触发条件（余额阈值 / 定时规则）
+- 结合 Fee Station 自动补充 Gas，避免归集中断
+- 自动 RBF 提高归集成功率
+- 设置手续费上限，控制成本
+
+Manuals 参考：[Auto-Sweep 概览](cn/portal/auto-sweep-overview)
+
+### 5. Fee Station（链上费用统一管理）
+
+Fee Station 是统一管理链上 Gas 和平台费用的账户：
+
+- 统一 Gas 资金池，支持多地址、多链
+- 自动 Gas 代付：交易 Gas 不足时自动代付
+- 多币种充值支持：支持稳定币充值，系统自动兑换目标链 Token
+- 统一费用结算：可覆盖 Auto Sweep、Batch Transfer 等业务流程
+
+### 6. 风控与权限体系
+
+官方提供可配置风控体系，确保资金安全与操作可控：
+
+- 交易策略规则（Transaction Policies）
+- 治理策略（Governance Policies）
+- 用户角色与权限（User Roles & Permissions）
+- 与 Cobo Guard 多因素认证（MFA）联动
+- 高风险交易阻断与人工确认（通过策略触发）
+
+## 二、功能详解与操作流程
+
+### 接入前准备
+
+**角色与权限规划**
+
+- 管理员、开发人员、运营人员
+- Portal 支持角色与权限分配，实现职责隔离
+
+**环境规划**
+
+企业版用户：
+
+- 开发环境（Dev）：联调 API / Webhook / Sweep
+- 生产环境（Prod）：正式业务运行
+
+Free trial / Starter / Standard 版用户：
+
+- 生产环境（Prod）：直接在正式环境运行
+
+**API 与事件配置**
+
+- 创建 API Key
+- 配置 Webhook Endpoint
+- 注册 Callback Endpoint（必要时）
+
+### 使用流程
+
+1. **创建机构钱包与基础配置**
+   - 创建 MPC Wallet（Organization-Controlled）
+   - 添加所需链
+   - 创建主钱包（Hot Wallet）
+   - 初始化 Fee Station
+
+2. **搭建用户地址体系**
+   - 批量生成地址 → 构建 Address Pool → 用户注册时分配
+   - 维护「用户 UID ↔ 地址 ↔ 链 ↔ Token 类型」映射
+
+3. **充值监听与游戏逻辑联动**
+   - 配置 Webhook → 订阅 Deposit / Transaction Status
+   - 接收事件 → 验签 → 更新余额或触发游戏事件
+
+4. **资产发放（奖励 / NFT）**
+   - 构建交易请求 → 调用 Transfer API → 监听状态
+   - Batch Job / Queue 系统处理高并发发放
+   - request_id 保证幂等
+   - Fee Station 自动保障 Gas 充足
+
+5. **自动归集（Auto Sweep）**
+   - 启用归集 → 配置归集策略 → 定期或触发条件汇聚资金
+   - Fee Station 补充 Gas / 自动 RBF 提高成功率
+
+6. **风控与安全策略落地**
+   - 配置角色权限（RBAC）
+   - 设置交易策略 / 高风险阻断（Transaction Policies）
+   - 与 Cobo Guard 联动 MFA（Cobo Guard + MFA）
+
+### 案例
+
+**角色与权限管理（RBAC）**
+
+- 运营角色：可以发起奖励任务，但不能直接签署交易
+- 财务角色：可审批大额奖励或特殊交易
+- 开发 / 管理员角色：管理 API / Webhook / Wallet 配置
+
+**交易策略规则（Transaction Policies）**
+
+- 单笔奖励金额上限：防止大额误发
+- 日累计奖励额度上限：控制每日总支出
+- 仅允许白名单 NFT / Token 地址进行转账
+
+**多因素认证（Cobo Guard + MFA）**
+
+- 高风险交易（超额、异常频率）需多方签名确认
+- MPC Wallet 多签策略确保即使部分钥匙丢失，资金仍安全
+
+## Reference
+
+- [Cobo Developer Hub / WaaS 2.0](https://www.cobo.com/developers/v2_cn/guides/get-started/get-started-with-waas)
+- [Cobo Portal Manuals](cn/portal/quick-start-mpc)

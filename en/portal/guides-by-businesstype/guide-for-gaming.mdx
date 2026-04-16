@@ -1,0 +1,164 @@
+---
+title: "Gaming Client User Guide"
+sidebarTitle: "Gaming Client User Guide"
+lang: "en"
+og:description: "Learn how Web3 gaming clients can build an on-chain asset system using Cobo Portal"
+---
+
+This guide is intended for Web3 gaming / GameFi clients and introduces how to build a comprehensive on-chain asset system based on Cobo Portal + MPC Wallet (institutional wallet), covering user address allocation, deposit monitoring, in-game asset distribution (Token / NFT), high-frequency transaction processing, automatic fund sweeping, Gas cost management (Fee Station), and risk control and permission frameworks.
+
+For gaming scenarios, Cobo is well-suited to address the following core needs:
+
+- Large-scale user address management
+- High-frequency, small-amount asset distribution
+- On-chain state-driven game logic
+- Automatic fund sweeping (reducing operational costs)
+- Server-side automatic signing (no private key management required)
+- Unified Gas management to prevent transaction failures
+- Fund and operational security with transaction policy and permission controls
+
+## 1. Core Feature Modules
+
+For gaming businesses, we recommend prioritizing the following capabilities:
+
+### 1. Bulk Address Pre-Generation (Address Pool)
+
+Using Cobo WaaS 2.0's address management feature, you can batch-generate large numbers of on-chain addresses in advance and build an Address Pool, eliminating delays caused by real-time address generation when users make their first deposit.
+
+- Achieve second-level address allocation to handle large-scale user growth
+- Unified multi-chain management (supporting 80+ chains and their tokens), reducing development and maintenance costs
+- Automatic address pool replenishment to ensure sufficient inventory
+
+Manuals Reference: [WaaS Address API / Wallet Management](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waa)
+### 2. Batch Transfer (High-Throughput Transfer)
+
+Cobo WaaS 2.0 supports high-concurrency Transfer API calls, combining multiple on-chain transaction requests for execution, automatically signed and broadcast by the MPC Wallet. Ideal for game rewards, airdrops, and PvP / PvE settlements.
+
+- Batch grouped distribution to reduce on-chain pressure
+- Combined with Gas optimization strategies to lower costs
+- Automatic retry or compensation for failed transactions
+
+Manuals Reference: [Transfer API / Transactions](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas)
+
+### 3. High-Frequency Event Monitoring (Webhook Event System)
+
+Monitor on-chain events in real time via Webhook to keep game logic in sync with on-chain state.
+
+- Supports events such as Deposit, Transaction Status, and TSS request status
+- Webhook events include a Cobo public key signature for authenticity verification
+- Developer Console supports historical event viewing and debugging
+
+Manuals Reference: [Webhook / Callback Guide](en/portal/developer-console/webhooks-intro)
+
+### 4. Auto-Sweep
+
+Automatically consolidates funds from user deposit addresses into the main wallet, reducing fragmentation and operational costs.
+
+- Enable Auto-Sweep in MPC Wallet
+- Configure sweep address and trigger conditions (balance threshold / scheduled rules)
+- Integrate with Fee Station for automatic Gas top-up to prevent sweep interruptions
+- Automatic RBF to improve sweep success rate
+- Set fee limits to control costs
+
+Manuals Reference: [Auto-Sweep Overview](en/portal/auto-sweep-overview)
+
+### 5. Fee Station (Unified On-Chain Fee Management)
+
+Fee Station is an account for centrally managing on-chain Gas and platform fees:
+
+- Unified Gas pool supporting multiple addresses and chains
+- Automatic Gas sponsorship: automatically covers Gas when a transaction has insufficient funds
+- Multi-currency deposit support: accepts stablecoin deposits with automatic conversion to the target chain token
+- Unified fee settlement: covers workflows such as Auto Sweep and Batch Transfer
+
+### 6. Risk Control and Permission Framework
+
+An officially configurable risk control framework to ensure fund security and operational accountability:
+
+- Transaction Policies
+- Governance Policies
+- User Roles & Permissions
+- Integration with Cobo Guard Multi-Factor Authentication (MFA)
+- High-risk transaction blocking and manual confirmation (triggered via policies)
+
+## 2. Feature Details and Operation Procedures
+
+### Pre-Integration Preparation
+
+**Role and Permission Planning**
+
+- Admin, Developer, Operations
+- Portal supports role and permission assignments to enforce separation of duties
+
+**Environment Planning**
+
+Enterprise users:
+
+- Development environment (Dev): integrate and test API / Webhook / Sweep
+- Production environment (Prod): live business operations
+
+Free Trial / Starter / Standard users:
+
+- Production environment (Prod): run directly in the live environment
+
+**API and Event Configuration**
+
+- Create an API Key
+- Configure a Webhook Endpoint
+- Register a Callback Endpoint (if required)
+
+### Getting Started
+
+1. **Create an Institutional Wallet and Complete Basic Configuration**
+   - Create an MPC Wallet (Organization-Controlled)
+   - Add the required chains
+   - Create a main wallet (Hot Wallet)
+   - Initialize Fee Station
+
+2. **Set Up the User Address System**
+   - Batch generate addresses → Build Address Pool → Assign to users upon registration
+   - Maintain a mapping of "user UID ↔ address ↔ chain ↔ token type"
+
+3. **Deposit Monitoring and Game Logic Integration**
+   - Configure Webhook → Subscribe to Deposit / Transaction Status events
+   - Receive events → Verify signature → Update balance or trigger game events
+
+4. **Asset Distribution (Rewards / NFT)**
+   - Build transaction request → Call Transfer API → Monitor status
+   - Use Batch Job / Queue system to handle high-concurrency distribution
+   - Use request_id to ensure idempotency
+   - Fee Station automatically ensures sufficient Gas
+
+5. **Auto-Sweep**
+   - Enable sweeping → Configure sweeping policy → Consolidate funds periodically or on trigger conditions
+   - Fee Station tops up Gas / automatic RBF improves success rate
+
+6. **Risk Control and Security Policy Implementation**
+   - Configure role-based access control (RBAC)
+   - Set up transaction policies / high-risk blocking (Transaction Policies)
+   - Integrate Cobo Guard MFA (Cobo Guard + MFA)
+
+### Use Cases
+
+**Role and Permission Management (RBAC)**
+
+- Operations role: can initiate reward tasks but cannot directly sign transactions
+- Finance role: can approve large rewards or special transactions
+- Developer / Admin role: manages API / Webhook / Wallet configuration
+
+**Transaction Policy Rules**
+
+- Single reward amount cap: prevents accidental large distributions
+- Daily cumulative reward limit: controls total daily expenditure
+- Only allow transfers to whitelisted NFT / Token addresses
+
+**Multi-Factor Authentication (Cobo Guard + MFA)**
+
+- High-risk transactions (over-limit, abnormal frequency) require multi-party signature confirmation
+- MPC Wallet multi-signature policy ensures funds remain secure even if some key shares are lost
+
+## Reference
+
+- [Cobo Developer Hub / WaaS 2.0](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas)
+- [Cobo Portal Manuals](/en/portal/quick-start-mpc)
+

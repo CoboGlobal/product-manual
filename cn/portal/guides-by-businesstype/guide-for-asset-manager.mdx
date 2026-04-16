@@ -1,0 +1,117 @@
+---
+title: "资产管理机构客户使用指南"
+sidebarTitle: "资产管理机构客户使用指南"
+lang: "zh-hans"
+og:description: "了解资产管理机构如何基于 Cobo Portal 实现安全合规的数字资产管理"
+---
+
+资产管理机构（包括加密基金、家族办公室、对冲基金、VC/PE 等）对安全性、合规性和透明度有极高要求。其核心痛点在于如何在确保资产安全的前提下实现灵活的投资运作，并满足监管审计要求。
+
+资管客户通常同时管理多个基金产品或投资组合，每个产品可能有不同的投资策略、风控规则和操作人员。因此，对钱包的分级管理、权限隔离和审批流程有很高的要求。
+
+**典型客户画像**
+
+- **加密基金**：管理 LP 资金，需要严格的权限隔离和审计报告
+- **家族办公室**：大额资产的长期安全托管，重视 Staking 收益
+- **VC/PE 基金**：管理多个项目投资组合，需要多钱包分级管理
+- **对冲基金**：频繁的 DeFi 操作和交易所交易，需要灵活且安全的链上交互
+
+## 一、核心功能模块
+
+1. **多钱包分级管理**：支持按项目或基金产品创建独立 MPC 钱包，实现财务与权限的物理隔离。
+2. **精细化交易风控引擎（Risk Control）**：为不同项目定制专属风控规则，如操作时间窗、目标合约黑白名单等。
+3. **定制化多级审批流（Approval Workflow）**：支持 2/3、3/5 等多种门限签名，匹配机构内部的层级授权逻辑。
+4. **资产透明度快照与审计日志**：自动生成不可篡改的链上资产证明和全量操作审计报告，满足监管合规。
+5. **统一资产看板（Consolidated View）**：在一个界面直观管理所有链上资产，实时计算总本位价值与盈亏。
+6. **全链通用 Staking API**：使用统一接口参与主流 PoS 链的质押获益，提升机构资金利用率。
+7. **MPC WalletConnect 安全交互**：在私钥分片不离开安全环境的前提下，安全连接并操作各类 DeFi 协议。
+
+| 需求类别 | 具体需求描述 | 对应 Cobo 功能 |
+| --- | --- | --- |
+| 多人多级审批 | 匹配机构内部的层级授权逻辑，如交易员发起、风控审核、管理层审批 | 交易策略 + 审批流 用户角色与权限 |
+| 精细化风控 | 为不同基金/项目定制专属风控规则，如额度限制、时间窗、白名单 | 交易策略引擎（链上 + 链下） |
+| DeFi 投资运作 | 安全参与链上 DeFi 协议，如流动性挖矿、Lending、Staking | Cobo Connect Staking App SuperLoop |
+| 资产安全托管 | 大规模资产的安全存储和多钱包隔离管理 | MPC 钱包 Vault 多钱包分级 |
+| 审计与报告 | 定期生成合规审计报告，满足监管和 LP 披露要求 | Reports App Dashboard 审计日志 |
+| 交易所交易安全 | 在交易所交易同时确保资产不留存在交易所，降低对手方风险 | SuperLoop 链下结算 |
+
+## 二、功能详解与操作流程
+
+### 2.1 快速开始
+
+- **创建 Vault**：在 Cobo Portal 中进入 MPC Wallets 模块，点击"Create Vault"，生成根私钥分片（Main Key、Signing Key、Recovery Key）
+- **创建多个钱包**：在同一 Vault 下为不同基金/项目创建独立钱包，如"Fund-A"、"Fund-B"、"Operating"
+- **地址管理**：每个钱包可生成多个链上地址，各地址独立记账，互不影响
+- **应用场景**：每个基金产品对应一个独立钱包，方便独立核算和审计，不同钱包可配置不同的风控策略
+
+### 2.2 精细化交易风控策略（Transaction Policies）
+
+- 进入风控配置：Cobo Portal → Risk Controls → Transaction Policies
+- 新建策略：点击"Create Policy"，选择适用的钱包类型和交易方向（充值/提币）
+- 配置规则条件（可组合多个条件）：
+  - **额度限制**：单笔或累计额度上限（如单笔 ≤ $10,000 自动通过，超过则触发审批）
+  - **目标地址白名单**：仅允许向经过验证的地址转账
+  - **操作时间窗口**：限制交易只在工作时间内执行
+  - **交易频率限制**：每小时/每日最大交易笔数
+  - **合约交互白名单**：限制可交互的智能合约地址
+- 设置触发动作：自动通过（Auto Approve）、自动拒绝（Auto Reject）、或触发审批流程（Quorum）
+- **默认策略**：Cobo Portal 为新组织预配置了默认交易策略，作为全局兜底规则，可自定义修改
+
+### 2.3 定制化多级审批流（Approval Workflow）
+
+- **组织控制钱包（OCW）**：2-2 签名方案，组织和 Cobo 各持一个分片，交易需双方共同签名
+- **配合交易策略**：小额交易自动审批，大额交易触发多级审批（如交易员 → 风控经理 → CIO）
+- **密钥分片管理**：每个 Vault 支持 Main Key、Signing Key、Recovery Key 三种类型的 Key Share Holder
+
+### 2.4 用户角色与权限管理（Roles & Permissions）
+
+- 进入组织管理：Cobo Portal → Organization → Members
+- 添加成员：通过邮件邀请新成员加入组织，分配角色
+- 预置角色（建议至少配置 2 名 Admin）：
+  - **Admin**：全局管理权限，包括组织设置和成员管理
+  - **Operator**：负责配置交易策略和风控规则
+  - **Spender**：发起交易操作
+  - **Approver**：审批交易请求
+  - **Viewer**：只读查看权限
+- 成员管理操作：修改角色、冻结/解冻账号、删除成员
+- **注意**：不建议为同一成员分配多个角色，确保职责分离
+
+### 2.5 WalletConnect 安全 DeFi 交互
+
+在私钥分片不离开安全环境的前提下，通过 WalletConnect 协议安全连接并操作各类 DeFi 协议。Cobo Portal 原生支持 WalletConnect，用户无需安装额外浏览器扩展，即可将 MPC 钱包与主流 dApp 建立安全连接。所有 dApp 交互均受 Cobo Portal 的交易策略和审批流程约束。
+
+- **连接 dApp**：在 Cobo Portal 中进入 MPC Wallets 的 dApp 交互页面，通过 WalletConnect 扫码或粘贴连接链接，与目标 dApp 建立安全连接
+- **支持的 DeFi 操作**（均受风控策略保护）：
+  - 流动性挖矿（如 Uniswap、Aave、Compound）
+  - DEX 交易（如 1inch、Curve）
+  - 跨链桥接（如 Across、Stargate）
+  - DAO 治理投票（如 Snapshot、Tally）
+  - NFT 交易市场（如 OpenSea、Blur）
+- **交易审批**：所有 dApp 交互均受 Cobo Portal 的交易策略和审批流程约束，与普通转账享受同等风控保护
+- **风控联动**：可在 Risk Controls 中配置合约白名单、交互额度限制等规则，确保 DeFi 操作在可控范围内执行
+
+### 2.6 Staking 质押获益
+
+- 入口：Cobo Portal → Apps → Staking → 点击"Open"
+- Staking 操作：在 Staking 页面中选择目标协议（如 Babylon），点击"Stake"
+- 填写质押参数：
+  - 选择 PoS 链（如 BTC / Babylon）
+  - 选择经过审核的节点运营商（Node Provider）
+  - 设定质押金额和时长
+  - 选择网络费速度
+- **API 集成**：也可通过 Staking API 程序化操作（支持 UTXO 管理、批量广播、生命周期管理）
+- **Unstake**：支持一键 Unstake 和 Unbonding 操作
+
+### 2.7 统一资产看板与报告（Dashboard & Reports）
+
+- **Dashboard**：Cobo Portal 首页即为 Dashboard，实时展示：
+  - 总资产价值（每日 23:59:59 UTC+8 快照）
+  - 资产分布饼状图（按币种/链/钱包维度）
+  - 交易趋势柱状图
+  - 套餐使用量和生态更新
+- **Reports App**：Cobo Portal → Apps → Reports，支持：
+  - 生成交易记录报告（按时间范围筛选）
+  - 每月资产快照（Monthly Asset Snapshot）
+  - 导出和分享报告（组织内安全分享）
+- **审计日志**：Developer Console 提供完整的 API 请求历史，支持按方法、API Key、状态等维度筛选
+
