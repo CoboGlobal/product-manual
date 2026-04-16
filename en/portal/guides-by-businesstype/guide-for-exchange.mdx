@@ -1,0 +1,78 @@
+---
+title: "Exchange Client User Guide"
+sidebarTitle: "Exchange Client User Guide"
+lang: "en"
+og:description: "Learn how exchange clients can quickly set up and manage MPC wallets"
+---
+
+This guide is intended for exchange clients and introduces how to build a comprehensive digital asset operations system covering deposits, sweeping, withdrawals, risk control, and compliance, based on Cobo Portal + MPC Wallet (institutional wallet). For exchange scenarios, Portal is well-suited to address the following core needs: automation of deposit and withdrawal operations, large-scale address management, hot wallet fund sweeping, withdrawal risk control, and asset segregation with operation auditing. Cobo's WaaS 2.0 API can be used alongside Cobo Portal, supporting unified API access, multi-chain and multi-token management, Webhook event notifications, developer console monitoring, and transaction policy and permission controls.
+
+## 1. Core Feature Modules
+
+For exchange businesses, we recommend prioritizing the following features:
+
+1. **Multi-Chain and Multi-Token Fast Integration**: Access mainstream public chains and tokens through a unified API, reducing wallet integration and maintenance costs. Cobo's WaaS 2.0 API supports 80+ chains and 3,000+ tokens, ideal for exchanges to quickly expand deposit and withdrawal capabilities. It supports automated token listing, with self-service token submission requests processed in as little as minutes.
+
+2. **Inbound Screening**: Perform KYA/KYT scans on user deposit transactions to identify high-risk addresses or suspicious activity, supporting AML/CFT compliance. The Screening App continuously scans transactions in real time and triggers automatic actions or manual reviews based on risk results.
+
+3. **Webhook Real-Time Notifications**: Receive status updates for deposits, withdrawals, and signing workflows via Webhook, reducing polling and improving system synchronization efficiency. Webhooks support event subscriptions and allow signature verification using Cobo's public key to ensure events are authentic and untampered.
+
+4. **Automated API Withdrawals**: Initiate withdrawal requests via the WaaS 2.0 API to integrate withdrawal capabilities into the exchange backend or user fund management system. If withdrawals or contract calls are initiated via API, a Callback Endpoint must be configured for secondary confirmation.
+
+5. **Layered Risk Control and Approval Policies**: Configure transaction policies based on dimensions such as token type, amount, address lists, and applicable wallets. Define thresholds for auto-approval, auto-rejection, or m-of-n approval to enable small-amount auto-withdrawals, large-amount manual review, and abnormal transaction interception.
+
+6. **Auto-Sweep**: Automatically consolidate assets scattered across deposit addresses into a designated address, improving hot wallet management efficiency and reducing operational costs from address fragmentation. Once enabled, you can configure sweeping policies, fee limits, and automatic RBF acceleration.
+
+## 2. Feature Details and Operation Procedures
+
+### Recommended Architecture
+
+For exchange scenarios, we recommend the following fund flow and control flow design:
+
+```
+User Deposit Address → Inbound Monitoring / Screening → Sweep to Withdrawal Address → Initiate Withdrawal → Callback Verification → Policy Approval / Signing → On-Chain Broadcast → Webhook Status Callback
+```
+
+Where:
+
+- **Deposit side**: Create an MPC auto-sweep wallet and configure sweeping policies. Within the sweep wallet, generate deposit addresses, assign them to individual end users, and track deposit status via Webhook.
+- **Sweep side**: Funds in user deposit addresses will be automatically swept to the sweep address according to the sweeping policy.
+- **Withdrawal side**: The exchange system initiates withdrawals via API, with risk controlled through Callback, transaction policies, and signing mechanisms.
+- **Operations side**: Enable the Screening App and configure compliance check rules. Set up risk control policies. Use the Developer Console to centrally view API Keys, Webhooks, API logs, Webhook Events, and Callback Messages.
+
+### Pre-Integration Preparation
+
+Before getting started, we recommend completing the following preparations:
+
+1. **Plan Team Roles and Permissions**
+   - We recommend distinguishing at least the following roles: Admin, Operations, Approver, and Developer.
+   - Portal supports role and permission assignments to facilitate separation of duties.
+   - [Introduction to Portal User Roles and Permissions](/en/portal/organization/roles-and-permissions)
+
+2. **Define Environment Plan and Complete Developer Setup**
+   - We recommend completing integration and testing of API, Webhook, sweeping, policies, and withdrawal workflows in the development environment before migrating to production. Both Portal and WaaS 2.0 API support separate development and production environments.
+   - Create and configure an API Key for the exchange system to call the WaaS 2.0 API.
+   - Register a Webhook Endpoint to receive events such as deposit, withdrawal, transaction status, and TSS request status changes.
+   - If withdrawals or contract calls are initiated via API, you must register a Callback Endpoint. Cobo will send a request to this Endpoint at key steps, and the workflow will only continue after the exchange system provides secondary confirmation.
+   - [Developer Setup Guide](/en/portal/developer-console/introduction)
+
+### Getting Started
+
+1. **Create an Institutional Wallet and Complete Basic Configuration**
+   - For exchange clients, MPC Wallet (Organization-Controlled Wallets) is the core wallet type.
+   - We recommend completing the following under the MPC Wallet type:
+     1. Add the chains your business needs to support; [click here](/en/portal/enable-or-disable-chains#enable-chains) for a tutorial on adding public chains
+     2. Create a Vault for exchange operations and set the signing group to server-side signers to support high-frequency sweeping scenarios; [click here](/en/portal/mpc-wallets/ocw/holder-group-overview) for a tutorial on creating a Vault and generating key shares
+     3. Create a sweep wallet; sweep wallets automatically trigger auto-sweeping of token assets within the wallet, consolidating assets from multiple addresses into a single designated address (called the sweep address). After creation, a default sweeping policy will be configured, which you can modify according to your business needs. [Click here](/en/portal/auto-sweep-overview) for a description of sweeping and how to use it
+
+2. **Set Up the Deposit Address System**
+   - Exchanges typically need to assign individual deposit addresses to users for account-level deposit identification and asset tracking.
+   - Recommended practices: assign dedicated deposit addresses to each user or asset type; use Webhooks to drive deposit confirmation instead of high-frequency polling; maintain a mapping of "on-chain address — user UID — token — chain" in the exchange accounting system.
+
+3. **Configure Inbound Risk Control Scanning**
+   - For exchanges, pre-deposit risk control is a critical part of the compliance and risk management framework.
+   - Recommended approach: enable Screening for wallets that receive user deposits; flag high-risk deposits for manual review or restrict their crediting; sync Screening results to internal risk control platforms or customer service ticketing systems; link compliance checks with withdrawal permissions to prevent high-risk assets from flowing out directly. [Click here](/en/apps/screening/introduction) for an introduction to the Screening App and how to use it
+
+4. **Establish a Withdrawal Approval and Risk Control Framework**
+   - Withdrawals are the most critical high-risk operation for exchanges. We recommend establishing layered controls through Transaction Policies + Callback + Multi-Role Approval.
+   - Portal supports setting transaction policies for applicable wallets and executing different actions based on whether a transaction matches the conditions, such as auto-approval, auto-rejection, or entering an approval workflow. Policy conditions can be set based on combinations of applicable wallets, addresses, tokens, and amounts. [Click here](/en/portal/risk-controls/introduction) for supported risk control rules and how to configure them

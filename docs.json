@@ -61,7 +61,10 @@
                     "pages": [
                       "en/portal/quick-start-mpc",
                       "en/portal/quick-start-guide-mpc",
-                      "en/portal/guides-by-businesstype/guide-for-exchange-clients"
+                      "en/portal/guides-by-businesstype/guide-for-exchange",
+                      "en/portal/guides-by-businesstype/guide-for-asset-manager",
+                      "en/portal/guides-by-businesstype/guide-for-otc-merchant",
+                      "en/portal/guides-by-businesstype/guide-for-gaming"
                     ]
                   },
                   {
@@ -653,7 +656,10 @@
                     "pages": [
                       "cn/portal/quick-start-mpc",
                       "cn/portal/quick-start-guide-mpc",
-                      "cn/portal/guides-by-businesstype/guide-for-exchange-clients"
+                      "cn/portal/guides-by-businesstype/guide-for-exchange",
+                      "cn/portal/guides-by-businesstype/guide-for-asset-manager",
+                      "cn/portal/guides-by-businesstype/guide-for-otc-merchant",
+                      "cn/portal/guides-by-businesstype/guide-for-gaming"
                     ]
                   },
                   {

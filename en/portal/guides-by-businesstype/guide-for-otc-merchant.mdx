@@ -1,0 +1,157 @@
+---
+title: "OTC Client User Guide"
+sidebarTitle: "OTC Client User Guide"
+lang: "en"
+og:description: "Learn how OTC merchants can build a secure and compliant digital asset operations system using Cobo Portal"
+---
+
+This guide is intended for OTC merchants, over-the-counter trading platforms, and crypto brokerage clients. It introduces how to build a comprehensive digital asset operations system covering collections, withdrawals, risk control, and compliance, based on Cobo Portal + MPC institutional wallet.
+
+The MPC institutional wallet (Organization-Controlled Wallet) uses a TSS threshold signing mechanism, where the institution and Cobo each hold one key share. The private key never exists in its complete form on any single device, fundamentally eliminating single-point-of-failure risk. For OTC institutions that require autonomous control over signing permissions and bear compliance responsibilities, the MPC institutional wallet is the preferred solution.
+
+Cobo Portal provides comprehensive feature support for OTC scenarios:
+
+- **Secure Signing Control**: The institution holds part of the key shares, so asset control does not rely entirely on a third party, meeting the compliance requirements of licensed institutions.
+- **Address Allowlist Management**: Only allows transfers to trusted addresses, preventing misdirected transfers and fraud at the policy level.
+- **Flexible Transaction Risk Control**: Set auto-approval or multi-level approval rules by amount, address, and token type.
+- **Compliance Integration**: Built-in Travel Rule reporting and KYT inbound scanning, integrated with major VASP networks.
+
+## 1. Core Feature Modules
+
+For OTC businesses, we recommend prioritizing the following features:
+
+**MPC Institutional Wallet**: The core wallet type for OTC business funds, supporting unified management across multiple chains and tokens. Under a Vault, institutions can create multiple independent wallets by business line, counterparty type, or token to achieve physical asset isolation.
+
+**Transaction Policies**: Configure policies based on combinations of initiator, amount, receiving address, token type, and other conditions. Supports auto-approval, auto-rejection, or triggering multi-signature approval. For example, transactions below a set threshold are automatically approved; those above require approver confirmation.
+
+**Address Allowlist**: Configure the permitted transfer address range within risk control policies to ensure funds only flow to trusted allowlisted addresses, significantly reducing the risk of misdirected transfers and targeted fraud.
+
+**Inbound Screening (Screening App)**: Enable KYT scanning on receiving addresses to identify high-risk source addresses. Suspicious deposits automatically trigger manual review or restricted crediting, embedding compliance checks into the fund inflow process.
+
+**Token Bridge**: Access cross-chain bridge capabilities within the Cobo Portal App ecosystem to rapidly transfer assets across public chains such as Ethereum and TRON, addressing cross-chain liquidity needs in OTC operations.
+
+**Fee Station**: The unified fee management entry point for MPC wallets. Maintains USDT/USDC balances to ensure withdrawal workflows are not interrupted by insufficient Gas.
+
+## 2. Recommended Architecture
+
+The typical fund flow and control flow for OTC businesses is as follows:
+
+```
+Inbound Receiving Address → Screening Risk Scan → Sweep to Main Operating Wallet → Initiate Withdrawal → Allowlist Verification → Transaction Policy Matching → Auto-Approval / Multi-Sig Approval → On-Chain Broadcast → Webhook Status Callback
+```
+
+- **Collection side**: Assign independent receiving addresses for different counterparties or business lines. Enable the Screening App for compliance scanning of inbound funds, and use Webhooks to drive deposit confirmation instead of high-frequency polling.
+- **Operations side**: Store funds centrally in the MPC institutional wallet, configure transaction risk controls and address allowlists, and conduct OTC withdrawals via the Payments App.
+- **Compliance side**: Enable Travel Rule reporting, set the amount threshold that triggers reporting, and ensure large withdrawals automatically trigger identity information collection and submission.
+
+## 3. Feature Details and Operation Procedures
+
+### 3.1 Pre-Integration Preparation
+
+Before getting started, we recommend completing the following preparations:
+
+**Plan Team Roles and Permissions**
+
+Cobo Portal supports role and permission assignments. We recommend distinguishing at least the following roles to ensure separation of duties:
+
+| Role | Responsibilities |
+| --- | --- |
+| Admin | Global management permissions, including member management and risk control configuration |
+| Operator | Configure transaction policies and risk control rules |
+| Spender | Initiate withdrawal operations |
+| Approver | Approve withdrawal requests |
+| Viewer | Read-only access; cannot perform any operations |
+
+**Note**: It is not recommended to assign both Spender and Approver roles to the same member, to ensure independence between the withdrawal initiation and approval stages.
+
+**Plan Wallet Isolation**
+
+Under the same Vault, you can create multiple independent wallets by business line, counterparty type, or token for easy independent accounting and auditing. Different wallets can be configured with different risk control policies.
+
+**Register a Webhook Endpoint (if using the API)**
+
+If withdrawals or on-chain operations are initiated via API, register a Webhook Endpoint to receive transaction status change events, and register a Callback Endpoint for secondary confirmation of critical operations.
+
+### 3.2 Create an MPC Institutional Wallet and Complete Basic Configuration
+
+1. Go to Cobo Portal → MPC Wallets → Create Vault
+2. Complete key share generation (Main Key, Signing Key, Recovery Key). The institution holds one key share and Cobo holds one, using a 2-of-2 signing mechanism
+3. Under the Vault, create business wallets — you can establish independent wallets by counterparty type, token, or business line
+4. Add the public chains required for your business (go to Plan → Chains → Add Chain)
+5. Go to Fee Station and top up with USDT/USDC to cover on-chain Gas fees for subsequent withdrawals
+
+### 3.3 Configure Transaction Risk Control Policies
+
+Transaction risk control is the most critical security step in OTC operations. We recommend completing this configuration before formally sending or receiving funds.
+
+Navigation path: Cobo Portal → Risk Controls → Transaction Policies → Create Policy
+
+Recommended rule combinations for OTC scenarios:
+
+| Scenario | Rule Conditions | Trigger Action |
+| --- | --- | --- |
+| Small withdrawal automation | Amount ≤ set threshold + receiving address on allowlist | Auto-approve |
+| Large withdrawal multi-sig approval | Amount > set threshold | Trigger approval workflow (Approver confirmation) |
+| Non-allowlist address blocking | Receiving address not on allowlist | Auto-reject |
+| Specified token restriction | Token type is TRON-USDT | Only allow specific initiators to operate |
+| Emergency lockdown | Abnormal situation | Auto-reject all transactions |
+
+**Default transaction policy**: Cobo Portal pre-configures a default policy for new accounts as a fallback rule. We recommend further customizing it based on your business scenarios.
+
+### 3.4 Configure Address Allowlist
+
+The address allowlist is a core mechanism for OTC compliance risk control, ensuring funds only flow to verified counterparty addresses.
+
+Navigation path: Cobo Portal → Risk Controls → Address Lists
+
+1. Create an address list and fill in the list name (e.g., "Verified Counterparty Addresses")
+2. Add counterparty wallet addresses that have completed KYC review
+3. In the transaction risk control policy, set the receiving address condition to "in allowlist"
+4. For new counterparties, complete KYC review first, then add the address to the allowlist before initiating a withdrawal
+
+### 3.5 Enable Inbound Compliance Scanning (Screening App)
+
+Navigation path: Cobo Portal → Apps → Screening → Enable
+
+- Enable Screening for receiving wallets that accept user deposits
+- Set handling rules for high-risk addresses: trigger manual review or restrict crediting
+- Integrate Screening results with internal risk control systems so that high-risk inbound funds do not enter the withdrawal workflow
+
+### 3.6 Enable Payments App and OTC Withdrawals (Optional)
+
+Navigation path: Cobo Portal → Apps → Payment Management → Enable
+
+1. Click **Settings** in the top-right corner, select the wallet scope (recommended: All wallets), and submit — the Admin must approve via Cobo Guard
+2. In the Payment App, add a bank account that matches the KYC entity
+3. Cobo reviews the bank account documentation; the withdrawal function is activated upon approval
+4. Use the **Cobo OTC** feature to initiate a fiat conversion request, selecting the target wallet and conversion amount
+
+Supported conversion paths: ETH_USDT → USD, ETH_USDC → USD, TRON_USDT → USD
+
+**Travel Rule Reporting**: Large withdrawals automatically trigger the Travel Rule process. The system collects identity information for both the originator and beneficiary and submits it according to the IVMS 101 standard — no manual action required.
+
+### 3.7 Team Member Management
+
+Navigation path: Cobo Portal → Avatar → Team → Members → Invite Member
+
+1. Enter the member's email and name, and assign a role
+2. The Admin confirms the operation via Cobo Guard
+3. The invited member activates their account via email and completes Cobo Guard binding and 2FA setup
+
+**Security recommendations**:
+
+- Admin has the highest level of permissions. In production environments, set up at least 2 Admins to avoid a single point of failure
+- Spender and Approver roles should be held by different individuals
+- Regularly review member permissions and promptly freeze or remove accounts for departing personnel
+
+## 4. FAQ
+
+**Can funds be withdrawn to addresses outside the allowlist on a temporary basis?** This is not recommended. If there is a temporary need, complete counterparty KYC review first, add the address to the allowlist, and then initiate the withdrawal to maintain a complete compliance record.
+
+**What is Cobo Guard?** Cobo Guard is Cobo's mobile security authentication tool, used to approve high-privilege operations such as member invitations, risk control modifications, and large withdrawals. Admins and Approvers are both required to install and bind it.
+
+**How do I view historical transactions and audit records?** Go to Cobo Portal → Dashboard to view an asset overview and transaction trends. Detailed transaction records can be filtered in the transaction history of each wallet. The Developer Console provides a complete API request log, filterable by method, API Key, and status code to meet compliance audit requirements.
+
+## Reference
+- [Cobo Developer Hub / WaaS 2.0](https://www.cobo.com/developers/v2/guides/get-started/get-started-with-waas)
+- [Cobo Portal Manuals](/en/portal/quick-start-mpc)
