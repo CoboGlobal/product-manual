@@ -448,12 +448,6 @@
                     ]
                   },
                   {
-                    "group": "OTC",
-                    "pages": [
-                      "en/apps/otc/introduction"
-                    ]
-                  },
-                  {
                     "group": "Token Swap",
                     "pages": [
                       "en/apps/token-swap/introduction",
@@ -1038,12 +1032,6 @@
                       "cn/apps/tokenization/introduction",
                       "cn/apps/tokenization/contract",
                       "cn/apps/tokenization/bond-tokenization-best-practice"
-                    ]
-                  },
-                  {
-                    "group": "OTC",
-                    "pages": [
-                      "cn/apps/otc/introduction"
                     ]
                   },
                   {
