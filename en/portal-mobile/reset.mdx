@@ -1,0 +1,78 @@
+---
+title: "Reset after changing devices or reinstalling the app"
+sidebarTitle: "Reset after changing devices or reinstalling the app"
+lang: "en"
+description: "Follow the reset process to restore access after changing devices or reinstalling the Cobo Portal Mobile App, ensuring security and proper usage."
+---
+
+If you are switching to a new device, can no longer access your old device, or have reinstalled the Cobo Portal Mobile App (hereinafter referred to as Portal Mobile), you need to re-bind your device on the new device to ensure the app works properly.
+
+<Note>To avoid potential risks, we do not recommend uninstalling and reinstalling Portal Mobile. Uninstalling clears the key shares stored on the device. If you have inadvertently uninstalled and reinstalled the app, you also need to follow the reset process in this document. In this case, "old device" and "new device" refer to the same device.</Note>
+
+Depending on whether you have created key shares, read the applicable section:
+
+- [For users who have created key shares](#key-share-holders)
+- [For users who have not created key shares](#non-key-share-holders)
+
+## For users who have created key shares <a id="key-share-holders"></a>
+
+If your device participates in MPC Wallet key management as a key share holder, follow the steps below to reset on a new device.
+
+### Step 1: Log in on the new device
+
+1. [Download the Cobo Portal Mobile App](/en/portal-mobile/download) on the new device.
+2. Open the app and complete the device screen lock and biometrics setup.
+3. Log in with the same account used on the old device.
+
+### Step 2: Choose how to continue
+
+When Portal Mobile detects that the account was previously bound to another device, it displays the **New device detected** page, where you can choose:
+
+- **View only**: You can only browse balances and history; you cannot sign or approve on this device. The old device retains full permissions.
+- **Switch to this device**: Set this device as the trusted signing device. After completing MFA verification, the old device will lose access.
+
+    <Warning>For security reasons, after switching devices the **send feature is suspended for 24 hours**. During this period, viewing assets and handling approvals remain available.</Warning>
+
+![TODO: New device detected page]()
+
+To continue signing and approving on the new device, select **Switch to this device**, then tap **Continue**.
+
+### Step 3: Restore your key shares
+
+After selecting **Switch to this device**, Portal Mobile enters the **Key share recovery** flow and asks about your backup situation:
+
+- **I have a backup file**: The backup file is accessible on this device (saved in iCloud, Google Drive, or locally), and you remember the recovery passphrase set when creating the backup. Follow the [steps to restore key shares](#steps-to-restore-your-key-shares) below.
+- **My backup file is lost**: Contact your organization Admin to initiate a redistribution on Cobo Portal (web), so that the other key groups in the vault regenerate key shares for you; then complete the key share generation task on this device.
+
+![TODO: Key share recovery page]()
+
+#### Steps to restore your key shares
+
+1. On the **Restore key shares** page, choose where your backup file is stored: **iCloud**, **Google Drive**, or **Local file**.
+
+2. Select the **TSS Node ID** corresponding to the key shares you want to restore (make sure it matches the TSS Node ID shown in Cobo Portal), then tap **Continue**.
+
+    <Note>If the selected TSS Node ID does not match the current account, select the correct backup file.</Note>
+
+3. Enter the **recovery passphrase** set when creating the backup, then tap **OK**.
+
+4. Once restoration is complete, Portal Mobile displays **Key shares restored successfully**.
+
+You have now completed the Portal Mobile reset process. If you selected **Switch to this device**, note the 24-hour freeze on the send feature.
+
+### About the 24-hour freeze after switching devices
+
+After completing a device switch, access is frozen for 24 hours to protect your account security. During this period, you may see a message indicating that the account is temporarily unavailable due to the device change. Once the freeze ends, you can use all features normally. If you have questions, [contact support](mailto:help@cobo.com).
+
+## For users who have not created key shares <a id="non-key-share-holders"></a>
+
+If you have never created key shares, the reset process is simpler:
+
+1. [Download the Cobo Portal Mobile App](/en/portal-mobile/download) on the new device, and complete the device screen lock and biometrics setup.
+2. Log in with your original account.
+3. [Re-bind this device](/en/portal-mobile/set-up#step-3-bind-this-device) as prompted.
+4. If the app detects that another device was previously bound, select **Switch to this device** on the **New device detected** page and complete MFA verification.
+
+Once done, you can use the Cobo Portal Mobile App normally on the new device.
+
+<Note>If you encounter issues during the reset process, or are unable to complete identity verification, [contact support](mailto:help@cobo.com) for assistance.</Note>
