@@ -50,7 +50,6 @@
           "pages": [
             "cn/portal-mobile/generate-and-back-up-key-shares",
             "cn/portal-mobile/reset",
-            "cn/portal-mobile/assistant",
             "cn/portal-mobile/manage",
             "cn/portal-mobile/migrate-from-guard"
           ]

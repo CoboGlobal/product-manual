@@ -1,13 +1,17 @@
 ---
-title: "Set up Cobo Portal Mobile App"
-sidebarTitle: "Set up Cobo Portal Mobile App"
+title: "Register your account, organization, and wallet using Cobo Portal Mobile App"
+sidebarTitle: "Register account and initialize wallet"
 lang: "en"
-description: "Learn how to set up the Cobo Portal Mobile App for the first time, including login, device binding, organization creation, and wallet generation."
+description: "Learn how to complete first-time registration in the Cobo Portal Mobile App: login, device binding, organization creation, and MPC Wallet initialization."
 ---
 
 <Warning>To use the Cobo Portal Mobile App, your device must have a screen lock enabled. Make sure the screen lock stays enabled — disabling it will prevent you from using the app.</Warning>
 
-This guide describes how to set up the Cobo Portal Mobile App (hereinafter referred to as Portal Mobile) for the first time, completing the full onboarding flow from login to wallet generation.
+This guide describes how to complete first-time registration and initialization through the Cobo Portal Mobile App (hereinafter referred to as Portal Mobile), covering the full onboarding flow from login and device binding to organization creation and automatic MPC Wallet initialization.
+
+<Info>After you register and create an organization in Portal Mobile, your organization automatically starts a **14-day free trial**. During the trial period, you can experience Cobo Portal's capabilities for free. For the trial scope, usage limits, and what happens after the trial ends, refer to [Cobo Portal plans and billing](/en/portal/bills-and-payments/introduction).</Info>
+
+<Note>The current feature set of Portal Mobile is limited and primarily covers account and device initialization, asset viewing, transfers, and approvals on mobile. More management and operations features (such as members and roles management, risk control configuration, API Keys, billing and plan management, and so on) are available only via the desktop [Cobo Portal web app](/en/portal/introduction) (https://portal.cobo.com).</Note>
 
 <Note>Currently, Portal Mobile is primarily intended for newly registered users. If your account was previously bound to Cobo Guard, after logging in you will see a message indicating that Cobo Portal is currently limited to newly registered users, and you will not be able to complete device binding in Portal Mobile for now. For details, see [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard).</Note>
 
@@ -19,16 +23,12 @@ When you first open Portal Mobile, if your device does not yet have a screen loc
 2. We recommend also enabling biometrics (Face ID or fingerprint) for faster and more secure access to the app.
 3. Once done, return to Portal Mobile to continue.
 
-![TODO: Screen prompting you to set up a device screen lock]()
-
 ## Step 2: Log in to your account
 
 On the login page, choose a login method:
 
 - **Continue with Google**: Log in with your Google account.
 - **Continue with email**: Log in with your email and password. If you do not have an account yet, tap **Sign up** on the login page, enter your email, and set a strong password to register.
-
-![TODO: Portal Mobile login page]()
 
 ## Step 3: Bind this device
 
@@ -48,8 +48,6 @@ Steps:
 
 4. Once verification succeeds, device binding is complete.
 
-![TODO: Bind this device page]()
-
 ## Step 4: Create your first organization
 
 If your account does not yet have an organization, Portal Mobile guides you to create your first one. An organization is the basic unit for managing all your assets, members, and permissions.
@@ -58,7 +56,7 @@ If your account does not yet have an organization, Portal Mobile guides you to c
 2. Read and agree to the relevant technical service terms.
 3. Tap **Create organization**.
 
-<Note>A newly created organization uses the production environment by default. If you need a development environment, contact Cobo support (help@cobo.com).</Note>
+<Note>A newly created organization uses the production environment by default, and automatically starts the 14-day free trial. If you need a development environment, contact Cobo support (help@cobo.com).</Note>
 
 ## Step 5: Automatically generate your wallet and key shares
 
@@ -70,8 +68,6 @@ After the organization is created, Portal Mobile automatically completes wallet 
 
 <Warning>Do not leave or close the app while key shares are being generated.</Warning>
 
-![TODO: Automatic wallet generation progress screen]()
-
 When the process completes, you will see a message that your key shares are ready. Tap **Continue** to proceed to backup setup.
 
 ## Step 6: Back up your key shares
@@ -80,4 +76,4 @@ After your key shares are generated, back them up as soon as possible. Without a
 
 For detailed backup steps, refer to [Generate and back up your key shares](/en/portal-mobile/generate-and-back-up-key-shares).
 
-Once the backup is complete, you can start using the Cobo Portal Mobile App. For day-to-day usage, refer to [Use and manage Cobo Portal Mobile App](/en/portal-mobile/manage).
+Once the backup is complete, you can start using Portal Mobile for mobile asset and approval operations. For day-to-day usage, refer to [Use and manage Cobo Portal Mobile App](/en/portal-mobile/manage); for more advanced management operations, use the desktop [Cobo Portal web app](/en/portal/introduction).
