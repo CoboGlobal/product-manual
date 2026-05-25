@@ -542,7 +542,7 @@
             ]
           },
           {
-            "tab": "Mobile App",
+            "tab": "Portal Mobile",
             "groups": [
               {
                 "group": "Cobo Guard (Old)",
@@ -572,7 +572,7 @@
                 ]
               },
               {
-                "group": "Cobo Portal Mobile App (New)",
+                "group": "Cobo Portal Mobile (New)",
                 "pages": [
                   {
                     "group": "OVERVIEW",
@@ -1166,7 +1166,7 @@
             ]
           },
           {
-            "tab": "Mobile App",
+            "tab": "Portal Mobile",
             "groups": [
               {
                 "group": "Cobo Guard（旧）",
@@ -1196,7 +1196,7 @@
                 ]
               },
               {
-                "group": "Cobo Portal Mobile App（新）",
+                "group": "Cobo Portal Mobile（新）",
                 "pages": [
                   {
                     "group": "概览",

@@ -1,6 +1,6 @@
 {
-  "_comment": "导航片段：用此 'Mobile App' tab 对象替换 docs.json 中现有的 { \"tab\": \"Cobo Guard\", ... } 对象（中文 cn 区域）。一级为 tab 'Mobile App'，二级为两款产品分组，分别带（旧）/（新）标签。英文 en 区域可镜像此结构，将路径前缀 cn/ 改为 en/。",
-  "tab": "Mobile App",
+  "_comment": "导航片段：用此 'Portal Mobile' tab 对象替换 docs.json 中现有的 { \"tab\": \"Cobo Guard\", ... } 对象（中文 cn 区域）。一级为 tab 'Portal Mobile'，二级为两款产品分组，分别带（旧）/（新）标签。英文 en 区域可镜像此结构，将路径前缀 cn/ 改为 en/。",
+  "tab": "Portal Mobile",
   "groups": [
     {
       "group": "Cobo Guard（旧）",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "group": "Cobo Portal Mobile App（新）",
+      "group": "Cobo Portal Mobile（新）",
       "pages": [
         {
           "group": "概览",
