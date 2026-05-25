@@ -24,9 +24,9 @@ The diagram below outlines the withdrawal flow from an Organization-Controlled W
 
 1. **Initiate a withdrawal request**: A spender initiates a withdrawal request via Cobo Portal or [the WaaS API](https://www.cobo.com/developers/v2/guides/mpc-wallets/get-started-ocw#withdraw-tokens).
 2. **Double confirmation**:
-   - For Cobo Portal initiated withdrawals: Confirm the withdrawal on [Cobo Guard](/en/guard/introduction).
+   - For Cobo Portal initiated withdrawals: Confirm the withdrawal on [Portal Mobile](/en/portal-mobile/introduction).
    - For WaaS API initiated withdrawals: Your [callback endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction) needs to respond with "ok" to confirm.
-3. **[Risk control](/en/portal/risk-controls/tx-policies-overview)**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Cobo Guard.
+3. **[Risk control](/en/portal/risk-controls/tx-policies-overview)**: If configured, transaction policies in Cobo Portal assess the withdrawal request. When manual review is required, approvers must approve the transaction on Portal Mobile.
 4. **Sign the transaction**: Cobo will send the transaction to [signers](/en/portal/mpc-wallets/ocw/holder-group-main-group#create-a-main-group) based on their online status and other criteria. Inform your mobile signer or check if your server signer is online. For details, see [Inform mobile signers or check server signer status](#inform-mobile-signers-or-check-server-signer-status).
    
    <Note>If you use a [server signer](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/tss-node-overview) with the [TSS Node callback mechanism](https://www.cobo.com/developers/v2/guides/mpc-wallets/server-co-signer/callback-server-overview), your TSS Node callback server must first approve the signing request before the server signer can proceed with transaction signing.</Note>
@@ -56,13 +56,13 @@ The diagram below outlines the withdrawal flow from an Organization-Controlled W
 7. <Fee />
 8. <MySnippet />
 9. Click **Submit**.
-10. Approve the request on your Cobo Guard. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
+10. Approve the request on your Portal Mobile. If it is a new address not found in your Address Book or any of your wallets created on Cobo Portal, you will be prompted to add the address to your Address Book.
 
 ## Inform mobile signers or check server signer status
 
 After the transaction is confirmed, the transaction will be sent to signers. The transaction will remain pending until it receives the necessary signature. 
 
-- For **mobile signers**, notify them to open their Cobo Guard to sign the transaction.
+- For **mobile signers**, notify them to open their Portal Mobile to sign the transaction.
 - For **server signers**, you can check if they are online through Cobo Portal by following these steps:
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
 2. Click **Wallets** in the left sidebar, then select **MPC Wallets**.

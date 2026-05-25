@@ -104,13 +104,13 @@ Safe&#123;Wallet&#125; transactions can be initiated in two ways:
 - Initiate transactions using Safe&#123;Wallet&#125; dApp connected via [Cobo Connect](/en/cobo-connect/introduction)
 - Other Signers initiate a transaction
 
-### Step 6: Approvers review transactions on Cobo Guard
+### Step 6: Approvers review transactions on Portal Mobile
 
-As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Cobo Guard App](/en/guard/introduction) to review the request.
+As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Portal Mobile App](/en/guard/introduction) to review the request.
 
 The Signer address will only execute message signing after the required number of approvers (set in the approval quorum in the message signing policy) have approved it. If any approver rejects the request, the message signing request will be blocked by the policy.
 
-The Cobo Guard interface provides comprehensive information and alerts:
+The Portal Mobile interface provides comprehensive information and alerts:
 
 - Provides detailed transaction information with decoded parameters
 - For multiSend transactions, an **All Actions** section displays bundled operations, each showing as `Contract Name: Method Name` with a sequence number. 
@@ -139,7 +139,7 @@ The Cobo Guard interface provides comprehensive information and alerts:
 ### Step 7: (For MPC Wallets only) Key share holders sign the transaction
 
 If you use MPC Wallet addresses as Safe&#123;Wallet&#125; Signers, the key share holders of the MPC Wallet need to sign the transaction:
-- Mobile signers review and sign on their Cobo Guard
+- Mobile signers review and sign on their Portal Mobile
 - Server signers (server nodes that utilize the TSS Node package) automatically sign the transaction
 
 ### Step 8: Complete the Safe&#123;Wallet&#125; multi-signature process
