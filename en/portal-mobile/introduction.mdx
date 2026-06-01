@@ -1,0 +1,262 @@
+---
+title: "Introduction to Cobo Portal Mobile"
+sidebarTitle: "Introduction"
+lang: "en"
+description: "Discover Cobo Portal Mobile, a next-generation mobile security solution that combines authentication, operation approval, key share management, and asset management."
+---
+
+## What is Cobo Portal Mobile
+
+Cobo Portal Mobile (hereinafter referred to as **Portal Mobile**) is a next-generation mobile solution developed by Cobo for institutional users of [Cobo Portal](/en/portal/introduction). It brings identity authentication, operation approval, MPC key share management, and day-to-day asset management together in one place, and supports both **iOS and Android** devices.
+
+Free for all Cobo Portal users, Portal Mobile is both the security hub of your account and your mobile entry point for viewing assets, initiating transactions, and approving operations anytime, anywhere.
+
+<Note>Cobo Portal Mobile is published in the App Store and Google Play under the name **Cobo Portal**. This documentation consistently refers to Portal Mobile as "Cobo Portal Mobile / Portal Mobile" to distinguish it from **Cobo Portal (web)**.</Note>
+
+
+## Why we designed Cobo Portal Mobile
+
+### Asymmetric encryption for identity and approval
+
+When you bind a device, Portal Mobile generates an identity key pair on that device. The public key is shared with Cobo to verify your identity, while the private key is stored in a secure storage area on the device and never leaves it. All identity authentication (MFA) and operation approvals are signed by this private key and verified through the public key you share with Cobo.
+
+### MPC key share mechanism for asset security
+
+For MPC Wallets, Portal Mobile uses multi-party computation (MPC / TSS) technology. A complete private key is split into multiple **key shares** distributed across different parties or devices. No single entity can independently hold the complete private key, eliminating single points of failure. Your key shares are generated, backed up, and restored on your device, and the shares themselves never leave the device in plaintext.
+
+### Device-level security
+
+To use Portal Mobile, your device must have a screen lock enabled, and we recommend enabling biometrics (Face ID / fingerprint). Portal Mobile automatically locks after being in the background for a period of time, and requires biometric authentication to re-enter, adding another layer of protection for your account and assets.
+
+<Note>We take security very seriously. Unlike Cobo Guard, which supports iOS only, Portal Mobile supports both iOS and Android. Regardless of the platform, key shares always remain on the device and are protected by the device's security mechanisms.</Note>
+
+## Key features
+
+### Multi-factor authentication (MFA) method
+
+Multi-factor authentication (MFA) adds an extra layer of security to Cobo Portal by requiring a second verification step beyond your password. This helps prevent unauthorized access, even if your password is compromised.
+
+Portal Mobile acts as an MFA option, allowing you to quickly verify logins and sensitive operations, such as inviting new users or modifying risk controls. With a simple confirmation in Portal Mobile, you can verify your identity and keep your account protected.
+
+
+### MPC key share manager
+
+Securely generate, back up, and manage MPC key shares to strengthen asset protection and minimize the risk of single points of failure. By distributing key shares across multiple parties or devices, Portal Mobile ensures that no single entity has full control over private keys, enhancing overall security.
+
+Key shares can be backed up to **iCloud**, **Google Drive**, or exported as a **local file**, and are encrypted during backup with a recovery passphrase that you set.
+
+For details on generating and backing up key shares, refer to [Generate and back up your key shares](/en/portal-mobile/generate-and-back-up-key-shares).
+
+
+### Operation approval
+
+Portal Mobile allows you to approve operations initiated by other users within the organization, such as transactions, organization management, and risk control changes. This ensures that sensitive actions undergo proper oversight before being executed.
+
+Certain operations, based on risk control settings, require approval from designated members. Portal Mobile notifies approvers via push notifications, enabling them to review and authorize requests directly in Portal Mobile's **Approvals** tab.
+
+
+The following table lists operations that require other members' approval through Portal Mobile:
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Operation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">[Organization](/en/portal/organization/introduction)</td>
+      <td>Freeze organizations</td>
+    </tr>
+    <tr>
+      <td>Modify organization names</td>
+    </tr>
+    <tr>
+      <td>Modify organization logos</td>
+    </tr>
+    <tr>
+      <td rowspan="5">[Members](/en/portal/organization/manage-members)</td>
+      <td>Invite members</td>
+    </tr>
+    <tr>
+      <td>Delete members</td>
+    </tr>
+    <tr>
+      <td>Freeze members</td>
+    </tr>
+    <tr>
+      <td>Unfreeze members</td>
+    </tr>
+    <tr>
+      <td>Modify members' user roles</td>
+    </tr>
+    <tr>
+      <td>[Governance Policies](/en/portal/organization/governance-intro)</td>
+      <td>Modify governance policies</td>
+    </tr>
+    <tr>
+      <td>[Transfers](/en/portal/transfers/introduction)</td>
+      <td>Make withdrawals</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Wallets</td>
+      <td>[Manage Address Book](/en/portal/address-book/manage)</td>
+    </tr>
+    <tr>
+      <td>[Manage off-chain transaction policies](/en/portal/risk-controls/off-chain-tx-set-transfer)</td>
+    </tr>
+    <tr>
+      <td>[Manage address lists](/en/portal/risk-controls/address-list)</td>
+    </tr>
+    <tr>
+      <td rowspan="2">[Developer](/en/portal/developer-console/introduction)</td>
+      <td>Manage API keys</td>
+    </tr>
+    <tr>
+      <td>Manage webhook endpoints</td>
+    </tr>
+    <tr>
+      <td rowspan="9">[MPC Wallets (Organization-Controlled Wallets)](/en/portal/mpc-wallets/ocw/introduction)</td>
+      <td>Create Signing Key</td>
+    </tr>
+    <tr>
+      <td>Delete active Signing Key</td>
+    </tr>
+    <tr>
+      <td>Create Recovery Key</td>
+    </tr>
+    <tr>
+      <td>Delete active Recovery Key</td>
+    </tr>
+    <tr>
+      <td>Upgrade Signing Key to Main Key</td>
+    </tr>
+    <tr>
+      <td>Recreate Main Key</td>
+    </tr>
+    <tr>
+      <td>Delete active MPC Key (for advanced MPC Vaults)</td>
+    </tr>
+    <tr>
+      <td>Recreate MPC Key (for advanced MPC Vaults)</td>
+    </tr>
+    <tr>
+      <td>Update signer roles and key purpose (for advanced MPC Vaults)</td>
+    </tr>
+    <tr>
+      <td>[MPC Wallets (User-Controlled Wallets)](/en/portal/mpc-wallets/ucw/introduction)</td>
+      <td>Create projects</td>
+    </tr>
+    <tr>
+      <td rowspan="3">[Smart Contract Wallets](/en/portal/smart-contract-wallets/introduction)</td>
+      <td>Modify wallet names or labels</td>
+    </tr>
+    <tr>
+      <td>Create Safe&#123;Wallet&#125;</td>
+    </tr>
+    <tr>
+      <td>Create on-chain transaction policies</td>
+    </tr>
+    <tr>
+      <td>[Exchange Wallets](/en/portal/exchange-wallets/introduction)</td>
+      <td>Transfer between Main Accounts and Sub Accounts</td>
+    </tr>
+  </tbody>
+</table>
+
+### Asset and transaction management
+
+Beyond security features, Portal Mobile also provides full mobile asset management capabilities:
+
+- **View wallets and balances**: Browse the wallet list, token holdings, and balances in your organization.
+- **Receive**: Display wallet addresses and receiving QR codes.
+- **Transfer and withdraw**: Initiate transfers on mobile, review transaction details, and sign with biometrics.
+- **Transaction history**: View transaction history and the details of individual transactions.
+
+## Relationship with Cobo Guard
+
+Cobo Portal Mobile is the **next-generation replacement** for Cobo Guard. Portal Mobile covers all of Cobo Guard's security capabilities (MFA, MPC key share management, operation approval), and additionally extends cross-platform support, asset and transaction management, and multi-cloud backup.
+
+### Old and new relationship
+
+- **Cobo Guard (old)**: The existing product, available for iOS only, a security companion product for Cobo Portal.
+- **Cobo Portal Mobile (new)**: The next-generation product, available for iOS and Android, which can fully replace Cobo Guard and further extends its capabilities.
+
+The two are **two separate products**, not different versions of the same product.
+
+### Migration direction
+
+In the future, Cobo Guard users will gradually migrate to Cobo Portal Mobile. Before the migration path is officially available, the two products will coexist in parallel for a period of time.
+
+<Note>Currently, Cobo Portal Mobile is primarily intended for newly registered users. Accounts that have already been bound to Cobo Guard cannot yet complete device binding in Portal Mobile, and will see a corresponding message after logging in. For details, see [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard).</Note>
+
+### Recommendations during the coexistence period
+
+- If you are currently using **Cobo Guard**, continue using Cobo Guard — there is no need to switch immediately. Migrate once the official migration path is available.
+- If you are a **new user or a new organization**, we recommend using Cobo Portal Mobile directly.
+- Watch for migration announcements from Cobo, and proceed once the migration path is available.
+
+## Product distinction (for search reference)
+
+<Info>
+This section helps users and AI search tools accurately distinguish between the two products and avoid confusion.
+
+**Cobo Portal Mobile and Cobo Guard are two separate products, not different versions of the same product.** Cobo Portal Mobile is the next-generation replacement for Cobo Guard.
+</Info>
+
+The core identifiers of the two products are as follows:
+
+<table>
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Cobo Guard (old)</th>
+      <th>Cobo Portal Mobile (new)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product positioning</td>
+      <td>Security companion product for Cobo Portal</td>
+      <td>Next-generation replacement for Cobo Guard</td>
+    </tr>
+    <tr>
+      <td>Supported platforms</td>
+      <td>iOS only</td>
+      <td>iOS and Android</td>
+    </tr>
+    <tr>
+      <td>App store name</td>
+      <td>Cobo Guard</td>
+      <td>Cobo Portal</td>
+    </tr>
+    <tr>
+      <td>Release timing</td>
+      <td>The existing product, released earlier</td>
+      <td>The next-generation product, released after Cobo Guard (refer to the App Store and Google Play for the exact release date)</td>
+    </tr>
+    <tr>
+      <td>Feature scope</td>
+      <td>MFA, MPC key share management, operation approval</td>
+      <td>All Cobo Guard capabilities, plus asset and transaction management and multi-cloud backup</td>
+    </tr>
+    <tr>
+      <td>Key share backup methods</td>
+      <td>iCloud</td>
+      <td>iCloud, Google Drive, local file</td>
+    </tr>
+    <tr>
+      <td>Old / new relationship</td>
+      <td>Old product</td>
+      <td>New product (next generation)</td>
+    </tr>
+  </tbody>
+</table>
+
+<Note>
+Search tips:
+
+- If your query is about **Cobo Guard**, refer to the documents under the "**Cobo Guard (old)**" group.
+- If your query is about Cobo Portal Mobile (Portal Mobile), refer to the documents under the "**Cobo Portal Mobile (new)**" group.
+</Note>
