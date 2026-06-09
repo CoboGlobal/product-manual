@@ -1,0 +1,37 @@
+---
+title: "Pause/Resume sweeping"
+sidebarTitle: "Pause/Resume sweeping"
+lang: "en"
+description: "Learn how to pause or resume auto token sweeping in Cobo Portal"
+---
+
+After enabling auto token sweeping, you can pause or resume the sweeping functionality at any time. When facing urgent situations (such as a need to temporarily freeze fund flows, handle risk events, or perform system checks), you can use "one-click pause" to quickly stop the automatic initiation of subsequent sweep transactions. After the risk is resolved, you can use "one-click resume" to restore sweeping.
+
+## Feature description
+
+- **Pause sweeping**: The system will stop automatically creating new sweep tasks/sweep transactions for the wallet (i.e., "will no longer automatically initiate sweep transactions").
+- **Resume sweeping**: The system will resume executing the sweep logic according to the current sweep strategy.
+
+> Note: Pause/Resume only affects the "automatically triggered" sweep behavior going forward. It does not affect sweep transactions that have already been initiated or completed.
+
+## Prerequisites
+
+- You have been assigned the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.
+- You have [enabled auto token sweeping](/en/portal/enable-auto-sweep) for the wallet.
+
+## Pause auto token sweeping
+
+1. Locate the target wallet in the wallet list.
+2. On the wallet settings page, click the **Auto sweep settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto sweep settings" />.
+3. In the auto sweep switch/status area, click **Pause Sweeping**.
+4. Follow the on-screen prompts to confirm the risk warning, and complete multi-factor authentication (MFA).
+
+After successfully pausing, the auto sweep status will display as "Paused".
+
+## Resume auto token sweeping
+
+1. On the wallet settings page, click the **Auto sweep settings** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep_settings.png" className="icon" alt="Auto sweep settings" />.
+2. In the auto sweep switch/status area, click **Resume Sweeping**.
+3. Follow the on-screen prompts to confirm and complete multi-factor authentication (MFA).
+
+After successfully resuming, the auto sweep status will display as "Running/Enabled", and the system will continue to execute automatic sweeping when the strategy is triggered.

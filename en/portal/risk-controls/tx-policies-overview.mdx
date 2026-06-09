@@ -62,6 +62,29 @@ For maximum security, you can combine both:
 1. Use on-chain transaction policies for core security rules
 2. Add off-chain transaction policies for flexible, day-to-day control
 
+## Accessing Transaction Policies
+
+Transaction Policies is accessible directly from the left sidebar navigation in Cobo Portal. Click **Transaction Policies** in the left sidebar to open the Transaction Policies page.
+
+### Page layout
+
+The Transaction Policies page includes the following elements:
+
+- **Two tabs**: **Transaction Policies** and **Address Lists**, allowing you to switch between managing policies and managing address lists.
+- **Manage Emergency Policy** button: Quickly access the emergency policy settings.
+- **Adjust Priorities** and **Create Policy** buttons: Reorder existing policies or create new ones.
+- **Policy list table**: Displays all configured policies with the following columns:
+  - **Priority**: The order in which policies are evaluated against transactions.
+  - **Type**: The policy type (e.g., Token Transfer, Contract Call, Message Signing).
+  - **Name**: The name assigned to the policy.
+  - **Wallets**: The wallets the policy applies to.
+  - **Conditions**: The conditions that trigger the policy.
+  - **Action**: The approval action configured for the policy (e.g., Auto Approval, Auto Rejection, Approval Quorum).
+  - **Status**: Whether the policy is active or inactive.
+  - **Operations**: Available actions such as editing or deleting the policy.
+- **Search**: Search for policies by policy name.
+- **Filter**: Filter policies to narrow down the displayed list.
+
 ## Setting up transaction policies
 
 <Note>Prerequisite: Please assign the [Operator](/en/portal/organization/roles-and-permissions) role to the designated team members who will set up transaction policies.</Note>

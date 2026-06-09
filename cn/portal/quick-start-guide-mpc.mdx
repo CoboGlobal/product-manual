@@ -20,7 +20,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 
 * [联系我们的销售团队](https://www.cobo.com/zh/book-demo?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales)获取您的账户激活链接。
 
-* 一台用于运行 [Cobo Guard](/cn/guard/introduction) 的 iOS 设备，这是我们专门用于多重身份验证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
+* 一台用于运行 [Portal Mobile](/cn/portal-mobile/introduction) 的 iOS 设备，这是我们专门用于多重身份验证（MFA）、操作审批、交易签名和私钥分片管理的应用程序。
 
 <Snippet />
 
@@ -43,7 +43,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 1. 登录 Cobo Portal。
       * 如需测试，请使用[开发环境](https://portal.dev.cobo.com/login)。
       * 如需正式使用，请使用[正式环境](https://portal.cobo.com/login)。
-2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+2. 点击左侧导航栏中的**钱包**，然后选择 **MPC 钱包**。
 3. 点击**创建主控私钥**。
 4. 在**创建主控私钥**对话框中，配置**私钥分片持有者2**。有关签名人类型及其设置的详细信息，请参阅[**签名人类型**表格](/cn/portal/mpc-wallets/ocw/holder-group-main-group)。
 
@@ -52,14 +52,14 @@ import Snippet from '/snippets/account-setup-cn.mdx';
     - 使用服务端签名人：输入持有者名称，填写 TSS Node ID，然后点击**确认**。
 
 
-5. 在您的 Cobo Guard 应用程序中确认您发起了此请求。
+5. 在您的 Portal Mobile 应用程序中确认您发起了此请求。
 
 ### 生成私钥分片
 
 要完成 Vault 设置，下一个关键步骤是您所选择的签名人生成私钥分片。此过程根据您的签名人类型而有所不同：
 
 * 对于移动端签名人：
-  - 等待 Cobo Guard 上出现 **1 个私钥分片需要生成**的弹出消息（这可能需要几秒钟）。
+  - 等待 Portal Mobile 上出现 **1 个私钥分片需要生成**的弹出消息（这可能需要几秒钟）。
   - 点击弹出消息打开私钥生成界面。
   - 按照屏幕上的说明完成私钥分片生成过程。
   - 我们建议您在此时备份您的私钥分片以增加安全性。但您也可以选择在完成本指南后再进行此步骤。
@@ -78,7 +78,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 1. 登录 Cobo Portal。
       * 如需测试，请使用[开发环境](https://portal.dev.cobo.com/login)。
       * 如需正式使用，请使用[正式环境](https://portal.cobo.com/login)。
-2. 点击 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+2. 点击左侧导航栏中的**钱包**，然后选择 **MPC 钱包**。
 3. 点击**创建钱包**。在对话框中：
    - 输入一个唯一的钱包名称。
    - 如果您需要自动归集多个地址的资金，请启用[自动代币归集](/cn/portal/auto-sweep-overview)。如果您不确定，可以暂时禁用它，待需要时再启用。
@@ -116,9 +116,8 @@ import Snippet from '/snippets/account-setup-cn.mdx';
       * 如需测试，请使用[开发环境](https://portal.dev.cobo.com/login)。
       * 如需正式使用，请使用[正式环境](https://portal.cobo.com/login)。
 
-2. 点击 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+2. 点击左侧导航栏中的**交易风控**。
 3. 导航至**地址列表**标签页，点击**创建列表**。
-<img src="/cn/images/risk-controls/create-an-address-list-cn.png" className="screenshot_full_screen"/>
 4. 输入地址列表名称，然后点击**确认**。
 5. 点击您新创建的地址列表，点击**添加地址**，然后输入您的信任地址。
 6. 点击**提交**并完成多重身份验证。
@@ -133,7 +132,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 
 按照以下步骤操作：
 
-1. 在 Cobo Portal 中，前往 <img src="/cn/images/common/wallets_icon.svg" className="icon"/> > **交易风控**。
+1. 在 Cobo Portal 中，点击左侧导航栏中的**交易风控**。
 2. 点击**创建交易风控规则** > **代币转账**。
 3. 按照截图所示配置设置：
 
@@ -155,17 +154,16 @@ import Snippet from '/snippets/account-setup-cn.mdx';
       * 如需测试，请使用[开发环境](https://portal.dev.cobo.com/login)。
       * 如需正式使用，请使用[正式环境](https://portal.cobo.com/login)。
 
-2. 点击左侧主菜单中的 <img src="/cn/images/transfers/transfer-button.svg" className="icon"></img>。
-<img src="/cn/images/get-started/withdraw.png" className="screenshot_modal"/>
+2. 点击左侧导航栏顶部的**转账**。
 3. 在**转账**对话框中，填写所需信息，然后点击**提交**。
-4. 在 Cobo Guard 中二次确认提币。
+4. 在 Portal Mobile 中二次确认提币。
 5. 提币请求通过二次确认后，交易将被发送给签名人。交易将保持 Pending 状态，直到收到必要的签名。
 
-      - 对于**移动端签名人**，请通知他们打开 Cobo Guard 签名。
+      - 对于**移动端签名人**，请通知他们打开 Portal Mobile 签名。
       - 对于**服务端签名人**，您可以通过 Cobo Portal 查看服务器是否在线：
 
       1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-      2. 点击 <img src="/cn/images/transfers/wallets-icon.svg" className="icon"></img> > **MPC 钱包**。
+      2. 点击左侧导航栏中的**钱包**，然后选择 **MPC 钱包**。
       3. 选择您的 Vault，然后点击右上角的 <img src="/cn/images/transfers/manage-key-share-group.svg" className="icon"></img> 图标。
       4. 在**私钥分片管理**页面，查看每个服务端签名人头像上是否带有绿点：
             - 🟢 绿点：服务器在线，可以签署交易
@@ -176,7 +174,7 @@ import Snippet from '/snippets/account-setup-cn.mdx';
     在您签署交易后，Cobo 会构建交易并将其广播到网络。代币转账可能需要一些时间才能完成，具体取决于网络条件。
 
 ### 查看交易详情和状态
-在向资产钱包转入或转出代币后，您可以在 <img src="/cn/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **交易记录**中查看其交易状态。
+在向资产钱包转入或转出代币后，您可以在左侧导航栏中的**交易记录**中查看其交易状态。
 
 ## 使用 WaaS API 集成
 

@@ -36,9 +36,9 @@ In this step, you will map Signers (Cobo Portal addresses you created in Step 1)
 <Info>You don't need to add Cobo Portal wallet addresses as Signers in your Safe&#123;Wallet&#125; at this point. You will do this in Step 4 after completing the policy setup.</Info>
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies** in the main menu on the left-hand side.
+2. Click **Transaction Policies** in the left sidebar.
 3. Click **Create Policy** > **Message Signing**.
-   <img src="/en/images/risk-controls/create_policy.png" className="screenshot_full_screen"/>
+
 4. Enter a policy name (maximum 30 characters).
 5. Select applicable networks. Select the EVM chain where your Safe&#123;Wallet&#125; is deployed. You cannot select **Any** or non-EVM chains.
 6. Under **Applicable Wallets**, select the MPC or Web3 Wallets and addresses you created in Step 1. 
@@ -104,13 +104,13 @@ Safe&#123;Wallet&#125; transactions can be initiated in two ways:
 - Initiate transactions using Safe&#123;Wallet&#125; dApp connected via [Cobo Connect](/en/cobo-connect/introduction)
 - Other Signers initiate a transaction
 
-### Step 6: Approvers review transactions on Cobo Guard
+### Step 6: Approvers review transactions on Portal Mobile
 
-As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Cobo Guard App](/en/guard/introduction) to review the request.
+As mentioned previously, after the message signing policy is configured, Cobo Portal automatically monitors the [Safe Transaction Service](https://docs.safe.global/core-api/transaction-service-overview). When a pending transaction is found for the corresponding Safe&#123;Wallet&#125;, Cobo Portal initiates a signature request and starts the risk control process. Approvers will receive a notification in their [Portal Mobile App](/en/guard/introduction) to review the request.
 
 The Signer address will only execute message signing after the required number of approvers (set in the approval quorum in the message signing policy) have approved it. If any approver rejects the request, the message signing request will be blocked by the policy.
 
-The Cobo Guard interface provides comprehensive information and alerts:
+The Portal Mobile interface provides comprehensive information and alerts:
 
 - Provides detailed transaction information with decoded parameters
 - For multiSend transactions, an **All Actions** section displays bundled operations, each showing as `Contract Name: Method Name` with a sequence number. 
@@ -139,7 +139,7 @@ The Cobo Guard interface provides comprehensive information and alerts:
 ### Step 7: (For MPC Wallets only) Key share holders sign the transaction
 
 If you use MPC Wallet addresses as Safe&#123;Wallet&#125; Signers, the key share holders of the MPC Wallet need to sign the transaction:
-- Mobile signers review and sign on their Cobo Guard
+- Mobile signers review and sign on their Portal Mobile
 - Server signers (server nodes that utilize the TSS Node package) automatically sign the transaction
 
 ### Step 8: Complete the Safe&#123;Wallet&#125; multi-signature process
@@ -155,5 +155,5 @@ See [Manage message signing policies](/en/portal/risk-controls/off-chain-tx-mana
 - View message signing history related to a policy
 - View policy details
 
-To view all Safe&#123;Wallet&#125; messaging signing history instead of that related to one policy, click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction History** in the main menu on the left-hand side, then click **Filter** and check **View Safe&#123;Wallet&#125; Tx messages**.
+To view all Safe&#123;Wallet&#125; messaging signing history instead of that related to one policy, click **Transaction History** in the left sidebar, then click **Filter** and check **View Safe&#123;Wallet&#125; Tx messages**.
 

@@ -1,0 +1,82 @@
+---
+title: "Transaction History AI Assistant"
+sidebarTitle: "Transaction History AI Assistant"
+lang: "en"
+description: "Learn how the Portal Transaction History AI Assistant helps users query, filter, and analyze transactions with natural language in Transaction History."
+---
+
+## What is the Portal Transaction History AI Assistant?
+
+The Portal Transaction History AI Assistant is an AI query and analysis assistant embedded in the Portal **Transaction History** module. It helps users retrieve, filter, and analyze transaction records more efficiently using natural language.
+
+Without changing existing transaction features or permissions, the assistant converts users’ natural language requests into executable query conditions and performs basic statistics and analysis on the result set. This enables users to get needed information and insights faster.
+
+The assistant does not replace the existing filters or list capabilities; it serves as an intelligent auxiliary entry point in the Transaction History module.
+
+## Who Is It For and When to Use It
+
+This assistant is suitable for users who frequently search, filter, and analyze transaction history. Typical scenarios include:
+
+- **Daily transaction retrieval:** quickly find transactions by time, status, token, direction, or amount range.
+- **Anomaly investigation:** locate failed transactions, pending transactions, or records related to a specific address for troubleshooting.
+- **Operations insights:** compute transaction counts, amount distributions, and large-transaction ratios over a period.
+- **Account/wallet analytics:** view inflow/outflow and related transaction details for a wallet, account, or address in a time range.
+
+## What Tasks It Can Assist With
+
+In the Transaction History module, the assistant can provide these capabilities:
+
+- **Natural language transaction search:**
+  Users can enter plain language requests, such as “show failed USDT transfers in the last 7 days” or “find ETH sent from one wallet yesterday,” and the system will identify and execute matching queries.
+
+- **Auto-apply filters:**
+  It maps time range, status, token, amount, direction, address, and wallet details from user input into structured filters.
+
+- **Show parsed query conditions:**
+  It displays the recognized filters with results so users can verify and adjust query logic.
+
+- **Result statistics:**
+  It computes basic metrics from filtered results, such as transaction count, failed count, large-transaction count, and token-specific quantities.
+
+- **Distribution and trend analysis:**
+  It can provide simple analysis of result distribution, like token distribution, large-transaction ratio, and inflow vs outflow summaries.
+
+## How to Use (Interaction Flow)
+
+In the Transaction History module, users can access the Portal AI entry and interact with the assistant using natural language.
+
+During interaction, you can:
+
+1. Describe your query in natural language.
+2. Review AI-parsed filter conditions.
+3. Get matching transaction results.
+4. Ask follow-up statistics or analysis questions.
+
+For example, you can first query:
+
+- Failed USDT transfers in the last 7 days.
+- Completed transactions over 100,000 USDT this month.
+- Deposit records related to a specific address.
+
+Then ask follow-up questions:
+
+- Count how many transactions.
+- Analyze token distribution.
+- Show large-transaction count and ratio.
+- Summarize inflows and outflows for a wallet in a time range.
+
+The assistant is an aid only; it does not modify original transaction data. Always validate results with your business context.
+
+## Scope and Limitations
+
+The assistant supports transaction history query, filter, statistics, and basic analysis, not automatic execution.
+
+- It does not modify, delete, or submit transaction records.
+- It does not replace existing filter, export, or transaction detail pages.
+- It does not bypass permission controls; users can only access permitted data.
+- Results are based on accessible transaction data and filtered results; there may be incomplete data or NLP mismatches.
+- Outputs are for reference and do not constitute financial, legal, tax, or compliance advice.
+
+<Info>
+For overall Cobo AI overview and data security, see [Cobo AI Introduction](/en/ai/introduction).
+</Info>

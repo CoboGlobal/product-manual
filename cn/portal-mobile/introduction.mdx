@@ -1,0 +1,262 @@
+---
+title: "Cobo Portal Mobile 简介"
+sidebarTitle: "简介"
+lang: "zh-hans"
+description: "了解新一代移动安全产品 —— Cobo Portal Mobile，在一个产品内完成身份验证、操作审批、私钥分片管理与资产管理。"
+---
+
+## 什么是 Cobo Portal Mobile
+
+Cobo Portal Mobile（以下简称 **Portal Mobile**）是由 Cobo 开发的新一代移动解决方案，面向 [Cobo Portal](/cn/portal/introduction) 的机构用户。它将身份验证、操作审批、MPC 私钥分片管理与日常资产管理整合到同一个产品中，并同时支持 **iOS 与 Android** 设备。
+
+作为所有 Cobo Portal 用户的免费产品，Portal Mobile 既是您账户的安全中枢，也是您随时随地查看资产、发起与审批交易的移动入口。
+
+<Note>Portal Mobile 在 App Store 与 Google Play 中的应用名称为 **Cobo Portal**。本文档统一以「Cobo Portal Mobile / Portal Mobile」指代该移动解决方案，以便与 **Cobo Portal 网页版** 区分。</Note>
+
+
+## Cobo Portal Mobile 的设计初衷
+
+### 用于身份与审批的非对称（密钥）加密
+
+Portal Mobile 在绑定设备时会在本设备上生成一对身份密钥。公钥与 Cobo 共享，用于识别您的身份；私钥则保存在设备本地的安全存储区中，不会离开设备。所有身份验证（MFA）与操作审批均由该私钥签名，并通过您与 Cobo 共享的公钥进行验证。
+
+### 用于保护资产安全的 MPC 私钥分片机制
+
+对于 MPC 钱包，Portal Mobile 采用多方计算（MPC / TSS）技术。完整私钥被拆分为多个**私钥分片**，分散保存在不同的参与方或设备上。任何单一实体都无法独自掌握完整私钥，从而消除单点故障风险。属于您的私钥分片在本设备上生成、备份与恢复，分片本身不会以明文形式离开设备。
+
+### 设备级安全防护
+
+为正常使用 Portal Mobile，您的设备必须开启锁屏密码，并建议启用生物识别（Face ID / 指纹）。Portal Mobile 在退到后台一段时间后会自动锁定，重新进入时需通过生物识别解锁，为账户与资产再增加一层保护。
+
+<Note>我们非常重视安全性。与仅支持 iOS 的 Cobo Guard 不同，Portal Mobile 同时支持 iOS 与 Android。无论使用哪种平台，私钥分片始终保存在本设备并受设备安全机制保护。</Note>
+
+## 主要功能
+
+### 多重身份验证 (MFA) 方式
+
+多重身份验证 (MFA) 是 Cobo Portal 中的一项重要安全措施。在登录时，除密码外，您还需通过 MFA 进行额外身份验证，为账户增加一层保护，防止密码泄露后的未经授权访问。
+
+Portal Mobile 作为一种 MFA 方式，可用于快速验证登录或关键操作（如邀请新用户、修改风险控制）。只需在 Portal Mobile 上完成确认，即可验证用户身份，确保账户安全无虞。
+
+
+### MPC 私钥分片管理器
+
+安全生成、备份和管理 MPC 私钥分片，有效提升资产保护，降低单点故障风险。Portal Mobile 通过将私钥分片分散至多个参与方或设备，确保任何单一实体都无法完全控制私钥，从而大幅提升安全性。
+
+私钥分片可备份至 **iCloud**、**Google Drive** 或导出为**本地文件**，备份时由您设置的恢复口令加密。
+
+如需了解如何生成和备份私钥分片，请参阅[生成并备份私钥分片](/cn/portal-mobile/generate-and-back-up-key-shares)。
+
+
+### 操作审批方式
+
+Portal Mobile 支持对团队内其他用户发起的操作进行审批，包括交易、团队管理和风险控制调整，确保敏感操作受到严格验证后执行。
+
+根据风险控制策略，某些操作需经指定成员批准。Portal Mobile 将通过推送通知及时提醒审批人，审批人可直接在 Portal Mobile 的**审批**标签页中查看和授权请求，保障操作安全可靠。
+
+
+以下表格列出了需要由团队内其他成员通过 Portal Mobile 审批的操作：
+
+<table>
+  <thead>
+    <tr>
+      <th>模块</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">[团队管理](/cn/portal/organization/introduction)</td>
+      <td>冻结团队</td>
+    </tr>
+    <tr>
+      <td>修改团队名称</td>
+    </tr>
+    <tr>
+      <td>修改团队 Logo</td>
+    </tr>
+    <tr>
+      <td rowspan="5">[成员管理](/cn/portal/organization/manage-members)</td>
+      <td>邀请成员</td>
+    </tr>
+    <tr>
+      <td>删除成员</td>
+    </tr>
+    <tr>
+      <td>冻结成员</td>
+    </tr>
+    <tr>
+      <td>解冻成员</td>
+    </tr>
+    <tr>
+      <td>修改成员用户角色</td>
+    </tr>
+    <tr>
+      <td>[业务风控](/cn/portal/organization/governance-intro)</td>
+      <td>修改业务风控</td>
+    </tr>
+    <tr>
+      <td>[转账](/cn/portal/transfers/introduction)</td>
+      <td>提币</td>
+    </tr>
+    <tr>
+      <td rowspan="3">钱包管理</td>
+      <td>[管理地址簿](/cn/portal/address-book/manage)</td>
+    </tr>
+    <tr>
+      <td>[管理链下交易风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)</td>
+    </tr>
+    <tr>
+      <td>[管理地址列表](/cn/portal/risk-controls/address-list)</td>
+    </tr>
+    <tr>
+      <td rowspan="2">[开发者中心](/cn/portal/developer-console/introduction)</td>
+      <td>管理 API Keys</td>
+    </tr>
+    <tr>
+      <td>管理 Webhook Endpoints</td>
+    </tr>
+    <tr>
+      <td rowspan="9">[MPC 钱包（机构钱包）](/cn/portal/mpc-wallets/ocw/introduction)</td>
+      <td>生成签名私钥</td>
+    </tr>
+    <tr>
+      <td>删除活跃的签名私钥</td>
+    </tr>
+    <tr>
+      <td>生成恢复私钥</td>
+    </tr>
+    <tr>
+      <td>删除活跃的恢复私钥</td>
+    </tr>
+    <tr>
+      <td>将签名私钥升级为主控私钥</td>
+    </tr>
+    <tr>
+      <td>重新生成主控私钥</td>
+    </tr>
+    <tr>
+      <td>删除活跃的私钥（高级 MPC Vaults 操作）</td>
+    </tr>
+    <tr>
+      <td>重新生成私钥（高级 MPC Vaults 操作）</td>
+    </tr>
+    <tr>
+      <td>更新签名人角色和私钥用途（高级 MPC Vaults 操作）</td>
+    </tr>
+    <tr>
+      <td>[MPC 钱包（终端用户钱包）](/cn/portal/mpc-wallets/ucw/introduction)</td>
+      <td>创建项目</td>
+    </tr>
+    <tr>
+      <td rowspan="3">[智能合约钱包](/cn/portal/smart-contract-wallets/introduction)</td>
+      <td>修改钱包名称或标签</td>
+    </tr>
+    <tr>
+      <td>创建智能合约钱包</td>
+    </tr>
+    <tr>
+      <td>创建链上交易风控</td>
+    </tr>
+    <tr>
+      <td>[交易所钱包](/cn/portal/exchange-wallets/introduction)</td>
+      <td>主账户与子账户间内部划转</td>
+    </tr>
+  </tbody>
+</table>
+
+### 资产与交易管理
+
+除安全功能外，Portal Mobile 还提供完整的移动端资产管理能力：
+
+- **查看钱包与余额**：浏览您团队中的钱包列表、代币持仓与余额。
+- **收款**：展示钱包地址与收款二维码。
+- **转账与提币**：在移动端发起转账，审阅交易详情后通过生物识别完成签名。
+- **交易记录**：查看交易历史与单笔交易详情。
+
+## Cobo Portal Mobile 与 Cobo Guard 的关系
+
+Cobo Portal Mobile 是 Cobo Guard 的**下一代替代产品**。Portal Mobile 涵盖了 Cobo Guard 的全部安全能力（MFA、MPC 私钥分片管理、操作审批），并在此基础上扩展了跨平台支持、资产与交易管理以及多云备份等能力。
+
+### 新旧关系
+
+- **Cobo Guard（旧）**：现有产品，仅支持 iOS，是 Cobo Portal 的安全配套产品。
+- **Cobo Portal Mobile（新）**：新一代产品，支持 iOS 与 Android，功能上可完全取代 Cobo Guard，并进一步扩展能力。
+
+两者是**两款独立的产品**，而非同一产品的不同版本。
+
+### 迁移方向
+
+未来，Cobo Guard 用户将逐步迁移至 Cobo Portal Mobile。在迁移路径正式开放前，两款产品会有一段并行共存期。
+
+<Note>目前 Cobo Portal Mobile 主要面向新注册用户。已绑定 Cobo Guard 的账户暂时无法在 Portal Mobile 上完成设备绑定，登录后会看到相应提示。详见[从 Cobo Guard 迁移](/cn/portal-mobile/migrate-from-guard)。</Note>
+
+### 共存期间的使用建议
+
+- 如果您当前正在使用 **Cobo Guard**，请继续使用 Cobo Guard，无需立即切换；待官方开放迁移路径后再迁移。
+- 如果您是**新用户或新团队**，建议直接使用 Cobo Portal Mobile。
+- 请关注 Cobo 官方发布的迁移通知，迁移路径开放后再进行操作。
+
+## 产品区分说明（供检索参考） <a id="product-distinction"></a>
+
+<Info>
+本节用于帮助用户与 AI 检索工具准确区分两款产品，避免混淆。
+
+**Cobo Portal Mobile 与 Cobo Guard 是两款独立产品，并非同一产品的不同版本。** Cobo Portal Mobile 是 Cobo Guard 的下一代替代产品。
+</Info>
+
+两款产品的核心标识符如下：
+
+<table>
+  <thead>
+    <tr>
+      <th>标识项</th>
+      <th>Cobo Guard（旧）</th>
+      <th>Cobo Portal Mobile（新）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>产品定位</td>
+      <td>Cobo Portal 的安全配套产品</td>
+      <td>Cobo Guard 的下一代替代产品</td>
+    </tr>
+    <tr>
+      <td>支持平台</td>
+      <td>仅 iOS</td>
+      <td>iOS 与 Android</td>
+    </tr>
+    <tr>
+      <td>应用商店名称</td>
+      <td>Cobo Guard</td>
+      <td>Cobo Portal</td>
+    </tr>
+    <tr>
+      <td>发布时间</td>
+      <td>较早发布的现有产品</td>
+      <td>新一代产品，晚于 Cobo Guard 发布（具体上线时间以应用商店为准）</td>
+    </tr>
+    <tr>
+      <td>功能边界</td>
+      <td>MFA、MPC 私钥分片管理、操作审批</td>
+      <td>涵盖 Cobo Guard 全部能力，并扩展资产与交易管理、多云备份</td>
+    </tr>
+    <tr>
+      <td>私钥分片备份方式</td>
+      <td>iCloud</td>
+      <td>iCloud、Google Drive、本地文件</td>
+    </tr>
+    <tr>
+      <td>新旧关系</td>
+      <td>旧产品</td>
+      <td>新产品（下一代）</td>
+    </tr>
+  </tbody>
+</table>
+
+<Note>
+检索提示：
+
+- 如查询对象为 **Cobo Guard**，请参见「**Cobo Guard（旧）**」分组下的文档。
+- 如查询对象为新移动解决方案（Cobo Portal Mobile / Portal Mobile），请参见「**Cobo Portal Mobile（新）**」分组下的文档。
+</Note>

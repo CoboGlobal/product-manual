@@ -1,0 +1,77 @@
+---
+title: "Use and manage Cobo Portal Mobile"
+sidebarTitle: "Use and manage Cobo Portal Mobile"
+lang: "en"
+description: "Learn how to use and manage Cobo Portal Mobile, including wallets, approvals, transactions, and settings."
+---
+
+<Warning>To use Cobo Portal Mobile, your device must have a screen lock enabled. Make sure the screen lock stays enabled — disabling it will prevent you from using Portal Mobile.</Warning>
+
+After completing the first-time setup, you can use Cobo Portal Mobile (hereinafter referred to as Portal Mobile) to manage your account, assets, and approvals anytime, anywhere. This document introduces the main screens and management features of Portal Mobile.
+
+## Bottom navigation
+
+The main screen of Portal Mobile has four bottom tabs:
+
+- **Wallets**: View the wallet list and assets, and initiate receiving and transfers.
+- **Approvals**: View and handle requests awaiting your approval.
+- **Transactions**: View transaction history.
+- **Me**: Manage your device, key shares, and settings.
+
+<Note>If you selected **View only** mode when logging in, "View only mode" is shown at the top of the screen. In this mode, you can only browse assets and history, and cannot sign or approve. To gain full permissions, tap **Bind this device**.</Note>
+
+## Wallets
+
+In the **Wallets** tab, you can:
+
+- View the wallet list, token holdings, and balances in your organization;
+- Open wallet details to view the breakdown of individual tokens;
+- **Receive**: Display wallet addresses and receiving QR codes;
+- **Transfer / withdraw**: Initiate a transfer, review the transaction details, and sign with biometrics.
+
+
+## Approvals
+
+In the **Approvals** tab, you can efficiently manage approval requests:
+
+- **Pending**: Displays all requests awaiting your approval;
+- **All**: Displays all approval requests regardless of their status.
+
+Tap a request to view its details. For transaction requests, you can review the transaction content, source, risk control information, and so on, then choose to **Approve** or **Reject**. For MPC transactions, after the approval passes you receive a signing request in Portal Mobile and complete the signing.
+
+Key share generation requests are also shown in this tab. For how to handle them, refer to [Generate and back up your key shares](/en/portal-mobile/generate-and-back-up-key-shares).
+
+
+## Transactions
+
+In the **Transactions** tab, you can view transaction history and the details of individual transactions, including transaction type, chain, amount, transaction fee, initiator, and recipient.
+
+## Me
+
+In the **Me** tab, you can manage your device and settings.
+
+### This device
+
+- **My Public Key**: View and copy your public key. The public key represents your identity and is used in scenarios such as multi-factor authentication (MFA) and operation approval.
+- **Key shares**: View your key share information, including the TSS Node ID, key groups (Main Group, Signing Group, Recovery Group), and the details of each group. If a backup is outdated, you can update the backup here.
+- **Bind device**: If the current device is not yet bound, you can complete binding here.
+
+<Note>Key share information is only visible if you hold key shares.</Note>
+
+### Settings
+
+- **Appearance**: Switch Portal Mobile's appearance between system, light, and dark.
+- **Language**: Switch Portal Mobile's language between system, Chinese (Simplified), and English.
+- **Export logs**: Export local logs for a selected date to help with troubleshooting. Local logs are retained only for the most recent few days.
+- **Test messages**: Send and receive test approval messages to verify that the approval channel works properly.
+
+### Support and about
+
+- **Contact support**: Join the Cobo community on Discord, or contact support by email.
+- **About**: View Portal Mobile's version number and privacy policy.
+
+
+## Other common features
+
+- **Notifications**: View push notifications from Cobo Portal, including approval requests, key share generation requests, and more.
+- **Auto-lock**: Portal Mobile automatically locks after being in the background for a period of time, and requires biometric authentication to re-enter.

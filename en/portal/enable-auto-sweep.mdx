@@ -26,7 +26,7 @@ The following steps use MPC Wallets (Organization-Controlled Wallets) as an exam
 ### For a new wallet
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+2. Click **Wallets** in the left sidebar, then select **MPC Wallets**.
 3. Select your vault.
 4. Click **Create Wallet**.
 5. Name your wallet, then enable the **Auto-Sweep** switch. 
@@ -39,14 +39,12 @@ The following steps use MPC Wallets (Organization-Controlled Wallets) as an exam
 
 Now you have successfully created a new Organization-Controlled Wallet with auto token sweeping enabled. The wallet has a icon indicating that the feature is enabled as the following screenshot shows.
 
-<Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions.</Note>
-
-<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
+<Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions. You can also adjust the sweep policy based on your specific business needs. For details, refer to [Sweep Poliy settings](/en/portal/auto-sweep-policy-edit).</Note>
 
 ### For an existing wallet
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+2. Click **Wallets** in the left sidebar, then select **MPC Wallets**.
 3. Select your vault.
 4. Choose the wallet that you want to enable auto token sweeping for.
 5. Click the **Turn On Auto-Sweep** icon <img src="/en/images/mpc-wallet/ocw/icon_sweep.png" className="icon" alt="The Turn On Auto-Sweep icon" /> in the **Action** column.
@@ -62,7 +60,6 @@ Now you have successfully enabled auto token sweeping for the wallet. The wallet
 
 <Note>After auto-sweep is enabled, Cobo will follow the predefined sweep strategy and automatically scan deposit addresses for tokens that meet the sweep criteria whenever the strategy is triggered. Regardless of whether the tokens were deposited before or after auto-sweep was enabled, they will be swept automatically as long as they meet the required conditions.</Note>
 
-<img src="/en/images/mpc-wallet/ocw/auto-sweep-icon.png" className="screenshot_full_screen" alt="The wallet with Auto-Sweep icon" />
 ## Changes after enabling auto token sweeping
 
 ### Sweep-to addresses
@@ -95,7 +92,7 @@ When sweeping occurs, two transaction records are generated:
 ## Optional next steps
 
 ### Modify sweep strategy
-By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+By default, two sweep strategies are enabled: single transaction threshold sweep and balance sweep. You can adjust the parameters of the sweep strategy as needed or add other sweep strategies. For detailed configuration steps, refer to [Sweep policy settings](/en/portal/auto-sweep-policy-edit).
 
 ### Change sweep-to addresses  
 If your setup changes, switch networks, or the current address is compromised or tainted by suspicious funds, you can [change sweep-to addresses](/en/portal/change-sweep-address) as needed.
@@ -110,13 +107,11 @@ You can configure network fee limits for BTC and ETH sweep transactions to avoid
 If a sweep transaction is not confirmed within a specified time, you can enable automatic RBF to speed up confirmation. For detailed configuration steps, see [Auto token sweeping settings](/en/portal/auto-sweep-settings).
 
 ### Set minimum sweep amount
-To avoid unnecessary network fees caused by small assets triggering sweeps, you can set a minimum sweep amount for sweep transactions. The system will only initiate a sweep transaction when the sweepable amount reaches this minimum value. For detailed configuration steps, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+To avoid unnecessary network fees caused by small assets triggering sweeps, you can set a minimum sweep amount for sweep transactions. The system will only initiate a sweep transaction when the sweepable amount reaches this minimum value. For detailed configuration steps, refer to [Sweep strategy settings](/en/portal/auto-sweep-policy-edit).
 
 ### Pause/Resume sweeping
-When encountering unexpected situations (such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments), you can pause sweeping. After conditions return to normal, you can resume sweeping to continue executing according to the established strategy. For more details, refer to [Auto token sweeping settings](/en/portal/auto-sweep-settings).
+When encountering unexpected situations (such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments), you can pause sweeping. After conditions return to normal, you can resume sweeping to continue executing according to the established strategy. For more details, refer to [Pause/Resume sweeping](/en/portal/auto-sweep-pause-resume).
 
-### Filter wallets by feature status  
+### Filter wallets by feature status
 You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.
-
-<img src="/en/images/mpc-wallet/ocw/auto-sweep-wallet-filter.png" className="screenshot_full_screen" alt="Wallet filter" />
 
