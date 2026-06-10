@@ -11,7 +11,7 @@ import Mpc from "/snippets/wallets/mpc-web3-en.mdx"
 
 ### MPC Technology
 
-Multi-Party Computation (MPC) is an advanced cryptographic technology utilized for key management on the blockchain. With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. These parties will jointly sign transactions without ever exposing their key shares or materializing a private key at any time.
+Multi-Party Computation (MPC) is an advanced cryptographic technology utilized for key management on the blockchain. With MPC technology, private key shares are individually generated within separate secure environments, encrypted, and divided amongst multiple parties. Transactions are processed using these distributed key shares, without the complete private key ever being assembled or exposed.
 
 This means that the private key that executes transactions never exists or lives in any one device at any point in time — rather, it is decentralized and held across multiple parties / devices. MPC technology ensures that no single party can unilaterally move funds, eliminating a single point of failure and making key theft and internal fraud and collusion much more challenging for malicious actors.
 
@@ -19,7 +19,7 @@ This means that the private key that executes transactions never exists or lives
 
 ### Threshold Signature Scheme (TSS)
 
-A Threshold Signature Scheme (TSS) is a type of digital signature protocol used by MPC Wallets to enable distributed parties to jointly sign transactions. In the MPC-TSS setup, a flexible threshold signature scheme (''m out of n'' key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to sign each transaction.
+A Threshold Signature Scheme (TSS) is a type of digital signature protocol used by MPC Wallets that allows distributed parties to each contribute independently to a transaction's signature. In the MPC-TSS setup, a flexible threshold signature scheme (''m out of n'' key shares) can be implemented. For instance, in a 2-2 signature scheme, two private key shares will be generated independently and both key shares will be required to authorize each transaction.
 
 <img src="/en/images/mpc-wallet/TSS.svg"/>
 
@@ -29,9 +29,9 @@ Cobo Portal offers two types of MPC Wallets: Organization-Controlled Wallets and
 
 ### Organization-Controlled Wallets
 
-In an Organization-Controlled Wallet, the management and control of the wallet lie with the organization itself. This setup allows organizations to securely custody and maintain complete control of their own funds or their end users’ assets.
+In an Organization-Controlled Wallet, the management and control of the wallet lie with the organization itself. This setup allows organizations to securely safeguard and maintain complete control of their own funds or their end users’ assets.
 
-An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with the organization and Cobo each holding a key share for transaction signing.
+An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with one key share held by the organization and the other key share stored within Cobo's multi-cloud infrastructure.
 
 **MPC Wallets for your organization’s own funds**:
 
@@ -45,9 +45,9 @@ An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with the orga
 
 In a User-Controlled Wallet, end users of the organization are given full control of their digital assets. In this setup, each end user of the organization holds their own unique private key share to their MPC Wallet.
 
-With a flexible threshold signature scheme (''m out of n'' key shares), User-Controlled Wallets allow the organization to customize how transactions are signed. For example, under a 3-3 signature scheme, the organization, the end user, and Cobo each hold a key share and all three key shares must collectively sign transactions. Alternatively, a 2-3 signature scheme can be implemented, where the organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
+With a flexible threshold signature scheme (''m out of n'' key shares), User-Controlled Wallets allow the organization to customize how transactions are authorized. For example, under a 3-3 signature scheme, the organization and the end user each hold a key share, while the third key share is stored within Cobo's multi-cloud infrastructure, and all three are required to independently authorize each transaction. Alternatively, a 2-3 signature scheme can be implemented, where the organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
 
-To integrate non-custodial MPC Wallets into your applications, a 2-2 signature can be implemented, where the end user and Cobo each hold a key share, while the organization holds none.
+To integrate non-custodial MPC Wallets into your applications, a 2-2 signature can be implemented, where the end user holds a key share and the other key share is stored within Cobo's multi-cloud infrastructure, while the organization holds none.
 
 **3-3 signature scheme**:
 
@@ -67,10 +67,10 @@ To integrate non-custodial MPC Wallets into your applications, a 2-2 signature c
 Choose from Organization-Controlled Wallets and User-Controlled Wallets based on your unique business requirements. Organization-Controlled Wallets allow you to safeguard and control your own treasury assets as well as your end users’ assets. User-Controlled Wallets allow you to integrate non-custodial wallets into your applications and provide your end users with the control over their assets.
 
 ### No single point of failure
-Cobo Portal’s MPC Wallets utilize advanced MPC technology to decentralize the private key, ensuring that the full key is never materialized at any point. To sign transactions, multiple key shares are required to jointly participate. This ensures that even if one key share is compromised, unauthorized parties cannot unilaterally access your funds. MPC Wallets safeguard your assets from external hacks, internal fraud, collusion, and human errors, significantly reducing the risk of asset loss.
+Cobo Portal’s MPC Wallets utilize advanced MPC technology to decentralize the private key, ensuring that the full key is never materialized at any point. Authorizing a transaction requires multiple independently held key shares. This ensures that even if one key share is compromised, unauthorized parties cannot unilaterally access your funds. MPC Wallets safeguard your assets from external hacks, internal fraud, collusion, and human errors, significantly reducing the risk of asset loss.
 
 ### Robust asset recovery capabilities
-With comprehensive backup and recovery mechanisms in place, Cobo Portal’s MPC Wallets ensure that you have access to your assets at all times – whether your key share is lost or compromised, or in the unlikely event of a system failure or service disruption. You can choose to manage the recovery process independently or engage the assistance of a third party disaster recovery service provider, such as an insurance company or security firm, for added peace of mind.
+With comprehensive backup and recovery mechanisms in place, Cobo Portal’s MPC Wallets ensure that you have access to your assets at all times – whether your key share is lost or compromised, or in the unlikely event of a system failure or service disruption. You retain the ability to manage the recovery process independently or engage the assistance of a third party disaster recovery service provider, such as an insurance company or security firm, for added peace of mind.
 
 ## MPC Wallets vs. Web3 Wallets
 
