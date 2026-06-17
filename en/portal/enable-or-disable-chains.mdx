@@ -5,35 +5,81 @@ lang: "en"
 description: "Learn how to enable or disable supported chains for your team, and how these settings affect your wallet usage and subscription quota."
 ---
 
-Cobo supports more than 80 mainstream public blockchains. To meet common usage scenarios, a subset of widely used chains is enabled by default.
+Cobo supports more than 80 mainstream public blockchains. To meet common usage scenarios, a subset of widely used chains is enabled and ready to use as soon as your wallet is created — no manual setup required.
 
 [Pricing plans](/en/portal/bills-and-payments/introduction) for Custodial Wallets and MPC Wallets include a quota on the number of chains that can be actively used. To help manage resource allocation and billing, additional chains must be manually enabled as needed.
+
+## Chains enabled by default
+
+Once a wallet is created, Cobo enables the following chains for your organization and automatically generates the corresponding addresses in the default wallet. All EVM-compatible chains share the same `0x` address, while non-EVM chains such as Bitcoin and Solana each have their own address. These chains are ready out of the box — no need to add them again from Pricing Plans.
+
+| Wallet type | Default-enabled chains | Count |
+| --- | --- | --- |
+| **MPC Wallets** | Ethereum, BNB Smart Chain, Bitcoin, Arbitrum, Solana, Base, Polygon | 7 |
+| **Custodial Wallets** | Ethereum, TRON, BNB Smart Chain, Bitcoin, Solana, Polygon, Arbitrum, Avalanche C-Chain, Base | 9 |
+
+<Note>**Free Trial (MPC Wallets only)**: During the free trial, MPC Wallets get **Ethereum Sepolia Testnet** enabled on top of the 7 chains above, and the default wallet is pre-funded with **SETH** so you can run test transactions right away without configuring a testnet yourself. Custodial Wallets do not offer a free trial.</Note>
+
+To enable additional chains, follow the manual steps below.
 
 ## Enable chains
 
 When a chain is enabled to your organization, all tokens supported on that chain become available for use in your wallets. The chain will be considered in use and will count against your plan quota. Additional charges apply if the total number of enabled chains exceeds the quota.
+
+Cobo Portal offers two ways to manually enable a chain. Pick the one that matches what you are doing:
+
+| Method                                | Use when                                                                                                  | Entry point                                                                                                                |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Enable chains in the pricing plan** | You want to centrally manage all enabled chains for a given wallet type, or enable multiple chains at once. | Profile avatar (top-right) > **Pricing Plans** > wallet type card > **Supported Chains** > **Manage**                     |
+| **Enable chains when adding tokens**  | You are adding a token to a wallet and only then realize that the token's chain is not yet enabled.       | Hover **Wallets** in the left nav to pick a wallet type > Vault > Wallet > **Tokens** tab > **Add Tokens** |
+
+Both methods produce the same result: once enabled, the chain is considered in use, counts toward your plan quota, and incurs overage charges for any usage above the included amount.
 
 ### Prerequisites
 
 - The chain you want to enable must be supported by Cobo. To view the complete list of supported tokens and chains, please refer to [Supported Tokens and Chains](/en/portal/supported-tokens-and-chains).
 - You have been assigned the Admin, Manager, or Operator [role](/en/portal/organization/roles-and-permissions).
 
-### Enable chains in the pricing plan
+### Method 1: Enable chains in the pricing plan
+
+Chain enablement is managed separately per wallet type (Custodial Wallets, MPC Wallets, Exchange Wallets). The steps below use MPC Wallets as an example:
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click your profile avatar in the top-right corner, and then click **Pricing Plans**.
-3. Navigate to **Supported Chains** and click the **Chain Management** icon.
-4. On the **Chain Management** panel, click **Add Chains**.
-5. In the **Add Chains** dialog, select the chains you want to add, and click **Confirm**.
-6. Select a multi-factor authentication (MFA) method for authentication.
+3. At the top of the **Pricing Plans** tab, select the wallet type card you want to manage (for example, **MPC Wallets**).
+4. In the **Supported Chains** section, click the **Manage** button on the right. The **Chain Management** panel opens on the right side, listing all chains currently enabled for that wallet type.
+5. In the top-right corner of the **Chain Management** panel, click **Add Chains**.
+6. In the **Add Chains** dialog:
+   - Review the notice that confirms each added chain is considered in use, counts toward your plan inclusion, and that overage charges apply for usage exceeding the plan inclusion.
+   - From the **Please select** dropdown, select the chains you want to add. You can select multiple chains at once.
+   - Click **Confirm**.
+7. Select a multi-factor authentication (MFA) method for authentication.
 
-After successful authentication, you will see a **Success** message.
+After successful authentication, you will see a **Success** message, and the newly enabled chains appear in the **Chain Management** panel.
 
-### Enable chains when adding tokens
+<Tip>Use the search box inside the **Chain Management** panel to quickly locate a specific enabled chain.</Tip>
 
-You can also enable the chain when adding tokens. If the chain of the token you want to add is not enabled, an **Enable Chain** dialog will pop up, showing the chain and token you want to add. After successful authentication, the chain will be added to your organization.
+### Method 2: Enable chains when adding tokens
 
-<img src="/en/images/enable-chains.png" className="screenshot_modal" alt="Enable Chain" />
+When you are not specifically managing chains but instead adding a new token to a wallet, and the token's chain has not yet been enabled, Cobo Portal enables the chain as part of the add-token flow — no need to go back to **Pricing Plans**.
+
+#### Step 1: Open the target wallet
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Hover over **Wallets** in the left navigation, and from the wallet type cards that appear, click the target wallet type (**MPC Wallets** / **Custodial Wallets** / **Exchange Wallets**) to open its wallet list page.
+3. In the vault list for that wallet type (for example, the **Organization-Controlled Wallets** tab under MPC Wallets), click the target vault.
+4. In the wallet list inside the vault, click the target wallet to open its detail page.
+
+#### Step 2: Open the Add Tokens dialog and pick tokens
+
+5. On the wallet detail page, switch to the **Tokens** tab and click **Add Tokens** in the top-right corner.
+6. In the **Add Tokens** dialog, choose the tokens you want to add:
+   - The **Token** area at the top shows your current selection as chips. Click the ✕ on a chip to remove it.
+   - The **All Chains** dropdown on the right filters the token list by chain — for example, **All Chains / Algen L1 Mainnet / Aptos / Arbitrum / Avalanche C-Chain**.
+   - The search box accepts a token name or contract address to quickly locate a token.
+   - The **Hot Tokens** section lists commonly used tokens (such as BTC, ETH, BNB, SOL, XRP, DOGE). Use the checkbox at the right of each row to select tokens; multi-select is supported.
+   - If the token you need is not listed, click the **submit a request** link at the bottom and follow [Supported Tokens and Chains](/en/portal/supported-tokens-and-chains#申请未支持代币的自助上币) to request listing.
+7. Click **Confirm** once your selection is complete. Cobo Portal enables the chains the selected tokens belong to (if not already enabled) and adds the tokens to the current wallet.
 
 ## Disable chains
 
@@ -43,10 +89,11 @@ After a chain is disabled, tokens associated with it will no longer be visible i
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click your profile avatar in the top-right corner, and then click **Pricing Plans**.
-3. Navigate to **Supported Chains** and click the **Chain Management** icon.
-4. On the **Chain Management** panel, click the delete icon next to the chain you want to delete.
-5. In the confirmation dialog, click **Confirm**.
-6. Select a multi-factor authentication (MFA) method for authentication.
+3. At the top of the **Pricing Plans** tab, select the target wallet type card (for example, **MPC Wallets**).
+4. In the **Supported Chains** section, click the **Manage** button on the right to open the **Chain Management** panel.
+5. In the chain list, click the delete icon next to the chain you want to disable.
+6. In the confirmation dialog, click **Confirm**.
+7. Select a multi-factor authentication (MFA) method for authentication.
 
 After successful authentication, you will see a **Success** message.
 

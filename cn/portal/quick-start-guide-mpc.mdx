@@ -73,7 +73,9 @@ import Snippet from '/snippets/account-setup-cn.mdx';
 ## 创建钱包和转账
 ### 创建钱包
 
-成功生成私钥后，系统会自动为您的 Vault 创建一个默认钱包。您可以按照以下步骤创建更多钱包：
+成功生成私钥后，系统会自动为您的 Vault 创建一个默认钱包，并为 7 条[默认启用的公链](/cn/portal/enable-or-disable-chains#默认启用的公链)（Ethereum、BNB Smart Chain、Bitcoin、Arbitrum、Solana、Base、Polygon）生成对应地址。其中所有 EVM 链共用同一个 `0x` 地址，无需重复添加。Free Trial 期间还会额外启用 Ethereum Sepolia Testnet 并预置 SETH 测试币，方便您直接试跑测试交易。
+
+您可以按照以下步骤创建更多钱包：
 
 1. 登录 Cobo Portal。
       * 如需测试，请使用[开发环境](https://portal.dev.cobo.com/login)。
