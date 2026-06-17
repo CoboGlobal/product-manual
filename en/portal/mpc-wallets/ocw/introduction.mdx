@@ -11,7 +11,9 @@ Organization-Controlled Wallets are a subtype of [MPC Wallets](/en/portal/mpc-wa
 
 Organization-Controlled Wallets are MPC-based wallets where the management and control of the digital assets lie with the organization itself. By leveraging MPC technology, the private key is fragmented into encrypted shares that are distributed among multiple parties. This approach enhances security and enables organizations to maintain full control over their funds or the assets of their end users. 
 
-Organization-Controlled Wallets use a 2-2 signature scheme, with one key share held by the organization and the other stored within Cobo's multi-cloud infrastructure.
+Organization-Controlled Wallets are non-custodial. The organization retains control of its key shares at all times. Any key share stored within Cobo's multi-cloud infrastructure is encrypted and stored on the organization's behalf, and Cobo does not control or use it.
+
+Organization-Controlled Wallets use a 2-2 signature scheme: one key share is held by the organization, and the other key share is generated within and stored encrypted in Cobo's multi-cloud infrastructure on the organization's behalf. Both key shares are required to independently authorize each transaction.
 
 ## Object Model
 
@@ -21,5 +23,4 @@ Organization-Controlled Wallets use a 2-2 signature scheme, with one key share h
 A vault is a collection of Organization-Controlled Wallets sharing the same root extended private key. You can set up multiple vaults, and create various wallets within each vault to meet the specific requirements of your business.
 
 ### Root Extended Private Key
-Each vault is associated with a unique root extended private key. This master private key is used within the MPC framework to generate a series of key shares. Each set of key shares jointly form a [private key](/en/portal/mpc-wallets/ocw/holder-group-overview), such as Main key and Signing Key.
-
+Each vault is associated with a unique root extended private key. This master private key is used within the MPC framework to generate a series of key shares. Each set of key shares combines to form a [private key](/en/portal/mpc-wallets/ocw/holder-group-overview), such as Main Key and Signing Key.
