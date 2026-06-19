@@ -1,0 +1,24 @@
+---
+title: "提币前提条件"
+sidebarTitle: "提币前提条件"
+lang: "zh-hans"
+description: "了解在 Cobo Portal 中从钱包发起提币之前必须满足的条件。"
+---
+
+在 Cobo Portal 中从钱包发起提币之前，请确保满足以下条件。如果任何条件未满足，提币可能无法启动。
+
+## 所需角色
+
+您必须持有适用于目标钱包的**提币员**角色。提币员角色授权您为该钱包发起转账和提币。如果您没有目标钱包的提币员角色，请联系您的团队管理员进行分配。要了解更多信息，请参阅[角色与权限](/cn/portal/organization/roles-and-permissions)。
+
+## 充足的余额
+
+钱包必须有足够的余额来支付提币金额和链上 gas 费。
+
+- 请确保钱包持有足够的原生 gas 代币（例如，EVM 网络上的 ETH 或 TRON 上的 TRX），或已启用 [Fee Station](/cn/portal/fee-station/introduction) 来支付 gas 费。
+- 您要提取的金额必须可用作可用余额，且未被另一笔进行中的交易锁定。详情请参阅[余额锁定](/cn/portal/transfers/introduction#balance-locking)。
+
+## 相关主题
+
+- [转账简介](/cn/portal/transfers/introduction)
+- [设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)

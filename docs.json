@@ -38,6 +38,7 @@
                       "en/portal/troubleshoot/token-chain-not-visible-or-unsupported",
                       "en/portal/troubleshoot/transfer-out-unsupported-evm-assets",
                       "en/portal/troubleshoot/transaction-failed-or-stuck",
+                      "en/portal/troubleshoot/withdraw-button-no-response",
                       "en/portal/troubleshoot/transaction-broadcasting-or-slow-confirmation",
                       "en/portal/troubleshoot/deposit-not-credited",
                       "en/portal/troubleshoot/insufficient-funds",
@@ -176,6 +177,7 @@
                     "group": "Transfers",
                     "pages": [
                       "en/portal/transfers/introduction",
+                      "en/portal/transfers/withdrawal-prerequisites",
                       "en/portal/transfers/from-asset-wallets",
                       "en/portal/transfers/from-web3-wallets",
                       "en/portal/transfers/from-mpc-wallets",
@@ -630,6 +632,7 @@
                       "cn/portal/troubleshoot/token-chain-not-visible-or-unsupported",
                       "cn/portal/troubleshoot/transfer-out-unsupported-evm-assets",
                       "cn/portal/troubleshoot/transaction-failed-or-stuck",
+                      "cn/portal/troubleshoot/withdraw-button-no-response",
                       "cn/portal/troubleshoot/transaction-broadcasting-or-slow-confirmation",
                       "cn/portal/troubleshoot/deposit-not-credited",
                       "cn/portal/troubleshoot/insufficient-funds",
@@ -768,6 +771,7 @@
                     "group": "转账",
                     "pages": [
                       "cn/portal/transfers/introduction",
+                      "cn/portal/transfers/withdrawal-prerequisites",
                       "cn/portal/transfers/from-asset-wallets",
                       "cn/portal/transfers/from-web3-wallets",
                       "cn/portal/transfers/from-mpc-wallets",

@@ -1,0 +1,15 @@
+---
+title: "Withdraw button does not respond"
+sidebarTitle: "Withdraw button no response"
+lang: "en"
+description: "Learn what to check when the withdraw or transfer button does not respond and shows no error."
+---
+
+**Applicable to: All wallets**
+
+If you click the withdraw or transfer button and nothing happens - for example, on a newly created wallet - verify the following before retrying:
+
+1. You hold the **Spender** role scoped to the wallet you are withdrawing from.
+2. The wallet has enough balance to cover both the withdrawal amount and the on-chain gas fee, and the amount is available as spendable balance (not locked by another in-flight transaction).
+
+The backend may return an error that the interface does not always display. Checking the conditions above resolves most cases. For the full list, see [Withdrawal prerequisites](/en/portal/transfers/withdrawal-prerequisites).

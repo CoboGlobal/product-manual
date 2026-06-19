@@ -1,0 +1,24 @@
+---
+title: "Withdrawal prerequisites"
+sidebarTitle: "Withdrawal prerequisites"
+lang: "en"
+description: "Review the conditions that must be met before you can initiate a withdrawal from a wallet in Cobo Portal."
+---
+
+Before you can initiate a withdrawal from a wallet in Cobo Portal, make sure the following conditions are met. If any condition is not met, the withdrawal may not start.
+
+## Required role
+
+You must hold the **Spender** role scoped to the wallet you want to withdraw from. The Spender role authorizes you to initiate transfers and withdrawals for that wallet. If you do not have the Spender role for the target wallet, ask your organization admin to assign it. To learn more, see [Roles and permissions](/en/portal/organization/roles-and-permissions).
+
+## Sufficient balance
+
+The wallet must have enough balance to cover both the withdrawal amount and the on-chain gas fee.
+
+- Make sure the wallet holds enough of the native gas token (for example, ETH on EVM networks or TRX on TRON), or that [Fee Station](/en/portal/fee-station/introduction) is enabled to pay the gas fee.
+- The amount you want to withdraw must be available as spendable balance and not locked by another in-flight transaction. For details, see [Balance locking](/en/portal/transfers/introduction#balance-locking).
+
+## Related topics
+
+- [Introduction to Transfer](/en/portal/transfers/introduction)
+- [Set up token transfer policy](/en/portal/risk-controls/off-chain-tx-set-transfer)
