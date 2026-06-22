@@ -4,3 +4,29 @@ sidebarTitle: "Error messages"
 lang: "en"
 description: "Understand the various error messages you may encounter in Cobo's Developer Console and how to resolve them."
 ---
+
+This article lists error codes you may encounter when using the Developer Console and Cobo Portal APIs, along with their causes and how to resolve them.
+
+## Error 12007
+
+Error 12007 has two possible causes:
+
+- **Asset not found**: The requested token or asset could not be located for this operation. Verify the token, chain, and wallet in your request.
+- **Gas sponsorship depleted**: When the feature that pays gas fees with your USD stablecoin balance is enabled, this error is also returned if the balance available for gas payment has run out.
+
+To resolve the gas sponsorship case:
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Top up your USD or USD stablecoin balance, then retry the operation.
+
+## Error 30038
+
+Error 30038 indicates that your Fee Station balance is insufficient to cover the requested fee, so the operation cannot proceed.
+
+To resolve this:
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Complete a deposit to top up your balance. For deposit options, refer to [How to use Fee Station](/en/portal/fee-station/set-up).
+4. Retry the operation after the deposit is credited.
