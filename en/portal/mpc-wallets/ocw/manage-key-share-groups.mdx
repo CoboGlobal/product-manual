@@ -17,6 +17,16 @@ Follow the steps below to navigate to the **Key Share Management** page:
 ## View root extended public keys
 Depending on the number of cryptographic algorithms supported on Cobo Portal, a set of root extended public keys associated with your vault will be displayed. Note that all public keys for MPC Wallets in this vault are derived from these root extended public keys.
 
+## Understand key share identifiers
+
+The **Key Share Management** page identifies each private key share with several values. Understanding how they relate helps you match a key share to the holder and the TSS Node that controls it.
+
+- **Key share ID** (shown as the key ID on this page): the unique identifier of a single private key share, in decimal format.
+- **Share public key**: the public key that corresponds to that private key share.
+- **TSS Node ID**: the identifier of the TSS Node that holds the key share. The node stored locally is the Local Node ID, and nodes held by other parties are the Other Node IDs.
+
+Each participant in a key share group corresponds to one private key share, one TSS Node ID, and one key share ID. In other words, a private key share, the TSS Node that holds it, and its holder map to each other one to one. The number of participants in a group equals the total number of private key shares, TSS Node IDs, and key share IDs in that group.
+
 ## Manage private keys
 
 <Note>Prerequisite: To manage keys, you need to have the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.</Note>
