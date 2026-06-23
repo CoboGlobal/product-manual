@@ -18,4 +18,35 @@ We recommend checking the following:
     - EVM networks usually require ETH (or the chain’s native token) to pay gas.
     - On TRON, fees are typically paid with TRX (or via related energy/bandwidth mechanisms).
 
+## When Fee Station balance is insufficient
+
+Fee Station does not make partial payments. If the Fee Station balance cannot cover the full fee, Fee Station does not pay part of it.
+
+- If you selected **Use Fee Station** so that Fee Station pays only when the wallet balance is insufficient, and both the wallet and Fee Station lack enough fee tokens, the transaction fails with an insufficient-funds error.
+- If you selected the option for Fee Station to always pay the fee and the Fee Station balance is insufficient, the transaction fails.
+
+After you deposit into Fee Station, the new balance may not be available immediately. The deposit must be confirmed on-chain and credited before Fee Station can use it, so a transaction created right after a deposit can still fail with an insufficient-balance error. Wait for the deposit to be credited, then retry the transaction.
+
+## Error 30038: Fee Station balance insufficient
+
+Error `30038` means the Fee Station balance is not enough to pay the fee for the transaction. Because Fee Station does not make partial payments, the transaction does not proceed until the balance covers the full fee.
+
+To resolve this:
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Deposit a supported token so that the balance covers the required fee.
+4. After the deposit is credited, retry the transaction.
+
+## Error 12007: Asset Not Found
+
+Error `12007` usually means the specified asset could not be found. When the gas fee sponsorship feature (paying gas fees with USDT) is enabled for your organization, error `12007` can also mean that the funds available for gas fee sponsorship have been depleted.
+
+To resolve this when gas fee sponsorship is enabled:
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click your name in the bottom left corner, then select **Organization** > **Fee Station**.
+3. Top up the balance used for gas fee sponsorship.
+4. After the deposit is credited, retry the transaction.
+
 If the issue persists, please provide your wallet type, chain, token, error message, and the time of occurrence, then contact Cobo Support (help@cobo.com).

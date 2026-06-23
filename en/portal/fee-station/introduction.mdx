@@ -15,6 +15,18 @@ Fee Station helps you simplify this. It’s a one-stop fee management platform o
 
 <Note>Currently, Fee Station supports paying gas fees for transactions made with MPC Wallets and Web3 Wallets on EVM-compatible chains, TRON, and Solana.</Note>
 
+## Supported wallet types
+
+The fee types that Fee Station can pay depend on the wallet type:
+
+| Wallet type                       | Fee types Fee Station can pay            |
+| --------------------------------- | ---------------------------------------- |
+| MPC Wallets                       | Gas fees, service fees, and custody fees |
+| Custodial Wallets (Web3 Wallets)  | Gas fees, service fees, and custody fees |
+| Custodial Wallets (Asset Wallets) | Custody fees only                        |
+
+Gas fee and transaction fee payment through Fee Station applies only to MPC Wallets and Custodial Wallets (Web3 Wallets). Custodial Wallets (Asset Wallets) can use Fee Station only to settle custody fees; they cannot use Fee Station to pay on-chain gas fees or transaction fees.
+
 ## Who should use Fee Station
 
 Fee Station is ideal for any team looking to simplify on-chain fee management, especially:
@@ -45,9 +57,14 @@ You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (s
 
 ### TRON gas fee optimization with energy rental
 
-Fee Station automatically leverages energy rental on the TRON network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
+On the TRON network, Fee Station can pay transaction fees in two ways:
 
-With Fee Station enabled, TRON transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
+- **Energy mode**: Fee Station uses rented energy to cover the resource cost of a transaction, which reduces the amount of TRX burned. This can lower TRON transaction fees by up to 80 percent, with greater savings for larger or high-frequency transactions. For details on discounts for high transaction counts, please contact our sales team.
+- **TRX mode**: Fee Station pays the transaction fee by burning TRX directly.
+
+Energy mode must be enabled for your organization before it takes effect. Until energy mode is enabled, Fee Station pays TRON transaction fees in TRX mode.
+
+The energy that Fee Station rents and manages is separate from any energy you rent yourself on the sending address. Fee Station does not detect or use energy that you rented independently. If a transaction relies only on your self-rented energy, you can still see an insufficient-energy error.
 
 ### API and webhook integration
 
@@ -56,8 +73,6 @@ Fee Station offers standardized APIs and webhook support, allowing your system t
 For more details, please refer to the [Fee Station API](https://www.cobo.com/developers/v2/api-references/feestation/get-fee-station-transaction-information) and [Webhook documentation](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-event-type#webhook-event-types).
 
 ## Benefits of using Fee Station
-
-The table below shows the differences between using Fee Station and not using it, helping you understand the benefits of using Fee Station:
 
 The table below shows the differences between using Fee Station and not using it, helping you understand the benefits of using Fee Station:
 

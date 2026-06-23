@@ -18,4 +18,35 @@ description: "了解提币时出现余额不足报错的常见原因与处理方
     - EVM 链通常需要 ETH（或对应链的原生币）支付 Gas。
     - TRON 链通常需要 TRX（或通过相关能量/带宽机制）支付手续费。
 
+## Fee Station 余额不足时的处理
+
+Fee Station 不支持部分代付。如果 Fee Station 余额不足以覆盖全额手续费，Fee Station 不会只代付其中一部分。
+
+- 如果您选择了**使用 Fee Station**，即仅在钱包余额不足时由 Fee Station 代付，而钱包和 Fee Station 均没有足够的费用代币，交易将因余额不足而失败。
+- 如果您选择了由 Fee Station 始终代付手续费，而 Fee Station 余额不足，交易将失败。
+
+向 Fee Station 充值后，新的余额可能不会立即可用。该笔充值需在链上确认并入账后，Fee Station 才能使用，因此充值后立即创建的交易仍可能因余额不足而失败。请等待充值入账后再重试交易。
+
+## 错误 30038：Fee Station 余额不足
+
+错误 `30038` 表示 Fee Station 余额不足以支付该笔交易的手续费。由于 Fee Station 不支持部分代付，在余额覆盖全额手续费之前，交易不会继续。
+
+要解决此问题：
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
+3. 充值受支持的代币，使余额足以覆盖所需手续费。
+4. 充值入账后，重试交易。
+
+## 错误 12007：Asset Not Found
+
+错误 `12007` 通常表示找不到指定的资产。当您的团队启用了使用 USDT 支付 gas 费的代付功能（gas 代付）时，错误 `12007` 也可能表示可用于 gas 费代付的资金已耗尽。
+
+在启用 gas 费代付的情况下，要解决此问题：
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
+3. 为用于 gas 费代付的余额充值。
+4. 充值入账后，重试交易。
+
 如仍无法解决，请提供钱包类型、链、币种、报错信息与时间点，并联系 Cobo 客服（help@cobo.com）。
