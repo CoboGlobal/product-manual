@@ -42,3 +42,18 @@ In the **Gas Token > Payment Preferences** tab, you can configure on-chain trans
 
 <img src="/en/images/fee-station/preferences.png" className="screenshot_full_screen"/>
 
+Each payment preference controls when Fee Station covers gas fees for an address: you can choose to cover fees only when the wallet balance is insufficient, or to always cover them. If you do not configure a preference for a chain, the system default applies.
+
+<Note>Whitelist-based fee configurations may apply to specific addresses. As a result, the fee behavior for those addresses can differ from the preference you set here, and changing an address's whitelist membership can change which fee behavior applies.</Note>
+
+## TRON fee payment
+
+For TRON USDT transfers, Fee Station pays the on-chain fee in one of two ways:
+
+- **Energy mode**: Fee Station uses available or rented energy on the sending address to cover the transfer, which avoids burning TRX and is the lower-cost option. Fee Station prioritizes this mode whenever energy can be applied.
+- **TRX burn mode**: When energy cannot be applied to the transfer, Fee Station pays the fee by burning TRX, which costs more than energy mode.
+
+The fee shown for a TRON transfer reflects the method actually used, so the displayed amount can differ between transfers depending on whether energy was applied.
+
+<Note>If you have pre-rented energy on a TRON sending address but still see a TRON insufficient-energy or insufficient-fee error, confirm that Fee Station is enabled and funded for TRON and that a TRON payment preference is configured under **Gas Token** > **Payment Preferences**. If the error persists after the Fee Station balance is funded, the address may require additional account configuration before pre-rented energy can be applied.</Note>
+

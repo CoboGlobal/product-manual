@@ -15,6 +15,18 @@ Fee Station helps you simplify this. It’s a one-stop fee management platform o
 
 <Note>Currently, Fee Station supports paying gas fees for transactions made with MPC Wallets and Web3 Wallets on EVM-compatible chains, TRON, and Solana.</Note>
 
+## Supported wallet types
+
+Fee Station gas fee payment is available for MPC Wallets and Web3 Wallets only.
+
+In the Cobo wallet taxonomy, Web3 Wallets are a subtype of Custodial Wallets. Custodial Wallets also include Asset Wallets, which are not eligible for gas fee payment. Asset Wallets can use the Fee Station balance to settle custody fees only.
+
+| Wallet type | Gas fee payment | Other fees covered |
+| --- | --- | --- |
+| [MPC Wallets](/en/portal/mpc-wallets/introduction) | Supported | Service fees, custody fees |
+| [Custodial Wallets (Web3 Wallets)](/en/portal/custodial-wallets/web3-wallets/introduction) | Supported | Service fees, custody fees |
+| [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/asset-wallets/introduction) | Not supported | Custody fees |
+
 ## Who should use Fee Station
 
 Fee Station is ideal for any team looking to simplify on-chain fee management, especially:
@@ -28,6 +40,10 @@ Fee Station is ideal for any team looking to simplify on-chain fee management, e
 ### Automatic gas fee handling
 
 Fee Station can automatically cover gas fees for transactions initiated from MPC Wallets and Web3 Wallets. You can choose to cover fees only when the wallet balance is insufficient, or to always cover them. Once configured, the system automatically checks the condition and processes the gas fee without manual input. For more details about the chain support, please refer to [Supported chains for gas fee payment](#supported-chains-for-gas-fee-payment).
+
+### How Auto Fueling works
+
+To make sure a withdrawal address can pay its own on-chain fees, Fee Station may send a small amount of the native gas token (for example, on the order of `0.001` of the native token) to the address before processing the transaction. The cost of this top-up is deducted from your Fee Station balance. Depending on your configuration and available balances, the deduction may be settled from your USD or USD stablecoin balance even when a native gas token balance is present.
 
 ### Unified fee settlement
 
