@@ -7,10 +7,18 @@ description: "Follow the steps to set up Fee Station for automatic payment of tr
 
 Note: Please make sure that your Fee Station has a sufficient balance of fee tokens to cover the transaction fees. When you create transactions from MPC Wallets, you will be able to view your Fee Station balance and whether a top-up is necessary.
 
+For the wallet types that Fee Station can pay transaction fees for, see [Supported wallet types](/en/portal/fee-station/introduction#supported-wallet-types).
+
 You can manually set up Fee Station to automatically pay for transaction fees. **This currently applies only to EVM and TRON transactions initiated from MPC Wallets (Organization-Controlled) and Custodial Wallets (Web3 Wallets) on the Cobo Portal web console.** Once Fee Station is set up for MPC Wallets and Custodial Wallets (Web3 Wallets), the payment methods will vary depending on the blockchain:
 
 - EVM chains: Fee Station automatically manages transaction fees by preloading the required amount into your MPC Wallet. For example, if you initiate a transaction of 1,000 ETH from your Wallet and the fee is 0.05 ETH, but your wallet does not have enough funds to cover the fee, Fee Station will automatically transfer 0.05 ETH to your wallet. This ensures that your transaction proceeds without interruption.
 - TRON chain: The transaction fee is directly deducted from Fee Station.
+
+## Auto Fueling
+
+On EVM-compatible chains, Fee Station covers gas fees through Auto Fueling: it transfers a small amount of the gas token into the sending address just before the transaction, so the transaction has enough gas to proceed. Because of this, you can see small top-up deposits arriving at your withdrawal addresses. These deposits are an expected part of Auto Fueling and do not require any action.
+
+The balance Fee Station debits for Auto Fueling can be a token that differs from the chain's native gas token. If you deposited USD or a USD stablecoin into Fee Station, Fee Station converts it into the required gas token at the time of the transaction, so the deducted balance can appear in your deposited token rather than the native gas token.
 
 ## Steps
 
@@ -18,14 +26,18 @@ You can manually set up Fee Station to automatically pay for transaction fees. *
 2. Click your profile avatar in the top-right corner, then select **Fee Station**.
 3. Switch to the **Payment Preferences** tab and click **Expand**.
 4. (For EVM chains) Select either **Do Not Use Fee Station** or **Use Fee Station**.
-- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Asset Wallet (Web3 Wallet) itself.
-- Use Fee Station: If the fee token balance in your MPC Wallet or Asset Wallet (Web3 Wallet) is insufficient, the transaction fee will be paid using Fee Station. If your MPC Wallet or Asset Wallet (Web3 Wallet) has sufficient fee tokens, the transaction fee will be paid by the MPC Wallet or Asset Wallet (Web3 Wallet) itself.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
+- Use Fee Station: If the fee token balance in your MPC Wallet or Custodial Wallet (Web3 Wallet) is insufficient, the transaction fee will be paid using Fee Station. If your MPC Wallet or Custodial Wallet (Web3 Wallet) has sufficient fee tokens, the transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
 5. (For the TRON chain) Select either **Do Not Use Fee Station** or **Use Fee Station**.
-- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Asset Wallet (Web3 Wallet) itself.
-- Use Fee Station: The transaction fee will be paid using Fee Station, regardless of whether your MPC Wallet or Asset Wallet (Web3 Wallet) has sufficient fee tokens.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
+- Use Fee Station: The transaction fee will be paid using Fee Station, regardless of whether your MPC Wallet or Custodial Wallet (Web3 Wallet) has sufficient fee tokens.
 <img src="/en/images/fee-station/1.png" className="screenshot_full_screen"/>
 6. Click **Save Changes**.
 7. Finish the setup by completing your security verification.
+
+## Fee preference priority
+
+The fee preference that Fee Station applies to a transaction, and the fee shown to you when you create the transaction, is determined by your organization's effective Fee Station configuration. An organization-level setting can take precedence over the per-chain preference you select under **Payment Preferences**. If the displayed fee does not match the preference you configured, an organization-level setting is taking precedence for that chain or token.
 
 ## Next steps
 

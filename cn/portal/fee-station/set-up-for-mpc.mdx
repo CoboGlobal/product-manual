@@ -13,6 +13,12 @@ description: "掌握如何设置 Fee Station，确保手续费的自动化处理
 
 - TRON 链： 交易手续费将直接从 Fee Station 中扣除。
 
+## 自动加油
+
+在 EVM 兼容链上，Fee Station 通过自动加油（Auto Fueling）来代付链上手续费：在交易发起前，将少量 Gas Token 转入发起地址，使交易拥有足够的 Gas 以顺利进行。因此，您可能会看到提币地址上出现少量充值入账。这些充值是自动加油的正常行为，无需处理。
+
+Fee Station 为自动加油扣除的余额，可能是与该链原生 Gas Token 不同的代币。如果您向 Fee Station 充值的是美元法币或美元稳定币，Fee Station 会在交易发生时将其兑换成所需的 Gas Token，因此被扣除的余额可能体现为您充值的代币，而非原生 Gas Token。
+
 ## 步骤
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
@@ -27,6 +33,10 @@ description: "掌握如何设置 Fee Station，确保手续费的自动化处理
 <img src="/cn/images/fee-station/1.png" className="screenshot_full_screen"/>
 6. 点击**保存更改**。
 7. 完成安全验证以完成设置。
+
+## 手续费偏好的优先级
+
+Fee Station 对某笔交易应用的手续费偏好，以及您在创建交易时看到的手续费，由您团队实际生效的 Fee Station 配置决定。团队或机构级别的设置可能优先于您在**付款偏好**中为各条链选择的偏好。如果显示的手续费与您配置的偏好不一致，说明该链或代币正在以团队或机构级别的设置为准。
 
 ## 后续步骤
 
