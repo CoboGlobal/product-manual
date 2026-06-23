@@ -4,3 +4,29 @@ sidebarTitle: "Error messages"
 lang: "zh-hans"
 description: "了解在 Cobo 开发者控制台中可能遇到的各种错误消息及其解决方法。"
 ---
+
+本文列出您在使用开发者控制台和 Cobo Portal API 时可能遇到的错误码，以及对应的原因和解决方法。
+
+## Error 12007
+
+Error 12007 可能由以下两种原因导致：
+
+- **资产未找到（Asset not found）**：本次操作未能找到所请求的代币或资产。请检查请求中的代币、链和钱包。
+- **代付额度耗尽**：当使用美元稳定币余额代付手续费的功能已启用时，如果可用于代付的余额已耗尽，也会返回该错误。
+
+针对代付额度耗尽的情况，解决方法如下：
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
+3. 为美元或美元稳定币余额充值，然后重试该操作。
+
+## Error 30038
+
+Error 30038 表示您的 Fee Station 余额不足以覆盖本次请求的费用，因此该操作无法继续。
+
+解决方法：
+
+1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
+2. 点击左下角的用户名，然后选择**团队** > **Fee Station**。
+3. 完成充值以补足余额。充值方式请参考 [Fee Station 使用指南](/cn/portal/fee-station/set-up)。
+4. 入账后重试该操作。

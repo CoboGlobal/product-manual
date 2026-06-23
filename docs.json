@@ -61,7 +61,11 @@
                     "group": "MPC Wallets",
                     "pages": [
                       "en/portal/quick-start-mpc",
-                      "en/portal/quick-start-guide-mpc"
+                      "en/portal/quick-start-guide-mpc",
+                      "en/portal/guides-by-businesstype/guide-for-exchange",
+                      "en/portal/guides-by-businesstype/guide-for-asset-manager",
+                      "en/portal/guides-by-businesstype/guide-for-otc-merchant",
+                      "en/portal/guides-by-businesstype/guide-for-gaming"
                     ]
                   },
                   {
@@ -317,7 +321,7 @@
                     ]
                   },
                   {
-                    "group": "Bills & Payments",
+                    "group": "Pricing Plans",
                     "pages": [
                       "en/portal/bills-and-payments/introduction",
                       "en/portal/bills-and-payments/purchase-pricing-plan",
@@ -325,11 +329,12 @@
                       "en/portal/bills-and-payments/manage-bills"
                     ]
                   },
-                  "en/portal/dashboard/introduction"
+                  "en/portal/dashboard/introduction",
+                  "en/portal/transaction-history/introduction"
                 ]
               },
               {
-                "group": "DEVELOPER CONSOLE",
+                "group": "DEVELOPER",
                 "pages": [
                   "en/portal/developer-console/introduction",
                   {
@@ -450,12 +455,6 @@
                     ]
                   },
                   {
-                    "group": "OTC",
-                    "pages": [
-                      "en/apps/otc/introduction"
-                    ]
-                  },
-                  {
                     "group": "Token Swap",
                     "pages": [
                       "en/apps/token-swap/introduction",
@@ -545,28 +544,60 @@
             ]
           },
           {
-            "tab": "Cobo Guard",
+            "tab": "Portal Mobile",
             "groups": [
               {
-                "group": "OVERVIEW",
+                "group": "Cobo Guard (Old)",
                 "pages": [
-                  "en/guard/introduction"
+                  {
+                    "group": "OVERVIEW",
+                    "pages": [
+                      "en/guard/introduction"
+                    ]
+                  },
+                  {
+                    "group": "GET STARTED",
+                    "pages": [
+                      "en/guard/download",
+                      "en/guard/set-up"
+                    ]
+                  },
+                  {
+                    "group": "MANAGE",
+                    "pages": [
+                      "en/guard/generate-and-back-up-key-shares",
+                      "en/guard/reset",
+                      "en/guard/assistant",
+                      "en/guard/manage"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "GET STARTED",
+                "group": "Cobo Portal Mobile (New)",
                 "pages": [
-                  "en/guard/download",
-                  "en/guard/set-up"
-                ]
-              },
-              {
-                "group": "MANAGE",
-                "pages": [
-                  "en/guard/generate-and-back-up-key-shares",
-                  "en/guard/reset",
-                  "en/guard/assistant",
-                  "en/guard/manage"
+                  {
+                    "group": "OVERVIEW",
+                    "pages": [
+                      "en/portal-mobile/introduction"
+                    ]
+                  },
+                  {
+                    "group": "GET STARTED",
+                    "pages": [
+                      "en/portal-mobile/download",
+                      "en/portal-mobile/set-up"
+                    ]
+                  },
+                  {
+                    "group": "MANAGE",
+                    "pages": [
+                      "en/portal-mobile/generate-and-back-up-key-shares",
+                      "en/portal-mobile/reset",
+                      "en/portal-mobile/manage",
+                      "en/portal-mobile/migrate-from-guard"
+                    ]
+                  }
                 ]
               }
             ]
@@ -647,7 +678,7 @@
                 ]
               },
               {
-                "group": "快速开始",
+                "group": "快速开始免费试用",
                 "pages": [
                   "cn/portal/sign-up",
                   "cn/portal/onboarding-agents",
@@ -655,7 +686,11 @@
                     "group": "MPC 钱包",
                     "pages": [
                       "cn/portal/quick-start-mpc",
-                      "cn/portal/quick-start-guide-mpc"
+                      "cn/portal/quick-start-guide-mpc",
+                      "cn/portal/guides-by-businesstype/guide-for-exchange",
+                      "cn/portal/guides-by-businesstype/guide-for-asset-manager",
+                      "cn/portal/guides-by-businesstype/guide-for-otc-merchant",
+                      "cn/portal/guides-by-businesstype/guide-for-gaming"
                     ]
                   },
                   {
@@ -912,7 +947,7 @@
                     ]
                   },
                   {
-                    "group": "账单与支付",
+                    "group": "套餐方案",
                     "pages": [
                       "cn/portal/bills-and-payments/introduction",
                       "cn/portal/bills-and-payments/purchase-pricing-plan",
@@ -920,11 +955,12 @@
                       "cn/portal/bills-and-payments/manage-bills"
                     ]
                   },
-                  "cn/portal/dashboard/introduction"
+                  "cn/portal/dashboard/introduction",
+                  "cn/portal/transaction-history/introduction"
                 ]
               },
               {
-                "group": "开发者控制台",
+                "group": "开发者",
                 "pages": [
                   "cn/portal/developer-console/introduction",
                   {
@@ -1045,12 +1081,6 @@
                     ]
                   },
                   {
-                    "group": "OTC",
-                    "pages": [
-                      "cn/apps/otc/introduction"
-                    ]
-                  },
-                  {
                     "group": "Token Swap",
                     "pages": [
                       "cn/apps/token-swap/introduction",
@@ -1140,28 +1170,60 @@
             ]
           },
           {
-            "tab": "Cobo Guard",
+            "tab": "Portal Mobile",
             "groups": [
               {
-                "group": "概览",
+                "group": "Cobo Guard（旧）",
                 "pages": [
-                  "cn/guard/introduction"
+                  {
+                    "group": "概览",
+                    "pages": [
+                      "cn/guard/introduction"
+                    ]
+                  },
+                  {
+                    "group": "快速开始",
+                    "pages": [
+                      "cn/guard/download",
+                      "cn/guard/set-up"
+                    ]
+                  },
+                  {
+                    "group": "管理",
+                    "pages": [
+                      "cn/guard/generate-and-back-up-key-shares",
+                      "cn/guard/reset",
+                      "cn/guard/assistant",
+                      "cn/guard/manage"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "快速开始",
+                "group": "Cobo Portal Mobile（新）",
                 "pages": [
-                  "cn/guard/download",
-                  "cn/guard/set-up"
-                ]
-              },
-              {
-                "group": "管理",
-                "pages": [
-                  "cn/guard/generate-and-back-up-key-shares",
-                  "cn/guard/reset",
-                  "cn/guard/assistant",
-                  "cn/guard/manage"
+                  {
+                    "group": "概览",
+                    "pages": [
+                      "cn/portal-mobile/introduction"
+                    ]
+                  },
+                  {
+                    "group": "快速开始",
+                    "pages": [
+                      "cn/portal-mobile/download",
+                      "cn/portal-mobile/set-up"
+                    ]
+                  },
+                  {
+                    "group": "管理",
+                    "pages": [
+                      "cn/portal-mobile/generate-and-back-up-key-shares",
+                      "cn/portal-mobile/reset",
+                      "cn/portal-mobile/manage",
+                      "cn/portal-mobile/migrate-from-guard"
+                    ]
+                  }
                 ]
               }
             ]

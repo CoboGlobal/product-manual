@@ -18,7 +18,7 @@ This quick start guide helps you explore and evaluate Cobo's [Custodial Wallets]
 
 * [Contact our sales team](https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=pricing-plan-intro&utm_content=enterprise-contact-sales) to acquire your account activation link.
 
-* An iOS device to run [Cobo Guard](/en/guard/introduction), an iOS app designed by Cobo for multi-factor authentication (MFA) and operation approval.
+* A mobile device (iOS or Android) to run [Portal Mobile](/en/portal-mobile/introduction), a mobile app designed by Cobo for multi-factor authentication (MFA) and operation approval.
 
 <MySnippet />
 
@@ -26,8 +26,8 @@ This quick start guide helps you explore and evaluate Cobo's [Custodial Wallets]
 1. Log in to Cobo Portal.
     - For testing, use the [development environment](https://portal.dev.cobo.com).
     - For production, use the [production environment](https://portal.cobo.com).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets**.
-3. A default wallet is automatically created for you. You can also create a new one if needed.
+2. Click **Wallets** in the left sidebar, then select **Custodial Wallets**.
+3. A default wallet is automatically created for you, with addresses pre-generated for 9 [chains that are enabled by default](/en/portal/enable-or-disable-chains#chains-enabled-by-default) (Ethereum, TRON, BNB Smart Chain, Bitcoin, Solana, Polygon, Arbitrum, Avalanche C-Chain, Base). All EVM chains share the same `0x` address, so there is no need to add them again. You can also create a new wallet if needed.
 4. Click the wallet you want to deposit into.
 5. Locate the token you want to deposit into the wallet, and then click <img src="/en/images/mpc-wallet/icon_deposit.svg" className="icon"></img>.
 
@@ -57,9 +57,8 @@ First, create a list of trusted addresses that are pre-approved for withdrawals:
     - For testing, use the [development environment](https://portal.dev.cobo.com).
     - For production, use the [production environment](https://portal.cobo.com).
 
-2. Click <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies**.
+2. Click **Transaction Policies** in the left sidebar.
 3. Navigate to the **Address Lists** tab and click **Create List**.
-<img src="/en/images/risk-controls/create-an-address-list.png" className="screenshot_full_screen"/>
 4. Enter a name for your address list, then click **Confirm**.
 5. Click your newly created address list, click **Add Address**, then enter your trusted addresses.
 6. Click **Submit** and verify with your Google Authenticator code.
@@ -73,7 +72,7 @@ Now, let's set up a policy with these security rules:
 
 Follow these steps:
 
-1. In Cobo Portal, go to <img src="/en/images/common/wallets_icon.svg" className="icon"/> > **Transaction Policies**.
+1. In Cobo Portal, go to **Transaction Policies** in the left sidebar.
 2. Click **Create Policy** > **Token Transfer**.
 3. Configure the settings as shown in the screenshot:
 
@@ -89,7 +88,7 @@ Your policy is now active and will require 2-of-3 approval for any USDT withdraw
    - For testing, use the [development environment](https://portal.dev.cobo.com).
    - For production, use the [production environment](https://portal.cobo.com).
 
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Custodial Wallets**.
+2. Click **Wallets** in the left sidebar, then select **Custodial Wallets**.
 3. Click the wallet from which you want to withdraw tokens.
 4. Locate the token you want to withdraw, then click <img src="/en/images/custodial-wallet/withdraw-icon.png" className="icon"/> to open the **Transfer** dialog.
 
@@ -97,12 +96,12 @@ Your policy is now active and will require 2-of-3 approval for any USDT withdraw
 
 <img src="/en/images/quick-start-guide-custodial-wallets/withdraw.png" className="screenshot_modal" alt="Screenshot of the withdrawal" />
 
-6. Double confirm the withdrawal on Cobo Guard.
+6. Double confirm the withdrawal on Portal Mobile.
 
 <Info>To learn more about making transfers from Asset Wallets, see [Transfer from Custodial Wallets (Asset Wallets)](/en/portal/transfers/from-asset-wallets).</Info>
 
 ## View transaction details and status
-After making a transfer to or from your Asset Wallets, you can view its transaction status in <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **Transaction History**. 
+After making a transfer to or from your Asset Wallets, you can view its transaction status in **Transaction History** in the left sidebar. 
 <img src="/en/images/quick-start-guide-custodial-wallets/transaction-history.png" className="screenshot_full_screen" alt="Screenshot of the transaction history" />
 
 ## What's next

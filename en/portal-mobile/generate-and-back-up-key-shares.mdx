@@ -1,0 +1,89 @@
+---
+title: "Generate and back up your key shares"
+sidebarTitle: "Generate and back up your key shares"
+lang: "en"
+description: "Learn how to generate and back up key shares in Cobo Portal Mobile to ensure secure key management and recovery."
+---
+
+<Note>**Eligibility reminder — new users only.** Key share generation and backup in Cobo Portal Mobile is currently **only available to newly registered users / new organizations**. **Existing users whose accounts are bound to Cobo Guard cannot generate or back up key shares in Portal Mobile yet** — they should continue managing key shares in Cobo Guard. **No migration path from Cobo Guard to Portal Mobile is available yet.** See [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard) for details.</Note>
+
+To demonstrate how Cobo Portal Mobile (hereinafter referred to as Portal Mobile) functions as a key share manager, this guide walks you through generating and backing up key shares from the perspective of a key share holder.
+
+After key shares are generated, holders can use Portal Mobile to back them up to iCloud, Google Drive, or export them as a local file. During backup, key shares are encrypted with a **recovery passphrase** that you set. Key share backups are useful in situations such as device loss or replacement.
+
+<Warning>Losing either the **backup file** or the **recovery passphrase** will permanently prevent recovery of your key shares — and the assets in the corresponding wallet. Be sure to keep both safe.</Warning>
+
+## Generate your key shares
+
+Multiple key shares jointly form a key. There are three types of keys: Main Key, Signing Key, and Recovery Key. Key shares can be generated in the following two ways.
+
+### Method 1: Automatic generation during first-time setup
+
+After you set up Portal Mobile for the first time and create your first organization, Portal Mobile automatically generates key shares for your first vault and creates the MPC Wallet — no manual action required. For details, refer to [Set up Cobo Portal Mobile](/en/portal-mobile/set-up#step-5-automatically-generate-your-wallet-and-key-shares).
+
+### Method 2: Responding to an Admin-initiated generation request
+
+Subsequent key share generation (for example, creating a new Main Key, Signing Key, or Recovery Key) is initiated by an Admin on Cobo Portal (web). The Admin designates organization members as key share holders, and the selected holders receive a notification in Portal Mobile.
+
+<Note>A selected holder's device must already be bound to the Admin's organization to be eligible for selection as a key share holder.</Note>
+
+1. After the Admin initiates key generation on Cobo Portal, you receive a "You have a pending key share generation request" notice in the **Approvals** tab of Portal Mobile. Tap the notice.
+
+
+2. On the **Group Information** page, review the details of the key share generation request (organization, MPC vault, key group, threshold, and so on). Once confirmed, tap **Start**.
+
+
+3. Wait for all key share holders to come online and approve the request. Once all holders have approved, the key share generation process starts automatically.
+
+4. The process takes about 30 seconds. Do not close Portal Mobile during this time. When you see the **Key Generated Successfully** message, tap **Back Up**.
+
+
+5. You can tap **Back Up** to enter the [backup flow](#back-up-your-key-shares), or tap **Skip** to back up later.
+
+<Warning>To keep your assets safe, back up your key shares as soon as possible.</Warning>
+
+## Back up your key shares
+
+After your key shares are generated, follow the steps below to complete the backup.
+
+### Step 1: Choose a backup method
+
+On the **Back up key shares** page, choose where to store the backup. You can add other backup methods at any time later.
+
+- **iCloud**: The backup file is stored in your iCloud account (iOS devices).
+- **Google Drive**: The backup file is stored in your Google Drive account.
+- **Local file**: Export the backup file locally and keep it yourself.
+
+
+<Note>Regardless of the method you choose, the next step requires you to create a recovery passphrase. This passphrase is required to decrypt the backup file and restore your key shares later.</Note>
+
+### Step 2: Confirm the backup notice
+
+In the confirmation dialog, read and select the following confirmation items:
+
+- I will keep the backup file safe;
+- I will remember the recovery passphrase.
+
+After confirming, tap **Continue**.
+
+### Step 3: Set a recovery passphrase
+
+Set a recovery passphrase used to encrypt your backup file. The recovery passphrase must meet the following requirements:
+
+- At least 16 characters;
+- At least one uppercase letter;
+- At least one number;
+- At least one special character.
+
+<Warning>The recovery passphrase is used to encrypt your key shares — it is **not** your login password. Keep the recovery passphrase safe; if you lose it, you will not be able to restore your key shares.</Warning>
+
+After entering and confirming the recovery passphrase, tap **Continue**, and complete identity verification as prompted.
+
+### Step 4: Complete the backup
+
+The backup is complete once you see the **Backup Successful** message.
+
+
+<Note>If you choose local file backup, Cobo cannot recover the local backup file for you. Be sure to store the backup file in a safe and accessible location.</Note>
+
+After the backup is complete, you can view your key share information at any time in **Me** > **Key shares**. If Portal Mobile shows a "Backup outdated" message, follow the prompt to update the backup to protect all your key shares.

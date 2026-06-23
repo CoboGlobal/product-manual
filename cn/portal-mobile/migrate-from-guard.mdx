@@ -1,0 +1,61 @@
+---
+title: "从 Cobo Guard 迁移"
+sidebarTitle: "从 Cobo Guard 迁移"
+lang: "zh-hans"
+description: "了解 Cobo Guard 与 Cobo Portal Mobile 的共存安排与迁移方向。"
+---
+
+Cobo Portal Mobile（以下简称 Portal Mobile）是 Cobo Guard 的下一代替代产品。本文档说明两款产品当前的共存安排，以及未来的迁移方向。
+
+<Warning>
+**关键信息（请先阅读）：**
+
+- **Cobo Portal Mobile 目前仅供新注册用户使用。** 暂**不**向 Cobo Guard 老用户开放。
+- **目前没有任何从 Cobo Guard 迁移到 Cobo Portal Mobile 的路径。** 应用内没有迁移流程，也没有自助或人工的迁移工具。
+- **如果您的账户已绑定 Cobo Guard**，在当前阶段您**无法**在 Portal Mobile 上绑定设备、生成私钥分片或使用任何 Portal Mobile 功能 —— Portal Mobile 会阻止设备绑定，并显示「目前 Cobo Portal 仅限新注册用户使用」等提示。
+- **Cobo Guard 老用户必须继续使用 Cobo Guard**，等待官方迁移路径开放。**请勿**卸载 Cobo Guard，也请勿尝试「切换」到 Portal Mobile。
+</Warning>
+
+<Info>
+Cobo Portal Mobile 与 Cobo Guard 是**两款独立的产品**，并非同一产品的不同版本。有关两款产品的功能边界与核心标识符对比，请参阅 [Cobo Portal Mobile 简介](/cn/portal-mobile/introduction#product-distinction)。
+</Info>
+
+## 共存说明
+
+在迁移路径正式开放前，Cobo Guard 与 Cobo Portal Mobile 会有一段并行共存期：
+
+- **Cobo Guard（旧）** 继续可用，现有用户的身份验证、操作审批与私钥分片管理不受影响。
+- **Cobo Portal Mobile（新）** 面向新注册用户开放，提供跨平台支持以及资产管理、多云备份等扩展能力。
+
+### 当前阶段的重要限制
+
+**Cobo Portal Mobile 当前阶段仅供"新注册用户"使用。** 如果您的账户此前已绑定过 Cobo Guard，在 Portal Mobile 上登录后会看到类似如下的提示：
+
+> 当前账户未通过 Cobo Portal 移动端绑定 —— 您的账户已绑定其他应用（例如 Cobo Guard），目前 Cobo Portal 仅限新注册用户使用。
+
+这意味着：
+
+- **已绑定 Cobo Guard 的账户无法在 Portal Mobile 上完成设备绑定。**
+- **已绑定 Cobo Guard 的账户无法在 Portal Mobile 上生成或备份私钥分片。**
+- **已绑定 Cobo Guard 的账户当前阶段无法使用 Portal Mobile 的任何功能。**
+- **目前不支持从 Cobo Guard 迁移到 Portal Mobile** —— 无论是应用内还是通过 Cobo 客服，均无法实现迁移。
+
+这是**当前阶段的预期行为，并非故障**。联系客服也无法为 Cobo Guard 老用户解锁访问 —— 老用户必须等待官方迁移路径开放。
+
+
+## 迁移方向
+
+未来，Cobo Guard 用户将逐步迁移至 Cobo Portal Mobile，最终由 Portal Mobile 统一承载移动端的安全与管理能力。届时：
+
+- 迁移路径将允许已绑定 Cobo Guard 的账户在 Portal Mobile 上完成设备绑定与私钥分片迁移；
+- 迁移完成后，您可以在 Portal Mobile 上使用原本由 Cobo Guard 提供的全部能力（MFA、操作审批、MPC 私钥分片管理），并获得资产管理等新功能。
+
+<Note>应用内的迁移流程尚未开放。本文档不包含逐步迁移指南——迁移路径正式发布后，本页面将更新具体操作步骤。</Note>
+
+## 共存期间的使用建议
+
+- 如果您当前正在使用 **Cobo Guard**（即已绑定 Cobo Guard 的老用户 / 老团队），**请务必继续使用 Cobo Guard** —— Portal Mobile **目前尚不支持您**，**目前也没有任何方式可以迁移**。请**不要**尝试切换或使用 Portal Mobile。相关使用说明请参阅「Cobo Guard（旧）」分组下的[文档](/cn/guard/introduction)。
+- 如果您是**从未绑定过 Cobo Guard 的全新用户或新团队**，建议直接使用 Cobo Portal Mobile。设置方式请参阅[设置 Cobo Portal Mobile](/cn/portal-mobile/set-up)。
+- 请关注 Cobo 官方发布的迁移通知，迁移路径开放后再按官方指引操作。
+
+如对迁移安排有疑问，请[联系客服](mailto:help@cobo.com)获取帮助。

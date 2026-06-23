@@ -1,0 +1,60 @@
+{
+  "_comment": "导航片段：用此 'Portal Mobile' tab 对象替换 docs.json 中现有的 { \"tab\": \"Cobo Guard\", ... } 对象（中文 cn 区域）。一级为 tab 'Portal Mobile'，二级为两款产品分组，分别带（旧）/（新）标签。英文 en 区域可镜像此结构，将路径前缀 cn/ 改为 en/。",
+  "tab": "Portal Mobile",
+  "groups": [
+    {
+      "group": "Cobo Guard（旧）",
+      "pages": [
+        {
+          "group": "概览",
+          "pages": [
+            "cn/guard/introduction"
+          ]
+        },
+        {
+          "group": "快速开始",
+          "pages": [
+            "cn/guard/download",
+            "cn/guard/set-up"
+          ]
+        },
+        {
+          "group": "管理",
+          "pages": [
+            "cn/guard/generate-and-back-up-key-shares",
+            "cn/guard/reset",
+            "cn/guard/assistant",
+            "cn/guard/manage"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Cobo Portal Mobile（新）",
+      "pages": [
+        {
+          "group": "概览",
+          "pages": [
+            "cn/portal-mobile/introduction"
+          ]
+        },
+        {
+          "group": "快速开始",
+          "pages": [
+            "cn/portal-mobile/download",
+            "cn/portal-mobile/set-up"
+          ]
+        },
+        {
+          "group": "管理",
+          "pages": [
+            "cn/portal-mobile/generate-and-back-up-key-shares",
+            "cn/portal-mobile/reset",
+            "cn/portal-mobile/manage",
+            "cn/portal-mobile/migrate-from-guard"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,8 @@ description: "Summary of the October 2025 enhancements to key share management a
 
 To enhance the usability and security of MPC Wallets, the configuration, interface, and security mechanisms for key shares were optimized in October 2025. The updates are described below.
 
+Across all modes, Cobo does not control or use client key shares. Any key share stored within Cobo's multi-cloud infrastructure is encrypted and stored on the client's behalf, and remains under the client's control.
+
 ## 1. Optimization of key share concepts and configuration
 
 ### Standard mode
@@ -21,7 +23,7 @@ The concept of **key share holder groups** has been simplified to **keys**, and 
 | Signing Group | Signing Key |
 | Recovery Group | Recovery Key |
 
-The structure and meaning of the keys remain unchanged. For example, the process of creating a Main Key is the same as the previous process of creating a Main Group: Cobo and the client each generate one key share, and together the two shares form a complete private key.
+The structure and meaning of the keys remain unchanged. For example, the process of creating a Main Key is the same as the previous process of creating a Main Group: the client generates one key share, and the other key share is generated within and stored encrypted in Cobo's multi-cloud infrastructure on the client's behalf. Together, the two key shares form a complete private key.
 
 #### UI/UX optimization
 
@@ -31,13 +33,13 @@ Required viewing each holder group under different tabs.
 <img src="/en/images/mpc-wallet/old-ui.png" className="screenshot_modal" alt="Previous Interface"/>
 
 New interface:
-All key share holders are displayed together, with labels indicating Main Key holders. Recovery Keys can be managed through the upper-right entry.
+All key shares are displayed together, with labels indicating Main Key holders. Recovery Keys can be managed through the upper-right entry.
 
 <img src="/en/images/mpc-wallet/new-ui.png" className="screenshot_modal" alt="New Interface"/>
 
 #### Recovery key configuration
 
-Users can choose between Self Recovery and Third-Party Recovery. In both modes, a Cobo key share is involved. The option to recover without Cobo participation is no longer available.
+Users can choose between Self Recovery and Third-Party Recovery. In both modes, the key share stored within Cobo's multi-cloud infrastructure participates in recovery. Recovery without this stored key share is no longer available.
 
 <img src="/en/images/mpc-wallet/recoverymode.png" className="screenshot_modal" alt="Recovery Key"/>
 
@@ -53,7 +55,7 @@ Key share holders (signers) are categorized as **Regular Signers** and **Standby
 
 #### Support for self-service configuration
 
-Once enabled, clients can configure keys directly through the user interface without relying on Cobo support.
+Once enabled, clients can configure keys directly through the user interface on a self-service basis.
 
 Previous interface:  
 <img src="/en/images/mpc-wallet/old-ui-advanced.png" className="screenshot_modal" alt="Old Advanced UI"/>
@@ -81,14 +83,14 @@ The system now prohibits the same node from acting as a key share holder for mul
 |--|--|--|--|
 | Naming | • Key share holder groups<br/>• Main Group<br/>• Signing Group<br/>• Recovery Group | • Key<br/>• Main Key<br/>• Signing Key<br/>• Recovery Key | Clearer and more intuitive concepts |
 | UI/UX | Key management spread across multiple tab pages | Main and Signing Key information displayed clearly with labels;<br/>Recovery Key accessible from upper-right corner | Centralized information, easier operation |
-| Recovery key configuration | Allowed recovery without Cobo participation | No longer supports recovery without Cobo | Simplifies configuration and ensures a secure, controllable recovery path |
+| Recovery key configuration | Allowed recovery without participation by the key share stored within Cobo's multi-cloud infrastructure | No longer supports recovery without participation by that stored key share | Simplifies configuration and ensures a secure, controllable recovery path |
 
 #### For advanced MPC vaults
 
 | Item | Before | After | Purpose |
 |--|--|--|--|
 | Naming | • Main Group, Signing Group, Recovery Group<br/>• Signers | • MPC Keys<br/>• Regular Signers, Standby Signers | More intuitive structure and terminology |
-| UI/UX | No interface support; required Cobo support via scripts | Clients can self-configure through the UI after enabling advanced mode | Reduces ambiguity and ensures key security |
+| UI/UX | No interface support; required manual configuration via scripts | Clients can self-configure through the UI after enabling advanced mode | Reduces ambiguity and ensures key security |
 
 #### General security mechanism enhancements
 
@@ -100,4 +102,3 @@ The system now prohibits the same node from acting as a key share holder for mul
 ### Impact on existing keys
 
 This optimization does not affect existing keys. Keys created before the optimization will retain their original structure and functions, and remain fully usable. The interface will present the existing key information in the new format.
-

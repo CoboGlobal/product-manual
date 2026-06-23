@@ -8,7 +8,7 @@ description: "Learn how to manage private keys in MPC vaults, including creating
 Follow the steps below to navigate to the **Key Share Management** page:
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
-2. Click <img src="/en/images/mpc-wallet/wallets-icon.svg" className="icon"></img> > **MPC Wallets**.
+2. Click **Wallets** in the left sidebar, then select **MPC Wallets**.
 3. Select your vault.
 4. Click <img src="/en/images/mpc-wallet/manage-key-share-group.svg" className="icon"></img> on the upper right hand corner.
 
@@ -16,6 +16,16 @@ Follow the steps below to navigate to the **Key Share Management** page:
 
 ## View root extended public keys
 Depending on the number of cryptographic algorithms supported on Cobo Portal, a set of root extended public keys associated with your vault will be displayed. Note that all public keys for MPC Wallets in this vault are derived from these root extended public keys.
+
+## Understand key share identifiers
+
+The **Key Share Management** page identifies each private key share with several values. Understanding how they relate helps you match a key share to the holder and the TSS Node that controls it.
+
+- **Key share ID** (shown as the key ID on this page): the unique identifier of a single private key share, in decimal format.
+- **Share public key**: the public key that corresponds to that private key share.
+- **TSS Node ID**: the identifier of the TSS Node that holds the key share. The node stored locally is the Local Node ID, and nodes held by other parties are the Other Node IDs.
+
+Each participant in a key share group corresponds to one private key share, one TSS Node ID, and one key share ID. In other words, a private key share, the TSS Node that holds it, and its holder map to each other one to one. The number of participants in a group equals the total number of private key shares, TSS Node IDs, and key share IDs in that group.
 
 ## Manage private keys
 
@@ -58,6 +68,6 @@ On the **Key Share Management** page, click **Recovery Keys** to:
 ### Key share holder changes
 For replacing key share holders, see [Key share handover](/en/portal/mpc-wallets/ocw/key-share-transfer) for detailed steps.
 
-### Cobo Guard device issues
-If a holder's Cobo Guard device is lost or changed, or the Cobo Guard app is reinstalled, see [Reset Cobo Guard after device change or reinstallation](/en/guard/reset) for detailed steps.
+### Portal Mobile device issues
+If a holder's Portal Mobile device is lost or changed, or the Portal Mobile app is reinstalled, see [Reset Portal Mobile after device change or reinstallation](/en/guard/reset) for detailed steps.
 
