@@ -23,12 +23,13 @@ Configure your AML/KYT providers in this section.
 
 | Setting | Description |
 | --- | --- |
-| AML Provider | • Select between Screening-integrated providers **CipherOwl**, **Elliptic**, and **Cobo Premium**.<br/>• You can also select **Custom Provider**, meaning you do not use the integrated providers, but instead perform your own KYT checks and submit decision results via API (When this option is selected, configuring [post-screening policies](/en/apps/screening/risk-policies) is not supported). |
-| API Key | Required for Elliptic integration |
-| Secret | Required for Elliptic integration |
+| AML Provider | • Select between Screening-integrated providers **CipherOwl**, **Elliptic**, **BlockSec**, and **Cobo Premium**.<br/>• You can also select **Custom Provider**, meaning you do not use the integrated providers, but instead perform your own KYT checks and submit decision results via API (When this option is selected, configuring [post-screening policies](/en/apps/screening/risk-policies) is not supported). |
+| API Key | Required for Elliptic and BlockSec |
+| Secret | Required for Elliptic |
 
 <Note>
-- Elliptic requires valid API credentials to function.<br/>
+- Elliptic requires a valid API Key and Secret to function.<br/>
+- BlockSec requires a valid API Key (no Secret needed).<br/>
 - Cobo Premium is a risk screening service tailored for payment clients. It checks addresses and transactions with stricter standards. Please contact [Cobo Support](mailto:help@cobo.com) if you need to enable it.
 </Note>
 
@@ -52,7 +53,19 @@ Customize how transaction screening behaves in different scenarios.
 
 - **Transaction Screening Policy:**
 
-    Configure screening rules for transfers between wallets within your organization on Cobo Portal (internal transactions) and all other transfers (external transactions) based on amount thresholds. Transactions not meeting the amount thresholds will be bypassed automatically.
+    Configure screening rules separately for transfers between wallets within your organization on Cobo Portal (**internal transactions**) and all other transfers (**external transactions**).
+
+    For each direction, you can define multiple **amount tiers**. Each tier covers a half-open USD amount range `[lower, upper)` and assigns one action to transactions that fall within it:
+
+    | Action | Description |
+    | --- | --- |
+    | Bypass | Transactions in this range are released without AML screening |
+    | Screen | Transactions in this range are sent to your configured AML provider for screening |
+    | Custom API | Transactions in this range are held for your own system to return a decision via API, independent of the global AML provider |
+
+    Tiers must start at 0, be continuous (each tier's lower bound equals the previous tier's upper bound), and end with an open-ended catch-all tier (no upper bound). By default, internal transactions are bypassed and external transactions are screened.
+
+    <Note>Tiered screening policies are available for teams using **Elliptic**, **CipherOwl**, **BlockSec**, or a **Custom Provider**. They are not supported when using **Cobo Premium**.</Note>
     
 ## Notification Settings
 
