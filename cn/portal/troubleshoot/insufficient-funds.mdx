@@ -13,7 +13,7 @@ description: "了解提币时出现余额不足报错的常见原因与处理方
 
 1. 优先检查是否启用了 Fee Station（推荐）
     - 对于 MPC 钱包与全托管钱包（Web3 钱包），建议启用 [Fee Station](/cn/portal/fee-station/introduction) 并完成相关设置，在 Gas Token 余额不足时自动补足手续费差额，减少因 Gas 不足导致的交易失败。此外，Fee Station 也支持使用美元法币或稳定币（如 USDT、USDC）支付手续费。
-    - 如果已启用 Fee Station，但其余额不足以覆盖手续费，则 Fee Station 无法代付 Gas，此时即使代币余额充足，转账仍可能因余额不足而失败。请为 Fee Station 充值：登录 [Cobo Portal](https://portal.cobo.com/login)，点击左下角的用户名，选择**团队** > **Fee Station**，并完成充值。充值后，请稍等片刻待入账完成，再重试转账。
+    - 如果已启用 Fee Station，但其余额不足以覆盖手续费，则 Fee Station 无法代付 Gas，此时即使代币余额充足，转账仍可能因余额不足而失败。请为 Fee Station 充值：登录 [Cobo Portal](https://portal.cobo.com/login)，在左侧导航栏中点击 **Fee Station** 进入，并完成充值。充值后，请稍等片刻待入账完成，再重试转账。
 
 2. 如未启用 Fee Station，请检查 Gas Token 余额是否充足
     - EVM 链通常需要 ETH（或对应链的原生币）支付 Gas。
