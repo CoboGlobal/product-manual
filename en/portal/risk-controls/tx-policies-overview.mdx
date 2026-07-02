@@ -62,6 +62,35 @@ For maximum security, you can combine both:
 1. Use on-chain transaction policies for core security rules
 2. Add off-chain transaction policies for flexible, day-to-day control
 
+## Policy matching and precedence
+
+When a transaction is initiated, Cobo Portal evaluates it against your ordered list of transaction policies to decide which approval action applies.
+
+### How a policy is matched
+
+A policy is matched when the transaction meets all of the policy's criteria. Depending on the policy type, these criteria can include:
+
+- **Wallet scope**: The transaction must originate from a wallet included in the policy's applicable wallets.
+- **Initiators**: The team member or API key that initiated the transaction.
+- **Source and destination addresses**: The receiving address, or whether it is included in a specified address list.
+- **Contract interaction**: For contract call policies, the contract address, method, and parameters.
+- **Amount and spending limits**: The transaction amount, per-transaction limit, or accumulated amount within a time window.
+- **Token types**: The tokens involved in the transaction.
+
+### How precedence is applied
+
+Policies are evaluated in priority order, from the top of the list downward. Once a transaction matches a policy, that policy's approval action is applied and no lower-priority policies are evaluated for that transaction.
+
+### Why a transaction may not trigger an expected policy
+
+If a transaction does not trigger the policy you expected, check the following:
+
+- **Scope mismatch**: The wallet, initiator, address, token, or amount does not meet the policy's conditions, so the policy does not match.
+- **A higher-priority policy matched first**: Another policy higher in the list already matched the transaction, so evaluation stopped before reaching the policy you expected.
+- **A condition is not met**: A policy requires all of its conditions to be satisfied. If any single condition is not met, the policy does not match.
+
+You can review and reorder policy priority on the Transaction Policies page. The matched policy determines the approval action and the reason recorded for the transaction.
+
 ## Accessing Transaction Policies
 
 Transaction Policies is accessible directly from the left sidebar navigation in Cobo Portal. Click **Transaction Policies** in the left sidebar to open the Transaction Policies page.

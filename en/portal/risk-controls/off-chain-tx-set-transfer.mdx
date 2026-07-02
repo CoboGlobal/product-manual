@@ -43,6 +43,10 @@ description: "Learn the steps to set up token transfer policies in Cobo Portal, 
 - **Amounts**: You can set the maximum transaction amount.
 <img src="/en/images/risk-controls/amounts.png" className="screenshot_full_screen"/>
 
+### Quota calculation <a id="quota-calculation"></a>
+
+When you set a spending limit over a time window using **Frequency**, Cobo Portal tracks a running total of the qualifying transaction amounts within that window. The policy is triggered when a new transaction would cause the running total to exceed the limit you set. This running total is calculated by Cobo's risk-control engine.
+
 **Receiving Addresses**: You can limit withdrawal transactions to specific receiving addresses.
 - **In Address Lists**: The receiving addresses must be included in the selected address lists.
 - **Not in Address Lists**:  The receiving addresses should not be included in the selected address lists.

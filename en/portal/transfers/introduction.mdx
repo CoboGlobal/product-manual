@@ -12,6 +12,8 @@ The Transfer module is meticulously designed to streamline the movement of asset
 2. Transfers between Custodial Wallets (Asset Wallets), MPC Wallets (Organization-Controlled Wallets), Smart Contract Wallets (Safe&#123;Wallet&#125;), and Exchange Wallets.
 3. Transfers between Main Accounts and Sub Accounts within the same exchange.
 
+Before you initiate a transfer, make sure you meet the [withdrawal prerequisites](/en/portal/transfers/withdrawal-prerequisites).
+
 To make a transfer, log in to [Cobo Portal](https://portal.cobo.com/login) and then click **Transfer** at the top of the left sidebar.
 
 
@@ -22,4 +24,23 @@ Then, fill in the required information as follows:
 For transfers from MPC Wallets and Custodial Wallets (Asset Wallets), you can use [Fee Station](/en/portal/fee-station/introduction) to pay for the gas fee.
 
 <Info>**Memo/Tag (Optional)**: The field is only visible when you select a token that requires it. For transfers out of Cobo Portal, it is highly recommended to include a memo/tag for the following chains: XRP, EOS, XLM, IOST, BNB_BNB, ATOM, LUNA, and TON.</Info>
+
+## Transaction statuses
+
+After you submit a transfer, the transaction moves through a series of statuses before it is broadcast on-chain. The **Pending Approval** status often needs clarification, because it can apply for two different reasons:
+
+- **Automated internal checks**: The transaction is being evaluated automatically by Cobo's risk-control and compliance screening systems. No human action is required during this stage.
+- **Manual approval**: The transaction matched a policy that requires one or more designated approvers to review and approve it.
+
+Because of the first case, you may see **Pending Approval** even when no approver is required for your transaction - this means the automated internal checks are still running. The transaction proceeds automatically once those checks complete, unless a matched policy also requires manual approval.
+
+## Balance locking <a id="balance-locking"></a>
+
+When you create a transfer, Cobo Portal reserves (locks) the spendable balance required for that transaction so the same funds cannot be spent by another transaction while the transfer is in progress.
+
+- **When balance is locked**: The spendable balance is locked at the moment the transaction is created.
+- **When balance is released**: The lock is released when the transaction reaches a final state - both when it completes successfully and when it fails or is rejected.
+- **Why multiple addresses can be locked at once**: For wallets that hold funds across multiple addresses (for example, UTXO-based chains), a single withdrawal can draw spendable balance from more than one address. The spendable balance on each selected address is locked for the duration of that withdrawal.
+
+Because an in-flight withdrawal reserves spendable balance, trying to spend the same funds again before the first withdrawal settles can produce a `Specified Spendable is locked` error. Wait until the in-flight transaction reaches a final state, then retry.
 
