@@ -16,11 +16,16 @@ description: "了解充币长时间未到账时的常见原因与排查步骤。
 2. 核对充币信息是否正确
     - 充币地址是否正确。
     - 充币链/网络是否正确。
-    - 若该链或资产要求填写 Tag/Memo/备注，请确认填写无误。
+    - 若该链或资产要求填写 Tag/Memo/备注，请注意：**转账**页面下展示的需要备注的链列表仅适用于转出交易，不适用于充币。发送资金前，请在 Cobo Portal 充币地址弹窗中查看该币种/链对应的 Memo/Tag 字段及提示信息。
 
-3. 检查是否存在入账延迟的常见原因
+3. 检查合规扫描与资产支持情况
+    - 如果 Cobo Portal 中的交易状态显示为 **Pending Screening**，或包含 **Pending Cobo KYT Screening**、**Pending Screening App Check** 等子状态，说明该笔充币正处于合规审核中。详情请参阅 [Screening 简介](/cn/apps/screening/introduction) 与 [Screening 设置](/cn/apps/screening/screening-settings)。
+    - 如果交易状态显示为 **Screening Rejected**，或包含 **Rejected by Cobo KYT**、**Rejected by Screening App** 等子状态，说明该笔充币已被您所在团队的合规策略拒绝。请参阅 [Screening 简介](/cn/apps/screening/introduction) 与 [Screening 设置](/cn/apps/screening/screening-settings) 以核查策略配置。
+    - 如果充值的代币或链目前尚不支持，请参阅 [自助上币](/cn/portal/self-service-token-listing) 申请上线支持。
+
+4. 检查是否存在入账延迟的常见原因
     - 网络拥堵导致确认时间变长。
-    - 部分 Layer2 网络（如 Arbitrum、Optimism、Base、Zora 等）需要等待 L1 最终确认（Finalized）后才会入账：即使您在 L2 浏览器中看到交易成功，也可能需要等待该交易在 L1 达到 Finalized 状态后，平台侧才会完成入账。
+    - 部分 Layer2 网络（如 Arbitrum、Optimism、Base、Zora 等）需要等待 L1 最终确认（Finalized）后才会入账：即使您在 L2 浏览器中看到交易成功，也可能需要等待该交易在 L1 达到 Finalized 状态后，平台侧才会完成入账。Cobo Portal 充币地址弹窗会展示该 L1 最终确认提示以及该币种的实时确认数，您可据此查看入账进度。
     - 系统维护或服务异常。
 
 如需查询 Cobo Portal 对不同链的入账确认数要求，请参阅[支持的代币与链](/cn/portal/supported-tokens-and-chains#代币入账确认数)。

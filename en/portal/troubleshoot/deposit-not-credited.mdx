@@ -16,11 +16,16 @@ If your deposit hasn’t been credited for a long time, we recommend checking th
 2. Verify your deposit information
     - Ensure the deposit address is correct.
     - Ensure the chain/network is correct.
-    - If the chain/asset requires a Tag/Memo/Note, ensure it is provided correctly.
+    - If the chain/asset requires a Tag/Memo/Note, note that the list of memo-required chains shown under **Transfers** applies to outbound transfers only and does not apply to deposits. Before sending funds, check the Memo/Tag field and any warning shown in the deposit address modal in Cobo Portal for the specific token and chain you are depositing.
 
-3. Check common causes of crediting delays
+3. Check compliance screening and asset support
+    - If the transaction status in Cobo Portal shows **Pending Screening**, or a sub-status such as **Pending Cobo KYT Screening** or **Pending Screening App Check**, the deposit is being held for compliance review. Learn more in [Introduction to Screening](/en/apps/screening/introduction) and [Configure Screening settings](/en/apps/screening/screening-settings).
+    - If the transaction status shows **Screening Rejected**, or a sub-status such as **Rejected by Cobo KYT** or **Rejected by Screening App**, the deposit was rejected by your organization's compliance policy. Refer to [Introduction to Screening](/en/apps/screening/introduction) and [Configure Screening settings](/en/apps/screening/screening-settings) to review your policy configuration.
+    - If the deposited token or chain is not currently supported, refer to [Self-service token listing](/en/portal/self-service-token-listing) to request support for it.
+
+4. Check common causes of crediting delays
     - Network congestion leading to longer confirmation time.
-    - Some Layer 2 networks (such as Arbitrum, Optimism, Base, and Zora) require L1 finality (Finalized) before the deposit is credited. Even if the transaction shows as successful on the L2 explorer, it may still need to reach Finalized on L1 before it can be credited.
+    - Some Layer 2 networks (such as Arbitrum, Optimism, Base, and Zora) require L1 finality (Finalized) before the deposit is credited. Even if the transaction shows as successful on the L2 explorer, it may still need to reach Finalized on L1 before it can be credited. The deposit address modal in Cobo Portal surfaces this L1-finality caveat and the live confirmation count for the specific token, so you can check progress there.
     - System maintenance or service incidents.
 
 To learn the confirmation requirements for deposits on different chains, refer to [Supported tokens and chains](/en/portal/supported-tokens-and-chains#required-confirmation-for-token-deposits).

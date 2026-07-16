@@ -66,7 +66,11 @@ Customize how transaction screening behaves in different scenarios.
     Tiers must start at 0, be continuous (each tier's lower bound equals the previous tier's upper bound), and end with an open-ended catch-all tier (no upper bound). By default, internal transactions are bypassed and external transactions are screened.
 
     <Note>Tiered screening policies are available for teams using **Elliptic**, **CipherOwl**, **BlockSec**, or a **Custom Provider**. They are not supported when using **Cobo Premium**.</Note>
-    
+
+## Manual review processing time
+
+A transaction awaiting manual review remains in the **Pending Screening** status in Cobo Portal until a decision is submitted, either through the API or in the Screening app.
+
 ## Notification Settings
 
 Manage who receives email notifications about important screening events.
@@ -78,4 +82,3 @@ It is recommended to include your Risk Management and Compliance teams as notifi
 </Note>
 
 <Info>At least one recipient must remain - you cannot delete the only remaining recipient.</Info>
-

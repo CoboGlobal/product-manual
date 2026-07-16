@@ -163,3 +163,6 @@ The table below lists the minimum number of confirmations required for token dep
 
 <Note>You can also query the `confirming_threshold` field through the [List supported chains API](https://www.cobo.com/developers/v2/api-references/wallets/list-supported-chains#response-data-confirming-threshold).</Note>
 
+<Note>Some chains or assets also require a Memo/Tag/Note for deposits. To check whether a specific token or chain requires one, refer to the Memo/Tag field and any warning shown in the deposit address modal in Cobo Portal.</Note>
+
+<Note>The actual wait time for a deposit to be credited depends on the number of confirmations required (shown above) and the current block production speed of the network, which can vary with network congestion. To check progress for a specific deposit, refer to the live confirmation count shown in the deposit address modal in Cobo Portal.</Note>
