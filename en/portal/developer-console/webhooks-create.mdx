@@ -13,6 +13,8 @@ If your server has firewall or security group rules that restrict access by IP a
 ## Prerequisites
 You have set up your webhook endpoint as described in [Set up a callback or webhook endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/set-up-endpoint).
 
+Each webhook endpoint applies to your organization as a whole. Configure it once to share it across your team rather than tying it to a single user. When you register the endpoint, you must select at least one event type for it to receive. You can also limit delivery to selected wallets or receive events for all wallets in your organization.
+
 ## Steps
 
 1. Log in to [Cobo Portal](https://portal.cobo.com/login).
@@ -24,9 +26,10 @@ You have set up your webhook endpoint as described in [Set up a callback or webh
 
 5. Enter the URL.
 6. Enter a description for the webhook endpoint.
-7. Select the types of event notifications you want to subscribe to.
+7. Under **Event Notification Subscriptions**, select the event types you want this endpoint to receive. Select at least one event type to save the endpoint.
     <Note>For more details about the event types, refer to [Webhook event types](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-event-type#webhook-event-types).</Note>
-8. Click **Register**.
+8. Choose whether to receive events for all wallets in your organization or only for selected wallets.
+9. Click **Register**.
 
 Now you have registered a webhook endpoint. After registering the webhook endpoint, you cannot delete it. However, if it's no longer needed, you can revoke it, which will permanently disable its functionality.
 
@@ -38,3 +41,9 @@ After registering a webhook endpoint, you can:
 - Filter the webhook endpoint list by status or event type.
 - Search for specific webhook endpoints using names or keywords.
 
+## Related resources
+
+- [Introduction to webhooks and callbacks](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction): Learn about payload structures, event types, and reconciliation.
+- [Set up a callback or webhook endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/set-up-endpoint): Implement your endpoint's event-handling logic.
+- [Transaction payload reference](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/wallets-transaction-payload): Review the complete `wallets.transaction` webhook payload schema.
+- [TSS request payload reference](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/wallets-mpc-tss-request-payload): Review the complete `wallets.mpc.tss_request` webhook payload schema.

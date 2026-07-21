@@ -11,3 +11,14 @@ import Snippet from '/snippets/webhook-events-cn.mdx';
 
 <Snippet />
 
+## 查看事件详情
+
+点击列表中的任意事件即可打开其详情页。详情页显示完整的事件负载，以及每次投递尝试的记录，包括时间戳和您的 Endpoint 针对该次投递返回的 HTTP 状态码。
+
+## 重新发送失败的事件
+
+如果某个事件的状态为**发送失败**或**重试中**，点击**重试**即可触发一次新的投递尝试。
+
+## 通过 API 查询事件历史
+
+您还可以使用 [List all webhook events](https://www.cobo.com/developers/v2/api-references/developers--webhooks/list-all-webhook-events) 操作查询 Endpoint 最多 30 天的 Webhook 事件历史。有关完整的恢复流程，包括查看指定事件、列出每次投递尝试、通过 API 重试，以及核对交易当前状态，请参阅 Developer Hub 中的 [设置 Callback 或 Webhook Endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/set-up-endpoint)。
