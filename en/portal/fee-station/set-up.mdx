@@ -1,59 +1,71 @@
 ---
-title: "How to use Fee Station"
-sidebarTitle: "How to use"
+title: "Set up Fee Station"
+sidebarTitle: "Set up"
 lang: "en"
-description: "Learn how to deposit tokens, track transaction records, and set up gas fee payment preferences in Fee Station."
+description: "Fund Fee Station, choose deposit assets, configure payment preferences, and view activity."
 ---
 
-This article introduces how to complete the following operations in Fee Station:
+## Fund your Fee Station
 
-- Deposit USD or stablecoins
-- Deposit gas tokens
-- Set up gas fee payment preferences
+### Deposit USD or stablecoins
 
-## Deposit USD or stablecoins
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click **Fee Station** in the left sidebar.
+3. Open the **USD / USD stablecoin** tab.
+4. Click **Deposit** next to **Total Value**.
+5. Choose a deposit method and follow the on-screen instructions.
 
-Fee Station supports deposits in fiat USD or USD stablecoins. After deposit, these funds can be used in Fee Station to pay for gas fees, platform service fees, and custody fees.
+    <img src="/en/images/fee-station/deposit-u.png" className="screenshot_full_screen" alt="Deposit USD or USD stablecoins in Fee Station" />
 
-In the **USD / USD stablecoin** tab, you can view your current balance, deposit history, and spending records, and initiate new deposits. For supported stablecoin types, refer to [Supported Token Types](/en/portal/fee-station/introduction#supported-token-types).
+### Deposit gas tokens
 
-1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. You can access it by clicking **Fee Station** in the left sidebar.
-3. In the **USD / USD stablecoin** tab, next to **Total Value**, click **Deposit**, choose a suitable deposit method, and follow the on-screen instructions to complete the deposit.
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click **Fee Station** in the left sidebar.
+3. Open the **Gas Token** tab.
+4. Find the gas token for the target chain.
+5. Click the <img src="/en/images/fee-station/icon_deposit.svg" className="icon" alt="Deposit icon" /> deposit icon and follow the on-screen instructions.
 
-    <img src="/en/images/fee-station/deposit-u.png" className="screenshot_full_screen"/>
+    <img src="/en/images/fee-station/deposit-gas-token.png" className="screenshot_full_screen" alt="Deposit a gas token in Fee Station" />
 
-## Deposit gas tokens
+For help choosing a funding asset, see [Fund flows](/en/portal/fee-station/fund-flows).
 
-You can also deposit native gas tokens on each supported chain, which can be used to cover gas fees on those chains.
+## Choose a chain and token
 
-In the **Gas Token** tab, you can view the balance and transaction records of gas tokens on each chain and initiate deposits. For supported gas tokens, refer to [Supported Token Types](/en/portal/fee-station/introduction#supported-token-types).
+1. Open the **Tokens** tab in **Fee Station**.
+2. Click the <img src="/en/images/fee-station/icon_deposit.svg" className="icon" alt="Deposit icon" /> deposit icon next to the token, or click the deposit icon at the top of the page and select a token.
 
-1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. You can access it by clicking **Fee Station** in the left sidebar.
-3. Switch to the **Gas Token** tab and find the gas token for the target chain (for example, TRX, ETH, or MATIC).
-4. Click the <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> deposit icon next to the gas token, and follow the instructions to complete the deposit.
+    <img src="/en/images/fee-station/2.png" className="screenshot_full_screen" alt="Choose a token to deposit into Fee Station" />
 
-    <img src="/en/images/fee-station/deposit-gas-token.png" className="screenshot_full_screen"/>
+3. Copy the deposit address or scan its QR code.
+4. To transfer from another wallet in Cobo Portal, click **Deposit from other wallets** and follow [Transfer assets](/en/portal/transfers/introduction).
 
 ## Configure payment preferences
 
-In the **Gas Token > Payment Preferences** tab, you can configure on-chain transaction fee payment strategies for MPC Wallets and Web3 Wallets based on supported chains.
+1. Open **Gas Token** > **Payment Preferences**.
+2. Expand the chain that you want to configure.
+3. Choose one of the payment preferences currently displayed for that chain.
+4. Click **Save Changes**.
+5. Complete the security verification.
 
-<img src="/en/images/fee-station/preferences.png" className="screenshot_full_screen"/>
+<img src="/en/images/fee-station/preferences.png" className="screenshot_full_screen" alt="Fee Station payment preferences" />
 
-Each payment preference controls when Fee Station covers gas fees for an address: you can choose to cover fees only when the wallet balance is insufficient, or to always cover them. If you do not configure a preference for a chain, the system default applies.
+<img src="/en/images/fee-station/1.png" className="screenshot_full_screen" alt="Configure a chain payment preference" />
 
-<Note>Whitelist-based fee configurations may apply to specific addresses. As a result, the fee behavior for those addresses can differ from the preference you set here, and changing an address's whitelist membership can change which fee behavior applies.</Note>
+Configure preferences independently for the EVM-compatible chains and TRON options shown in Cobo Portal. See [Choose your Fee Station model](/en/portal/fee-station/choose-your-fee-model) for scenario guidance.
+
+<Note>Whitelist-based fee configurations may apply to specific addresses. As a result, the fee behavior for those addresses can differ from the preference you set here.</Note>
+
+## View your activity
+
+In **Fee Station**, use the address icon to view a token's deposit address and the transaction-record icon to view its activity. Use the filter, sort, and search controls to locate tokens and records.
+
+For API-based balance, address, and transaction reconciliation, see [Monitor Fee Station activity](/en/portal/fee-station/monitor-and-alerts).
 
 ## TRON fee payment
 
 For TRON USDT transfers, Fee Station pays the on-chain fee in one of two ways:
 
-- **Energy mode**: Fee Station uses available or rented energy on the sending address to cover the transfer, which avoids burning TRX and is the lower-cost option. Fee Station prioritizes this mode whenever energy can be applied.
-- **TRX burn mode**: When energy cannot be applied to the transfer, Fee Station pays the fee by burning TRX, which costs more than energy mode.
+- **Energy mode**: Fee Station uses available or rented energy on the sending address. Fee Station prioritizes this mode when energy can be applied.
+- **TRX burn mode**: When energy cannot be applied, Fee Station pays the fee by burning TRX.
 
-The fee shown for a TRON transfer reflects the method actually used, so the displayed amount can differ between transfers depending on whether energy was applied.
-
-<Note>If you have pre-rented energy on a TRON sending address but still see a TRON insufficient-energy or insufficient-fee error, confirm that Fee Station is enabled and funded for TRON and that a TRON payment preference is configured under **Gas Token** > **Payment Preferences**. If the error persists after the Fee Station balance is funded, the address may require additional account configuration before pre-rented energy can be applied.</Note>
-
+The displayed fee reflects the method used for the transfer. See [TRON energy rental](/en/portal/fee-station/choose-your-fee-model#tron-energy-rental) for how Fee Station determines the energy rental cost.

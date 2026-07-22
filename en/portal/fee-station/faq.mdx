@@ -1,0 +1,53 @@
+---
+title: "Fee Station FAQ"
+sidebarTitle: "FAQ"
+lang: "en"
+description: "Troubleshoot Fee Station balances, fee errors, and sweep failures."
+---
+
+## Error 30013
+
+```json
+{
+  "error_code": 30013,
+  "error_message": "The fee token balance is insufficient to cover the transaction fee."
+}
+```
+
+### Why this happens
+
+The wallet's own available balance of the fee token cannot cover the transaction fee after pending and reserved amounts are accounted for. This error concerns the wallet balance, not the shared Fee Station balance.
+
+### How to fix it
+
+1. Check the wallet's available balance for the chain's fee token.
+2. Check for concurrent pending transactions from the same wallet that may reserve or lock part of the balance.
+3. Fund the wallet with the required fee token, or wait for the pending transactions to finish, and retry the transaction.
+
+## Error 30038
+
+```json
+{
+  "error_code": 30038,
+  "error_message": "The Fee Station token balance is insufficient to cover the transaction fee."
+}
+```
+
+### Why this happens
+
+The shared Fee Station balance cannot cover the Network gas or applicable service-fee charge. This error concerns Fee Station rather than the wallet's own fee-token balance.
+
+### How to fix it
+
+1. Check the Fee Station balance for the asset needed by the charge.
+2. [Fund Fee Station](/en/portal/fee-station/fund-flows) with an eligible asset.
+3. Confirm that the wallet and transaction type are eligible in the [support matrix](/en/portal/fee-station/introduction#supported-wallet-types).
+4. Retry the transaction after the deposit is available.
+
+## Why does my displayed balance differ from what I can spend?
+
+The displayed total can include pending, locked, or frozen amounts that are not currently spendable. Use the available balance when deciding whether Fee Station can cover a payment. See [Reconcile balances](/en/portal/fee-station/monitor-and-alerts#reconcile-balances) for the balance fields.
+
+## Why did my address sweep fail?
+
+A sweep can fail when the child address does not have enough Network gas or the Fee Station eligibility or quota check does not pass. Review [Large child-address sweeps](/en/portal/fee-station/choose-your-fee-model#large-child-address-sweeps) and confirm the wallet type in the [support matrix](/en/portal/fee-station/introduction#supported-wallet-types).

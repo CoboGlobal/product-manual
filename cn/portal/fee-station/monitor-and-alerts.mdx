@@ -1,0 +1,47 @@
+---
+title: "监控 Fee Station 活动"
+sidebarTitle: "监控与通知"
+lang: "zh-hans"
+description: "监控 Fee Station 余额、地址、交易和 Webhook 事件。"
+---
+
+您可以使用 Cobo Portal 进行日常检查，并使用 WaaS 2.0 API 进行自动化对账。
+
+## 核对余额
+
+调用 [List Fee Station token balances](https://www.cobo.com/developers/v2/api-references/feestation/list-fee-station-token-balances)，按 `token_ids` 查询余额。使用 `limit`、`before` 和 `after` 对结果进行分页。
+
+每种代币的余额分为以下金额：
+
+- `total`：所有余额状态下记录的总金额。
+- `available`：当前可以使用的金额。
+- `pending`：与尚未完成处理的活动关联的金额。
+- `locked`：已预留且不能用于其他付款的金额。
+- `frozen`：被限制使用的金额。
+
+核对 Fee Station 当前可以立即使用的金额时，请使用 `available`，而不是 `total`。
+
+## 核对充值地址
+
+在 Cobo Portal 中打开 **Fee Station**，找到目标代币，然后点击地址图标查看充值地址。
+
+调用 [List Fee Station addresses](https://www.cobo.com/developers/v2/api-references/feestation/list-fee-station-addresses) 以编程方式查询地址。使用 `chain_ids` 或 `addresses` 进行筛选。对于需要 memo 的地址，请使用 `|` 将 memo 附加到地址后。使用 `limit`、`before` 和 `after` 进行游标分页。
+
+## 核对交易
+
+在 Cobo Portal 中打开 **Fee Station**，查看充值和支出的交易流水。使用页面提供的筛选、排序和搜索控件查找记录。
+
+如需进行自动化对账，请调用 [List all Fee Station transactions](https://www.cobo.com/developers/v2/api-references/feestation/list-all-fee-station-transactions)。您可以使用 `request_id`、`cobo_ids`、`transaction_ids`、`transaction_hashes`、`types`、`statuses`、`chain_ids`、`token_ids`、`asset_ids` 和创建时间范围进行筛选。使用 `limit`、`before`、`after` 和 `direction` 对结果进行分页和排序。
+
+## 订阅 Webhook 事件
+
+按照 [Set up a callback or webhook endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/set-up-endpoint) 注册 Endpoint 并验证 Webhook 交付。订阅与所需生命周期阶段对应的事件：
+
+| 事件 | 触发时机 |
+| --- | --- |
+| `fee_station.transaction.created` | Fee Station 交易创建时。 |
+| `fee_station.transaction.updated` | Fee Station 交易状态发生变化时。 |
+| `fee_station.transaction.succeeded` | Fee Station 交易成功完成时。 |
+| `fee_station.transaction.failed` | Fee Station 交易失败时。 |
+
+事件数据契约请参阅 [Webhook event types and data types](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/webhook-event-type#fee-station-events)。
