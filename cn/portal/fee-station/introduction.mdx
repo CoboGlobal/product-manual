@@ -7,11 +7,11 @@ description: "Fee Station 是您在 Cobo Portal 中统一管理链上手续费�
 
 ## 什么是 Fee Station
 
-在多链环境中，每条区块链都要求使用不同的原生代币（Gas Token，如 ETH、TRX、SOL）来支付交易手续费。这使得企业和开发者不仅需要为每条链准备相应代币，还要频繁检查余额，稍有疏忽就可能导致交易失败。
+Fee Station 是一个供团队共享的费用账户，用于支付团队范围内产生的费用。它独立于任何单个钱包的资产余额。团队中的任一成员都可以为 Fee Station 充值，系统会根据团队配置，使用共享余额为符合条件的钱包和费用类型付款。
 
-与此同时，服务费、托管费等平台费用，也需要单独结算，往往通过邮件、表格、人工对账完成，流程复杂、效率低。
+为 Fee Station 充值不会将资产转入某个特定钱包。当符合条件的交易或账单产生时，系统会检查 Fee Station 是否已配置为该钱包或费用类型付款。如果符合条件且共享余额充足，系统会从 Fee Station 扣款，以代替钱包自身余额付款或与钱包自身余额共同完成付款。
 
-Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 Cobo 提供的一站式费用管理工具，相当于一个团队共享的费用账户：只需由团队中的任一成员为 Fee Station 账户充值，系统就能根据已配置的策略为团队内所有链上交易自动代付费用，并统一结算各类平台费用。
+如需了解资产如何进入 Fee Station 并在共享账户中流转，请参阅[资金流转](/cn/portal/fee-station/fund-flows)。
 
 <Note>目前，Fee Station 支持为 MPC 钱包和 Web3 钱包在 EVM 兼容链、TRON 和 Solana 上发起的交易自动代付链上手续费。</Note>
 
@@ -19,13 +19,13 @@ Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 C
 
 Fee Station 仅支持为 MPC 钱包和 Web3 钱包代付链上手续费。
 
-在 Cobo 的钱包分类中，Web3 钱包属于全托管钱包的一种子类型。全托管钱包还包括资产钱包，但资产钱包不支持手续费代付，仅可使用 Fee Station 余额结算托管费。
+在 Cobo 的钱包分类中，Web3 钱包属于全托管钱包的一种子类型。全托管钱包还包括资产钱包，但资产钱包不支持通过 Fee Station 代付手续费。
 
-| 钱包类型 | 手续费代付 | 可结算的其他费用 |
-| --- | --- | --- |
-| [MPC 钱包](/cn/portal/mpc-wallets/introduction) | 支持 | 服务费、托管费 |
-| [全托管钱包（Web3 钱包）](/cn/portal/custodial-wallets/web3-wallets/introduction) | 支持 | 服务费、托管费 |
-| [全托管钱包（资产钱包）](/cn/portal/custodial-wallets/asset-wallets/introduction) | 不支持 | 托管费 |
+| 钱包类型 | Network gas |
+| --- | --- |
+| [MPC 钱包](/cn/portal/mpc-wallets/introduction) | 支持 |
+| [全托管钱包（Web3 钱包）](/cn/portal/custodial-wallets/web3-wallets/introduction) | 支持 |
+| [全托管钱包（资产钱包）](/cn/portal/custodial-wallets/asset-wallets/introduction) | 不支持 |
 
 ## 谁适合使用 Fee Station
 
@@ -43,17 +43,11 @@ Fee Station 适用于所有希望简化链上费用管理的团队，特别是�
 
 ### 自动加油的工作方式
 
-为确保提币地址能够支付自身的链上手续费，Fee Station 可能会在处理交易前向该地址发送少量原生 Gas Token（例如约 `0.001` 原生代币）。该笔加油费用将从您的 Fee Station 余额中扣除。根据您的配置与可用余额，即使账户中存在原生 Gas Token 余额，该笔扣费也可能从您的美元或美元稳定币余额中结算。
+为确保提币地址能够支付自身的链上手续费，Fee Station 可能会在处理交易前向该地址发送少量原生 Gas Token。该笔加油费用将从您的 Fee Station 余额中扣除。根据您的配置与可用余额，即使账户中存在原生 Gas Token 余额，该笔扣费也可能从您的美元或美元稳定币余额中结算。
 
-### 统一结算各类费用
+### 统一结算 Gas 费用
 
-除了支付链上交易手续费，Fee Station 的余额还可用于结算 Cobo Portal 中产生的所有平台费用，例如服务费、托管费等。你无需为每一类费用分别管理账户或准备资金，只需维护 Fee Station 中的单一余额，就能实现统一扣费、清晰记录，极大简化财务管理流程。
-
-<Tip>
-Fee Station 支持的费用类型：
-- [全托管钱包（资产钱包）](/cn/portal/custodial-wallets/asset-wallets/introduction)：托管费
-- [MPC 钱包](/cn/portal/mpc-wallets/ocw/introduction) / [全托管钱包（Web3 钱包）](/cn/portal/custodial-wallets/web3-wallets/introduction)：链上手续费、服务费、托管费
-</Tip>
+Fee Station 的余额可用于结算所有支持的钱包类型和链上产生的 Network gas，无需为每条链分别维护 Gas 余额。各钱包类型是否符合条件，请参阅[支持的钱包类型](#支持的钱包类型)。
 
 ### 灵活支持多种充值方式
 
@@ -61,7 +55,7 @@ Fee Station 支持的费用类型：
 
 ### TRON 手续费优化与能量租赁
 
-Fee Station 在 TRON 链上会自动使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。整个过程由 Fee Station 自动完成，用户无需手动管理能量，即可享受手续费优化效果。开启 Fee Station 后，TRON 链交易手续费最高可节省约 80%。大量交易笔数可享阶梯优惠，可联系销售团队了解详情。
+Fee Station 在 TRON 链上会自动使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。整个过程由 Fee Station 自动完成，用户无需手动管理能量，即可享受手续费优化效果。Fee Station 会在交易发生时请求实时能量租赁报价，并为报价添加安全缓冲，因此费用是动态变化的，并非固定的折扣比例。详情请参阅[TRON 能量租赁](/cn/portal/fee-station/choose-your-fee-model#tron-能量租赁)。
 
 ### 提供 API 与 Webhook 支持
 
@@ -158,5 +152,3 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | SETH（仅开发环境可用）       | ETH       |
 | TBSC（仅开发环境可用）       | BNB       |
 | TTRON（仅开发环境可用）      | TRX       |
-
-

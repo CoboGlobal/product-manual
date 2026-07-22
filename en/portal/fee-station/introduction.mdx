@@ -7,11 +7,11 @@ description: "Fee Station is your all-in-one solution for managing expenses and 
 
 ## What is Fee Station
 
-On different blockchains, transactions require different native tokens (gas tokens like ETH, TRX, or SOL) to pay for gas fees. This means you need to prepare and manage gas balances for each chain. If any address runs out of gas, transactions may fail.
+Fee Station is a team-shared account for paying fees across your organization. It is separate from the asset balance of any individual wallet. Any organization member can fund Fee Station, and the shared balance can pay for eligible wallets and fee types according to your organization's configuration.
 
-Meanwhile, you might need to settle various types of fees across Cobo Portal, such as service fees and custody fees. These are often handled via emails, spreadsheets, and manual reconciliation—making the process inefficient and error-prone.
+Funding Fee Station does not move assets into a specific wallet. When an eligible transaction or bill occurs, the system checks whether Fee Station is configured to pay for that wallet or fee type. If it is eligible and the shared balance is sufficient, the payment is deducted from Fee Station instead of, or in addition to, the wallet's own balance.
 
-Fee Station helps you simplify this. It’s a one-stop fee management platform on Cobo Portal. Once any member deposits to the Fee Station account, it can automatically cover on-chain gas fees for all [MPC Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure, and also settle various types of fees with a single balance.
+Use [Fund flows](/en/portal/fee-station/fund-flows) to understand how assets enter and move through the shared account.
 
 <Note>Currently, Fee Station supports paying gas fees for transactions made with MPC Wallets and Web3 Wallets on EVM-compatible chains, TRON, and Solana.</Note>
 
@@ -19,13 +19,13 @@ Fee Station helps you simplify this. It’s a one-stop fee management platform o
 
 Fee Station gas fee payment is available for MPC Wallets and Web3 Wallets only.
 
-In the Cobo wallet taxonomy, Web3 Wallets are a subtype of Custodial Wallets. Custodial Wallets also include Asset Wallets, which are not eligible for gas fee payment. Asset Wallets can use the Fee Station balance to settle custody fees only.
+In the Cobo wallet taxonomy, Web3 Wallets are a subtype of Custodial Wallets. Custodial Wallets also include Asset Wallets, which are not eligible for Fee Station gas fee payment.
 
-| Wallet type | Gas fee payment | Other fees covered |
-| --- | --- | --- |
-| [MPC Wallets](/en/portal/mpc-wallets/introduction) | Supported | Service fees, custody fees |
-| [Custodial Wallets (Web3 Wallets)](/en/portal/custodial-wallets/web3-wallets/introduction) | Supported | Service fees, custody fees |
-| [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/asset-wallets/introduction) | Not supported | Custody fees |
+| Wallet type | Network gas |
+| --- | --- |
+| [MPC Wallets](/en/portal/mpc-wallets/introduction) | Supported |
+| [Custodial Wallets (Web3 Wallets)](/en/portal/custodial-wallets/web3-wallets/introduction) | Supported |
+| [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/asset-wallets/introduction) | Not supported |
 
 ## Who should use Fee Station
 
@@ -43,17 +43,11 @@ Fee Station can automatically cover gas fees for transactions initiated from MPC
 
 ### How Auto Fueling works
 
-To make sure a withdrawal address can pay its own on-chain fees, Fee Station may send a small amount of the native gas token (for example, on the order of `0.001` of the native token) to the address before processing the transaction. The cost of this top-up is deducted from your Fee Station balance. Depending on your configuration and available balances, the deduction may be settled from your USD or USD stablecoin balance even when a native gas token balance is present.
+To make sure a withdrawal address can pay its own on-chain fees, Fee Station may send a small amount of the native gas token to the address before processing the transaction. The cost of this top-up is deducted from your Fee Station balance. Depending on your configuration and available balances, the deduction may be settled from your USD or USD stablecoin balance even when a native gas token balance is present.
 
-### Unified fee settlement
+### Unified gas fee settlement
 
-In addition to covering gas fees, your Fee Station balance can also be used to settle all platform-related charges within Cobo Portal, including service fees and custody fees. You don't need to maintain separate balances for each fee type. A single balance simplifies the billing process and gives you a clear, consolidated view of your spending.
-
-<Tip>
-Fee Station supports the following types of fees:
-- [Custodial Wallets (Asset Wallets)](/en/portal/custodial-wallets/asset-wallets/introduction): Custody fees
-- [MPC Wallets](/en/portal/mpc-wallets/ocw/introduction) / [Custodial Wallets (Web3 Wallets)](/en/portal/custodial-wallets/web3-wallets/introduction): Gas fees, service fees, and custody fees
-</Tip>
+Your Fee Station balance settles Network gas across all supported wallet types and chains from a single balance. You don't need to maintain separate gas balances for each chain. For which wallet types are eligible, see [Supported wallet types](#supported-wallet-types).
 
 ### Flexible deposit options
 
@@ -63,7 +57,7 @@ You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (s
 
 Fee Station automatically leverages energy rental on the TRON network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
 
-With Fee Station enabled, TRON transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
+Fee Station requests a live energy rental quote at the time of the transaction and applies a safety buffer to that quote, so the cost is dynamic rather than a fixed discount percentage. See [TRON energy rental](/en/portal/fee-station/choose-your-fee-model#tron-energy-rental) for details.
 
 ### API and webhook integration
 
@@ -162,5 +156,3 @@ You can also deposit the native gas token of the chain, and Fee Station will pay
 | SETH (available only in development environment)       | ETH       |
 | TBSC (available only in development environment)       | BNB       |
 | TTRON (available only in development environment)      | TRX       |
-
-

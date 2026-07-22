@@ -1,60 +1,71 @@
 ---
-title: "Fee Station 使用指南"
-sidebarTitle: "使用指南"
+title: "设置 Fee Station"
+sidebarTitle: "设置"
 lang: "zh-hans"
-description: "快速上手如何在 Fee Station 页面中完成充值、查看流水、设置手续费代付策略等操作。"
+description: "为 Fee Station 充值、选择充值资产、设置付款偏好并查看活动。"
 ---
 
-本文介绍如何在 Fee Station 中完成以下操作：
+## 为 Fee Station 充值
 
-- 充值美元或稳定币
-- 充值 Gas Token
-- 设置手续费代付策略
-
-## 充值美元或稳定币
-
-Fee Station 支持充值美元法币或美元稳定币。充值后，您可以在 Fee Station 中使用这些资金来支付交易手续费、平台服务费和托管费等账单。
-
-在**美元/美元稳定币**标签页，您可以查看当前账户中余额，充值记录及其支出记录，并发起充值操作。Fee Station 支持的稳定币类型请参考[支持充值的代币类型](/cn/portal/fee-station/introduction#支持充值的代币类型)。
+### 充值美元或稳定币
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-2. 您可以在左侧导航栏中点击 **Fee Station** 进入。
-3. 在**美元/美元稳定币**标签页，在总价值右侧点击**充币**按钮，选择合适的充值方式，并按照指引完成充值。
+2. 点击左侧导航栏中的 **Fee Station**。
+3. 打开**美元/美元稳定币**标签页。
+4. 点击**总价值**旁的**充币**。
+5. 选择充值方式，并按照页面提示完成操作。
 
-    <img src="/cn/images/fee-station/deposit-u.png" className="screenshot_full_screen"/>
+    <img src="/cn/images/fee-station/deposit-u.png" className="screenshot_full_screen" alt="在 Fee Station 中充值美元或美元稳定币" />
 
-## 充值 Gas Token
-
-您也可以直接为各条链的原生 Gas Token 充值，用于代付对应链上的交易手续费。
-
-在**Gas Token**标签页，您可以查看当前账户中各链 Gas Token 的余额及其交易流水，并发起充值操作。Fee Station 支持充值的 Gas Token 请参考[支持充值的代币类型](/cn/portal/fee-station/introduction#支持充值的代币类型)。
+### 充值 Gas Token
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
-2. 您可以在左侧导航栏中点击 **Fee Station** 进入。
-3. 切换到**Gas Token**标签页，在列表中找到目标链对应的 Gas Token（例如 TRX、ETH、MATIC 等）。
-4. 在该 Gas Token 右侧点击 <img src="/cn/images/fee-station/deposit.svg" className="icon"></img> 充值图标，并按照提示完成充值操作。
+2. 点击左侧导航栏中的 **Fee Station**。
+3. 打开 **Gas Token** 标签页。
+4. 找到目标链对应的 Gas Token。
+5. 点击 <img src="/cn/images/fee-station/deposit.svg" className="icon" alt="充值图标" /> 充值图标，并按照页面提示完成操作。
 
-    <img src="/cn/images/fee-station/deposit-gas-token.png" className="screenshot_full_screen"/>
+    <img src="/cn/images/fee-station/deposit-gas-token.png" className="screenshot_full_screen" alt="在 Fee Station 中充值 Gas Token" />
 
+如需选择充值资产，请参阅[资金流转](/cn/portal/fee-station/fund-flows)。
 
-## 设置手续费代付策略
+## 选择链和代币
 
-在 **Gas Token > 付款偏好** 标签页，您可以为 MPC 钱包和 Web3 钱包基于支持的链分别设置链上手续费代付策略。
+1. 在 **Fee Station** 中打开**代币**标签页。
+2. 点击目标代币旁的 <img src="/cn/images/fee-station/deposit.svg" className="icon" alt="充值图标" /> 充值图标，或点击页面顶部的充值图标并选择代币。
 
-<img src="/cn/images/fee-station/preferences.png" className="screenshot_full_screen"/>
+    <img src="/cn/images/fee-station/2.png" className="screenshot_full_screen" alt="选择要充值到 Fee Station 的代币" />
 
-每条链的付款偏好决定了 Fee Station 何时为地址代付手续费：您可以选择仅在交易地址余额不足时代付，或始终代付。如果未为某条链配置付款偏好，则采用系统默认策略。
+3. 复制充值地址或扫描二维码。
+4. 如需从 Cobo Portal 中的其他钱包转账，请点击**从其他钱包充值**，并按照[转账](/cn/portal/transfers/introduction)中的步骤操作。
 
-<Note>白名单费用配置可能适用于特定地址。因此，这些地址的代付行为可能与此处设置的付款偏好不同；调整某个地址的白名单归属可能会改变其适用的代付行为。</Note>
+## 设置付款偏好
+
+1. 打开 **Gas Token** > **付款偏好**。
+2. 展开需要配置的链。
+3. 选择该链当前显示的付款偏好之一。
+4. 点击**保存更改**。
+5. 完成安全验证。
+
+<img src="/cn/images/fee-station/preferences.png" className="screenshot_full_screen" alt="Fee Station 付款偏好" />
+
+<img src="/cn/images/fee-station/1.png" className="screenshot_full_screen" alt="配置链的付款偏好" />
+
+请分别配置 Cobo Portal 中显示的 EVM 兼容链和 TRON 选项。使用场景指南请参阅[选择 Fee Station 费用模式](/cn/portal/fee-station/choose-your-fee-model)。
+
+<Note>白名单费用配置可能适用于特定地址。因此，这些地址的代付行为可能与此处设置的付款偏好不同。</Note>
+
+## 查看活动
+
+在 **Fee Station** 中，使用地址图标查看代币的充值地址，使用交易流水图标查看其活动。使用筛选、排序和搜索控件查找代币和记录。
+
+如需通过 API 核对余额、地址和交易，请参阅[监控 Fee Station 活动](/cn/portal/fee-station/monitor-and-alerts)。
 
 ## TRON 手续费支付
 
 对于 TRON USDT 转账，Fee Station 通过以下两种方式之一支付链上手续费：
 
-- **能量模式（Energy mode）**：Fee Station 使用发送地址上可用或已租赁的能量来完成转账，从而避免燃烧 TRX，成本更低。在可以使用能量时，Fee Station 会优先采用该模式。
-- **TRX 燃烧模式（TRX burn mode）**：当转账无法使用能量时，Fee Station 通过燃烧 TRX 支付手续费，成本高于能量模式。
+- **Energy mode**：Fee Station 使用发送地址上可用或已租赁的能量。在能够使用能量时，Fee Station 会优先采用该模式。
+- **TRX burn mode**：当无法使用能量时，Fee Station 通过燃烧 TRX 支付手续费。
 
-TRON 转账显示的手续费反映实际采用的支付方式，因此不同转账显示的金额可能会因是否使用能量而不同。
-
-<Note>如果您已在某个 TRON 发送地址上预先租赁了能量，但仍遇到 TRON 能量不足或手续费不足的报错，请确认 Fee Station 已为 TRON 启用并充值，且已在 **Gas Token** > **付款偏好** 中配置 TRON 的付款偏好。如果在 Fee Station 余额充足后报错仍未消除，则该地址可能需要完成额外的账户配置后才能使用预租赁的能量。</Note>
-
+显示的手续费反映该笔转账实际采用的方式。Fee Station 如何确定能量租赁成本，请参阅 [TRON 能量租赁](/cn/portal/fee-station/choose-your-fee-model#tron-能量租赁)。

@@ -1,0 +1,32 @@
+---
+title: "Choose your Fee Station model"
+sidebarTitle: "Choose your fee model"
+lang: "en"
+description: "Choose a Fee Station configuration for your transaction and funding patterns."
+---
+
+Choose a Fee Station configuration based on how your organization sends transactions. For funding mechanics, see [Fund flows](/en/portal/fee-station/fund-flows). To apply a configuration in Cobo Portal, see [Set up Fee Station](/en/portal/fee-station/set-up).
+
+## Large child-address sweeps
+
+Choose Fee Station for large sweeps when eligible child addresses need Network gas before their assets can be swept. Confirm that the wallet type supports Fee Station in the [support matrix](/en/portal/fee-station/introduction#supported-wallet-types) and maintain enough available Fee Station balance for the sweep. A sweep can fail when its Fee Station eligibility or quota check does not pass.
+
+## High-frequency withdrawals
+
+For frequent withdrawals from MPC Wallets or Custodial Wallets (Web3 Wallets), use Fee Station to reduce repeated gas funding work. Configure the payment preference for each chain under **Gas Token** > **Payment Preferences**. See [Configure payment preferences](/en/portal/fee-station/set-up#configure-payment-preferences) for the options currently available in Cobo Portal.
+
+## Multichain operations
+
+For operations across multiple chains, fund Fee Station with a supported USD stablecoin. Fee Station can use the shared balance for Network gas on [supported chains](/en/portal/fee-station/introduction#supported-chains-for-gas-fee-payment). The conversion uses an external quote plus a markup, as described in [Fund with USD stablecoins](/en/portal/fee-station/fund-flows#fund-with-usd-stablecoins).
+
+Review the [supported token types](/en/portal/fee-station/introduction#supported-token-types) before choosing the funding asset.
+
+## Occasional withdrawals
+
+For infrequent withdrawals, configure only the EVM-compatible chains and TRON chains that your team uses. Manage each available choice under **Gas Token** > **Payment Preferences**, then follow [Configure payment preferences](/en/portal/fee-station/set-up#configure-payment-preferences) to save the configuration.
+
+## TRON energy rental
+
+For TRON transfers, Fee Station requests a live energy rental quote at the time of the transaction and applies a safety buffer to the quote. The cost is therefore dynamic rather than a fixed discount percentage.
+
+Fee Station prioritizes Energy mode when energy can be applied and uses TRX burn mode otherwise. See [TRON fee payment](/en/portal/fee-station/set-up#tron-fee-payment) for how the two modes work.

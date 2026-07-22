@@ -1,0 +1,47 @@
+---
+title: "Monitor Fee Station activity"
+sidebarTitle: "Monitor and alerts"
+lang: "en"
+description: "Monitor Fee Station balances, addresses, transactions, and webhook events."
+---
+
+Use Cobo Portal for routine checks and the WaaS 2.0 API for programmatic reconciliation.
+
+## Reconcile balances
+
+Call [List Fee Station token balances](https://www.cobo.com/developers/v2/api-references/feestation/list-fee-station-token-balances) to retrieve balances by `token_ids`. Use `limit`, `before`, and `after` to paginate the results.
+
+Each token balance separates the following amounts:
+
+- `total`: The full recorded balance across all balance states.
+- `available`: The amount that is currently spendable.
+- `pending`: The amount associated with activity that has not finished processing.
+- `locked`: The amount reserved and unavailable for other payments.
+- `frozen`: The amount restricted from spending.
+
+Use `available`, rather than `total`, when reconciling how much Fee Station can spend immediately.
+
+## Reconcile deposit addresses
+
+In Cobo Portal, open **Fee Station**, locate a token, and click its address icon to view the deposit address.
+
+Call [List Fee Station addresses](https://www.cobo.com/developers/v2/api-references/feestation/list-fee-station-addresses) to retrieve addresses programmatically. Filter by `chain_ids` or `addresses`. For an address that requires a memo, append the memo to the address with `|`. Use `limit`, `before`, and `after` for cursor pagination.
+
+## Reconcile transactions
+
+In Cobo Portal, open **Fee Station** and view the transaction records for deposits and spending. Use the available filter, sort, and search controls to locate an entry.
+
+For programmatic reconciliation, call [List all Fee Station transactions](https://www.cobo.com/developers/v2/api-references/feestation/list-all-fee-station-transactions). You can filter by `request_id`, `cobo_ids`, `transaction_ids`, `transaction_hashes`, `types`, `statuses`, `chain_ids`, `token_ids`, `asset_ids`, and the created-time range. Use `limit`, `before`, `after`, and `direction` to paginate and order results.
+
+## Subscribe to webhook events
+
+Follow [Set up a callback or webhook endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/set-up-endpoint) to register an endpoint and verify webhook deliveries. Subscribe to the events that match the lifecycle stages you need:
+
+| Event | When it occurs |
+| --- | --- |
+| `fee_station.transaction.created` | A Fee Station transaction is created. |
+| `fee_station.transaction.updated` | A Fee Station transaction status changes. |
+| `fee_station.transaction.succeeded` | A Fee Station transaction completes successfully. |
+| `fee_station.transaction.failed` | A Fee Station transaction fails. |
+
+See [Webhook event types and data types](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-event-type#fee-station-events) for the event data contract.

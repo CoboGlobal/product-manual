@@ -1,0 +1,53 @@
+---
+title: "Fee Station 常见问题"
+sidebarTitle: "常见问题"
+lang: "zh-hans"
+description: "排查 Fee Station 余额、费用报错和归集失败问题。"
+---
+
+## Error 30013
+
+```json
+{
+  "error_code": 30013,
+  "error_message": "The fee token balance is insufficient to cover the transaction fee."
+}
+```
+
+### 问题原因
+
+扣除待处理和已预留金额后，钱包自身的费用代币可用余额不足以支付交易手续费。此报错与钱包余额有关，而不是 Fee Station 的共享余额。
+
+### 解决方法
+
+1. 检查钱包中目标链费用代币的可用余额。
+2. 检查同一钱包是否存在并发的待处理交易，这些交易可能预留或锁定了部分余额。
+3. 向钱包充值所需的费用代币，或等待待处理交易完成，然后重试交易。
+
+## Error 30038
+
+```json
+{
+  "error_code": 30038,
+  "error_message": "The Fee Station token balance is insufficient to cover the transaction fee."
+}
+```
+
+### 问题原因
+
+Fee Station 的共享余额不足以支付 Network gas 或适用的服务费。此报错与 Fee Station 有关，而不是钱包自身的费用代币余额。
+
+### 解决方法
+
+1. 检查 Fee Station 中支付该费用所需资产的余额。
+2. 使用符合条件的资产[为 Fee Station 充值](/cn/portal/fee-station/fund-flows)。
+3. 通过[支持的钱包类型](/cn/portal/fee-station/introduction#支持的钱包类型)确认钱包和交易类型符合条件。
+4. 充值金额可用后，重试交易。
+
+## 为什么显示余额与实际可用金额不同？
+
+显示的 `total` 余额可能包含当前不可用的 `pending`、`locked` 或 `frozen` 金额。判断 Fee Station 能否支付费用时，请使用 `available` 余额。各余额字段的详情请参阅[核对余额](/cn/portal/fee-station/monitor-and-alerts#核对余额)。
+
+## 为什么地址归集失败？
+
+当子地址没有足够的 Network gas，或 Fee Station 适用性或配额检查未通过时，归集可能会失败。请查看[大量子地址归集](/cn/portal/fee-station/choose-your-fee-model#大量子地址归集)，并通过[支持的钱包类型](/cn/portal/fee-station/introduction#支持的钱包类型)确认钱包类型。

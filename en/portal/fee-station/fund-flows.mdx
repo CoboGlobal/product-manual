@@ -1,0 +1,32 @@
+---
+title: "Fee Station fund flows"
+sidebarTitle: "Fund flows"
+lang: "en"
+description: "Learn how to fund Fee Station and reconcile credits to its shared balance."
+---
+
+Fee Station is a shared account for your organization. You can fund it with USD, supported USD stablecoins, or native gas tokens. For the current asset list, see [Supported token types](/en/portal/fee-station/introduction#supported-token-types).
+
+## Fund with USD
+
+1. Log in to [Cobo Portal](https://portal.cobo.com/login).
+2. Click **Fee Station** in the left sidebar.
+3. Open the **USD / USD stablecoin** tab.
+4. Click **Deposit** next to **Total Value**.
+5. Choose a deposit method and follow the on-screen instructions.
+
+## Fund with USD stablecoins
+
+USD stablecoins let you fund one shared balance for fees across supported chains. When Fee Station needs another gas or settlement asset, it converts the stablecoin at the time of use based on an external price quote plus a markup.
+
+Use the [supported token list](/en/portal/fee-station/introduction#supported-token-types) to choose a stablecoin and chain, then follow the deposit workflow in [Set up Fee Station](/en/portal/fee-station/set-up#fund-your-fee-station).
+
+## Fund with native gas tokens
+
+You can also deposit a chain's native gas token directly. This option is useful when you already hold the native token and do not need Fee Station to convert a stablecoin before paying Network gas.
+
+Follow [Choose a chain and token](/en/portal/fee-station/set-up#choose-a-chain-and-token) to copy the deposit address or scan its QR code.
+
+## Auto-fueling refunds
+
+Fee Station can send native gas to an eligible address before a transaction so that the address can pay its on-chain fee. If the transaction does not consume the entire top-up, the unused portion is returned automatically to the shared Fee Station balance. The refund is tied to the original funding request and is processed without crediting the same refund more than once.

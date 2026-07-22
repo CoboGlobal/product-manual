@@ -1,0 +1,32 @@
+---
+title: "选择 Fee Station 费用模式"
+sidebarTitle: "选择费用模式"
+lang: "zh-hans"
+description: "根据交易和充值模式选择合适的 Fee Station 配置。"
+---
+
+请根据团队发起交易的方式选择 Fee Station 配置。资金流转机制请参阅[资金流转](/cn/portal/fee-station/fund-flows)。如需在 Cobo Portal 中应用配置，请参阅[设置 Fee Station](/cn/portal/fee-station/set-up)。
+
+## 大量子地址归集
+
+如果符合条件的子地址需要先获得 Network gas 才能归集资产，请为大量归集使用 Fee Station。请通过[支持的钱包类型](/cn/portal/fee-station/introduction#支持的钱包类型)确认钱包类型支持 Fee Station，并确保 Fee Station 有足够的可用余额。如果归集操作未通过 Fee Station 适用性或配额检查，归集可能会失败。
+
+## 高频提币
+
+如果您经常从 MPC 钱包或全托管钱包（Web3 钱包）提币，可以使用 Fee Station 减少重复准备 Gas Token 的工作。请在 **Gas Token** > **付款偏好**中按链配置付款偏好。Cobo Portal 当前提供的选项请参阅[设置付款偏好](/cn/portal/fee-station/set-up#设置付款偏好)。
+
+## 多链操作
+
+如果您需要在多条链上操作，请使用支持的美元稳定币为 Fee Station 充值。Fee Station 可以使用共享余额支付[支持链](/cn/portal/fee-station/introduction#支持代付的链)上的 Network gas。兑换会采用外部报价加上加价，详情请参阅[使用美元稳定币充值](/cn/portal/fee-station/fund-flows#使用美元稳定币充值)。
+
+选择充值资产前，请查看[支持充值的代币类型](/cn/portal/fee-station/introduction#支持充值的代币类型)。
+
+## 偶发提币
+
+如果您不经常提币，请仅配置团队使用的 EVM 兼容链和 TRON 链。在 **Gas Token** > **付款偏好**中管理各链当前提供的选项，然后按照[设置付款偏好](/cn/portal/fee-station/set-up#设置付款偏好)保存配置。
+
+## TRON 能量租赁
+
+对于 TRON 转账，Fee Station 会在交易发生时请求实时能量租赁报价，并为报价添加安全缓冲。因此，费用会动态变化，并非固定的折扣比例。
+
+Fee Station 会在能够使用能量时优先采用 Energy mode，否则采用 TRX burn mode。两种模式的工作方式请参阅 [TRON 手续费支付](/cn/portal/fee-station/set-up#tron-手续费支付)。

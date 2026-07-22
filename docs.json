@@ -317,7 +317,11 @@
                     "group": "Fee Station",
                     "pages": [
                       "en/portal/fee-station/introduction",
-                      "en/portal/fee-station/set-up"
+                      "en/portal/fee-station/fund-flows",
+                      "en/portal/fee-station/choose-your-fee-model",
+                      "en/portal/fee-station/set-up",
+                      "en/portal/fee-station/monitor-and-alerts",
+                      "en/portal/fee-station/faq"
                     ]
                   },
                   {
@@ -942,7 +946,11 @@
                     "group": "Fee Station",
                     "pages": [
                       "cn/portal/fee-station/introduction",
-                      "cn/portal/fee-station/set-up"
+                      "cn/portal/fee-station/fund-flows",
+                      "cn/portal/fee-station/choose-your-fee-model",
+                      "cn/portal/fee-station/set-up",
+                      "cn/portal/fee-station/monitor-and-alerts",
+                      "cn/portal/fee-station/faq"
                     ]
                   },
                   {
@@ -1342,7 +1350,7 @@
     },
     {
       "source": "/cn/portal/fee-station/overview",
-      "destination": "/cn/portal/fee-station/set-up"
+      "destination": "/cn/portal/fee-station/fund-flows"
     },
     {
       "source": "/cn/portal/fee-station/set-up-for-mpc",
@@ -1354,11 +1362,11 @@
     },
     {
       "source": "/cn/portal/fee-station/view-tx-records",
-      "destination": "/cn/portal/fee-station/set-up"
+      "destination": "/cn/portal/fee-station/monitor-and-alerts"
     },
     {
       "source": "/en/portal/fee-station/overview",
-      "destination": "/en/portal/fee-station/set-up"
+      "destination": "/en/portal/fee-station/fund-flows"
     },
     {
       "source": "/en/portal/fee-station/set-up-for-mpc",
@@ -1370,7 +1378,7 @@
     },
     {
       "source": "/en/portal/fee-station/transaction-records",
-      "destination": "/en/portal/fee-station/set-up"
+      "destination": "/en/portal/fee-station/monitor-and-alerts"
     },
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
@@ -1614,7 +1622,7 @@
     },
     {
       "source": "/en/portal/fee-station/manage",
-      "destination": "/en/portal/fee-station/set-up-for-mpc#next-steps"
+      "destination": "/en/portal/fee-station/monitor-and-alerts"
     },
     {
       "source": "/en/portal/developer-console/webhooks-manage",
@@ -1706,7 +1714,7 @@
     },
     {
       "source": "/cn/portal/fee-station/manage",
-      "destination": "/cn/portal/fee-station/set-up-for-mpc#next-steps"
+      "destination": "/cn/portal/fee-station/monitor-and-alerts"
     },
     {
       "source": "/cn/portal/developer-console/webhooks-manage",
