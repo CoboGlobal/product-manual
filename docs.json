@@ -1317,6 +1317,62 @@
   },
   "redirects": [
     {
+      "source": "/en/apps/superloop/set-up",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/en/apps/superloop/manage-overview",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/en/apps/superloop/manage-an-exchange-account",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/en/apps/superloop/manage-fee-reserve",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/en/apps/superloop/supported-exchanges-overview",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/en/apps/superloop/supported-exchanges-bitget",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/en/apps/superloop/supported-exchanges-bitmart",
+      "destination": "/en/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/set-up",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/manage-overview",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/manage-an-exchange-account",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/manage-fee-reserve",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/supported-exchanges-overview",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/supported-exchanges-bitget",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
+      "source": "/cn/apps/superloop/supported-exchanges-bitmart",
+      "destination": "/cn/apps/superloop/introduction"
+    },
+    {
       "source": "/cn/guard/restore-key-shares-from-icloud",
       "destination": "/cn/guard/reset"
     },
