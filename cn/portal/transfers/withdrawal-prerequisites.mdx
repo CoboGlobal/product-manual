@@ -18,6 +18,10 @@ description: "了解在 Cobo Portal 中从钱包发起提币之前必须满足�
 - 请确保钱包持有足够的原生 gas 代币（例如，EVM 网络上的 ETH 或 TRON 上的 TRX），或已启用 [Fee Station](/cn/portal/fee-station/introduction) 来支付 gas 费。
 - 您要提取的金额必须可用作可用余额，且未被另一笔进行中的交易锁定。详情请参阅[余额锁定](/cn/portal/transfers/introduction#balance-locking)。
 
+## 最低提币金额
+
+每个代币和网络均有最低提币金额。如果您提交的外部提币金额低于所选网络的最低金额，Cobo 将在交易广播至链上之前于验证阶段拒绝该请求。由于交易未被广播，您无需支付网络 gas 费或 Cobo 服务费。
+
 ## 相关主题
 
 - [转账简介](/cn/portal/transfers/introduction)

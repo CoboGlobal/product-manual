@@ -18,6 +18,10 @@ The wallet must have enough balance to cover both the withdrawal amount and the 
 - Make sure the wallet holds enough of the native gas token (for example, ETH on EVM networks or TRX on TRON), or that [Fee Station](/en/portal/fee-station/introduction) is enabled to pay the gas fee.
 - The amount you want to withdraw must be available as spendable balance and not locked by another in-flight transaction. For details, see [Balance locking](/en/portal/transfers/introduction#balance-locking).
 
+## Minimum withdrawal amount
+
+Each token and network has a minimum withdrawal amount. If the amount you enter for an external withdrawal falls below the minimum for the selected network, Cobo rejects the request during validation before the transaction is broadcast on-chain. Because no transaction is broadcast, you are not charged a network gas fee or a Cobo service fee.
+
 ## Related topics
 
 - [Introduction to Transfer](/en/portal/transfers/introduction)
