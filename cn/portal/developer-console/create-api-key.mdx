@@ -24,12 +24,15 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
 
 5. 输入 API Key 的名称（最多 30 个字符）。
 6. 输入 API Key 和选择加密算法。API Key 是密钥对中的公钥，长度必须为 64 个字符，只能包含数字 0 至 9 和字母 A 至 F。如想了解如何使用 Ed25519 算法生成 API Key，请参阅 [Generate an API key and an API secret](https://www.cobo.com/developers/v2_cn/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret)。
+
+<Note>角色权限和 Wallet Scope 是两个独立控制项。您选择的角色会在资源和操作维度授予 API 操作权限，而 Wallet Scope 会限制这些权限可作用的钱包范围。对于带钱包目标的 Custody 和 WaaS 操作，角色权限和 Wallet Scope 都必须允许该操作。完整权限矩阵请参阅[角色与权限](/cn/portal/risk-controls/roles-and-permissions)。</Note>
+
 7. 在**用户角色 & 钱包范围**板块，点击**为用户角色设置钱包范围**来设置该 API key 的用户角色以及可访问的钱包范围。
 8. 从对应的下拉列表中选择该 API Key 的用户角色以及可访问的钱包范围。
 
     <img src="/cn/images/developer-console/user_role_1.png" className="screenshot_modal" alt="设置用户角色的钱包范围对话框" />
 
-    您可以点击**每个角色**来为每个用户角色选择不同的钱包范围。
+    使用 **Shared scope** 可将同一个钱包范围应用于所有已选角色。点击**每个角色**可使用 **Per-role scope**，为每个已选角色分别设置钱包范围。
 
     <img src="/cn/images/developer-console/user_role_2.png" className="screenshot_modal" alt="设置用户角色的钱包范围对话框" />
 
@@ -38,6 +41,8 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
     点击**确认**来完成配置。
 
 9. 选择此 API Key 使用的 Callback Endpoint，或注册一个新的 Callback Endpoint。所选的 Callback Endpoint 将接收由该 API Key 触发的消息。有关更多信息，请参阅[注册 Callback Endpoint](/cn/portal/developer-console/callbacks-register)。
+
+    <Warning>如果此 API Key 未配置 Callback Endpoint，基于 Callback 的提币二次确认将被跳过，提币请求会默认批准。</Warning>
 10. 选择 Key 类型。
     - **长期**: 此 Key 类型需要 IP 地址白名单以增强安全性。您必须指定用于发送 API 请求的固定 IP 地址或 CIDR 网段。如需填写多个条目，请使用英文逗号 (,) 分隔。
     <Note>避免在 [API Playground](https://www.cobo.com/developers/v2/api-references/playground) 中使用长期 Key，因为请求是从 API Playground 发送的，而不是从您指定的 IP 地址发送的。</Note>
@@ -73,4 +78,3 @@ description: "学习如何注册 API Key，确保安全访问您的 API。"
     - 失效审批中：API Key 的失效操作正在等待审批。
     - 更新审批中：API Key 的更新操作正在等待审批。
 - 使用名称或关键字搜索特定的 API Key。
-

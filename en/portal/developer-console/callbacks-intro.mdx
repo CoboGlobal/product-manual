@@ -7,7 +7,8 @@ description: "Learn about callbacks and webhooks in Cobo's Wallet-as-a-Service (
 
 Webhooks and callbacks are essential mechanisms for the WaaS service to communicate with your application. After you set up and register callback and webhook endpoints, the WaaS service sends push messages to the designated URL when an event occurs. They allow your application to receive real-time updates or notifications and to respond to events accordingly.
 
-Callbacks serve similarly to a Two-Factor Authentication (2FA) method. The WaaS 2.0 service uses callbacks to verify your identity. To make withdrawals or contract calls using the WaaS 2.0 API, you must register a callback endpoint and handle callback messages to approve the withdrawals.
+Callbacks serve similarly to a Two-Factor Authentication (2FA) method. Registering a callback endpoint lets your application double-check sensitive WaaS 2.0 API actions such as withdrawals and contract calls before they continue.
+
+<Warning>If no Callback Endpoint is configured for the API key, callback-based withdrawal double-check is not performed and withdrawal requests are approved by default.</Warning>
 
 For more details about the webhooks and callbacks mechanisms and how to handle them, refer to [Webhooks and callbacks](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/introduction).
-

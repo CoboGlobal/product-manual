@@ -10,6 +10,36 @@ Please note that role permissions vary across organization types. Permissions ma
 
 ## Cobo Portal user roles
 
+### Role capability overview
+
+The following summary highlights the typical purpose of each default role. It is not a complete permission list; use the detailed table below as the permission reference.
+
+| Role | Typical capability |
+| --- | --- |
+| Viewer | Views organization information, wallet information, balances, addresses, and transaction records. |
+| Spender | Initiates wallet operations such as withdrawals and transfers for wallets in scope. |
+| Approver | Reviews and approves transactions and other requests that require approval. |
+| Staker | Performs staking-related actions for supported assets and wallets. |
+| Operator | Handles day-to-day operational tasks, including selected organization, wallet, and developer operations. |
+| Compliance Officer | Reviews compliance-related information such as transaction categories and risk-control records. |
+| Manager | Manages organization members, roles, policies, wallets, and developer settings for operational administration. |
+| Admin | Has broad administrative permissions across organization management, wallet operations, risk controls, and developer settings. |
+
+<Warning>Assign Spender narrowly. Spender can initiate withdrawals and transfers for wallets in scope, so separate spending duties from approval duties whenever your workflow requires independent review.</Warning>
+
+### Authorization model
+
+| Area | Authorization checks |
+| --- | --- |
+| Wallet-targeted Custody and WaaS operations, such as wallet actions and `transaction/withdraw` | Access requires the required role permission, and the target wallet must be allowed by Wallet Scope. |
+| Organization, role, team, developer, and non-wallet-targeted settings | Access requires the required role permission. Wallet Scope does not decide access to these settings. |
+
+<Note>This matrix covers Custody and WaaS authorization. Payment API key authorization is not included.</Note>
+
+### How to read the permissions table
+
+Role details are shown as Resource + Operation entries, such as `wallet/create` and `transaction/withdraw`. A checkmark means the role includes that operation for the listed resource. Permissions marked with * are available only in Custody Organization. Permissions marked with △ are available only in Payment Organization.
+
 The following table lists the permissions of each role in Cobo Portal.
 
 <table class="six-columns-fixed-first-row">
