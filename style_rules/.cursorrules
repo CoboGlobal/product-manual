@@ -20,7 +20,6 @@ When the command contains "rococo":
 - Custodial Wallets (Web3 Wallets)
 - MPC Wallets (Organization-Controlled Wallets)
 - MPC Wallets (User-Controlled Wallets)
-- Smart Contract Wallets (Safe{Wallet})
 - Exchange Wallets (Main Account)
 - Exchange Wallets (Sub Account)
 - When referring to a subtype, explain the relation first and then use the subtype name directly. E.g., Asset Wallets are a subtype of Custodial Wallets. Asset Wallets ...
@@ -49,7 +48,6 @@ When the command contains "rococo":
 
 ### Risk Controls
 - Transaction Policies
- - On-Chain Transaction Policies (applicable to SCW only)
  - Off-Chain Transaction Policies (applicable to all wallet types)
 - Governance Policies
 - User Roles and Permissions
@@ -144,7 +142,6 @@ For bills and payments, use outgoing transfer volume. Do not use outgoing transa
 - Use full names for all product names except for individual apps within Cobo Portal Apps.
  - Cobo product names:
    - Cobo Portal
-   - Cobo Safe
    - Cobo Guard
    - Cobo Accounts
    - Cobo Portal Apps
@@ -207,9 +204,9 @@ For bills and payments, use outgoing transfer volume. Do not use outgoing transa
 
 - Use sentence case for topic titles, except for module names. For example:
  - What is an Exchange Wallet?
- - Deposit and transfer funds into Safe{Wallet}
+ - Deposit and transfer funds into an Exchange Wallet
  - **Modules Include**:
-   - All wallet types: Custodial Wallets, MPC, SCW, Exchange Wallets
+   - All wallet types: Custodial Wallets, MPC, Exchange Wallets
    - Transfer
    - Risk Controls
    - Organization (Use "Organization" for the module; "organization" for customer’s organization)
@@ -384,7 +381,7 @@ For bills and payments, use outgoing transfer volume. Do not use outgoing transa
 - Format: `https://manuals.cobo.com/portal/{module-name}/{(optional)sub-module-name}/{topic-title}`
 - Examples:
  - `https://manuals.cobo.com/portal/transfers/introduction`
- - `https://manuals.cobo.com/portal/mpc-wallets/ocw/introduction` (to distinguish between scw)
+ - `https://manuals.cobo.com/portal/mpc-wallets/ocw/introduction`
 
 ### Other Manuals
 

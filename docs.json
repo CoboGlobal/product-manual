@@ -218,14 +218,6 @@
                         "pages": [
                           "en/portal/risk-controls/tx-policies-overview",
                           {
-                            "group": "On-chain transaction policies",
-                            "pages": [
-                              "en/portal/risk-controls/on-chain-tx-type",
-                              "en/portal/risk-controls/create-on-chain-policy",
-                              "en/portal/risk-controls/manage-on-chain-policy"
-                            ]
-                          },
-                          {
                             "group": "Off-chain transaction policies",
                             "pages": [
                               "en/portal/risk-controls/default-transaction-policies",
@@ -373,30 +365,6 @@
                       "en/portal/mpc-wallets/ucw/project-management",
                       "en/portal/mpc-wallets/ucw/vault-management",
                       "en/portal/mpc-wallets/ucw/wallet-management"
-                    ]
-                  },
-                  {
-                    "group": "Smart Contract Wallets",
-                    "pages": [
-                      "en/portal/smart-contract-wallets/introduction",
-                      {
-                        "group": "Set up Smart Contract Wallets",
-                        "pages": [
-                          "en/portal/smart-contract-wallets/create",
-                          "en/portal/smart-contract-wallets/import"
-                        ]
-                      },
-                      "en/portal/smart-contract-wallets/manage",
-                      "en/portal/smart-contract-wallets/manage-delegate-keys",
-                      {
-                        "group": "Deposit and withdraw assets",
-                        "pages": [
-                          "en/portal/smart-contract-wallets/deposit-assets",
-                          "en/portal/smart-contract-wallets/withdraw-assets",
-                          "en/portal/transfers/from-smart-contract-wallets"
-                        ]
-                      },
-                      "en/portal/smart-contract-wallets/dapp-interaction"
                     ]
                   }
                 ]
@@ -843,14 +811,6 @@
                         "pages": [
                           "cn/portal/risk-controls/tx-policies-overview",
                           {
-                            "group": "链上交易风控",
-                            "pages": [
-                              "cn/portal/risk-controls/on-chain-tx-type",
-                              "cn/portal/risk-controls/create-on-chain-policy",
-                              "cn/portal/risk-controls/manage-on-chain-policy"
-                            ]
-                          },
-                          {
                             "group": "链下交易风控",
                             "pages": [
                               "cn/portal/risk-controls/default-transaction-policies",
@@ -998,30 +958,6 @@
                       "cn/portal/mpc-wallets/ucw/project-management",
                       "cn/portal/mpc-wallets/ucw/vault-management",
                       "cn/portal/mpc-wallets/ucw/wallet-management"
-                    ]
-                  },
-                  {
-                    "group": "智能合约钱包",
-                    "pages": [
-                      "cn/portal/smart-contract-wallets/introduction",
-                      {
-                        "group": "设置智能合约钱包",
-                        "pages": [
-                          "cn/portal/smart-contract-wallets/create",
-                          "cn/portal/smart-contract-wallets/import"
-                        ]
-                      },
-                      "cn/portal/smart-contract-wallets/manage",
-                      "cn/portal/smart-contract-wallets/manage-delegate-keys",
-                      {
-                        "group": "充币和提币",
-                        "pages": [
-                          "cn/portal/smart-contract-wallets/deposit-assets",
-                          "cn/portal/smart-contract-wallets/withdraw-assets",
-                          "cn/portal/transfers/from-smart-contract-wallets"
-                        ]
-                      },
-                      "cn/portal/smart-contract-wallets/dapp-interaction"
                     ]
                   }
                 ]
@@ -1374,7 +1310,7 @@
     },
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
-      "destination": "/cn/portal/risk-controls/manage-on-chain-policy"
+      "destination": "/cn/portal/retired-features"
     },
     {
       "source": "/en/portal/mpc-wallets/ocw/network-environments",
@@ -1482,7 +1418,7 @@
     },
     {
       "source": "/en/portal/smart-contract-wallets/key-features",
-      "destination": "/en/portal/smart-contract-wallets/introduction"
+      "destination": "/en/portal/retired-features"
     },
     {
       "source": "/en/portal/exchange-wallets/key-features",
@@ -1518,7 +1454,7 @@
     },
     {
       "source": "/cn/portal/smart-contract-wallets/key-features",
-      "destination": "/cn/portal/smart-contract-wallets/introduction"
+      "destination": "/cn/portal/retired-features"
     },
     {
       "source": "/cn/portal/exchange-wallets/key-features",
@@ -1755,6 +1691,54 @@
     {
       "source": "/cn/portal/deposit-address-transaction",
       "destination": "/cn/portal/auto-sweep-settings"
+    },
+    {
+      "source": "/en/portal/smart-contract-wallets/:slug*",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/smart-contract-wallets",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/transfers/from-smart-contract-wallets",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/risk-controls/on-chain-tx-type",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/risk-controls/create-on-chain-policy",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/risk-controls/manage-on-chain-policy",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/smart-contract-wallets/:slug*",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/smart-contract-wallets",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/transfers/from-smart-contract-wallets",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/risk-controls/on-chain-tx-type",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/risk-controls/create-on-chain-policy",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/risk-controls/manage-on-chain-policy",
+      "destination": "/cn/portal/retired-features"
     }
   ]
 }
