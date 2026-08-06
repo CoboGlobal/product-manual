@@ -7,10 +7,11 @@ description: "Follow the steps to set up Fee Station for automatic payment of tr
 
 Note: Please make sure that your Fee Station has a sufficient balance of fee tokens to cover the transaction fees. When you create transactions from MPC Wallets, you will be able to view your Fee Station balance and whether a top-up is necessary.
 
-You can manually set up Fee Station to automatically pay for transaction fees. **This currently applies only to EVM and TRON transactions initiated from MPC Wallets (Organization-Controlled) and Custodial Wallets (Web3 Wallets) on the Cobo Portal web console.** Once Fee Station is set up for MPC Wallets and Custodial Wallets (Web3 Wallets), the payment methods will vary depending on the blockchain:
+You can manually set up Fee Station to automatically pay for transaction fees. **This currently applies only to EVM, TRON, and Solana transactions initiated from MPC Wallets (Organization-Controlled) and Custodial Wallets (Web3 Wallets) on the Cobo Portal web console.** Once Fee Station is set up for MPC Wallets and Custodial Wallets (Web3 Wallets), the payment methods will vary depending on the blockchain:
 
-- EVM chains: Fee Station automatically manages transaction fees by preloading the required amount into your MPC Wallet. For example, if you initiate a transaction of 1,000 ETH from your Wallet and the fee is 0.05 ETH, but your wallet does not have enough funds to cover the fee, Fee Station will automatically transfer 0.05 ETH to your wallet. This ensures that your transaction proceeds without interruption.
+- EVM chains: Fee Station automatically manages transaction fees by preloading the required amount into your MPC Wallet or Custodial Wallet (Web3 Wallet). For example, if you initiate a transaction of 1,000 ETH from your Wallet and the fee is 0.05 ETH, but your wallet does not have enough funds to cover the fee, Fee Station will automatically transfer 0.05 ETH to your wallet. This ensures that your transaction proceeds without interruption.
 - TRON chain: The transaction fee is directly deducted from Fee Station.
+- Solana: The transaction fee is directly deducted from Fee Station.
 
 ## Steps
 
@@ -18,22 +19,24 @@ You can manually set up Fee Station to automatically pay for transaction fees. *
 2. Click your profile avatar in the top-right corner, then select **Fee Station**.
 3. Switch to the **Payment Preferences** tab and click **Expand**.
 4. (For EVM chains) Select either **Do Not Use Fee Station** or **Use Fee Station**.
-- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Asset Wallet (Web3 Wallet) itself.
-- Use Fee Station: If the fee token balance in your MPC Wallet or Asset Wallet (Web3 Wallet) is insufficient, the transaction fee will be paid using Fee Station. If your MPC Wallet or Asset Wallet (Web3 Wallet) has sufficient fee tokens, the transaction fee will be paid by the MPC Wallet or Asset Wallet (Web3 Wallet) itself.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
+- Use Fee Station: If the fee token balance in your MPC Wallet or Custodial Wallet (Web3 Wallet) is insufficient, the transaction fee will be paid using Fee Station. If your MPC Wallet or Custodial Wallet (Web3 Wallet) has sufficient fee tokens, the transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
 5. (For the TRON chain) Select either **Do Not Use Fee Station** or **Use Fee Station**.
-- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Asset Wallet (Web3 Wallet) itself.
-- Use Fee Station: The transaction fee will be paid using Fee Station, regardless of whether your MPC Wallet or Asset Wallet (Web3 Wallet) has sufficient fee tokens.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
+- Use Fee Station: The transaction fee will be paid using Fee Station, regardless of whether your MPC Wallet or Custodial Wallet (Web3 Wallet) has sufficient fee tokens.
+6. (For Solana) Select either **Do Not Use Fee Station** or **Use Fee Station**.
+- Do Not Use Fee Station: The transaction fee will be paid by the MPC Wallet or Custodial Wallet (Web3 Wallet) itself.
+- Use Fee Station: The transaction fee will be paid using Fee Station, regardless of whether your MPC Wallet or Custodial Wallet (Web3 Wallet) has sufficient fee tokens.
 <img src="/en/images/fee-station/1.png" className="screenshot_full_screen"/>
-6. Click **Save Changes**.
-7. Finish the setup by completing your security verification.
+7. Click **Save Changes**.
+8. Finish the setup by completing your security verification.
 
 ## Next steps
 
-After setting up Fee Station for MPC Wallets, you can:
+After setting up Fee Station, you can:
 
 - View the deposit address for a specific token.
 - Deposit a specific token into your Fee Station. You can make the deposit by copying the token’s deposit address or by scanning its QR code.
 - View detailed information about a Fee Station transaction records, including the amount, timestamp, and more.
 - Modify your payment preferences.
 - Filter, sort, and search for transaction records.
-
