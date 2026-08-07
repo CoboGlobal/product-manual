@@ -24,12 +24,15 @@ You have been assigned the [user role](/en/portal/risk-controls/roles-and-permis
 
 5. Enter the API key name (maximum 30 characters).
 6. Enter the API key and select its cryptographic algorithm. The API key is the public key in the cryptographic key pair, and must be 64 characters long, containing only numbers 0 to 9 and alphabets A to F. To learn how to generate an API key using the Ed25519 algorithm, see [Generate an API key and an API secret](https://www.cobo.com/developers/v2/guides/overview/cobo-auth#generate-an-api-key-and-an-api-secret).
+
+<Note>Role permissions and Wallet Scope are separate controls. The role you select grants API operation permissions at the resource and operation level, while Wallet Scope limits which wallets those permissions can operate on. For wallet-targeted Custody and WaaS actions, both the role permission and Wallet Scope must allow the action. For the full permission matrix, see [Roles and permissions](/en/portal/risk-controls/roles-and-permissions).</Note>
+
 7. In the **Role & Wallet Scope** section, click **Set Wallet Scope for User Role** to set user roles for this API key and the wallet scope that the API key can access.
 8. Select user roles and wallet scope from the corresponding dropdown lists.
 
     <img src="/en/images/developer-console/user_role_1.png" className="screenshot_modal" alt="The Set Wallet Scope for User Role dialog" />
 
-    You can click **For Each Role** to select different wallet scope for each user role.
+    Use **Shared scope** to apply one wallet scope to all selected roles. Click **For Each Role** to use **Per-role scope**, where each selected role can have its own wallet scope.
 
     <img src="/en/images/developer-console/user_role_2.png" className="screenshot_modal" alt="The Set Wallet Scope for User Role dialog" />
 
@@ -38,6 +41,8 @@ You have been assigned the [user role](/en/portal/risk-controls/roles-and-permis
     Click **Confirm** to complete the configuration.
 
 9. Select the callback endpoint this API key uses, or register a new one. The selected callback endpoint will receive messages triggered by the API key. For more information, see [Register a callback endpoint](/en/portal/developer-console/callbacks-register).
+
+    <Warning>If no Callback Endpoint is configured for this API key, callback-based withdrawal double-check is skipped and withdrawal requests are approved by default.</Warning>
 10. Select the key type.
     - **Permanent**: This key type requires IP address whitelisting for enhanced security. You must specify the static IP addresses or CIDR ranges from which API requests will be sent. If you provide multiple entries, separate them with English commas (,).
     <Note>Avoid using permanent keys for testing with the [API Playground](https://www.cobo.com/developers/v2/api-references/playground), as requests are sent from the API Playground, not your specified IP addresses.</Note>
@@ -74,4 +79,3 @@ After registering an API key, you can:
     - Pending Approval (Revoke): The operation of revoking the API key has not been approved.
     - Pending Approval (Update): The operation of updating the API key has not been approved.
 - Search for specific API keys using names or keywords.
-
