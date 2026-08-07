@@ -34,8 +34,6 @@ Cobo Portal 根据不同的业务使用场景,提供两种组织类型:**支付�
 | 带钱包目标的 Custody 和 WaaS 操作，例如钱包操作和 `transaction/withdraw` | 访问必须具备所需角色权限，且目标钱包必须在 Wallet Scope 允许范围内。 |
 | 团队、角色、成员、开发者和不带钱包目标的设置 | 访问必须具备所需角色权限。Wallet Scope 不决定这些设置的访问权限。 |
 
-<Note>此矩阵涵盖 Custody 和 WaaS 授权，不包含 Payment API Key 授权。</Note>
-
 ### 如何阅读权限表格
 
 角色详情以 Resource + Operation 条目展示，例如 `wallet/create` 和 `transaction/withdraw`。勾选表示该角色包含对应资源的该项操作。带 * 标记的权限仅在托管类组织中可用；带 △ 标记的权限仅在支付类组织中可用。
