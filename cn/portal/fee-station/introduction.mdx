@@ -43,7 +43,7 @@ Fee Station 适用于所有希望简化链上费用管理的团队，特别是�
 
 ### 自动加油的工作方式
 
-为确保提币地址能够支付自身的链上手续费，Fee Station 可能会在处理交易前向该地址发送少量原生 Gas Token（例如约 `0.001` 原生代币）。该笔加油费用将从您的 Fee Station 余额中扣除。根据您的配置与可用余额，即使账户中存在原生 Gas Token 余额，该笔扣费也可能从您的美元或美元稳定币余额中结算。
+为确保提币地址能够支付自身的链上手续费，Fee Station 可能会在处理交易前向该地址发送少量原生 Gas Token。该笔加油费用将从您的 Fee Station 余额中扣除。根据您的配置与可用余额，即使账户中存在原生 Gas Token 余额，该笔扣费也可能从您的美元或美元稳定币余额中结算。
 
 ### 统一结算各类费用
 
@@ -57,11 +57,11 @@ Fee Station 支持的费用类型：
 
 ### 灵活支持多种充值方式
 
-除了直接充值所需链的 Gas Token，你还可以选择最简单的方式：只充值美元稳定币（如 USDT、USDC）或者美元法币作为统一余额。Fee Station 会在交易发生时自动兑换成所需的 Gas Token，帮你覆盖多链交易的手续费，无需再为每条链分别准备代币。支持充值的稳定币与 Gas Token 请参考[支持的代币](#支持的代币)。
+除了直接充值所需链的 Gas Token，你还可以选择最简单的方式：只充值美元稳定币（如 USDT、USDC）或者美元法币作为统一余额。Fee Station 可根据您的付款偏好使用这些资金支付多链手续费，减少为每条链单独准备代币的工作。支持充值的稳定币与 Gas Token 请参考[支持的代币](#支持的代币)。
 
 ### TRON 手续费优化与能量租赁
 
-Fee Station 在 TRON 链上会自动使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。整个过程由 Fee Station 自动完成，用户无需手动管理能量，即可享受手续费优化效果。开启 Fee Station 后，TRON 链交易手续费最高可节省约 80%。大量交易笔数可享阶梯优惠，可联系销售团队了解详情。
+对于 TRON 交易，Fee Station 可在适用场景使用可用或租赁的能量，以减少 TRX 燃烧产生的手续费成本。当能量无法用于某笔转账时，Fee Station 退回 TRX 燃烧模式（TRX burn mode）。用户无需手动管理能量。
 
 ### 提供 API 与 Webhook 支持
 
@@ -162,3 +162,15 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | TBSC（仅开发环境可用）       | BNB       |
 | TTRON（仅开发环境可用）      | TRX       |
 
+## TRON 手续费概念
+
+在通过 Fee Station 进行 TRON 链交易时，涉及多个独立的资金来源和链上机制。了解它们有助于充入正确的余额并排查手续费问题。
+
+| 概念 | 说明 |
+| --- | --- |
+| **发送地址 TRX** | 发送地址中直接持有的 TRX。当 Fee Station 未启用或交易不满足代付条件时，手续费从此余额支付。 |
+| **Fee Station Gas Token 余额（TRX）** | 已充入 Fee Station Gas Token 账户的 TRX。当 Fee Station 已启用且已在 **Gas Token** > **付款偏好** 中配置 TRON 策略时，此余额用于支付 TRON 手续费。充值路径：**Fee Station** > **Gas Token** > **代币**。 |
+| **Fee Station 美元/美元稳定币余额** | 已充入 Fee Station **美元/美元稳定币**账户的美元或稳定币（如 TRON USDT）。该余额可根据您配置的付款偏好用于支付 TRON 手续费。充值路径：**Fee Station** > **美元/美元稳定币**。 |
+| **TRON 能量与带宽** | 可减少或消除 TRX 燃烧的链上资源。Fee Station 支付 TRON 手续费时，条件允许时优先使用能量模式（Energy mode）；能量不足时退回 TRX 燃烧模式（TRX burn mode）。 |
+
+<Note>Fee Station 不会自动将稳定币余额兑换为 TRX。每笔 TRON 交易所使用的支付路径，取决于您配置的付款偏好以及交易时 Fee Station 账户中的可用余额。</Note>

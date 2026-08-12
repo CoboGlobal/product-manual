@@ -5,14 +5,35 @@ lang: "en"
 description: "Learn how to deposit assets into Fee Station for automatic payment of transaction fees on Cobo Portal."
 ---
 
-<Note>You can deposit into Fee Station for automatic payment for transaction fees. Please note that this currently applies only to EVM, TRON, Solana, and Tempo transactions initiated from MPC Wallets (Organization-Controlled) and Custodial Wallets (Web3 Wallets) on the Cobo Portal web console.</Note>
+<Note>You can deposit into Fee Station to automatically cover transaction fees. Gas fee payment currently applies to MPC Wallets (Organization-Controlled) and Custodial Wallets (Web3 Wallets) on the Cobo Portal web console for EVM-compatible chain and TRON transactions.</Note>
+
+## Deposit USD or USD stablecoins
 
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
-2. Click your profile avatar in the top-right corner, then select **Fee Station**.
-3. Switch to the **Tokens** tab, where you will see a list of fee tokens supported by Fee Station.
-4. Click <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> next to the token you want to deposit into Fee Station.
-- Alternatively, click <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> on the top right corner and select the token you want to deposit into Fee Station.
-<img src="/en/images/fee-station/2.png" className="screenshot_full_screen"/>
-5. In the pop-up window, click <img src="/en/images/fee-station/copy.svg" className="icon"></img> to copy the deposit address or scan the QR code with your wallet.
-- If you want to make a transfer from other wallets created on Cobo Portal, click **Deposit from other wallets**. Then, follow the instructions [here](/en/portal/transfers/introduction) to complete the transfer.
+2. Click **Fee Station** in the left sidebar.
+3. Go to **USD / USD Stablecoins** and click **Deposit** next to **Total Value**.
+4. Choose a deposit method and follow the on-screen instructions.
 
+## Deposit gas tokens
+
+1. Log into [Cobo Portal](https://portal.cobo.com/login).
+2. Click **Fee Station** in the left sidebar.
+3. Go to **Gas Token** > **Tokens**.
+4. Find the gas token for your target chain and click <img src="/en/images/fee-station/icon_deposit.svg" className="icon"></img> next to it.
+
+    <Note>The **Deposit** icon appears only when the token supports deposits. If the icon is absent, the token does not currently accept deposits in your account.</Note>
+
+5. In the pop-up window, copy the deposit address or scan the QR code.
+    - To transfer from a wallet already on Cobo Portal, click **Deposit from other wallets** and follow the transfer instructions to complete a standard transfer to the Fee Station deposit address.
+
+## Deposit TRON USDT into the stablecoin balance
+
+To deposit TRON USDT into the Fee Station USD / USD stablecoin balance using an existing Cobo Portal wallet:
+
+1. Click **Fee Station** in the left sidebar.
+2. Go to **USD / USD Stablecoins** and click **Deposit** > **Deposit with Crypto**.
+3. Select TRON USDT as the token and TRON as the network.
+4. Copy the Fee Station deposit address shown.
+5. To send from a wallet on Cobo Portal, click **Deposit from other wallets**. This prefills a standard transfer to the Fee Station deposit address. Follow the on-screen instructions to complete the transfer.
+
+Use only the tokens, networks, and source wallets visible in Cobo Portal.

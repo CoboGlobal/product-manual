@@ -19,4 +19,22 @@ We recommend checking the following:
     - EVM networks usually require ETH (or the chain’s native token) to pay gas.
     - On TRON, fees are typically paid with TRX (or via related energy/bandwidth mechanisms).
 
-If the issue persists, please provide your wallet type, chain, token, error message, and the time of occurrence, then contact Cobo Support (help@cobo.com).
+If the balance checks above do not resolve the error, note the exact error code and `error_message` from the failed transfer, then apply the fix for the matching code in the sections below.
+
+## Amount format and precision errors (error code 2006)
+
+If you see an error referencing amount format or precision, for example, error code **2006** or a message such as `account_output.amount invalid`, the cause is different from an insufficient-balance error:
+
+- **Cause**: The withdrawal amount has an invalid format or exceeds the token's supported decimal precision. This is not a balance or fee issue.
+- **Fix**: Adjust the transfer amount to match the token's accepted decimal format before retrying. Check the token's precision requirements in Cobo Portal or via the API.
+
+Use this table to route the error correctly:
+
+| Error | Likely cause | Fix |
+| --- | --- | --- |
+| 2006 / `account_output.amount invalid` | Amount format or decimal precision is invalid | Correct the amount format; do not top up gas |
+| 12007 / insufficient fee-token or Fee Station balance | The fee cannot be paid from the active fee source | Top up the correct balance (see below) |
+
+For error 12007, identify the active fee source:
+- **Fee Station enabled** for the chain and wallet type: Top up the relevant Fee Station balance, Gas Token (TRX, ETH, etc.) or USD / USD stablecoin, depending on your configured payment preferences.
+- **Fee Station not enabled** or transaction does not qualify: Top up the native gas token balance in the source wallet address.

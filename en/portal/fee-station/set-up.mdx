@@ -11,6 +11,16 @@ This article introduces how to complete the following operations in Fee Station:
 - Deposit gas tokens
 - Set up gas fee payment preferences
 
+## Prerequisites
+
+Before using Fee Station, confirm the following:
+
+- **Wallet type**: Gas fee payment is available for MPC Wallets and Custodial Wallets (Web3 Wallets) only. Asset Wallets cannot use Fee Station for gas fee payment.
+- **View permission**: You must have the Fee Station view permission to access the Fee Station page.
+- **Update permission**: Editing payment preferences requires the Fee Station update permission plus multi-factor authentication (MFA) and any applicable organization-level approvals.
+- **Export permission**: Exporting transaction records requires the Fee Station export permission.
+- **Tab and action availability**: Some tabs or actions (such as **Deposit**) may not appear if the selected token does not support deposits or your organization's configuration does not include certain features. If an option is missing, verify your permissions and organization eligibility before assuming the feature is unavailable.
+
 ## Deposit USD or stablecoins
 
 Fee Station supports deposits in fiat USD or USD stablecoins. After deposit, these funds can be used in Fee Station to pay for gas fees, platform service fees, and custody fees.
@@ -48,6 +58,14 @@ Each payment preference controls when Fee Station covers gas fees for an address
 
 ## TRON fee payment
 
+<Note>
+With Fee Station enabled for TRON:
+- Confirm that your Fee Station has a sufficient **Gas Token (TRX)** or **USD / USD stablecoin** balance, depending on your configured payment preferences.
+- Confirm that a TRON payment preference is set under **Gas Token** > **Payment Preferences**.
+
+If Fee Station is not enabled or a transaction does not qualify for Fee Station coverage, the source wallet address must hold sufficient native TRX to pay the fee.
+</Note>
+
 For TRON USDT transfers, Fee Station pays the on-chain fee in one of two ways:
 
 - **Energy mode**: Fee Station uses available or rented energy on the sending address to cover the transfer, which avoids burning TRX and is the lower-cost option. Fee Station prioritizes this mode whenever energy can be applied.
@@ -55,5 +73,14 @@ For TRON USDT transfers, Fee Station pays the on-chain fee in one of two ways:
 
 The fee shown for a TRON transfer reflects the method actually used, so the displayed amount can differ between transfers depending on whether energy was applied.
 
-<Note>If you have pre-rented energy on a TRON sending address but still see a TRON insufficient-energy or insufficient-fee error, confirm that Fee Station is enabled and funded for TRON and that a TRON payment preference is configured under **Gas Token** > **Payment Preferences**. If the error persists after the Fee Station balance is funded, the address may require additional account configuration before pre-rented energy can be applied.</Note>
+<Note>If you have pre-rented energy on a TRON sending address but still see a TRON insufficient-energy or insufficient-fee error, confirm that Fee Station is enabled and funded for TRON and that a TRON payment preference is configured under **Gas Token** > **Payment Preferences**.</Note>
 
+## Troubleshooting
+
+If a Fee Station tab, deposit action, payment preference, or recharge option is not visible or available, check the following:
+
+- **Fee Station page not visible**: Verify that you have the Fee Station view permission.
+- **Deposit action absent for a token**: The **Deposit** icon appears only when the token supports deposits. If the icon is missing, the token does not currently accept deposits in your account.
+- **Payment Preferences tab not editable**: Editing payment preferences requires the Fee Station update permission, MFA completion, and any required organization approvals.
+- **USD / USD Stablecoins or Gas Token tab missing**: These tabs may be hidden by your organization's feature configuration. Contact your organization administrator if you believe you should have access.
+- **TRON fees still failing after enabling Fee Station**: Confirm that a TRON payment preference is configured under **Gas Token** > **Payment Preferences** and that the relevant Fee Station balance is funded. Use only the tabs and methods visible in Cobo Portal.

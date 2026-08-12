@@ -43,7 +43,7 @@ Fee Station can automatically cover gas fees for transactions initiated from MPC
 
 ### How Auto Fueling works
 
-To make sure a withdrawal address can pay its own on-chain fees, Fee Station may send a small amount of the native gas token (for example, on the order of `0.001` of the native token) to the address before processing the transaction. The cost of this top-up is deducted from your Fee Station balance. Depending on your configuration and available balances, the deduction may be settled from your USD or USD stablecoin balance even when a native gas token balance is present.
+To make sure a withdrawal address can pay its own on-chain fees, Fee Station may send a small amount of the native gas token to the address before processing the transaction. The cost of this top-up is deducted from your Fee Station balance. Depending on your configuration and available balances, the deduction may be settled from your USD or USD stablecoin balance even when a native gas token balance is present.
 
 ### Unified fee settlement
 
@@ -57,13 +57,11 @@ Fee Station supports the following types of fees:
 
 ### Flexible deposit options
 
-You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (such as USDT or USDC) as a unified balance. Fee Station will convert them into the required gas tokens at the time of transaction, avoiding the manual work of preparing tokens for each chain. For more details about supported gas token or stablecoin types, please refer to [Supported token types](#supported-token-types).
+You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (such as USDT or USDC) as a unified balance. Fee Station can use these funds to cover gas fees across chains according to your payment preferences, reducing the need to prepare gas tokens for each chain. For more details about supported gas token or stablecoin types, please refer to [Supported token types](#supported-token-types).
 
 ### TRON gas fee optimization with energy rental
 
-Fee Station automatically leverages energy rental on the TRON network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
-
-With Fee Station enabled, TRON transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
+For TRON transactions, Fee Station can use available or rented energy where applicable, which reduces TRX burn for gas fees. When energy cannot be applied to a transfer, Fee Station falls back to TRX burn mode. You do not need to manage energy manually.
 
 ### API and webhook integration
 
@@ -166,3 +164,15 @@ You can also deposit the native gas token of the chain, and Fee Station will pay
 | TBSC (available only in development environment)       | BNB       |
 | TTRON (available only in development environment)      | TRX       |
 
+## TRON fee concepts
+
+When transacting on TRON through Fee Station, several distinct fund sources and on-chain mechanisms are involved. Understanding them helps you fund the right balance and diagnose fee errors.
+
+| Concept | Description |
+| --- | --- |
+| **Source address TRX** | TRX held directly in the sending wallet address. Used to pay fees when Fee Station is disabled or a transaction does not qualify for Fee Station coverage. |
+| **Fee Station Gas Token balance (TRX)** | TRX deposited in your Fee Station Gas Token account. When Fee Station is enabled and a TRON payment preference is configured under **Gas Token** > **Payment Preferences**, this balance covers TRON fees. Top it up from **Fee Station** > **Gas Token** > **Tokens**. |
+| **Fee Station USD / USD stablecoin balance** | USD or stablecoin (such as TRON USDT) deposited in your Fee Station **USD / USD Stablecoins** account. This balance can fund TRON fees according to your configured payment preferences. Top it up from **Fee Station** > **USD / USD Stablecoins**. |
+| **TRON Energy and Bandwidth** | On-chain resources that reduce or eliminate TRX fee burn. When Fee Station pays a TRON fee, it uses Energy mode (available or rented energy) where possible. When energy cannot cover the transfer, it falls back to TRX burn mode. |
+
+<Note>Fee Station does not automatically exchange stablecoin funds into TRX. The payment path for each TRON transaction depends on your configured payment preferences and the funds available in your Fee Station account at the time of the transaction.</Note>
