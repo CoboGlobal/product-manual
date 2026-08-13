@@ -9,14 +9,12 @@ description: "了解 Cobo Portal 的交易风控，实现交易自动化处理�
 
 每个团队都管理着一份交易风控列表。发起交易时将会根据列表中的风控顺序进行匹配。一旦识别到匹配风控，将自动执行相应的审批动作。
 
-### 链下交易风控
-
 交易风控由 Cobo Portal 的后端系统管理。它们提供：
 - **灵活性**：易于修改和更新
 - **兼容性**：适用于多种钱包类型
 - **即时生效**：无需区块链交易即可生效
 
-链下交易风控包括以下类型：
+交易风控包括以下类型：
 
 | 风控类型 | 主要用途 | 关键控制点 |
 |------------|--------------|--------------|
@@ -87,12 +85,11 @@ description: "了解 Cobo Portal 的交易风控，实现交易自动化处理�
 <Note>交易风控是您团队的重要安全保障之一，建议您严格配置交易风控策略，重点关注大额提币场景，确保不存在无风控规则、所有交易自动通过或同一角色既可提币又可审批等高风险情况。</Note>
 
 详细设置说明，请参阅：
-- 链下交易风控：
-  - [默认交易风控](/cn/portal/risk-controls/default-transaction-policies)
-  - [设置通用风控](/cn/portal/risk-controls/off-chain-tx-set-general-policy)
-  - [管理通用风控](/cn/portal/risk-controls/off-chain-tx-manage-general-policy)
-  - [设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)
-  - [设置合约交互风控](/cn/portal/risk-controls/off-chain-tx-set-contract-call)
-  - [设置消息签名风控](/cn/portal/risk-controls/off-chain-tx-set-message-signing)
-  - [管理一键收紧](/cn/portal/risk-controls/manage-emergency-policy)
+- [默认交易风控](/cn/portal/risk-controls/default-transaction-policies)
+- [设置通用风控](/cn/portal/risk-controls/off-chain-tx-set-general-policy)
+- [管理通用风控](/cn/portal/risk-controls/off-chain-tx-manage-general-policy)
+- [设置代币转账风控](/cn/portal/risk-controls/off-chain-tx-set-transfer)
+- [设置合约交互风控](/cn/portal/risk-controls/off-chain-tx-set-contract-call)
+- [设置消息签名风控](/cn/portal/risk-controls/off-chain-tx-set-message-signing)
+- [管理一键收紧](/cn/portal/risk-controls/manage-emergency-policy)
 
