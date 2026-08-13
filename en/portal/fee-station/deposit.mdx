@@ -7,6 +7,8 @@ description: "Learn how to deposit assets into Fee Station for automatic payment
 
 <Note>You can deposit into Fee Station for automatic payment for transaction fees. Please note that this currently applies only to EVM, TRON, Solana, and Tempo transactions initiated from MPC Wallets (Organization-Controlled) and Custodial Wallets (Web3 Wallets) on the Cobo Portal web console.</Note>
 
+<Warning>Before making the first TRON USDT deposit into Fee Station, make sure the sending address already holds TRX or Energy. The first funding transfer still needs gas. If the sender holds only TRON USDT, the deposit may be blocked before Fee Station can cover future fees.</Warning>
+
 1. Log into [Cobo Portal](https://portal.cobo.com/login).
 2. Click your profile avatar in the top-right corner, then select **Fee Station**.
 3. Switch to the **Tokens** tab, where you will see a list of fee tokens supported by Fee Station.
@@ -15,4 +17,3 @@ description: "Learn how to deposit assets into Fee Station for automatic payment
 <img src="/en/images/fee-station/2.png" className="screenshot_full_screen"/>
 5. In the pop-up window, click <img src="/en/images/fee-station/copy.svg" className="icon"></img> to copy the deposit address or scan the QR code with your wallet.
 - If you want to make a transfer from other wallets created on Cobo Portal, click **Deposit from other wallets**. Then, follow the instructions [here](/en/portal/transfers/introduction) to complete the transfer.
-

@@ -44,7 +44,13 @@ In the **Gas Token > Payment Preferences** tab, you can configure on-chain trans
 
 Each payment preference controls when Fee Station covers gas fees for an address: you can choose to cover fees only when the wallet balance is insufficient, or to always cover them. If you do not configure a preference for a chain, the system default applies.
 
+Payment Preferences are organization-level Fee Station defaults for supported chains and wallet types. After you save a preference, it applies to future matching transfers. It does not apply to the initial transfer that funds Fee Station, including the first TRON deposit into Fee Station.
+
+For each transfer covered by Fee Station, the usage result and its linked fee transaction record show how the fee was paid. Use these records to attribute whether Fee Station or the sending address paid the on-chain fee.
+
 <Note>Whitelist-based fee configurations may apply to specific addresses. As a result, the fee behavior for those addresses can differ from the preference you set here, and changing an address's whitelist membership can change which fee behavior applies.</Note>
+
+<Note>For API transfers, the Portal payment choice maps to the `auto_fuel` field. Use `PassiveAutoFuel` to have Fee Station cover gas passively for supported transfers, `ProActiveAutoFuel` to let Fee Station cover gas proactively, `UsePortalPreference` to follow the saved Portal preference, or `DisableAutoFuel` to make the sender pay TRON gas from its own TRX or Energy balance. If you omit `auto_fuel`, the transfer follows the saved Portal preference.</Note>
 
 ## TRON fee payment
 
@@ -56,4 +62,3 @@ For TRON USDT transfers, Fee Station pays the on-chain fee in one of two ways:
 The fee shown for a TRON transfer reflects the method actually used, so the displayed amount can differ between transfers depending on whether energy was applied.
 
 <Note>If you have pre-rented energy on a TRON sending address but still see a TRON insufficient-energy or insufficient-fee error, confirm that Fee Station is enabled and funded for TRON and that a TRON payment preference is configured under **Gas Token** > **Payment Preferences**. If the error persists after the Fee Station balance is funded, the address may require additional account configuration before pre-rented energy can be applied.</Note>
-
