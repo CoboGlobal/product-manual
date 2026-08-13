@@ -352,6 +352,7 @@
                 "pages": [
                   "en/portal/glossary",
                   "en/portal/dapp",
+                  "en/portal/retired-features",
                   {
                     "group": "User-Controlled Wallets",
                     "pages": [
@@ -940,6 +941,7 @@
                 "pages": [
                   "cn/portal/glossary",
                   "cn/portal/dapp",
+                  "cn/portal/retired-features",
                   {
                     "group": "终端用户钱包",
                     "pages": [
