@@ -57,17 +57,41 @@ Fee Station 支持的费用类型：
 
 ### 灵活支持多种充值方式
 
-除了直接充值所需链的 Gas Token，你还可以选择最简单的方式：只充值美元稳定币（如 USDT、USDC）或者美元法币作为统一余额。Fee Station 会在交易发生时自动兑换成所需的 Gas Token，帮你覆盖多链交易的手续费，无需再为每条链分别准备代币。支持充值的稳定币与 Gas Token 请参考[支持的代币](#支持的代币)。
+除了直接充值所需链的 Gas Token，你还可以选择最简单的方式：只充值美元稳定币（如 USDT、USDC）或者美元法币作为统一余额。对于由 Fee Station 代付的转账，Fee Station 可按您的付款偏好从该余额中结算手续费，您无需再为每条链单独准备 Gas Token 余额。支持充值的稳定币与 Gas Token 请参考[支持的代币](#支持的代币)。
 
 ### TRON 手续费优化与能量租赁
 
-在 Fee Station 已启用、已充值并已针对 TRON 完成配置后，Fee Station 可在 TRON 链上使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。Fee Station 会根据已配置的策略处理符合条件的能量使用，因此对于支持的转账，您无需手动管理能量。开启 Fee Station 后，TRON 链交易手续费最高可节省约 80%。大量交易笔数可享阶梯优惠，可联系销售团队了解详情。
+在 Fee Station 已启用、已充值并已针对 TRON 完成配置后，Fee Station 可在 TRON 链上使用能量（Energy），优先消耗能量而非直接燃烧 TRX 来支付手续费。对于由 Fee Station 代付的转账，Fee Station 会按已配置的策略处理符合条件的能量使用，您无需自行租赁能量。
+
+如果某笔转账不由 Fee Station 代付，能量必须来自发送地址本身（该地址已持有或已被委托的能量），或该地址需持有 TRX 用于支付手续费。详见[不使用 Fee Station 支付 gas](#不使用-fee-station-支付-gas)。
 
 ### 提供 API 与 Webhook 支持
 
 Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实时查看费用状态并获取通知提醒，方便对账、监控和运营分析。
 
 如需详细接入说明，请参见 [Fee Station API 文档](https://www.cobo.com/developers/v2/api-references/feestation/get-fee-station-transaction-information)与 [Webhook 文档](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/webhook-event-type#webhook-事件类型)。
+
+## 不使用 Fee Station 支付 gas
+
+您不必使用 Fee Station。如果未启用 Fee Station，或某笔转账不在代付范围内，链上手续费由发送地址自行支付。此时发送地址必须持有该链的原生 Gas Token。
+
+对于 TRON USDT 转账，发送地址需要有可用能量或 TRX。能量不足时会燃烧 TRX 支付手续费，因此只持有 TRON USDT、没有 TRX 的地址无法发起转出。
+
+<Note>通过 API 转账时，将 `auto_fuel` 设为 `DisableAutoFuel`，则任何情况下都不会使用 Fee Station 支付手续费。`ProActiveAutoFuel` 表示始终使用 Fee Station；`PassiveAutoFuel` 仅在来源地址余额不足时使用。若不传 `auto_fuel`，行为等同于 `UsePortalPreference`，即沿用您在 Portal 中保存的付款偏好。TRON 与 Solana 因其手续费代付机制，不支持 `PassiveAutoFuel`。</Note>
+
+## 链上手续费由谁支付
+
+由谁支付取决于 Fee Station 是否已启用、是否已充值，以及该笔转账是否在代付范围内：
+
+| 情形 | 手续费支付方 |
+| --- | --- |
+| 未启用 Fee Station，或 `auto_fuel` 为 `DisableAutoFuel` | 发送地址，使用其自有的 Gas Token 余额 |
+| Fee Station 已启用并已充值，且该笔转账符合代付条件 | Fee Station，从您的 Fee Station 余额扣除 |
+| Fee Station 已启用但余额不足以支付手续费 | 双方都不支付 —— 该笔转账会被拒绝，并返回手续费代币余额不足的错误 |
+| 转账在 TRON 链上且有可用能量 | 优先消耗能量，从而避免燃烧 TRX |
+| 转账在 TRON 链上且没有可用能量 | 燃烧 TRX 支付手续费 |
+
+是否符合代付条件取决于链、钱包类型，以及适用于该发送地址的付款偏好。设置与查看付款偏好请参考[如何使用 Fee Station](/cn/portal/fee-station/set-up)。
 
 ## 使用 Fee Station 的优势
 

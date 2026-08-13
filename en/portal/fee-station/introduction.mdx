@@ -57,19 +57,42 @@ Fee Station supports the following types of fees:
 
 ### Flexible deposit options
 
-You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (such as USDT or USDC) as a unified balance. Fee Station will convert them into the required gas tokens at the time of transaction, avoiding the manual work of preparing tokens for each chain. For more details about supported gas token or stablecoin types, please refer to [Supported token types](#supported-token-types).
+You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (such as USDT or USDC) as a unified balance. For transfers that Fee Station covers, it can settle the fee from this balance according to your payment preferences, so you do not need to prepare a separate gas token balance for each chain. For more details about supported gas token or stablecoin types, please refer to [Supported token types](#supported-token-types).
 
 ### TRON gas fee optimization with energy rental
 
-When Fee Station is enabled, funded, and configured for TRON, it can use energy rental on the TRON network and prioritize energy to reduce the direct burning of TRX for gas fees. Fee Station handles eligible energy use based on the configured strategy, so you do not need to manage energy manually for supported transfers.
+When Fee Station is enabled, funded, and configured for TRON, it can use energy on the TRON network and prioritize energy over burning TRX for gas fees. For transfers that Fee Station covers, it handles eligible energy use according to the configured strategy, so you do not need to rent energy yourself.
 
-With Fee Station enabled, TRON transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
+If Fee Station does not cover a transfer, energy must come from the sending address itself, such as energy the address already holds or has been delegated, or the address must hold TRX to pay the fee. See [Pay gas without Fee Station](#pay-gas-without-fee-station).
+
 
 ### API and webhook integration
 
 Fee Station offers standardized APIs and webhook support, allowing your system to access real-time fee data and receive timely notifications. This makes monitoring and operations tracking easier and more efficient.
 
 For more details, please refer to the [Fee Station API](https://www.cobo.com/developers/v2/api-references/feestation/get-fee-station-transaction-information) and [Webhook documentation](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-event-type#webhook-event-types).
+
+## Pay gas without Fee Station
+
+You do not have to use Fee Station. If you disable it, or if a transfer is not covered by it, the sending address pays the on-chain fee itself. In that case the sending address must hold the native gas token of the chain it transacts on.
+
+For TRON USDT transfers, the sending address needs available energy or TRX. If energy is insufficient, TRX is burned to pay the fee, so an address holding only TRON USDT and no TRX cannot send.
+
+<Note>When using the API, set `auto_fuel` to `DisableAutoFuel` so Fee Station is not used for the transaction fee under any circumstances. `ProActiveAutoFuel` always uses Fee Station, and `PassiveAutoFuel` uses it only when the source address balance is insufficient. If you omit `auto_fuel`, the transfer behaves as `UsePortalPreference` and follows your saved Portal preference. TRON and Solana do not support `PassiveAutoFuel` because of their fee delegation mechanism.</Note>
+
+## Who pays the on-chain fee
+
+Which side pays depends on whether Fee Station is enabled, funded, and applicable to the transfer:
+
+| Situation | Who pays the fee |
+| --- | --- |
+| Fee Station is not enabled, or `auto_fuel` is `DisableAutoFuel` | The sending address, from its own gas token balance |
+| Fee Station is enabled and funded, and the transfer is eligible | Fee Station, from your Fee Station balance |
+| Fee Station is enabled but its balance is not sufficient for the fee | Neither — the transfer is rejected with an insufficient fee token balance error |
+| The transfer is on TRON and energy is available | Energy is used, which avoids burning TRX |
+| The transfer is on TRON and no energy can be applied | TRX is burned to pay the fee |
+
+Eligibility depends on the chain, the wallet type, and the payment preference that applies to the sending address. See [How to use Fee Station](/en/portal/fee-station/set-up) for how to set and inspect preferences.
 
 ## Benefits of using Fee Station
 

@@ -51,7 +51,7 @@ Fee Station 支持充值美元法币或美元稳定币。充值后，您可以�
 
 <Note>白名单费用配置可能适用于特定地址。因此，这些地址的代付行为可能与此处设置的付款偏好不同；调整某个地址的白名单归属可能会改变其适用的代付行为。</Note>
 
-<Note>对于 API 转账，Portal 中的付款选项会映射到 `auto_fuel` 字段。使用 `PassiveAutoFuel` 可让 Fee Station 对受支持的转账被动代付 gas，使用 `ProActiveAutoFuel` 可主动由 Fee Station 代付 gas，使用 `UsePortalPreference` 可沿用已保存的 Portal 偏好，使用 `DisableAutoFuel` 会让发送方使用自己的 TRX 或 Energy 支付 TRON gas。如果省略 `auto_fuel`，转账会沿用已保存的 Portal 偏好。</Note>
+<Note>通过 API 转账时，`auto_fuel` 字段按单次请求决定代付行为，优先于此处保存的付款偏好：`ProActiveAutoFuel` 表示始终使用 Fee Station；`PassiveAutoFuel` 仅在来源地址余额不足时使用；`UsePortalPreference` 沿用此处保存的偏好；`DisableAutoFuel` 表示任何情况下都不使用 Fee Station，由发送地址使用自有的 Gas Token 余额支付。若不传 `auto_fuel`，行为等同于 `UsePortalPreference`。TRON 与 Solana 因其手续费代付机制，不支持 `PassiveAutoFuel`。详见[不使用 Fee Station 支付 gas](/cn/portal/fee-station/introduction#不使用-fee-station-支付-gas)。</Note>
 
 ## TRON 手续费支付
 
@@ -62,4 +62,4 @@ Fee Station 支持充值美元法币或美元稳定币。充值后，您可以�
 
 TRON 转账显示的手续费反映实际采用的支付方式，因此不同转账显示的金额可能会因是否使用能量而不同。
 
-<Note>如果您已在某个 TRON 发送地址上预先租赁了能量，但仍遇到 TRON 能量不足或手续费不足的报错，请确认 Fee Station 已为 TRON 启用并充值，且已在 **Gas Token** > **付款偏好** 中配置 TRON 的付款偏好。如果在 Fee Station 余额充足后报错仍未消除，则该地址可能需要完成额外的账户配置后才能使用预租赁的能量。</Note>
+<Note>如果您已在某个 TRON 发送地址上预先租赁了能量，但仍遇到 TRON 能量不足或手续费不足的报错，请确认 Fee Station 已为 TRON 启用并充值，且已在 **Gas Token** > **付款偏好** 中配置 TRON 的付款偏好。</Note>
