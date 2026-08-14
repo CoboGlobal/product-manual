@@ -30,18 +30,8 @@ Portal Mobile is a multifunctional security mobile application available on iOS 
 ### Cobo Portal
 Cobo Portal is an all-in-one platform designed to provide a secure and efficient way to manage your digital assets. With its battle-tested security architecture and unparalleled support for tokens and chains, Cobo Portal offers a range of crypto wallets to cater to your specific needs. Additionally, it offers a wide array of features, including comprehensive risk controls, seamless access to Web3/DeFi networks, intuitive data dashboards, and a rich selection of both Cobo and third-party applications.
 
-### Cobo Safe
-Cobo Safe is a smart contract built on the [Safe Module](https://docs.safe.global/advanced/smart-account-modules), which extends the functionality of Safe&#123;Wallet&#125; while keeping module logic separate from Safe&#123;Wallet&#125;'s core contracts. When integrated with Safe&#123;Wallet&#125;, Cobo Safe enables role-based access controls, allowing tasks to be delegated to externally owned accounts (EOAs). These accounts can perform actions that have been pre-authorized by Safe&#123;Wallet&#125; signers using a single signature.
-
 ### Custodial Wallets
 A wallet type where Cobo maintains custody of the private keys, offering institutional-grade security and simplified asset management. Cobo offers two types of Custodial Wallets: Asset Wallets and Web3 Wallets.
-
-## D
-### Delegate Key
-The Delegate Key is used to initiate, but not sign, multi-sig transactions on behalf of Safe&#123;Wallet&#125; signers. It is a unique address created by Cobo and automatically assigned to you during the Delegate Key setup.
-
-### Delegate
-Delegates can perform actions authorized by Safe&#123;Wallet&#125; signers using a single signature. This authorization is granted when you create on-chain transaction policies for your Smart Contract Wallets (Safe&#123;Wallet&#125;) on Cobo Portal. Delegates can be addresses from either MPC Wallets (Organization-Controlled) or externally owned accounts (EOAs) outside of Cobo Portal.
 
 ## E
 ### Exchange Wallets
@@ -61,10 +51,6 @@ The maximum number of gas units you are willing to pay for the execution of a tr
 ### Governance policies
 Governance policies determine the approval rules under which an operation will be approved or rejected. Approval rules include auto rejection, auto approval, approval quorum, and customized workflow.
 
-
-## I
-### Initiator address
-The initiator address is used to cover the fees for creating a Smart Contract Wallet (Safe&#123;Wallet&#125;) on Cobo Portal. The initiator address must be from an MPC Wallet (Organization-Controlled).
 
 ## M
 ### Main Account
@@ -87,12 +73,6 @@ A multi-signature (multi-sig) transaction requires multiple key share holders to
 
 ## O
 
-### Off-chain transaction policy
-Off-chain transaction policies in Cobo Portal are managed on the backend, allowing you to define rules that govern the handling and approval of transactions. These policies can control transaction limits, frequency, whitelists, and more.
-
-### On-chain transaction policy
-On-chain transaction policies are managed by smart contracts on blockchain networks. These policies let you define rules that control how transactions are handled and approved. Please note that on-chain transaction policies must be configured before you can make withdrawals or interact with dApps using your Smart Contract Wallets (Safe&#123;Wallet&#125;).
-
 ### Organization
 A top-level entity in Cobo Portal. Each organization independently manages its wallets, policies, and operations within the Cobo Portal ecosystem.
 
@@ -104,7 +84,7 @@ A type of MPC Wallets where the ownership and management of digital assets lie w
 A type of key within a Multi-Party Computation (MPC) system where key share holders are responsible for restoring access to the wallet or system in the event of lost or compromised key shares.
 
 ### Risk Control
-A comprehensive set of mechanisms designed to address the challenges in storing, managing, and transferring digital assets, including both on-chain and off-chain transaction policies, governance policies, as well as user roles and permissions.
+A comprehensive set of mechanisms designed to address the challenges in storing, managing, and transferring digital assets, including transaction policies, governance policies, as well as user roles and permissions.
 
 ## S
 ### Safe&#123;Wallet&#125;
@@ -114,7 +94,7 @@ Safe&#123;Wallet&#125; is a leading multi-signature wallet and platform for secu
 A server signer is a server node that stores the key shares of your MPC Wallets. The server signer utilizes the TSS Node package to automatically sign transactions initiated by your MPC Wallets.
 
 ### Signer address
-The addresses of participants who are authorized to initiate, sign, and execute transactions within a Smart Contract Wallet (Safe&#123;Wallet&#125;). On Cobo Portal, the signer addresses can be from either MPC Wallets (Organization-Controlled) or external owned accounts (EOAs) outside of Cobo Portal.
+The addresses of participants who are authorized to initiate, sign, and execute transactions within a Safe&#123;Wallet&#125;. On Cobo Portal, the signer addresses can be from either MPC Wallets (Organization-Controlled) or external owned accounts (EOAs) outside of Cobo Portal.
 
 ### Signing Key
 A type of key within a Multi-Party Computation (MPC) system where key share holders are responsible for collaboratively signing transactions. 
@@ -122,15 +102,15 @@ A type of key within a Multi-Party Computation (MPC) system where key share hold
 ### Single-sig transaction
 A single-signature (single-sig) transaction requires just one key share holder to sign a transaction before it can be executed.
 
-### Smart Contract Wallet
-Smart Contract Wallets are a type of decentralized application (dApp) built on blockchain technology, allowing users to manage digital assets through programmable smart contracts.
-
 ### Sub Account
 A Sub Account is a subordinate account within an Exchange Wallet, created and managed under the authority and control of its Main Account.
 
 ## T
 ### Threshold
-The threshold of a Smart Contract Wallet (Safe&#123;Wallet&#125;) defines the number of signer addresses that must approve a transaction before it can be executed.
+The threshold of a Safe&#123;Wallet&#125; defines the number of signer addresses that must approve a transaction before it can be executed.
+
+### Transaction policy
+Transaction policies in Cobo Portal are managed on the backend, allowing you to define rules that govern the handling and approval of transactions. These policies can control transaction limits, frequency, whitelists, and more.
 
 ### Transaction category
 A user-defined label used in Cobo Portal to classify and organize transfers within an organization, enabling easier identification and management of transactions.

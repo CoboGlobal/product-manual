@@ -25,11 +25,10 @@ Cobo Portal is designed to serve various participants in the Web3 ecosystem:
 
 ### An all-in-one wallet platform
 
-Cobo Portal combines all four wallet technologies in one platform with state-of-the-art security architecture and the industry’s widest coverage of chains and tokens ([click here](/en/portal/supported-tokens-and-chains) for supported chains and tokens).
+Cobo Portal combines multiple wallet technologies in one platform with state-of-the-art security architecture and the industry’s widest coverage of chains and tokens ([click here](/en/portal/supported-tokens-and-chains) for supported chains and tokens).
 
 - [Custodial Wallets](/en/portal/custodial-wallets/introduction): Custodial Wallets utilize advanced encryption techniques and risk control engines to ensure that your funds are protected against unauthorized access and potential attacks. It implements a robust 3-tier (hot-warm-cold) private key storage architecture with 95% of funds securely stored in cold wallets and only 5% in hot and warm wallets.
 - [MPC Wallets](/en/portal/mpc-wallets/introduction): Multi-Party Computation (MPC) is an advanced cryptographic technology utilized for key management on the blockchain. Cobo Portal offers two types of MPC Wallets: Organization-Controlled Wallets, providing organizations with complete control of their own funds or their end users’ assets, and User-Controlled Wallets, giving end users full control of their digital assets.
-- [Smart Contract Wallets](/en/portal/smart-contract-wallets/introduction): This wallet type supports a myriad of smart contract wallets, prominently featuring Safe\{Wallet\} alongside other account abstraction wallets. It also allows the flexibility to delegate an Externally Owned Accounts (EOA) wallet to interact seamlessly with the smart contract ecosystem.
 - [Exchange Wallets](/en/portal/exchange-wallets/introduction): Exchange Wallets are your one-stop solution for managing multiple exchange accounts effortlessly. It brings all of your exchange accounts together in a single, user-friendly interface, providing a seamless experience for viewing, monitoring, and managing your assets across various exchanges.
 
 
@@ -40,7 +39,6 @@ The following table lists the main characteristics of each wallet type:
     <th></th>
     <th>Custodial Wallets</th>
     <th>MPC Wallets</th>
-    <th>Smart Contract Wallets</th>
     <th>Exchange Wallets</th>
   </tr>
   <tr>
@@ -61,13 +59,6 @@ The following table lists the main characteristics of each wallet type:
     </td>
     <td>
       <ul>
-        <li>Efficient single-signature fund transfers</li><br/>
-        <li>Enable role-based access controls</li><br/>
-        <li>Off-chain and on-chain transaction policies</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
         <li>Easily move assets in and out of multiple exchanges from a single dashboard</li><br/>
         <li>Customize security settings across multiple exchange accounts from a single interface</li><br/>
         <li>Enhanced portfolio oversight</li>
@@ -78,28 +69,24 @@ The following table lists the main characteristics of each wallet type:
     <td><strong>Typical customers</strong></td>
     <td>Users seeking ease of use and convenience, and those who prefer having a trusted specialist handle the security of their wallet.</td>
     <td>Users who want more control over their private keys and assets and privacy, and those who prefer a more decentralized approach to custody.</td>
-    <td>Users who prefer non-custodial wallets powered by smart contracts, and those who seek transparency, automation, programmability, and on-chain role-based access controls.</td>
     <td>Users who trade on centralized exchanges but aim to manage exchange counterparty exposure and minimize the risk of leaving assets on exchanges.</td>
   </tr>
   <tr>
     <td><strong>Key storage and signature</strong></td>
     <td>Private keys are managed solely by Cobo. Transactions are approved by you and then signed by Cobo.</td>
     <td>Private keys are secured in a non-custodial MPC setup, distributed across "m out of n" key shares. No single party — including Cobo — holds the complete private key or can unilaterally sign transactions.</td>
-    <td>Private keys are safely stored in smart contracts and multiple signatures are required to sign transactions or messages. For higher efficiency, single-signature operations can be performed by pre-authorized delegates.</td>
     <td>Cobo retains your API keys, allowing for the operation of your exchange accounts through Cobo Portal.</td>
   </tr>
   <tr>
     <td><strong>Chain support</strong></td>
     <td>70+ chains, 2,000+ tokens</td>
     <td>30+ chains, 2,000+ tokens</td>
-    <td>9 chains</td>
     <td>Dependent on the corresponding exchanges</td>
   </tr>
   <tr>
     <td><strong>KYC</strong></td>
     <td>Required</td>
     <td>Not required for Starter and Standard plans</td>
-    <td>Not required</td>
     <td>Not required</td>
   </tr>
 </table>
@@ -108,7 +95,7 @@ The following table lists the main characteristics of each wallet type:
 Cobo Portal offers a variety of risk control mechanisms designed to address the challenges in storing, managing and transferring digital assets, including [transaction policies](/en/portal/risk-controls/tx-policies-overview), [governance policies](/en/portal/risk-controls/governance-policies), and [user roles and permissions](/en/portal/risk-controls/roles-and-permissions).
 
 ### Web3/DeFi access
-Custodial Wallets (Web3 Wallets), MPC Wallets, and Smart Contract Wallets provide you with secure and scalable gateways to Web3 and DeFi, allowing you to transfer funds into and out of decentralized applications and financial services, all while ensuring the security of your assets.
+Custodial Wallets (Web3 Wallets) and MPC Wallets provide you with secure and scalable gateways to Web3 and DeFi, allowing you to transfer funds into and out of decentralized applications and financial services, all while ensuring the security of your assets.
 
 ### Developer
 Cobo Portal's Developer console serves as a one-stop solution for developers looking to control and optimize their workflows. It delivers a comprehensive experience for managing API keys, tracking API logs, overseeing webhook events, and handling callback messages. It supports both WaaS 2.0 and WaaS 1.0 (Cobo Custody) modules. For example, the log viewer provides in-depth insights into your entire API request history, equipped with a range of powerful filters such as request method, API key, and status code. These capabilities enable effortless debugging, troubleshooting, and auditing with just a few clicks.

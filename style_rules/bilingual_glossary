@@ -27,7 +27,6 @@ When the command contains "rococo-translate":
 | MPC Wallets                | MPC 钱包     | |
 | Organization-Controlled Wallets | 机构钱包  | |
 | User-Controlled Wallets     | 终端用户钱包 | |
-| Smart Contract Wallets      | 智能合约钱包 | |
 | Safe{Wallet}               | Safe{Wallet} | Keep original |
 | Exchange Wallets           | 交易所钱包   | |
 
@@ -142,16 +141,6 @@ When the command contains "rococo-translate":
 | reshare                                            | 生成新的主控私钥分片                                 |
 
 ## Exchange Wallets
-
-| account abstraction wallets | 账户抽象钱包 |
-| --------------------------- | ------------ |
-| Delegate                    | 不翻译       |
-
-## SCW Wallets
-
-| approved spender | 被授权的合约地址 |
-| ---------------- | ---------------- |
-|                  |                  |
 
 ## Bills & payments
 

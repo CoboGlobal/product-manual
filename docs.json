@@ -217,50 +217,37 @@
                         "group": "Transaction policies",
                         "pages": [
                           "en/portal/risk-controls/tx-policies-overview",
+                          "en/portal/risk-controls/default-transaction-policies",
                           {
-                            "group": "On-chain transaction policies",
+                            "group": "General policy",
                             "pages": [
-                              "en/portal/risk-controls/on-chain-tx-type",
-                              "en/portal/risk-controls/create-on-chain-policy",
-                              "en/portal/risk-controls/manage-on-chain-policy"
+                              "en/portal/risk-controls/off-chain-tx-set-general-policy",
+                              "en/portal/risk-controls/off-chain-tx-manage-general-policy"
                             ]
                           },
                           {
-                            "group": "Off-chain transaction policies",
+                            "group": "Token transfer policy",
                             "pages": [
-                              "en/portal/risk-controls/default-transaction-policies",
-                              {
-                                "group": "General policy",
-                                "pages": [
-                                  "en/portal/risk-controls/off-chain-tx-set-general-policy",
-                                  "en/portal/risk-controls/off-chain-tx-manage-general-policy"
-                                ]
-                              },
-                              {
-                                "group": "Token transfer policy",
-                                "pages": [
-                                  "en/portal/risk-controls/off-chain-tx-set-transfer",
-                                  "en/portal/risk-controls/off-chain-tx-manage-transfer"
-                                ]
-                              },
-                              {
-                                "group": "Contract call",
-                                "pages": [
-                                  "en/portal/risk-controls/off-chain-tx-set-contract-call",
-                                  "en/portal/risk-controls/off-chain-tx-manage-contract-call"
-                                ]
-                              },
-                              {
-                                "group": "Message signing policy",
-                                "pages": [
-                                  "en/portal/risk-controls/off-chain-tx-set-message-signing",
-                                  "en/portal/risk-controls/off-chain-tx-manage-message-signing",
-                                  "en/portal/risk-controls/safe-risk-controls"
-                                ]
-                              },
-                              "en/portal/risk-controls/manage-emergency-policy"
+                              "en/portal/risk-controls/off-chain-tx-set-transfer",
+                              "en/portal/risk-controls/off-chain-tx-manage-transfer"
                             ]
                           },
+                          {
+                            "group": "Contract call",
+                            "pages": [
+                              "en/portal/risk-controls/off-chain-tx-set-contract-call",
+                              "en/portal/risk-controls/off-chain-tx-manage-contract-call"
+                            ]
+                          },
+                          {
+                            "group": "Message signing policy",
+                            "pages": [
+                              "en/portal/risk-controls/off-chain-tx-set-message-signing",
+                              "en/portal/risk-controls/off-chain-tx-manage-message-signing",
+                              "en/portal/risk-controls/safe-risk-controls"
+                            ]
+                          },
+                          "en/portal/risk-controls/manage-emergency-policy",
                           "en/portal/risk-controls/address-list"
                         ]
                       },
@@ -365,6 +352,7 @@
                 "pages": [
                   "en/portal/glossary",
                   "en/portal/dapp",
+                  "en/portal/retired-features",
                   {
                     "group": "User-Controlled Wallets",
                     "pages": [
@@ -373,30 +361,6 @@
                       "en/portal/mpc-wallets/ucw/project-management",
                       "en/portal/mpc-wallets/ucw/vault-management",
                       "en/portal/mpc-wallets/ucw/wallet-management"
-                    ]
-                  },
-                  {
-                    "group": "Smart Contract Wallets",
-                    "pages": [
-                      "en/portal/smart-contract-wallets/introduction",
-                      {
-                        "group": "Set up Smart Contract Wallets",
-                        "pages": [
-                          "en/portal/smart-contract-wallets/create",
-                          "en/portal/smart-contract-wallets/import"
-                        ]
-                      },
-                      "en/portal/smart-contract-wallets/manage",
-                      "en/portal/smart-contract-wallets/manage-delegate-keys",
-                      {
-                        "group": "Deposit and withdraw assets",
-                        "pages": [
-                          "en/portal/smart-contract-wallets/deposit-assets",
-                          "en/portal/smart-contract-wallets/withdraw-assets",
-                          "en/portal/transfers/from-smart-contract-wallets"
-                        ]
-                      },
-                      "en/portal/smart-contract-wallets/dapp-interaction"
                     ]
                   }
                 ]
@@ -842,50 +806,37 @@
                         "group": "交易风控",
                         "pages": [
                           "cn/portal/risk-controls/tx-policies-overview",
+                          "cn/portal/risk-controls/default-transaction-policies",
                           {
-                            "group": "链上交易风控",
+                            "group": "通用风控",
                             "pages": [
-                              "cn/portal/risk-controls/on-chain-tx-type",
-                              "cn/portal/risk-controls/create-on-chain-policy",
-                              "cn/portal/risk-controls/manage-on-chain-policy"
+                              "cn/portal/risk-controls/off-chain-tx-set-general-policy",
+                              "cn/portal/risk-controls/off-chain-tx-manage-general-policy"
                             ]
                           },
                           {
-                            "group": "链下交易风控",
+                            "group": "代币转账风控",
                             "pages": [
-                              "cn/portal/risk-controls/default-transaction-policies",
-                              {
-                                "group": "通用风控",
-                                "pages": [
-                                  "cn/portal/risk-controls/off-chain-tx-set-general-policy",
-                                  "cn/portal/risk-controls/off-chain-tx-manage-general-policy"
-                                ]
-                              },
-                              {
-                                "group": "代币转账风控",
-                                "pages": [
-                                  "cn/portal/risk-controls/off-chain-tx-set-transfer",
-                                  "cn/portal/risk-controls/off-chain-tx-manage-transfer"
-                                ]
-                              },
-                              {
-                                "group": "合约调用风控",
-                                "pages": [
-                                  "cn/portal/risk-controls/off-chain-tx-set-contract-call",
-                                  "cn/portal/risk-controls/off-chain-tx-manage-contract-call"
-                                ]
-                              },
-                              {
-                                "group": "消息签名风控",
-                                "pages": [
-                                  "cn/portal/risk-controls/off-chain-tx-set-message-signing",
-                                  "cn/portal/risk-controls/off-chain-tx-manage-message-signing",
-                                  "cn/portal/risk-controls/safe-risk-controls"
-                                ]
-                              },
-                              "cn/portal/risk-controls/manage-emergency-policy"
+                              "cn/portal/risk-controls/off-chain-tx-set-transfer",
+                              "cn/portal/risk-controls/off-chain-tx-manage-transfer"
                             ]
                           },
+                          {
+                            "group": "合约调用风控",
+                            "pages": [
+                              "cn/portal/risk-controls/off-chain-tx-set-contract-call",
+                              "cn/portal/risk-controls/off-chain-tx-manage-contract-call"
+                            ]
+                          },
+                          {
+                            "group": "消息签名风控",
+                            "pages": [
+                              "cn/portal/risk-controls/off-chain-tx-set-message-signing",
+                              "cn/portal/risk-controls/off-chain-tx-manage-message-signing",
+                              "cn/portal/risk-controls/safe-risk-controls"
+                            ]
+                          },
+                          "cn/portal/risk-controls/manage-emergency-policy",
                           "cn/portal/risk-controls/address-list"
                         ]
                       },
@@ -990,6 +941,7 @@
                 "pages": [
                   "cn/portal/glossary",
                   "cn/portal/dapp",
+                  "cn/portal/retired-features",
                   {
                     "group": "终端用户钱包",
                     "pages": [
@@ -998,30 +950,6 @@
                       "cn/portal/mpc-wallets/ucw/project-management",
                       "cn/portal/mpc-wallets/ucw/vault-management",
                       "cn/portal/mpc-wallets/ucw/wallet-management"
-                    ]
-                  },
-                  {
-                    "group": "智能合约钱包",
-                    "pages": [
-                      "cn/portal/smart-contract-wallets/introduction",
-                      {
-                        "group": "设置智能合约钱包",
-                        "pages": [
-                          "cn/portal/smart-contract-wallets/create",
-                          "cn/portal/smart-contract-wallets/import"
-                        ]
-                      },
-                      "cn/portal/smart-contract-wallets/manage",
-                      "cn/portal/smart-contract-wallets/manage-delegate-keys",
-                      {
-                        "group": "充币和提币",
-                        "pages": [
-                          "cn/portal/smart-contract-wallets/deposit-assets",
-                          "cn/portal/smart-contract-wallets/withdraw-assets",
-                          "cn/portal/transfers/from-smart-contract-wallets"
-                        ]
-                      },
-                      "cn/portal/smart-contract-wallets/dapp-interaction"
                     ]
                   }
                 ]
@@ -1374,7 +1302,7 @@
     },
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
-      "destination": "/cn/portal/risk-controls/manage-on-chain-policy"
+      "destination": "/cn/portal/retired-features"
     },
     {
       "source": "/en/portal/mpc-wallets/ocw/network-environments",
@@ -1482,7 +1410,7 @@
     },
     {
       "source": "/en/portal/smart-contract-wallets/key-features",
-      "destination": "/en/portal/smart-contract-wallets/introduction"
+      "destination": "/en/portal/retired-features"
     },
     {
       "source": "/en/portal/exchange-wallets/key-features",
@@ -1518,7 +1446,7 @@
     },
     {
       "source": "/cn/portal/smart-contract-wallets/key-features",
-      "destination": "/cn/portal/smart-contract-wallets/introduction"
+      "destination": "/cn/portal/retired-features"
     },
     {
       "source": "/cn/portal/exchange-wallets/key-features",
@@ -1755,6 +1683,54 @@
     {
       "source": "/cn/portal/deposit-address-transaction",
       "destination": "/cn/portal/auto-sweep-settings"
+    },
+    {
+      "source": "/en/portal/smart-contract-wallets/:slug*",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/smart-contract-wallets",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/transfers/from-smart-contract-wallets",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/risk-controls/on-chain-tx-type",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/risk-controls/create-on-chain-policy",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/en/portal/risk-controls/manage-on-chain-policy",
+      "destination": "/en/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/smart-contract-wallets/:slug*",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/smart-contract-wallets",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/transfers/from-smart-contract-wallets",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/risk-controls/on-chain-tx-type",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/risk-controls/create-on-chain-policy",
+      "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/risk-controls/manage-on-chain-policy",
+      "destination": "/cn/portal/retired-features"
     }
   ]
 }
