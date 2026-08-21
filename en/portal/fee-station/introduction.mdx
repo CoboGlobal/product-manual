@@ -11,7 +11,7 @@ On different blockchains, transactions require different native tokens (gas toke
 
 Meanwhile, you might need to settle various types of fees across Cobo Portal, such as service fees and custody fees. These are often handled via emails, spreadsheets, and manual reconciliation—making the process inefficient and error-prone.
 
-Fee Station helps you simplify this. It’s a one-stop fee management platform on Cobo Portal. Once any member deposits to the Fee Station account, it can automatically cover on-chain gas fees for all [MPC Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure, and also settle various types of fees with a single balance.
+Fee Station helps you simplify this. It is a one-stop fee management platform on Cobo Portal. After Fee Station is enabled, funded, and configured for the chain or request, it can cover on-chain gas fees for supported [MPC Wallets](/en/portal/mpc-wallets/introduction) or [Web3 Wallets](/en/portal/custodial-wallets/web3-wallets/introduction) transactions in your organization based on the strategy you configure, and also settle various types of fees with a single balance.
 
 <Note>Currently, Fee Station supports paying gas fees for transactions made with MPC Wallets and Web3 Wallets on EVM-compatible chains, TRON, Solana, and Tempo.</Note>
 
@@ -39,7 +39,7 @@ Fee Station is ideal for any team looking to simplify on-chain fee management, e
 
 ### Automatic gas fee handling
 
-Fee Station can automatically cover gas fees for transactions initiated from MPC Wallets and Web3 Wallets. You can choose to cover fees only when the wallet balance is insufficient, or to always cover them. Once configured, the system automatically checks the condition and processes the gas fee without manual input. For more details about the chain support, please refer to [Supported chains for gas fee payment](#supported-chains-for-gas-fee-payment).
+When Fee Station is enabled, funded, and configured for a supported chain or request, it can cover gas fees for transactions initiated from MPC Wallets and Web3 Wallets. You can choose to cover fees only when the wallet balance is insufficient, or to always cover them. Once configured, the system checks the condition and processes the gas fee without manual input. For more details about the chain support, please refer to [Supported chains for gas fee payment](#supported-chains-for-gas-fee-payment).
 
 ### How Auto Fueling works
 
@@ -57,13 +57,14 @@ Fee Station supports the following types of fees:
 
 ### Flexible deposit options
 
-You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (such as USDT or USDC) as a unified balance. Fee Station will convert them into the required gas tokens at the time of transaction, avoiding the manual work of preparing tokens for each chain. For more details about supported gas token or stablecoin types, please refer to [Supported token types](#supported-token-types).
+You can deposit gas tokens directly, or simply deposit USD or USD stablecoins (such as USDT or USDC) as a unified balance. For transfers that Fee Station covers, it can settle the fee from this balance according to your payment preferences, so you do not need to prepare a separate gas token balance for each chain. For more details about supported gas token or stablecoin types, please refer to [Supported token types](#supported-token-types).
 
 ### TRON gas fee optimization with energy rental
 
-Fee Station automatically leverages energy rental on the TRON network, prioritizing the use of energy to reduce the direct burning of TRX for gas fees. The entire process is fully automated, so you do not need to manage energy manually to benefit from fee optimization. 
+When Fee Station is enabled, funded, and configured for TRON, it can use energy on the TRON network and prioritize energy over burning TRX for gas fees. For transfers that Fee Station covers, it handles eligible energy use according to the configured strategy, so you do not need to rent energy yourself.
 
-With Fee Station enabled, TRON transaction fees can be reduced by up to 80%, and larger or high-frequency transactions can achieve even greater savings. For details on discounts for high transaction counts, please contact our sales team.
+If Fee Station does not cover a transfer, energy must come from the sending address itself, such as energy the address already holds or has been delegated, or the address must hold TRX to pay the fee. See [Pay gas without Fee Station](#pay-gas-without-fee-station).
+
 
 ### API and webhook integration
 
@@ -71,18 +72,36 @@ Fee Station offers standardized APIs and webhook support, allowing your system t
 
 For more details, please refer to the [Fee Station API](https://www.cobo.com/developers/v2/api-references/feestation/get-fee-station-transaction-information) and [Webhook documentation](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-event-type#webhook-event-types).
 
-## Benefits of using Fee Station
+## Pay gas without Fee Station
 
-The table below shows the differences between using Fee Station and not using it, helping you understand the benefits of using Fee Station:
+You do not have to use Fee Station. If you disable it, or if a transfer is not covered by it, the sending address pays the on-chain fee itself. In that case the sending address must hold the native gas token of the chain it transacts on.
+
+On most chains the token you send is not the token that pays the fee. Sending USDC on Ethereum costs ETH; sending USDT on TRON draws on available energy, and burns TRX when energy is insufficient. An address that holds only the token you want to send, with no gas token for that chain, cannot send it.
+
+<Note>API transfers can decide this per request instead of following the preference saved in Cobo Portal. For the field and its accepted values, see [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) in the developer documentation.</Note>
+
+## Who pays the on-chain fee
+
+Which side pays depends on whether Fee Station is enabled, funded, and applicable to the transfer:
+
+| Situation | Who pays the fee |
+| --- | --- |
+| Fee Station is not enabled, or the transfer opts out of Fee Station | The sending address, from its own gas token balance |
+| Fee Station is enabled and funded, and the transfer is eligible | Fee Station, from your Fee Station balance |
+| Fee Station is enabled but its balance is not sufficient for the fee | Neither — the transfer is rejected with an insufficient fee token balance error |
+
+Eligibility depends on the chain, the wallet type, and the payment preference that applies to the sending address. See [How to use Fee Station](/en/portal/fee-station/set-up) for how to set and inspect preferences, and for how a fee is settled on TRON once Fee Station covers it.
+
+## Benefits of using Fee Station
 
 The table below shows the differences between using Fee Station and not using it, helping you understand the benefits of using Fee Station:
 
 | Category            | Without Fee Station                                    | With Fee Station                                         |
 | ----------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| **Gas preparation**     | Manually prepare gas tokens for each individual blockchain | Deposit gas tokens or USD stablecoins once, and Fee Station will automatically cover gas fees. |
-| **Gas fee strategy**    | Manual intervention required                               | Automatically applies configured rules, such as paying only when the wallet balance is insufficient, or always paying |
+| **Gas preparation**     | Manually prepare gas tokens for each individual blockchain | Deposit gas tokens or USD stablecoins once; when Fee Station is enabled and funded for the chain, it covers gas fees without further manual preparation. |
+| **Gas fee strategy**    | Manual intervention required                               | When enabled and configured, applies the saved rules, covering fees only when the wallet balance is insufficient or always covering them, for supported chains and wallet types. |
 | **Fee settlement**      | Separate records across multiple chains and tokens         | All fees settled through a single account and in the same token, easier to track   |
-| **Failed transactions** | High risk of failure due to insufficient gas               | Automatically detect and top up gas, significantly lower failure rate |
+| **Failed transactions** | High risk of failure due to insufficient gas               | When enabled, funded, and supported for the transfer, detects insufficient gas and covers the fee, reducing failure risk. |
 | **Maintenance cost**    | Frequent manual operations, time-consuming                 | One-time setup enables ongoing automation with less operational effort |
 | **Data tracking**       | No unified record of fee activity                          | Exportable and well-organized records of deposits and spending |
 
@@ -165,4 +184,3 @@ You can also deposit the native gas token of the chain, and Fee Station will pay
 | SETH (available only in development environment)       | ETH       |
 | TBSC (available only in development environment)       | BNB       |
 | TTRON (available only in development environment)      | TRX       |
-

@@ -11,7 +11,7 @@ description: "Fee Station 是您在 Cobo Portal 中统一管理链上手续费�
 
 与此同时，服务费、托管费等平台费用，也需要单独结算，往往通过邮件、表格、人工对账完成，流程复杂、效率低。
 
-Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 Cobo 提供的一站式费用管理工具，相当于一个团队共享的费用账户：只需由团队中的任一成员为 Fee Station 账户充值，系统就能根据已配置的策略为团队内所有链上交易自动代付费用，并统一结算各类平台费用。
+Fee Station 正是为了解决这些繁琐的管理问题而设计的。它是 Cobo 提供的一站式费用管理工具，相当于一个团队共享的费用账户：在 Fee Station 已启用、已充值并已针对相应链或请求完成配置后，系统可根据已配置的策略为团队内支持的链上交易代付费用，并统一结算各类平台费用。
 
 <Note>目前，Fee Station 支持为 MPC 钱包和 Web3 钱包在 EVM 兼容链、TRON、Solana 和 Tempo 上发起的交易自动代付链上手续费。</Note>
 
@@ -39,7 +39,7 @@ Fee Station 适用于所有希望简化链上费用管理的团队，特别是�
 
 ### 自动代付 Gas
 
-支持为 MPC 钱包和 Web3 钱包发起的交易自动支付链上手续费，可配置“仅在交易地址余额不足时代付”或“始终代付”等策略，减少因 Gas 不足导致的交易失败。设置完成后，系统将自动识别是否需要代付，整个过程无需人工干预。支持代付手续费的链请参考[支持的链](#支持的链)。
+在 Fee Station 已启用、已充值并已针对支持的链或请求完成配置后，可为 MPC 钱包和 Web3 钱包发起的交易支付链上手续费。您可以配置“仅在交易地址余额不足时代付”或“始终代付”等策略，减少因 Gas 不足导致的交易失败。设置完成后，系统会识别是否需要代付并处理 gas 费用，无需人工操作。支持代付手续费的链请参考[支持的链](#支持的链)。
 
 ### 自动加油的工作方式
 
@@ -57,11 +57,13 @@ Fee Station 支持的费用类型：
 
 ### 灵活支持多种充值方式
 
-除了直接充值所需链的 Gas Token，你还可以选择最简单的方式：只充值美元稳定币（如 USDT、USDC）或者美元法币作为统一余额。Fee Station 会在交易发生时自动兑换成所需的 Gas Token，帮你覆盖多链交易的手续费，无需再为每条链分别准备代币。支持充值的稳定币与 Gas Token 请参考[支持的代币](#支持的代币)。
+除了直接充值所需链的 Gas Token，你还可以选择最简单的方式：只充值美元稳定币（如 USDT、USDC）或者美元法币作为统一余额。对于由 Fee Station 代付的转账，Fee Station 可按您的付款偏好从该余额中结算手续费，您无需再为每条链单独准备 Gas Token 余额。支持充值的稳定币与 Gas Token 请参考[支持的代币](#支持的代币)。
 
 ### TRON 手续费优化与能量租赁
 
-Fee Station 在 TRON 链上会自动使用能量租赁（Energy Rental）机制，优先消耗能量以减少直接燃烧 TRX 的手续费成本。整个过程由 Fee Station 自动完成，用户无需手动管理能量，即可享受手续费优化效果。开启 Fee Station 后，TRON 链交易手续费最高可节省约 80%。大量交易笔数可享阶梯优惠，可联系销售团队了解详情。
+在 Fee Station 已启用、已充值并已针对 TRON 完成配置后，Fee Station 可在 TRON 链上使用能量（Energy），优先消耗能量而非直接燃烧 TRX 来支付手续费。对于由 Fee Station 代付的转账，Fee Station 会按已配置的策略处理符合条件的能量使用，您无需自行租赁能量。
+
+如果某笔转账不由 Fee Station 代付，能量必须来自发送地址本身（该地址已持有或已被委托的能量），或该地址需持有 TRX 用于支付手续费。详见[不使用 Fee Station 支付 gas](#不使用-fee-station-支付-gas)。
 
 ### 提供 API 与 Webhook 支持
 
@@ -69,16 +71,36 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 
 如需详细接入说明，请参见 [Fee Station API 文档](https://www.cobo.com/developers/v2/api-references/feestation/get-fee-station-transaction-information)与 [Webhook 文档](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/webhook-event-type#webhook-事件类型)。
 
+## 不使用 Fee Station 支付 gas
+
+您不必使用 Fee Station。如果未启用 Fee Station，或某笔转账不在代付范围内，链上手续费由发送地址自行支付。此时发送地址必须持有该链的原生 Gas Token。
+
+在多数链上，您转出的代币与支付手续费的代币并不相同。在以太坊上转 USDC，手续费用 ETH 支付；在 TRON 上转 USDT，会消耗可用能量，能量不足时燃烧 TRX。因此，只持有待转出代币、没有该链 Gas Token 的地址无法发起转出。
+
+<Note>通过 API 发起的转账可以按单次请求决定是否使用 Fee Station 代付，而不必沿用在 Cobo Portal 中保存的付款偏好。相关字段及其取值请参考开发者文档中的 [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)。</Note>
+
+## 链上手续费由谁支付
+
+由谁支付取决于 Fee Station 是否已启用、是否已充值，以及该笔转账是否在代付范围内：
+
+| 情形 | 手续费支付方 |
+| --- | --- |
+| 未启用 Fee Station，或该笔转账选择不使用 Fee Station | 发送地址，使用其自有的 Gas Token 余额 |
+| Fee Station 已启用并已充值，且该笔转账符合代付条件 | Fee Station，从您的 Fee Station 余额扣除 |
+| Fee Station 已启用但余额不足以支付手续费 | 双方都不支付 —— 该笔转账会被拒绝，并返回手续费代币余额不足的错误 |
+
+是否符合代付条件取决于链、钱包类型，以及适用于该发送地址的付款偏好。设置与查看付款偏好，以及 Fee Station 代付后 TRON 手续费的具体结算方式，请参考[如何使用 Fee Station](/cn/portal/fee-station/set-up)。
+
 ## 使用 Fee Station 的优势
 
 下表展示了使用 Fee Station 前后在链上费用管理等方面的差异，帮助你直观了解其带来的优势：
 
 | 功能维度 | 使用 Fee Station 前          | 使用 Fee Station 后                                    |
 | ------------ | -------------------------------- | ---------------------------------------------------------- |
-| Gas 准备     | 每条链都需要手动准备 Gas Token   | 可充值 Gas Token 或美元稳定币，统一由 Fee Station 自动代付 |
-| 代付策略     | 只能人工操作                     | 可配置交易地址 Gas Token 不足时代付或始终代付                |
+| Gas 准备     | 每条链都需要手动准备 Gas Token   | 可充值 Gas Token 或美元稳定币；在 Fee Station 已启用并为该链充值的前提下，无需手动为每条链单独准备 Gas。 |
+| 代付策略     | 只能人工操作                     | 已启用并配置后，对支持的链和钱包类型应用已配置的代付规则（如 Gas Token 不足时代付或始终代付）。 |
 | 费用结算     | 多链多币种分散记录，难以统一核算 | 使用同一币种与单一账户结算各类费用，账务更直观                       |
-| 失败交易     | Gas 不足导致交易失败风险高       | 自动检测并补足 Gas，显著降低失败率                         |
+| 失败交易     | Gas 不足导致交易失败风险高       | 在 Fee Station 已启用、已充值且对该类交易受支持的前提下，可检测 Gas 不足并代付手续费，降低失败风险。 |
 | 维护成本     | 人工操作频繁、耗时               | 一次配置即可自动运行，减少维护工作                         |
 | 数据追踪     | 缺乏统一的费用记录               | 可在 Fee Station 导出完整充值与支出记录                    |
 
@@ -161,4 +183,3 @@ Fee Station 提供标准化的 API 和 Webhook 接口，帮助你在系统中实
 | SETH（仅开发环境可用）       | ETH       |
 | TBSC（仅开发环境可用）       | BNB       |
 | TTRON（仅开发环境可用）      | TRX       |
-
