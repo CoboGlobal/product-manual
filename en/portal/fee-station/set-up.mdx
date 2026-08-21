@@ -44,13 +44,13 @@ In the **Gas Token > Payment Preferences** tab, you can configure on-chain trans
 
 Each payment preference controls when Fee Station covers gas fees for an address: you can choose to cover fees only when the wallet balance is insufficient, or to always cover them. If you do not configure a preference for a chain, the system default applies.
 
-Payment Preferences are organization-level Fee Station defaults for supported chains and wallet types. After you save a preference, it applies to future matching transfers. It does not apply to the initial transfer that funds Fee Station, including the first TRON deposit into Fee Station.
+Payment Preferences are organization-level Fee Station defaults for supported chains and wallet types. After you save a preference, it applies to future matching transfers. It does not apply to a transfer that deposits into Fee Station: whichever token you deposit, the sending address pays that transfer's fee itself.
 
 For each transfer covered by Fee Station, the usage result and its linked fee transaction record show how the fee was paid. Use these records to attribute whether Fee Station or the sending address paid the on-chain fee.
 
 <Note>Whitelist-based fee configurations may apply to specific addresses. As a result, the fee behavior for those addresses can differ from the preference you set here, and changing an address's whitelist membership can change which fee behavior applies.</Note>
 
-<Note>For API transfers, the `auto_fuel` field decides this per request instead of the saved Portal preference: `ProActiveAutoFuel` always uses Fee Station, `PassiveAutoFuel` uses it only when the source address balance is insufficient, `UsePortalPreference` follows the preference saved here, and `DisableAutoFuel` never uses Fee Station so the sending address pays from its own gas token balance. If you omit `auto_fuel`, the transfer behaves as `UsePortalPreference`. TRON and Solana do not support `PassiveAutoFuel` because of their fee delegation mechanism. See [Pay gas without Fee Station](/en/portal/fee-station/introduction#pay-gas-without-fee-station).</Note>
+<Note>An API transfer can decide per request whether Fee Station covers the fee, instead of following the preference saved here. For the field and its accepted values, see [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) in the developer documentation.</Note>
 
 ## TRON fee payment
 

@@ -45,13 +45,13 @@ Fee Station 支持充值美元法币或美元稳定币。充值后，您可以�
 
 每条链的付款偏好决定了 Fee Station 何时为地址代付手续费：您可以选择仅在交易地址余额不足时代付，或始终代付。如果未为某条链配置付款偏好，则采用系统默认策略。
 
-付款偏好是组织级别的 Fee Station 默认设置，适用于支持的链和钱包类型。保存偏好后，该设置会影响后续匹配的转账，不适用于向 Fee Station 入金的首次转账，包括首次向 Fee Station 充值 TRON。
+付款偏好是组织级别的 Fee Station 默认设置，适用于支持的链和钱包类型。保存偏好后，该设置会影响后续匹配的转账，不适用于向 Fee Station 充值的转账本身：无论充值哪种代币，该笔转账的手续费都由发送地址自行支付。
 
 对于每笔由 Fee Station 覆盖费用的转账，使用结果及其关联的费用交易记录会显示手续费的支付方式。您可以通过这些记录判断链上手续费由 Fee Station 还是发送地址支付。
 
 <Note>白名单费用配置可能适用于特定地址。因此，这些地址的代付行为可能与此处设置的付款偏好不同；调整某个地址的白名单归属可能会改变其适用的代付行为。</Note>
 
-<Note>通过 API 转账时，`auto_fuel` 字段按单次请求决定代付行为，优先于此处保存的付款偏好：`ProActiveAutoFuel` 表示始终使用 Fee Station；`PassiveAutoFuel` 仅在来源地址余额不足时使用；`UsePortalPreference` 沿用此处保存的偏好；`DisableAutoFuel` 表示任何情况下都不使用 Fee Station，由发送地址使用自有的 Gas Token 余额支付。若不传 `auto_fuel`，行为等同于 `UsePortalPreference`。TRON 与 Solana 因其手续费代付机制，不支持 `PassiveAutoFuel`。详见[不使用 Fee Station 支付 gas](/cn/portal/fee-station/introduction#不使用-fee-station-支付-gas)。</Note>
+<Note>通过 API 发起的转账可以按单次请求决定是否由 Fee Station 代付，而不必沿用此处保存的付款偏好。相关字段及其取值请参考开发者文档中的 [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)。</Note>
 
 ## TRON 手续费支付
 
