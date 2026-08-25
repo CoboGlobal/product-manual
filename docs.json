@@ -584,7 +584,8 @@
                     "group": "GET STARTED",
                     "pages": [
                       "en/portal-mobile/download",
-                      "en/portal-mobile/set-up"
+                      "en/portal-mobile/set-up",
+                      "en/portal-mobile/register-and-sign-in"
                     ]
                   },
                   {
@@ -1208,7 +1209,8 @@
                     "group": "快速开始",
                     "pages": [
                       "cn/portal-mobile/download",
-                      "cn/portal-mobile/set-up"
+                      "cn/portal-mobile/set-up",
+                      "cn/portal-mobile/register-and-sign-in"
                     ]
                   },
                   {

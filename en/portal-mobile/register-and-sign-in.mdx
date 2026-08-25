@@ -1,0 +1,50 @@
+---
+title: "Register and sign in to Cobo Portal Mobile"
+sidebarTitle: "Register and sign in"
+lang: "en"
+description: "Learn how to register and sign in to Cobo Portal Mobile with Apple, Google, email, or an email verification code."
+---
+
+<Warning>Portal Mobile is currently available only to newly registered Cobo Portal users and organizations that have never been bound to Cobo Guard. Existing Cobo Guard users cannot use Portal Mobile or migrate to it yet. See [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard).</Warning>
+
+## Available sign-in methods
+
+The sign-in screen offers the following methods:
+
+- **Continue with Google**: Available on iOS and Android.
+- **Continue with Apple**: Available on iOS only. You can choose whether to share your email address with Apple. If you hide it, Apple provides a private relay address instead of your personal email address.
+- **Continue with email**: Enter your email address. Portal Mobile checks whether the address is registered and then routes you to the appropriate sign-in or registration flow.
+
+## Register with email
+
+1. Tap **Continue with email** and enter your email address.
+2. If the address is not registered, Portal Mobile sends a one-time verification code to that address.
+3. Enter the code to complete passwordless registration and sign in.
+
+No password is required for this first registration. After signing in, you can set an email login password from **Me > Login & Security** if you need password sign-in later.
+
+## Sign in with email
+
+For a registered email address, you can choose either:
+
+- **Password**: Enter your email login password.
+- **Email verification code**: Request a one-time code and enter it to sign in without a password.
+
+If you forgot your password, use **Forgot password** on the email sign-in screen. The email OTP flow is separate from password reset and cannot be reused across these purposes.
+
+## Apple private relay addresses
+
+When you sign in with Apple and choose **Hide My Email**, your account may show an address ending in `@privaterelay.appleid.com`. This is an Apple-managed forwarding address. Portal Mobile labels it as a hidden email address rather than displaying it as your ordinary email.
+
+If you later set an email password, Portal Mobile uses an available non-private-relay account email (for example, a linked Google email) as the email anchor where applicable. Keep access to the Apple ID and its relay mailbox so that you can receive verification messages.
+
+## Manage login methods
+
+After signing in, open **Me > Login & Security** to review available login methods. You can:
+
+- Link a Google or Apple account that is not already linked;
+- Add an email login and set or change its password;
+- Add and manage passkeys (up to the limit shown in the app);
+- View whether an Apple login uses a hidden email address.
+
+Linking an account opens the provider's authorization page and returns to Portal Mobile after the result is verified. If the flow is cancelled or the callback cannot be verified, the account is not linked.
