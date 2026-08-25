@@ -1,63 +1,123 @@
 ---
-title: "使用 Onboarding Agents 辅助新用户接入"
-sidebarTitle: "使用 Onboarding Agents 辅助新用户接入"
+title: "完成 Free Trial 新用户 Onboarding"
+sidebarTitle: "Free Trial 新用户 Onboarding"
 lang: "zh-hans"
-description: "了解 Cobo Portal Onboarding Agents 作为 Cobo AI 助手在新用户接入阶段调用的一组 AI Agents，如何协助您按正确顺序完成关键配置并顺利完成首次交易。"
+description: "了解 MPC 钱包 Free Trial 新用户如何根据是否需要对接 API，完成对应的 Onboarding 任务。"
 ---
 
-<Note>
-目前，Cobo AI 功能处于 Beta 阶段，仅向部分测试用户开放，用于收集使用反馈并持续优化体验。
+完成 Cobo Portal 注册并创建组织后，您需要根据团队是否对接 API 选择一条 Onboarding 路径。系统会记录各项任务的完成状态；完成当前路径中的任务后，您即可开始测试 MPC 钱包的核心流程。
 
-如有兴趣体验 Cobo AI，可联系 [Cobo 客服](mailto:help@cobo.com)申请开通。开通权限后，您可在相关产品界面中看到 Cobo AI 的入口并使用相关功能。
+<Info>
+Onboarding 任务的可用状态和具体操作以 Cobo Portal 页面显示为准。需要帮助时，可以在页面中打开 **AI 助手**，询问当前任务的操作方法或下一步建议。
+</Info>
+
+## 开始前
+
+1. [注册 Cobo Portal 账户并创建组织](/cn/portal/sign-up)。
+2. 使用创建组织时所用的账户登录 Cobo Portal。
+3. 在欢迎页面选择符合团队实际使用方式的路径：
+   - **我需要对接 API**
+   - **我不需要对接 API**
+
+## 两条路径都需要完成的任务
+
+无论选择哪条路径，都需要先完成以下安全配置：
+
+### 1. 下载 Portal Mobile 并绑定设备
+
+1. 根据手机系统下载 Portal Mobile。
+2. 使用当前 Cobo Portal 账户登录 Portal Mobile。
+3. 输入发送到注册邮箱的验证码，将手机设为安全设备并完成绑定。
+
+### 2. 创建并备份 MPC 私钥分片
+
+1. 在 Portal Mobile 中进入当前组织。
+2. 按应用内指引创建 MPC 私钥分片。
+3. 完成后立即备份私钥分片，并确认备份可用。
+
+<Warning>
+私钥分片用于保护和控制 MPC 钱包。请勿向任何人披露私钥分片、备份内容、密码或验证码。
+</Warning>
+
+## 路径一：我需要对接 API
+
+此路径适用于需要通过 WaaS API 以编程方式使用 Cobo 服务的团队。完成共同任务后，继续完成以下配置：
+
+### 1. 生成并验证 API Key
+
+1. 安装 Cobo CLI。
+2. 生成并激活 Production API Key。
+3. 完成基础 API 测试，确认 API Key 可以正常调用。
+
+有关 API Key 的创建和安全管理，请参阅[创建 API Key](/cn/portal/developer-console/create-api-key)和[管理 API Key](/cn/portal/developer-console/manage-api-key)。
+
+### 2. 配置 Server Co-Signer（可选）
+
+如果您的方案需要由 Server Co-Signer（TSS Node）参与私钥分片生成，请按页面指引完成配置。不需要或者想暂缓配置 Server Co-Signer 的团队可以跳过此任务。
+
+### 3. 配置并验证 Webhook
+
+1. 配置 Webhook Endpoint，并订阅充值和交易状态通知。
+2. 发起一笔测试提币，验证签名流程和 Webhook 回调是否正常。
+
+有关 Webhook 的配置方法，请参阅[Webhook 简介](/cn/portal/developer-console/webhooks-intro)和[创建 Webhook Endpoint](/cn/portal/developer-console/webhooks-create)。
+
+## 路径二：我不需要对接 API
+
+此路径适用于主要通过 Cobo Portal Web 端或 Portal Mobile 管理钱包和交易的团队。完成共同任务后，继续完成以下任务：
+
+### 1. 获取测试币
+
+系统会在满足页面所示条件后自动发放测试币，无需手动领取。请等待任务状态更新，并确认测试币已到账后再继续测试交易。
+
+### 2. 测试提币转账
+
+通过 Cobo Portal Web 端或 Portal Mobile 发起测试提币转账，确认可以完成钱包的基本转账操作。
+
+### 3. 邀请成员并配置用户角色和权限
+
+返回 Cobo Portal Web 端，邀请需要参与钱包管理的成员，并根据团队职责分配用户角色和权限。
+
+有关成员和权限配置，请参阅[用户角色和权限](/cn/portal/organization/roles-and-permissions)。
+
+## 转账前准备 Gas 费
+
+<Note>
+准备 Gas 费不属于 Onboarding Checklist，但在发起链上转账前必须完成。Gas 余额不足可能导致转账无法发起或执行失败。
 </Note>
 
-## Cobo Portal Onboarding Agents 是什么？
+您可以选择以下任一方式支付 Gas 费：
 
-Onboarding Agents 是 [Cobo AI 助手](/cn/ai/introduction#cobo-ai-assistant) 在新用户接入阶段调用的一组协同工作的 Agents，可以持续感知您当前的配置进度与系统状态，提供清晰的步骤指引、进度反馈与必要解释，帮助您顺畅完成关键接入步骤。
+### 使用 Fee Station 代付
 
-Onboarding Agents 会为您提供合适的步骤引导，但不会自动推进关键流程，而是作为一个随时可用的接入助手。
+Fee Station 支持为 MPC 钱包在 EVM 兼容链、TRON、Solana 和 Tempo 上发起的交易代付 Gas 费。使用前需要完成以下准备：
 
-<Info>
-**什么是 Agent？**  
-Agent 可以理解为 AI 助手在特定任务场景下自动调用的智能工具，不同 Agent 负责不同类型的任务。
-</Info>
+1. 启用 Fee Station。
+2. 向 Fee Station 充值 Gas Token 或支持的美元稳定币，并确保余额足以支付 Gas 费。
+3. 为相应链配置付款偏好，确认该笔转账符合 Fee Station 的代付条件。
 
-## 适用对象与使用场景
+如果 Fee Station 已启用但余额不足，转账会被拒绝。有关支持的链、代币和代付规则，请参阅 [Fee Station 简介](/cn/portal/fee-station/introduction)、[设置 Fee Station 以支付交易手续费](/cn/portal/fee-station/set-up-for-mpc)和[向 Fee Station 充值](/cn/portal/fee-station/deposit)。
 
-Onboarding Agents 适用于通过自助注册方式创建的 Cobo Portal 免费试用团队，团队用户尚未完成新用户接入流程，且需要使用 MPC 钱包。
+### 使用发送地址的 Gas Token 支付
 
-典型适用对象包括：
+如果不使用 Fee Station，或该笔转账不在 Fee Station 的代付范围内，发送地址必须持有对应链的原生 Gas Token。例如：
 
-- 新创建团队的管理员，需要配置钱包、邀请成员等
-- 首次使用 Cobo Portal 的团队成员，需要完成 Portal Mobile 等安全相关配置  
-- 需要重新理解或补全关键配置的团队成员
-- 不确定当前状态下可以执行哪些操作，或下一步应该做什么的用户
+- Ethereum 及相关 EVM 兼容链上的转账通常使用 ETH 或该链的原生 Gas Token 支付 Gas 费。
+- TRON 上的转账需要可用能量或 TRX。
+- Solana 上的转账需要 SOL。
 
-## 可协助完成的任务
+请在发起转账前检查发送地址的 Gas Token 余额。
 
-Onboarding Agents 由多个 Agents 协同工作，可协助您完成以下任务：
+<Warning>
+向 Fee Station 充值本身也是一笔链上转账。Fee Station 无法为给自身充值的交易代付 Gas 费，因此充值来源地址必须预先持有对应链的 Gas Token。
+</Warning>
 
-- 结合产品文档内容，解答与 Cobo 产品和配置流程相关的常见问题  
-- 引导 MPC 钱包新用户完成新手指引配置，包括：  
-  - 下载和绑定 Portal Mobile  
-  - 邀请团队内成员并分配用户角色  
-  - 配置 MPC 钱包，例如创建 Vault、创建主控私钥、创建和备份私钥分片、创建钱包等  
-- 解释团队内风控规则配置的含义  
-- 引导您体验资产充值与提币流程，并说明相关操作和注意事项
+## 完成 Onboarding
+
+在 Onboarding 页面确认当前路径的任务均已完成。若某项任务仍显示未完成，请展开该任务查看要求；也可以打开 **AI 助手**，说明任务名称和当前状态以获取帮助。
+
+如果后续使用方式发生变化，例如原先选择不对接 API，之后需要进行系统集成，仍可前往开发者控制台配置 API Key 和 Webhook。
 
 <Info>
-在对话的过程中，您可能会看到不同名称的 Agents 被调用。这表示当前由对应的 Agent 负责处理特定任务，例如 Member Invitation Agent 负责完成团队成员邀请，Portal Mobile Setup Agent 负责引导 Portal Mobile 设置等。这些 Agents 会在对话中按需切换和协作，您无需手动切换。
+有关 Cobo AI 的功能概览、数据使用与安全以及能力边界，请参阅 [Cobo AI 简介](/cn/ai/introduction)。
 </Info>
-
-## 使用方式与交互流程
-
-[注册登录 Cobo Portal](/cn/portal/sign-up) 后，点击界面右上角的 **AI 图标** 即可打开 AI 助手。
-
-对于适用的新用户，Cobo AI 助手将调用 Onboarding Agents，以**对话式、分阶段**的方式与您交互。系统会结合您当前所处的流程阶段和配置状态，提供相应的引导与说明，协助完成相关配置与操作。
-
-您可以在对话过程中使用自然语言提出问题或描述目标，Cobo AI 助手将根据当前场景提供相应的帮助。
-
-<img src="/cn/images/ai/onboarding-agent-chat.png" className="screenshot_full_screen" alt="Onboarding Agents 对话窗口"/>
-
-<Info>有关 Cobo AI 的整体概览、数据使用与安全及能力边界等信息，请参阅 [Cobo AI 简介](/cn/ai/introduction)。</Info>
-
