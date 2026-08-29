@@ -9,9 +9,24 @@ description: "Learn about frequently asked questions about MPC Wallets, includin
 
 ### Why can't some tokens be fully swept from the deposit address?  
 
-In certain blockchain networks, after an auto token sweeping operation, a small amount of funds may still remain in the deposit address. The main reasons are as follows:  
+See [Remaining balance after token sweeping](/en/portal/troubleshoot/remaining-balance-after-sweeping) for the network reserve and fee estimation conditions that can leave funds in a deposit address.
 
-- Minimum balance requirement for certain tokens: Some blockchains (such as XRP) require addresses to maintain a minimum balance. For example, an XRP address must retain at least 1 XRP, so even after auto token sweeping, the deposit address will still have 1 XRP that cannot be transferred.  
-- L1 fee estimation discrepancies in L2 auto token sweeping: On Layer 2 networks (such as Base), sweep transactions require L1 fees, but the actual fee consumed may be lower than the estimated amount. As a result, after auto token sweeping, the deposit address may still hold an amount equal to `blockchain estimated L1 fee - actually paid L1 fee`, which cannot be fully swept.  
-- Gas estimation discrepancies in EVM transactions: On EVM-compatible chains (such as Ethereum and BSC), sweep transactions require gas fees, which are estimated based on the maximum possible consumption (gas limit). However, the actual gas consumed might be lower than the gas limit, leading to a remaining balance of `gas price * unused gas` in the deposit address.  
+### How are gas fees paid for sweep transactions?
 
+The deposit address must have enough gas for a sweep transaction, or [Fee Station can supplement the required gas](/en/portal/enable-auto-sweep).
+
+### Can a deposit address initiate other transactions?
+
+By default, a deposit address cannot initiate other transactions. If your workflow requires this capability, see [Enable deposit address transactions](/en/portal/auto-sweep-settings#enable-deposit-address-transactions).
+
+### What conditions apply to a manually created sweep task?
+
+A task created through [Create auto sweep task](https://www.cobo.com/developers/v2/api-references/autosweep/create-auto-sweep-task) is subject to its own threshold and the applicable execution conditions described in [When does auto token sweeping trigger?](/en/portal/troubleshoot/when-auto-token-sweeping-triggers).
+
+### How can I view a wallet's sweep-to addresses?
+
+Open the wallet's **Sweep-To** tab in Cobo Portal, or use [List sweep-to addresses](https://www.cobo.com/developers/v2/api-references/autosweep/list-sweep-to-addresses).
+
+### What should I do if a sweep transaction is stuck or fails?
+
+Follow [Auto-sweep transaction stuck or taking too long to confirm](/en/portal/troubleshoot/auto-sweep-transaction-stuck-or-unconfirmed) to review the task details and troubleshoot common causes.

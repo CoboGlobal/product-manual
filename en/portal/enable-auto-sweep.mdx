@@ -7,6 +7,8 @@ description: "Learn how to enable auto token sweeping and explore the resulting 
 
 This guide explains how to enable the auto token sweeping feature for MPC Wallets (Organization-Controlled Wallets) or Custodial Wallets (Web3 Wallets) on Cobo Portal. For more details about auto token sweeping, refer to [Overview](/en/portal/auto-sweep-overview).
 
+In Cobo Portal, enabling auto token sweeping is a one-time action. Pausing or resuming sweeping is a separate setting available only for Custodial Wallets (Web3 Wallets): it temporarily controls future automatic triggers without reversing enablement and does not apply to MPC Wallets.
+
 ## Prerequisites
 
 - For MPC Wallets (Organization-Controlled Wallets):
@@ -110,8 +112,7 @@ If a sweep transaction is not confirmed within a specified time, you can enable 
 To avoid unnecessary network fees caused by small assets triggering sweeps, you can set a minimum sweep amount for sweep transactions. The system will only initiate a sweep transaction when the sweepable amount reaches this minimum value. For detailed configuration steps, refer to [Sweep strategy settings](/en/portal/auto-sweep-policy-edit).
 
 ### Pause/Resume sweeping
-When encountering unexpected situations (such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments), you can pause sweeping. After conditions return to normal, you can resume sweeping to continue executing according to the established strategy. For more details, refer to [Pause/Resume sweeping](/en/portal/auto-sweep-pause-resume).
+For Custodial Wallets (Web3 Wallets), you can pause sweeping when encountering unexpected situations such as network congestion, fee fluctuations, risk control checks, or temporary business adjustments. After conditions return to normal, resume sweeping to continue according to the established strategy. This setting is not available for MPC Wallets. For more details, refer to [Pause/Resume sweeping](/en/portal/auto-sweep-pause-resume).
 
 ### Filter wallets by feature status
 You can filter wallets by their **Auto-Sweep Enabled** status in the wallet list to quickly identify which wallets have the feature enabled.
-
