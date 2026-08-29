@@ -41,16 +41,22 @@ For more detailed information about the discounts, please contact our sales team
     <Info>If you are using the WaaS 2.0 API, you can use the [Check Cobo Loop transfers](https://www.cobo.com/developers/v2/api-references/transactions/check-loop-transfers) operation to determine if a transaction can be executed as a Cobo Loop transfer. Or directly call the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) operation to enforce a transaction as a Cobo Loop transfer.</Info>
 
 6. Enter the transfer amount.
-7. Review the transaction cost. You are unable to modify or customize this fee. 
+7. Review the transaction cost.
 
-    Transaction fees consist of the following three aspects:
-        - Sweeping gas fee: When you deposit a non-native token (e.g., USDT on Ethereum), Cobo pre-charges your deposit address with the native token (e.g., ETH) as gas to ensure future withdrawals can be processed smoothly. This fee is calculated as: Sweeping fee of current token balance × (Withdrawal amount / Current token balance)%, based on the real-time on-chain gas price.
-        - Compliance fee: Covers KYT/AML service fees for deposits and withdrawals, as well as Cobo’s compliance investigation costs. This fee is calculated as: Deposit compliance fee of current token balance × (Withdrawal amount / Current token balance)% + Withdrawal compliance fee.
-        - Withdrawal gas fee: Calculated based on the real-time on-chain gas price.
+    Transaction fees consist of the following three components:
+    - **Consolidation (sweeping) fee**: The allocated cost of consolidating, or sweeping, funds before an outbound transfer.
+    - **Compliance fee (AML/KYT)**: A separate fee component that covers KYT/AML screening for deposits and withdrawals, as well as Cobo's compliance investigation costs.
+    - **On-chain (Gas) fee**: The network fee required to include your transaction on the blockchain. The displayed amount is an estimate. The estimate depends on the applicable chain's fee model, the complexity of the transaction, the speed tier you select, and current network conditions.
 
-The fee amount will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
+    The fee amount will be deducted from the source wallet that you selected in step 3. Please ensure that the source wallet has the required token enabled and sufficient balance for the fee payment.
 
-    <img src="/en/images/transfers/fee.png" className="screenshot_modal"/>
+    The displayed on-chain (gas) fee estimate reflects a point in time. Available fee controls depend on the chain and its fee model. For chains that use the EVM or UTXO fee model, you can customize network parameters for the transfer. Because network conditions and transaction complexity can change, refresh or re-estimate the on-chain (gas) fee shortly before you submit the transfer.
+
+    <Info>
+    Fee estimates are produced by the [Estimate transaction fee](https://www.cobo.com/developers/v2/guides/transactions/estimate-fees) operation, which requires the `TRANSACTION:ESTIMATE_FEE` permission. It returns `slow`, `recommended`, and `fast` estimates based on the chain's fee model, and covers only the on-chain (gas) fee — not the consolidation or compliance fee. Because it produces a point-in-time estimate, refresh it before you submit the transfer.
+    </Info>
+
+    <img src="/en/images/transfers/fee.png" className="screenshot_modal" alt="Screenshot of the transaction fee breakdown"/>
 
 8. <MySnippet />
 9. Click **Submit**.
