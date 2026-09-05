@@ -1,0 +1,102 @@
+---
+title: "Configure gas sponsorship and notifications"
+sidebarTitle: "Settings"
+lang: "en"
+description: "Turn on gas token top-up, decide which chains Cobo sponsors and which balance it charges, and manage billing email recipients."
+---
+
+The **Settings** tab holds two things: **Advanced settings**, which control how transaction fees get paid, and **Email notifications**, which control who hears about it.
+
+Every change here **saves immediately** — there is no save button.
+
+Changes under **Advanced settings** — the gas token top-up switch, per-chain sponsorship rules, and the deduction preference — additionally require MFA. Changes to the notification recipient list, and to alert thresholds on the Overview, do not.
+
+<Note>Changing these settings requires the **Edit Fee Station Settings** permission. Without it you can still open the page and read your configuration, but Cobo blocks the change with a permission notice when you try to save one.</Note>
+
+## Advanced settings
+
+The summary line tells you where you stand without expanding anything:
+
+- *Using the default setup: transaction fees are sponsored by Credits* — nothing chain-specific is in play.
+- *Gas token top-up is enabled · sponsorship rules and deduction order are customizable*
+
+### Gas token top-up
+
+This is the switch that decides how much of Billing Center you see. It is **off by default**.
+
+**While off**, transaction fees are paid entirely with Credits. There is no per-chain deposit entry and no gas token balance table — one balance, nothing to configure.
+
+**Once on**, you can deposit native tokens such as ETH, TRX, or SOL per chain. Transaction fees then draw on the chain's token first and fall back to Credits when it runs short.
+
+<Warning>
+You cannot turn gas token top-up back off while you still hold gas tokens. Cobo blocks it and tells you how much is left: *You still hold [amount] in gas tokens, so this cannot be turned off yet.*
+
+Spend the balances down first. This is deliberate — turning the switch off hides all gas token UI, and Cobo will not hide a balance that is still being spent.
+</Warning>
+
+### Per-chain sponsorship rules
+
+<Note>Available on the **Enterprise** plan only. On Starter and Standard, Cobo applies the default rule — sponsor only when the address balance is short — to every chain.</Note>
+
+This section decides **whether Billing Center covers gas when the native token in a wallet address is not enough**. Chains are grouped, and each group is set independently:
+
+| Chain group | Options |
+|---|---|
+| **EVM, TON, APT and LAT chains** | No sponsorship · Sponsor when the address balance is short · Always sponsored by the Billing Center |
+| **TRON** | No sponsorship · Sponsored by the Billing Center |
+| **Solana** | No sponsorship · Sponsored by the Billing Center |
+| **Tempo** | No sponsorship · Sponsored by the Billing Center |
+
+- **No sponsorship** — pay gas only with the native token held in the wallet address; **transactions fail when it runs out**.
+- **Sponsor when the address balance is short** — recommended. Use the address's tokens first; Billing Center covers the full amount when they run short.
+- **Always sponsored by the Billing Center** — never touch the address's tokens.
+
+A chain group your organization does not support is not shown.
+
+<Note>The **Solana** rule can be changed only by organizations on Cobo's newer fee model. If the Solana option is present but not editable, that is why — contact Cobo Support to confirm your organization's setup.</Note>
+
+### Which balance to charge when sponsoring
+
+<Note>Available on the **Enterprise** plan only.</Note>
+
+Once sponsorship applies, this decides where the money comes from:
+
+- **Gas tokens first, Credits when short** *(recommended)* — charge the gas token balance first and cover the remainder with Credits automatically.
+- **Gas tokens only** — charge only the gas token balance and never touch Credits.
+
+<Warning>
+**Gas tokens only** changes what a shortfall means. Instead of Credits quietly covering the gap, **transactions fail outright** the moment a chain's gas token runs out, and you must deposit per chain to recover.
+
+Cobo asks you to confirm before switching, and the change **takes effect immediately on every chain with sponsorship enabled** — not just one.
+
+Choose this only if you want the two balances kept separate on purpose. If you do, treat the [Overview](/en/portal/billing-center/overview) gas token table and its per-chain alert thresholds as operationally critical: they are your only warning before transactions start failing.
+</Warning>
+
+## Email notifications
+
+Billing notifications go to the recipient list you manage here. **Low balance alerts and bill notifications share one list** — there is no separate list per notification type.
+
+| Notification | Sent when |
+|---|---|
+| **Low balance alert** | A balance falls below its threshold |
+| **Bill notifications** | A Cobo bill is generated, 3 days before it is due, and when it is overdue |
+
+Bill notifications are **always on** and cannot be turned off.
+
+### Managing recipients
+
+Click **Manage recipients**. Recipients are chosen from your **organization's members** — you pick a member, not an arbitrary email address. Add or remove them, then click **Done**.
+
+<Warning>
+The recipient list can be empty, and Cobo does not fill it in for you. When it is empty the page warns *Notifications cannot be delivered: Please add a recipient* — and **no low-balance alert or bill notice reaches anyone**.
+
+Add at least one recipient when you set up your organization, before you rely on alerts.
+</Warning>
+
+<Note>Adding recipients requires permission to view organization members. Without it, the dialog explains that recipients cannot be added.</Note>
+
+## Setting alert thresholds
+
+Thresholds are **not** on this page. Each one sits next to the balance it guards, on the [Overview](/en/portal/billing-center/overview): the Credits threshold under the Credits figure, and each chain's threshold in its row of the gas token table.
+
+<Note>A new organization's thresholds start at `0`, which means alerts are off. Set them yourself — see [Overview](/en/portal/billing-center/overview).</Note>

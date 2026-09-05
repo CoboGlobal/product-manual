@@ -1,0 +1,69 @@
+---
+title: "Manage your plan and bills"
+sidebarTitle: "Bills & Plans"
+lang: "en"
+description: "Review your subscription and resource usage, pay Cobo bills, and download invoices."
+---
+
+The **Bills & Plans** tab covers your subscription: which plan you are on, how much of it you have used, and what Cobo has billed you.
+
+<Note>Bills and invoices are visible only to roles with permission to see them. If this tab appears empty or restricted, ask an organization admin.</Note>
+
+## Your subscription
+
+Plans are held **per wallet type** — MPC Wallet, Custodial Wallet, Exchange Wallet, and Smart Contract Wallet each carry their own plan and status, so your organization can be on different tiers for different wallet types.
+
+For each, the dashboard shows the plan name under a **CURRENT PLAN** tag, the wallet type it applies to, the **Plan Expiry Date**, and the **Service Period**.
+
+## Resource usage
+
+**Resource usage** tracks consumption against your current plan's quota, one card per metric:
+
+| Metric | What it counts |
+|---|---|
+| **Outgoing Transfer Volume** | Value transferred out, in USD |
+| **Asset Under Custody** | Value held, in USD |
+| **Wallet Addresses** | Addresses in use |
+| **Supported Chains** | Chains available to you |
+| **API Calls** | API calls made |
+| **Users** | Team members |
+
+Which cards appear depends on the wallet type: Smart Contract Wallets show transfer volume, assets under custody, API calls, and users; Exchange Wallets show transfer volume, API calls, and users.
+
+Usage beyond your plan is charged as **overage** and appears on your monthly bill.
+
+## Choosing a plan
+
+The plan cards compare **Starter**, **Standard**, and **Enterprise** across API calls, assets under custody, team members, chains, and wallet addresses. Billing cycles are **Monthly**, **Semi-annual**, and **Annual**.
+
+Use the **Plan calculator** to model what a plan costs at your expected usage before you commit.
+
+<Note>Your plan also determines how much of [Settings](/en/portal/billing-center/settings) you can reach: per-chain sponsorship rules and the deduction preference are available on **Enterprise** only.</Note>
+
+When you buy or upgrade, the order summary shows the discount, any coupon, the amount payable, and your Billing Center balance. If the balance does not cover it, the summary shows **Insufficient balance** with a **Deposit** action.
+
+A plan takes effect **immediately after successful payment**. The price shown is the base fee — overage is billed separately, and the account is charged automatically at the end of each billing cycle.
+
+## Billing history
+
+**Billing history** lists your bills with **Bill ID / name**, **Amount**, **Billing period**, **Due date**, and **Status** — *Not Yet Paid*, *Paid*, or *Overdue*.
+
+Per bill you can **Pay now**, **View details** — which opens the bill document — or **View receipt** once it is paid.
+
+<Note>
+Transaction fees are **not** part of your Cobo bill. They are deducted from your balance in real time as transactions happen — the bill itself covers your subscription and any overage.
+
+This means a bill and your transaction fee records are two separate things to reconcile. There is no link from a bill to its related fee records in the UI; use the date range and export in [Transactions](/en/portal/billing-center/transactions) to line them up.
+</Note>
+
+## Paying a bill
+
+Cobo charges bills automatically from Credits on the charge date.
+
+<Warning>
+If an automatic charge fails because Credits were short, **Cobo does not retry it on its own**. Adding funds afterwards does not restart the charge.
+
+Deposit enough Credits, then pay the bill yourself with **Pay now** here. The [Overview](/en/portal/billing-center/overview) card only offers **Deposit** and a link to **Bills** — the payment itself is made on this page.
+</Warning>
+
+Download a bill as PDF from its detail view, and a receipt once it is paid.

@@ -1,0 +1,82 @@
+---
+title: "Trace and export transactions"
+sidebarTitle: "Transactions"
+lang: "en"
+description: "Every fee, bill, refund, and deposit in one filterable list, with per-record detail and CSV export for reconciliation."
+---
+
+The **Transactions** tab is one list covering everything that moved money in or out of Billing Center — no separate tables for gas fees, bills, and deposits.
+
+## Groups
+
+Records are grouped by what they are:
+
+| Group | Contains |
+|---|---|
+| **Transaction Fees** | On-chain fees charged for your wallets' transactions, and refunds of those fees |
+| **Cobo Bills** | Monthly Cobo bills and refunds of them |
+| **Deposits** | Money you added to Billing Center |
+
+Within a group, the **Type** column names the individual record: *Wallet Gas*, *Wallet Gas Refund*, *Cobo Bill*, *Cobo Refund*, *Deposit*, or *Other*.
+
+A fee record also shows which balance paid it — *(Paid with Credits)* or *(Paid with gas token)*. This is the field to check when you want to know whether a chain drew on its own token or fell back to Credits.
+
+Deposit records instead show a **Token** column and a **Credited to** column, telling you which balance the money landed in: **Credits** or **Gas Token**.
+
+## Status
+
+| Status | Meaning |
+|---|---|
+| **Completed** | Settled. For a deposit, the funds are spendable. |
+| **Processing** | Still in progress. A deposit in this state is not yet part of your balance. |
+| **Rejected** | Did not go through. For a deposit, the funds were not credited — contact help@cobo.com. |
+
+## Filter the list
+
+- **Date range** — Last 7 days, Last 30 days, Last 90 days, or Custom. **You can query up to 12 months.**
+- **Filter** — narrow by **Status**, **Chain**, and **Type**. The filter panel is a draft: your choices apply only when you click **Apply**, and **Reset** clears them. The count on the Filter button tells you how many conditions are currently in effect.
+- **Exceptions only** — show just the records that did not complete normally.
+- **Search** — by record ID, or by record ID and transaction hash, depending on the group you are in.
+
+Click **View details** on any row to open the detail drawer.
+
+## Read a record's details
+
+The drawer shows the record's basic information:
+
+| Field | What it is |
+|---|---|
+| **Record ID** | This record's unique identifier — the key to reconcile against |
+| **Related operation ID** | The operation that caused this record, such as the transaction that incurred the fee |
+| **Status** | Completed, Processing, or Rejected |
+| **Initiator** | For deposits, how the money arrived: *On-chain deposit* or *Fiat deposit* |
+| **Created at** / **Updated at** | When the record was created and last changed |
+| **From** / **To** | The addresses involved |
+| **Amount** | The amount, in its own token |
+| **Refund of** | On a refund, what it reverses: *Paid with Credits*, *Paid with gas token*, or *Cobo Bill* |
+
+<Note>The drawer reports the record's current status as a single value. It does not show a step-by-step progress timeline, and a processing deposit does not display a confirmation count.</Note>
+
+## Export for reconciliation
+
+Click **Export** to open **Export Transactions**.
+
+1. Choose a **Time range**: All, Last month, or Custom.
+2. Choose a **Fee type**, if the step is shown: **Credits** or **Gas token**.
+3. Click **Generate export**.
+
+<Note>
+**Export is available on the Transaction Fees and Deposits groups only.** The **Cobo Bills** group has no Export button — export bills from [Bills & Plans](/en/portal/billing-center/bills-and-plans) instead, using **Export all bills**.
+
+**The Fee type step appears only if you have gas token top-up enabled.** Otherwise Credits are your only fee type and the modal skips the choice.
+
+When the step does appear it is a required choice, not a filter you can skip: Credits records and gas token records are exported separately, so a period covering both needs two export jobs, which you then combine yourself.
+</Note>
+
+Exports are generated in the background. **Recent exports** lists your jobs with their **Range**, **Requested at**, and **Status** — *Generating*, *Completed*, *Failed*, or *Cancelled* — and a **Download** action once a job is ready. **Up to 10 are kept**, so download anything you need to keep.
+
+### Reconciling against a bill
+
+Transaction fees are deducted in real time and are **not** part of your monthly Cobo bill; the bill covers your subscription and overage — so the two reconcile separately.
+
+There is no link from a bill to its related fee records. To line them up, note the bill's billing period in [Bills & Plans](/en/portal/billing-center/bills-and-plans), then set the same date range here and export.
