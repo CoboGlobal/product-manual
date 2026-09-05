@@ -1,0 +1,81 @@
+---
+title: "Read your balances in Billing Center"
+sidebarTitle: "Overview"
+lang: "en"
+description: "The Overview tab answers one question: can your organization still pay? Read balances, upcoming bills, and low-balance alerts."
+---
+
+The **Overview** tab is built to answer one question at a glance: can your organization still pay, and if not, what runs out first?
+
+## Balance
+
+The **Balance** card shows your **Credits** balance. Hover **Payment scope** to see what it covers: transaction fees, monthly Cobo bills, and add-on plan quotas.
+
+If you have turned on gas token top-up, a second **Gas Token** figure appears next to Credits, showing the USD value of every gas token you hold. **The two are shown side by side and are never added together** — they pay for different things, so a combined number would be misleading.
+
+Use **Deposit** to add funds, and **Deposits** to jump to your deposit history.
+
+### Low-balance alerts
+
+Under the Credits figure is the alert threshold: **Notify me when the balance falls below** _[amount]_. Edit the amount inline and it saves immediately.
+
+When Credits drop below it, Cobo emails your recipients and the Overview shows a **Top up Credits** prompt, which tells you the current balance, the threshold, and offers **adjust the alert threshold** if the number is simply set too high for how you operate.
+
+<Note>
+Setting a threshold to `0` turns the alert off for that balance.
+
+A new organization starts with its thresholds at `0`, which means **low-balance alerts do not fire until you set a threshold yourself**. Set one on the Credits card, and on each chain row, as soon as you start funding the organization.
+</Note>
+
+You get an email when a balance falls below its threshold. While it stays below, Cobo keeps reminding you, but no more than **once every 24 hours** — so a balance left low sends one email per day, not one per transaction. Once the balance recovers above the threshold, the alert resets, and the next drop starts a fresh round.
+
+Each balance is judged on its own, so Credits and several chains may each alert on the same day.
+
+Configure who receives these emails in [Settings](/en/portal/billing-center/settings).
+
+## Spent This Month
+
+**Spent This Month** breaks your month-to-date spending into **Transaction Fees** and **Cobo Bills**. The two figures are read-only; the card's **Transactions** link opens [Transactions](/en/portal/billing-center/transactions) on the **Transaction Fees** group. To see Cobo Bills, switch groups once you are there.
+
+## Upcoming Bill
+
+**Upcoming Bill** shows the amount of your next Cobo bill, its **Charge date**, and the **Balance after charge**.
+
+If Credits will not cover it, the card turns red and shows how much you are short: **Insufficient, short by** _[amount]_. If a bill is past due, the card shows **Overdue**.
+
+<Warning>
+Cobo does not retry an auto-charge on its own once it has failed. Topping up afterwards does not restart it — you have to pay the bill yourself from **Bills & Plans**.
+</Warning>
+
+## Gas Token Balance
+
+This table appears only when gas token top-up is on. It lists the chains that hold gas tokens, each with its balance, USD value, and its own **Alert threshold** — editable inline, exactly like the Credits threshold.
+
+A row is flagged **Below threshold** or **Above threshold**, and a row that is short shows how much: **_[amount] [symbol]_ short**, with a **Top up** action.
+
+Narrow the table with the search box (**Search chain or token**) or the **Low balance only** filter.
+
+<Warning>
+Two behaviors are worth knowing before you rely on this table to decide where to top up.
+
+**Chains with a zero balance are not listed.** A chain whose gas token is completely used up disappears from the table rather than showing as empty — even though it is the most urgent one. It reappears after you deposit to it again.
+
+**Rows are ordered by USD value, largest first.** The chain holding the most value sits at the top and the one closest to running out sits at the bottom. Use **Low balance only** to surface the chains that actually need attention, rather than reading from the top of the list.
+</Warning>
+
+### When no chain holds gas tokens
+
+If you have turned gas token top-up on but not yet deposited anything, the table explains the consequence, and the consequence depends on your deduction setting:
+
+- With the default setting, transaction fees still come out of Credits, so nothing breaks.
+- With **Gas tokens only** selected, Credits will not cover gas — so **transactions on every chain will fail**. See [Settings](/en/portal/billing-center/settings).
+
+## Deposits that need your attention
+
+**Deposits processing.** A deposit that has arrived but is not yet spendable is counted on the Balance card as _[n]_ **deposit(s) processing**. It becomes spendable once it clears; until then it is not part of your balance.
+
+**Deposits failed.** Failed deposits are aggregated into a single banner — _[n]_ **deposit(s) failed** — with **View all** to open [Transactions](/en/portal/billing-center/transactions) filtered to them. Open a record to see its amount and status.
+
+<Warning>Funds from a failed deposit are not credited, and they are not returned automatically. Contact help@cobo.com to resolve it.</Warning>
+
+<Note>The failed-deposit banner counts **every** failed deposit in your organization's history, not just recent ones, and it cannot be dismissed. If it persists after support has resolved a case, it is most likely counting older records — open **View all** to see which.</Note>

@@ -1,0 +1,51 @@
+---
+title: "费用中心简介"
+sidebarTitle: "简介"
+lang: "zh-hans"
+description: "费用中心是您在 Cobo Portal 中为组织充值、查看支出、并决定交易手续费如何支付的统一入口。"
+---
+
+## 什么是费用中心
+
+在 Cobo Portal 上运营一个组织会产生两类费用，它们的性质并不相同。
+
+每一笔链上交易都要消耗该链的原生代币——以太坊上是 ETH，TRON 上是 TRX，Solana 上是 SOL。钱包地址一旦没有对应代币，交易就会失败。除此之外，Cobo 还会按月就您的套餐及超出部分出具账单。
+
+**费用中心**把这两件事收在同一个地方。您只需维护一笔预付余额，即 **Credits**，Cobo 会从中扣除交易手续费和月度账单。您不必在每条链上都备好原生代币，也不必再靠人工对账。
+
+<Note>Gas 代付支持 MPC 钱包与 Web3 钱包在 EVM 兼容链、TRON、Solana、Tempo 上的交易。</Note>
+
+## Credits 与 Gas 代币
+
+费用中心里有两种余额，区别在于各自能支付什么。
+
+| | Credits | Gas 代币 |
+|---|---|---|
+| 是什么 | 您充入的预付余额，可用 USDT、USDC 或 USD 充值，按 1:1 折算为美元 | 各条链用来支付 Gas 的代币，按链充入 |
+| 可支付 | 任意受支持公链的交易手续费、Cobo 月度账单与增购的套餐额度 | 仅所在链的交易手续费 |
+| 不可支付 | — | Cobo 账单 |
+
+只用 Credits 就足以支撑一个组织的日常运转。Gas 代币是可选项：只有当您希望某条链的手续费从该链自己的代币里扣、而不是从 Credits 里扣时，才需要充入。
+
+正因为它是可选项，**Gas 代币充值默认关闭**。关闭期间，费用中心只展示一笔 Credits 余额，不出现任何与链相关的内容——既没有按链充值入口，也没有 Gas 代币余额看板。开启方式见[设置](/cn/portal/billing-center/settings)。
+
+## 四个页签分别做什么
+
+| 页签 | 在这里做什么 |
+|---|---|
+| [总览](/cn/portal/billing-center/overview) | 查看余额、本月支出与待扣账单，并设置余额低到多少时提醒您 |
+| [交易记录](/cn/portal/billing-center/transactions) | 回溯每一笔手续费、账单、退费与充值，可筛选、查看详情并导出对账 |
+| [账单与套餐](/cn/portal/billing-center/bills-and-plans) | 查看套餐与资源用量，支付账单、下载发票 |
+| [设置](/cn/portal/billing-center/settings) | 开启 Gas 代币充值、设置各链代付规则，以及管理费用通知的收件人 |
+
+## 开始之前
+
+登录 [Cobo Portal](https://portal.cobo.com/login)，在左侧导航栏点击 **费用中心** 即可进入。
+
+「查看费用中心」与「修改费用中心设置」是两个不同的权限。如果您能看到余额、但某个控件不可操作，请联系组织管理员为您授予 **Edit Fee Station Settings** 权限。账单与发票的权限更严格，只有特定角色可见。
+
+## 后续步骤
+
+- [充值](/cn/portal/billing-center/deposit)——为费用中心充入 Credits 或 Gas 代币。
+- [总览](/cn/portal/billing-center/overview)——查看余额并设置低余额提醒。
+- [设置](/cn/portal/billing-center/settings)——决定哪些链由费用中心代付、以及从哪种余额扣费。

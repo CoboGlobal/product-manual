@@ -1,0 +1,51 @@
+---
+title: "Introduction to Billing Center"
+sidebarTitle: "Introduction"
+lang: "en"
+description: "Billing Center is where you fund your organization, watch what it spends, and control how transaction fees are paid on Cobo Portal."
+---
+
+## What is Billing Center
+
+Running an organization on Cobo Portal costs money in two different ways, and they behave differently.
+
+Every on-chain transaction burns the chain's own native token — ETH on Ethereum, TRX on TRON, SOL on Solana. If a wallet address runs out of that token, its transactions fail. Separately, Cobo charges a monthly bill for your plan and any usage beyond it.
+
+**Billing Center** is the single place where you fund both. You keep one prepaid balance, called **Credits**, and Cobo draws transaction fees and monthly bills from it. You do not have to hold a native token on every chain, and you do not have to reconcile fees by hand.
+
+<Note>Gas sponsorship applies to transactions made with MPC Wallets and Web3 Wallets on EVM-compatible chains, TRON, Solana, and Tempo.</Note>
+
+## Credits and gas tokens
+
+Billing Center holds two kinds of balance. The difference between them is what each can pay for.
+
+| | Credits | Gas tokens |
+|---|---|---|
+| What it is | Prepaid balance you top up with USDT, USDC, or USD, counted 1:1 in USD | The token a chain pays gas in, deposited per chain |
+| Pays for | Transaction fees on any supported chain, monthly Cobo bills, and add-on plan quotas | Transaction fees on its own chain only |
+| Cannot pay for | — | Cobo bills |
+
+Credits alone are enough to run an organization. Gas tokens are optional: you deposit them only if you want a particular chain's fees drawn from that chain's own token rather than from Credits.
+
+Because gas tokens are optional, **gas token top-up is turned off by default**. While it is off, Billing Center shows a single Credits balance and nothing chain-specific — no per-chain deposit entry and no gas token balance table. See [Settings](/en/portal/billing-center/settings) for how to turn it on.
+
+## How the four tabs are organized
+
+| Tab | What you do there |
+|---|---|
+| [Overview](/en/portal/billing-center/overview) | Read your balances, see what you spent this month and what the next bill will take, and set the balance at which Cobo warns you |
+| [Transactions](/en/portal/billing-center/transactions) | Trace every fee, bill, refund, and deposit; filter, inspect, and export them for reconciliation |
+| [Bills & Plans](/en/portal/billing-center/bills-and-plans) | Review your plan and resource usage, and pay or download bills |
+| [Settings](/en/portal/billing-center/settings) | Turn on gas token top-up, choose per-chain sponsorship rules, and manage who receives billing emails |
+
+## Before you start
+
+To open Billing Center, log in to [Cobo Portal](https://portal.cobo.com/login) and click **Billing Center** in the left navigation bar.
+
+Reading Billing Center and changing its settings are separate permissions. If you can see a balance but a control is unavailable, ask an organization admin to grant you the **Edit Fee Station Settings** permission. Bills and invoices are restricted further — only certain roles can see them.
+
+## Next steps
+
+- [Deposit funds](/en/portal/billing-center/deposit) — put Credits or gas tokens into Billing Center.
+- [Overview](/en/portal/billing-center/overview) — read your balances and set low-balance alerts.
+- [Settings](/en/portal/billing-center/settings) — decide which chains Cobo sponsors and which balance it charges.

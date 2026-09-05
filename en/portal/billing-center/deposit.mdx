@@ -1,0 +1,56 @@
+---
+title: "Deposit funds into Billing Center"
+sidebarTitle: "Deposit"
+lang: "en"
+description: "Top up Credits with stablecoins or USD, or deposit a chain's native gas token."
+---
+
+Click **Deposit** anywhere in Billing Center to open the deposit dialog. “Supported chain” below means the chains gas sponsorship covers — EVM-compatible chains, TRON, Solana, and Tempo — for transactions made with MPC Wallets and Web3 Wallets. It offers up to three methods; which one you want depends on what you need the money to pay for.
+
+| Method | What arrives | What it can pay for |
+|---|---|---|
+| **Stablecoin** | Transfer USDT or USDC on-chain; credited to Credits on arrival | Transaction fees on any supported chain, and Cobo bills |
+| **USD** | Credited to Credits on arrival | Transaction fees on any supported chain, and Cobo bills |
+| **Gas Token** | The token that chain pays gas in | Transaction fees on that chain only |
+
+**Gas Token only appears once gas token top-up is enabled.** Until then the dialog offers Stablecoin and USD. See [Settings](/en/portal/billing-center/settings).
+
+<Note>The deposit dialog opened from a plan purchase in **Bills & Plans** always lists all three methods, including Gas Token, regardless of that setting. Deposit gas tokens from the Overview or Settings entry instead, so you are working with the balance you intend to.</Note>
+
+## Deposit stablecoins
+
+1. Click **Deposit** and choose **Stablecoin**.
+2. Pick the **token** first — USDT or USDC.
+3. Then pick the **network**. This second list stays disabled until a token is chosen, and offers only the networks that carry the token you picked.
+4. The deposit address appears once both are selected. Copy it and send the funds from your own wallet.
+5. Read the notices shown with the address before sending.
+
+<Warning>Send only the token and network shown in the dialog. Funds sent on a different network, or in a different token, may be unrecoverable.</Warning>
+
+You can also fund Billing Center from another Cobo wallet rather than an external one, using the transfer entry in the same dialog.
+
+## Deposit USD
+
+Choose **USD** and enter the amount. The minimum USD deposit is **$0.5**.
+
+## Deposit gas tokens
+
+1. Click **Deposit** and choose **Gas Token**.
+2. Pick the chain. Chains you already hold a balance on show it; others show **No balance yet**.
+3. Copy the deposit address and send that chain's gas token to it.
+
+A deposited gas token is spendable only on its own chain, and never pays a Cobo bill.
+
+<Warning>On most chains the gas token is the chain's native token — ETH, TRX, SOL. **Tempo is the exception**: it pays gas in fee-payer stablecoins such as pathUSD, not in its native token. Send whatever token the dialog shows for the chain you picked rather than assuming it is the native one.</Warning>
+
+## How long deposits take
+
+Crypto deposits — stablecoins and gas tokens — take **about 30 minutes**. USD deposits take **about 1 business day**.
+
+A deposit that has arrived but has not finished processing is counted separately on the Overview as *deposit(s) processing*, and is not part of your spendable balance until it clears.
+
+## If a deposit fails
+
+A failed deposit shows as **Rejected** in [Transactions](/en/portal/billing-center/transactions), and the Overview shows an aggregate banner.
+
+<Warning>The funds are not credited and are not returned automatically. Contact help@cobo.com to resolve it — waiting will not release them.</Warning>
