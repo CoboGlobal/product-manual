@@ -19,7 +19,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 4. 设置交易风控（可选）
 5. 添加链（可选）
 6. 创建钱包（可选）
-7. 设置 Fee Station（可选）
+7. 设置费用管理（可选）
 8. 开启代币自动归集（可选）
 9. 配置 KYA / KYT 扫描工具（可选）
 10. 充币（可选）
@@ -79,8 +79,8 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 - [设置恢复私钥](/cn/portal/mpc-wallets/ocw/holder-group-recovery-group)
 - [主控私钥 / 签名私钥 / 恢复私钥的区别](/cn/portal/mpc-wallets/ocw/holder-group-overview)
 
-## 设置 Fee Station（可选）
-如果您希望在开发环境中使用 Cobo 的美元稳定币代付链上交易手续费功能，或集中管理主链币以支付 Gas，可以启用 Fee Station。它相当于一个团队共享的费用账户，可根据配置策略为链上交易自动代付 Gas，并统一结算各类平台费用。详情请参阅[Fee Station 简介](/cn/portal/fee-station/introduction)。
+## 设置费用管理（可选）
+在开发环境中，Payment 团队可以启用 Fee Station 管理适用的 Gas 费用。Payment 团队详情请参阅[Fee Station 简介](/cn/portal/fee-station/introduction)。
 
 ## 开启代币自动归集（可选）
 如果需要开启 MPC 钱包资金的自动归集，请参考[启用自动代币归集](/cn/portal/enable-auto-sweep)。
@@ -92,7 +92,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 为方便测试，在开发环境中，系统已为您自动分配测试币 SETH。如果需要充值其他币种（例如 USDC 或 USDT），请确认所用链（Tron / BEP-20 / ERC-20 等），并参考[充值](/cn/portal/mpc-wallets/ocw/transfers)文档。
 
-充值主链币：如需支付链上手续费，请确保钱包中有足够对应链的主链币。您可以在 [Fee Station](/cn/portal/fee-station/introduction) 预充值对应链的主链币，或充值美元稳定币用以代付链上手续费。
+充值主链币：如需支付链上手续费，请确保钱包中有足够对应链的主链币。Payment 团队可在 [Fee Station](/cn/portal/fee-station/introduction) 中充值 Gas Token 或美元稳定币，用于适用的 Gas 费用处理。
 
 ## 提币
 
@@ -128,7 +128,7 @@ og:description: "学习如何在 Cobo Portal 开发环境中设置和使用 MPC 
 
 如果您在开发环境中配置了交易风控，钱包中配置了主控私钥，或者配置了 Callback Endpoint 等，这些设置会对提币流程产生影响。例如，您可能需要额外审批步骤才能完成交易。
 
-在提币前，请确保钱包中有足够主链币用于支付链上手续费，或者已启用 [Fee Station](/cn/portal/fee-station/introduction) 代付功能。
+在提币前，请确保钱包中有足够主链币用于支付链上手续费。Payment 团队使用 [Fee Station](/cn/portal/fee-station/introduction) 处理适用的 Gas 费用。
 
 以下为 JavaScript SDK 示例代码，更多详情可参阅[发起转账 API 文档](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token)
 
@@ -195,4 +195,3 @@ API called successfully. Returned data: {
   调用[获取交易列表](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions) 接口查询交易列表。
 
 至此，您已完成 MPC 钱包在开发环境中的主要功能快速体验，包括账户设置、充币与提币等操作。如果您想要在生产环境中正式部署和使用 MPC 钱包，请参考[正式使用指南](/cn/portal/quick-start-guide-mpc)。
-

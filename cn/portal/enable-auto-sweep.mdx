@@ -15,8 +15,8 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 - 对于全托管钱包 (Web3 钱包)：
   - 您已创建全托管钱包 (Web3 钱包)并按照[设置 Web3 钱包](/cn/portal/custodial-wallets/web3-wallets/set-up)中的说明进行设置。
 - 您已被分配为管理员、操作员、或经理[用户角色](/cn/portal/organization/roles-and-permissions)。
-- 归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。
-<Info>更多详情请参照[ Fee Station 使用指南](/cn/portal/fee-station/set-up)。</Info>
+- 归集交易的提币部分会产生链上手续费（Gas 费）。Payment 团队使用 [Fee Station](/cn/portal/fee-station/introduction) 处理适用的 Gas 费用。如果 Fee Station 不覆盖该操作，请在充币地址中保留所需的原生 Gas Token 余额。
+<Info>Payment 团队可参阅 [Fee Station 使用指南](/cn/portal/fee-station/set-up)了解更多详情。</Info>
 
 ## 步骤
 
@@ -64,7 +64,7 @@ description: "了解如何为钱包启用自动代币归集功能，并探索钱
 ### 归集地址
 
 启用自动代币归集后，系统会自动为该钱包使用的每条链生成一个专属的归集地址，该地址由 Cobo 系统分配，用户无法手动指定。当充币地址收到代币时，系统会自动、定期地发起归集交易将这些代币转移到对应的归集地址。
-<Note>归集交易的提币部分会产生链上手续费（Gas 费）。建议您启用 [Fee Station](/cn/portal/fee-station/introduction)，在充币地址余额不足时自动补充手续费差额。否则，您需要确保充币地址有足够的主链币余额支付链上手续费。</Note>
+<Note>归集交易的提币部分会产生链上手续费（Gas 费）。Payment 团队使用 [Fee Station](/cn/portal/fee-station/introduction) 处理适用的 Gas 费用。如果 Fee Station 不覆盖该操作，请在充币地址中保留所需的原生 Gas Token 余额。</Note>
 
 钱包地址分为两个标签页展示：**充币**标签页显示先前创建的充币地址，而**归集至**标签页显示归集地址。
 

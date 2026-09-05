@@ -308,6 +308,18 @@
                     ]
                   },
                   {
+                    "group": "Billing Center",
+                    "pages": [
+                      "en/portal/billing-center/introduction",
+                      "en/portal/billing-center/overview",
+                      "en/portal/billing-center/transaction-records",
+                      "en/portal/billing-center/bills-and-plans",
+                      "en/portal/billing-center/settings",
+                      "en/portal/billing-center/deposit-gas-token",
+                      "en/portal/billing-center/deposit-stablecoin"
+                    ]
+                  },
+                  {
                     "group": "Pricing Plans",
                     "pages": [
                       "en/portal/bills-and-payments/introduction",
@@ -895,6 +907,18 @@
                     "pages": [
                       "cn/portal/fee-station/introduction",
                       "cn/portal/fee-station/set-up"
+                    ]
+                  },
+                  {
+                    "group": "Billing Center",
+                    "pages": [
+                      "cn/portal/billing-center/introduction",
+                      "cn/portal/billing-center/overview",
+                      "cn/portal/billing-center/transaction-records",
+                      "cn/portal/billing-center/bills-and-plans",
+                      "cn/portal/billing-center/settings",
+                      "cn/portal/billing-center/deposit-gas-token",
+                      "cn/portal/billing-center/deposit-stablecoin"
                     ]
                   },
                   {

@@ -21,7 +21,7 @@ Then, fill in the required information as follows:
 
 <img src="/en/images/transfers/transfer-form.jpg" className="screenshot_modal"/>
 
-For transfers from MPC Wallets and Custodial Wallets (Asset Wallets), you can use [Fee Station](/en/portal/fee-station/introduction) to pay for the gas fee.
+For transfers from MPC Wallets and Custodial Wallets (Web3 Wallets), Payment organizations use [Fee Station](/en/portal/fee-station/introduction) for eligible gas-fee handling. If Fee Station does not cover the operation, maintain the required native gas-token balance.
 
 <Info>**Memo/Tag (Optional)**: The field is only visible when you select a token that requires it. For transfers out of Cobo Portal, it is highly recommended to include a memo/tag for the following chains: XRP, EOS, XLM, IOST, BNB_BNB, ATOM, LUNA, and TON.</Info>
 
@@ -43,4 +43,3 @@ When you create a transfer, Cobo Portal reserves (locks) the spendable balance r
 - **Why multiple addresses can be locked at once**: For wallets that hold funds across multiple addresses (for example, UTXO-based chains), a single withdrawal can draw spendable balance from more than one address. The spendable balance on each selected address is locked for the duration of that withdrawal.
 
 Because an in-flight withdrawal reserves spendable balance, trying to spend the same funds again before the first withdrawal settles can produce a `Specified Spendable is locked` error. Wait until the in-flight transaction reaches a final state, then retry.
-

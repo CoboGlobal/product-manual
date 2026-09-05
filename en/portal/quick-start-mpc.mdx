@@ -19,7 +19,7 @@ This guide will walk you through the step-by-step process to set up and use MPC 
 4. Set up transaction policies (optional)
 5. Add chains (optional)
 6. Create a wallet (optional)
-7. Set up Fee Station (optional)
+7. Set up fee management (optional)
 8. Enable auto token sweeping (optional)
 9. Configure KYA / KYT screening tools (optional)
 10. Deposit tokens (optional)
@@ -88,10 +88,10 @@ To fully experience the MPC Wallet creation process, refer to:
 - [Recovery Key](/en/portal/mpc-wallets/ocw/holder-group-recovery-group)
 - [Differences between Main Key, Signing Key, and Recovery Key](/en/portal/mpc-wallets/ocw/holder-group-overview)
 
-## Set up Fee Station (optional)
+## Set up fee management (optional)
 
-In the development environment, you can enable Fee Station to simplify gas fee management. It acts as a shared account for your team, and you can deposit gas tokens or USD stablecoins into it, and the system will automatically cover on-chain gas fees based on your settings, while consolidating all platform fees into a single bill. 
-For details, refer to [Fee Station introduction](/en/portal/fee-station/introduction).
+In the development environment, Payment organizations can enable Fee Station to simplify eligible gas-fee management.
+For Payment organization details, refer to [Fee Station introduction](/en/portal/fee-station/introduction).
 
 ## Enable auto token sweeping (optional)
 
@@ -106,7 +106,7 @@ If you need to perform KYA / KYT screening on your MPC Wallets, refer to [Screen
 For your testing convenience, SETH test tokens are automatically allocated to you in the development environment.  
 If you need to deposit other tokens (such as USDC or USDT), confirm the chain used (Tron / BEP-20 / ERC-20, etc.) and refer to [Transfer (deposit / withdraw)](/en/portal/mpc-wallets/ocw/transfers) for more details.
 
-To pay on-chain gas fees, ensure your wallet has enough gas tokens for the corresponding chain. You can deposit gas tokens or USD stablecoins into [Fee Station](/en/portal/fee-station/introduction) to use the gas fee payment feature.
+To pay on-chain gas fees, ensure your wallet has enough gas tokens for the corresponding chain. Payment organizations can deposit gas tokens or USD stablecoins into [Fee Station](/en/portal/fee-station/introduction) for eligible gas-fee handling.
 
 ## Withdraw tokens
 
@@ -141,7 +141,7 @@ This section shows how to use the WaaS 2.0 API with MPC Wallets (Organization-Co
 
 5. **Initiate a withdrawal transaction**  
    If you have configured transaction policies, a Main Key, or callback endpoints for your wallet, these settings will affect the withdrawal process. For example, you may need additional approval before the transaction can be completed.
-   Before withdrawing, ensure your wallet has enough gas tokens or that you have enabled [Fee Station](/en/portal/fee-station/introduction) for gas fee payment.
+   Before withdrawing, ensure your wallet has enough gas tokens. Payment organizations use [Fee Station](/en/portal/fee-station/introduction) for eligible gas-fee handling.
 
    The following is an example code using the JavaScript WaaS SDK. For more details, see the [Transfer token API documentation](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token).
 
@@ -205,4 +205,3 @@ After submitting a transaction, you can check its status via:
   - [List all transactions](https://www.cobo.com/developers/v2/api-references/transactions/list-all-transactions)
 
 Now you have completed the quick start for MPC Wallets in the development environment, including key tasks such as account setup, deposits, and withdrawals. To officially deploy and use MPC Wallets in the production environment, see the [Production usage guide](/en/portal/quick-start-guide-mpc).
-
