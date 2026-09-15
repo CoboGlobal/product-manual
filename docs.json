@@ -301,6 +301,17 @@
                     ]
                   },
                   {
+                    "group": "Billing Center",
+                    "pages": [
+                      "en/portal/billing-center/introduction",
+                      "en/portal/billing-center/overview",
+                      "en/portal/billing-center/deposit",
+                      "en/portal/billing-center/transactions",
+                      "en/portal/billing-center/bills-and-plans",
+                      "en/portal/billing-center/settings"
+                    ]
+                  },
+                  {
                     "group": "Fee Station",
                     "pages": [
                       "en/portal/fee-station/introduction",
@@ -888,6 +899,17 @@
                           "cn/portal/risk-controls/security-confirmation"
                         ]
                       }
+                    ]
+                  },
+                  {
+                    "group": "费用中心",
+                    "pages": [
+                      "cn/portal/billing-center/introduction",
+                      "cn/portal/billing-center/overview",
+                      "cn/portal/billing-center/deposit",
+                      "cn/portal/billing-center/transactions",
+                      "cn/portal/billing-center/bills-and-plans",
+                      "cn/portal/billing-center/settings"
                     ]
                   },
                   {
