@@ -1,0 +1,32 @@
+---
+title: "Initial setup"
+sidebarTitle: "Initial setup"
+lang: "en"
+description: "The two things to do before a new organization starts using Billing Center, plus one optional setting."
+---
+
+Do these two things once, while setting up your organization.
+
+## 1. Deposit Credits
+
+Click **Deposit** anywhere in Billing Center and choose Stablecoin or USD. Once the deposit arrives it is counted as Credits, which can pay transaction fees on every supported chain as well as your Cobo bills.
+
+<Warning>Send only the token and network shown in the dialog. Funds sent on the wrong network, or in a token that is not listed, may be unrecoverable.</Warning>
+
+## 2. Adjust the low-balance alert thresholds
+
+Set the Credits alert threshold to match your actual usage. If you have enabled gas tokens, set a threshold for each chain as well.
+
+Thresholds live on the **Overview** page, next to the balance each one guards. Edit them inline; changes save immediately. Recipients are managed under **Email notifications** on the **Settings** page — simply enter an email address.
+
+<Note>Low-balance alerts and bill notifications share one recipient list. If the list is empty, neither kind of notification reaches anyone.</Note>
+
+When a balance drops below its threshold, Cobo emails the recipients. While the balance stays below the threshold, alerts are sent at most once every 24 hours.
+
+## Optional: whether to enable gas tokens
+
+**Off by default, and most organizations do not need it.**
+
+While it is off, Billing Center holds a single Credits balance and shows nothing chain-specific — no per-chain deposit entry and no gas token balance table. All transaction fees are paid with Credits, which affects no transaction.
+
+Enable it only if you want a chain's fees charged to that chain's own token rather than to Credits. Once enabled, you can deposit ETH, TRX, SOL, and others per chain.

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "product-manual-docs",
+      "runtimeExecutable": "mintlify",
+      "runtimeArgs": ["dev"],
+      "port": 3000
+    }
+  ]
+}

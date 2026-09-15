@@ -1,0 +1,63 @@
+---
+title: "Balances and how fees are charged"
+sidebarTitle: "Balances and fees"
+lang: "en"
+description: "What Credits and gas tokens each pay for, the order a transaction fee is charged in, and how transactions from Cobo Portal differ from those made through the API."
+---
+
+## Credits and gas tokens
+
+| | Credits | Gas tokens |
+|---|---|---|
+| Funded with | USDT, USDC, or USD | The token each chain charges its fees in, deposited per chain |
+| Pays for | Transaction fees on any supported chain, Cobo monthly bills, and add-on plan quotas | **Transaction fees on its own chain only** |
+| Cannot pay for | — | Cobo bills |
+
+## The order a fee is charged in
+
+Cobo looks at three sources, in order:
+
+1. **The gas tokens held by the wallet address itself**
+2. **The gas tokens in Billing Center**
+3. **Credits**
+
+If none of them is enough, the transaction fails.
+
+Whether step 1 is skipped depends on the sponsorship rule you selected. Step 2 requires gas token top-up to be enabled; without it, the fee goes straight to step 3.
+
+### One fee is paid in full by a single source
+
+<Warning>
+**When a source is not enough, the whole fee moves to the next source — the next source does not top up the difference.**
+
+For example: the address holds 0.003 ETH and the transaction needs 0.005 ETH. Billing Center does not add the missing 0.002. It **pays the full 0.005**, and the 0.003 already in the address is left untouched.
+
+The same applies further down: if Billing Center's gas tokens fall short, the entire fee is charged to Credits instead — the gas token balance is not partially spent first.
+</Warning>
+
+This matters for reconciliation: every fee in your transaction records is **tagged with exactly one payment source** — Paid with Credits, or Paid with gas token.
+
+## Cobo Portal and the API follow different rules
+
+<Warning>
+**The per-chain sponsorship rules and the deduction preference apply only to transactions initiated through the API. Transfers initiated from Cobo Portal do not read those settings.**
+</Warning>
+
+### Transfers initiated from Cobo Portal
+
+The behavior is fixed per chain and is not affected by those settings:
+
+| Chain | Fixed behavior |
+|---|---|
+| EVM-compatible chains | Use the address's gas tokens if they are enough; otherwise Billing Center pays the whole fee |
+| TRON, Solana, Tempo | Billing Center pays directly |
+
+In addition, when a Portal transfer is sponsored and gas tokens fall short, **the entire fee is charged to Credits**.
+
+To stop Billing Center from covering a particular Portal transfer, choose that option in the transfer dialog.
+
+### Transactions initiated through the API
+
+How the fee is paid is determined by the `auto_fuel` parameter in the request. **When the parameter is omitted it defaults to `UsePortalPreference`, which follows the per-chain sponsorship rules configured in Settings.** When another value is passed explicitly, the request decides and the page configuration is not read.
+
+<Note>For all accepted values and request examples, see the [Transfer token](https://www.cobo.com/developers/v2/api-references/transactions/transfer-token) endpoint in the Developer Hub.</Note>
