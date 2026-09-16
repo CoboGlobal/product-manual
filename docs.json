@@ -643,7 +643,7 @@
                 ]
               },
               {
-                "group": "快速开始免费试用",
+                "group": "快速开始",
                 "pages": [
                   "cn/portal/sign-up",
                   "cn/portal/onboarding-agents",
@@ -1213,8 +1213,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Free Trial",
-      "href": "https://www.cobo.com/lp/14-day-free-trial-cobo?utm_term=manual_freetrial.nav"
+      "label": "Contact Sales",
+      "href": "https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=contact-sales"
     }
   },
   "footer": {
