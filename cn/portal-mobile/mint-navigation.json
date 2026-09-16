@@ -23,7 +23,6 @@
           "pages": [
             "cn/guard/generate-and-back-up-key-shares",
             "cn/guard/reset",
-            "cn/guard/assistant",
             "cn/guard/manage"
           ]
         }
