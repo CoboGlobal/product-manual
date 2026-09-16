@@ -591,7 +591,8 @@
               {
                 "group": "OVERVIEW",
                 "pages": [
-                  "en/ai/introduction"
+                  "en/ai/introduction",
+                  "en/ai/waas-portal-assistant"
                 ]
               }
             ]
@@ -1179,7 +1180,8 @@
               {
                 "group": "概览",
                 "pages": [
-                  "cn/ai/introduction"
+                  "cn/ai/introduction",
+                  "cn/ai/waas-portal-assistant"
                 ]
               }
             ]
@@ -1252,11 +1254,11 @@
     },
     {
       "source": "/en/portal/onboarding-agents",
-      "destination": "/en/ai/introduction"
+      "destination": "/en/ai/waas-portal-assistant"
     },
     {
       "source": "/cn/portal/onboarding-agents",
-      "destination": "/cn/ai/introduction"
+      "destination": "/cn/ai/waas-portal-assistant"
     },
     {
       "source": "/cn/guard/restore-key-shares-from-icloud",
