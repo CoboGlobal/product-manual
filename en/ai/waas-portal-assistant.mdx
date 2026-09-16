@@ -1,0 +1,120 @@
+---
+title: "Cobo Portal AI Assistant for WaaS"
+sidebarTitle: "WaaS Portal Assistant"
+lang: "en"
+description: "Learn what the Cobo Portal AI Assistant can do for WaaS tasks, how to use it, and which actions require confirmation or approval."
+---
+
+The Cobo Portal AI Assistant provides a single conversational entry point for supported WaaS questions and workflows. A single **WaaS Portal Agent** determines which capability is needed based on your request. You do not need to choose or switch among multiple agents.
+
+The assistant works within your current organization and role permissions. Available capabilities may vary by environment, account permissions, and rollout status.
+
+## Open the assistant
+
+1. Sign in to [Cobo Portal](https://portal.cobo.com/login) with an eligible account.
+2. Click the circular **AI** icon to open the full-page assistant.
+3. Describe your question or task in natural language.
+
+The conversation interface includes:
+
+| Control | Purpose |
+| --- | --- |
+| Message box | Ask a question or describe a task in English or Chinese |
+| `/` | Open shortcuts for customer support, sales, and plan recommendations |
+| `+` | Attach a screenshot or other relevant context |
+| Session list | View and continue previous conversations |
+
+## Describe your goal
+
+State the task and include any known identifiers or parameters. The assistant confirms the target before taking action and asks for missing information instead of guessing.
+
+Examples:
+
+- "Withdraw 10 USDT from my MPC Wallet to 0xabc..."
+- "Why was transaction abc123 rejected?"
+- "Invite teammate@company.com with the Viewer role."
+- "Add Solana to this MPC Wallet."
+- "Show our total assets by chain."
+
+## Supported tasks
+
+### Product, API, and troubleshooting questions
+
+Ask how a Cobo feature works, how to integrate with the WaaS 2.0 API, what an error means, or whether a chain or token is supported. The assistant uses Cobo product manuals and Developer Hub documentation to answer.
+
+### Wallets and deposit addresses
+
+List wallets, create a supported wallet, or generate a deposit address. For MPC Wallets, the assistant can help with the lifecycle from Vault and signer setup through KeyGen, backup status, wallet creation, and enabling supported chains.
+
+KeyGen, key share backup, and some approvals must still be completed in Portal Mobile or Cobo Guard. The assistant never displays or exports private key material.
+
+### Transactions and transfers
+
+The assistant can:
+
+- Find and filter transaction records.
+- Estimate fees and run required validation before preparing a transfer.
+- Diagnose why a specific transaction is pending, rejected, or failed.
+- Prepare supported remedies for an existing transaction, such as speed up, cancel, drop, or resend.
+
+Before submitting a transfer or changing an existing transaction, the assistant confirms the transaction, action, and relevant fees. Final authorization follows the applicable Portal Mobile or Cobo Guard flow.
+
+### Members and roles
+
+Invite a member and assign one or more available roles. The invitation is not complete until the required confirmation, MFA, and approval flow has finished.
+
+### Transaction Policies
+
+View existing Transaction Policies and get guidance on policy type, conditions, approval requirements, limits, and priority.
+
+<Warning>The assistant does not create, edit, reorder, or enable Transaction Policies in the conversation. Apply policy changes in Cobo Portal, then ask the assistant to check the resulting configuration.</Warning>
+
+### Approval status
+
+View approval requests, see which approvers are still pending, and identify where confirmation must be completed.
+
+<Warning>The assistant cannot approve, reject, or revoke a request on another user's behalf. Each approver must act in their own Portal Mobile or Cobo Guard app.</Warning>
+
+### Assets and activity
+
+Ask for organization-level totals and charts, including asset breakdowns by token, chain, or wallet type, balance history, and deposit or withdrawal trends.
+
+### Support and security
+
+The assistant can view or prepare a support ticket, check for a duplicate issue, and help populate the submission form. It can also review organization, member, MPC Wallet, API Key, webhook, and transaction-policy settings against supported security checks.
+
+## Confirmation and authorization
+
+The assistant separates information retrieval from actions that change data or assets:
+
+| Task type | What happens |
+| --- | --- |
+| Product explanations and read-only queries | The assistant retrieves permitted information and explains the result |
+| Transfers, member invitations, MPC setup, and transaction remedies | The assistant confirms the target and parameters, then prepares the supported action |
+| MFA, approval, signing, and KeyGen | You complete the required step in Cobo Portal, Portal Mobile, or Cobo Guard |
+
+The assistant does not bypass permissions, Transaction Policies, Governance Policies, MFA, approval, or signing requirements.
+
+## Limits
+
+The assistant cannot:
+
+- Execute a critical asset or configuration action without your confirmation.
+- Approve or reject requests on behalf of an approver.
+- Create or modify Transaction Policies in the conversation.
+- Access or reveal private keys, mnemonics, private key shares, API secrets, or signing values.
+- Access another organization or any data outside your role permissions.
+- Provide professional financial, legal, tax, or compliance advice.
+- Guarantee that all information is complete or real-time in every situation.
+
+## Contact support or sales
+
+Use a slash command or state your intent directly:
+
+| Shortcut | Purpose |
+| --- | --- |
+| `Contact support` or `/human_support` | Continue the current conversation with Cobo Support |
+| `/contact_sales` | Open the Cobo Sales contact page |
+| `/plan_recommendation` | Start a plan recommendation conversation |
+
+For general data usage and security information, see [Cobo AI Introduction](/en/ai/introduction).
