@@ -55,8 +55,6 @@
               {
                 "group": "GET STARTED",
                 "pages": [
-                  "en/portal/sign-up",
-                  "en/portal/onboarding-agents",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -645,8 +643,6 @@
               {
                 "group": "快速开始",
                 "pages": [
-                  "cn/portal/sign-up",
-                  "cn/portal/onboarding-agents",
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -1246,6 +1242,22 @@
     }
   },
   "redirects": [
+    {
+      "source": "/en/portal/sign-up",
+      "destination": "/en/accounts/sign-up"
+    },
+    {
+      "source": "/cn/portal/sign-up",
+      "destination": "/cn/accounts/sign-up"
+    },
+    {
+      "source": "/en/portal/onboarding-agents",
+      "destination": "/en/ai/introduction"
+    },
+    {
+      "source": "/cn/portal/onboarding-agents",
+      "destination": "/cn/ai/introduction"
+    },
     {
       "source": "/cn/guard/restore-key-shares-from-icloud",
       "destination": "/cn/guard/reset"
