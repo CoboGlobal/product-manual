@@ -1,0 +1,159 @@
+---
+title: "AutoFuel"
+sidebarTitle: "AutoFuel"
+lang: "zh-hans"
+description: "了解 AutoFuel 如何使用 Fuel 为 Cobo Agent Wallet 交易代付 gas 费。"
+---
+
+## AutoFuel 是什么？
+
+AutoFuel 是面向 Cobo Agent Wallet 的 gas 费代付服务。当您获得或购买 Fuel 后，Agent 发起链上交易时，您的 Agent Wallet 可自动消耗 Fuel 来支付链上 gas 费。对于 AutoFuel 覆盖的交易，您无需在 Agent Wallet 中持有或管理 Gas Token。
+
+AutoFuel 适用于 Agent Wallet 场景：在您授权 Agent 执行相关操作后，Agent 可代表您发起链上交易。
+
+## 适用对象与使用场景
+
+AutoFuel 面向 Cobo Agent Wallet 个人用户，尤其适合希望由 AI Agent 执行链上交易、但不想为每条链手动准备 Gas Token 的用户。
+
+典型场景包括：
+
+| 场景 | AutoFuel 如何协助 |
+| --- | --- |
+| 新用户注册后，希望 Agent 直接开始执行交易。 | 免费试用 Fuel 可让符合条件的新用户先测试受支持的交易，无需先完成 gas 设置。 |
+| Agent 在您未主动使用 Cobo Portal 时持续执行交易。 | 购买 Fuel 后，只要余额充足，Agent 即可持续使用 AutoFuel。 |
+| Fuel 余额偏低或不可用。 | AI 助手会通知您，并提供购买 Fuel 的入口。 |
+
+## AutoFuel 可协助完成的任务
+
+AutoFuel 可协助完成以下任务：
+
+- 在 Agent 发起交易时自动扣减 Fuel 以支付 gas 费。
+- 通过受支持的 USDC 或 USDT 充值方式购买 Fuel。
+- 查看 Fuel 余额、等值 USD 参考价值和 AutoFuel 状态。
+- 查看充值记录和消耗记录。
+- 在 Fuel 到账、余额偏低、Fuel 耗尽或不足以完成下一笔交易时，通过 AI 助手通知您。
+- 由您本人暂停或恢复 AutoFuel。
+
+## Fuel 余额与记录
+
+您可以在 Fuel 管理页查看 Fuel 余额，也可以在 AI 助手对话中查询。
+
+| 字段 | 说明 |
+| --- | --- |
+| Fuel 余额 | 当前可用于 AutoFuel 的 Fuel 总量。 |
+| 等值 USD | 基于当前汇率换算出的 Fuel 余额近似美元价值，仅供参考。 |
+| AutoFuel 状态 | 显示当前账户的 AutoFuel 处于已开启还是已暂停状态。 |
+
+充值记录与消耗记录独立展示，并按时间倒序排列。两个列表均支持分页和导出。
+
+### Fuel 消耗
+
+每笔交易消耗的 Fuel 数量固定，并由链和交易类型决定。Agent 发起交易时，AutoFuel 会自动扣减所需 Fuel。您无需逐笔确认 Fuel 扣减。
+
+### 充值记录
+
+| 字段 | 说明 |
+| --- | --- |
+| 充值金额 | 检测到的充值金额和代币标识，代币标识使用 `CHAIN_TOKEN` 格式，例如 `BASE_USDC`。 |
+| 到账 Fuel | 充值折算后到账的 Fuel 数量。 |
+| 状态 | 充值状态：`Pending` 表示链上交易已被检测到并等待区块确认，`Success` 表示 Fuel 已到账，`Failed` 表示 Fuel 未到账。 |
+| 时间 | 检测到充值交易的时间。 |
+| 交易 ID | 充值对应的链上交易哈希，可点击跳转至区块浏览器。 |
+
+### 消耗记录
+
+| 字段 | 说明 |
+| --- | --- |
+| Fuel 扣减 | 该笔交易扣减的 Fuel 数量。 |
+| 交易类型 | 触发 Fuel 扣减的交易类型，例如 ERC-20 转账。 |
+| 链 | 交易执行所在的链。 |
+| 时间 | Fuel 扣减时间。 |
+| 关联交易 ID | Fuel 扣减关联的链上交易哈希，可点击跳转至区块浏览器。 |
+
+## 购买 Fuel
+
+您可以在 Fuel 管理页或通过 AI 助手购买 Fuel。
+
+### 在 Cobo Portal 购买 Fuel
+
+1. 打开 Fuel 管理页。
+2. 点击 **充值**。
+3. 选择受支持的充值代币：`USDC` 或 `USDT`。
+4. 选择该代币支持的链。
+5. 查看页面展示的汇率和单次充值上限。
+6. 点击 **下一步**。
+7. 复制专属充值地址，或扫描二维码。
+8. 在换算计算器中输入金额，查看预计获得的 Fuel 数量。
+9. 首次充值时，勾选服务条款确认项。
+10. 在所选链上向页面展示的充值地址发送所选代币。
+
+系统会为每个用户、每个受支持的代币和链组合分配一个专属充值地址。请使用充值弹窗中展示的代币和链。代币标识使用 `CHAIN_TOKEN` 格式，例如 `BASE_USDC`、`TRON_USDT` 或 `ETH_USDC`。
+
+USDC 充值使用 Cobo 配置的固定 Fuel 汇率。USDT 充值会在到账时按市场价格折算为等值 USDC，再按固定 Fuel 汇率折算为 Fuel。
+
+### 通过 AI 助手购买 Fuel
+
+您可以通过自然语言向 AI 助手索要充值地址。例如，说明您想使用的代币和链，AI 助手会在该代币和链组合受支持时返回对应的地址和链信息。
+
+### 充值状态与到账
+
+发送充值交易后，AutoFuel 会跟踪交易确认状态：
+
+| 状态 | 说明 |
+| --- | --- |
+| Pending | 链上交易已被检测到，正在等待区块确认。 |
+| Success | 交易达到所需确认阈值，Fuel 已到账，余额已更新。 |
+| Failed | 交易失败，Fuel 不到账。 |
+
+Fuel 到账后，AI 助手会向您绑定的全部渠道推送通知。通知内容包括到账 Fuel 数量和当前余额。
+
+<Note>
+Fuel 不可退款、不可转让。单次充值上限为 500 美元。
+</Note>
+
+## 控制 AutoFuel
+
+只有您本人可以暂停或恢复 AutoFuel。Agent 无权替您执行这些操作。
+
+暂停 AutoFuel 后，交易会回退到标准 gas 流程。恢复 AutoFuel 后，符合条件的 Agent 发起交易可继续消耗 Fuel。
+
+## 免费试用 Fuel
+
+新用户完成注册后会自动获得免费试用 Fuel，无需手动领取。
+
+免费试用 Fuel 的规则如下：
+
+- 每个账户仅可获得一次免费试用 Fuel。
+- 免费试用 Fuel 仅可用于 L2 链：Base、Arbitrum、Optimism 和 Polygon。
+- 免费试用 Fuel 与付费 Fuel 并入同一个 Fuel 余额池。
+- 免费试用 Fuel 会优先于付费 Fuel 被消耗。
+- 免费试用 Fuel 无有效期，用完为止。
+
+注册完成后，AI 助手会推送通知，说明免费 Fuel 数量及 L2 链限制。Fuel 余额页展示 Fuel 总量，不区分免费 Fuel 与付费 Fuel。
+
+## 通知与余额不足状态
+
+AutoFuel 会通过 AI 助手向您绑定的全部渠道推送通知。
+
+| 触发条件 | 通知内容 |
+| --- | --- |
+| Fuel 到账 | 展示到账 Fuel 数量和当前 Fuel 余额。 |
+| Fuel 余额低于系统阈值 | 提醒您充值，并展示当前余额和充值入口。 |
+| Fuel 耗尽或不足以完成下一笔交易 | 提示 AutoFuel 已耗尽、交易已暂停，并提供充值入口。 |
+
+## 能力边界
+
+AutoFuel 存在以下限制：
+
+- AutoFuel 适用于 Cobo Agent Wallet 的 gas 费代付，不是面向 MPC 钱包或 Web3 钱包的组织级 Fee Station 余额。
+- Fuel 仅可通过受支持的 USDC 和 USDT 充值方式购买。
+- Fuel 不可退款、不可转让。
+- 单次充值上限为 500 美元。
+- Agent 无法暂停或恢复 AutoFuel。
+- 免费试用 Fuel 仅可用于 Base、Arbitrum、Optimism 和 Polygon。
+
+## 相关文档
+
+- [Cobo AI 简介](/cn/ai/introduction)
+- [使用 Onboarding Agents 辅助新用户接入](/cn/portal/onboarding-agents)
+- [Fee Station 简介](/cn/portal/fee-station/introduction)

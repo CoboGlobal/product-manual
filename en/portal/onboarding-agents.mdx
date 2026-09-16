@@ -49,6 +49,14 @@ Onboarding agents work together to help with the following tasks:
 During a conversation, you might see different agents being invoked. This indicates which agent is handling the current task—for example, the Member Invitation Agent handles member invitations, while the Portal Mobile Setup Agent guides the Portal Mobile setup. These Agents switch and collaborate as needed; you do not need to switch them manually.
 </Info>
 
+## Prepare gas for first transactions
+
+Gas preparation is not part of the onboarding checklist, but it is required before on-chain transactions can be executed. The right option depends on the wallet and transaction flow you use:
+
+- For Cobo Agent Wallet transactions initiated by an agent, use [AutoFuel](/en/ai/autofuel) to cover gas fees with Fuel.
+- For organization-level MPC Wallets or Web3 Wallets, use [Fee Station](/en/portal/fee-station/introduction) when the wallet type, chain, and payment preference are eligible.
+- If a transaction is not covered by AutoFuel or Fee Station, make sure the sending address holds the native gas token for the chain.
+
 ## How to use
 
 After [signing up and logging in to Cobo Portal](/en/portal/sign-up), click the **AI icon** in the top-right corner to open the AI Assistant.
@@ -60,4 +68,3 @@ You can ask questions or describe your goal in natural language, and the Cobo AI
 <img src="/en/images/ai/onboarding-agent-chat.png" className="screenshot_full_screen" alt="Onboarding agents conversation window"/>
 
 <Info>For more information about Cobo AI, including overview, data use and security, and capability boundaries, see [Cobo AI Introduction](/en/ai/introduction).</Info>
-

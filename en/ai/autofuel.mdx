@@ -1,0 +1,159 @@
+---
+title: "AutoFuel"
+sidebarTitle: "AutoFuel"
+lang: "en"
+description: "Learn how AutoFuel uses Fuel to cover gas fees for Cobo Agent Wallet transactions."
+---
+
+## What is AutoFuel?
+
+AutoFuel is a gas fee payment service for Cobo Agent Wallet. After you receive or buy Fuel, your Agent Wallet can automatically consume Fuel to cover on-chain gas fees when an agent initiates a transaction. You do not need to hold or manage gas tokens in the Agent Wallet for transactions covered by AutoFuel.
+
+AutoFuel is designed for agent-wallet use cases where an agent may execute transactions on your behalf after you have authorized the agent's activity.
+
+## Who should use AutoFuel
+
+AutoFuel is designed for individual Cobo Agent Wallet users, especially users who want an AI agent to handle on-chain transactions without manually preparing gas tokens for each chain.
+
+Typical scenarios include:
+
+| Scenario | How AutoFuel helps |
+| --- | --- |
+| You are a new user and want an agent to start transacting after registration. | Free trial Fuel lets eligible new users test supported transactions without completing gas setup first. |
+| Your agent runs transactions when you are not actively using Cobo Portal. | Paid Fuel lets the agent continue using AutoFuel while your balance is sufficient. |
+| Your Fuel balance becomes low or unavailable. | The AI Assistant notifies you and provides an entry point to buy Fuel. |
+
+## What AutoFuel can do
+
+AutoFuel can help with the following tasks:
+
+- Automatically deduct Fuel to cover gas fees for transactions initiated by your agent.
+- Let you buy Fuel with supported USDC or USDT recharge options.
+- Show your Fuel balance, estimated USD value, and AutoFuel status.
+- Show recharge records and consumption records.
+- Notify you through the AI Assistant when Fuel arrives, when your balance is low, or when Fuel is exhausted or insufficient for the next transaction.
+- Let you pause or resume AutoFuel yourself.
+
+## Fuel balance and records
+
+Your Fuel balance is shown in the Fuel management page and can also be queried in AI Assistant conversations.
+
+| Field | Description |
+| --- | --- |
+| Fuel balance | The total amount of Fuel currently available for AutoFuel. |
+| Estimated USD value | The approximate USD value of the current Fuel balance based on the current exchange rate. This value is for reference only. |
+| AutoFuel status | Shows whether AutoFuel is enabled or paused for your account. |
+
+Recharge records and consumption records are listed separately in reverse chronological order. Both lists support pagination and export.
+
+### Fuel consumption
+
+Each transaction consumes a fixed amount of Fuel based on the chain and transaction type. When your agent initiates a transaction, AutoFuel deducts the required Fuel automatically. You do not need to confirm each Fuel deduction separately.
+
+### Recharge records
+
+| Field | Description |
+| --- | --- |
+| Recharge amount | The amount and token identifier detected for the recharge, shown in `CHAIN_TOKEN` format such as `BASE_USDC`. |
+| Fuel credited | The amount of Fuel credited after the recharge is converted. |
+| Status | The recharge status: `Pending` means the transaction was detected and is waiting for block confirmations, `Success` means Fuel was credited, and `Failed` means Fuel was not credited. |
+| Time | The time when the recharge transaction was detected. |
+| Transaction ID | The on-chain transaction hash for the recharge. You can open it in the block explorer. |
+
+### Consumption records
+
+| Field | Description |
+| --- | --- |
+| Fuel deduction | The amount of Fuel deducted for the transaction. |
+| Transaction type | The type of transaction that triggered the Fuel deduction, such as an ERC-20 transfer. |
+| Chain | The chain where the transaction was executed. |
+| Time | The time when Fuel was deducted. |
+| Related transaction ID | The on-chain transaction hash associated with the Fuel deduction. You can open it in the block explorer. |
+
+## Buy Fuel
+
+You can buy Fuel from the Fuel management page or through the AI Assistant.
+
+### Buy Fuel in Cobo Portal
+
+1. Open the Fuel management page.
+2. Click **Recharge**.
+3. Select a supported recharge token: `USDC` or `USDT`.
+4. Select a supported chain for the selected token.
+5. Review the displayed exchange rate and the single-recharge limit.
+6. Click **Next**.
+7. Copy the dedicated recharge address or scan the QR code.
+8. Enter an amount in the conversion calculator to review the estimated Fuel amount.
+9. For your first recharge, select the service terms confirmation.
+10. Send the selected token to the displayed recharge address on the selected chain.
+
+Each user receives a dedicated recharge address for each supported token and chain combination. Use the token and chain shown in the recharge dialog. Token identifiers use the `CHAIN_TOKEN` format, such as `BASE_USDC`, `TRON_USDT`, or `ETH_USDC`.
+
+USDC recharges use a fixed Fuel exchange rate configured by Cobo. USDT recharges are converted to an equivalent USDC value based on the market price when the recharge arrives, and then converted to Fuel using the fixed Fuel exchange rate.
+
+### Buy Fuel with the AI Assistant
+
+You can ask the AI Assistant for a recharge address in natural language. For example, ask for a recharge address and specify the token and chain you want to use. The AI Assistant returns the matching address and chain information when that token and chain combination is supported.
+
+### Recharge status and arrival
+
+After you send a recharge transaction, AutoFuel tracks the transaction confirmation status:
+
+| Status | Description |
+| --- | --- |
+| Pending | The on-chain transaction has been detected and is waiting for block confirmations. |
+| Success | The transaction has reached the required confirmation threshold, Fuel has been credited, and your balance has been updated. |
+| Failed | The transaction failed, and Fuel is not credited. |
+
+When Fuel arrives, the AI Assistant sends a notification to all channels bound to your account. The notification includes the credited Fuel amount and your current balance.
+
+<Note>
+Fuel is non-refundable and non-transferable. A single recharge cannot exceed USD 500.
+</Note>
+
+## Control AutoFuel
+
+Only you can pause or resume AutoFuel. Agents cannot perform these operations for you.
+
+When you pause AutoFuel, transactions fall back to the standard gas flow. When you resume AutoFuel, eligible agent-initiated transactions can consume Fuel again.
+
+## Free trial Fuel
+
+New users receive free trial Fuel automatically after registration. No manual claim is required.
+
+Free trial Fuel has the following rules:
+
+- Each account can receive free trial Fuel once.
+- Free trial Fuel can be used only on L2 chains: Base, Arbitrum, Optimism, and Polygon.
+- Free trial Fuel is included in the same Fuel balance pool as paid Fuel.
+- Free trial Fuel is consumed before paid Fuel.
+- Free trial Fuel has no expiration date and remains available until used.
+
+After registration, the AI Assistant sends a notification that shows the free Fuel amount and the L2-chain restriction. The Fuel balance page shows the total Fuel balance and does not separate free Fuel from paid Fuel.
+
+## Notifications and low-balance states
+
+AutoFuel sends notifications through the AI Assistant to all channels bound to your account.
+
+| Trigger | Notification |
+| --- | --- |
+| Fuel arrives | Shows the credited Fuel amount and your current Fuel balance. |
+| Fuel balance is below the system threshold | Advises you to recharge and shows your current balance and recharge entry point. |
+| Fuel is exhausted or insufficient for the next transaction | Tells you that AutoFuel has been exhausted and transactions have been paused, and provides a recharge entry point. |
+
+## Scope and limitations
+
+AutoFuel has the following limitations:
+
+- AutoFuel applies to Cobo Agent Wallet gas fee payment. It is not the organization-level Fee Station balance for MPC Wallets or Web3 Wallets.
+- Fuel can be bought with supported USDC and USDT recharge options only.
+- Fuel is non-refundable and non-transferable.
+- Each recharge is limited to USD 500.
+- Agents cannot pause or resume AutoFuel.
+- Free trial Fuel can be used only on Base, Arbitrum, Optimism, and Polygon.
+
+## Related guides
+
+- [Cobo AI Introduction](/en/ai/introduction)
+- [Cobo Portal onboarding agents](/en/portal/onboarding-agents)
+- [Introduction to Fee Station](/en/portal/fee-station/introduction)

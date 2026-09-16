@@ -593,7 +593,8 @@
               {
                 "group": "OVERVIEW",
                 "pages": [
-                  "en/ai/introduction"
+                  "en/ai/introduction",
+                  "en/ai/autofuel"
                 ]
               }
             ]
@@ -1183,7 +1184,8 @@
               {
                 "group": "概览",
                 "pages": [
-                  "cn/ai/introduction"
+                  "cn/ai/introduction",
+                  "cn/ai/autofuel"
                 ]
               }
             ]
