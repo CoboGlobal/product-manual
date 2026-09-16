@@ -47,7 +47,7 @@ const sdk = (function (a) {
   var ELEMENT_TRACK_MAP = [
     {
       selector: "#topbar-cta-button a",
-      tid: "manual_button_navbar_freetrial",
+      tid: "manual_button_navbar_contactsales",
     },
     {
       selector: 'a[href*="portal.cobo.com/login"]',
