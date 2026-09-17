@@ -20,7 +20,7 @@ The conversation interface includes:
 | Control | Purpose |
 | --- | --- |
 | Message box | Ask a question or describe a task in English or Chinese |
-| `/` | Open shortcuts for customer support, sales, and plan recommendations |
+| `/` | Open shortcuts for customer support and sales |
 | `+` | Attach a screenshot or other relevant context |
 | Session list | View and continue previous conversations |
 
@@ -32,6 +32,7 @@ Examples:
 
 - "Withdraw 10 USDT from my MPC Wallet to 0xabc..."
 - "Why was transaction abc123 rejected?"
+- "Why did API request error-123 return 401?"
 - "Invite teammate@company.com with the Viewer role."
 - "Add Solana to this MPC Wallet."
 - "Show our total assets by chain."
@@ -41,6 +42,14 @@ Examples:
 ### Product, API, and troubleshooting questions
 
 Ask how a Cobo feature works, how to integrate with the WaaS 2.0 API, what an error means, or whether a chain or token is supported. The assistant uses Cobo product manuals and Developer Hub documentation to answer.
+
+### Developer API diagnosis
+
+The assistant can diagnose a failed WaaS API call from an error you paste or from API request logs available to your organization. It can find a request by `error_id`, `request_id`, endpoint and approximate time, HTTP status, or API Key identifier, then inspect the request detail and explain the recorded cause and next step. It can also check whether a webhook endpoint is configured and active.
+
+For the most reliable result, include the full JSON error body with `error_code`, `error_message`, and `error_id`. You can also provide a `request_id`, endpoint, and approximate request time. If no matching log is available, the assistant distinguishes analysis of the pasted error from findings confirmed in your organization logs.
+
+<Warning>Do not paste an API Secret, signature value, private key, or full request headers. The assistant does not create or rotate API Keys, change webhook or callback configuration, or redeliver webhook events.</Warning>
 
 ### Wallets and deposit addresses
 
@@ -104,6 +113,7 @@ The assistant cannot:
 - Approve or reject requests on behalf of an approver.
 - Create or modify Transaction Policies in the conversation.
 - Access or reveal private keys, mnemonics, private key shares, API secrets, or signing values.
+- Create or rotate API Keys, change webhook configuration, or redeliver webhook events.
 - Access another organization or any data outside your role permissions.
 - Provide professional financial, legal, tax, or compliance advice.
 - Guarantee that all information is complete or real-time in every situation.
@@ -116,6 +126,5 @@ Use a slash command or state your intent directly:
 | --- | --- |
 | `Contact support` or `/human_support` | Continue the current conversation with Cobo Support |
 | `/contact_sales` | Open the Cobo Sales contact page |
-| `/plan_recommendation` | Start a plan recommendation conversation |
 
 For general data usage and security information, see [Cobo AI Introduction](/en/ai/introduction).
