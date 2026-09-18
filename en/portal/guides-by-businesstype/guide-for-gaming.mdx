@@ -5,7 +5,7 @@ lang: "en"
 og:description: "Learn how Web3 gaming clients can build an on-chain asset system using Cobo Portal"
 ---
 
-This guide is intended for Web3 gaming / GameFi clients and introduces how to build a comprehensive on-chain asset system based on Cobo Portal + MPC Wallet (institutional wallet), covering user address allocation, deposit monitoring, in-game asset distribution (Token / NFT), high-frequency transaction processing, automatic fund sweeping, Gas cost management (Fee Station), and risk control and permission frameworks.
+This guide is intended for Web3 gaming / GameFi clients and introduces how to build a comprehensive on-chain asset system based on Cobo Portal + MPC Wallet (institutional wallet), covering user address allocation, deposit monitoring, in-game asset distribution (Token / NFT), high-frequency transaction processing, automatic fund sweeping, Gas cost management (Billing Center), and risk control and permission frameworks.
 
 For gaming scenarios, Cobo is well-suited to address the following core needs:
 
@@ -56,15 +56,15 @@ Automatically consolidates funds from user deposit addresses into the main walle
 
 - Enable Auto-Sweep in MPC Wallet
 - Configure sweep address and trigger conditions (balance threshold / scheduled rules)
-- Integrate with Fee Station for automatic Gas top-up to prevent sweep interruptions
+- Integrate with Billing Center for automatic Gas top-up to prevent sweep interruptions
 - Automatic RBF to improve sweep success rate
 - Set fee limits to control costs
 
 Manuals Reference: [Auto-Sweep Overview](en/portal/auto-sweep-overview)
 
-### 5. Fee Station (Unified On-Chain Fee Management)
+### 5. Billing Center (Unified On-Chain Fee Management)
 
-Fee Station is an account for centrally managing on-chain Gas and platform fees:
+Billing Center is an account for centrally managing on-chain Gas and platform fees:
 
 - Unified Gas pool supporting multiple addresses and chains
 - Automatic Gas sponsorship: automatically covers Gas when a transaction has insufficient funds
@@ -113,7 +113,7 @@ Starter / Standard users:
    - Create an MPC Wallet (Organization-Controlled)
    - Add the required chains
    - Create a main wallet (Hot Wallet)
-   - Initialize Fee Station
+   - Initialize Billing Center
 
 2. **Set Up the User Address System**
    - Batch generate addresses → Build Address Pool → Assign to users upon registration
@@ -127,11 +127,11 @@ Starter / Standard users:
    - Build transaction request → Call Transfer API → Monitor status
    - Use Batch Job / Queue system to handle high-concurrency distribution
    - Use request_id to ensure idempotency
-   - Fee Station automatically ensures sufficient Gas
+   - Billing Center automatically ensures sufficient Gas
 
 5. **Auto-Sweep**
    - Enable sweeping → Configure sweeping policy → Consolidate funds periodically or on trigger conditions
-   - Fee Station tops up Gas / automatic RBF improves success rate
+   - Billing Center tops up Gas / automatic RBF improves success rate
 
 6. **Risk Control and Security Policy Implementation**
    - Configure role-based access control (RBAC)

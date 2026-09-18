@@ -298,10 +298,11 @@
                     ]
                   },
                   {
-                    "group": "Fee Station",
+                    "group": "Billing Center",
                     "pages": [
-                      "en/portal/fee-station/introduction",
-                      "en/portal/fee-station/set-up"
+                      "en/portal/billing-center/introduction",
+                      "en/portal/billing-center/balances-and-fees",
+                      "en/portal/billing-center/get-started"
                     ]
                   },
                   {
@@ -885,10 +886,11 @@
                     ]
                   },
                   {
-                    "group": "Fee Station",
+                    "group": "费用中心",
                     "pages": [
-                      "cn/portal/fee-station/introduction",
-                      "cn/portal/fee-station/set-up"
+                      "cn/portal/billing-center/introduction",
+                      "cn/portal/billing-center/balances-and-fees",
+                      "cn/portal/billing-center/get-started"
                     ]
                   },
                   {
@@ -1298,35 +1300,35 @@
     },
     {
       "source": "/cn/portal/fee-station/overview",
-      "destination": "/cn/portal/fee-station/set-up"
+      "destination": "/cn/portal/billing-center/introduction"
     },
     {
       "source": "/cn/portal/fee-station/set-up-for-mpc",
-      "destination": "/cn/portal/fee-station/set-up"
+      "destination": "/cn/portal/billing-center/get-started"
     },
     {
       "source": "/cn/portal/fee-station/deposit",
-      "destination": "/cn/portal/fee-station/set-up"
+      "destination": "/cn/portal/billing-center/get-started"
     },
     {
       "source": "/cn/portal/fee-station/view-tx-records",
-      "destination": "/cn/portal/fee-station/set-up"
+      "destination": "/cn/portal/billing-center/introduction"
     },
     {
       "source": "/en/portal/fee-station/overview",
-      "destination": "/en/portal/fee-station/set-up"
+      "destination": "/en/portal/billing-center/introduction"
     },
     {
       "source": "/en/portal/fee-station/set-up-for-mpc",
-      "destination": "/en/portal/fee-station/set-up"
+      "destination": "/en/portal/billing-center/get-started"
     },
     {
       "source": "/en/portal/fee-station/deposit",
-      "destination": "/en/portal/fee-station/set-up"
+      "destination": "/en/portal/billing-center/get-started"
     },
     {
       "source": "/en/portal/fee-station/transaction-records",
-      "destination": "/en/portal/fee-station/set-up"
+      "destination": "/en/portal/billing-center/introduction"
     },
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-tx-policy",
@@ -1446,7 +1448,7 @@
     },
     {
       "source": "/en/portal/fee-station/key-features",
-      "destination": "/en/portal/fee-station/introduction"
+      "destination": "/en/portal/billing-center/introduction"
     },
     {
       "source": "/en/portal/address-book/key-features",
@@ -1482,7 +1484,7 @@
     },
     {
       "source": "/cn/portal/fee-station/key-features",
-      "destination": "/cn/portal/fee-station/introduction"
+      "destination": "/cn/portal/billing-center/introduction"
     },
     {
       "source": "/cn/portal/address-book/key-features",
@@ -1570,7 +1572,7 @@
     },
     {
       "source": "/en/portal/fee-station/manage",
-      "destination": "/en/portal/fee-station/set-up-for-mpc#next-steps"
+      "destination": "/en/portal/billing-center/get-started"
     },
     {
       "source": "/en/portal/developer-console/webhooks-manage",
@@ -1662,7 +1664,7 @@
     },
     {
       "source": "/cn/portal/fee-station/manage",
-      "destination": "/cn/portal/fee-station/set-up-for-mpc#next-steps"
+      "destination": "/cn/portal/billing-center/get-started"
     },
     {
       "source": "/cn/portal/developer-console/webhooks-manage",
@@ -1759,6 +1761,30 @@
     {
       "source": "/cn/portal/risk-controls/manage-on-chain-policy",
       "destination": "/cn/portal/retired-features"
+    },
+    {
+      "source": "/cn/portal/fee-station/introduction",
+      "destination": "/cn/portal/billing-center/introduction"
+    },
+    {
+      "source": "/cn/portal/fee-station/set-up",
+      "destination": "/cn/portal/billing-center/get-started"
+    },
+    {
+      "source": "/cn/portal/fee-station/transaction-records",
+      "destination": "/cn/portal/billing-center/introduction"
+    },
+    {
+      "source": "/en/portal/fee-station/introduction",
+      "destination": "/en/portal/billing-center/introduction"
+    },
+    {
+      "source": "/en/portal/fee-station/set-up",
+      "destination": "/en/portal/billing-center/get-started"
+    },
+    {
+      "source": "/en/portal/fee-station/view-tx-records",
+      "destination": "/en/portal/billing-center/introduction"
     }
   ]
 }
