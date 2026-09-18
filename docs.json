@@ -55,8 +55,6 @@
               {
                 "group": "GET STARTED",
                 "pages": [
-                  "en/portal/sign-up",
-                  "en/portal/onboarding-agents",
                   {
                     "group": "MPC Wallets",
                     "pages": [
@@ -188,7 +186,6 @@
                       "en/portal/transfers/from-exchange-wallets",
                       "en/portal/transfers/travel-rule",
                       "en/portal/transfers/fee-model",
-                      "en/portal/transfers/transaction-agent",
                       {
                         "group": "Address Book",
                         "pages": [
@@ -532,7 +529,6 @@
                     "pages": [
                       "en/guard/generate-and-back-up-key-shares",
                       "en/guard/reset",
-                      "en/guard/assistant",
                       "en/guard/manage"
                     ]
                   }
@@ -594,7 +590,8 @@
               {
                 "group": "OVERVIEW",
                 "pages": [
-                  "en/ai/introduction"
+                  "en/ai/introduction",
+                  "en/ai/waas-portal-assistant"
                 ]
               }
             ]
@@ -644,10 +641,8 @@
                 ]
               },
               {
-                "group": "快速开始免费试用",
+                "group": "快速开始",
                 "pages": [
-                  "cn/portal/sign-up",
-                  "cn/portal/onboarding-agents",
                   {
                     "group": "MPC 钱包",
                     "pages": [
@@ -779,7 +774,6 @@
                       "cn/portal/transfers/from-exchange-wallets",
                       "cn/portal/transfers/travel-rule",
                       "cn/portal/transfers/fee-model",
-                      "cn/portal/transfers/transaction-agent",
                       {
                         "group": "地址簿",
                         "pages": [
@@ -1123,7 +1117,6 @@
                     "pages": [
                       "cn/guard/generate-and-back-up-key-shares",
                       "cn/guard/reset",
-                      "cn/guard/assistant",
                       "cn/guard/manage"
                     ]
                   }
@@ -1185,7 +1178,8 @@
               {
                 "group": "概览",
                 "pages": [
-                  "cn/ai/introduction"
+                  "cn/ai/introduction",
+                  "cn/ai/waas-portal-assistant"
                 ]
               }
             ]
@@ -1215,8 +1209,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Free Trial",
-      "href": "https://www.cobo.com/lp/14-day-free-trial-cobo?utm_term=manual_freetrial.nav"
+      "label": "Contact Sales",
+      "href": "https://www.cobo.com/book-demo/?utm_source=product-manual&utm_medium=product&utm_campaign=contact-sales"
     }
   },
   "footer": {
@@ -1248,6 +1242,38 @@
     }
   },
   "redirects": [
+    {
+      "source": "/en/portal/sign-up",
+      "destination": "/en/accounts/sign-up"
+    },
+    {
+      "source": "/cn/portal/sign-up",
+      "destination": "/cn/accounts/sign-up"
+    },
+    {
+      "source": "/en/portal/onboarding-agents",
+      "destination": "/en/ai/waas-portal-assistant"
+    },
+    {
+      "source": "/cn/portal/onboarding-agents",
+      "destination": "/cn/ai/waas-portal-assistant"
+    },
+    {
+      "source": "/en/portal/transfers/transaction-agent",
+      "destination": "/en/ai/waas-portal-assistant"
+    },
+    {
+      "source": "/cn/portal/transfers/transaction-agent",
+      "destination": "/cn/ai/waas-portal-assistant"
+    },
+    {
+      "source": "/en/guard/assistant",
+      "destination": "/en/ai/introduction"
+    },
+    {
+      "source": "/cn/guard/assistant",
+      "destination": "/cn/ai/introduction"
+    },
     {
       "source": "/cn/guard/restore-key-shares-from-icloud",
       "destination": "/cn/guard/reset"
