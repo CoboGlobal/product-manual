@@ -11,3 +11,14 @@ You can easily manage the webhook events in Developer by clicking on the corresp
 
 <Snippet />
 
+## View event details
+
+Click any event in the list to open its details. The detail view shows the full event payload and a log of every delivery attempt, including the timestamp and the HTTP status code your endpoint returned for that attempt.
+
+## Resend a failed event
+
+If an event's status is **Failed** or **Retrying**, click **Retry** to trigger a new delivery attempt to your endpoint.
+
+## Query event history via the API
+
+You can also query up to 30 days of webhook event history for an endpoint using the [List all webhook events](https://www.cobo.com/developers/v2/api-references/developers--webhooks/list-all-webhook-events) operation. For a full recovery workflow, including inspecting a specific event, listing every delivery attempt, retrying via the API, and reconciling against the current transaction state, see [Set up a callback or webhook endpoint](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/set-up-endpoint) in Developer Hub.

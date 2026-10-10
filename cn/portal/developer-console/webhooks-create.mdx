@@ -13,6 +13,8 @@ description: "学习如何创建 Webhook Endpoint，确保与外部服务的有�
 ## 前提条件
 您已按照 [Set up a callback or webhook endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/set-up-endpoint) 中的说明设置了 Webhook Endpoint。
 
+每个 Webhook Endpoint 适用于您的整个组织。您只需配置一次，即可在团队内共享，而非绑定到单个用户。注册 Endpoint 时，您必须至少选择一个要接收的事件类型。您还可以选择接收组织内所有钱包的事件，或将投递范围限制为选定的钱包。
+
 ## 步骤
 
 1. 登录 [Cobo Portal](https://portal.cobo.com/login)。
@@ -23,9 +25,10 @@ description: "学习如何创建 Webhook Endpoint，确保与外部服务的有�
 
 4. 输入 URL。
 5. 输入 Webhook 的描述。
-6. 选择您想要接收的事件通知类型。
+6. 在**事件通知订阅**下，选择您希望此 Endpoint 接收的事件类型。您必须至少选择一个事件类型才能保存 Endpoint。
     <Note>欲了解更多事件类型的详情，请参阅 [Webhook event types](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/webhook-event-type#webhook-event-types)。</Note>
-7. 点击**注册**。
+7. 选择接收组织内所有钱包的事件，或仅接收选定钱包的事件。
+8. 点击**注册**。
 
 至此，您已完成 Webhook Endpoint 的注册。Webhook Endpoint 一旦注册后将无法删除。但是如果您不再需要，您可以让它失效，这意味着永久禁用其功能。
 
@@ -37,3 +40,9 @@ description: "学习如何创建 Webhook Endpoint，确保与外部服务的有�
 - 根据状态或事件类型过滤 Webhook Endpoint 列表。
 - 使用名称或关键字搜索特定的 Webhook Endpoint。
 
+## 相关资源
+
+- [Webhooks 和 Callbacks 简介](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/introduction)：了解负载结构、事件类型和核对流程。
+- [设置 Callback 或 Webhook Endpoint](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/set-up-endpoint)：实现 Endpoint 的事件处理逻辑。
+- [Transaction 负载参考](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/wallets-transaction-payload)：查看完整的 `wallets.transaction` Webhook 负载结构。
+- [TSS request 负载参考](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/wallets-mpc-tss-request-payload)：查看完整的 `wallets.mpc.tss_request` Webhook 负载结构。
