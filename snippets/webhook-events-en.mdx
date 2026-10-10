@@ -4,6 +4,12 @@
 - **Time** <img src="/en/images/developer-console/button_time.svg" className="icon"></img>: Select a timeframe to display all webhook events within that time period.
 - **Event** <img src="/en/images/developer-console/button_event.svg" className="icon"></img>: Tick the type of event notification from the drop-down menu.
 - **Clear All** <img src="/en/images/developer-console/button_clear all.svg" className="icon"></img>: Remove all selected conditions.
-- **Retry** <img src="/en/images/developer-console/button_retry.svg" className="icon"></img>: When the status is either "Failed" or "Retrying", the user can resubmit the event.
+- **Retry** <img src="/en/images/developer-console/button_retry.svg" className="icon"></img>: Resubmit the event to your endpoint. This action requires permission to resend webhook events; if you do not have it, choosing Retry shows a permission notice instead of resending. If the event's status is not `Failed` or `Retrying` (for example, it was already delivered), Cobo Portal asks you to confirm before resending, because retrying a delivered event can cause your endpoint to process duplicate data.
+- **Event details**: Click an event to view its `Time`, `Event ID`, and `URL`. When the status is `Retrying`, the details also show `Next Retry Time` and `No. of Retries Left`.
+- **Webhook Attempts**: Below the event details, view the delivery log for each attempt made to your endpoint. Viewing attempts requires a separate view permission from the one required to retry.
 
 For more details on the behaviors of the webhook events, refer to [Webhook events](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/set-up-endpoint#webhook-events).
+
+Before you click Retry, fix the issue on your endpoint. Resending without addressing the root cause produces the same failure. For a complete recovery workflow — including finding affected events, inspecting delivery logs, and reconciling transaction state — see [Recover missed or failed events](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-operations#recover-missed-or-failed-events) in the Developer Hub.
+
+If an event is no longer visible in Cobo Portal or through the API, its delivery history has expired. Reconcile the transaction's current state directly through the transaction APIs; see [When history has expired](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/webhook-operations#when-history-has-expired) in the Developer Hub.

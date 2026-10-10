@@ -4,6 +4,12 @@
 - **时间** <img src="/cn/images/developer-console/button_time.svg" className="icon"></img>：选择显示某一时间段内的所有 Webhook 事件。
 - **事件** <img src="/cn/images/developer-console/button_event.svg" className="icon"></img>：从下拉菜单中勾选事件通知类型。
 - **全部清除** <img src="/cn/images/developer-console/button_clear all.svg" className="icon"></img>：移除所有已选中的条件。
-- **重试** <img src="/cn/images/developer-console/button_retry.svg" className="icon"></img>：当状态为“发送失败”或“重试中”时，用户可以重新发送事件。
+- **重新发送** <img src="/cn/images/developer-console/button_retry.svg" className="icon"></img>：重新发送该事件给您的 Endpoint。此操作需要具备重新发送 Webhook 事件的权限；如果没有该权限，单击重新发送会显示权限提示，而不会重新发送事件。如果该事件的状态不是 `Failed` 或 `Retrying`（例如该事件已成功投递），Cobo Portal 会要求您确认后才能重新发送，因为对已投递事件重新发送可能导致您的 Endpoint 处理重复数据。
+- **事件详情**：单击某个事件可查看其 `Time`、`Event ID` 和 `URL`。当状态为 `Retrying` 时，详情中还会显示 `Next Retry Time` 和 `No. of Retries Left`。
+- **Webhook 尝试**：在事件详情下方，可查看该事件投递到您 Endpoint 的每一次尝试记录。查看尝试记录需要具备与重新发送不同的独立查看权限。
 
 如您想要了解 Webhook Events 的行为以及更多详情，请参阅 [Webhook events](https://www.cobo.com/developers/v2/guides/webhooks-callbacks/set-up-endpoint#webhook-events)。
+
+在单击重新发送之前，请先修复您 Endpoint 上的问题；在未解决根本原因的情况下重新发送只会导致同样的失败。有关完整的恢复流程（包括查找受影响的事件、检查投递日志，以及对账交易状态），请参阅开发者中心的[恢复遗漏或失败的事件](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/webhook-operations#恢复遗漏或失败的事件)。
+
+如果某个事件在 Cobo Portal 或 API 中已不再可见，说明其投递历史已过期。请直接通过 Transaction API 对账该交易的当前状态；请参阅开发者中心的[历史记录已过期时](https://www.cobo.com/developers/v2_cn/guides/webhooks-callbacks/webhook-operations#历史记录已过期时)。
