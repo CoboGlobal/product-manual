@@ -5,14 +5,14 @@ lang: "en"
 description: "Learn how to pause or resume auto token sweeping in Cobo Portal"
 ---
 
-After enabling auto token sweeping, you can pause or resume the sweeping functionality at any time. When facing urgent situations (such as a need to temporarily freeze fund flows, handle risk events, or perform system checks), you can use "one-click pause" to quickly stop the automatic initiation of subsequent sweep transactions. After the risk is resolved, you can use "one-click resume" to restore sweeping.
+This feature applies to Custodial Wallets (Web3 Wallets) with auto token sweeping enabled. You can pause or resume the sweeping functionality at any time. When facing urgent situations (such as a need to temporarily freeze fund flows, handle risk events, or perform system checks), you can use "one-click pause" to quickly stop the automatic initiation of subsequent sweep transactions. After the risk is resolved, you can use "one-click resume" to restore sweeping.
 
 ## Feature description
 
 - **Pause sweeping**: The system will stop automatically creating new sweep tasks/sweep transactions for the wallet (i.e., "will no longer automatically initiate sweep transactions").
 - **Resume sweeping**: The system will resume executing the sweep logic according to the current sweep strategy.
 
-> Note: Pause/Resume only affects the "automatically triggered" sweep behavior going forward. It does not affect sweep transactions that have already been initiated or completed.
+> Note: Pause/Resume only affects automatically triggered sweep behavior going forward. It does not affect sweep tasks or transactions that have already been created. This setting is independent from the one-time auto-sweep enablement for MPC Wallets described in [Enable auto token sweeping](/en/portal/enable-auto-sweep); pausing here does not revoke that enablement.
 
 ## Prerequisites
 

@@ -8,9 +8,13 @@ description: "Learn how to view and modify auto token sweep strategies for walle
 After enabling auto token sweeping, the system enables two sweep strategies by default: single transaction threshold sweep and balance sweep. You can adjust the parameters of sweep strategies based on your business needs or add other sweep strategies.
 
 The currently supported sweep strategies include:
-- Single transaction threshold sweep: Triggered when a deposit amount in the deposit address reaches the set threshold.
-- Balance sweep: Triggered when the token balance in the wallet reaches the set threshold.
-- Scheduled sweep: Triggered at a fixed time every day to sweep all tokens in the wallet.
+- Single transaction threshold sweep: Evaluates each incoming deposit transaction separately. When the amount of a token in an individual deposit transaction reaches that token's configured threshold, it can trigger sweeping for the token.
+- Balance sweep: Evaluates each token balance separately. When any token balance in the wallet reaches that token's configured threshold, it can trigger sweeping for the token. Balances are not combined across tokens for this evaluation.
+- Scheduled sweep: Triggers sweeping at a configured time each day. The schedule uses the IANA time zone identifier configured in the policy, such as `Asia/Shanghai` or `UTC`, rather than the local time zone of the person viewing the policy.
+
+The minimum sweep amount is a separate security setting, not another sweep strategy. It applies regardless of which strategies are enabled. After a strategy condition is met, the sweepable amount must also reach the configured minimum before the system initiates a sweep transaction.
+
+Sweep strategies do not control the destination address. Funds are always swept to the wallet's system-generated sweep-to address for the relevant chain. For details, see [Change sweep-to addresses](/en/portal/change-sweep-address).
 
 ## Prerequisites
 - You have been assigned the [user role](/en/portal/organization/roles-and-permissions) of Operator, Manager, or Admin.

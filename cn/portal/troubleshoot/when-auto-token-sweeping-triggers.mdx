@@ -7,8 +7,10 @@ description: "了解启用自动代币归集后归集未触发的常见原因与
 
 **适用范围：全托管钱包（Web3 钱包）、MPC 钱包**
 
-对于启用了自动代币归集的全托管钱包（Web3 钱包）与 MPC 钱包，自动代币归集的触发时机和执行策略由 Cobo 系统根据内部规则自动管理。如果您已为钱包启用自动代币归集，但发现资金入账到充币地址后一段时间仍未归集，请先确认该地址在链上确实已收到资金，并注意归集可能会受到网络拥堵、手续费波动、以及平台侧策略执行节奏等因素影响。
+自动代币归集分为两层：策略触发条件和执行条件。可用的策略触发条件在[归集策略](/cn/portal/auto-sweep-policy-edit)中配置，包括单笔阈值归集、余额归集和定时归集。定时策略使用已配置的 IANA 时区标识符记录每天的执行时间。
 
-如需手动触发归集，您也可以通过 WaaS 2.0 API 创建归集任务，请参阅 [Create auto sweep task](https://www.cobo.com/developers/v2/api-references/autosweep/create-auto-sweep-task)。
+满足策略条件会开始创建和处理归集任务，但不保证任务完成时间。可归集金额还必须达到钱包已配置的最小归集金额，这是一项独立的安全设置。充币地址也必须直接备有足够的 Gas 或链上手续费，或通过 [Fee Station](/cn/portal/fee-station/introduction) 支付相关费用。
 
-参考文档：[自动代币归集概览](/cn/portal/auto-sweep-overview)与[自动代币归集设置](/cn/portal/auto-sweep-settings)。
+如需手动触发归集，请通过 WaaS 2.0 API 创建归集任务。该任务仍须满足自身的 `min_balance_threshold` 以及适用的执行条件。请参阅 [Create auto sweep task](https://www.cobo.com/developers/v2/api-references/autosweep/create-auto-sweep-task)。
+
+参考文档：[自动代币归集概览](/cn/portal/auto-sweep-overview)、[自动归集策略设置](/cn/portal/auto-sweep-policy-edit)与[自动代币归集设置](/cn/portal/auto-sweep-settings)。

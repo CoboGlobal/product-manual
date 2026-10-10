@@ -18,6 +18,8 @@ When auto token sweeping is enabled, incoming tokens are automatically moved to 
 3. Click the **Change Sweep-To Address** button.
 4. In the dialog, choose the network that the sweep-to address belongs to, and click **Confirm**.
 
+    <Note>Cobo generates the new sweep-to address for the selected chain. You cannot submit an external address through this flow.</Note>
+
     <img src="/en/images/mpc-wallet/ocw/change-sweep.png" className="screenshot_full_screen" alt="The Change Sweep Address dialog" />
 
 5. Verify your identity using Portal Mobile or another MFA method.
@@ -26,5 +28,4 @@ After you verify your identity, the change request will be processed and **a new
 
 ## Next steps
 
-After the sweep-to address is changed, any incoming deposits to the deposit addresses will be periodically swept to the new address, and the old address itself will no longer be in use. You can filter addresses by the **Not In Use** status and manually withdraw any remaining balances from the old sweep-to addresses to the new address or another designated destination.
-
+After the sweep-to address is changed, any incoming deposits to the deposit addresses will be periodically swept to the new address, and the old address itself will no longer be in use. You can filter addresses by the **Not In Use** status and manually withdraw any remaining balances from the old sweep-to addresses to the new address or another designated destination. To send funds to an address outside the wallet's sweep-to addresses, initiate a separate transfer or withdrawal after sweeping completes; changing the sweep-to address does not send funds externally.
