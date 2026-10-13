@@ -17,6 +17,7 @@ The following summary highlights the typical purpose of each default role. It is
 | Role | Typical capability |
 | --- | --- |
 | Viewer | Views organization information, wallet information, balances, addresses, and transaction records. |
+| Developer | A read-only role for the Developer Console. Members can view API keys, view and export API logs, access the Developer Console dashboard, and view webhook and callback URLs/events. |
 | Spender | Initiates wallet operations such as withdrawals and transfers for wallets in scope. |
 | Approver | Reviews and approves transactions and other requests that require approval. |
 | Staker | Performs staking-related actions for supported assets and wallets. |
@@ -26,6 +27,8 @@ The following summary highlights the typical purpose of each default role. It is
 | Admin | Has broad administrative permissions across organization management, wallet operations, risk controls, and developer settings. |
 
 <Warning>Assign Spender narrowly. Spender can initiate withdrawals and transfers for wallets in scope, so separate spending duties from approval duties whenever your workflow requires independent review.</Warning>
+
+<Note>The Developer role does not support wallet scope. Its permissions apply to all wallets.</Note>
 
 ### Authorization model
 
@@ -46,6 +49,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <th>Resource</th>
     <th>Operation</th>
     <th>Viewer</th>
+    <th>Developer</th>
     <th>Spender</th>
     <th>Approver</th>
     <th>Staker</th>
@@ -58,6 +62,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="34">Organization Management</td>
     <td rowspan="6">team_member</td>
     <td>read</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -75,11 +80,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>delete</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -97,6 +104,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -108,11 +116,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
     <tr>
     <td>unfreeze</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -131,12 +141,14 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -153,11 +165,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>unfreeze</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -176,11 +190,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -194,6 +210,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="4">fee_station</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -204,6 +221,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -216,6 +234,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>deposit</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -226,6 +245,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>export</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -244,6 +264,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -255,11 +276,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
     <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -278,11 +301,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -301,10 +326,12 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>delete</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -323,11 +350,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -346,6 +375,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -353,6 +383,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="3">transaction_category</td>
     <td>*read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>-</td>
@@ -363,6 +394,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*create</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -375,6 +407,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>*update</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>-</td>
@@ -386,6 +419,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td rowspan="3">pricing_plan</td>
     <td>read</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -403,11 +437,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>update_supported_chains</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -426,11 +462,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>update_billing_emails</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -445,6 +483,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="7">wallet</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -455,6 +494,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -470,6 +510,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -477,6 +518,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*connect</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -492,6 +534,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -499,6 +542,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*delete</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -511,6 +555,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>*create_address</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -522,6 +567,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>address_book</td>
     <td>delete</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -536,6 +582,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="11">transaction</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -547,6 +594,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>export</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -557,6 +605,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*withdraw</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -571,6 +620,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -579,6 +629,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>estimate_fee</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -591,6 +642,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>*contract_call</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -601,6 +653,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>message_sign</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -613,6 +666,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>*manage</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -623,6 +677,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*update</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -637,6 +692,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -645,6 +701,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*unstake_withdraw</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -661,6 +718,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -669,6 +727,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -679,6 +738,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -695,6 +755,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -703,6 +764,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -713,6 +775,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -726,6 +789,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="4">mpc_key_group</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -736,6 +800,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -751,6 +816,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -758,6 +824,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>delete</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -771,6 +838,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="2">utxo</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -781,6 +849,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>*manage</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -799,12 +868,14 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td rowspan="2">travel_rule</td>
     <td>read</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -816,6 +887,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>edit</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -829,6 +901,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="3">address_book</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -840,6 +913,7 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td>create</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -850,6 +924,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -866,6 +941,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -873,6 +949,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -888,6 +965,7 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>✔️</td>
@@ -895,6 +973,7 @@ The following table lists the permissions of each role in Cobo Portal.
   </tr>
   <tr>
     <td>delete</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -908,12 +987,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td rowspan="11">Developer Management</td>
     <td>developer_dashboard</td>
     <td>view</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -926,52 +1006,57 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>read</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td rowspan="2">api_log</td>
     <td>read</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>export</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td rowspan="3">webhook</td>
     <td>read</td>
+    <td>-</td>
     <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -983,11 +1068,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>resend</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1000,12 +1087,13 @@ The following table lists the permissions of each role in Cobo Portal.
   <tr>
     <td rowspan="3">callback</td>
     <td>read</td>
+    <td>-</td>
     <td>✔️</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
@@ -1017,11 +1105,13 @@ The following table lists the permissions of each role in Cobo Portal.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>resend</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1042,6 +1132,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <th>Resource</th>
     <th>Operation</th>
     <th>Viewer</th>
+    <th>Developer</th>
     <th>Spender</th>
     <th>Operator</th>
     <th>Approver</th>
@@ -1059,6 +1150,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1071,6 +1163,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>-</td>
@@ -1078,6 +1171,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1096,6 +1190,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1108,6 +1203,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1115,6 +1211,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1133,6 +1230,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1140,6 +1238,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△create</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1158,6 +1257,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1170,6 +1270,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1177,6 +1278,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1195,6 +1297,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1202,6 +1305,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△create</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1219,6 +1323,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>-</td>
@@ -1226,6 +1331,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△delete</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1244,6 +1350,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1256,6 +1363,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1263,6 +1371,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△update</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1281,6 +1390,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1288,6 +1398,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>△create</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -1306,6 +1417,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1315,6 +1427,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td rowspan="2">swap_orders</td>
     <td>*read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1326,6 +1439,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>*create</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -1340,6 +1454,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td rowspan="2">bridge_orders</td>
     <td>*read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1351,6 +1466,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>*create</td>
+    <td>-</td>
     <td>-</td>
     <td>✔️</td>
     <td>-</td>
@@ -1365,6 +1481,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>screening_results</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1378,6 +1495,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td rowspan="3">screening_funds</td>
     <td>refund</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1390,6 +1508,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   <tr>
     <td>isolate</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1402,6 +1521,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   <tr>
     <td>unfreeze</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1415,6 +1535,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td rowspan="4">compliance_funds</td>
     <td>read</td>
     <td>✔️</td>
+    <td>-</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
@@ -1431,6 +1552,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -1443,6 +1565,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>✔️</td>
     <td>-</td>
     <td>-</td>
@@ -1450,6 +1573,7 @@ The following table lists the permissions of each role in Cobo Portal Apps.
   </tr>
   <tr>
     <td>unfreeze</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
