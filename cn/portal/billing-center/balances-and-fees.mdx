@@ -19,19 +19,19 @@ description: "链上手续费在 Portal 页面转账与 API 交易下各自的�
 支付方式**只能在每次转账的弹窗中选择，且只影响当次转账**，费用中心没有针对 Portal 转账的全局开关。
 
 ```mermaid
-flowchart TD
-    B{转账弹窗里选了什么？} -->|只用钱包地址内的代币| C["扣地址 Gas 代币<br/>不足则失败"]
-    B -->|使用费用中心| D{哪条链？}
-    D -->|EVM 兼容链| E{地址 Gas 代币够吗？}
-    D -->|TRON / Solana / Tempo| F{费用中心 Gas 代币够吗？}
-    E -->|够| G[扣地址 Gas 代币]
+flowchart LR
+    B("弹窗里选了什么？") -->|"只用钱包地址内的代币<br/>不够则交易失败"| W
+    B -->|使用费用中心| D("哪条链？")
+    D -->|EVM 兼容链| E("地址 Gas 代币够吗？")
+    D -->|"TRON / Solana / Tempo"| F("费用中心<br/>Gas 代币够吗？")
+    E -->|够| W["钱包地址的 Gas 代币"]
     E -->|不够| F
-    F -->|够| I[扣费用中心 Gas 代币]
-    F -->|不够| J[扣 Credits]
-    style C fill:#f5f5f5,stroke:#333
-    style G fill:#e6f3e6,stroke:#333
-    style I fill:#e6f3e6,stroke:#333
-    style J fill:#e6f3e6,stroke:#333
+    F -->|够| G["费用中心的 Gas 代币"]
+    F -->|不够| C["费用中心的 Credits"]
+    classDef wallet fill:#dbe9fb,stroke:#4a7fc1,color:#13365e
+    classDef bc fill:#1b4f9c,stroke:#13365e,color:#ffffff
+    class W wallet
+    class G,C bc
 ```
 
 ## 通过 API 发起的交易
