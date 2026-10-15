@@ -1,0 +1,66 @@
+<svg viewBox="0 0 640 516" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="640" height="516" fill="#FFFFFF"/>
+  <g fill="none" stroke="#9CA3AF" stroke-width="1.6">
+    <path d="M225 64 V84 H90 V412"/>
+    <path d="M225 84 H360 V112"/>
+    <path d="M360 164 V184 H270 V212"/>
+    <path d="M360 184 H450 V312"/>
+    <path d="M270 264 V284 H130 V412"/>
+    <path d="M270 284 H410 V312"/>
+    <path d="M430 376 V400 H330 V412"/>
+    <path d="M430 400 H530 V412"/>
+  </g>
+  <g fill="#9CA3AF">
+    <path d="M90 420 l-5 -11 h10 z"/><path d="M130 420 l-5 -11 h10 z"/>
+    <path d="M360 120 l-5 -11 h10 z"/><path d="M270 220 l-5 -11 h10 z"/>
+    <path d="M410 320 l-5 -11 h10 z"/><path d="M450 320 l-5 -11 h10 z"/>
+    <path d="M330 420 l-5 -11 h10 z"/><path d="M530 420 l-5 -11 h10 z"/>
+  </g>
+  <g stroke="#CBD0D8" stroke-width="1.2" fill="#FFFFFF">
+    <rect x="135" y="20" width="180" height="44" rx="9"/>
+    <rect x="270" y="120" width="180" height="44" rx="9"/>
+    <rect x="150" y="220" width="240" height="44" rx="9"/>
+    <rect x="340" y="320" width="180" height="56" rx="9"/>
+  </g>
+  <rect x="20" y="420" width="180" height="44" rx="9" fill="#DBE9FB" stroke="#4A7FC1" stroke-width="1.2"/>
+  <g fill="#2353A8">
+    <rect x="240" y="420" width="180" height="44" rx="9"/>
+    <rect x="440" y="420" width="180" height="44" rx="9"/>
+  </g>
+  <g font-size="13.5" font-weight="500" fill="#111827" text-anchor="middle">
+    <text x="225" y="47">Choice in the dialog</text>
+    <text x="360" y="147">Chain of the transaction</text>
+    <text x="270" y="247">Wallet address gas token balance</text>
+    <text x="430" y="343">Billing Center</text><text x="430" y="361">gas token balance</text>
+  </g>
+  <g font-size="13.5" font-weight="500" text-anchor="middle">
+    <text x="110" y="447" fill="#13365E">Wallet address gas tokens</text>
+    <text x="330" y="447" fill="#FFFFFF">Billing Center gas tokens</text>
+    <text x="530" y="447" fill="#FFFFFF">Billing Center Credits</text>
+  </g>
+  <g>
+    <rect x="13.0" y="132.5" width="154.0" height="35.0" rx="4" fill="#F3F4F6"/>
+    <text x="90" y="147.5" font-size="11.5" fill="#4B5563" text-anchor="middle">Wallet address token only</text>
+    <text x="90" y="162.0" font-size="11.5" fill="#4B5563" text-anchor="middle">fails if insufficient</text>
+    <rect x="304.2" y="91.8" width="111.5" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="360" y="106.8" font-size="11.5" fill="#4B5563" text-anchor="middle">Use Billing Center</text>
+    <rect x="217.7" y="191.8" width="104.7" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="270" y="206.8" font-size="11.5" fill="#4B5563" text-anchor="middle">EVM-compatible</text>
+    <rect x="380.1" y="197.8" width="139.8" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="450" y="212.8" font-size="11.5" fill="#4B5563" text-anchor="middle">TRON / Solana / Tempo</text>
+    <rect x="163.0" y="273.8" width="74.0" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="200" y="288.8" font-size="11.5" fill="#4B5563" text-anchor="middle">Sufficient</text>
+    <rect x="296.0" y="273.8" width="88.0" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="340" y="288.8" font-size="11.5" fill="#4B5563" text-anchor="middle">Insufficient</text>
+    <rect x="343.0" y="389.8" width="74.0" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="380" y="404.8" font-size="11.5" fill="#4B5563" text-anchor="middle">Sufficient</text>
+    <rect x="436.0" y="389.8" width="88.0" height="20.5" rx="4" fill="#F3F4F6"/>
+    <text x="480" y="404.8" font-size="11.5" fill="#4B5563" text-anchor="middle">Insufficient</text>
+  </g>
+  <g font-size="12" fill="#6B7280">
+    <rect x="20" y="484" width="13" height="13" rx="3" fill="#DBE9FB" stroke="#4A7FC1" stroke-width="1.2"/>
+    <text x="40" y="495">Wallet address pays</text>
+    <rect x="176" y="484" width="13" height="13" rx="3" fill="#2353A8"/>
+    <text x="196" y="495">Billing Center pays</text>
+  </g>
+</svg>

@@ -18,21 +18,7 @@ The transfer dialog lets you choose what pays the fee — "Use Billing Center" o
 
 The choice **is made in each transfer's dialog and applies only to that transfer**; Billing Center has no global switch governing Portal transfers.
 
-```mermaid
-flowchart LR
-    B("Choice in the transfer dialog") -->|"Use the token in the wallet address only<br/>fails if insufficient"| W
-    B -->|Use Billing Center| D("Which chain?")
-    D -->|EVM-compatible chains| E("Address gas tokens enough?")
-    D -->|"TRON / Solana / Tempo"| F("Billing Center<br/>gas tokens enough?")
-    E -->|Yes| W["Gas tokens in the wallet address"]
-    E -->|No| F
-    F -->|Yes| G["Gas tokens in Billing Center"]
-    F -->|No| C["Credits in Billing Center"]
-    classDef wallet fill:#dbe9fb,stroke:#4a7fc1,color:#13365e
-    classDef bc fill:#1b4f9c,stroke:#13365e,color:#ffffff
-    class W wallet
-    class G,C bc
-```
+<img src="/en/images/billing-center/fee-source.svg" alt="How a Portal transfer fee is charged" />
 
 ## Transactions initiated through the API
 
