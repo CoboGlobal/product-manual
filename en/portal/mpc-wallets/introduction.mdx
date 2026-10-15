@@ -25,7 +25,7 @@ A Threshold Signature Scheme (TSS) is a type of digital signature protocol used 
 
 ## Types of MPC Wallets on Cobo Portal
 
-Cobo Portal offers two types of MPC Wallets: Organization-Controlled Wallets and User-Controlled Wallets.
+Cobo Portal offers Organization-Controlled Wallets.
 
 ### Organization-Controlled Wallets
 
@@ -41,30 +41,10 @@ An Organization-Controlled Wallet utilizes a 2-2 signature scheme, with one key 
 
 <img src="/en/images/mpc-wallet/MPC wallet for your end users’ assets.svg"/>
 
-### User-Controlled Wallets
-
-In a User-Controlled Wallet, end users of the organization are given full control of their digital assets. In this setup, each end user of the organization holds their own unique private key share to their MPC Wallet.
-
-With a flexible threshold signature scheme (''m out of n'' key shares), User-Controlled Wallets allow the organization to customize how transactions are authorized. For example, under a 3-3 signature scheme, the organization and the end user each hold a key share, while the third key share is stored within Cobo's multi-cloud infrastructure, and all three are required to independently authorize each transaction. Alternatively, a 2-3 signature scheme can be implemented, where the organization’s key share is held offline and utilized only in specific circumstances, such as disputes or critical events.
-
-To integrate non-custodial MPC Wallets into your applications, a 2-2 signature can be implemented, where the end user holds a key share and the other key share is stored within Cobo's multi-cloud infrastructure, while the organization holds none.
-
-**3-3 signature scheme**:
-
-<img src="/en/images/mpc-wallet/3-3 signature scheme.svg"/>
-
-**2-3 signature scheme**:
-
-<img src="/en/images/mpc-wallet/2-3 signature scheme.svg"/>
-
-**2-2 signature scheme**:
-
-<img src="/en/images/mpc-wallet/2-2 scheme.png"/>
-
 ## Key features
 
 ### Flexible key share management
-Choose from Organization-Controlled Wallets and User-Controlled Wallets based on your unique business requirements. Organization-Controlled Wallets allow you to safeguard and control your own treasury assets as well as your end users’ assets. User-Controlled Wallets allow you to integrate non-custodial wallets into your applications and provide your end users with the control over their assets.
+Organization-Controlled Wallets allow you to safeguard and control your own treasury assets as well as your end users’ assets.
 
 ### No single point of failure
 Cobo Portal’s MPC Wallets utilize advanced MPC technology to decentralize the private key, ensuring that the full key is never materialized at any point. Authorizing a transaction requires multiple independently held key shares. This ensures that even if one key share is compromised, unauthorized parties cannot unilaterally access your funds. MPC Wallets safeguard your assets from external hacks, internal fraud, collusion, and human errors, significantly reducing the risk of asset loss.
