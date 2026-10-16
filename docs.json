@@ -350,17 +350,7 @@
                 "pages": [
                   "en/portal/glossary",
                   "en/portal/dapp",
-                  "en/portal/retired-features",
-                  {
-                    "group": "User-Controlled Wallets",
-                    "pages": [
-                      "en/portal/mpc-wallets/ucw/introduction",
-                      "en/portal/mpc-wallets/ucw/set-up",
-                      "en/portal/mpc-wallets/ucw/project-management",
-                      "en/portal/mpc-wallets/ucw/vault-management",
-                      "en/portal/mpc-wallets/ucw/wallet-management"
-                    ]
-                  }
+                  "en/portal/retired-features"
                 ]
               }
             ]
@@ -938,17 +928,7 @@
                 "pages": [
                   "cn/portal/glossary",
                   "cn/portal/dapp",
-                  "cn/portal/retired-features",
-                  {
-                    "group": "终端用户钱包",
-                    "pages": [
-                      "cn/portal/mpc-wallets/ucw/introduction",
-                      "cn/portal/mpc-wallets/ucw/set-up",
-                      "cn/portal/mpc-wallets/ucw/project-management",
-                      "cn/portal/mpc-wallets/ucw/vault-management",
-                      "cn/portal/mpc-wallets/ucw/wallet-management"
-                    ]
-                  }
+                  "cn/portal/retired-features"
                 ]
               }
             ]
@@ -1504,19 +1484,19 @@
     },
     {
       "source": "/en/portal/mpc-wallets/ucw/object-model",
-      "destination": "/en/mpc-wallets/ucw/introduction"
+      "destination": "/en/portal/mpc-wallets/introduction"
     },
     {
       "source": "/cn/portal/mpc-wallets/ucw/object-model",
-      "destination": "/cn/mpc-wallets/ucw/introduction"
+      "destination": "/cn/portal/mpc-wallets/introduction"
     },
     {
       "source": "/en/portal/mpc-wallets/ocw/object-model",
-      "destination": "/en/mpc-wallets/ucw/introduction"
+      "destination": "/en/portal/mpc-wallets/ocw/introduction"
     },
     {
       "source": "/cn/portal/mpc-wallets/ocw/object-model",
-      "destination": "/cn/mpc-wallets/ucw/introduction"
+      "destination": "/cn/portal/mpc-wallets/ocw/introduction"
     },
     {
       "source": "/en/portal/developer-console/api-dashboard",
