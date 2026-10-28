@@ -6,13 +6,13 @@ description: "Discover Cobo Portal Mobile, a next-generation mobile security sol
 ---
 
 <Warning>
-**Important availability notice — Cobo Portal Mobile is currently for ELIGIBLE NEW USERS ONLY.**
+**Important availability notice — who can use Cobo Portal Mobile**
 
-- **Who can use it:** Only **new users and organizations provisioned by Cobo Sales** that have **never been bound to Cobo Guard**.
-- **Who cannot use it (yet):** Any **existing user whose account is already bound to Cobo Guard**. These accounts **cannot bind a device, generate key shares, migrate, or otherwise use Portal Mobile** at this stage.
-- **Migration from Cobo Guard is NOT yet supported.** No in-product migration path is available. Existing Cobo Guard users must continue using Cobo Guard and wait for the official migration path to be released.
+- **New accounts:** New users and organizations provisioned by Cobo Sales can set up and use Portal Mobile directly.
+- **Accounts bound to Cobo Guard:** After sign-in, Portal Mobile starts the migration flow; Portal Mobile features become available once migration is complete. Cobo Guard stops working for the account after migration.
+- **Migration is per account**, and eligibility is determined by the in-app preflight check.
 
-See [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard) for the full coexistence and migration policy.
+For step-by-step migration instructions, see [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard).
 </Warning>
 
 ## What is Cobo Portal Mobile
@@ -199,15 +199,14 @@ The two are **two separate products**, not different versions of the same produc
 
 ### Migration direction
 
-In the future, Cobo Guard users will gradually migrate to Cobo Portal Mobile. Before the migration path is officially available, the two products will coexist in parallel for a period of time.
+Accounts bound to Cobo Guard can sign in to Portal Mobile and follow the in-app flow to migrate. Accounts with key shares restore the original backup first; if the original TSS Node is also used by other accounts, migration generates new key shares and requires a new backup immediately.
 
-<Warning>**Current limitation — eligible new users only, no migration from Cobo Guard yet.** Cobo Portal Mobile is currently available only to **new users and organizations provisioned by Cobo Sales that have never been bound to Cobo Guard**. Accounts already bound to Cobo Guard cannot complete device binding, generate key shares, or migrate in Portal Mobile. For details, see [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard).</Warning>
+<Warning>Migration is per account, and Cobo Guard stops working for the account after migration. Do not uninstall Cobo Guard until migration and the new key share backup are complete. For step-by-step instructions, see [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard).</Warning>
 
 ### Recommendations during the coexistence period
 
-- If you are currently using **Cobo Guard** (existing user / existing organization already bound to Cobo Guard), **you must continue using Cobo Guard** — Portal Mobile **does not yet support you**. Do **not** try to log in to Portal Mobile to "switch" or "migrate"; it will not let you bind your device. Wait for the official migration path to be released.
+- If your account is bound to **Cobo Guard**, follow the steps in [Migrate from Cobo Guard](/en/portal-mobile/migrate-from-guard). Accounts that fail the preflight check should continue using Cobo Guard and contact support.
 - If you are a **new user or organization provisioned by Cobo Sales** that has never been bound to Cobo Guard, you can use Cobo Portal Mobile directly.
-- Watch for migration announcements from Cobo, and proceed once the migration path is available.
 
 ## Product distinction (for search reference)
 
